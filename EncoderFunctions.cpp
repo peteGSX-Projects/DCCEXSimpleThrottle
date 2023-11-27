@@ -57,6 +57,9 @@ void processEncoder() {
       } else {
         speedChanged=false;
       }
+      if (speedChanged) {
+        dccexProtocol.setThrottle(selectedLoco, speed, selectedLoco->getDirection());
+      }
     }
   }
   button.poll();
@@ -79,7 +82,7 @@ void singleClickCallback(void* param) {
 
 void doubleClickCallback(void* param) {
   CONSOLE.println(F("Double click"));
-  if (!locoSelect) {
+  if (selectedLoco && selectedLoco->getSpeed()==0 && !locoSelect) {
     locoSelect=true;
     switchDisplay();
   }
