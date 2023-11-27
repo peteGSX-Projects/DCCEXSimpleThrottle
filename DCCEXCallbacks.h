@@ -23,12 +23,12 @@
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 #include "defines.h"
+#include "EncoderFunctions.h"
 
 class DCCEXCallbacks : public DCCEXProtocolDelegate {
 public:
   void receivedServerVersion(int major, int minor, int patch);
-  // void receivedSpeed(int throttleNo, int speed);
-  // void receivedDirection(int throttleNo, Direction dir);
+  void receivedLocoUpdate(Loco* loco);
   // void receivedTrackPower(TrackPower state);
   // void receivedReadLoco(int address);
 

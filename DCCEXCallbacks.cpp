@@ -29,18 +29,16 @@ void DCCEXCallbacks::receivedServerVersion(int major, int minor, int patch) {
   CONSOLE.print(patch);
 }
 
-// void DCCEXCallbacks::receivedSpeed(int throttleNo, int speed) {
+void DCCEXCallbacks::receivedLocoUpdate(Loco* loco) {
+  if (selectedLoco!=loco || locoSelect) return;
+  speedChanged=true;
+  directionChanged=true;
+}
+
+// void DCCEXCallbacks::receivedTrackPower(TrackPower state) {
 
 // }
 
-// void receivedDirection(int throttleNo, Direction dir) {
-
-// }
-
-// void receivedTrackPower(TrackPower state) {
-
-// }
-
-// void receivedReadLoco(int address) {
+// void DCCEXCallbacks::receivedReadLoco(int address) {
 
 // }

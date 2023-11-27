@@ -74,8 +74,8 @@ void singleClickCallback(void* param) {
     switchDisplay();
   } else {
     if (selectedLoco && selectedLoco->getSpeed()==0) {
-      Direction direction=(direction==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
-      directionChanged=true;
+      Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
+      dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
     }
   }
 }
