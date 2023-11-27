@@ -35,9 +35,12 @@ void DCCEXCallbacks::receivedLocoUpdate(Loco* loco) {
   directionChanged=true;
 }
 
-// void DCCEXCallbacks::receivedTrackPower(TrackPower state) {
-
-// }
+void DCCEXCallbacks::receivedTrackPower(TrackPower state) {
+  if (trackPower!=state) {
+    trackPower=state;
+    trackPowerChanged=true;
+  }
+}
 
 // void DCCEXCallbacks::receivedReadLoco(int address) {
 

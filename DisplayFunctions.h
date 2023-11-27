@@ -38,6 +38,7 @@ void displayRuntime();
 void displaySpeed();
 void displayDirection();
 void displayLoco();
+void displayTrackPower();
 void displayMenu();
 void scrollMenu(int direction);
 

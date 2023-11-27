@@ -30,6 +30,8 @@ bool directionChanged=false;
 Loco* selectedLoco=nullptr;
 Menu menu;
 int selectedMenuItem=0;
+TrackPower trackPower=TrackPower::PowerUnknown;
+bool trackPowerChanged=false;
 
 void setupButton() {
   button.setSingleClickCallback(&singleClickCallback, nullptr);
@@ -76,6 +78,8 @@ void singleClickCallback(void* param) {
     if (selectedLoco && selectedLoco->getSpeed()==0) {
       Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
       dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
+    } else if (selectedLoco && selectedLoco->getSpeed()>0) {
+      dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
     }
   }
 }
@@ -90,4 +94,15 @@ void doubleClickCallback(void* param) {
 
 void longPressCallback(void* param) {
   CONSOLE.println(F("Long press"));
+  if (locoSelect) {
+    // This should initiate reading loco from prog track
+  } else if (selectedLoco && selectedLoco->getSpeed()>0) {
+    dccexProtocol.emergencyStop();
+  } else if (selectedLoco && selectedLoco->getSpeed()==0) {
+    if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
+      dccexProtocol.powerOn();
+    } else if (trackPower==TrackPower::PowerOn) {
+      dccexProtocol.powerOff();
+    }
+  }
 }

@@ -20,6 +20,8 @@ Once selected, use the encoder to increase and decrease the speed.
 
 When speed is 0 (zero), press the encoder button once to change direction.
 
+When speed is greater than 0 (zero), press the encoder button once to stop the loco.
+
 ## Select a different locomotive
 
 When speed is 0 (zero), double click the encoder button, and the roster list will once again be displayed.
@@ -30,7 +32,7 @@ Once selected, the previous locomotive is forgotten, and the currently selected 
 
 ## Read locomotive address from programming track
 
-Whenever the menu of roster entries is displayed, double clicking the encoder button will initiate reading the locomotive address from the programming track.
+Whenever the menu of roster entries is displayed, holding the encoder button for more than half a second will initiate reading the locomotive address from the programming track.
 
 Provided a valid DCC address is received within 5 seconds, this address will be set for the throttle.
 

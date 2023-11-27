@@ -35,6 +35,8 @@ extern bool directionChanged;
 extern Loco* selectedLoco;
 extern Menu menu;
 extern int selectedMenuItem;
+extern TrackPower trackPower;
+extern bool trackPowerChanged;
 
 void setupButton();
 void processEncoder();

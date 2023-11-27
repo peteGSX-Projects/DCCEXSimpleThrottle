@@ -29,7 +29,7 @@ class DCCEXCallbacks : public DCCEXProtocolDelegate {
 public:
   void receivedServerVersion(int major, int minor, int patch);
   void receivedLocoUpdate(Loco* loco);
-  // void receivedTrackPower(TrackPower state);
+  void receivedTrackPower(TrackPower state);
   // void receivedReadLoco(int address);
 
 };

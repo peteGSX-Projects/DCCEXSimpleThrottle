@@ -49,6 +49,7 @@ void switchDisplay() {
     displaySpeed();
     displayDirection();
     displayLoco();
+    displayTrackPower();
   }
 }
 
@@ -60,6 +61,10 @@ void displayRuntime() {
     if (directionChanged) {
       displayDirection();
       directionChanged=false;
+    }
+    if (trackPowerChanged) {
+      displayTrackPower();
+      trackPowerChanged=false;
     }
   }
 }
@@ -99,6 +104,28 @@ void displayLoco() {
     oled.print(F("0"));
   }
   oled.clearToEOL();
+}
+
+void displayTrackPower() {
+  oled.setCursor(0, 7);
+  oled.set1X();
+  oled.print(F("Track power: "));
+  switch (trackPower) {
+    case TrackPower::PowerOff:
+      oled.print(F("Off"));
+      break;
+
+    case TrackPower::PowerOn:
+      oled.print(F("On"));
+      break;
+
+    case TrackPower::PowerUnknown:
+      oled.print(F("?"));
+      break;
+
+    default:
+      break;
+  }
 }
 
 void displayMenu() {
