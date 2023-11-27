@@ -1,10 +1,29 @@
+/*
+ *  © 2023 Peter Cole
+ *
+ *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
+ *
+ *  This is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  It is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #include <Arduino.h>
 #include "Menu.h"
 
 MenuItem::MenuItem(char* name, Loco* object) {
-  _locoName=name;
+  _locoName=strdup(name);
   _locoObject=object;
-  _index=_nextIndex++;
+  _next=nullptr;
 }
 
 void MenuItem::setNext(MenuItem* item) {
@@ -15,11 +34,15 @@ MenuItem* MenuItem::getNext() {
   return _next;
 }
 
+void MenuItem::setIndex(int index) {
+  _index=index;
+}
+
 int MenuItem::getIndex() {
   return _index;
 }
 
-char* MenuItem::getLocoName() {
+const char* MenuItem::getLocoName() {
   return _locoName;
 }
 
@@ -31,6 +54,7 @@ Menu::Menu() {
   _firstItem=nullptr;
   _itemCount=0;
   _currentPage=0;
+  _currentIndex=0;
 };
 
 void Menu::addItem(MenuItem* item) {
@@ -43,6 +67,7 @@ void Menu::addItem(MenuItem* item) {
     }
     current->setNext(item);
   }
+  item->setIndex(_currentIndex++);
   _itemCount++;
 }
 
@@ -69,4 +94,8 @@ int Menu::getItemsPerPage() {
 
 int Menu::getCurrentPage() {
   return _currentPage;
+}
+
+void Menu::setCurrentPage(int page) {
+  _currentPage=page;
 }

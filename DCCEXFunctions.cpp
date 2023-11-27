@@ -1,3 +1,22 @@
+/*
+ *  © 2023 Peter Cole
+ *
+ *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
+ *
+ *  This is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  It is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
 #include <Arduino.h>
 #include "DCCEXFunctions.h"
 
@@ -41,6 +60,14 @@ void getRoster() {
   } else if (dccexProtocol.receivedLists() && !setupScreen) {
     setupScreen=true;
     populateMenu();
-    switchDisplay();
   }
+}
+
+void populateMenu() {
+  if (dccexProtocol.roster->getFirst()) {
+    for (Loco* r=dccexProtocol.roster->getFirst(); r; r=r->getNext()) {
+      menu.addItem(new MenuItem(r->getName(), r));
+    }
+  }
+  switchDisplay();
 }
