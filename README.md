@@ -28,6 +28,12 @@ Use the encoder to scroll through the roster list and press the encoder's button
 
 Once selected, the previous locomotive is forgotten, and the currently selected locomotive is controlled instead.
 
+## Read locomotive address from programming track
+
+Whenever the menu of roster entries is displayed, double clicking the encoder button will initiate reading the locomotive address from the programming track.
+
+Provided a valid DCC address is received within 5 seconds, this address will be set for the throttle.
+
 ## Turn track power on and off
 
 When speed is 0 (zero) and a locomotive is selected, hold the encoder button down for more than half a second.
