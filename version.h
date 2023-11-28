@@ -1,7 +1,8 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.3"
+#define VERSION "0.0.4"
+// 0.0.4  - Fix track power display bug
 // 0.0.3  - Add track power control
 //        - Add encoder press to stop loco
 //        - Add emergency stop

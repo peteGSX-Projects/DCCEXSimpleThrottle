@@ -113,14 +113,17 @@ void displayTrackPower() {
   switch (trackPower) {
     case TrackPower::PowerOff:
       oled.print(F("Off"));
+      oled.clearToEOL();
       break;
 
     case TrackPower::PowerOn:
       oled.print(F("On"));
+      oled.clearToEOL();
       break;
 
     case TrackPower::PowerUnknown:
       oled.print(F("?"));
+      oled.clearToEOL();
       break;
 
     default:
