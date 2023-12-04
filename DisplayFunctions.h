@@ -22,14 +22,11 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include <SPI.h>
-#include "SSD1306Ascii.h"
-#include "SSD1306AsciiSpi.h"
 #include "defines.h"
 #include "EncoderFunctions.h"
 #include "version.h"
 
-extern SSD1306AsciiSpi oled;
+extern OLED oled;
 
 void setupDisplay();
 void displayStartupInfo();

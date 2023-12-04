@@ -20,28 +20,67 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
+#if defined(ARDUINO_ARCH_ESP32)
+#include <WiFi.h>
+#endif
+
+// If we haven't got a custom config.h, use the example
+#if __has_include ( "config.h")
+  #include "config.h"
+#else
+  #warning config.h not found. Using defaults from config.example.h
+  #include "config.example.h"
+#endif
+
+// If connection retries not defined, define default 20
+#ifndef CONNECT_RETRIES
 #define CONNECT_RETRIES 20
+#endif
 
-#define ENCODER_DT PC14
-#define ENCODER_CLK PC15
-#define ENCODER_SW PA0
-
+// If OLED font not defined, set it
+#ifndef OLED_FONT
 #define OLED_FONT System5x7
+#endif
 
+// Include the right libraries and set correct alias for connection type
+#if defined(OLED_USE_I2C)
+#include "SSD1306Ascii.h"
+#include "SSD1306AsciiAvrI2c.h"
+#define OLED SSD1306AsciiAvrI2c
+#ifndef OLED_ADDRESS
+#define OLED_ADDRESS 0x3c
+#endif
+#elif defined(OLED_USE_SPI)
+#include <SPI.h>
+#include "SSD1306Ascii.h"
+#include "SSD1306AsciiSpi.h"
+#define OLED SSD1306AsciiSpi
+#endif
+
+// If OLED type not defined, set it
+#ifndef OLED_TYPE
 #define OLED_TYPE &SH1106_128x64
-#define CS_PIN PA4
-#define DC_PIN PA3
+#endif
 
+// Define console and client based on device type
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
 #undef CONSOLE
 #undef CLIENT
 #define CONSOLE Serial
 #define CLIENT Serial1
-#else
+#elif defined(ARDUINO_ARCH_ESP32)
 #undef CONSOLE
 #undef CLIENT
 #define CONSOLE Serial
-#define CLIENT Serial
+extern WiFiClient client;
+#define CLIENT client
+// If we haven't got a custom config_wifi.h, use the example
+#if __has_include ( "config_wifi.h")
+  #include "config_wifi.h"
+#else
+  #warning config_wifi.h not found. Using defaults from config_wifi.example.h
+  #include "config_wifi.example.h"
+#endif
 #endif
 
 #endif

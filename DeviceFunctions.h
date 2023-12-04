@@ -17,35 +17,20 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#ifndef DEVICEFUNCTIONS_H
+#define DEVICEFUNCTIONS_H
+
 #include <Arduino.h>
 #include "defines.h"
-#include "DisplayFunctions.h"
-#include "EncoderFunctions.h"
-#include "DCCEXFunctions.h"
-#include "DeviceFunctions.h"
 
-void setup() {
+// Disabling JTAG is required to avoid pin conflicts on Bluepill
 #if defined(ARDUINO_BLUEPILL_F103C8)
-  disableJTAG();
+void disableJTAG();
 #endif
-  CONSOLE.begin(115200);
-#if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
-  CLIENT.begin(115200);
-#elif defined(ARDUINO_ARCH_ESP32)
+
+#if defined(ARDUINO_ARCH_ESP32)
+#include <WiFi.h>
+void setupWiFi();
+#endif
 
 #endif
-  setupDisplay();
-  setupButton();
-  dccexProtocol.setLogStream(&CONSOLE);
-  dccexProtocol.setDelegate(&dccexCallbacks);
-  dccexProtocol.connect(&CLIENT);
-  displayStartupInfo();
-  // switchDisplay();
-}
-
-void loop() {
-  dccexProtocol.check();
-  getRoster();
-  displayRuntime();
-  processEncoder();
-}

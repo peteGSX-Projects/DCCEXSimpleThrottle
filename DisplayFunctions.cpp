@@ -20,10 +20,14 @@
 #include <Arduino.h>
 #include "DisplayFunctions.h"
 
-SSD1306AsciiSpi oled;
+OLED oled;
 
 void setupDisplay() {
+#if defined(OLED_TYPE_I2C)
+  oled.begin(OLED_TYPE, OLED_ADDRESS);
+#elif defined(OLED_TYPE_SPI)
   oled.begin(OLED_TYPE, CS_PIN, DC_PIN);
+#endif
   oled.setFont(OLED_FONT);
   oled.clear();
 }

@@ -1,3 +1,7 @@
+# Local user files
+config.h
+config_wifi.h
+
 # Prerequisites
 *.d
 
