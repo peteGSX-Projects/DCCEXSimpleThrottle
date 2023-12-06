@@ -45,8 +45,8 @@
 // Include the right libraries and set correct alias for connection type
 #if defined(OLED_USE_I2C)
 #include "SSD1306Ascii.h"
-#include "SSD1306AsciiAvrI2c.h"
-#define OLED SSD1306AsciiAvrI2c
+#include "SSD1306AsciiWire.h"
+#define OLED SSD1306AsciiWire
 #ifndef OLED_ADDRESS
 #define OLED_ADDRESS 0x3c
 #endif
