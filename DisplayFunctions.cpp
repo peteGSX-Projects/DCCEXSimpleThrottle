@@ -19,6 +19,8 @@
 
 #include <Arduino.h>
 #include "DisplayFunctions.h"
+#include "EncoderFunctions.h"
+#include "version.h"
 
 OLED oled;
 

@@ -32,7 +32,7 @@ void setup() {
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
   CLIENT.begin(115200);
 #elif defined(ARDUINO_ARCH_ESP32)
-
+  setupWiFi();
 #endif
   setupDisplay();
   setupButton();
@@ -40,7 +40,6 @@ void setup() {
   dccexProtocol.setDelegate(&dccexCallbacks);
   dccexProtocol.connect(&CLIENT);
   displayStartupInfo();
-  // switchDisplay();
 }
 
 void loop() {

@@ -32,7 +32,52 @@ void disableJTAG() {
 #endif
 
 #if defined(ARDUINO_ARCH_ESP32)
+
+// If we haven't got a custom config_wifi.h, use the example
+#if __has_include ( "config_wifi.h")
+  #include "config_wifi.h"
+#else
+  #warning config_wifi.h not found. Using defaults from config_wifi.example.h
+  #include "config_wifi.example.h"
+#endif
+
+WiFiClient wifiClient;
+
+int wifiRetries=CONNECT_RETRIES;
+
 void setupWiFi() {
-  
+  // Connect to WiFi network
+  CONSOLE.print("Connecting to WiFi network ");
+  CONSOLE.println(wifiNetworks[0].label);
+  CONSOLE.println(wifiNetworks[0].ssid);
+  CONSOLE.println(wifiNetworks[0].password);
+  WiFi.begin(wifiNetworks[0].ssid, wifiNetworks[0].password);
+  while(WiFi.status()!=WL_CONNECTED && wifiRetries>0) {
+  // while(WiFi.waitForConnectResult() != WL_CONNECTED && wifiRetries>0) {
+    delay(1000);
+    CONSOLE.println("Retrying...");
+    wifiRetries--;
+  }
+  if (WiFi.status()!=WL_CONNECTED) {
+    CONSOLE.print("WiFi connection failed: ");
+    CONSOLE.println(WiFi.status());
+  } else {
+    CONSOLE.print("Connected with IP: ");
+    CONSOLE.println(WiFi.localIP());
+
+    // Connect to the server
+    wifiRetries=CONNECT_RETRIES;
+    CONSOLE.println("Connecting to the server...");
+    if (!CLIENT.connect(csServers[0].ipaddress, csServers[0].port)) {
+      CONSOLE.println("connection failed");
+      while(1 && wifiRetries>0) {
+        delay(1000);
+        CONSOLE.print(wifiRetries);
+        CONSOLE.println(" retries left");
+        wifiRetries--;
+      }
+    }
+    CONSOLE.println("Connected to the server");
+  }
 }
 #endif

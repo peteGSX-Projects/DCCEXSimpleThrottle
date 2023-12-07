@@ -20,9 +20,7 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
-#if defined(ARDUINO_ARCH_ESP32)
-#include <WiFi.h>
-#endif
+#include <Arduino.h>
 
 // If we haven't got a custom config.h, use the example
 #if __has_include ( "config.h")
@@ -37,31 +35,6 @@
 #define CONNECT_RETRIES 20
 #endif
 
-// If OLED font not defined, set it
-#ifndef OLED_FONT
-#define OLED_FONT System5x7
-#endif
-
-// Include the right libraries and set correct alias for connection type
-#if defined(OLED_USE_I2C)
-#include "SSD1306Ascii.h"
-#include "SSD1306AsciiWire.h"
-#define OLED SSD1306AsciiWire
-#ifndef OLED_ADDRESS
-#define OLED_ADDRESS 0x3c
-#endif
-#elif defined(OLED_USE_SPI)
-#include <SPI.h>
-#include "SSD1306Ascii.h"
-#include "SSD1306AsciiSpi.h"
-#define OLED SSD1306AsciiSpi
-#endif
-
-// If OLED type not defined, set it
-#ifndef OLED_TYPE
-#define OLED_TYPE &SH1106_128x64
-#endif
-
 // Define console and client based on device type
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
 #undef CONSOLE
@@ -69,18 +42,29 @@
 #define CONSOLE Serial
 #define CLIENT Serial1
 #elif defined(ARDUINO_ARCH_ESP32)
+#include <WiFi.h>
 #undef CONSOLE
 #undef CLIENT
 #define CONSOLE Serial
-extern WiFiClient client;
-#define CLIENT client
-// If we haven't got a custom config_wifi.h, use the example
-#if __has_include ( "config_wifi.h")
-  #include "config_wifi.h"
-#else
-  #warning config_wifi.h not found. Using defaults from config_wifi.example.h
-  #include "config_wifi.example.h"
-#endif
+extern WiFiClient wifiClient;
+#define CLIENT wifiClient
+
+struct WiFiNetwork {
+  const char* label;
+  const char* ssid;
+  const char* password;
+};
+
+struct EXCommandStation {
+  const char* label;
+  IPAddress ipaddress;
+  int port;
+};
+
+extern WiFiNetwork* wifiNetworks;
+extern EXCommandStation* csServers;
+extern const int WIFI_NETWORKS;
+extern const int CS_SERVERS;
 #endif
 
 #endif

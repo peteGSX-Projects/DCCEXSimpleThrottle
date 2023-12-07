@@ -22,7 +22,7 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include "defines.h"
+// #include "defines.h"
 
 class MenuItem {
 public:

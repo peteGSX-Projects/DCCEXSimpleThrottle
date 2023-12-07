@@ -23,9 +23,33 @@
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 #include "defines.h"
-#include "EncoderFunctions.h"
-#include "version.h"
 
+// Include the right libraries and set correct alias for connection type
+#if defined(OLED_USE_I2C)
+#include "SSD1306Ascii.h"
+#include "SSD1306AsciiWire.h"
+#define OLED SSD1306AsciiWire
+#ifndef OLED_ADDRESS
+#define OLED_ADDRESS 0x3c
+#endif
+#elif defined(OLED_USE_SPI)
+#include <SPI.h>
+#include "SSD1306Ascii.h"
+#include "SSD1306AsciiSpi.h"
+#define OLED SSD1306AsciiSpi
+#endif
+
+// If OLED font not defined, set it
+#ifndef OLED_FONT
+#define OLED_FONT System5x7
+#endif
+
+// If OLED type not defined, set it
+#ifndef OLED_TYPE
+#define OLED_TYPE &SH1106_128x64
+#endif
+
+// Extern OLED declaration
 extern OLED oled;
 
 void setupDisplay();

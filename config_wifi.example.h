@@ -4,30 +4,22 @@
 #ifndef CONFIG_WIFI_H
 #define CONFIG_WIFI_H
 
-// Do not remove these lines
-// Struct for WiFi and CS connection details (ESP32 only)
+#include "defines.h"
+
 #if defined(ARDUINO_ARCH_ESP32)
-#include <WiFi.h>
-struct WiFiNetwork {
-  const char* SSID;
-  const char* PASSWORD;
+
+// Define number of WiFi networks and EX-CommandStation entries
+const int WIFI_NETWORKS=2;
+const int CS_SERVERS=2;
+
+WiFiNetwork* wifiNetworks=new WiFiNetwork[WIFI_NETWORKS]{
+  {"EX-CommandStation", "SSID1", "PASSWORD1"},    // First WiFi network's details
+  {"Home WiFi", "SSID2", "PASSWORD2"},            // Second WiFi network's details
 };
 
-struct EXCommandStation {
-  IPAddress ipaddress;
-  int port;
-};
-
-// WiFi configuration (ESP32 only)
-const int NETWORKS=2;
-const int SERVERS=2;
-
-WiFiNetwork wifiNetworks[NETWORKS]={
-  
-};
-
-EXCommandStation servers[SERVERS]={
-
+EXCommandStation* csServers=new EXCommandStation[CS_SERVERS]{
+  {"Testing CS", IPAddress(192, 168, 4, 1), 2560},    // First EX-CommandStation's details
+  {"Layout CS", IPAddress(192, 168, 0, 10), 2560},    // Second EX-CommandStation's details
 };
 
 #endif  // ESP32
