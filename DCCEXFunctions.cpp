@@ -40,12 +40,14 @@ void getRoster() {
       oled.clear();
       oled.setCursor(0, 0);
       oled.print(F("Retrieving roster..."));
+      CONSOLE.print(F("Retrieving roster..."));
       retrievalDisplayed=true;
     } else if (!dccexProtocol.receivedLists() && millis()-lastRetry>retryDelay && connectionRetries>0) {
       lastRetry=millis();
       connectionRetries--;
       oled.setCursor(col, row);
       oled.print(F("."));
+      CONSOLE.print(F("."));
       col=col+5;
       if (col>120) {
         row++;
@@ -57,9 +59,11 @@ void getRoster() {
     oled.clear();
     oled.setCursor(0, 0);
     oled.print(F("Could not retrieve roster"));
+    CONSOLE.println(F("\nCould not retrieve roster"));
     errorDisplayed=true;
   } else if (dccexProtocol.receivedLists() && !setupScreen) {
     setupScreen=true;
+    CONSOLE.println(F("Roster retrieved"));
     populateMenu();
   }
 }
@@ -68,6 +72,7 @@ void populateMenu() {
   if (dccexProtocol.roster->getFirst()) {
     for (Loco* r=dccexProtocol.roster->getFirst(); r; r=r->getNext()) {
       menu.addItem(new MenuItem(r->getName(), r));
+      CONSOLE.println(r->getName());
     }
   }
   switchDisplay();

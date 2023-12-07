@@ -38,10 +38,13 @@ void displayStartupInfo() {
   oled.setCursor(0, 0);
   oled.setInvertMode(false);
   oled.print(F("Simple DCC-EX Throttle"));
+  CONSOLE.print(F("Simple DCC-EX Throttle"));
   oled.clearToEOL();
   oled.setCursor(0, 2);
   oled.print(F("Version: "));
+  CONSOLE.print(F(" version: "));
   oled.print(VERSION);
+  CONSOLE.println(VERSION);
   delay(2000);
   oled.clear();
 }
