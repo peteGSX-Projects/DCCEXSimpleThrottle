@@ -22,7 +22,6 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include "defines.h"
 #include "avdweb_Switch.h"
 #include "Rotary.h"
 #include "Menu.h"

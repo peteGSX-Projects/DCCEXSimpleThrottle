@@ -17,62 +17,20 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef MENU_H
-#define MENU_H
+#ifndef DEVICEFUNCTIONS_H
+#define DEVICEFUNCTIONS_H
 
 #include <Arduino.h>
-#include <DCCEXProtocol.h>
-// #include "defines.h"
+#include "defines.h"
 
-class MenuItem {
-public:
-  MenuItem(char* name, Loco* object);
+// Disabling JTAG is required to avoid pin conflicts on Bluepill
+#if defined(ARDUINO_BLUEPILL_F103C8)
+void disableJTAG();
+#endif
 
-  void setNext(MenuItem* item);
-
-  void setIndex(int index);
-  
-  MenuItem* getNext();
-
-  int getIndex();
-
-  const char* getLocoName();
-
-  Loco* getLocoObject();
-
-private:
-  const char* _locoName;
-  Loco* _locoObject;
-  int _index;
-  MenuItem* _next;
-
-};
-
-class Menu {
-public:
-  Menu();
-
-  void addItem(MenuItem* item);
-
-  MenuItem* getFirst();
-
-  MenuItem* getItemAtIndex(int index);
-
-  int getItemCount();
-
-  int getItemsPerPage();
-
-  int getCurrentPage();
-
-  void setCurrentPage(int page);
-
-private:
-  MenuItem* _firstItem;
-  int _itemCount;
-  int _itemsPerPage=5;
-  int _currentPage;
-  int _currentIndex;
-
-};
+#if defined(ARDUINO_ARCH_ESP32)
+#include <WiFi.h>
+void setupWiFi();
+#endif
 
 #endif

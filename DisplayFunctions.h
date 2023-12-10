@@ -22,14 +22,29 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include <SPI.h>
-#include "SSD1306Ascii.h"
-#include "SSD1306AsciiSpi.h"
 #include "defines.h"
-#include "EncoderFunctions.h"
-#include "version.h"
+#include <U8g2lib.h>
 
-extern SSD1306AsciiSpi oled;
+// Include the right libraries and set correct alias for connection type
+#if defined(OLED_USE_I2C)
+#define OLED U8G2_SH1106_128X64_NONAME_F_HW_I2C
+#ifndef OLED_ADDRESS
+#define OLED_ADDRESS 0x3c
+#endif
+#elif defined(OLED_USE_SPI)
+#include <SPI.h>
+#define OLED U8G2_SH1106_128X64_NONAME_F_4W_HW_SPI
+#endif
+
+#define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr
+#define MENU_FONT u8g2_font_5x8_mr
+#define SPEED_FONT u8g2_font_spleen12x24_mn
+#define DIRECTION_FONT u8g2_font_6x10_mr
+#define ADDRESS_FONT u8g2_font_6x10_mr
+#define ESTOP_FONT u8g2_font_6x12_mr
+
+// Extern OLED declaration
+extern OLED oled;
 
 void setupDisplay();
 void displayStartupInfo();

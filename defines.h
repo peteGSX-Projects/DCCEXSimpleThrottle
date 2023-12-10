@@ -20,28 +20,51 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
+#include <Arduino.h>
+
+// If we haven't got a custom config.h, use the example
+#if __has_include ( "config.h")
+  #include "config.h"
+#else
+  #warning config.h not found. Using defaults from config.example.h
+  #include "config.example.h"
+#endif
+
+// If connection retries not defined, define default 20
+#ifndef CONNECT_RETRIES
 #define CONNECT_RETRIES 20
+#endif
 
-#define ENCODER_DT PC14
-#define ENCODER_CLK PC15
-#define ENCODER_SW PA0
-
-#define OLED_FONT System5x7
-
-#define OLED_TYPE &SH1106_128x64
-#define CS_PIN PA4
-#define DC_PIN PA3
-
+// Define console and client based on device type
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
 #undef CONSOLE
 #undef CLIENT
 #define CONSOLE Serial
 #define CLIENT Serial1
-#else
+#elif defined(ARDUINO_ARCH_ESP32)
+#include <WiFi.h>
 #undef CONSOLE
 #undef CLIENT
 #define CONSOLE Serial
-#define CLIENT Serial
+extern WiFiClient wifiClient;
+#define CLIENT wifiClient
+
+struct WiFiNetwork {
+  const char* label;
+  const char* ssid;
+  const char* password;
+};
+
+struct EXCommandStation {
+  const char* label;
+  IPAddress ipaddress;
+  int port;
+};
+
+extern WiFiNetwork* wifiNetworks;
+extern EXCommandStation* csServers;
+extern const int WIFI_NETWORKS;
+extern const int CS_SERVERS;
 #endif
 
 #endif

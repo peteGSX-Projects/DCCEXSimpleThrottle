@@ -22,7 +22,6 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include "defines.h"
 #include "EncoderFunctions.h"
 
 class DCCEXCallbacks : public DCCEXProtocolDelegate {

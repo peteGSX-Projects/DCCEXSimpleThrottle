@@ -21,6 +21,7 @@
 #include "EncoderFunctions.h"
 #include "DCCEXFunctions.h"
 #include "DisplayFunctions.h"
+#include "defines.h"
 
 Rotary encoder(ENCODER_DT, ENCODER_CLK);
 Switch button(ENCODER_SW);
