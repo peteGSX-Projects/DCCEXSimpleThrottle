@@ -22,31 +22,34 @@
 #include "EncoderFunctions.h"
 #include "version.h"
 
-OLED oled;
+#if defined(OLED_USE_I2C)
+OLED oled(U8G2_R0, U8X8_PIN_NONE, SCL_PIN, SDA_PIN);
+#elif defined(OLED_USE_SPI)
+OLED oled(U8G2_R0, CS_PIN, DC_PIN);
+#endif
 
 void setupDisplay() {
-#if defined(OLED_TYPE_I2C)
-  oled.begin(OLED_TYPE, OLED_ADDRESS);
-#elif defined(OLED_TYPE_SPI)
-  oled.begin(OLED_TYPE, CS_PIN, DC_PIN);
-#endif
-  oled.setFont(OLED_FONT);
+  oled.begin();
+  oled.setFont(MENU_FONT);
   oled.clear();
+  oled.sendBuffer();
 }
 
 void displayStartupInfo() {
-  oled.setCursor(0, 0);
-  oled.setInvertMode(false);
+  oled.clear();
+  oled.setFont(DEFAULT_FONT);
+  oled.setCursor(0, 10);
   oled.print(F("Simple DCC-EX Throttle"));
   CONSOLE.print(F("Simple DCC-EX Throttle"));
-  oled.clearToEOL();
-  oled.setCursor(0, 2);
+  oled.setCursor(0, 20);
   oled.print(F("Version: "));
   CONSOLE.print(F(" version: "));
   oled.print(VERSION);
+  oled.sendBuffer();
   CONSOLE.println(VERSION);
   delay(2000);
   oled.clear();
+  oled.sendBuffer();
 }
 
 void switchDisplay() {
@@ -54,7 +57,8 @@ void switchDisplay() {
     displayMenu();
   } else {
     oled.clear();
-    oled.setInvertMode(false);
+    oled.sendBuffer();
+    oled.setDrawColor(1);
     displaySpeed();
     displayDirection();
     displayLoco();
@@ -79,19 +83,23 @@ void displayRuntime() {
 }
 
 void displaySpeed() {
-  oled.setCursor(40, 0);
-  oled.set2X();
+  oled.setCursor(40, 20);
+  oled.setFont(SPEED_FONT);
+  oled.print(F("   "));
+  oled.setCursor(40, 20);
   if (selectedLoco) {
     oled.print(selectedLoco->getSpeed());
   } else {
     oled.print(F("0"));
   }
-  oled.clearToEOL();
+  oled.sendBuffer();
 }
 
 void displayDirection() {
-  oled.setCursor(30, 3);
-  oled.set1X();
+  oled.setCursor(30, 35);
+  oled.setFont(DIRECTION_FONT);
+  oled.print(F("       "));
+  oled.setCursor(30, 35);
   if (selectedLoco) {
     if (selectedLoco->getDirection()==Forward) {
       oled.print(F("Forward"));
@@ -99,68 +107,73 @@ void displayDirection() {
       oled.print(F("Reverse"));
     }
   } else {
-    oled.print(F("---"));
+    oled.print(F("  ---"));
   }  
-  oled.clearToEOL();
+  oled.sendBuffer();
 }
 
 void displayLoco() {
-  oled.setCursor(0, 5);
-  oled.set1X();
+  oled.setCursor(0, 50);
+  oled.setFont(ADDRESS_FONT);
+  oled.print(F("                      "));
+  oled.setCursor(0, 50);
   if (selectedLoco) {
     oled.print(selectedLoco->getName());
   } else {
     oled.print(F("0"));
   }
-  oled.clearToEOL();
+  oled.sendBuffer();
 }
 
 void displayTrackPower() {
-  oled.setCursor(0, 7);
-  oled.set1X();
+  oled.drawHLine(0, 55, 128);
+  oled.setCursor(50, 63);
+  oled.setFont(MENU_FONT);
   oled.print(F("Track power: "));
+  oled.setCursor(112, 63);
+  oled.print("   ");
+  oled.setCursor(112, 63);
   switch (trackPower) {
     case TrackPower::PowerOff:
       oled.print(F("Off"));
-      oled.clearToEOL();
       break;
 
     case TrackPower::PowerOn:
       oled.print(F("On"));
-      oled.clearToEOL();
       break;
 
     case TrackPower::PowerUnknown:
       oled.print(F("?"));
-      oled.clearToEOL();
       break;
 
     default:
       break;
   }
+  oled.sendBuffer();
 }
 
 void displayMenu() {
   oled.clear();
-  oled.set1X();
-  oled.setInvertMode(false);
-  oled.setCursor(0, 0);
+  oled.setDrawColor(1);
+  oled.setFont(MENU_FONT);
+  oled.drawHLine(0, 7, 128);
+  oled.setCursor(0, 6);
   oled.print(F("Select loco"));
   int startIdx=menu.getCurrentPage()*menu.getItemsPerPage();
-  int row=2;
+  int row=11;
   for (int i=0; i<menu.getItemsPerPage(); i++) {
     int idx=startIdx + i;
     MenuItem* item=menu.getItemAtIndex(idx);
     if (idx<menu.getItemCount()) {
-      oled.setCursor(0, row++);
       if (idx==selectedMenuItem) {
-        oled.setInvertMode(true);
+        oled.setDrawColor(0);
       } else {
-        oled.setInvertMode(false);
+        oled.setDrawColor(1);
       }
-      oled.print(item->getLocoName());
+      oled.drawStr(0, row+=8, item->getLocoName());
     }
   }
+  oled.sendBuffer();
 }
 
 void scrollMenu(int direction) {

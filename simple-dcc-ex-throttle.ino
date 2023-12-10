@@ -29,17 +29,17 @@ void setup() {
   disableJTAG();
 #endif
   CONSOLE.begin(115200);
+  setupDisplay();
+  setupButton();
+  displayStartupInfo();
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
   CLIENT.begin(115200);
 #elif defined(ARDUINO_ARCH_ESP32)
   setupWiFi();
 #endif
-  setupDisplay();
-  setupButton();
   dccexProtocol.setLogStream(&CONSOLE);
   dccexProtocol.setDelegate(&dccexCallbacks);
   dccexProtocol.connect(&CLIENT);
-  displayStartupInfo();
 }
 
 void loop() {
