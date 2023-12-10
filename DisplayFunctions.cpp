@@ -57,6 +57,7 @@ void switchDisplay() {
     displayMenu();
   } else {
     oled.clear();
+    oled.sendBuffer();
     // oled.setInvertMode(false);
     displaySpeed();
     displayDirection();
@@ -90,6 +91,7 @@ void displaySpeed() {
     oled.print(F("0"));
   }
   // oled.clearToEOL();
+  oled.sendBuffer();
 }
 
 void displayDirection() {
@@ -105,6 +107,7 @@ void displayDirection() {
     oled.print(F("---"));
   }  
   // oled.clearToEOL();
+  oled.sendBuffer();
 }
 
 void displayLoco() {
@@ -116,6 +119,7 @@ void displayLoco() {
     oled.print(F("0"));
   }
   // oled.clearToEOL();
+  oled.sendBuffer();
 }
 
 void displayTrackPower() {
@@ -141,6 +145,7 @@ void displayTrackPower() {
     default:
       break;
   }
+  oled.sendBuffer();
 }
 
 void displayMenu() {
@@ -150,12 +155,12 @@ void displayMenu() {
   oled.drawHLine(0, 7, 128);
   oled.print(F("Select loco"));
   int startIdx=menu.getCurrentPage()*menu.getItemsPerPage();
-  int row=2;
+  int row=17;
   for (int i=0; i<menu.getItemsPerPage(); i++) {
     int idx=startIdx + i;
     MenuItem* item=menu.getItemAtIndex(idx);
     if (idx<menu.getItemCount()) {
-      oled.setCursor(0, row++);
+      oled.setCursor(0, row+=8);
       if (idx==selectedMenuItem) {
         // oled.setInvertMode(true);
       } else {
