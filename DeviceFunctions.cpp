@@ -45,20 +45,61 @@ WiFiClient wifiClient;
 
 void setupWiFi() {
   // Connect to WiFi network
+  int retries=CONNECT_RETRIES;
+  oled.clear();
+  oled.setFont(DEFAULT_FONT);
+  oled.setCursor(0, 10);
+  oled.print(F("Connecting to WiFi network: "));
+  oled.setCursor(0, 20);
+  oled.print(wifiNetworks[0].label);
+  oled.setFont(WIFI_FONT);
+  int X=0;
+  int Y=30;
+  oled.sendBuffer();
   CONSOLE.print("Connecting to WiFi network ");
   CONSOLE.println(wifiNetworks[0].label);
   WiFi.begin(wifiNetworks[0].ssid, wifiNetworks[0].password);
-  while(WiFi.status()!=WL_CONNECTED) delay(1000);
-  CONSOLE.print("Connected with IP: ");
-  CONSOLE.println(WiFi.localIP());
-
-  // Connect to the server
-  CONSOLE.print("Connecting to server ");
-  CONSOLE.println(csServers[0].label);
-  if (!CLIENT.connect(csServers[0].ipaddress, csServers[0].port)) {
-    CONSOLE.println("connection failed");
-    while(true) delay(1000);
+  while (WiFi.status()!=WL_CONNECTED && retries>0) {
+    oled.drawGlyph(X, Y, 0x0048);
+    X+=9;
+    if (X>125) {
+      X=0;
+      Y+=9;
+    }
+    oled.sendBuffer();
+    retries--;
+    delay(1000);
   }
-  CONSOLE.println("Connected to the server");
+  if (WiFi.status()!=WL_CONNECTED) {
+    displayError("Failed WiFi connection");
+  } else {
+    CONSOLE.print("Connected with IP: ");
+    CONSOLE.println(WiFi.localIP());
+
+    // Connect to the server
+    oled.clear();
+    oled.setFont(DEFAULT_FONT);
+    oled.setCursor(0, 10);
+    oled.print(F("Connecting to server: "));
+    oled.setCursor(0, 20);
+    oled.print(wifiNetworks[0].label);
+    oled.sendBuffer();
+    oled.setCursor(0, 30);
+    CONSOLE.print("Connecting to server ");
+    CONSOLE.println(csServers[0].label);
+    retries=CONNECT_RETRIES;
+    while (!CLIENT.connect(csServers[0].ipaddress, csServers[0].port) && retries>0) {
+      oled.print(F("#"));
+      oled.sendBuffer();
+      retries--;
+      delay(500);
+    }
+    if (retries==0) {
+      displayError("Failed server connection");
+    } else {
+      CONSOLE.println("Connected to the server");
+      connected=true;
+    }
+  }
 }
 #endif

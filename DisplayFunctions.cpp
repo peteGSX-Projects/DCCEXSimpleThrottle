@@ -189,6 +189,15 @@ void scrollMenu(int direction) {
     CONSOLE.print(F("selectedMenuItem: "));
     CONSOLE.println(selectedMenuItem);
     displayMenu();
-  }
-  
+  }  
+}
+
+void displayError(const char* error) {
+  oled.clear();
+  oled.setFont(DEFAULT_FONT);
+  oled.setCursor(0, 10);
+  oled.print(error);
+  oled.setFont(ERROR_FONT);
+  oled.drawGlyph(50, 50, 0x0029);
+  oled.sendBuffer();
 }

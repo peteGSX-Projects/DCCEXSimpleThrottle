@@ -22,6 +22,7 @@
 
 #include <Arduino.h>
 #include "defines.h"
+#include "DisplayFunctions.h"
 
 // Disabling JTAG is required to avoid pin conflicts on Bluepill
 #if defined(ARDUINO_BLUEPILL_F103C8)

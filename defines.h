@@ -67,4 +67,6 @@ extern const int WIFI_NETWORKS;
 extern const int CS_SERVERS;
 #endif
 
+extern bool connected;
+
 #endif

@@ -24,6 +24,8 @@
 #include "DCCEXFunctions.h"
 #include "DeviceFunctions.h"
 
+bool connected=false;
+
 void setup() {
 #if defined(ARDUINO_BLUEPILL_F103C8)
   disableJTAG();
@@ -34,17 +36,22 @@ void setup() {
   displayStartupInfo();
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
   CLIENT.begin(115200);
+  connected=true;
 #elif defined(ARDUINO_ARCH_ESP32)
   setupWiFi();
 #endif
-  dccexProtocol.setLogStream(&CONSOLE);
-  dccexProtocol.setDelegate(&dccexCallbacks);
-  dccexProtocol.connect(&CLIENT);
+  if (connected) {
+    dccexProtocol.setLogStream(&CONSOLE);
+    dccexProtocol.setDelegate(&dccexCallbacks);
+    dccexProtocol.connect(&CLIENT);
+  }
 }
 
 void loop() {
-  dccexProtocol.check();
-  getRoster();
-  displayRuntime();
-  processEncoder();
+  if (connected) {
+    dccexProtocol.check();
+    getRoster();
+    displayRuntime();
+    processEncoder();
+  }
 }
