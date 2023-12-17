@@ -58,6 +58,10 @@ void setupWiFi() {
   oled.sendBuffer();
   CONSOLE.print("Connecting to WiFi network ");
   CONSOLE.println(wifiNetworks[0].label);
+  CONSOLE.print("SSID|PASSWORD: ");
+  CONSOLE.print(wifiNetworks[0].ssid);
+  CONSOLE.print("|");
+  CONSOLE.println(wifiNetworks[0].password);
   WiFi.begin(wifiNetworks[0].ssid, wifiNetworks[0].password);
   while (WiFi.status()!=WL_CONNECTED && retries>0) {
     oled.drawGlyph(X, Y, 0x0048);
