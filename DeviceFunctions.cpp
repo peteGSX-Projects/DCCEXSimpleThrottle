@@ -51,18 +51,18 @@ void setupWiFi() {
   oled.setCursor(0, 10);
   oled.print(F("Connecting to WiFi network: "));
   oled.setCursor(0, 20);
-  oled.print(wifiNetworks[0].label);
+  oled.print(csServers[0].label);
   oled.setFont(WIFI_FONT);
   int X=0;
   int Y=30;
   oled.sendBuffer();
   CONSOLE.print("Connecting to WiFi network ");
-  CONSOLE.println(wifiNetworks[0].label);
+  CONSOLE.println(csServers[0].label);
   CONSOLE.print("SSID|PASSWORD: ");
-  CONSOLE.print(wifiNetworks[0].ssid);
+  CONSOLE.print(csServers[0].ssid);
   CONSOLE.print("|");
-  CONSOLE.println(wifiNetworks[0].password);
-  WiFi.begin(wifiNetworks[0].ssid, wifiNetworks[0].password);
+  CONSOLE.println(csServers[0].password);
+  WiFi.begin(csServers[0].ssid, csServers[0].password);
   while (WiFi.status()!=WL_CONNECTED && retries>0) {
     oled.drawGlyph(X, Y, 0x0048);
     X+=9;
@@ -86,7 +86,7 @@ void setupWiFi() {
     oled.setCursor(0, 10);
     oled.print(F("Connecting to server: "));
     oled.setCursor(0, 20);
-    oled.print(wifiNetworks[0].label);
+    oled.print(csServers[0].label);
     oled.sendBuffer();
     oled.setCursor(0, 30);
     CONSOLE.print("Connecting to server ");

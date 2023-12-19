@@ -22,17 +22,16 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-// #include "defines.h"
 
-class MenuItem {
+class LocoMenuItem {
 public:
-  MenuItem(char* name, Loco* object);
+  LocoMenuItem(char* name, Loco* object);
 
-  void setNext(MenuItem* item);
+  void setNextLoco(LocoMenuItem* item);
 
   void setIndex(int index);
   
-  MenuItem* getNext();
+  LocoMenuItem* getNextLoco();
 
   int getIndex();
 
@@ -44,7 +43,7 @@ private:
   const char* _locoName;
   Loco* _locoObject;
   int _index;
-  MenuItem* _next;
+  LocoMenuItem* _nextLoco;
 
 };
 
@@ -52,11 +51,11 @@ class Menu {
 public:
   Menu();
 
-  void addItem(MenuItem* item);
+  void addLocoItem(LocoMenuItem* item);
 
-  MenuItem* getFirst();
+  LocoMenuItem* getFirstLoco();
 
-  MenuItem* getItemAtIndex(int index);
+  LocoMenuItem* getItemAtIndex(int index);
 
   int getItemCount();
 
@@ -67,7 +66,7 @@ public:
   void setCurrentPage(int page);
 
 private:
-  MenuItem* _firstItem;
+  LocoMenuItem* _firstLoco;
   int _itemCount;
   int _itemsPerPage=5;
   int _currentPage;

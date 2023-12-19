@@ -71,7 +71,7 @@ void getRoster() {
 void populateMenu() {
   if (dccexProtocol.roster->getFirst()) {
     for (Loco* r=dccexProtocol.roster->getFirst(); r; r=r->getNext()) {
-      menu.addItem(new MenuItem(r->getName(), r));
+      menu.addLocoItem(new LocoMenuItem(r->getName(), r));
       CONSOLE.println(r->getName());
     }
   }

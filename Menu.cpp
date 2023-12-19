@@ -20,63 +20,63 @@
 #include <Arduino.h>
 #include "Menu.h"
 
-MenuItem::MenuItem(char* name, Loco* object) {
+LocoMenuItem::LocoMenuItem(char* name, Loco* object) {
   _locoName=strdup(name);
   _locoObject=object;
-  _next=nullptr;
+  _nextLoco=nullptr;
 }
 
-void MenuItem::setNext(MenuItem* item) {
-  _next=item;
+void LocoMenuItem::setNextLoco(LocoMenuItem* item) {
+  _nextLoco=item;
 }
 
-MenuItem* MenuItem::getNext() {
-  return _next;
+LocoMenuItem* LocoMenuItem::getNextLoco() {
+  return _nextLoco;
 }
 
-void MenuItem::setIndex(int index) {
+void LocoMenuItem::setIndex(int index) {
   _index=index;
 }
 
-int MenuItem::getIndex() {
+int LocoMenuItem::getIndex() {
   return _index;
 }
 
-const char* MenuItem::getLocoName() {
+const char* LocoMenuItem::getLocoName() {
   return _locoName;
 }
 
-Loco* MenuItem::getLocoObject() {
+Loco* LocoMenuItem::getLocoObject() {
   return _locoObject;
 }
 
 Menu::Menu() {
-  _firstItem=nullptr;
+  _firstLoco=nullptr;
   _itemCount=0;
   _currentPage=0;
   _currentIndex=0;
 };
 
-void Menu::addItem(MenuItem* item) {
-  if (this->_firstItem==nullptr) {
-    this->_firstItem=item;
+void Menu::addLocoItem(LocoMenuItem* item) {
+  if (this->_firstLoco==nullptr) {
+    this->_firstLoco=item;
   } else {
-    MenuItem* current=this->_firstItem;
-    while (current->getNext()!=nullptr) {
-      current=current->getNext();
+    LocoMenuItem* current=this->_firstLoco;
+    while (current->getNextLoco()!=nullptr) {
+      current=current->getNextLoco();
     }
-    current->setNext(item);
+    current->setNextLoco(item);
   }
   item->setIndex(_currentIndex++);
   _itemCount++;
 }
 
-MenuItem* Menu::getFirst() {
-  return _firstItem;
+LocoMenuItem* Menu::getFirstLoco() {
+  return _firstLoco;
 }
 
-MenuItem* Menu::getItemAtIndex(int index) {
-  for (MenuItem* item=_firstItem; item; item=item->getNext()) {
+LocoMenuItem* Menu::getItemAtIndex(int index) {
+  for (LocoMenuItem* item=_firstLoco; item; item=item->getNextLoco()) {
     if (item->getIndex()==index) {
       return item;
     }

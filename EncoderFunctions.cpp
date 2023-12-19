@@ -71,7 +71,7 @@ void processEncoder() {
 void singleClickCallback(void* param) {
   CONSOLE.println(F("Single click"));
   if (locoSelect) {
-    MenuItem* selectedItem=menu.getItemAtIndex(selectedMenuItem);
+    LocoMenuItem* selectedItem=menu.getItemAtIndex(selectedMenuItem);
     selectedLoco=selectedItem->getLocoObject();
     locoSelect=false;
     switchDisplay();

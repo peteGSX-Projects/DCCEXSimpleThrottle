@@ -163,7 +163,7 @@ void displayMenu() {
   int row=11;
   for (int i=0; i<menu.getItemsPerPage(); i++) {
     int idx=startIdx + i;
-    MenuItem* item=menu.getItemAtIndex(idx);
+    LocoMenuItem* item=menu.getItemAtIndex(idx);
     if (idx<menu.getItemCount()) {
       if (idx==selectedMenuItem) {
         oled.setDrawColor(0);
