@@ -25,11 +25,11 @@
 
 Rotary encoder(ENCODER_DT, ENCODER_CLK);
 Switch button(ENCODER_SW);
-bool locoSelect=true;
+bool menuDisplay=true;
 bool speedChanged=false;
 bool directionChanged=false;
 Loco* selectedLoco=nullptr;
-Menu locoMenu;
+Menu rosterMenu;
 Menu serverMenu;
 Menu extrasMenu;
 Menu* currentMenu=nullptr;
@@ -45,7 +45,7 @@ void setupButton() {
 
 void processEncoder() {
   unsigned char result=encoder.process();
-  if (locoSelect) {
+  if (menuDisplay) {
     if (result==DIR_CW) {
       scrollMenu(1);
     } else if (result==DIR_CCW) {
@@ -73,10 +73,15 @@ void processEncoder() {
 
 void singleClickCallback(void* param) {
   CONSOLE.println(F("Single click"));
-  if (locoSelect) {
-    LocoMenuItem* selectedItem=menu.getItemAtIndex(selectedMenuItem);
-    selectedLoco=selectedItem->getLocoObject();
-    locoSelect=false;
+  if (menuDisplay) {
+    MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+    if (LocoMenuItem* locoItem=static_cast<LocoMenuItem*>(selectedItem)) {
+      selectedLoco=locoItem->getLocoObject();
+    } else {
+      return;
+    }
+    // selectedLoco=selectedItem->getLocoObject();
+    menuDisplay=false;
     switchDisplay();
   } else {
     if (selectedLoco && selectedLoco->getSpeed()==0) {
@@ -90,15 +95,15 @@ void singleClickCallback(void* param) {
 
 void doubleClickCallback(void* param) {
   CONSOLE.println(F("Double click"));
-  if (selectedLoco && selectedLoco->getSpeed()==0 && !locoSelect) {
-    locoSelect=true;
+  if (selectedLoco && selectedLoco->getSpeed()==0 && !menuDisplay) {
+    menuDisplay=true;
     switchDisplay();
   }
 }
 
 void longPressCallback(void* param) {
   CONSOLE.println(F("Long press"));
-  if (locoSelect) {
+  if (menuDisplay) {
     // This should initiate reading loco from prog track
   } else if (selectedLoco && selectedLoco->getSpeed()>0) {
     dccexProtocol.emergencyStop();

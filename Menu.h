@@ -25,16 +25,28 @@
 
 class MenuItem {
 public:
+  /// @brief Constructor
+  /// @param label Text label to display in the menu
   MenuItem(char* label);
 
+  /// @brief Get menu item label
+  /// @return 
   const char* getLabel();
 
+  /// @brief Set the next MenuItem
+  /// @param item 
   void setNext(MenuItem* item);
   
+  /// @brief Get the next MenuItem
+  /// @return 
   MenuItem* getNext();
 
+  /// @brief Set the index of this item
+  /// @param index 
   void setIndex(int index);
 
+  /// @brief Get the index of this item
+  /// @return 
   int getIndex();
 
 private:
@@ -46,26 +58,16 @@ private:
 
 class LocoMenuItem : public MenuItem {
 public:
-  // LocoMenuItem(char* name, Loco* object);
+  /// @brief Constructor, provide the Loco object
+  /// @param object 
   LocoMenuItem(Loco* object);
 
-  // void setNextLoco(LocoMenuItem* item);
-
-  // void setIndex(int index);
-  
-  // LocoMenuItem* getNextLoco();
-
-  // int getIndex();
-
-  // const char* getLocoName();
-
+  /// @brief Get the Loco object
+  /// @return 
   Loco* getLocoObject();
 
 private:
-  // const char* _locoName;
   Loco* _locoObject;
-  // int _index;
-  // LocoMenuItem* _nextLoco;
 
 };
 
@@ -88,7 +90,6 @@ public:
   void setCurrentPage(int page);
 
 private:
-  // LocoMenuItem* _firstLoco;
   MenuItem* _first;
   int _itemCount;
   int _itemsPerPage=5;

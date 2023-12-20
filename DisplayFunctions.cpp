@@ -53,7 +53,7 @@ void displayStartupInfo() {
 }
 
 void switchDisplay() {
-  if (locoSelect) {
+  if (menuDisplay) {
     displayMenu();
   } else {
     oled.clear();
@@ -67,7 +67,7 @@ void switchDisplay() {
 }
 
 void displayRuntime() {
-  if (!locoSelect) {
+  if (!menuDisplay) {
     if (speedChanged) {
       displaySpeed();
     }
@@ -152,19 +152,19 @@ void displayTrackPower() {
   oled.sendBuffer();
 }
 
-void displayMenu(Menu* menu) {
+void displayMenu() {
   oled.clear();
   oled.setDrawColor(1);
   oled.setFont(MENU_FONT);
   oled.drawHLine(0, 7, 128);
   oled.setCursor(0, 6);
   oled.print(F("Select loco"));
-  int startIdx=menu.getCurrentPage()*menu.getItemsPerPage();
+  int startIdx=currentMenu->getCurrentPage()*currentMenu->getItemsPerPage();
   int row=11;
-  for (int i=0; i<menu.getItemsPerPage(); i++) {
+  for (int i=0; i<currentMenu->getItemsPerPage(); i++) {
     int idx=startIdx + i;
-    LocoMenuItem* item=menu.getItemAtIndex(idx);
-    if (idx<menu.getItemCount()) {
+    MenuItem* item=currentMenu->getItemAtIndex(idx);
+    if (idx<currentMenu->getItemCount()) {
       if (idx==selectedMenuItem) {
         oled.setDrawColor(0);
       } else {
@@ -178,13 +178,13 @@ void displayMenu(Menu* menu) {
 
 void scrollMenu(int direction) {
   int newIndex=selectedMenuItem+direction;
-  int currentPage=menu.getCurrentPage();
-  int itemsPP=menu.getItemsPerPage();
-  if (newIndex>=0 && newIndex<menu.getItemCount()) {
+  int currentPage=currentMenu->getCurrentPage();
+  int itemsPP=currentMenu->getItemsPerPage();
+  if (newIndex>=0 && newIndex<currentMenu->getItemCount()) {
     selectedMenuItem=newIndex;
     if (selectedMenuItem<currentPage*itemsPP || selectedMenuItem>=(currentPage+1)*itemsPP) {
       currentPage+=direction>0 ? 1 : -1;
-      menu.setCurrentPage(currentPage);
+      currentMenu->setCurrentPage(currentPage);
     }
     CONSOLE.print(F("selectedMenuItem: "));
     CONSOLE.println(selectedMenuItem);

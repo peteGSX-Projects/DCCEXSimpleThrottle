@@ -35,9 +35,11 @@ void setup() {
   setupButton();
   displayStartupInfo();
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
+  currentMenu=&rosterMenu;
   CLIENT.begin(115200);
   connected=true;
 #elif defined(ARDUINO_ARCH_ESP32)
+  currentMenu=&serverMenu;
   setupWiFi();
 #endif
   if (connected) {

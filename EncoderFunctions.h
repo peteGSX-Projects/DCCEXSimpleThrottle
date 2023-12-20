@@ -28,11 +28,11 @@
 
 extern Rotary encoder;
 extern Switch button;
-extern bool locoSelect;
+extern bool menuDisplay;
 extern bool speedChanged;
 extern bool directionChanged;
 extern Loco* selectedLoco;
-extern Menu locoMenu;
+extern Menu rosterMenu;
 extern Menu serverMenu;
 extern Menu extrasMenu;
 extern Menu* currentMenu;
