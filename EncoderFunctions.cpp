@@ -29,13 +29,14 @@ bool menuDisplay=true;
 bool speedChanged=false;
 bool directionChanged=false;
 Loco* selectedLoco=nullptr;
-Menu rosterMenu;
-Menu serverMenu;
-Menu extrasMenu;
+Menu rosterMenu("Select loco");
+Menu serverMenu("Select server");
+Menu extrasMenu("Select action");
 Menu* currentMenu=nullptr;
 int selectedMenuItem=0;
 TrackPower trackPower=TrackPower::PowerUnknown;
 bool trackPowerChanged=false;
+EncoderMode encoderMode;
 
 void setupButton() {
   button.setSingleClickCallback(&singleClickCallback, nullptr);

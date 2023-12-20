@@ -19,6 +19,7 @@
 
 #include <Arduino.h>
 #include "DeviceFunctions.h"
+#include "EncoderFunctions.h"
 
 // Disabling JTAG is required to avoid pin conflicts on Bluepill
 #if defined(ARDUINO_BLUEPILL_F103C8)
@@ -42,6 +43,17 @@ void disableJTAG() {
 #endif
 
 WiFiClient wifiClient;
+
+void setupServerMenu() {
+  for (int i=0; i<CS_SERVERS; i++) {
+    serverMenu.addItem(new MenuItem(csServers[i].label));
+  }
+}
+
+void selectServer() {
+  displayMenu();
+  // setupWiFi();
+}
 
 void setupWiFi() {
   // Connect to WiFi network

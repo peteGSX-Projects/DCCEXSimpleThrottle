@@ -158,7 +158,7 @@ void displayMenu() {
   oled.setFont(MENU_FONT);
   oled.drawHLine(0, 7, 128);
   oled.setCursor(0, 6);
-  oled.print(F("Select loco"));
+  oled.print(F(currentMenu->getLabel()));
   int startIdx=currentMenu->getCurrentPage()*currentMenu->getItemsPerPage();
   int row=11;
   for (int i=0; i<currentMenu->getItemsPerPage(); i++) {

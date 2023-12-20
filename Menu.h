@@ -27,7 +27,7 @@ class MenuItem {
 public:
   /// @brief Constructor
   /// @param label Text label to display in the menu
-  MenuItem(char* label);
+  MenuItem(const char* label);
 
   /// @brief Get menu item label
   /// @return 
@@ -73,7 +73,7 @@ private:
 
 class Menu {
 public:
-  Menu();
+  Menu(const char* label);
 
   void addItem(MenuItem* item);
 
@@ -89,7 +89,10 @@ public:
 
   void setCurrentPage(int page);
 
+  const char* getLabel();
+
 private:
+  const char* _label;
   MenuItem* _first;
   int _itemCount;
   int _itemsPerPage=5;

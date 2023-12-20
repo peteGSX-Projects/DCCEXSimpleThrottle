@@ -36,11 +36,14 @@ void setup() {
   displayStartupInfo();
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
   currentMenu=&rosterMenu;
+  encoderMode=SELECT_LOCO;
   CLIENT.begin(115200);
   connected=true;
 #elif defined(ARDUINO_ARCH_ESP32)
+  setupServerMenu();
   currentMenu=&serverMenu;
-  setupWiFi();
+  encoderMode=SELECT_SERVER;
+  selectServer();
 #endif
   if (connected) {
     dccexProtocol.setLogStream(&CONSOLE);

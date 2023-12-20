@@ -63,4 +63,11 @@ extern const int CS_SERVERS;
 
 extern bool connected;
 
+enum EncoderMode {
+  OPERATE_LOCO,
+  SELECT_LOCO,
+  SELECT_SERVER,
+  SELECT_EXTRAS,
+};
+
 #endif

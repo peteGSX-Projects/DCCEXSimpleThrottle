@@ -20,7 +20,7 @@
 #include <Arduino.h>
 #include "Menu.h"
 
-MenuItem::MenuItem(char* label)
+MenuItem::MenuItem(const char* label)
 : _label(strdup(label)) {
   _next=nullptr;
 }
@@ -45,40 +45,15 @@ int MenuItem::getIndex() {
   return _index;
 }
 
-// LocoMenuItem::LocoMenuItem(char* name, Loco* object) {
-//   _locoName=strdup(name);
-//   _locoObject=object;
-//   _nextLoco=nullptr;
-// }
-
 LocoMenuItem::LocoMenuItem(Loco* object)
 : MenuItem(object->getName()), _locoObject(object) {}
-
-// void LocoMenuItem::setNextLoco(LocoMenuItem* item) {
-//   _nextLoco=item;
-// }
-
-// LocoMenuItem* LocoMenuItem::getNextLoco() {
-//   return _nextLoco;
-// }
-
-// void LocoMenuItem::setIndex(int index) {
-//   _index=index;
-// }
-
-// int LocoMenuItem::getIndex() {
-//   return _index;
-// }
-
-// const char* LocoMenuItem::getLocoName() {
-//   return _locoName;
-// }
 
 Loco* LocoMenuItem::getLocoObject() {
   return _locoObject;
 }
 
-Menu::Menu() {
+Menu::Menu(const char* label)
+: _label(label) {
   _first=nullptr;
   _itemCount=0;
   _currentPage=0;
@@ -126,4 +101,8 @@ int Menu::getCurrentPage() {
 
 void Menu::setCurrentPage(int page) {
   _currentPage=page;
+}
+
+const char* Menu::getLabel() {
+  return _label;
 }

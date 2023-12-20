@@ -24,6 +24,7 @@
 #include <DCCEXProtocol.h>
 #include "avdweb_Switch.h"
 #include "Rotary.h"
+#include "defines.h"
 #include "Menu.h"
 
 extern Rotary encoder;
@@ -39,6 +40,7 @@ extern Menu* currentMenu;
 extern int selectedMenuItem;
 extern TrackPower trackPower;
 extern bool trackPowerChanged;
+extern EncoderMode encoderMode;
 
 void setupButton();
 void processEncoder();
