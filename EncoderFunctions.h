@@ -35,6 +35,7 @@ extern Loco* selectedLoco;
 extern Menu locoMenu;
 extern Menu serverMenu;
 extern Menu extrasMenu;
+extern Menu* currentMenu;
 extern int selectedMenuItem;
 extern TrackPower trackPower;
 extern bool trackPowerChanged;

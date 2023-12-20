@@ -32,6 +32,7 @@ Loco* selectedLoco=nullptr;
 Menu locoMenu;
 Menu serverMenu;
 Menu extrasMenu;
+Menu* currentMenu=nullptr;
 int selectedMenuItem=0;
 TrackPower trackPower=TrackPower::PowerUnknown;
 bool trackPowerChanged=false;
