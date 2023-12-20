@@ -57,7 +57,7 @@ void displaySpeed();
 void displayDirection();
 void displayLoco();
 void displayTrackPower();
-void displayMenu();
+void displayMenu(Menu* menu);
 void scrollMenu(int direction);
 void displayError(const char* error);
 

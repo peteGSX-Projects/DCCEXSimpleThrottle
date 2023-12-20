@@ -152,7 +152,7 @@ void displayTrackPower() {
   oled.sendBuffer();
 }
 
-void displayMenu() {
+void displayMenu(Menu* menu) {
   oled.clear();
   oled.setDrawColor(1);
   oled.setFont(MENU_FONT);
@@ -170,7 +170,7 @@ void displayMenu() {
       } else {
         oled.setDrawColor(1);
       }
-      oled.drawStr(0, row+=8, item->getLocoName());
+      oled.drawStr(0, row+=8, item->getLabel());
     }
   }
   oled.sendBuffer();

@@ -20,63 +20,91 @@
 #include <Arduino.h>
 #include "Menu.h"
 
-LocoMenuItem::LocoMenuItem(char* name, Loco* object) {
-  _locoName=strdup(name);
-  _locoObject=object;
-  _nextLoco=nullptr;
+MenuItem::MenuItem(char* label)
+: _label(strdup(label)) {
+  _next=nullptr;
 }
 
-void LocoMenuItem::setNextLoco(LocoMenuItem* item) {
-  _nextLoco=item;
+const char* MenuItem::getLabel() {
+  return _label;
 }
 
-LocoMenuItem* LocoMenuItem::getNextLoco() {
-  return _nextLoco;
+void MenuItem::setNext(MenuItem* item) {
+  _next=item;
+}
+  
+MenuItem* MenuItem::getNext() {
+  return _next;
 }
 
-void LocoMenuItem::setIndex(int index) {
+void MenuItem::setIndex(int index) {
   _index=index;
 }
 
-int LocoMenuItem::getIndex() {
+int MenuItem::getIndex() {
   return _index;
 }
 
-const char* LocoMenuItem::getLocoName() {
-  return _locoName;
-}
+// LocoMenuItem::LocoMenuItem(char* name, Loco* object) {
+//   _locoName=strdup(name);
+//   _locoObject=object;
+//   _nextLoco=nullptr;
+// }
+
+LocoMenuItem::LocoMenuItem(Loco* object)
+: MenuItem(object->getName()), _locoObject(object) {}
+
+// void LocoMenuItem::setNextLoco(LocoMenuItem* item) {
+//   _nextLoco=item;
+// }
+
+// LocoMenuItem* LocoMenuItem::getNextLoco() {
+//   return _nextLoco;
+// }
+
+// void LocoMenuItem::setIndex(int index) {
+//   _index=index;
+// }
+
+// int LocoMenuItem::getIndex() {
+//   return _index;
+// }
+
+// const char* LocoMenuItem::getLocoName() {
+//   return _locoName;
+// }
 
 Loco* LocoMenuItem::getLocoObject() {
   return _locoObject;
 }
 
 Menu::Menu() {
-  _firstLoco=nullptr;
+  _first=nullptr;
   _itemCount=0;
   _currentPage=0;
   _currentIndex=0;
 };
 
-void Menu::addLocoItem(LocoMenuItem* item) {
-  if (this->_firstLoco==nullptr) {
-    this->_firstLoco=item;
+void Menu::addItem(MenuItem* item) {
+  if (this->_first==nullptr) {
+    this->_first=item;
   } else {
-    LocoMenuItem* current=this->_firstLoco;
-    while (current->getNextLoco()!=nullptr) {
-      current=current->getNextLoco();
+    MenuItem* current=this->_first;
+    while (current->getNext()!=nullptr) {
+      current=current->getNext();
     }
-    current->setNextLoco(item);
+    current->setNext(item);
   }
   item->setIndex(_currentIndex++);
   _itemCount++;
 }
 
-LocoMenuItem* Menu::getFirstLoco() {
-  return _firstLoco;
+MenuItem* Menu::getFirst() {
+  return _first;
 }
 
-LocoMenuItem* Menu::getItemAtIndex(int index) {
-  for (LocoMenuItem* item=_firstLoco; item; item=item->getNextLoco()) {
+MenuItem* Menu::getItemAtIndex(int index) {
+  for (MenuItem* item=_first; item; item=item->getNext()) {
     if (item->getIndex()==index) {
       return item;
     }

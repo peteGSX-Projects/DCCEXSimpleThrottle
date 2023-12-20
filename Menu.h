@@ -23,27 +23,49 @@
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 
-class LocoMenuItem {
+class MenuItem {
 public:
-  LocoMenuItem(char* name, Loco* object);
+  MenuItem(char* label);
 
-  void setNextLoco(LocoMenuItem* item);
+  const char* getLabel();
+
+  void setNext(MenuItem* item);
+  
+  MenuItem* getNext();
 
   void setIndex(int index);
-  
-  LocoMenuItem* getNextLoco();
 
   int getIndex();
 
-  const char* getLocoName();
+private:
+  const char* _label;
+  int _index;
+  MenuItem* _next;
+
+};
+
+class LocoMenuItem : public MenuItem {
+public:
+  // LocoMenuItem(char* name, Loco* object);
+  LocoMenuItem(Loco* object);
+
+  // void setNextLoco(LocoMenuItem* item);
+
+  // void setIndex(int index);
+  
+  // LocoMenuItem* getNextLoco();
+
+  // int getIndex();
+
+  // const char* getLocoName();
 
   Loco* getLocoObject();
 
 private:
-  const char* _locoName;
+  // const char* _locoName;
   Loco* _locoObject;
-  int _index;
-  LocoMenuItem* _nextLoco;
+  // int _index;
+  // LocoMenuItem* _nextLoco;
 
 };
 
@@ -51,11 +73,11 @@ class Menu {
 public:
   Menu();
 
-  void addLocoItem(LocoMenuItem* item);
+  void addItem(MenuItem* item);
 
-  LocoMenuItem* getFirstLoco();
+  MenuItem* getFirst();
 
-  LocoMenuItem* getItemAtIndex(int index);
+  MenuItem* getItemAtIndex(int index);
 
   int getItemCount();
 
@@ -66,7 +88,8 @@ public:
   void setCurrentPage(int page);
 
 private:
-  LocoMenuItem* _firstLoco;
+  // LocoMenuItem* _firstLoco;
+  MenuItem* _first;
   int _itemCount;
   int _itemsPerPage=5;
   int _currentPage;
