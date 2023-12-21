@@ -32,8 +32,8 @@ void disableJTAG();
 #if defined(ARDUINO_ARCH_ESP32)
 #include <WiFi.h>
 void setupServerMenu();
-void selectServer();
-void setupWiFi();
+void setupWiFi(int server);
 #endif
+void setupExtrasMenu();
 
 #endif

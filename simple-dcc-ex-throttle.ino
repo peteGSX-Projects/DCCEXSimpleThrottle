@@ -34,6 +34,7 @@ void setup() {
   CONSOLE.begin(115200);
   setupDisplay();
   setupButton();
+  setupExtrasMenu();
   displayStartupInfo();
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
   currentMenu=&rosterMenu;
@@ -44,15 +45,12 @@ void setup() {
   setupServerMenu();
   currentMenu=&serverMenu;
   encoderMode=SELECT_SERVER;
-  selectServer();
-  // setupWiFi();
+  displayMenu();
 #endif
 }
 
 void loop() {
-  if (!connected) {
-    
-  } else {
+  if (connected) {
     if (!protocolSetup) {
       dccexProtocol.setLogStream(&CONSOLE);
       dccexProtocol.setDelegate(&dccexCallbacks);

@@ -50,12 +50,7 @@ void setupServerMenu() {
   }
 }
 
-void selectServer() {
-  displayMenu();
-  // setupWiFi();
-}
-
-void setupWiFi() {
+void setupWiFi(int server) {
   // Connect to WiFi network
   int retries=CONNECT_RETRIES;
   oled.clear();
@@ -63,18 +58,18 @@ void setupWiFi() {
   oled.setCursor(0, 10);
   oled.print(F("Connecting to WiFi network: "));
   oled.setCursor(0, 20);
-  oled.print(csServers[0].label);
+  oled.print(csServers[server].label);
   oled.setFont(WIFI_FONT);
   int X=0;
   int Y=30;
   oled.sendBuffer();
   CONSOLE.print("Connecting to WiFi network ");
-  CONSOLE.println(csServers[0].label);
+  CONSOLE.println(csServers[server].label);
   CONSOLE.print("SSID|PASSWORD: ");
-  CONSOLE.print(csServers[0].ssid);
+  CONSOLE.print(csServers[server].ssid);
   CONSOLE.print("|");
-  CONSOLE.println(csServers[0].password);
-  WiFi.begin(csServers[0].ssid, csServers[0].password);
+  CONSOLE.println(csServers[server].password);
+  WiFi.begin(csServers[server].ssid, csServers[server].password);
   while (WiFi.status()!=WL_CONNECTED && retries>0) {
     oled.drawGlyph(X, Y, 0x0048);
     X+=9;
@@ -98,13 +93,13 @@ void setupWiFi() {
     oled.setCursor(0, 10);
     oled.print(F("Connecting to server: "));
     oled.setCursor(0, 20);
-    oled.print(csServers[0].label);
+    oled.print(csServers[server].label);
     oled.sendBuffer();
     oled.setCursor(0, 30);
     CONSOLE.print("Connecting to server ");
-    CONSOLE.println(csServers[0].label);
+    CONSOLE.println(csServers[server].label);
     retries=CONNECT_RETRIES;
-    while (!CLIENT.connect(csServers[0].ipaddress, csServers[0].port) && retries>0) {
+    while (!CLIENT.connect(csServers[server].ipaddress, csServers[server].port) && retries>0) {
       oled.print(F("#"));
       oled.sendBuffer();
       retries--;
@@ -119,3 +114,8 @@ void setupWiFi() {
   }
 }
 #endif
+
+void setupExtrasMenu() {
+  extrasMenu.addItem(new MenuItem("Blah 1"));
+  extrasMenu.addItem(new MenuItem("Blah 2"));
+}

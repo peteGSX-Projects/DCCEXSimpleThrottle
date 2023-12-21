@@ -18,10 +18,11 @@
 */
 
 #include <Arduino.h>
+#include "defines.h"
 #include "EncoderFunctions.h"
 #include "DCCEXFunctions.h"
 #include "DisplayFunctions.h"
-#include "defines.h"
+#include "DeviceFunctions.h"
 
 Rotary encoder(ENCODER_DT, ENCODER_CLK);
 Switch button(ENCODER_SW);
@@ -74,45 +75,103 @@ void processEncoder() {
 
 void singleClickCallback(void* param) {
   CONSOLE.println(F("Single click"));
-  if (menuDisplay) {
-    MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
-    if (LocoMenuItem* locoItem=static_cast<LocoMenuItem*>(selectedItem)) {
-      selectedLoco=locoItem->getLocoObject();
-    } else {
-      return;
+  switch(encoderMode) {
+    case OPERATE_LOCO: {
+      if (selectedLoco && selectedLoco->getSpeed()==0) {
+        Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
+        dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
+      } else if (selectedLoco && selectedLoco->getSpeed()>0) {
+        dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
+      }
+      break;
     }
-    // selectedLoco=selectedItem->getLocoObject();
-    menuDisplay=false;
-    switchDisplay();
-  } else {
-    if (selectedLoco && selectedLoco->getSpeed()==0) {
-      Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
-      dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
-    } else if (selectedLoco && selectedLoco->getSpeed()>0) {
-      dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
+
+#if defined(ARDUINO_ARCH_ESP32)
+    case SELECT_SERVER: {
+      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+      setupWiFi(selectedItem->getIndex());
+      if (connected) {
+        encoderMode=SELECT_LOCO;
+        currentMenu=&rosterMenu;
+        switchDisplay();
+      }
+      break;
     }
+#endif
+
+    case SELECT_LOCO: {
+      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+      if (LocoMenuItem* locoItem=static_cast<LocoMenuItem*>(selectedItem)) {
+        selectedLoco=locoItem->getLocoObject();
+        encoderMode=OPERATE_LOCO;
+        menuDisplay=false;
+        switchDisplay();
+      }
+      break;
+    }
+
+    // case SELECT_EXTRAS: {
+    //   MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+    //   break;
+    // }
+
+    default:
+      break;
   }
 }
 
 void doubleClickCallback(void* param) {
   CONSOLE.println(F("Double click"));
-  if (selectedLoco && selectedLoco->getSpeed()==0 && !menuDisplay) {
-    menuDisplay=true;
-    switchDisplay();
+  switch(encoderMode) {
+    case OPERATE_LOCO: {
+      if (selectedLoco && selectedLoco->getSpeed()==0 && !menuDisplay) {
+        menuDisplay=true;
+        currentMenu=&rosterMenu;
+        encoderMode=SELECT_LOCO;
+        switchDisplay();
+      }
+      break;
+    }
+
+    case SELECT_LOCO: {
+      menuDisplay=true;
+      currentMenu=&extrasMenu;
+      encoderMode=SELECT_EXTRAS;
+      switchDisplay();
+      break;
+    }
+
+    case SELECT_EXTRAS: {
+      menuDisplay=true;
+      currentMenu=&rosterMenu;
+      encoderMode=SELECT_LOCO;
+      switchDisplay();
+      break;
+    }
+
+    default:
+      break;
   }
+  
 }
 
 void longPressCallback(void* param) {
   CONSOLE.println(F("Long press"));
-  if (menuDisplay) {
-    // This should initiate reading loco from prog track
-  } else if (selectedLoco && selectedLoco->getSpeed()>0) {
-    dccexProtocol.emergencyStop();
-  } else if (selectedLoco && selectedLoco->getSpeed()==0) {
-    if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
-      dccexProtocol.powerOn();
-    } else if (trackPower==TrackPower::PowerOn) {
-      dccexProtocol.powerOff();
+  switch(encoderMode) {
+    case OPERATE_LOCO: {
+      if (selectedLoco && selectedLoco->getSpeed()>0) {
+        dccexProtocol.emergencyStop();
+      } else if (selectedLoco && selectedLoco->getSpeed()==0) {
+        if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
+          dccexProtocol.powerOn();
+        } else if (trackPower==TrackPower::PowerOn) {
+          dccexProtocol.powerOff();
+        }
+      }
+      break;
     }
+
+    default:
+      break;
   }
 }
