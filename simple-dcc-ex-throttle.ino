@@ -25,6 +25,7 @@
 #include "DeviceFunctions.h"
 
 bool connected=false;
+bool protocolSetup=false;
 
 void setup() {
 #if defined(ARDUINO_BLUEPILL_F103C8)
@@ -44,19 +45,22 @@ void setup() {
   currentMenu=&serverMenu;
   encoderMode=SELECT_SERVER;
   selectServer();
+  // setupWiFi();
 #endif
-  if (connected) {
-    dccexProtocol.setLogStream(&CONSOLE);
-    dccexProtocol.setDelegate(&dccexCallbacks);
-    dccexProtocol.connect(&CLIENT);
-  }
 }
 
 void loop() {
-  if (connected) {
+  if (!connected) {
+    
+  } else {
+    if (!protocolSetup) {
+      dccexProtocol.setLogStream(&CONSOLE);
+      dccexProtocol.setDelegate(&dccexCallbacks);
+      dccexProtocol.connect(&CLIENT);
+    }
     dccexProtocol.check();
     getRoster();
     displayRuntime();
-    processEncoder();
   }
+  processEncoder();
 }
