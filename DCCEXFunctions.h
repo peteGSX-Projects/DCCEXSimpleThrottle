@@ -31,5 +31,7 @@ extern DCCEXCallbacks dccexCallbacks;
 
 void getRoster();
 void populateMenu();
+void togglePower();
+void forgetLoco();
 
 #endif

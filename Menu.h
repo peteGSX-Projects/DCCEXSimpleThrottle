@@ -22,52 +22,115 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-// #include "defines.h"
 
 class MenuItem {
 public:
-  MenuItem(char* name, Loco* object);
+  /// @brief Constructor
+  /// @param label Text label to display in the menu
+  MenuItem(const char* label);
 
+  /// @brief Get menu item label
+  /// @return 
+  const char* getLabel();
+
+  /// @brief Set the next MenuItem
+  /// @param item 
   void setNext(MenuItem* item);
-
-  void setIndex(int index);
   
+  /// @brief Get the next MenuItem
+  /// @return 
   MenuItem* getNext();
 
+  /// @brief Set the index of this item
+  /// @param index 
+  void setIndex(int index);
+
+  /// @brief Get the index of this item
+  /// @return 
   int getIndex();
 
-  const char* getLocoName();
-
-  Loco* getLocoObject();
-
 private:
-  const char* _locoName;
-  Loco* _locoObject;
+  const char* _label;
   int _index;
   MenuItem* _next;
 
 };
 
-class Menu {
+class LocoMenuItem : public MenuItem {
 public:
-  Menu();
+  /// @brief Constructor, provide the Loco object
+  /// @param object 
+  LocoMenuItem(Loco* object);
 
-  void addItem(MenuItem* item);
-
-  MenuItem* getFirst();
-
-  MenuItem* getItemAtIndex(int index);
-
-  int getItemCount();
-
-  int getItemsPerPage();
-
-  int getCurrentPage();
-
-  void setCurrentPage(int page);
+  /// @brief Get the Loco object
+  /// @return 
+  Loco* getLocoObject();
 
 private:
-  MenuItem* _firstItem;
+  Loco* _locoObject;
+
+};
+
+class ActionMenuItem : public MenuItem {
+public:
+  typedef void (*Action)();
+
+  /// @brief Constructor, provide the label and function to call
+  /// @param label Char array to display
+  /// @param action Function to call when selected
+  ActionMenuItem(const char* label, Action action);
+
+  /// @brief Get the action associated with the menu item
+  /// @return Call the associated function
+  void callAction();
+
+private:
+  Action _action;
+
+};
+
+class Menu {
+public:
+  /// @brief Constructor for a new Menu object
+  /// @param label Char array for the title of the menu to display
+  Menu(const char* label);
+
+  /// @brief Add a MenuItem object
+  /// @param item A valid menu item inheriting the MenuItem base class
+  void addItem(MenuItem* item);
+
+  /// @brief Get the first MenuItem
+  /// @return MenuItem object
+  MenuItem* getFirst();
+
+  /// @brief Get the MenuItem object at the specified index
+  /// @param index Index of the item to get
+  /// @return MenuItem object
+  MenuItem* getItemAtIndex(int index);
+
+  /// @brief Get the number of items in this menu
+  /// @return Item count
+  int getItemCount();
+
+  /// @brief Get the number of items to display on a page
+  /// @return Number of items to display
+  int getItemsPerPage();
+
+  /// @brief Get the current page to display
+  /// @return Current page number
+  int getCurrentPage();
+
+  /// @brief Set the current page to display
+  /// @param page Current page number
+  void setCurrentPage(int page);
+
+  /// @brief Get the menu label
+  /// @return Char array
+  const char* getLabel();
+
+private:
+  const char* _label;
+  MenuItem* _first;
   int _itemCount;
   int _itemsPerPage=5;
   int _currentPage;

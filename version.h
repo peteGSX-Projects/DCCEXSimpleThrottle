@@ -1,7 +1,10 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.5"
+#define VERSION "0.0.6"
+// 0.0.6  - Extra menu functions
+//        - Select loco or build consist
+//        - Select EX-CommandStation via menu
 // 0.0.5  - Add ESP32 with WiFi
 // 0.0.4  - Fix track power display bug
 // 0.0.3  - Add track power control

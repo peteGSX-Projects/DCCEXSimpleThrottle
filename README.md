@@ -12,6 +12,16 @@ Rotary encoder
 
 ## Operation
 
+* Need to change *
+
+Double click cycles menus.
+
+On select loco screen, change menu to track power, read loco, forget loco
+
+On control screen, long press turns headlight on/off
+
+On select loco screen, long press sets up consist
+
 On start up, no locomotive will be selected, and the roster list retrieved from the EX-CommandStation will be displayed.
 
 Use the rotary encoder to scroll down the roster list and press the encoder's button once to select a locomotive.

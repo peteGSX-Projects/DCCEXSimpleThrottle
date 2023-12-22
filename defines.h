@@ -49,24 +49,25 @@
 extern WiFiClient wifiClient;
 #define CLIENT wifiClient
 
-struct WiFiNetwork {
-  const char* label;
-  const char* ssid;
-  const char* password;
-};
-
 struct EXCommandStation {
   const char* label;
   IPAddress ipaddress;
   int port;
+  const char* ssid;
+  const char* password;
 };
 
-extern WiFiNetwork* wifiNetworks;
 extern EXCommandStation* csServers;
-extern const int WIFI_NETWORKS;
 extern const int CS_SERVERS;
 #endif
 
 extern bool connected;
+
+enum EncoderMode {
+  OPERATE_LOCO,
+  SELECT_LOCO,
+  SELECT_SERVER,
+  SELECT_EXTRAS,
+};
 
 #endif

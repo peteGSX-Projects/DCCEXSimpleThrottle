@@ -31,7 +31,7 @@ void DCCEXCallbacks::receivedServerVersion(int major, int minor, int patch) {
 }
 
 void DCCEXCallbacks::receivedLocoUpdate(Loco* loco) {
-  if (selectedLoco!=loco || locoSelect) return;
+  if (selectedLoco!=loco || menuDisplay) return;
   speedChanged=true;
   directionChanged=true;
 }

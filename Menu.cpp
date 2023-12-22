@@ -20,16 +20,21 @@
 #include <Arduino.h>
 #include "Menu.h"
 
-MenuItem::MenuItem(char* name, Loco* object) {
-  _locoName=strdup(name);
-  _locoObject=object;
+// Class MenuItem
+
+MenuItem::MenuItem(const char* label)
+: _label(strdup(label)) {
   _next=nullptr;
+}
+
+const char* MenuItem::getLabel() {
+  return _label;
 }
 
 void MenuItem::setNext(MenuItem* item) {
   _next=item;
 }
-
+  
 MenuItem* MenuItem::getNext() {
   return _next;
 }
@@ -42,26 +47,39 @@ int MenuItem::getIndex() {
   return _index;
 }
 
-const char* MenuItem::getLocoName() {
-  return _locoName;
-}
+// Class LocoMenuItem
 
-Loco* MenuItem::getLocoObject() {
+LocoMenuItem::LocoMenuItem(Loco* object)
+: MenuItem(object->getName()), _locoObject(object) {}
+
+Loco* LocoMenuItem::getLocoObject() {
   return _locoObject;
 }
 
-Menu::Menu() {
-  _firstItem=nullptr;
+// Class ActionMenuItem
+
+ActionMenuItem::ActionMenuItem(const char* label, Action action)
+: MenuItem(label), _action(action) {}
+
+void ActionMenuItem::callAction() {
+  _action();
+}
+
+// Class Menu
+
+Menu::Menu(const char* label)
+: _label(label) {
+  _first=nullptr;
   _itemCount=0;
   _currentPage=0;
   _currentIndex=0;
 };
 
 void Menu::addItem(MenuItem* item) {
-  if (this->_firstItem==nullptr) {
-    this->_firstItem=item;
+  if (this->_first==nullptr) {
+    this->_first=item;
   } else {
-    MenuItem* current=this->_firstItem;
+    MenuItem* current=this->_first;
     while (current->getNext()!=nullptr) {
       current=current->getNext();
     }
@@ -72,11 +90,11 @@ void Menu::addItem(MenuItem* item) {
 }
 
 MenuItem* Menu::getFirst() {
-  return _firstItem;
+  return _first;
 }
 
 MenuItem* Menu::getItemAtIndex(int index) {
-  for (MenuItem* item=_firstItem; item; item=item->getNext()) {
+  for (MenuItem* item=_first; item; item=item->getNext()) {
     if (item->getIndex()==index) {
       return item;
     }
@@ -98,4 +116,8 @@ int Menu::getCurrentPage() {
 
 void Menu::setCurrentPage(int page) {
   _currentPage=page;
+}
+
+const char* Menu::getLabel() {
+  return _label;
 }

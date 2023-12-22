@@ -18,21 +18,26 @@
 */
 
 #include <Arduino.h>
+#include "defines.h"
 #include "EncoderFunctions.h"
 #include "DCCEXFunctions.h"
 #include "DisplayFunctions.h"
-#include "defines.h"
+#include "DeviceFunctions.h"
 
 Rotary encoder(ENCODER_DT, ENCODER_CLK);
 Switch button(ENCODER_SW);
-bool locoSelect=true;
+bool menuDisplay=true;
 bool speedChanged=false;
 bool directionChanged=false;
 Loco* selectedLoco=nullptr;
-Menu menu;
+Menu rosterMenu("Select loco");
+Menu serverMenu("Select server");
+Menu extrasMenu("Select action");
+Menu* currentMenu=nullptr;
 int selectedMenuItem=0;
 TrackPower trackPower=TrackPower::PowerUnknown;
 bool trackPowerChanged=false;
+EncoderMode encoderMode;
 
 void setupButton() {
   button.setSingleClickCallback(&singleClickCallback, nullptr);
@@ -42,7 +47,7 @@ void setupButton() {
 
 void processEncoder() {
   unsigned char result=encoder.process();
-  if (locoSelect) {
+  if (menuDisplay) {
     if (result==DIR_CW) {
       scrollMenu(1);
     } else if (result==DIR_CCW) {
@@ -70,40 +75,100 @@ void processEncoder() {
 
 void singleClickCallback(void* param) {
   CONSOLE.println(F("Single click"));
-  if (locoSelect) {
-    MenuItem* selectedItem=menu.getItemAtIndex(selectedMenuItem);
-    selectedLoco=selectedItem->getLocoObject();
-    locoSelect=false;
-    switchDisplay();
-  } else {
-    if (selectedLoco && selectedLoco->getSpeed()==0) {
-      Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
-      dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
-    } else if (selectedLoco && selectedLoco->getSpeed()>0) {
-      dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
+  switch(encoderMode) {
+    case OPERATE_LOCO: {
+      if (selectedLoco && selectedLoco->getSpeed()==0) {
+        Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
+        dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
+      } else if (selectedLoco && selectedLoco->getSpeed()>0) {
+        dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
+      }
+      break;
     }
+
+#if defined(ARDUINO_ARCH_ESP32)
+    case SELECT_SERVER: {
+      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+      setupWiFi(selectedItem->getIndex());
+      if (connected) {
+        encoderMode=SELECT_LOCO;
+        currentMenu=&rosterMenu;
+        switchDisplay();
+      }
+      break;
+    }
+#endif
+
+    case SELECT_LOCO: {
+      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+      if (LocoMenuItem* locoItem=static_cast<LocoMenuItem*>(selectedItem)) {
+        selectedLoco=locoItem->getLocoObject();
+        encoderMode=OPERATE_LOCO;
+        menuDisplay=false;
+        switchDisplay();
+      }
+      break;
+    }
+
+    case SELECT_EXTRAS: {
+      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+      if (ActionMenuItem* actionItem=static_cast<ActionMenuItem*>(selectedItem)) {
+        actionItem->callAction();
+      }
+      break;
+    }
+
+    default:
+      break;
   }
 }
 
 void doubleClickCallback(void* param) {
   CONSOLE.println(F("Double click"));
-  if (selectedLoco && selectedLoco->getSpeed()==0 && !locoSelect) {
-    locoSelect=true;
-    switchDisplay();
+  switch(encoderMode) {
+    case OPERATE_LOCO: {
+      if (selectedLoco && selectedLoco->getSpeed()==0 && !menuDisplay) {
+        menuDisplay=true;
+        currentMenu=&rosterMenu;
+        encoderMode=SELECT_LOCO;
+        switchDisplay();
+      }
+      break;
+    }
+
+    case SELECT_LOCO: {
+      menuDisplay=true;
+      currentMenu=&extrasMenu;
+      encoderMode=SELECT_EXTRAS;
+      switchDisplay();
+      break;
+    }
+
+    case SELECT_EXTRAS: {
+      menuDisplay=true;
+      currentMenu=&rosterMenu;
+      encoderMode=SELECT_LOCO;
+      switchDisplay();
+      break;
+    }
+
+    default:
+      break;
   }
+  
 }
 
 void longPressCallback(void* param) {
   CONSOLE.println(F("Long press"));
-  if (locoSelect) {
-    // This should initiate reading loco from prog track
-  } else if (selectedLoco && selectedLoco->getSpeed()>0) {
-    dccexProtocol.emergencyStop();
-  } else if (selectedLoco && selectedLoco->getSpeed()==0) {
-    if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
-      dccexProtocol.powerOn();
-    } else if (trackPower==TrackPower::PowerOn) {
-      dccexProtocol.powerOff();
+  switch(encoderMode) {
+    case OPERATE_LOCO: {
+      if (selectedLoco && selectedLoco->getSpeed()>0) {
+        dccexProtocol.emergencyStop();
+      }
+      break;
     }
+
+    default:
+      break;
   }
 }
