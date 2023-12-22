@@ -20,6 +20,7 @@
 #include <Arduino.h>
 #include "DeviceFunctions.h"
 #include "EncoderFunctions.h"
+#include "DCCEXFunctions.h"
 
 // Disabling JTAG is required to avoid pin conflicts on Bluepill
 #if defined(ARDUINO_BLUEPILL_F103C8)
@@ -116,6 +117,6 @@ void setupWiFi(int server) {
 #endif
 
 void setupExtrasMenu() {
-  extrasMenu.addItem(new MenuItem("Blah 1"));
-  extrasMenu.addItem(new MenuItem("Blah 2"));
+  extrasMenu.addItem(new ActionMenuItem("Toggle track power", togglePower));
+  extrasMenu.addItem(new ActionMenuItem("Forget loco/consist", forgetLoco));
 }

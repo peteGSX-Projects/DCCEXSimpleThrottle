@@ -110,10 +110,13 @@ void singleClickCallback(void* param) {
       break;
     }
 
-    // case SELECT_EXTRAS: {
-    //   MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
-    //   break;
-    // }
+    case SELECT_EXTRAS: {
+      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
+      if (ActionMenuItem* actionItem=static_cast<ActionMenuItem*>(selectedItem)) {
+        actionItem->callAction();
+      }
+      break;
+    }
 
     default:
       break;
@@ -161,12 +164,6 @@ void longPressCallback(void* param) {
     case OPERATE_LOCO: {
       if (selectedLoco && selectedLoco->getSpeed()>0) {
         dccexProtocol.emergencyStop();
-      } else if (selectedLoco && selectedLoco->getSpeed()==0) {
-        if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
-          dccexProtocol.powerOn();
-        } else if (trackPower==TrackPower::PowerOn) {
-          dccexProtocol.powerOff();
-        }
       }
       break;
     }

@@ -20,6 +20,8 @@
 #include <Arduino.h>
 #include "Menu.h"
 
+// Class MenuItem
+
 MenuItem::MenuItem(const char* label)
 : _label(strdup(label)) {
   _next=nullptr;
@@ -45,12 +47,25 @@ int MenuItem::getIndex() {
   return _index;
 }
 
+// Class LocoMenuItem
+
 LocoMenuItem::LocoMenuItem(Loco* object)
 : MenuItem(object->getName()), _locoObject(object) {}
 
 Loco* LocoMenuItem::getLocoObject() {
   return _locoObject;
 }
+
+// Class ActionMenuItem
+
+ActionMenuItem::ActionMenuItem(const char* label, Action action)
+: MenuItem(label), _action(action) {}
+
+void ActionMenuItem::callAction() {
+  _action();
+}
+
+// Class Menu
 
 Menu::Menu(const char* label)
 : _label(label) {

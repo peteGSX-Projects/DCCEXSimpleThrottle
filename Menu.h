@@ -71,24 +71,61 @@ private:
 
 };
 
+class ActionMenuItem : public MenuItem {
+public:
+  typedef void (*Action)();
+
+  /// @brief Constructor, provide the label and function to call
+  /// @param label Char array to display
+  /// @param action Function to call when selected
+  ActionMenuItem(const char* label, Action action);
+
+  /// @brief Get the action associated with the menu item
+  /// @return Call the associated function
+  void callAction();
+
+private:
+  Action _action;
+
+};
+
 class Menu {
 public:
+  /// @brief Constructor for a new Menu object
+  /// @param label Char array for the title of the menu to display
   Menu(const char* label);
 
+  /// @brief Add a MenuItem object
+  /// @param item A valid menu item inheriting the MenuItem base class
   void addItem(MenuItem* item);
 
+  /// @brief Get the first MenuItem
+  /// @return MenuItem object
   MenuItem* getFirst();
 
+  /// @brief Get the MenuItem object at the specified index
+  /// @param index Index of the item to get
+  /// @return MenuItem object
   MenuItem* getItemAtIndex(int index);
 
+  /// @brief Get the number of items in this menu
+  /// @return Item count
   int getItemCount();
 
+  /// @brief Get the number of items to display on a page
+  /// @return Number of items to display
   int getItemsPerPage();
 
+  /// @brief Get the current page to display
+  /// @return Current page number
   int getCurrentPage();
 
+  /// @brief Set the current page to display
+  /// @param page Current page number
   void setCurrentPage(int page);
 
+  /// @brief Get the menu label
+  /// @return Char array
   const char* getLabel();
 
 private:

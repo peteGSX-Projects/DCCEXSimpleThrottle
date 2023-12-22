@@ -77,3 +77,32 @@ void populateMenu() {
   }
   switchDisplay();
 }
+
+void togglePower() {
+  if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
+    dccexProtocol.powerOn();
+  } else if (trackPower==TrackPower::PowerOn) {
+    dccexProtocol.powerOff();
+  }
+  if (selectedLoco) {
+    encoderMode=OPERATE_LOCO;
+    menuDisplay=false;
+    switchDisplay();
+  } else {
+    currentMenu=&rosterMenu;
+    encoderMode=SELECT_LOCO;
+    menuDisplay=true;
+    switchDisplay();
+  }
+}
+
+void forgetLoco() {
+  if (selectedLoco->getSource()==LocoSourceEntry) {
+    delete(selectedLoco);
+  }
+  selectedLoco=nullptr;
+  currentMenu=&rosterMenu;
+  encoderMode=SELECT_LOCO;
+  menuDisplay=true;
+  switchDisplay();
+}
