@@ -15,54 +15,54 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
 #include "DCCEXFunctions.h"
 #include "Defines.h"
+#include <Arduino.h>
 
 DCCEXProtocol dccexProtocol;
 DCCEXCallbacks dccexCallbacks;
 
-uint8_t connectionRetries=CONNECT_RETRIES;
-unsigned long retryDelay=1000;
-unsigned long lastRetry=0;
-bool gotRoster=false;
-bool retrievalDisplayed=false;
-bool errorDisplayed=false;
-bool setupScreen=false;
-int col=0;
-int row=2;
+uint8_t connectionRetries = CONNECT_RETRIES;
+unsigned long retryDelay = 1000;
+unsigned long lastRetry = 0;
+bool gotRoster = false;
+bool retrievalDisplayed = false;
+bool errorDisplayed = false;
+bool setupScreen = false;
+int col = 0;
+int row = 2;
 
 void getRoster() {
-  if (!dccexProtocol.receivedLists() && connectionRetries>0) {
+  if (!dccexProtocol.receivedLists() && connectionRetries > 0) {
     if (!retrievalDisplayed) {
       oled.clear();
       oled.setCursor(0, 0);
       oled.print(F("Retrieving roster..."));
       CONSOLE.print(F("Retrieving roster..."));
-      retrievalDisplayed=true;
-    } else if (!dccexProtocol.receivedLists() && millis()-lastRetry>retryDelay && connectionRetries>0) {
-      lastRetry=millis();
+      retrievalDisplayed = true;
+    } else if (!dccexProtocol.receivedLists() && millis() - lastRetry > retryDelay && connectionRetries > 0) {
+      lastRetry = millis();
       connectionRetries--;
       oled.setCursor(col, row);
       oled.print(F("."));
       CONSOLE.print(F("."));
-      col=col+5;
-      if (col>120) {
+      col = col + 5;
+      if (col > 120) {
         row++;
-        col=0;
+        col = 0;
       }
     }
     dccexProtocol.getLists(true, false, false, false);
-  } else if (!dccexProtocol.receivedLists() && connectionRetries==0 && !errorDisplayed) {
+  } else if (!dccexProtocol.receivedLists() && connectionRetries == 0 && !errorDisplayed) {
     oled.clear();
     oled.setCursor(0, 0);
     oled.print(F("Could not retrieve roster"));
     CONSOLE.println(F("\nCould not retrieve roster"));
-    errorDisplayed=true;
+    errorDisplayed = true;
   } else if (dccexProtocol.receivedLists() && !setupScreen) {
-    setupScreen=true;
+    setupScreen = true;
     CONSOLE.println(F("Roster retrieved"));
     populateMenu();
   }
@@ -70,7 +70,7 @@ void getRoster() {
 
 void populateMenu() {
   if (dccexProtocol.roster->getFirst()) {
-    for (Loco* r=dccexProtocol.roster->getFirst(); r; r=r->getNext()) {
+    for (Loco *r = dccexProtocol.roster->getFirst(); r; r = r->getNext()) {
       currentMenu->addItem(new LocoMenuItem(r));
       CONSOLE.println(r->getName());
     }
@@ -79,30 +79,30 @@ void populateMenu() {
 }
 
 void togglePower() {
-  if (trackPower==TrackPower::PowerUnknown || trackPower==TrackPower::PowerOff) {
+  if (trackPower == TrackPower::PowerUnknown || trackPower == TrackPower::PowerOff) {
     dccexProtocol.powerOn();
-  } else if (trackPower==TrackPower::PowerOn) {
+  } else if (trackPower == TrackPower::PowerOn) {
     dccexProtocol.powerOff();
   }
   if (selectedLoco) {
-    encoderMode=OPERATE_LOCO;
-    menuDisplay=false;
+    encoderMode = OPERATE_LOCO;
+    menuDisplay = false;
     switchDisplay();
   } else {
-    currentMenu=&rosterMenu;
-    encoderMode=SELECT_LOCO;
-    menuDisplay=true;
+    currentMenu = &rosterMenu;
+    encoderMode = SELECT_LOCO;
+    menuDisplay = true;
     switchDisplay();
   }
 }
 
 void forgetLoco() {
-  if (selectedLoco->getSource()==LocoSourceEntry) {
-    delete(selectedLoco);
+  if (selectedLoco->getSource() == LocoSourceEntry) {
+    delete (selectedLoco);
   }
-  selectedLoco=nullptr;
-  currentMenu=&rosterMenu;
-  encoderMode=SELECT_LOCO;
-  menuDisplay=true;
+  selectedLoco = nullptr;
+  currentMenu = &rosterMenu;
+  encoderMode = SELECT_LOCO;
+  menuDisplay = true;
   switchDisplay();
 }

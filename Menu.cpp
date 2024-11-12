@@ -15,73 +15,53 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
 #include "Menu.h"
+#include <Arduino.h>
 
 // Class MenuItem
 
-MenuItem::MenuItem(const char* label)
-: _label(strdup(label)) {
-  _next=nullptr;
-}
+MenuItem::MenuItem(const char *label) : _label(strdup(label)) { _next = nullptr; }
 
-const char* MenuItem::getLabel() {
-  return _label;
-}
+const char *MenuItem::getLabel() { return _label; }
 
-void MenuItem::setNext(MenuItem* item) {
-  _next=item;
-}
-  
-MenuItem* MenuItem::getNext() {
-  return _next;
-}
+void MenuItem::setNext(MenuItem *item) { _next = item; }
 
-void MenuItem::setIndex(int index) {
-  _index=index;
-}
+MenuItem *MenuItem::getNext() { return _next; }
 
-int MenuItem::getIndex() {
-  return _index;
-}
+void MenuItem::setIndex(int index) { _index = index; }
+
+int MenuItem::getIndex() { return _index; }
 
 // Class LocoMenuItem
 
-LocoMenuItem::LocoMenuItem(Loco* object)
-: MenuItem(object->getName()), _locoObject(object) {}
+LocoMenuItem::LocoMenuItem(Loco *object) : MenuItem(object->getName()), _locoObject(object) {}
 
-Loco* LocoMenuItem::getLocoObject() {
-  return _locoObject;
-}
+Loco *LocoMenuItem::getLocoObject() { return _locoObject; }
 
 // Class ActionMenuItem
 
-ActionMenuItem::ActionMenuItem(const char* label, Action action)
-: MenuItem(label), _action(action) {}
+ActionMenuItem::ActionMenuItem(const char *label, Action action) : MenuItem(label), _action(action) {}
 
-void ActionMenuItem::callAction() {
-  _action();
-}
+void ActionMenuItem::callAction() { _action(); }
 
 // Class Menu
 
-Menu::Menu(const char* label)
-: _label(label) {
-  _first=nullptr;
-  _itemCount=0;
-  _currentPage=0;
-  _currentIndex=0;
+Menu::Menu(const char *label) : _label(label) {
+  _first = nullptr;
+  _itemCount = 0;
+  _currentPage = 0;
+  _currentIndex = 0;
 };
 
-void Menu::addItem(MenuItem* item) {
-  if (this->_first==nullptr) {
-    this->_first=item;
+void Menu::addItem(MenuItem *item) {
+  if (this->_first == nullptr) {
+    this->_first = item;
   } else {
-    MenuItem* current=this->_first;
-    while (current->getNext()!=nullptr) {
-      current=current->getNext();
+    MenuItem *current = this->_first;
+    while (current->getNext() != nullptr) {
+      current = current->getNext();
     }
     current->setNext(item);
   }
@@ -89,35 +69,23 @@ void Menu::addItem(MenuItem* item) {
   _itemCount++;
 }
 
-MenuItem* Menu::getFirst() {
-  return _first;
-}
+MenuItem *Menu::getFirst() { return _first; }
 
-MenuItem* Menu::getItemAtIndex(int index) {
-  for (MenuItem* item=_first; item; item=item->getNext()) {
-    if (item->getIndex()==index) {
+MenuItem *Menu::getItemAtIndex(int index) {
+  for (MenuItem *item = _first; item; item = item->getNext()) {
+    if (item->getIndex() == index) {
       return item;
     }
   }
   return nullptr;
 }
 
-int Menu::getItemCount() {
-  return _itemCount;
-}
+int Menu::getItemCount() { return _itemCount; }
 
-int Menu::getItemsPerPage() {
-  return _itemsPerPage;
-}
+int Menu::getItemsPerPage() { return _itemsPerPage; }
 
-int Menu::getCurrentPage() {
-  return _currentPage;
-}
+int Menu::getCurrentPage() { return _currentPage; }
 
-void Menu::setCurrentPage(int page) {
-  _currentPage=page;
-}
+void Menu::setCurrentPage(int page) { _currentPage = page; }
 
-const char* Menu::getLabel() {
-  return _label;
-}
+const char *Menu::getLabel() { return _label; }

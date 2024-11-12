@@ -15,22 +15,21 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef DCCEXCALLBACKS_H
 #define DCCEXCALLBACKS_H
 
+#include "EncoderFunctions.h"
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include "EncoderFunctions.h"
 
 class DCCEXCallbacks : public DCCEXProtocolDelegate {
 public:
   void receivedServerVersion(int major, int minor, int patch);
-  void receivedLocoUpdate(Loco* loco);
+  void receivedLocoUpdate(Loco *loco);
   void receivedTrackPower(TrackPower state);
   // void receivedReadLoco(int address);
-
 };
 
 #endif

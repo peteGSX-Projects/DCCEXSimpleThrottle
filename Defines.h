@@ -15,7 +15,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef DEFINES_H
 #define DEFINES_H
@@ -23,11 +23,11 @@
 #include <Arduino.h>
 
 // If we haven't got a custom myConfig.h, use the example
-#if __has_include ("myConfig.h")
-  #include "myConfig.h"
+#if __has_include("myConfig.h")
+#include "myConfig.h"
 #else
-  #warning myConfig.h not found. Using defaults from myConfig.example.h
-  #include "myConfig.example.h"
+#warning myConfig.h not found. Using defaults from myConfig.example.h
+#include "myConfig.example.h"
 #endif
 
 // If connection retries not defined, define default 20
@@ -50,14 +50,14 @@ extern WiFiClient wifiClient;
 #define CLIENT wifiClient
 
 struct EXCommandStation {
-  const char* label;
+  const char *label;
   IPAddress ipaddress;
   int port;
-  const char* ssid;
-  const char* password;
+  const char *ssid;
+  const char *password;
 };
 
-extern EXCommandStation* csServers;
+extern EXCommandStation *csServers;
 extern const int CS_SERVERS;
 #endif
 

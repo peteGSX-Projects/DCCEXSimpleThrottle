@@ -15,14 +15,14 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef DEVICEFUNCTIONS_H
 #define DEVICEFUNCTIONS_H
 
-#include <Arduino.h>
 #include "Defines.h"
 #include "DisplayFunctions.h"
+#include <Arduino.h>
 
 // Disabling JTAG is required to avoid pin conflicts on Bluepill
 #if defined(ARDUINO_BLUEPILL_F103C8)

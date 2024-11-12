@@ -15,12 +15,12 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
+#include "DCCEXFunctions.h"
 #include "DeviceFunctions.h"
 #include "EncoderFunctions.h"
-#include "DCCEXFunctions.h"
+#include <Arduino.h>
 
 // Disabling JTAG is required to avoid pin conflicts on Bluepill
 #if defined(ARDUINO_BLUEPILL_F103C8)
@@ -36,24 +36,24 @@ void disableJTAG() {
 #if defined(ARDUINO_ARCH_ESP32)
 
 // If we haven't got a custom myWiFiConfig.h, use the example
-#if __has_include ( "myWiFiConfig.h")
-  #include "myWiFiConfig.h"
+#if __has_include("myWiFiConfig.h")
+#include "myWiFiConfig.h"
 #else
-  #warning myWiFiConfig.h not found. Using defaults from myWiFiConfig.example.h
-  #include "myWiFiConfig.example.h"
+#warning myWiFiConfig.h not found. Using defaults from myWiFiConfig.example.h
+#include "myWiFiConfig.example.h"
 #endif
 
 WiFiClient wifiClient;
 
 void setupServerMenu() {
-  for (int i=0; i<CS_SERVERS; i++) {
+  for (int i = 0; i < CS_SERVERS; i++) {
     serverMenu.addItem(new MenuItem(csServers[i].label));
   }
 }
 
 void setupWiFi(int server) {
   // Connect to WiFi network
-  int retries=CONNECT_RETRIES;
+  int retries = CONNECT_RETRIES;
   oled.clear();
   oled.setFont(DEFAULT_FONT);
   oled.setCursor(0, 10);
@@ -61,8 +61,8 @@ void setupWiFi(int server) {
   oled.setCursor(0, 20);
   oled.print(csServers[server].label);
   oled.setFont(WIFI_FONT);
-  int X=0;
-  int Y=30;
+  int X = 0;
+  int Y = 30;
   oled.sendBuffer();
   CONSOLE.print("Connecting to WiFi network ");
   CONSOLE.println(csServers[server].label);
@@ -71,18 +71,18 @@ void setupWiFi(int server) {
   CONSOLE.print("|");
   CONSOLE.println(csServers[server].password);
   WiFi.begin(csServers[server].ssid, csServers[server].password);
-  while (WiFi.status()!=WL_CONNECTED && retries>0) {
+  while (WiFi.status() != WL_CONNECTED && retries > 0) {
     oled.drawGlyph(X, Y, 0x0048);
-    X+=9;
-    if (X>125) {
-      X=0;
-      Y+=9;
+    X += 9;
+    if (X > 125) {
+      X = 0;
+      Y += 9;
     }
     oled.sendBuffer();
     retries--;
     delay(1000);
   }
-  if (WiFi.status()!=WL_CONNECTED) {
+  if (WiFi.status() != WL_CONNECTED) {
     displayError("Failed WiFi connection");
   } else {
     CONSOLE.print("Connected with IP: ");
@@ -99,18 +99,18 @@ void setupWiFi(int server) {
     oled.setCursor(0, 30);
     CONSOLE.print("Connecting to server ");
     CONSOLE.println(csServers[server].label);
-    retries=CONNECT_RETRIES;
-    while (!CLIENT.connect(csServers[server].ipaddress, csServers[server].port) && retries>0) {
+    retries = CONNECT_RETRIES;
+    while (!CLIENT.connect(csServers[server].ipaddress, csServers[server].port) && retries > 0) {
       oled.print(F("#"));
       oled.sendBuffer();
       retries--;
       delay(500);
     }
-    if (retries==0) {
+    if (retries == 0) {
       displayError("Failed server connection");
     } else {
       CONSOLE.println("Connected to the server");
-      connected=true;
+      connected = true;
     }
   }
 }

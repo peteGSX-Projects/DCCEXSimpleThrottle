@@ -15,12 +15,12 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
 #include "DisplayFunctions.h"
 #include "EncoderFunctions.h"
 #include "Version.h"
+#include <Arduino.h>
 
 #if defined(OLED_USE_I2C)
 OLED oled(U8G2_R0, U8X8_PIN_NONE, SCL_PIN, SDA_PIN);
@@ -73,11 +73,11 @@ void displayRuntime() {
     }
     if (directionChanged) {
       displayDirection();
-      directionChanged=false;
+      directionChanged = false;
     }
     if (trackPowerChanged) {
       displayTrackPower();
-      trackPowerChanged=false;
+      trackPowerChanged = false;
     }
   }
 }
@@ -101,14 +101,14 @@ void displayDirection() {
   oled.print(F("       "));
   oled.setCursor(30, 35);
   if (selectedLoco) {
-    if (selectedLoco->getDirection()==Forward) {
+    if (selectedLoco->getDirection() == Forward) {
       oled.print(F("Forward"));
     } else {
       oled.print(F("Reverse"));
     }
   } else {
     oled.print(F("  ---"));
-  }  
+  }
   oled.sendBuffer();
 }
 
@@ -134,20 +134,20 @@ void displayTrackPower() {
   oled.print("   ");
   oled.setCursor(112, 63);
   switch (trackPower) {
-    case TrackPower::PowerOff:
-      oled.print(F("Off"));
-      break;
+  case TrackPower::PowerOff:
+    oled.print(F("Off"));
+    break;
 
-    case TrackPower::PowerOn:
-      oled.print(F("On"));
-      break;
+  case TrackPower::PowerOn:
+    oled.print(F("On"));
+    break;
 
-    case TrackPower::PowerUnknown:
-      oled.print(F("?"));
-      break;
+  case TrackPower::PowerUnknown:
+    oled.print(F("?"));
+    break;
 
-    default:
-      break;
+  default:
+    break;
   }
   oled.sendBuffer();
 }
@@ -159,40 +159,40 @@ void displayMenu() {
   oled.drawHLine(0, 7, 128);
   oled.setCursor(0, 6);
   oled.print(F(currentMenu->getLabel()));
-  int startIdx=currentMenu->getCurrentPage()*currentMenu->getItemsPerPage();
-  int row=11;
-  for (int i=0; i<currentMenu->getItemsPerPage(); i++) {
-    int idx=startIdx + i;
-    MenuItem* item=currentMenu->getItemAtIndex(idx);
-    if (idx<currentMenu->getItemCount()) {
-      if (idx==selectedMenuItem) {
+  int startIdx = currentMenu->getCurrentPage() * currentMenu->getItemsPerPage();
+  int row = 11;
+  for (int i = 0; i < currentMenu->getItemsPerPage(); i++) {
+    int idx = startIdx + i;
+    MenuItem *item = currentMenu->getItemAtIndex(idx);
+    if (idx < currentMenu->getItemCount()) {
+      if (idx == selectedMenuItem) {
         oled.setDrawColor(0);
       } else {
         oled.setDrawColor(1);
       }
-      oled.drawStr(0, row+=8, item->getLabel());
+      oled.drawStr(0, row += 8, item->getLabel());
     }
   }
   oled.sendBuffer();
 }
 
 void scrollMenu(int direction) {
-  int newIndex=selectedMenuItem+direction;
-  int currentPage=currentMenu->getCurrentPage();
-  int itemsPP=currentMenu->getItemsPerPage();
-  if (newIndex>=0 && newIndex<currentMenu->getItemCount()) {
-    selectedMenuItem=newIndex;
-    if (selectedMenuItem<currentPage*itemsPP || selectedMenuItem>=(currentPage+1)*itemsPP) {
-      currentPage+=direction>0 ? 1 : -1;
+  int newIndex = selectedMenuItem + direction;
+  int currentPage = currentMenu->getCurrentPage();
+  int itemsPP = currentMenu->getItemsPerPage();
+  if (newIndex >= 0 && newIndex < currentMenu->getItemCount()) {
+    selectedMenuItem = newIndex;
+    if (selectedMenuItem < currentPage * itemsPP || selectedMenuItem >= (currentPage + 1) * itemsPP) {
+      currentPage += direction > 0 ? 1 : -1;
       currentMenu->setCurrentPage(currentPage);
     }
     CONSOLE.print(F("selectedMenuItem: "));
     CONSOLE.println(selectedMenuItem);
     displayMenu();
-  }  
+  }
 }
 
-void displayError(const char* error) {
+void displayError(const char *error) {
   oled.clear();
   oled.setFont(DEFAULT_FONT);
   oled.setCursor(0, 10);

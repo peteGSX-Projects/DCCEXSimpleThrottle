@@ -15,16 +15,16 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef DCCEXFUNCTIONS_H
 #define DCCEXFUNCTIONS_H
 
-#include <Arduino.h>
-#include <DCCEXProtocol.h>
 #include "DCCEXCallbacks.h"
 #include "DisplayFunctions.h"
 #include "EncoderFunctions.h"
+#include <Arduino.h>
+#include <DCCEXProtocol.h>
 
 extern DCCEXProtocol dccexProtocol;
 extern DCCEXCallbacks dccexCallbacks;

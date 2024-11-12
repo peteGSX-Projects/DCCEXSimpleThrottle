@@ -15,17 +15,17 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
+#include "DCCEXFunctions.h"
 #include "Defines.h"
+#include "DeviceFunctions.h"
 #include "DisplayFunctions.h"
 #include "EncoderFunctions.h"
-#include "DCCEXFunctions.h"
-#include "DeviceFunctions.h"
+#include <Arduino.h>
 
-bool connected=false;
-bool protocolSetup=false;
+bool connected = false;
+bool protocolSetup = false;
 
 void setup() {
 #if defined(ARDUINO_BLUEPILL_F103C8)
@@ -37,14 +37,14 @@ void setup() {
   setupExtrasMenu();
   displayStartupInfo();
 #if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
-  currentMenu=&rosterMenu;
-  encoderMode=SELECT_LOCO;
+  currentMenu = &rosterMenu;
+  encoderMode = SELECT_LOCO;
   CLIENT.begin(115200);
-  connected=true;
+  connected = true;
 #elif defined(ARDUINO_ARCH_ESP32)
   setupServerMenu();
-  currentMenu=&serverMenu;
-  encoderMode=SELECT_SERVER;
+  currentMenu = &serverMenu;
+  encoderMode = SELECT_SERVER;
   displayMenu();
 #endif
 }

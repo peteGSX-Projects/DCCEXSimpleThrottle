@@ -15,28 +15,28 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
-#include "Defines.h"
-#include "EncoderFunctions.h"
 #include "DCCEXFunctions.h"
-#include "DisplayFunctions.h"
+#include "Defines.h"
 #include "DeviceFunctions.h"
+#include "DisplayFunctions.h"
+#include "EncoderFunctions.h"
+#include <Arduino.h>
 
 Rotary encoder(ENCODER_DT, ENCODER_CLK);
 Switch button(ENCODER_SW);
-bool menuDisplay=true;
-bool speedChanged=false;
-bool directionChanged=false;
-Loco* selectedLoco=nullptr;
+bool menuDisplay = true;
+bool speedChanged = false;
+bool directionChanged = false;
+Loco *selectedLoco = nullptr;
 Menu rosterMenu("Select loco");
 Menu serverMenu("Select server");
 Menu extrasMenu("Select action");
-Menu* currentMenu=nullptr;
-int selectedMenuItem=0;
-TrackPower trackPower=TrackPower::PowerUnknown;
-bool trackPowerChanged=false;
+Menu *currentMenu = nullptr;
+int selectedMenuItem = 0;
+TrackPower trackPower = TrackPower::PowerUnknown;
+bool trackPowerChanged = false;
 EncoderMode encoderMode;
 
 void setupButton() {
@@ -46,24 +46,24 @@ void setupButton() {
 }
 
 void processEncoder() {
-  unsigned char result=encoder.process();
+  unsigned char result = encoder.process();
   if (menuDisplay) {
-    if (result==DIR_CW) {
+    if (result == DIR_CW) {
       scrollMenu(1);
-    } else if (result==DIR_CCW) {
+    } else if (result == DIR_CCW) {
       scrollMenu(-1);
     }
   } else {
     if (selectedLoco) {
-      int speed=selectedLoco->getSpeed();
-      if (result==DIR_CW && speed<126) {
+      int speed = selectedLoco->getSpeed();
+      if (result == DIR_CW && speed < 126) {
         speed++;
-        speedChanged=true;
-      } else if (result==DIR_CCW && speed>0) {
+        speedChanged = true;
+      } else if (result == DIR_CCW && speed > 0) {
         speed--;
-        speedChanged=true;
+        speedChanged = true;
       } else {
-        speedChanged=false;
+        speedChanged = false;
       }
       if (speedChanged) {
         dccexProtocol.setThrottle(selectedLoco, speed, selectedLoco->getDirection());
@@ -73,102 +73,102 @@ void processEncoder() {
   button.poll();
 }
 
-void singleClickCallback(void* param) {
+void singleClickCallback(void *param) {
   CONSOLE.println(F("Single click"));
-  switch(encoderMode) {
-    case OPERATE_LOCO: {
-      if (selectedLoco && selectedLoco->getSpeed()==0) {
-        Direction direction=(selectedLoco->getDirection()==Direction::Reverse) ? Direction::Forward : Direction::Reverse;
-        dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
-      } else if (selectedLoco && selectedLoco->getSpeed()>0) {
-        dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
-      }
-      break;
+  switch (encoderMode) {
+  case OPERATE_LOCO: {
+    if (selectedLoco && selectedLoco->getSpeed() == 0) {
+      Direction direction =
+          (selectedLoco->getDirection() == Direction::Reverse) ? Direction::Forward : Direction::Reverse;
+      dccexProtocol.setThrottle(selectedLoco, selectedLoco->getSpeed(), direction);
+    } else if (selectedLoco && selectedLoco->getSpeed() > 0) {
+      dccexProtocol.setThrottle(selectedLoco, 0, selectedLoco->getDirection());
     }
+    break;
+  }
 
 #if defined(ARDUINO_ARCH_ESP32)
-    case SELECT_SERVER: {
-      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
-      setupWiFi(selectedItem->getIndex());
-      if (connected) {
-        encoderMode=SELECT_LOCO;
-        currentMenu=&rosterMenu;
-        switchDisplay();
-      }
-      break;
+  case SELECT_SERVER: {
+    MenuItem *selectedItem = currentMenu->getItemAtIndex(selectedMenuItem);
+    setupWiFi(selectedItem->getIndex());
+    if (connected) {
+      encoderMode = SELECT_LOCO;
+      currentMenu = &rosterMenu;
+      switchDisplay();
     }
+    break;
+  }
 #endif
 
-    case SELECT_LOCO: {
-      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
-      if (LocoMenuItem* locoItem=static_cast<LocoMenuItem*>(selectedItem)) {
-        selectedLoco=locoItem->getLocoObject();
-        encoderMode=OPERATE_LOCO;
-        menuDisplay=false;
-        switchDisplay();
-      }
-      break;
+  case SELECT_LOCO: {
+    MenuItem *selectedItem = currentMenu->getItemAtIndex(selectedMenuItem);
+    if (LocoMenuItem *locoItem = static_cast<LocoMenuItem *>(selectedItem)) {
+      selectedLoco = locoItem->getLocoObject();
+      encoderMode = OPERATE_LOCO;
+      menuDisplay = false;
+      switchDisplay();
     }
+    break;
+  }
 
-    case SELECT_EXTRAS: {
-      MenuItem* selectedItem=currentMenu->getItemAtIndex(selectedMenuItem);
-      if (ActionMenuItem* actionItem=static_cast<ActionMenuItem*>(selectedItem)) {
-        actionItem->callAction();
-      }
-      break;
+  case SELECT_EXTRAS: {
+    MenuItem *selectedItem = currentMenu->getItemAtIndex(selectedMenuItem);
+    if (ActionMenuItem *actionItem = static_cast<ActionMenuItem *>(selectedItem)) {
+      actionItem->callAction();
     }
+    break;
+  }
 
-    default:
-      break;
+  default:
+    break;
   }
 }
 
-void doubleClickCallback(void* param) {
+void doubleClickCallback(void *param) {
   CONSOLE.println(F("Double click"));
-  switch(encoderMode) {
-    case OPERATE_LOCO: {
-      if (selectedLoco && selectedLoco->getSpeed()==0 && !menuDisplay) {
-        menuDisplay=true;
-        currentMenu=&rosterMenu;
-        encoderMode=SELECT_LOCO;
-        switchDisplay();
-      }
-      break;
-    }
-
-    case SELECT_LOCO: {
-      menuDisplay=true;
-      currentMenu=&extrasMenu;
-      encoderMode=SELECT_EXTRAS;
+  switch (encoderMode) {
+  case OPERATE_LOCO: {
+    if (selectedLoco && selectedLoco->getSpeed() == 0 && !menuDisplay) {
+      menuDisplay = true;
+      currentMenu = &rosterMenu;
+      encoderMode = SELECT_LOCO;
       switchDisplay();
-      break;
     }
-
-    case SELECT_EXTRAS: {
-      menuDisplay=true;
-      currentMenu=&rosterMenu;
-      encoderMode=SELECT_LOCO;
-      switchDisplay();
-      break;
-    }
-
-    default:
-      break;
+    break;
   }
-  
+
+  case SELECT_LOCO: {
+    menuDisplay = true;
+    currentMenu = &extrasMenu;
+    encoderMode = SELECT_EXTRAS;
+    switchDisplay();
+    break;
+  }
+
+  case SELECT_EXTRAS: {
+    menuDisplay = true;
+    currentMenu = &rosterMenu;
+    encoderMode = SELECT_LOCO;
+    switchDisplay();
+    break;
+  }
+
+  default:
+    break;
+  }
 }
 
-void longPressCallback(void* param) {
+void longPressCallback(void *param) {
   CONSOLE.println(F("Long press"));
-  switch(encoderMode) {
-    case OPERATE_LOCO: {
-      if (selectedLoco && selectedLoco->getSpeed()>0) {
-        dccexProtocol.emergencyStop();
-      }
-      break;
+  switch (encoderMode) {
+  case OPERATE_LOCO: {
+    if (selectedLoco && selectedLoco->getSpeed() > 0) {
+      dccexProtocol.emergencyStop();
     }
+    break;
+  }
 
-    default:
-      break;
+  default:
+    break;
   }
 }

@@ -15,11 +15,11 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
-#include <Arduino.h>
 #include "DCCEXCallbacks.h"
 #include "Defines.h"
+#include <Arduino.h>
 
 void DCCEXCallbacks::receivedServerVersion(int major, int minor, int patch) {
   CONSOLE.print(F("Received version: "));
@@ -30,16 +30,17 @@ void DCCEXCallbacks::receivedServerVersion(int major, int minor, int patch) {
   CONSOLE.print(patch);
 }
 
-void DCCEXCallbacks::receivedLocoUpdate(Loco* loco) {
-  if (selectedLoco!=loco || menuDisplay) return;
-  speedChanged=true;
-  directionChanged=true;
+void DCCEXCallbacks::receivedLocoUpdate(Loco *loco) {
+  if (selectedLoco != loco || menuDisplay)
+    return;
+  speedChanged = true;
+  directionChanged = true;
 }
 
 void DCCEXCallbacks::receivedTrackPower(TrackPower state) {
-  if (trackPower!=state) {
-    trackPower=state;
-    trackPowerChanged=true;
+  if (trackPower != state) {
+    trackPower = state;
+    trackPowerChanged = true;
   }
 }
 

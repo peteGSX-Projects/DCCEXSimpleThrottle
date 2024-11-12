@@ -15,28 +15,28 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef ENCODERFUNCTIONS_H
 #define ENCODERFUNCTIONS_H
 
-#include <Arduino.h>
-#include <DCCEXProtocol.h>
-#include "avdweb_Switch.h"
-#include "Rotary.h"
 #include "Defines.h"
 #include "Menu.h"
+#include "Rotary.h"
+#include "avdweb_Switch.h"
+#include <Arduino.h>
+#include <DCCEXProtocol.h>
 
 extern Rotary encoder;
 extern Switch button;
 extern bool menuDisplay;
 extern bool speedChanged;
 extern bool directionChanged;
-extern Loco* selectedLoco;
+extern Loco *selectedLoco;
 extern Menu rosterMenu;
 extern Menu serverMenu;
 extern Menu extrasMenu;
-extern Menu* currentMenu;
+extern Menu *currentMenu;
 extern int selectedMenuItem;
 extern TrackPower trackPower;
 extern bool trackPowerChanged;
@@ -44,8 +44,8 @@ extern EncoderMode encoderMode;
 
 void setupButton();
 void processEncoder();
-void singleClickCallback(void* param);
-void doubleClickCallback(void* param);
-void longPressCallback(void* param);
+void singleClickCallback(void *param);
+void doubleClickCallback(void *param);
+void longPressCallback(void *param);
 
 #endif

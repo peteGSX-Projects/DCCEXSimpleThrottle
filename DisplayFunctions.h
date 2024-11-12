@@ -15,14 +15,14 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 #ifndef DISPLAYFUNCTIONS_H
 #define DISPLAYFUNCTIONS_H
 
+#include "Defines.h"
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include "Defines.h"
 #include <U8g2lib.h>
 
 // Include the right libraries and set correct alias for connection type
@@ -42,9 +42,9 @@
 #define DIRECTION_FONT u8g2_font_6x10_mr
 #define ADDRESS_FONT u8g2_font_6x10_mr
 #define ESTOP_FONT u8g2_font_6x12_mr
-#define WIFI_FONT u8g2_font_open_iconic_www_1x_t // use 0048
+#define WIFI_FONT u8g2_font_open_iconic_www_1x_t      // use 0048
 #define CS_FONT u8g2_font_streamline_transportation_t // use 0034
-#define ERROR_FONT u8g2_font_emoticons21_tr // use 0029 for error
+#define ERROR_FONT u8g2_font_emoticons21_tr           // use 0029 for error
 
 // Extern OLED declaration
 extern OLED oled;
@@ -59,6 +59,6 @@ void displayLoco();
 void displayTrackPower();
 void displayMenu();
 void scrollMenu(int direction);
-void displayError(const char* error);
+void displayError(const char *error);
 
 #endif
