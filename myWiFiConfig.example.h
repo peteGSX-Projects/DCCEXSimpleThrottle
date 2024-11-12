@@ -1,8 +1,8 @@
-// Example config_wifi.h file
-// Copy this to config_wifi.h and update to suit
+// Example myWiFiConfig.h file
+// Copy this to myWiFiConfig.h and update to suit
 
-#ifndef CONFIG_WIFI_H
-#define CONFIG_WIFI_H
+#ifndef MYWIFICONFIG_H
+#define MYWIFICONFIG_H
 
 #include "defines.h"
 
@@ -18,4 +18,4 @@ EXCommandStation* csServers=new EXCommandStation[CS_SERVERS]{
 };
 
 #endif  // ESP32
-#endif  // CONFIG_WIFI_H
+#endif  // MYWIFICONFIG_H

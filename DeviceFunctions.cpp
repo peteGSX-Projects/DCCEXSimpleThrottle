@@ -35,12 +35,12 @@ void disableJTAG() {
 
 #if defined(ARDUINO_ARCH_ESP32)
 
-// If we haven't got a custom config_wifi.h, use the example
-#if __has_include ( "config_wifi.h")
-  #include "config_wifi.h"
+// If we haven't got a custom myWiFiConfig.h, use the example
+#if __has_include ( "myWiFiConfig.h")
+  #include "myWiFiConfig.h"
 #else
-  #warning config_wifi.h not found. Using defaults from config_wifi.example.h
-  #include "config_wifi.example.h"
+  #warning myWiFiConfig.h not found. Using defaults from myWiFiConfig.example.h
+  #include "myWiFiConfig.example.h"
 #endif
 
 WiFiClient wifiClient;
