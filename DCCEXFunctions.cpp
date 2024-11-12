@@ -19,7 +19,7 @@
 
 #include <Arduino.h>
 #include "DCCEXFunctions.h"
-#include "defines.h"
+#include "Defines.h"
 
 DCCEXProtocol dccexProtocol;
 DCCEXCallbacks dccexCallbacks;

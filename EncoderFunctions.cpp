@@ -18,7 +18,7 @@
 */
 
 #include <Arduino.h>
-#include "defines.h"
+#include "Defines.h"
 #include "EncoderFunctions.h"
 #include "DCCEXFunctions.h"
 #include "DisplayFunctions.h"

@@ -1,8 +1,8 @@
-// Example config.h file
-// Copy this to config.h and update to suit
+// Example myConfig.h file
+// Copy this to myConfig.h and update to suit
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef MYCONFIG_H
+#define MYCONFIG_H
 
 // Recommended rotary encoder pin definitions for Bluepill/Blackpill
 #define ENCODER_DT PC14
@@ -43,4 +43,4 @@
 // MISO - 19
 // MOSI - 23
 
-#endif
+#endif // MYCONFIG_H

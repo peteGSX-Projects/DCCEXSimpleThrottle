@@ -24,7 +24,7 @@
 #include <DCCEXProtocol.h>
 #include "avdweb_Switch.h"
 #include "Rotary.h"
-#include "defines.h"
+#include "Defines.h"
 #include "Menu.h"
 
 extern Rotary encoder;

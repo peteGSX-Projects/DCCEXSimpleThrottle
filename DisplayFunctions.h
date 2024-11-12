@@ -22,7 +22,7 @@
 
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
-#include "defines.h"
+#include "Defines.h"
 #include <U8g2lib.h>
 
 // Include the right libraries and set correct alias for connection type
