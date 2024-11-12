@@ -22,12 +22,12 @@
 
 #include <Arduino.h>
 
-// If we haven't got a custom config.h, use the example
-#if __has_include ( "config.h")
-  #include "config.h"
+// If we haven't got a custom myConfig.h, use the example
+#if __has_include ("myConfig.h")
+  #include "myConfig.h"
 #else
-  #warning config.h not found. Using defaults from config.example.h
-  #include "config.example.h"
+  #warning myConfig.h not found. Using defaults from myConfig.example.h
+  #include "myConfig.example.h"
 #endif
 
 // If connection retries not defined, define default 20

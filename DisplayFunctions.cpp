@@ -20,7 +20,7 @@
 #include <Arduino.h>
 #include "DisplayFunctions.h"
 #include "EncoderFunctions.h"
-#include "version.h"
+#include "Version.h"
 
 #if defined(OLED_USE_I2C)
 OLED oled(U8G2_R0, U8X8_PIN_NONE, SCL_PIN, SDA_PIN);

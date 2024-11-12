@@ -19,7 +19,7 @@
 
 #include <Arduino.h>
 #include "DCCEXCallbacks.h"
-#include "defines.h"
+#include "Defines.h"
 
 void DCCEXCallbacks::receivedServerVersion(int major, int minor, int patch) {
   CONSOLE.print(F("Received version: "));

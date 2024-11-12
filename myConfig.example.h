@@ -1,5 +1,5 @@
-// Example config.h file
-// Copy this to config.h and update to suit
+// Example myConfig.h file
+// Copy this to myConfig.h and update to suit
 
 #ifndef CONFIG_H
 #define CONFIG_H

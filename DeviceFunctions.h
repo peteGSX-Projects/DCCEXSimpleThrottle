@@ -21,7 +21,7 @@
 #define DEVICEFUNCTIONS_H
 
 #include <Arduino.h>
-#include "defines.h"
+#include "Defines.h"
 #include "DisplayFunctions.h"
 
 // Disabling JTAG is required to avoid pin conflicts on Bluepill
