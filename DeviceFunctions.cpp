@@ -35,19 +35,30 @@ void disableJTAG() {
 
 #if defined(ARDUINO_ARCH_ESP32)
 
-// If we haven't got a custom myWiFiConfig.h, use the example
-#if __has_include("myWiFiConfig.h")
-#include "myWiFiConfig.h"
-#else
-#warning myWiFiConfig.h not found. Using defaults from myWiFiConfig.example.h
-#include "myWiFiConfig.example.h"
-#endif
+const char *csNames[] = COMMANDSTATION_NAMES;
+const char *csIPs[] = COMMANDSTATION_IPS;
+const uint16_t csPorts[] = COMMANDSTATION_PORTS;
+const char *csSSIDs[] = COMMANDSTATION_SSIDS;
+const char *csPasswords[] = COMMANDSTATION_PASSWORDS;
 
+const uint8_t numberOfCommandStations = COMMANDSTATION_COUNT;
+EXCommandStation *csServers = new EXCommandStation[COMMANDSTATION_COUNT];
 WiFiClient wifiClient;
 
+void initialiseCSArray() {
+  for (int i = 0; i < numberOfCommandStations; i++) {
+    csServers[i].name = csNames[i];
+    csServers[i].ipAddress = convertIP(csIPs[i]);
+    csServers[i].port = csPorts[i];
+    csServers[i].ssid = csSSIDs[i];
+    csServers[i].password = csPasswords[i];
+  }
+}
+
 void setupServerMenu() {
-  for (int i = 0; i < CS_SERVERS; i++) {
-    serverMenu.addItem(new MenuItem(csServers[i].label));
+  for (int i = 0; i < numberOfCommandStations; i++) {
+    // serverMenu.addItem(new MenuItem(csServers[i].label));
+    serverMenu.addItem(new MenuItem(csServers[i].name));
   }
 }
 
@@ -59,13 +70,13 @@ void setupWiFi(int server) {
   oled.setCursor(0, 10);
   oled.print(F("Connecting to WiFi network: "));
   oled.setCursor(0, 20);
-  oled.print(csServers[server].label);
+  oled.print(csServers[server].name);
   oled.setFont(WIFI_FONT);
   int X = 0;
   int Y = 30;
   oled.sendBuffer();
   CONSOLE.print("Connecting to WiFi network ");
-  CONSOLE.println(csServers[server].label);
+  CONSOLE.println(csServers[server].name);
   CONSOLE.print("SSID|PASSWORD: ");
   CONSOLE.print(csServers[server].ssid);
   CONSOLE.print("|");
@@ -94,13 +105,13 @@ void setupWiFi(int server) {
     oled.setCursor(0, 10);
     oled.print(F("Connecting to server: "));
     oled.setCursor(0, 20);
-    oled.print(csServers[server].label);
+    oled.print(csServers[server].name);
     oled.sendBuffer();
     oled.setCursor(0, 30);
     CONSOLE.print("Connecting to server ");
-    CONSOLE.println(csServers[server].label);
+    CONSOLE.println(csServers[server].name);
     retries = CONNECT_RETRIES;
-    while (!CLIENT.connect(csServers[server].ipaddress, csServers[server].port) && retries > 0) {
+    while (!CLIENT.connect(csServers[server].ipAddress, csServers[server].port) && retries > 0) {
       oled.print(F("#"));
       oled.sendBuffer();
       retries--;
@@ -113,6 +124,24 @@ void setupWiFi(int server) {
       connected = true;
     }
   }
+}
+
+IPAddress convertIP(const char *ipAddressString) {
+  int first;
+  int second;
+  int third;
+  int fourth;
+  if (sscanf(ipAddressString, "%d.%d.%d.%d", &first, &second, &third, &fourth) == 4) {
+    if ((first >= 0 && first <= 255) && (second >= 0 && second <= 255) && (third >= 0 && third <= 255) &&
+        (fourth >= 0 && fourth <= 255)) {
+      return IPAddress(first, second, third, fourth);
+    } else {
+      CONSOLE.println("IP address is out of range");
+    }
+  } else {
+    CONSOLE.println("Invalid IP address format");
+  }
+  return IPAddress(0, 0, 0, 0);
 }
 #endif
 

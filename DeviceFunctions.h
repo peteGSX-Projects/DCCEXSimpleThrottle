@@ -31,8 +31,27 @@ void disableJTAG();
 
 #if defined(ARDUINO_ARCH_ESP32)
 #include <WiFi.h>
+
+// OLD WAY Define number of EX-CommandStation entries, including WiFi details
+// const int CS_SERVERS = 2;
+
+// EXCommandStation *csServers = new EXCommandStation[CS_SERVERS]{
+//     // {"Name", IPAddress(a, b, c, d), "Port", "WiFi SSID", "WiFi password"}, // This format
+//     {"Testing CS", IPAddress(192, 168, 4, 1), 2560, "SSID1", "PASSWORD1"}, // First EX-CommandStation's details
+//     {"Layout CS", IPAddress(192, 168, 0, 10), 2560, "SSID2", "PASSWORD2"}, // Second EX-CommandStation's details
+// };
+
+extern const uint8_t numberofCommandStations;
+extern EXCommandStation *csServers;
+
 void setupServerMenu();
+
 void setupWiFi(int server);
+
+/// @brief Validates and converts an IP address from the preprocessor macro string to an IPAddress object
+/// @param ipAddressString Preprocessor macro IP address string COMMANDSTATION_IP
+/// @return IPAddress object
+IPAddress convertIP(const char *ipAddressString);
 #endif
 void setupExtrasMenu();
 
