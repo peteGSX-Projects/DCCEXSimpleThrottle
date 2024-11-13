@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -36,7 +35,7 @@
 #endif
 
 // Define console and client based on device type
-#if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
+#if defined(ARDUINO_ARCH_STM32)
 #undef CONSOLE
 #undef CLIENT
 #define CONSOLE Serial
@@ -50,15 +49,13 @@ extern WiFiClient wifiClient;
 #define CLIENT wifiClient
 
 struct EXCommandStation {
-  const char *label;
-  IPAddress ipaddress;
-  int port;
+  const char *name;
+  IPAddress ipAddress;
+  uint16_t port;
   const char *ssid;
   const char *password;
 };
 
-extern EXCommandStation *csServers;
-extern const int CS_SERVERS;
 #endif
 
 extern bool connected;
@@ -69,5 +66,86 @@ enum EncoderMode {
   SELECT_SERVER,
   SELECT_EXTRAS,
 };
+
+// Default pin and OLED definitions for Bluepill/Blackpill
+#if defined(ARDUINO_ARCH_STM32)
+#ifndef ENCODER_DT
+#define ENCODER_DT PC14
+#endif // ENCODER_DT
+#ifndef ENCODER_CLK
+#define ENCODER_CLK PC15
+#endif // ENCODER_CLK
+#ifndef ENCODER_SW
+#define ENCODER_SW PA0
+#endif // ENCODER_SW
+#ifndef OLED_USE
+#define OLED_USE_I2C // Default to I2C for Bluepill
+#endif // OLED_USE
+#ifndef OLED_ADDRESS
+#define OLED_ADDRESS 0x3c
+#endif // OLED_ADDRESS
+#ifndef SCL_PIN
+#define SCL_PIN PB6
+#endif // SCL_PIN
+#ifndef SDA_PIN
+#define SDA_PIN PB7
+#endif // SDA_PIN
+#ifndef CS_PIN
+#define CS_PIN PA4
+#endif // CS_PIN
+#ifndef DC_PIN
+#define DC_PIN PA3
+#endif // DC_PIN
+// Reference:
+// SCK - PA5
+// MISO - PA6
+// MOSI - PA7
+
+// Default pin and OLED definitions for ESP32
+#elif defined(ARDUINO_ARCH_ESP32)
+
+#ifndef ENCODER_DT
+#define ENCODER_DT 12
+#endif // ENCODER_DT
+#ifndef ENCODER_CLK
+#define ENCODER_CLK 14
+#endif // ENCODER_CLK
+#ifndef ENCODER_SW
+#define ENCODER_SW 13
+#endif // ENCODER_SW
+#ifndef OLED_USE
+// #define OLED_USE_SPI // Default to SPI for ESP32
+#define OLED_USE_I2C
+#endif // OLED_USE
+#ifndef OLED_ADDRESS
+#define OLED_ADDRESS 0x3c
+#endif // OLED_ADDRESS
+#ifndef SCL_PIN
+#define SCL_PIN 22
+#endif // SCL_PIN
+#ifndef SDA_PIN
+#define SDA_PIN 23
+#endif // SDA_PIN
+#ifndef CS_PIN
+#define CS_PIN 5
+#endif // CS_PIN
+#ifndef DC_PIN
+// #define DC_PIN ?
+#endif // DC_PIN
+// Reference:
+// SCK - 18
+// MISO - 19
+// MOSI - 23
+
+/*
+Macro to create CommandStation and WiFi configuration details
+*/
+#define CREATE_COMMANDSTATION_SERVER(index)                                                                            \
+  {                                                                                                                    \
+    COMMANDSTATION_LABEL_##index, convertIP(COMMANDSTATION_IP_##index), COMMANDSTATION_PORT_ #index,                   \
+        COMMANDSTATION_SSID_ #index, COMMANDSTATION_PASSWORD_##index                                                   \
+  }
+
+#endif // ARCH type
 
 #endif
