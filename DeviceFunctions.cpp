@@ -56,9 +56,11 @@ void initialiseCSArray() {
 }
 
 void setupServerMenu() {
-  for (int i = 0; i < numberOfCommandStations; i++) {
-    // serverMenu.addItem(new MenuItem(csServers[i].label));
-    serverMenu.addItem(new MenuItem(csServers[i].name));
+  initialiseCSArray();
+  if (csServers) {
+    for (int i = 0; i < numberOfCommandStations; i++) {
+      serverMenu.addItem(new MenuItem(csServers[i].name));
+    }
   }
 }
 
