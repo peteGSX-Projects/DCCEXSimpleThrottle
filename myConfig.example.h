@@ -23,16 +23,11 @@ Each list of elements must be surrounded by curly brackets {}
 #define COMMANDSTATION_SSIDS {"SSID1", "SSID2"}
 #define COMMANDSTATION_PASSWORDS {"Password1", "Password2"}
 */
-#define COMMANDSTATION_NAMES                                                                                           \
-  { "CommandStation 1", "CommandStation 2" }
-#define COMMANDSTATION_IPS                                                                                             \
-  { "192.168.4.1", "192.168.0.1" }
-#define COMMANDSTATION_PORTS                                                                                           \
-  { 2560, 2560 }
-#define COMMANDSTATION_SSIDS                                                                                           \
-  { "SSID1", "SSID2" }
-#define COMMANDSTATION_PASSWORDS                                                                                       \
-  { "Password1", "Password2" }
+#define COMMANDSTATION_NAMES { "CommandStation 1", "CommandStation 2" }
+#define COMMANDSTATION_IPS { "192.168.4.1", "192.168.0.1" }
+#define COMMANDSTATION_PORTS { 2560, 2560 }
+#define COMMANDSTATION_SSIDS { "SSID1", "SSID2" }
+#define COMMANDSTATION_PASSWORDS { "Password1", "Password2" }
 
 /*
 If necessary, define OLED type, address, and pins
