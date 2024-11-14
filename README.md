@@ -1,59 +1,26 @@
-# Simple DCC-EX Throttle
+# DCC-EX Simple Throttle
 
-This is a very simple throttle that communicates with a DCC-EX EX-CommandStation via a serial interface and can control one DCC locomotive.
+This is a very simple throttle that communicates with a DCC-EX EX-CommandStation via a serial or WiFi interface and can control one DCC locomotive and perform some other basic activities.
+
+Selecting a locomotive to control requires a roster to be configured in the EX-CommandStation, or alternatively the DCC address can be acquired by placing the locomotive on the programming track and opting to read the address from there instead.
+
+There is some brief information in this README, however for the full documentation refer to [Pete's Pages](https://petegsx-projects.github.io/simple-throttle/index.html).
 
 ## Hardware
 
-Bluepill
+- Either an STMicroelectronics F103C8 based Bluepill or Wemos D1 Mini/Lolin 32 Lite
+- 128 x 64 SH1106 based I2C or SPI OLED
+- Rotary encoder (eg. KY-040)
 
-128 x 64 OLED
+## Installation and configuration
 
-Rotary encoder
+The software in this repository has been written to take advantage of VSCode and PlatformIO, and will automatically obtain the required libraries:
 
-## Operation
+- DCCEX/DCCEXProtocol
+- olikraus/U8g2
 
-* Need to change *
+If using a Bluepill and serial connection, no user configuration should be required.
 
-Double click cycles menus.
+If using a Wemos D1 Mini or Lolin32 Lite, you will need to update the WiFi and CommandStation connection parameters by copying myConfig.example.h to myConfig.h and editing it as required.
 
-On select loco screen, change menu to track power, read loco, forget loco
-
-On control screen, long press turns headlight on/off
-
-On select loco screen, long press sets up consist
-
-On start up, no locomotive will be selected, and the roster list retrieved from the EX-CommandStation will be displayed.
-
-Use the rotary encoder to scroll down the roster list and press the encoder's button once to select a locomotive.
-
-Once selected, use the encoder to increase and decrease the speed.
-
-When speed is 0 (zero), press the encoder button once to change direction.
-
-When speed is greater than 0 (zero), press the encoder button once to stop the loco.
-
-## Select a different locomotive
-
-When speed is 0 (zero), double click the encoder button, and the roster list will once again be displayed.
-
-Use the encoder to scroll through the roster list and press the encoder's button once to select a locomotive.
-
-Once selected, the previous locomotive is forgotten, and the currently selected locomotive is controlled instead.
-
-## Read locomotive address from programming track
-
-Whenever the menu of roster entries is displayed, holding the encoder button for more than half a second will initiate reading the locomotive address from the programming track.
-
-Provided a valid DCC address is received within 5 seconds, this address will be set for the throttle.
-
-## Turn track power on and off
-
-When speed is 0 (zero) and a locomotive is selected, hold the encoder button down for more than half a second.
-
-If track power is off, it will be turned on, and if turned on, it will be turned off.
-
-## Emergency stop
-
-When a locomotive is selected and speed is more than zero (0), hold the encoder down for more than half a second.
-
-An emergency stop will be sent to the EX-CommandStation.
+If you wish to use the Arduino IDE, you will need to ensure the appropriate STM32 and/or Espressif board support is installed along with the above libraries.

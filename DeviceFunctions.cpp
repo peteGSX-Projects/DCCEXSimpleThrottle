@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -35,16 +34,17 @@ void disableJTAG() {
 
 #if defined(ARDUINO_ARCH_ESP32)
 
-const char *csNames[] = COMMANDSTATION_NAMES;
-const char *csIPs[] = COMMANDSTATION_IPS;
-const uint16_t csPorts[] = COMMANDSTATION_PORTS;
-const char *csSSIDs[] = COMMANDSTATION_SSIDS;
-const char *csPasswords[] = COMMANDSTATION_PASSWORDS;
+const char *csNames[] = COMMANDSTATION_NAMES;         // array to store names of CommandStations
+const char *csIPs[] = COMMANDSTATION_IPS;             // array to store IPs of CommandStations
+const uint16_t csPorts[] = COMMANDSTATION_PORTS;      // array to store ports of CommandStations
+const char *csSSIDs[] = COMMANDSTATION_SSIDS;         // array to store SSIDs of CommandStations
+const char *csPasswords[] = COMMANDSTATION_PASSWORDS; // array to store passwords of CommandStations
 
 const uint8_t numberOfCommandStations = COMMANDSTATION_COUNT;
 EXCommandStation *csServers = new EXCommandStation[COMMANDSTATION_COUNT];
 WiFiClient wifiClient;
 
+/// @brief Initialise the array of user defined CommandStations from myConfig.h
 void initialiseCSArray() {
   for (int i = 0; i < numberOfCommandStations; i++) {
     csServers[i].name = csNames[i];

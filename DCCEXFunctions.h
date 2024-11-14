@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -26,12 +25,22 @@
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 
+/// @brief Create the dccexProtocol object for all CommandStation interactions
 extern DCCEXProtocol dccexProtocol;
+
+/// @brief Create the callback/delegate object to respond to broadcasts and responses
 extern DCCEXCallbacks dccexCallbacks;
 
+/// @brief Function to retrieve the roster information
 void getRoster();
+
+/// @brief Function to populate the menu with roster entries
 void populateMenu();
+
+/// @brief Function to toggle the current track power state
 void togglePower();
+
+/// @brief Function to forget the currently selected loco
 void forgetLoco();
 
 #endif

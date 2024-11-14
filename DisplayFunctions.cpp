@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -39,8 +38,8 @@ void displayStartupInfo() {
   oled.clear();
   oled.setFont(DEFAULT_FONT);
   oled.setCursor(0, 10);
-  oled.print(F("Simple DCC-EX Throttle"));
-  CONSOLE.print(F("Simple DCC-EX Throttle"));
+  oled.print(F("DCC-EX Simple Throttle"));
+  CONSOLE.print(F("DCC-EX Simple Throttle"));
   oled.setCursor(0, 20);
   oled.print(F("Version: "));
   CONSOLE.print(F(" version: "));
