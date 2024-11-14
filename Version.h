@@ -1,7 +1,8 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.8"
+#define VERSION "0.0.9"
+// 0.0.9  - Re-write codebase
 // 0.0.8  - Simplify user configuration
 // 0.0.7  - Update to DCCEXProtocol 0.0.17
 // 0.0.6  - Extra menu functions

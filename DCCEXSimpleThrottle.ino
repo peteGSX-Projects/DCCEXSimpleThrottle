@@ -16,50 +16,10 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "DCCEXFunctions.h"
-#include "Defines.h"
-#include "DeviceFunctions.h"
-#include "DisplayFunctions.h"
-#include "EncoderFunctions.h"
 #include <Arduino.h>
 
-bool connected = false;     // flag for connection state
-bool protocolSetup = false; // flag for setting up the DCCEXProtocol object
-
-/// @brief Initial setup function
-void setup() {
-#if defined(ARDUINO_BLUEPILL_F103C8)
-  disableJTAG();
-#endif
-  CONSOLE.begin(115200);
-  setupDisplay();
-  setupButton();
-  setupExtrasMenu();
-  displayStartupInfo();
-#if defined(ARDUINO_BLUEPILL_F103C8) || defined(ARDUINO_BLACKPILL_F411CE)
-  currentMenu = &rosterMenu;
-  encoderMode = SELECT_LOCO;
-  CLIENT.begin(115200);
-  connected = true;
-#elif defined(ARDUINO_ARCH_ESP32)
-  setupServerMenu();
-  currentMenu = &serverMenu;
-  encoderMode = SELECT_SERVER;
-  displayMenu();
-#endif
-}
+/// @brief Initial setup
+void setup() {}
 
 /// @brief Main loop
-void loop() {
-  if (connected) {
-    if (!protocolSetup) {
-      dccexProtocol.setLogStream(&CONSOLE);
-      dccexProtocol.setDelegate(&dccexCallbacks);
-      dccexProtocol.connect(&CLIENT);
-    }
-    dccexProtocol.check();
-    getRoster();
-    displayRuntime();
-  }
-  processEncoder();
-}
+void loop() {}
