@@ -2,6 +2,8 @@
 
 This is a very simple throttle that communicates with a DCC-EX EX-CommandStation via a serial or WiFi interface and can control one DCC locomotive and perform some other basic activities.
 
+Selecting a locomotive to control requires a roster to be configured in the EX-CommandStation, or alternatively the DCC address can be acquired by placing the locomotive on the programming track and opting to read the address from there instead.
+
 There is some brief information in this README, however for the full documentation refer to [Pete's Pages](https://petegsx-projects.github.io/simple-throttle/index.html).
 
 ## Hardware
