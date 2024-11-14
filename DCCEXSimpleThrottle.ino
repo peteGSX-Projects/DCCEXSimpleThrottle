@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -24,9 +23,10 @@
 #include "EncoderFunctions.h"
 #include <Arduino.h>
 
-bool connected = false;
-bool protocolSetup = false;
+bool connected = false;     // flag for connection state
+bool protocolSetup = false; // flag for setting up the DCCEXProtocol object
 
+/// @brief Initial setup function
 void setup() {
 #if defined(ARDUINO_BLUEPILL_F103C8)
   disableJTAG();
@@ -49,6 +49,7 @@ void setup() {
 #endif
 }
 
+/// @brief Main loop
 void loop() {
   if (connected) {
     if (!protocolSetup) {

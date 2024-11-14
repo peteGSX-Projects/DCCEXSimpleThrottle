@@ -1,9 +1,8 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
  *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
- *
- *  This is free software: you can redistribute it and/or modify
+  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
@@ -44,6 +43,7 @@ void DCCEXCallbacks::receivedTrackPower(TrackPower state) {
   }
 }
 
-// void DCCEXCallbacks::receivedReadLoco(int address) {
-
-// }
+void DCCEXCallbacks::receivedReadLoco(int address) {
+  Serial.print("Loco address read from prog track is: ");
+  Serial.println(address);
+}

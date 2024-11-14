@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -32,20 +31,14 @@ void disableJTAG();
 #if defined(ARDUINO_ARCH_ESP32)
 #include <WiFi.h>
 
-// OLD WAY Define number of EX-CommandStation entries, including WiFi details
-// const int CS_SERVERS = 2;
+extern const uint8_t numberofCommandStations; // Number of user defined CommandStations
+extern EXCommandStation *csServers;           // Pointer to the array of user defined CommandStations
 
-// EXCommandStation *csServers = new EXCommandStation[CS_SERVERS]{
-//     // {"Name", IPAddress(a, b, c, d), "Port", "WiFi SSID", "WiFi password"}, // This format
-//     {"Testing CS", IPAddress(192, 168, 4, 1), 2560, "SSID1", "PASSWORD1"}, // First EX-CommandStation's details
-//     {"Layout CS", IPAddress(192, 168, 0, 10), 2560, "SSID2", "PASSWORD2"}, // Second EX-CommandStation's details
-// };
-
-extern const uint8_t numberofCommandStations;
-extern EXCommandStation *csServers;
-
+/// @brief Function to setup the menu of user defined CommandStations
 void setupServerMenu();
 
+/// @brief Function to connect to WiFi and the CommandStation once the user has selected one
+/// @param server Index of the CommandStation array containing connection details
 void setupWiFi(int server);
 
 /// @brief Validates and converts an IP address from the preprocessor macro string to an IPAddress object
@@ -53,6 +46,8 @@ void setupWiFi(int server);
 /// @return IPAddress object
 IPAddress convertIP(const char *ipAddressString);
 #endif
+
+/// @brief Setup items for the menu accessible via double clicking
 void setupExtrasMenu();
 
 #endif

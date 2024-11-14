@@ -6,6 +6,7 @@
 
 /*
 Define WiFi connection parameters here
+These are irrelevant if using Bluepill and a serial connection
 */
 #define COMMANDSTATION_COUNT 2 // The number of EX-CommandStations to define
 
@@ -22,14 +23,21 @@ Each list of elements must be surrounded by curly brackets {}
 #define COMMANDSTATION_SSIDS {"SSID1", "SSID2"}
 #define COMMANDSTATION_PASSWORDS {"Password1", "Password2"}
 */
-#define COMMANDSTATION_NAMES {"CommandStation 1", "CommandStation 2"}
-#define COMMANDSTATION_IPS {"192.168.4.1", "192.168.0.1"}
-#define COMMANDSTATION_PORTS {2560, 2560}
-#define COMMANDSTATION_SSIDS {"SSID1", "SSID2"}
-#define COMMANDSTATION_PASSWORDS {"Password1", "Password2"}
+#define COMMANDSTATION_NAMES                                                                                           \
+  { "CommandStation 1", "CommandStation 2" }
+#define COMMANDSTATION_IPS                                                                                             \
+  { "192.168.4.1", "192.168.0.1" }
+#define COMMANDSTATION_PORTS                                                                                           \
+  { 2560, 2560 }
+#define COMMANDSTATION_SSIDS                                                                                           \
+  { "SSID1", "SSID2" }
+#define COMMANDSTATION_PASSWORDS                                                                                       \
+  { "Password1", "Password2" }
 
-// If necessary, define OLED type, address, and pins
-// #define OLED_USE_I2C // Default to I2C
+/*
+If necessary, define OLED type, address, and pins
+*/
+// #define OLED_USE_I2C // Default
 // #define OLED_USE_SPI
 // #define OLED_ADDRESS 0x3c
 
@@ -40,7 +48,7 @@ Each list of elements must be surrounded by curly brackets {}
 // #define CS_PIN PA4 // Default for Bluepill
 // #define CS_PIN 5 // Default for ESP32
 // #define DC_PIN PA3 // Default for Bluepill
-// #define DC_PIN ? // Default for ESP32
+// #define DC_PIN 2 // Default for ESP32
 
 // If necessary, define pins for the rotary encoder
 // #define ENCODER_DT PC14 // Default for Bluepill

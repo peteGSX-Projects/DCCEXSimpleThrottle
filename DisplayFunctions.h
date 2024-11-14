@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -49,16 +48,39 @@
 // Extern OLED declaration
 extern OLED oled;
 
+/// @brief Setup the display object
 void setupDisplay();
+
+/// @brief Display software version for 2 seconds
 void displayStartupInfo();
+
+/// @brief Switch between displaying the current menu and displaying loco info
 void switchDisplay();
+
+/// @brief Update display with current loco info if not displaying a menu
 void displayRuntime();
+
+/// @brief Update the speed display of the current loco
 void displaySpeed();
+
+/// @brief Update the direction display of the current loco
 void displayDirection();
+
+/// @brief Update the DCC address of the current loco
 void displayLoco();
+
+/// @brief Update the current track power state
 void displayTrackPower();
+
+/// @brief Display the currently selected menu and items
 void displayMenu();
+
+/// @brief Scroll up or down when a list of menu items exceeds a full page
+/// @param direction Direction to scroll: 1 for down, -1 for up
 void scrollMenu(int direction);
+
+/// @brief Display an error on screen
+/// @param error Error text to display
 void displayError(const char *error);
 
 #endif

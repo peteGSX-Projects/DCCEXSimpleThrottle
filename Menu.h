@@ -1,7 +1,6 @@
 /*
+ *  © 2024 Peter Cole
  *  © 2023 Peter Cole
- *
- *  This file is for a serially connected throttle for a DCC-EX EX-CommandStation.
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,86 +22,89 @@
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 
+/// @brief Base class for each menu item type
 class MenuItem {
 public:
-  /// @brief Constructor
-  /// @param label Text label to display in the menu
+  /// @brief Constructor for each MenuItem object
+  /// @param label Pointer to the text label char array to display in the menu
   MenuItem(const char *label);
 
   /// @brief Get menu item label
-  /// @return
+  /// @return Pointer to the char array containing the item label
   const char *getLabel();
 
-  /// @brief Set the next MenuItem
-  /// @param item
+  /// @brief Set the next MenuItem object
+  /// @param item Pointer to the next MenuItem object
   void setNext(MenuItem *item);
 
-  /// @brief Get the next MenuItem
-  /// @return
+  /// @brief Get the next MenuItem object
+  /// @return Pointer to the next MenuItem object
   MenuItem *getNext();
 
   /// @brief Set the index of this item
-  /// @param index
+  /// @param index Integer index of this MenuItem object
   void setIndex(int index);
 
   /// @brief Get the index of this item
-  /// @return
+  /// @return Integer index of this MenuItem object
   int getIndex();
 
 private:
-  const char *_label;
-  int _index;
-  MenuItem *_next;
+  const char *_label; // pointer to the char array containing the label
+  int _index;         // index of the MenuItem
+  MenuItem *_next;    // pointer to the next MenuItem object
 };
 
+/// @brief Extension of the MenuItem class to cater for loco objects
 class LocoMenuItem : public MenuItem {
 public:
-  /// @brief Constructor, provide the Loco object
-  /// @param object
+  /// @brief Constructor for the loco menu item objects
+  /// @param object Pointer to the Loco object to associate with this menu item
   LocoMenuItem(Loco *object);
 
-  /// @brief Get the Loco object
-  /// @return
+  /// @brief Get the Loco object associated with this menu item
+  /// @return Pointer to the Loco object
   Loco *getLocoObject();
 
 private:
   Loco *_locoObject;
 };
 
+/// @brief Extension of the MenuItem class to cater for items with associated actions
 class ActionMenuItem : public MenuItem {
 public:
   typedef void (*Action)();
 
-  /// @brief Constructor, provide the label and function to call
+  /// @brief Constructor for the action menu item objects
   /// @param label Char array to display
   /// @param action Function to call when selected
   ActionMenuItem(const char *label, Action action);
 
-  /// @brief Get the action associated with the menu item
-  /// @return Call the associated function
+  /// @brief Call the action associated with this menu item object
   void callAction();
 
 private:
   Action _action;
 };
 
+/// @brief Class to define each menu object
 class Menu {
 public:
   /// @brief Constructor for a new Menu object
   /// @param label Char array for the title of the menu to display
   Menu(const char *label);
 
-  /// @brief Add a MenuItem object
+  /// @brief Add a MenuItem object to this menu
   /// @param item A valid menu item inheriting the MenuItem base class
   void addItem(MenuItem *item);
 
-  /// @brief Get the first MenuItem
-  /// @return MenuItem object
+  /// @brief Get the first MenuItem object associated with this menu
+  /// @return Pointer to the MenuItem object
   MenuItem *getFirst();
 
   /// @brief Get the MenuItem object at the specified index
   /// @param index Index of the item to get
-  /// @return MenuItem object
+  /// @return Pointer to the MenuItem object
   MenuItem *getItemAtIndex(int index);
 
   /// @brief Get the number of items in this menu
@@ -113,7 +115,7 @@ public:
   /// @return Number of items to display
   int getItemsPerPage();
 
-  /// @brief Get the current page to display
+  /// @brief Get the current page of this menu
   /// @return Current page number
   int getCurrentPage();
 

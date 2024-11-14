@@ -114,7 +114,6 @@ enum EncoderMode {
 #define ENCODER_SW 13
 #endif // ENCODER_SW
 #ifndef OLED_USE
-// #define OLED_USE_SPI // Default to SPI for ESP32
 #define OLED_USE_I2C
 #endif // OLED_USE
 #ifndef OLED_ADDRESS
@@ -130,21 +129,12 @@ enum EncoderMode {
 #define CS_PIN 5
 #endif // CS_PIN
 #ifndef DC_PIN
-// #define DC_PIN ?
+#define DC_PIN 2
 #endif // DC_PIN
 // Reference:
 // SCK - 18
 // MISO - 19
 // MOSI - 23
-
-/*
-Macro to create CommandStation and WiFi configuration details
-*/
-#define CREATE_COMMANDSTATION_SERVER(index)                                                                            \
-  {                                                                                                                    \
-    COMMANDSTATION_LABEL_##index, convertIP(COMMANDSTATION_IP_##index), COMMANDSTATION_PORT_ #index,                   \
-        COMMANDSTATION_SSID_ #index, COMMANDSTATION_PASSWORD_##index                                                   \
-  }
 
 #endif // ARCH type
 
