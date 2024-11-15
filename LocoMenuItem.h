@@ -16,7 +16,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MENU_H
-#define MENU_H
+#ifndef LOCOMENUITEM_H
+#define LOCOMENUITEM_H
 
-#endif
+#include "BaseMenuItem.h"
+
+/// @brief 
+class LocoMenuItem : public BaseMenuItem {
+
+
+};
+
+#endif // LOCOMENUITEM_H
