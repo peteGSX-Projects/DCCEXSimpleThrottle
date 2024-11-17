@@ -16,24 +16,25 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#ifndef ROTARYENCODER_H
+#define ROTARYENCODER_H
 
-#include "BaseMenuItem.h"
+#include "Rotary.h"
+#include "RotaryEncoderInterface.h"
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
+/// @brief Class to manage user interaction with a rotary encoder
+class RotaryEncoder : public RotaryEncoderInterface {
 public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
+  /// @brief Constructor for this rotary encoder object
+  /// @param rotaryEncoder Pointer to an existing Rotary object
+  RotaryEncoder(Rotary *rotaryEncoder);
 
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
+  /// @brief Monitor for movements of the rotary encoder
+  /// @return None, Clockwise, CounterClockwise
+  RotaryEncoderMovement getMovement();
 
 private:
-  Loco *_loco;
+  Rotary *_rotaryEncoder;
 };
 
-#endif // LOCOMENUITEM_H
+#endif // ROTARYENCODER_H

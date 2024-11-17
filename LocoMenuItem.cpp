@@ -17,3 +17,7 @@
  */
 
 #include "LocoMenuItem.h"
+
+LocoMenuItem::LocoMenuItem(Loco *loco) : BaseMenuItem(loco->getName()), _loco(loco) {}
+
+Loco *LocoMenuItem::getLoco() { return _loco; }

@@ -16,24 +16,8 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#include "ActionMenuItem.h"
 
-#include "BaseMenuItem.h"
+ActionMenuItem::ActionMenuItem(const char *name, Action action) : BaseMenuItem(name), _action(action) {}
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
-public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
-
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
-
-private:
-  Loco *_loco;
-};
-
-#endif // LOCOMENUITEM_H
+void ActionMenuItem::callAction() { _action(); }

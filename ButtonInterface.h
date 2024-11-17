@@ -16,24 +16,20 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#ifndef BUTTONINTERFACE_H
+#define BUTTONINTERFACE_H
 
-#include "BaseMenuItem.h"
+enum class ButtonEvent { None, SingleClick, DoubleClick, LongPress };
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
+/// @brief Interface class to abstract retrieving physical button events for user interaction
+class ButtonInterface {
 public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
+  /// @brief Get the current button event
+  /// @return ButtonEvent enum
+  virtual ButtonEvent getEvent() = 0;
 
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
-
-private:
-  Loco *_loco;
+  /// @brief Destructor for this ButtonInterface object
+  virtual ~ButtonInterface() = default;
 };
 
-#endif // LOCOMENUITEM_H
+#endif // BUTTONINTERFACE_H

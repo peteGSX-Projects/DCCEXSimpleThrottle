@@ -16,24 +16,26 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#ifndef ACTIONMENUITEM_H
+#define ACTIONMENUITEM_H
 
 #include "BaseMenuItem.h"
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
+/// @brief Extension of the BaseMenuItem class for users to select items that call a function or method
+class ActionMenuItem : public BaseMenuItem {
 public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
+  typedef void (*Action)();
 
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
+  /// @brief Constructor for the action menu item objects
+  /// @param name Pointer to the char array containing the item's name to display
+  /// @param action Function to call when this item is selected
+  ActionMenuItem(const char *name, Action action);
+
+  /// @brief Call the action associated with this menu item object
+  void callAction();
 
 private:
-  Loco *_loco;
+  Action _action;
 };
 
-#endif // LOCOMENUITEM_H
+#endif // ACTIONMENUITEM_H

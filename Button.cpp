@@ -16,24 +16,21 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#include "Button.h"
 
-#include "BaseMenuItem.h"
+Button::Button(Switch *button) : _button(button) {}
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
-public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
-
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
-
-private:
-  Loco *_loco;
-};
-
-#endif // LOCOMENUITEM_H
+ButtonEvent Button::getEvent() {
+  if (!_button)
+    return ButtonEvent::None;
+  _button->poll();
+  ButtonEvent event = ButtonEvent::None;
+  if (_button->singleClick()) {
+    event = ButtonEvent::SingleClick;
+  } else if (_button->doubleClick()) {
+    event = ButtonEvent::DoubleClick;
+  } else if (_button->longPress()) {
+    event = ButtonEvent::LongPress;
+  }
+  return event;
+}

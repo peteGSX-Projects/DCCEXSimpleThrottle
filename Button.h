@@ -16,24 +16,25 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#ifndef BUTTON_H
+#define BUTTON_H
 
-#include "BaseMenuItem.h"
+#include "ButtonInterface.h"
+#include "avdweb_Switch.h"
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
+/// @brief Class to manage user interaction with a button
+class Button : public ButtonInterface {
 public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
+  /// @brief Constructor for this button object
+  /// @param button Pointer to an existing switch object
+  Button(Switch *button);
 
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
+  /// @brief Monitor for button events
+  /// @return None, SingleClick, DoubleClick, LongPress
+  ButtonEvent getEvent();
 
 private:
-  Loco *_loco;
+  Switch *_button;
 };
 
-#endif // LOCOMENUITEM_H
+#endif // BUTTON_H

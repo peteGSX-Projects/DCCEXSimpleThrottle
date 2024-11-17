@@ -16,24 +16,28 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef LOCOMENUITEM_H
-#define LOCOMENUITEM_H
+#include "ScreenManager.h"
 
-#include "BaseMenuItem.h"
+ScreenManager::ScreenManager() {
+  _first = nullptr;
+  _next = nullptr;
+  _currentScreen = nullptr;
+}
 
-/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
-class LocoMenuItem : public BaseMenuItem {
-public:
-  /// @brief Constructor for the loco menu item objects
-  /// @param object Pointer to the Loco object to associate with this menu item
-  LocoMenuItem(Loco *loco);
+void ScreenManager::addScreen(ScreenInterface *screen) {
+  if (this->_first == nullptr) {
+    this->_first = screen;
+  } else {
+    ScreenInterface *currentScreen = this->_first;
+    while (currentScreen->getNext() != nullptr) {
+      currentScreen = currentScreen->getNext();
+    }
+    currentScreen->setNext(screen);
+  }
+}
 
-  /// @brief Get the Loco object associated with this menu item
-  /// @return Pointer to the Loco object
-  Loco *getLoco();
+ScreenInterface *ScreenManager::getNext() { return _next; }
 
-private:
-  Loco *_loco;
-};
+void ScreenManager::switchToScreen(ScreenInterface *screen) {}
 
-#endif // LOCOMENUITEM_H
+ScreenInterface *ScreenManager::getCurrentScreen() { return _currentScreen; }
