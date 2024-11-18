@@ -35,6 +35,9 @@ void ScreenManager::addScreen(ScreenInterface *screen) {
     }
     currentScreen->setNext(screen);
   }
+  if (_currentScreen == nullptr) {
+    _currentScreen = screen;
+  }
 }
 
 ScreenInterface *ScreenManager::getNext() { return _next; }

@@ -27,8 +27,10 @@ void MenuScreen::update() {}
 void MenuScreen::handleRotation(RotaryEncoderMovement movement) {
   switch (movement) {
   case RotaryEncoderMovement::Clockwise:
+    CONSOLE.println("Move clockwise");
     break;
   case RotaryEncoderMovement::CounterClockwise:
+    CONSOLE.println("Move counter clockwise");
     break;
   case RotaryEncoderMovement::None:
   default:
@@ -39,10 +41,13 @@ void MenuScreen::handleRotation(RotaryEncoderMovement movement) {
 void MenuScreen::handleButtonEvent(ButtonEvent buttonEvent) {
   switch (buttonEvent) {
   case ButtonEvent::SingleClick:
+    CONSOLE.println("Single click");
     break;
   case ButtonEvent::DoubleClick:
+    CONSOLE.println("Double click");
     break;
   case ButtonEvent::LongPress:
+    CONSOLE.println("Long press");
     break;
   case ButtonEvent::None:
   default:

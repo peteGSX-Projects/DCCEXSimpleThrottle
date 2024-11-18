@@ -19,6 +19,7 @@
 #ifndef MENUSCREEN_H
 #define MENUSCREEN_H
 
+#include "Defines.h"
 #include "Menu.h"
 #include "ScreenInterface.h"
 

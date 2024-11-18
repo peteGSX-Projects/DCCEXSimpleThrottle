@@ -29,10 +29,12 @@ void Controller::begin() {
   _rotaryEncoderInterface->begin();
 }
 
-void Controller::addScreen(ScreenInterface *screenInterface) {}
+void Controller::addScreen(ScreenInterface *screenInterface) { _screenManager->addScreen(screenInterface); }
 
 void Controller::update() {
   ScreenInterface *currentScreen = _screenManager->getCurrentScreen();
+  if (!currentScreen)
+    return;
   ButtonEvent event = _buttonInterface->getEvent();
   currentScreen->handleButtonEvent(event);
   RotaryEncoderMovement movement = _rotaryEncoderInterface->getMovement();
