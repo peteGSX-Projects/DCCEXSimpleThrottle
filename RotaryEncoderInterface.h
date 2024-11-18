@@ -24,12 +24,15 @@ enum class RotaryEncoderMovement { None, Clockwise, CounterClockwise };
 /// @brief Interface class to abstract retrieving physical rotary encoder movements for user interaction
 class RotaryEncoderInterface {
 public:
+  /// @brief Start this interface
+  virtual void begin() = 0;
+
   /// @brief Get the current rotary encoder movement
   /// @return RotaryEncoderMovement enum
-  RotaryEncoderMovement getMovement();
+  virtual RotaryEncoderMovement getMovement() = 0;
 
   /// @brief Destructor for this RotaryEncoderInterface object
-  ~RotaryEncoderInterface() = default;
+  virtual ~RotaryEncoderInterface() = default;
 };
 
 #endif // ROTARYENCODERINTERFACE_H

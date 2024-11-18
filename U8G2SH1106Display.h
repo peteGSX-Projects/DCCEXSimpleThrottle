@@ -16,19 +16,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef OLEDDISPLAY_H
-#define OLEDDISPLAY_H
+#ifndef U8G2SH1106DISPLAY_H
+#define U8G2SH1106DISPLAY_H
 
 #include "Defines.h"
 #include "DisplayInterface.h"
 #include <U8g2lib.h>
 
-
-class OLEDDisplay : public DisplayInterface {
+class U8G2SH1106Display : public DisplayInterface {
 public:
   /// @brief Constructor for the display
   /// @param oled Pointer to the existing I2C or SPI U8G2 OLED object
-  OLEDDisplay(U8G2 *oled);
+  U8G2SH1106Display(U8G2 *oled);
 
   /// @brief Setup display parameters
   void begin() override;
@@ -53,4 +52,4 @@ private:
   const uint8_t *_errorFont;
 };
 
-#endif // OLEDDISPLAY_H
+#endif // U8G2SH1106DISPLAY_H

@@ -18,6 +18,8 @@
 
 #include "RotaryEncoder.h"
 
+void RotaryEncoder::begin() {}
+
 RotaryEncoder::RotaryEncoder(Rotary *rotaryEncoder) : _rotaryEncoder(rotaryEncoder) {}
 
 RotaryEncoderMovement RotaryEncoder::getMovement() {

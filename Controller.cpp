@@ -19,10 +19,23 @@
 #include "Controller.h"
 
 Controller::Controller(ButtonInterface *buttonInterface, DisplayInterface *displayInterface,
-                       RotaryEncoderInterface *rotaryEncoderInterface)
+                       RotaryEncoderInterface *rotaryEncoderInterface, ScreenManager *screenManager)
     : _buttonInterface(buttonInterface), _displayInterface(displayInterface),
-      _rotaryEncoderInterface(rotaryEncoderInterface) {}
+      _rotaryEncoderInterface(rotaryEncoderInterface), _screenManager(screenManager) {}
+
+void Controller::begin() {
+  _buttonInterface->begin();
+  _displayInterface->begin();
+  _rotaryEncoderInterface->begin();
+}
 
 void Controller::addScreen(ScreenInterface *screenInterface) {}
 
-void Controller::update() {}
+void Controller::update() {
+  ScreenInterface *currentScreen = _screenManager->getCurrentScreen();
+  ButtonEvent event = _buttonInterface->getEvent();
+  currentScreen->handleButtonEvent(event);
+  RotaryEncoderMovement movement = _rotaryEncoderInterface->getMovement();
+  currentScreen->handleRotation(movement);
+  currentScreen->update();
+}

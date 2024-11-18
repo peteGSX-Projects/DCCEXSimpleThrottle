@@ -21,10 +21,10 @@
 #include "Defines.h"
 #include "Menu.h"
 #include "MenuScreen.h"
-#include "OLEDDisplay.h"
 #include "OperatingScreen.h"
 #include "Rotary.h"
 #include "RotaryEncoder.h"
+#include "U8G2SH1106Display.h"
 #include "Version.h"
 #include "avdweb_Switch.h"
 #include <Arduino.h>
@@ -32,11 +32,16 @@
 
 /// @brief Create the OLED object based on user defined connection type
 #if (OLED_CONNECTION == OLED_I2C)
-OLED_TYPE oled(U8G2_R0, U8X8_PIN_NONE, SCL_PIN, SDA_PIN);
+OLED_TYPE sh1106OLED(U8G2_R0, U8X8_PIN_NONE, SCL_PIN, SDA_PIN);
 #elif (OLED_CONNECTION == OLED_SPI)
 #include <SPI.h>
-OLED_TYPE oled(U8G2_R0, CS_PIN, DC_PIN);
+OLED_TYPE sh1106OLED(U8G2_R0, CS_PIN, DC_PIN);
 #endif // OLED_CONNECTION
+
+/// @brief Create the OLED display object
+/// @param oled Reference of the existing OLED object
+/// @return u8G2SH1106Display object, unused in this context
+U8G2SH1106Display display(&sh1106OLED);
 
 /// @brief Create the actual physical button object using defaults in Defines.h (or overrides in myConfig.h)
 /// @param BUTTON_PIN Pin the button is connected to
@@ -66,11 +71,6 @@ Rotary physicalRotaryEncoder(ENCODER_DT_PIN, ENCODER_CLK_PIN);
 /// @return RotaryEncoder object, unused in this context
 RotaryEncoder rotaryEncoder(&physicalRotaryEncoder);
 
-/// @brief Create the OLED display object
-/// @param oled Reference of the existing OLED object
-/// @return OLEDDisplay object, unused in this context
-OLEDDisplay oledDisplay(&oled);
-
 /// @brief Create the menu to allow selecting an EX-CommandStation and associated WiFi connection
 Menu serverMenu("Select server");
 
@@ -95,12 +95,16 @@ Menu actionMenu("Select action");
 /// @return
 MenuScreen actionMenuScreen(&actionMenu);
 
+/// @brief Create the screen manager object
+ScreenManager screenManager;
+
 /// @brief Create the controller
 /// @param button Pointer to the button interacting with this controller
 /// @param display Pointer to the display for this controller to manage
 /// @param rotaryEncoder Pointer to the rotary encoder interacting with this controller
+/// @param screenManager Pointer to the screen manager
 /// @return Controller object, unused in this context
-// Controller controller(&button, &oledDisplay, &rotaryEncoder);
+Controller controller(&button, &display, &rotaryEncoder, &screenManager);
 
 /// @brief Initial setup
 void setup() {
@@ -108,9 +112,9 @@ void setup() {
   CONSOLE.println("DCC-EX Simple Throttle");
   CONSOLE.print("Version: ");
   CONSOLE.println(VERSION);
-  oledDisplay.begin();
-  oledDisplay.displayStartupInfo(VERSION);
+  controller.begin();
+  display.displayStartupInfo(VERSION);
 }
 
 /// @brief Main loop
-void loop() {}
+void loop() {controller.update();}

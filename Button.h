@@ -29,9 +29,12 @@ public:
   /// @param button Pointer to an existing switch object
   Button(Switch *button);
 
+  /// @brief Start this button object
+  void begin() override;
+
   /// @brief Monitor for button events
   /// @return None, SingleClick, DoubleClick, LongPress
-  ButtonEvent getEvent();
+  ButtonEvent getEvent() override;
 
 private:
   Switch *_button;

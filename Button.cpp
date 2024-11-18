@@ -18,6 +18,8 @@
 
 #include "Button.h"
 
+void Button::begin() {}
+
 Button::Button(Switch *button) : _button(button) {}
 
 ButtonEvent Button::getEvent() {

@@ -16,9 +16,9 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "OLEDDisplay.h"
+#include "U8G2SH1106Display.h"
 
-OLEDDisplay::OLEDDisplay(U8G2 *oled) : _oled(oled) {
+U8G2SH1106Display::U8G2SH1106Display(U8G2 *oled) : _oled(oled) {
   _defaultFont = DEFAULT_FONT;
   _menuFont = MENU_FONT;
   _speedFont = SPEED_FONT;
@@ -30,19 +30,19 @@ OLEDDisplay::OLEDDisplay(U8G2 *oled) : _oled(oled) {
   _errorFont = ERROR_FONT;
 }
 
-void OLEDDisplay::begin() {
+void U8G2SH1106Display::begin() {
   _oled->begin();
   _oled->setFont(_defaultFont);
   _oled->clear();
   _oled->sendBuffer();
 }
 
-void OLEDDisplay::clear() {
+void U8G2SH1106Display::clear() {
   _oled->clear();
   _oled->sendBuffer();
 }
 
-void OLEDDisplay::displayStartupInfo(const char *version) {
+void U8G2SH1106Display::displayStartupInfo(const char *version) {
   _oled->clear();
   _oled->setFont(_defaultFont);
   _oled->setCursor(0, 10);

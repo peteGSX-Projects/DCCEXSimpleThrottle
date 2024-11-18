@@ -24,6 +24,9 @@ enum class ButtonEvent { None, SingleClick, DoubleClick, LongPress };
 /// @brief Interface class to abstract retrieving physical button events for user interaction
 class ButtonInterface {
 public:
+  /// @brief Start this interface
+  virtual void begin() = 0;
+
   /// @brief Get the current button event
   /// @return ButtonEvent enum
   virtual ButtonEvent getEvent() = 0;

@@ -30,8 +30,12 @@ public:
   /// @param buttonInterface Pointer to the existing button interface
   /// @param displayInterface Pointer to the existing display interface
   /// @param rotaryEncoderInterface Pointer to the existing rotary encoder interface
+  /// @param screenManager Pointer to the existing screen manager
   Controller(ButtonInterface *buttonInterface, DisplayInterface *displayInterface,
-             RotaryEncoderInterface *rotaryEncoderInterface);
+             RotaryEncoderInterface *rotaryEncoderInterface, ScreenManager *screenManager);
+
+  /// @brief Start all associated interfaces, calls begin() for all
+  void begin();
 
   /// @brief Add a screen to the controller and screen manager
   /// @param screenInterface Pointer to the screen interface object
@@ -44,7 +48,7 @@ private:
   ButtonInterface *_buttonInterface;
   DisplayInterface *_displayInterface;
   RotaryEncoderInterface *_rotaryEncoderInterface;
-  ScreenManager _screenManager;
+  ScreenManager *_screenManager;
 };
 
 #endif // CONTROLLER_H

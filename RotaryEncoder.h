@@ -29,9 +29,12 @@ public:
   /// @param rotaryEncoder Pointer to an existing Rotary object
   RotaryEncoder(Rotary *rotaryEncoder);
 
+  /// @brief Start this rotary encoder
+  void begin() override;
+
   /// @brief Monitor for movements of the rotary encoder
   /// @return None, Clockwise, CounterClockwise
-  RotaryEncoderMovement getMovement();
+  RotaryEncoderMovement getMovement() override;
 
 private:
   Rotary *_rotaryEncoder;

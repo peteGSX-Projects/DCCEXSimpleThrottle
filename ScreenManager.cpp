@@ -18,8 +18,9 @@
 
 #include "ScreenManager.h"
 
+ScreenInterface *ScreenManager::_first = nullptr;
+
 ScreenManager::ScreenManager() {
-  _first = nullptr;
   _next = nullptr;
   _currentScreen = nullptr;
 }
