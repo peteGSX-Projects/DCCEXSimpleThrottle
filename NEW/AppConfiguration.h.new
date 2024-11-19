@@ -20,21 +20,55 @@
 #define APPCONFIGURATION_H
 
 #include "Button.h"
+#include "Controller.h"
+#include "Menu.h"
+#include "MenuScreen.h"
+#include "OperatingScreen.h"
 #include "RotaryEncoder.h"
+#include "ScreenManager.h"
 #include "U8G2SH1106Display.h"
 
 class AppConfiguration {
 public:
+  /// @brief
   AppConfiguration();
 
-  void begin();
+  /// @brief
+  /// @param menuList
+  /// @param menuCount
+  void initialise(Menu **menuList, uint8_t menuCount);
 
-  void update();
+  /// @brief
+  /// @return
+  Button *getButton();
+
+  /// @brief
+  /// @return
+  U8G2SH1106Display *getDisplay();
+
+  /// @brief
+  /// @return
+  RotaryEncoder *getRotaryEncoder();
+
+  /// @brief
+  /// @return
+  Controller *getController();
+
+  /// @brief
+  /// @return
+  ScreenManager *getScreenManager();
 
 private:
-  UserConfirmationInterface *_userConfirmation;
-  UserSelectionInterface *_userSelection;
-  DisplayInterface *_display;
+  Button *_button;
+  U8G2SH1106Display *_display;
+  RotaryEncoder *_rotaryEncoder;
+  ScreenManager *_screenManager;
+  Controller *_controller;
+  Menu **_menuList;
+  uint8_t _menuCount;
+
+  void _setupHardware();
+  void _setupScreens();
 };
 
 #endif // APPCONFIGURATION_H

@@ -16,21 +16,21 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
+#include "RotaryEncoder.h"
 
-AppConfiguration::AppConfiguration() {
-  _userConfirmation = new Button();
-  _userSelection = new RotaryEncoder();
-  _display = new U8G2SH1106Display();
-}
+void RotaryEncoder::begin() {}
 
-void AppConfiguration::begin() {
-  _userConfirmation->begin();
-  _userSelection->begin();
-  _display->begin();
-}
+RotaryEncoder::RotaryEncoder(Rotary *rotaryEncoder) : _rotaryEncoder(rotaryEncoder) {}
 
-void AppConfiguration::update() {
-  _userConfirmation->getUserConfirmationAction();
-  _userSelection->getUserSelectionAction();
+RotaryEncoderMovement RotaryEncoder::getMovement() {
+  if (!_rotaryEncoder)
+    return RotaryEncoderMovement::None;
+  RotaryEncoderMovement movement = RotaryEncoderMovement::None;
+  unsigned char result = _rotaryEncoder->process();
+  if (result == DIR_CW) {
+    movement = RotaryEncoderMovement::Clockwise;
+  } else if (result == DIR_CCW) {
+    movement = RotaryEncoderMovement::CounterClockwise;
+  }
+  return movement;
 }

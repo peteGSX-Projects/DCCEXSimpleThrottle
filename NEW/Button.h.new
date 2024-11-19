@@ -16,21 +16,28 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
+#ifndef BUTTON_H
+#define BUTTON_H
 
-AppConfiguration::AppConfiguration() {
-  _userConfirmation = new Button();
-  _userSelection = new RotaryEncoder();
-  _display = new U8G2SH1106Display();
-}
+#include "ButtonInterface.h"
+#include "avdweb_Switch.h"
 
-void AppConfiguration::begin() {
-  _userConfirmation->begin();
-  _userSelection->begin();
-  _display->begin();
-}
+/// @brief Class to manage user interaction with a button
+class Button : public ButtonInterface {
+public:
+  /// @brief Constructor for this button object
+  /// @param button Pointer to an existing switch object
+  Button(Switch *button);
 
-void AppConfiguration::update() {
-  _userConfirmation->getUserConfirmationAction();
-  _userSelection->getUserSelectionAction();
-}
+  /// @brief Start this button object
+  void begin() override;
+
+  /// @brief Monitor for button events
+  /// @return None, SingleClick, DoubleClick, LongPress
+  ButtonEvent getEvent() override;
+
+private:
+  Switch *_button;
+};
+
+#endif // BUTTON_H

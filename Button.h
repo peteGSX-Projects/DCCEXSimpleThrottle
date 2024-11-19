@@ -19,22 +19,21 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include "ButtonInterface.h"
+#include "UserConfirmationInterface.h"
 #include "avdweb_Switch.h"
 
-/// @brief Class to manage user interaction with a button
-class Button : public ButtonInterface {
+class Button : public UserConfirmationInterface {
 public:
-  /// @brief Constructor for this button object
-  /// @param button Pointer to an existing switch object
-  Button(Switch *button);
+  /// @brief Constructor for the button object
+  Button();
 
-  /// @brief Start this button object
+  /// @brief
   void begin() override;
 
-  /// @brief Monitor for button events
-  /// @return None, SingleClick, DoubleClick, LongPress
-  ButtonEvent getEvent() override;
+  /// @brief Check for any user confirmation actions
+  /// This should be called at least once per main loop iteration
+  /// @return UserSelectionConfirmation::[None|SingleClick|DoubleClick|LongPress]
+  UserConfirmationAction getUserConfirmationAction();
 
 private:
   Switch *_button;

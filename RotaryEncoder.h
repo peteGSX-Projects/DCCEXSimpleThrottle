@@ -19,25 +19,22 @@
 #ifndef ROTARYENCODER_H
 #define ROTARYENCODER_H
 
+#include "Defines.h"
 #include "Rotary.h"
-#include "RotaryEncoderInterface.h"
+#include "UserSelectionInterface.h"
 
-/// @brief Class to manage user interaction with a rotary encoder
-class RotaryEncoder : public RotaryEncoderInterface {
+/// @brief Class to implement a physical rotary encoder for user selection activities
+/// Clockwise moves down/increases speed, counter clockwise moves up/decreases speed
+class RotaryEncoder : public UserSelectionInterface {
 public:
-  /// @brief Constructor for this rotary encoder object
-  /// @param rotaryEncoder Pointer to an existing Rotary object
-  RotaryEncoder(Rotary *rotaryEncoder);
+  RotaryEncoder();
 
-  /// @brief Start this rotary encoder
   void begin() override;
 
-  /// @brief Monitor for movements of the rotary encoder
-  /// @return None, Clockwise, CounterClockwise
-  RotaryEncoderMovement getMovement() override;
+  UserSelectionAction getUserSelectionAction() override;
 
 private:
-  Rotary *_rotaryEncoder;
+  Rotary *_rotary;
 };
 
 #endif // ROTARYENCODER_H

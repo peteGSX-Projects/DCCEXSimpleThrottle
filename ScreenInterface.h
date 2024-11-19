@@ -19,38 +19,38 @@
 #ifndef SCREENINTERFACE_H
 #define SCREENINTERFACE_H
 
-#include "ButtonInterface.h"
 #include "DisplayInterface.h"
-#include "RotaryEncoderInterface.h"
+#include "UserConfirmationInterface.h"
+#include "UserSelectionInterface.h"
 
-/// @brief Class to support screens of different types responding to rotary encoder movements and button events
+/// @brief
 class ScreenInterface {
-public:
-  /// @brief Method to implement to check for rotary encoder movements and button events
+  /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
+  /// actions, and to ensure displays are updated
   virtual void update() = 0;
 
-  /// @brief Method to implement to handle a rotary encoder movement
-  /// @param movement None, Clockwise, or CounterClockwise
-  virtual void handleRotation(RotaryEncoderMovement movement) = 0;
+  /// @brief Implement this method to define what to do when user confirmation actions are performed
+  /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
+  virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
 
-  /// @brief Method to implement to handle a button event
-  /// @param buttonEvent None, SingleClick, DoubleClick, LongPress
-  virtual void handleButtonEvent(ButtonEvent buttonEvent) = 0;
+  /// @brief Implement this method to define what to do when user selection actions are performed
+  /// @param action UserSelectionAction::[None|UpOrDecrease|DownOrIncrease]
+  virtual void handleUserSelectionAction(UserSelectionAction action) = 0;
 
-  /// @brief Method to implement to draw the current screen on a display
-  /// @param display Pointer to the display interface object
-  virtual void drawScreen(DisplayInterface *displayInterface) = 0;
+  /// @brief Implement this method to draw the associated screen object on the specified display
+  /// @param display Pointer to the display object
+  virtual void drawScreen(DisplayInterface *display) = 0;
 
-  /// @brief Destructor for this ScreenInterface object
-  virtual ~ScreenInterface() = default;
-
-  /// @brief Get the next screen in the linked list
-  /// @return Pointer to the screen interface object
+  /// @brief Get the next screen object in the linked list
+  /// @return Pointer to the screen object
   ScreenInterface *getNext() { return _next; }
 
-  /// @brief Set the next screen in the linked list
-  /// @param screenInterface Pointer to the screen interface object
-  void setNext(ScreenInterface *screenInterface) { _next = screenInterface; }
+  /// @brief Set the next screen object in the linked list
+  /// @param screen Pointer to a screen object
+  void setNext(ScreenInterface *screen) { _next = screen; }
+
+  /// @brief Destructor for the object
+  virtual ~ScreenInterface() = default;
 
 private:
   ScreenInterface *_next;

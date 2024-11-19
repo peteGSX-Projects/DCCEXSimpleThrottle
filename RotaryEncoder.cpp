@@ -18,19 +18,19 @@
 
 #include "RotaryEncoder.h"
 
+RotaryEncoder::RotaryEncoder() { _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN); }
+
 void RotaryEncoder::begin() {}
 
-RotaryEncoder::RotaryEncoder(Rotary *rotaryEncoder) : _rotaryEncoder(rotaryEncoder) {}
-
-RotaryEncoderMovement RotaryEncoder::getMovement() {
-  if (!_rotaryEncoder)
-    return RotaryEncoderMovement::None;
-  RotaryEncoderMovement movement = RotaryEncoderMovement::None;
-  unsigned char result = _rotaryEncoder->process();
+UserSelectionAction RotaryEncoder::getUserSelectionAction() {
+  if (!_rotary)
+    return UserSelectionAction::None;
+  UserSelectionAction action = UserSelectionAction::None;
+  unsigned char result = _rotary->process();
   if (result == DIR_CW) {
-    movement = RotaryEncoderMovement::Clockwise;
+    action = UserSelectionAction::DownOrIncrease;
   } else if (result == DIR_CCW) {
-    movement = RotaryEncoderMovement::CounterClockwise;
+    action = UserSelectionAction::UpOrDecrease;
   }
-  return movement;
+  return action;
 }

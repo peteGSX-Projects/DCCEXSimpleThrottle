@@ -17,22 +17,26 @@
  */
 
 #include "Button.h"
+#include "Defines.h"
+
+Button::Button() {
+  _button = new Switch(BUTTON_PIN, BUTTON_PIN_MODE, BUTTON_PIN_POLARITY, BUTTON_DEBOUNCE_PERIOD,
+                       BUTTON_LONG_PRESS_PERIOD, BUTTON_DOUBLE_CLICK_PERIOD, BUTTON_DEGLITCH_PERIOD);
+}
 
 void Button::begin() {}
 
-Button::Button(Switch *button) : _button(button) {}
-
-ButtonEvent Button::getEvent() {
+UserConfirmationAction Button::getUserConfirmationAction() {
   if (!_button)
-    return ButtonEvent::None;
+    return UserConfirmationAction::None;
+  UserConfirmationAction action = UserConfirmationAction::None;
   _button->poll();
-  ButtonEvent event = ButtonEvent::None;
   if (_button->singleClick()) {
-    event = ButtonEvent::SingleClick;
+    action = UserConfirmationAction::SingleClick;
   } else if (_button->doubleClick()) {
-    event = ButtonEvent::DoubleClick;
+    action = UserConfirmationAction::DoubleClick;
   } else if (_button->longPress()) {
-    event = ButtonEvent::LongPress;
+    action = UserConfirmationAction::LongPress;
   }
-  return event;
+  return action;
 }

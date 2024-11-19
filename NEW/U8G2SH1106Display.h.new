@@ -23,27 +23,21 @@
 #include "DisplayInterface.h"
 #include <U8g2lib.h>
 
-/// @brief Class to implement display on an SH1106 based OLED using the U8g2 library
 class U8G2SH1106Display : public DisplayInterface {
 public:
-  /// @brief Constructor for the display object
-  U8G2SH1106Display();
+  /// @brief Constructor for the display
+  /// @param oled Pointer to the existing I2C or SPI U8G2 OLED object
+  U8G2SH1106Display(U8G2 *oled);
 
-  /// @brief Start the display
+  /// @brief Setup display parameters
   void begin() override;
 
   /// @brief Clear the display
   void clear() override;
 
-  /// @brief Display the menu header text with horizontal line separator from menu items
-  /// @param headerText Pointer to the char array containing the header text
-  void displayMenuHeader(const char *headerText) override;
-
-  /// @brief Implement this to display the menu item's text at the correct position on a display
-  /// @param index Index of the item to be displayed
-  /// @param itemText Pointer to the char array containing the item's text
-  /// @param selected Flag if this item is selected or not so it can be highlighted
-  void displayMenuItem(uint8_t index, const char *itemText, bool selected) override;
+  /// @brief Display the initial startup screen including the software version
+  /// @param version Pointer to the char array containing the version
+  void displayStartupInfo(const char *version) override;
 
 private:
   U8G2 *_oled;

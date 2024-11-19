@@ -20,47 +20,29 @@
 #define DISPLAYINTERFACE_H
 
 #include <Arduino.h>
-#include <DCCEXProtocol.h>
 
-/// @brief Display interface class to abstract display activities from the display type in use
+/// @brief Interface class to abstract construction of what is displayed on screen from the physical implementations
+/// All physical display classes must extend this
+/// This allows for different display types and resolutions to be used
 class DisplayInterface {
 public:
-  /// @brief Setup display parameters
+  /// @brief Implement this to perform any initial startup methods or activities
   virtual void begin() = 0;
 
-  /// @brief Clear the display
+  /// @brief Implement this to entirely clear a display
   virtual void clear() = 0;
 
-  /// @brief Display the initial startup screen including the software version
-  /// @param version Pointer to the char array containing the version
-  virtual void displayStartupInfo(const char *version) = 0;
+  /// @brief Implement this to display the header text with a horizontal line separator from menu items
+  /// @param headerText Pointer to the char array containing the header text
+  virtual void displayMenuHeader(const char *headerText) = 0;
 
-  /// @brief Display the menu header
-  /// @param menuName Pointer to the char array containing the menu name
-  // virtual void displayMenuHeader(const char *menuName) = 0;
+  /// @brief Implement this to display the menu item's text at the correct position on a display
+  /// @param index Index of the item to be displayed
+  /// @param itemText Pointer to the char array containing the item's text
+  /// @param selected Flag if this item is selected or not so it can be highlighted
+  virtual void displayMenuItem(uint8_t index, const char *itemText, bool selected) = 0;
 
-  /// @brief 
-  /// @param itemText
-  /// @param row
-  // virtual void displayMenuItem(const char *itemText, uint8_t row) = 0;
-
-  /// @brief
-  /// @param speed
-  // virtual void displaySpeed(uint8_t speed);
-
-  /// @brief
-  /// @param direction
-  // virtual void displayDirection(Direction direction);
-
-  /// @brief
-  /// @param address
-  // virtual void displayLocoAddress(uint16_t address);
-
-  /// @brief
-  /// @param trackPower
-  // virtual void displayTrackPower(TrackPower trackPower);
-
-  /// @brief Destructor for this DisplayInterface object
+  /// @brief Destructor for the object
   virtual ~DisplayInterface() = default;
 };
 

@@ -16,21 +16,28 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
+#ifndef ROTARYENCODER_H
+#define ROTARYENCODER_H
 
-AppConfiguration::AppConfiguration() {
-  _userConfirmation = new Button();
-  _userSelection = new RotaryEncoder();
-  _display = new U8G2SH1106Display();
-}
+#include "Rotary.h"
+#include "RotaryEncoderInterface.h"
 
-void AppConfiguration::begin() {
-  _userConfirmation->begin();
-  _userSelection->begin();
-  _display->begin();
-}
+/// @brief Class to manage user interaction with a rotary encoder
+class RotaryEncoder : public RotaryEncoderInterface {
+public:
+  /// @brief Constructor for this rotary encoder object
+  /// @param rotaryEncoder Pointer to an existing Rotary object
+  RotaryEncoder(Rotary *rotaryEncoder);
 
-void AppConfiguration::update() {
-  _userConfirmation->getUserConfirmationAction();
-  _userSelection->getUserSelectionAction();
-}
+  /// @brief Start this rotary encoder
+  void begin() override;
+
+  /// @brief Monitor for movements of the rotary encoder
+  /// @return None, Clockwise, CounterClockwise
+  RotaryEncoderMovement getMovement() override;
+
+private:
+  Rotary *_rotaryEncoder;
+};
+
+#endif // ROTARYENCODER_H
