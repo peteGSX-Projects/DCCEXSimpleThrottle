@@ -16,21 +16,16 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "RotaryEncoder.h"
+#include "StartupScreen.h"
 
-RotaryEncoder::RotaryEncoder() { _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN); }
+StartupScreen::StartupScreen() {}
 
-void RotaryEncoder::begin() {}
+void StartupScreen::update() {}
 
-UserSelectionAction RotaryEncoder::getUserSelectionAction() {
-  if (!_rotary)
-    return UserSelectionAction::None;
-  UserSelectionAction action = UserSelectionAction::None;
-  unsigned char result = _rotary->process();
-  if (result == DIR_CW) {
-    action = UserSelectionAction::Down;
-  } else if (result == DIR_CCW) {
-    action = UserSelectionAction::Up;
-  }
-  return action;
+void StartupScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
+
+void StartupScreen::handleUserSelectionAction(UserSelectionAction action) {}
+
+void StartupScreen::drawScreen(DisplayInterface *display) {
+  display->displayHeader("DCC-EX Simple Throttle");
 }

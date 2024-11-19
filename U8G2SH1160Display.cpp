@@ -48,6 +48,6 @@ void U8G2SH1106Display::clear() {
   _oled->sendBuffer();
 }
 
-void U8G2SH1106Display::displayMenuHeader(const char *headerText) {}
+void U8G2SH1106Display::displayHeader(const char *headerText) {}
 
 void U8G2SH1106Display::displayMenuItem(uint8_t index, const char *itemText, bool selected) {}

@@ -20,12 +20,14 @@
 #define USERSELECTIONINTERFACE_H
 
 /// @brief User selection action data types available
-enum class UserSelectionAction { None, UpOrDecrease, DownOrIncrease };
+enum class UserSelectionAction { None, Up, Down };
 
 /// @brief Interface class to abstract user selection actions from physical implementations
 /// All physical user selection classes must extend this
 /// This allows for the use of physical buttons, rotary encoders, touch screens, and other user interface methods that
 /// can move menu selections up and down, and increase or decrease throttle speeds
+/// Note if using a rotary encoder, if up is counter clockwise for menu selections, this will also be a decrease in
+/// speed, and vice versa for down with clockwise and an increase in speed
 class UserSelectionInterface {
 public:
   /// @brief Implement this to perform any initial startup methods or activities
@@ -33,7 +35,7 @@ public:
 
   /// @brief Implement this to check for any user selection actions
   /// This should be called at least once per main loop iteration
-  /// @return UserSelectionAction::[None|UpOrDecrease|DownOrIncrease]
+  /// @return UserSelectionAction::[None|Up|Down]
   virtual UserSelectionAction getUserSelectionAction() = 0;
 
   /// @brief Destructor for the object

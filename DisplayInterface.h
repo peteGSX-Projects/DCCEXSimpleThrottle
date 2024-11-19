@@ -32,9 +32,9 @@ public:
   /// @brief Implement this to entirely clear a display
   virtual void clear() = 0;
 
-  /// @brief Implement this to display the header text with a horizontal line separator from menu items
+  /// @brief Implement this to display the header text with a horizontal line separator from other items
   /// @param headerText Pointer to the char array containing the header text
-  virtual void displayMenuHeader(const char *headerText) = 0;
+  virtual void displayHeader(const char *headerText) = 0;
 
   /// @brief Implement this to display the menu item's text at the correct position on a display
   /// @param index Index of the item to be displayed

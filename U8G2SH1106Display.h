@@ -35,9 +35,9 @@ public:
   /// @brief Clear the display
   void clear() override;
 
-  /// @brief Display the menu header text with horizontal line separator from menu items
+  /// @brief Display the header text with horizontal line separator from other items
   /// @param headerText Pointer to the char array containing the header text
-  void displayMenuHeader(const char *headerText) override;
+  void displayHeader(const char *headerText) override;
 
   /// @brief Implement this to display the menu item's text at the correct position on a display
   /// @param index Index of the item to be displayed

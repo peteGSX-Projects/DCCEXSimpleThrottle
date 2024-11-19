@@ -23,12 +23,16 @@
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
 
+/// @brief 
 class AppConfiguration {
 public:
+  /// @brief 
   AppConfiguration();
 
+  /// @brief 
   void begin();
 
+  /// @brief 
   void update();
 
 private:

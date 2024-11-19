@@ -25,6 +25,7 @@
 
 /// @brief
 class ScreenInterface {
+public:
   /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
   /// actions, and to ensure displays are updated
   virtual void update() = 0;
@@ -34,12 +35,15 @@ class ScreenInterface {
   virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
 
   /// @brief Implement this method to define what to do when user selection actions are performed
-  /// @param action UserSelectionAction::[None|UpOrDecrease|DownOrIncrease]
+  /// @param action UserSelectionAction::[None|Up|Down]
   virtual void handleUserSelectionAction(UserSelectionAction action) = 0;
 
   /// @brief Implement this method to draw the associated screen object on the specified display
   /// @param display Pointer to the display object
   virtual void drawScreen(DisplayInterface *display) = 0;
+
+  /// @brief Destructor for the object
+  virtual ~ScreenInterface() = default;
 
   /// @brief Get the next screen object in the linked list
   /// @return Pointer to the screen object
@@ -48,9 +52,6 @@ class ScreenInterface {
   /// @brief Set the next screen object in the linked list
   /// @param screen Pointer to a screen object
   void setNext(ScreenInterface *screen) { _next = screen; }
-
-  /// @brief Destructor for the object
-  virtual ~ScreenInterface() = default;
 
 private:
   ScreenInterface *_next;

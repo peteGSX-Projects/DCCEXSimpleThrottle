@@ -31,6 +31,29 @@ void AppConfiguration::begin() {
 }
 
 void AppConfiguration::update() {
-  _userConfirmation->getUserConfirmationAction();
-  _userSelection->getUserSelectionAction();
+  UserConfirmationAction action = _userConfirmation->getUserConfirmationAction();
+  switch (action) {
+  case UserConfirmationAction::SingleClick:
+    CONSOLE.println("Single click");
+    break;
+  case UserConfirmationAction::DoubleClick:
+    CONSOLE.println("Double click");
+    break;
+  case UserConfirmationAction::LongPress:
+    CONSOLE.println("Long press");
+    break;
+  default:
+    break;
+  }
+  UserSelectionAction selection = _userSelection->getUserSelectionAction();
+  switch (selection) {
+  case UserSelectionAction::Down:
+    CONSOLE.println("Down");
+    break;
+  case UserSelectionAction::Up:
+    CONSOLE.println("Up");
+    break;
+  default:
+    break;
+  }
 }
