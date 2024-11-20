@@ -45,6 +45,10 @@ public:
   /// @param selected Flag if this item is selected or not so it can be highlighted
   void displayMenuItem(uint8_t index, const char *itemText, bool selected) override;
 
+  /// @brief Display the software version below the header text
+  /// @param version Pointer to the char array containing the version number
+  void displaySoftwareVersion(const char *version) override;
+
 private:
   U8G2 *_oled;
   const uint8_t *_defaultFont;

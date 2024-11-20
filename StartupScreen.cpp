@@ -17,6 +17,7 @@
  */
 
 #include "StartupScreen.h"
+#include "Version.h"
 
 StartupScreen::StartupScreen() {}
 
@@ -27,5 +28,10 @@ void StartupScreen::handleUserConfirmationAction(UserConfirmationAction action) 
 void StartupScreen::handleUserSelectionAction(UserSelectionAction action) {}
 
 void StartupScreen::drawScreen(DisplayInterface *display) {
+  if (!display->needsRedraw())
+    return;
+  display->setNeedsRedraw(false);
+  display->clear();
   display->displayHeader("DCC-EX Simple Throttle");
+  display->displaySoftwareVersion(VERSION);
 }

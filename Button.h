@@ -27,7 +27,7 @@ public:
   /// @brief Constructor for the button object
   Button();
 
-  /// @brief
+  /// @brief Not required to be implemented for this type
   void begin() override;
 
   /// @brief Check for any user confirmation actions

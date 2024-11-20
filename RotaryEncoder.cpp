@@ -18,7 +18,10 @@
 
 #include "RotaryEncoder.h"
 
-RotaryEncoder::RotaryEncoder() { _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN); }
+RotaryEncoder::RotaryEncoder() {
+  _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN);
+  setThrottleInverted();
+}
 
 void RotaryEncoder::begin() {}
 

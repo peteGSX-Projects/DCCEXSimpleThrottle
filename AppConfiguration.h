@@ -19,26 +19,41 @@
 #ifndef APPCONFIGURATION_H
 #define APPCONFIGURATION_H
 
+#include "AppOrchestrator.h"
 #include "Button.h"
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
 
-/// @brief 
+/// @brief
 class AppConfiguration {
 public:
-  /// @brief 
+  /// @brief Constructor for the app configuration object
   AppConfiguration();
 
-  /// @brief 
-  void begin();
+  /// @brief Start all associated user interfaces and instantiate all objects
+  void initialise();
 
-  /// @brief 
-  void update();
+  /// @brief Get the user confirmation interface associated with the config
+  /// @return Pointer to the user confirmation interface
+  UserConfirmationInterface *getUserConfirmationInterface();
+
+  /// @brief Get the user selection interface associated with the config
+  /// @return Pointer to the user selection interface
+  UserSelectionInterface *getUserSelectionInterface();
+
+  /// @brief Get the display interface associated with the config
+  /// @return Pointer to the display interface
+  DisplayInterface *getDisplayInterface();
+
+  /// @brief Get the application orchestrator associated with the config
+  /// @return Pointer to the application orchestrator
+  AppOrchestrator *getAppOrechstrator();
 
 private:
-  UserConfirmationInterface *_userConfirmation;
-  UserSelectionInterface *_userSelection;
-  DisplayInterface *_display;
+  UserConfirmationInterface *_userConfirmationInterface;
+  UserSelectionInterface *_userSelectionInterface;
+  DisplayInterface *_displayInterface;
+  AppOrchestrator *_appOrchestrator;
 };
 
 #endif // APPCONFIGURATION_H

@@ -19,41 +19,46 @@
 #include "AppConfiguration.h"
 
 AppConfiguration::AppConfiguration() {
-  _userConfirmation = new Button();
-  _userSelection = new RotaryEncoder();
-  _display = new U8G2SH1106Display();
+  _userConfirmationInterface = new Button();
+  _userSelectionInterface = new RotaryEncoder();
+  _displayInterface = new U8G2SH1106Display();
+  _appOrchestrator = new AppOrchestrator(_displayInterface, _userConfirmationInterface, _userSelectionInterface);
 }
 
-void AppConfiguration::begin() {
-  _userConfirmation->begin();
-  _userSelection->begin();
-  _display->begin();
-}
+void AppConfiguration::initialise() {}
 
-void AppConfiguration::update() {
-  UserConfirmationAction action = _userConfirmation->getUserConfirmationAction();
-  switch (action) {
-  case UserConfirmationAction::SingleClick:
-    CONSOLE.println("Single click");
-    break;
-  case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("Double click");
-    break;
-  case UserConfirmationAction::LongPress:
-    CONSOLE.println("Long press");
-    break;
-  default:
-    break;
-  }
-  UserSelectionAction selection = _userSelection->getUserSelectionAction();
-  switch (selection) {
-  case UserSelectionAction::Down:
-    CONSOLE.println("Down");
-    break;
-  case UserSelectionAction::Up:
-    CONSOLE.println("Up");
-    break;
-  default:
-    break;
-  }
-}
+UserConfirmationInterface *AppConfiguration::getUserConfirmationInterface() { return _userConfirmationInterface; }
+
+UserSelectionInterface *AppConfiguration::getUserSelectionInterface() { return _userSelectionInterface; }
+
+DisplayInterface *AppConfiguration::getDisplayInterface() { return _displayInterface; }
+
+AppOrchestrator *AppConfiguration::getAppOrechstrator() { return _appOrchestrator; }
+
+// void AppConfiguration::update() {
+//   UserConfirmationAction action = _userConfirmation->getUserConfirmationAction();
+//   switch (action) {
+//   case UserConfirmationAction::SingleClick:
+//     CONSOLE.println("Single click");
+//     break;
+//   case UserConfirmationAction::DoubleClick:
+//     CONSOLE.println("Double click");
+//     break;
+//   case UserConfirmationAction::LongPress:
+//     CONSOLE.println("Long press");
+//     break;
+//   default:
+//     break;
+//   }
+//   UserSelectionAction selection = _userSelection->getUserSelectionAction();
+//   switch (selection) {
+//   case UserSelectionAction::Down:
+//     CONSOLE.println("Down");
+//     break;
+//   case UserSelectionAction::Up:
+//     CONSOLE.println("Up");
+//     break;
+//   default:
+//     break;
+//   }
+// }

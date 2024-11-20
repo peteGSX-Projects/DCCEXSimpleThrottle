@@ -40,6 +40,17 @@ public:
 
   /// @brief Destructor for the object
   virtual ~UserSelectionInterface() = default;
+
+  /// @brief Check if throttle is inverted compared to up/down
+  /// @return True if UserSelectionAction::Up decreases speed, and Down increases speed
+  /// Particularly useful for rotary encoders vs. physical push buttons or touch screens
+  bool throttleInverted() { return _throttleInverted; }
+
+  /// @brief Call this method to ensure throttle is inverted compared to selection options
+  void setThrottleInverted() { _throttleInverted = true; }
+
+private:
+  bool _throttleInverted = false;
 };
 
 #endif // USERSELECTIONINTERFACE_H

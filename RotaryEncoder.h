@@ -27,10 +27,17 @@
 /// Clockwise moves down/increases speed, counter clockwise moves up/decreases speed
 class RotaryEncoder : public UserSelectionInterface {
 public:
+  /// @brief Constructor for the rotary encoder object
   RotaryEncoder();
 
+  /// @brief Not implemented for this device type
   void begin() override;
 
+  /// @brief Check for any user selection actions
+  /// This should be called at least once per main loop iteration
+  /// Note that with a rotary encoder, clockwise is down but also increases speed, and counter clockwise is up but also
+  /// decreases speed
+  /// @return UserSelectionAction::[None|Up|Down]
   UserSelectionAction getUserSelectionAction() override;
 
 private:

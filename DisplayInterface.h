@@ -42,8 +42,32 @@ public:
   /// @param selected Flag if this item is selected or not so it can be highlighted
   virtual void displayMenuItem(uint8_t index, const char *itemText, bool selected) = 0;
 
+  /// @brief Implement this to display the software version below the header text
+  /// @param version Pointer to the char array containing the version number
+  virtual void displaySoftwareVersion(const char *version) = 0;
+
+  /// @brief Check if the display needs to be redrawn to prevent unnecessary redraws and flicker
+  /// @return True|False
+  bool needsRedraw() { return _needsRedraw; }
+
+  /// @brief Set the redraw flag for this display
+  /// @param redraw True|False
+  void setNeedsRedraw(bool redraw) { _needsRedraw = redraw; }
+
+  /// @brief Get the number of menu items to be displayed per page for this display
+  /// @return Number of items per page this display can handle
+  uint8_t getMenuItemsPerPage() { return _menuItemsPerPage; }
+
+  /// @brief Set the number of menu items per page this display can handle
+  /// @param menuItemsPerPage Items per page
+  void setMenuItemsPerPage(uint8_t menuItemsPerPage) { _menuItemsPerPage = menuItemsPerPage; }
+
   /// @brief Destructor for the object
   virtual ~DisplayInterface() = default;
+
+private:
+  bool _needsRedraw = false;
+  uint8_t _menuItemsPerPage = 0;
 };
 
 #endif // DISPLAYINTERFACE_H

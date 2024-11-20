@@ -34,6 +34,8 @@ U8G2SH1106Display::U8G2SH1106Display() {
   _wifiFont = WIFI_FONT;
   _csFont = CS_FONT;
   _errorFont = ERROR_FONT;
+  setMenuItemsPerPage(5);
+  setNeedsRedraw(true);
 }
 
 void U8G2SH1106Display::begin() {
@@ -48,6 +50,22 @@ void U8G2SH1106Display::clear() {
   _oled->sendBuffer();
 }
 
-void U8G2SH1106Display::displayHeader(const char *headerText) {}
+void U8G2SH1106Display::displayHeader(const char *headerText) {
+  _oled->setDrawColor(1);
+  _oled->setFont(_menuFont);
+  _oled->drawHLine(0, 7, 128);
+  _oled->setCursor(0, 6);
+  _oled->print(headerText);
+  _oled->sendBuffer();
+}
 
 void U8G2SH1106Display::displayMenuItem(uint8_t index, const char *itemText, bool selected) {}
+
+void U8G2SH1106Display::displaySoftwareVersion(const char *version) {
+  _oled->setDrawColor(1);
+  _oled->setFont(_menuFont);
+  _oled->setCursor(0, 19);
+  _oled->print("Version: ");
+  _oled->print(version);
+  _oled->sendBuffer();
+}

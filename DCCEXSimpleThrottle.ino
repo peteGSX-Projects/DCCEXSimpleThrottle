@@ -29,8 +29,13 @@ void setup() {
   CONSOLE.println("DCC-EX Simple Throttle");
   CONSOLE.print("Version: ");
   CONSOLE.println(VERSION);
-  appConfig.begin();
+  appConfig.initialise();
+  AppOrchestrator *orchestrator = appConfig.getAppOrechstrator();
+  orchestrator->begin();
 }
 
 /// @brief Main loop
-void loop() { appConfig.update(); }
+void loop() {
+  AppOrchestrator *orchestrator = appConfig.getAppOrechstrator();
+  orchestrator->update();
+}
