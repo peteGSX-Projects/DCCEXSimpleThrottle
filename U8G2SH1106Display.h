@@ -49,6 +49,22 @@ public:
   /// @param version Pointer to the char array containing the version number
   void displaySoftwareVersion(const char *version) override;
 
+  /// @brief Update the currenty selected loco's speed
+  /// @param speed 8 bit integer of the speed
+  void updateSpeed(uint8_t speed) override;
+
+  /// @brief Update the address of the currently selected loco
+  /// @param address Pointer to the char array containing the name
+  void updateLocoName(const char *name) override;
+
+  /// @brief Update the currently selected loco's direction
+  /// @param direction Forward|Reverse
+  void updateLocoDirection(Direction direction) override;
+
+  /// @brief Update the current track power status
+  /// @param trackPower PowerOff|PowerOn|PowerUnknown
+  void updateTrackPowerState(TrackPower trackPower) override;
+
 private:
   U8G2 *_oled;
   const uint8_t *_defaultFont;

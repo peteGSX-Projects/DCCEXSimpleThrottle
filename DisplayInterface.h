@@ -20,6 +20,7 @@
 #define DISPLAYINTERFACE_H
 
 #include <Arduino.h>
+#include <DCCEXProtocol.h>
 
 /// @brief Interface class to abstract construction of what is displayed on screen from the physical implementations
 /// All physical display classes must extend this
@@ -45,6 +46,22 @@ public:
   /// @brief Implement this to display the software version below the header text
   /// @param version Pointer to the char array containing the version number
   virtual void displaySoftwareVersion(const char *version) = 0;
+
+  /// @brief Implement this to update the currenty selected loco's speed
+  /// @param speed 8 bit integer of the speed
+  virtual void updateSpeed(uint8_t speed) = 0;
+
+  /// @brief Implement this to update the name of the currently selected loco
+  /// @param name Pointer to the char array containing the name
+  virtual void updateLocoName(const char *name) = 0;
+
+  /// @brief Implement this to update the currently selected loco's direction
+  /// @param direction Forward|Reverse
+  virtual void updateLocoDirection(Direction direction) = 0;
+
+  /// @brief Implement this to update the current track power status
+  /// @param trackPower PowerOff|PowerOn|PowerUnknown
+  virtual void updateTrackPowerState(TrackPower trackPower) = 0;
 
   /// @brief Check if the display needs to be redrawn to prevent unnecessary redraws and flicker
   /// @return True|False

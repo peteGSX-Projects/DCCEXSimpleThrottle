@@ -20,7 +20,6 @@
 #define BASEMENUITEM_H
 
 #include <Arduino.h>
-#include <DCCEXProtocol.h>
 
 /// @brief Base class for all menu item types, and all menu item types must inherit from this.
 /// Every menu item has a name, which is what appears on screen for the user to select.

@@ -48,6 +48,34 @@ void AppOrchestrator::update() {
   }
 }
 
+// void AppConfiguration::update() {
+//   UserConfirmationAction action = _userConfirmation->getUserConfirmationAction();
+//   switch (action) {
+//   case UserConfirmationAction::SingleClick:
+//     CONSOLE.println("Single click");
+//     break;
+//   case UserConfirmationAction::DoubleClick:
+//     CONSOLE.println("Double click");
+//     break;
+//   case UserConfirmationAction::LongPress:
+//     CONSOLE.println("Long press");
+//     break;
+//   default:
+//     break;
+//   }
+//   UserSelectionAction selection = _userSelection->getUserSelectionAction();
+//   switch (selection) {
+//   case UserSelectionAction::Down:
+//     CONSOLE.println("Down");
+//     break;
+//   case UserSelectionAction::Up:
+//     CONSOLE.println("Up");
+//     break;
+//   default:
+//     break;
+//   }
+// }
+
 void AppOrchestrator::_handleStartupState() {
   _tempScreen->drawScreen(_displayInterface);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {

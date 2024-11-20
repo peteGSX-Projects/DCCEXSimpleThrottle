@@ -20,6 +20,7 @@
 #define LOCOMENUITEM_H
 
 #include "BaseMenuItem.h"
+#include <DCCEXProtocol.h>
 
 /// @brief Extension of the BaseMenuItem class to allow users to select a Loco
 class LocoMenuItem : public BaseMenuItem {

@@ -69,3 +69,61 @@ void U8G2SH1106Display::displaySoftwareVersion(const char *version) {
   _oled->print(version);
   _oled->sendBuffer();
 }
+
+void U8G2SH1106Display::updateSpeed(uint8_t speed) {
+  _oled->setCursor(40, 20);
+  _oled->setFont(_speedFont);
+  _oled->print(F("   "));
+  _oled->setCursor(40, 20);
+  _oled->print(speed);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::updateLocoName(const char *name) {
+  _oled->setCursor(0, 50);
+  _oled->setFont(_addressFont);
+  _oled->print(F("                      "));
+  _oled->setCursor(0, 50);
+  _oled->print(name);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::updateLocoDirection(Direction direction) {
+  _oled->setCursor(30, 35);
+  _oled->setFont(_directionFont);
+  _oled->print(F("       "));
+  _oled->setCursor(30, 35);
+  if (direction == Direction::Reverse) {
+    _oled->print(F("Reverse"));
+  } else {
+    _oled->print(F("Forward"));
+  }
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::updateTrackPowerState(TrackPower trackPower) {
+  _oled->drawHLine(0, 55, 128);
+  _oled->setCursor(50, 63);
+  _oled->setFont(_menuFont);
+  _oled->print(F("Track power: "));
+  _oled->setCursor(112, 63);
+  _oled->print("   ");
+  _oled->setCursor(112, 63);
+  switch (trackPower) {
+  case TrackPower::PowerOff:
+    _oled->print(F("Off"));
+    break;
+
+  case TrackPower::PowerOn:
+    _oled->print(F("On"));
+    break;
+
+  case TrackPower::PowerUnknown:
+    _oled->print(F("?"));
+    break;
+
+  default:
+    break;
+  }
+  _oled->sendBuffer();
+}
