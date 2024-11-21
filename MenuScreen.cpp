@@ -37,5 +37,7 @@ void MenuScreen::handleUserSelectionAction(UserSelectionAction action) {
 void MenuScreen::drawScreen(DisplayInterface *display) {
   if (!_menu)
     return;
+  if (!display->needsRedraw())
+    return;
   _menu->displayMenu(display);
 }

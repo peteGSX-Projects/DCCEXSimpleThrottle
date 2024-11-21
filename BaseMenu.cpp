@@ -19,6 +19,7 @@
 #include "BaseMenu.h"
 
 void BaseMenu::displayMenu(DisplayInterface *displayInterface) {
+  displayInterface->setNeedsRedraw(false);
   displayInterface->clear();
   displayInterface->displayHeader(_name);
 }

@@ -71,9 +71,13 @@ private:
   /// @brief
   void _handleSelectActionState();
 
-  /// @brief 
-  /// @param appState 
+  /// @brief
+  /// @param appState
   void _switchState(AppState appState);
+
+  /// @brief
+  /// @param menu
+  void _displayMenu(BaseMenu *menu);
 };
 
 #endif // APPORCHESTRATOR_H

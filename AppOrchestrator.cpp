@@ -17,6 +17,7 @@
  */
 
 #include "AppOrchestrator.h"
+#include "MenuScreen.h"
 #include "OperateScreen.h"
 #include "StartupScreen.h"
 
@@ -64,6 +65,7 @@ void AppOrchestrator::_handleStartupState() {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
+    CONSOLE.println("AppOrchestrator::_handleStartupState UserConfirmationAction");
     _switchState(AppState::SelectServer);
     break;
   default:
@@ -73,16 +75,18 @@ void AppOrchestrator::_handleStartupState() {
 
 void AppOrchestrator::_handleSelectServerState() {
   if (!_menuManager)
-    CONSOLE.println("No menuManager");
     return;
   auto *menu = _menuManager->getSelectServerMenu();
-  if (!menu) {
-    CONSOLE.println("No menu");
+  if (!menu)
     return;
-  }
-  menu->displayMenu(_displayInterface);
+  _displayMenu(menu);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {
   case UserConfirmationAction::DoubleClick:
+  case UserConfirmationAction::LongPress:
+    CONSOLE.println("AppOrchestrator::_handleSelectServerState UserConfirmationAction");
+    break;
+  case UserConfirmationAction::SingleClick:
+    CONSOLE.println("AppOrchestrator::_handleSelectServerState SingleClick");
     _switchState(AppState::SelectLoco);
     break;
   default:
@@ -94,12 +98,19 @@ void AppOrchestrator::_handleSelectLocoState() {
   if (!_menuManager)
     return;
   auto *menu = _menuManager->getSelectLocoMenu();
-  menu->displayMenu(_displayInterface);
+  if (!menu)
+    return;
+  _displayMenu(menu);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::LongPress:
+    CONSOLE.println("AppOrchestrator::_handleSelectLocoState UserConfirmationAction");
+    break;
   case UserConfirmationAction::SingleClick:
+    CONSOLE.println("AppOrchestrator::_handleSelectLocoState SingleClick");
     _switchState(AppState::Operate);
     break;
   case UserConfirmationAction::DoubleClick:
+    CONSOLE.println("AppOrchestrator::_handleSelectLocoState DoubleClick");
     _switchState(AppState::SelectAction);
     break;
   default:
@@ -110,7 +121,12 @@ void AppOrchestrator::_handleSelectLocoState() {
 void AppOrchestrator::_handleOperateState() {
   _operateScreen->drawScreen(_displayInterface);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::SingleClick:
+  case UserConfirmationAction::LongPress:
+    CONSOLE.println("AppOrchestrator::_handleOperateState UserConfirmationAction");
+    break;
   case UserConfirmationAction::DoubleClick:
+    CONSOLE.println("AppOrchestrator::_handleOperateState DoubleClick");
     _switchState(AppState::SelectLoco);
     break;
   default:
@@ -122,9 +138,19 @@ void AppOrchestrator::_handleSelectActionState() {
   if (!_menuManager)
     return;
   auto *menu = _menuManager->getSelectActionMenu();
-  menu->displayMenu(_displayInterface);
+  if (!menu)
+    return;
+  _displayMenu(menu);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::LongPress:
+    CONSOLE.println("AppOrchestrator::_handleSelectActionState UserConfirmationAction");
+    break;
+  case UserConfirmationAction::SingleClick:
+    CONSOLE.println("AppOrchestrator::_handleSelectActionState SingleClick");
+    _switchState(AppState::Operate);
+    break;
   case UserConfirmationAction::DoubleClick:
+    CONSOLE.println("AppOrchestrator::_handleSelectActionState DoubleClick");
     _switchState(AppState::SelectLoco);
     break;
   default:
@@ -159,4 +185,9 @@ void AppOrchestrator::_switchState(AppState appState) {
   default:
     break;
   }
+}
+
+void AppOrchestrator::_displayMenu(BaseMenu *menu) {
+  MenuScreen menuScreen(menu);
+  menuScreen.drawScreen(_displayInterface);
 }
