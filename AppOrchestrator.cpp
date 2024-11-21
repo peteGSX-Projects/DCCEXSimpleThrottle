@@ -20,11 +20,11 @@
 #include "OperateScreen.h"
 #include "StartupScreen.h"
 
-AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface,
+AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, MenuManager *menuManager,
                                  UserConfirmationInterface *userConfirmationInterface,
                                  UserSelectionInterface *userSelectionInterface)
-    : _displayInterface(displayInterface), _userConfirmationInterface(userConfirmationInterface),
-      _userSelectionInterface(userSelectionInterface) {
+    : _displayInterface(displayInterface), _menuManager(menuManager),
+      _userConfirmationInterface(userConfirmationInterface), _userSelectionInterface(userSelectionInterface) {
   _currentAppState = AppState::Startup;
   _startupScreen = new StartupScreen();
   _operateScreen = new OperateScreen();
@@ -50,41 +50,13 @@ void AppOrchestrator::update() {
   case AppState::Operate:
     _handleOperateState();
     break;
-  case AppState::SelectExtras:
-    _handleSelectExtrasState();
+  case AppState::SelectAction:
+    _handleSelectActionState();
     break;
   default:
     break;
   }
 }
-
-// void AppConfiguration::update() {
-//   UserConfirmationAction action = _userConfirmation->getUserConfirmationAction();
-//   switch (action) {
-//   case UserConfirmationAction::SingleClick:
-//     CONSOLE.println("Single click");
-//     break;
-//   case UserConfirmationAction::DoubleClick:
-//     CONSOLE.println("Double click");
-//     break;
-//   case UserConfirmationAction::LongPress:
-//     CONSOLE.println("Long press");
-//     break;
-//   default:
-//     break;
-//   }
-//   UserSelectionAction selection = _userSelection->getUserSelectionAction();
-//   switch (selection) {
-//   case UserSelectionAction::Down:
-//     CONSOLE.println("Down");
-//     break;
-//   case UserSelectionAction::Up:
-//     CONSOLE.println("Up");
-//     break;
-//   default:
-//     break;
-//   }
-// }
 
 void AppOrchestrator::_handleStartupState() {
   _startupScreen->drawScreen(_displayInterface);
@@ -92,17 +64,99 @@ void AppOrchestrator::_handleStartupState() {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
-    _currentAppState = AppState::Operate;
-    _displayInterface->setNeedsRedraw(true);
+    _switchState(AppState::SelectServer);
+    break;
   default:
     break;
   }
 }
 
-void AppOrchestrator::_handleSelectServerState() {}
+void AppOrchestrator::_handleSelectServerState() {
+  if (!_menuManager)
+    CONSOLE.println("No menuManager");
+    return;
+  auto *menu = _menuManager->getSelectServerMenu();
+  if (!menu) {
+    CONSOLE.println("No menu");
+    return;
+  }
+  menu->displayMenu(_displayInterface);
+  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::DoubleClick:
+    _switchState(AppState::SelectLoco);
+    break;
+  default:
+    break;
+  }
+}
 
-void AppOrchestrator::_handleSelectLocoState() {}
+void AppOrchestrator::_handleSelectLocoState() {
+  if (!_menuManager)
+    return;
+  auto *menu = _menuManager->getSelectLocoMenu();
+  menu->displayMenu(_displayInterface);
+  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::SingleClick:
+    _switchState(AppState::Operate);
+    break;
+  case UserConfirmationAction::DoubleClick:
+    _switchState(AppState::SelectAction);
+    break;
+  default:
+    break;
+  }
+}
 
-void AppOrchestrator::_handleOperateState() { _operateScreen->drawScreen(_displayInterface); }
+void AppOrchestrator::_handleOperateState() {
+  _operateScreen->drawScreen(_displayInterface);
+  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::DoubleClick:
+    _switchState(AppState::SelectLoco);
+    break;
+  default:
+    break;
+  }
+}
 
-void AppOrchestrator::_handleSelectExtrasState() {}
+void AppOrchestrator::_handleSelectActionState() {
+  if (!_menuManager)
+    return;
+  auto *menu = _menuManager->getSelectActionMenu();
+  menu->displayMenu(_displayInterface);
+  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  case UserConfirmationAction::DoubleClick:
+    _switchState(AppState::SelectLoco);
+    break;
+  default:
+    break;
+  }
+}
+
+void AppOrchestrator::_switchState(AppState appState) {
+  CONSOLE.println("Switch AppState");
+  _displayInterface->setNeedsRedraw(true);
+  switch (appState) {
+  case AppState::Startup:
+    CONSOLE.println("Switch to Startup");
+    _currentAppState = AppState::Startup;
+    break;
+  case AppState::Operate:
+    CONSOLE.println("Switch to Operate");
+    _currentAppState = AppState::Operate;
+    break;
+  case AppState::SelectAction:
+    CONSOLE.println("Switch to SelectAction");
+    _currentAppState = AppState::SelectAction;
+    break;
+  case AppState::SelectLoco:
+    CONSOLE.println("Switch to SelectLoco");
+    _currentAppState = AppState::SelectLoco;
+    break;
+  case AppState::SelectServer:
+    CONSOLE.println("Switch to SelectServer");
+    _currentAppState = AppState::SelectServer;
+    break;
+  default:
+    break;
+  }
+}

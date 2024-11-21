@@ -20,11 +20,12 @@
 #define APPORCHESTRATOR_H
 
 #include "DisplayInterface.h"
+#include "MenuManager.h"
+#include "ScreenInterface.h"
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
-#include "ScreenInterface.h"
 
-enum class AppState { Startup, SelectServer, SelectLoco, SelectExtras, Operate };
+enum class AppState { Startup, SelectServer, SelectLoco, SelectAction, Operate };
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens, and
 /// displays
@@ -32,10 +33,11 @@ class AppOrchestrator {
 public:
   /// @brief Constructor for the application orchestrator object
   /// @param displayInterface Pointer to the display interface to ensure is updated
+  /// @param menuManager
   /// @param userConfirmationInterface Pointer to the user confirmation interface to monitor
   /// @param userSelectionInterface Pointer the user selection interface to monitor
-  AppOrchestrator(DisplayInterface *displayInterface, UserConfirmationInterface *userConfirmationInterface,
-                  UserSelectionInterface *userSelectionInterface);
+  AppOrchestrator(DisplayInterface *displayInterface, MenuManager *menuManager,
+                  UserConfirmationInterface *userConfirmationInterface, UserSelectionInterface *userSelectionInterface);
 
   /// @brief Call this method to start all the associated interfaces
   void begin();
@@ -46,6 +48,7 @@ public:
 
 private:
   DisplayInterface *_displayInterface;
+  MenuManager *_menuManager;
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   AppState _currentAppState;
@@ -55,18 +58,22 @@ private:
 
   /// @brief When in startup mode, show the startup screen and wait for user interaction
   void _handleStartupState();
-  
-  /// @brief 
+
+  /// @brief
   void _handleSelectServerState();
 
-  /// @brief 
+  /// @brief
   void _handleSelectLocoState();
-  
-  /// @brief 
+
+  /// @brief
   void _handleOperateState();
 
+  /// @brief
+  void _handleSelectActionState();
+
   /// @brief 
-  void _handleSelectExtrasState();
+  /// @param appState 
+  void _switchState(AppState appState);
 };
 
 #endif // APPORCHESTRATOR_H

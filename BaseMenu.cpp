@@ -18,11 +18,14 @@
 
 #include "BaseMenu.h"
 
-BaseMenu::BaseMenu(const char *name) : _name(name) {
-  _firstMenuItem = nullptr;
-  _menuItemCount = 0;
-  _currentItemIndex = 0;
+void BaseMenu::displayMenu(DisplayInterface *displayInterface) {
+  displayInterface->clear();
+  displayInterface->displayHeader(_name);
 }
+
+void BaseMenu::setMenuName(const char *name) { _name = name; }
+
+const char *BaseMenu::getMenuName() { return _name; }
 
 void BaseMenu::addItem(BaseMenuItem *menuItem) {
   if (this->_firstMenuItem == nullptr) { // If it's the first menu item, set it
@@ -54,5 +57,3 @@ BaseMenuItem *BaseMenu::getMenuItemAtIndex(uint8_t index) {
 }
 
 uint8_t BaseMenu::getMenuItemCount() { return _menuItemCount; }
-
-const char *BaseMenu::getMenuName() { return _name; }

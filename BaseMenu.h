@@ -20,6 +20,7 @@
 #define BASEMENU_H
 
 #include "BaseMenuItem.h"
+#include "Defines.h"
 #include "DisplayInterface.h"
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
@@ -28,14 +29,6 @@
 /// @brief Class for maintaining a linked list of menu items to form a menu
 class BaseMenu {
 public:
-  /// @brief Constructor for each menu
-  /// @param name Pointer to the char array containing the name of the menu
-  BaseMenu(const char *name);
-
-  /// @brief Implement this method to display the menu on screen
-  /// @param displayInterface Pointer to the physical display
-  virtual void displayMenu(DisplayInterface *displayInterface) = 0;
-
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
@@ -43,6 +36,14 @@ public:
   /// @brief Implement this method to respond to user selection actions
   /// @param action UserSelectionAction::[None|Up|Down]
   virtual void handleUserSelectionAction(UserSelectionAction action) = 0;
+
+  /// @brief Method to display the menu on screen
+  /// @param displayInterface Pointer to the physical display
+  void displayMenu(DisplayInterface *displayInterface);
+
+  /// @brief Set the name of this menu
+  /// @param name Pointer to the char array containing the name
+  void setMenuName(const char *name);
 
   /// @brief Get the name of this menu
   /// @return Pointer to the char array containing the menu name
@@ -66,10 +67,10 @@ public:
   uint8_t getMenuItemCount();
 
 private:
-  const char *_name;            // Name of this menu
-  BaseMenuItem *_firstMenuItem; // Pointer to the first menu item in the linked list
-  uint8_t _menuItemCount;       // Count of menu items associated with this menu
-  uint8_t _currentItemIndex;    // Incrementing index to ensure each menu item has a unique index
+  const char *_name = nullptr;            // Name of this menu
+  BaseMenuItem *_firstMenuItem = nullptr; // Pointer to the first menu item in the linked list
+  uint8_t _menuItemCount = 0;             // Count of menu items associated with this menu
+  uint8_t _currentItemIndex = 0;          // Incrementing index to ensure each menu item has a unique index
 };
 
 #endif // MENU_H

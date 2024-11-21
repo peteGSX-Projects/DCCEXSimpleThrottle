@@ -21,10 +21,12 @@
 
 #include "AppOrchestrator.h"
 #include "Button.h"
+#include "MenuManager.h"
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
 
-/// @brief
+/// @brief Class to perform all application configuration on startup
+/// All interfaces and menus are created within this class
 class AppConfiguration {
 public:
   /// @brief Constructor for the app configuration object
@@ -49,10 +51,15 @@ public:
   /// @return Pointer to the application orchestrator
   AppOrchestrator *getAppOrechstrator();
 
+  /// @brief
+  /// @return
+  MenuManager *getMenuManager();
+
 private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   DisplayInterface *_displayInterface;
+  MenuManager *_menuManager;
   AppOrchestrator *_appOrchestrator;
 };
 

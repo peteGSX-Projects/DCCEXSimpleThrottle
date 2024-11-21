@@ -22,7 +22,9 @@ AppConfiguration::AppConfiguration() {
   _userConfirmationInterface = new Button();
   _userSelectionInterface = new RotaryEncoder();
   _displayInterface = new U8G2SH1106Display();
-  _appOrchestrator = new AppOrchestrator(_displayInterface, _userConfirmationInterface, _userSelectionInterface);
+  _menuManager = new MenuManager();
+  _appOrchestrator =
+      new AppOrchestrator(_displayInterface, _menuManager, _userConfirmationInterface, _userSelectionInterface);
 }
 
 void AppConfiguration::initialise() {}
@@ -34,3 +36,5 @@ UserSelectionInterface *AppConfiguration::getUserSelectionInterface() { return _
 DisplayInterface *AppConfiguration::getDisplayInterface() { return _displayInterface; }
 
 AppOrchestrator *AppConfiguration::getAppOrechstrator() { return _appOrchestrator; }
+
+MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
