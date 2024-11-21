@@ -21,7 +21,8 @@
 
 #include "DisplayInterface.h"
 #include "MenuManager.h"
-#include "ScreenInterface.h"
+#include "OperateScreen.h"
+#include "StartupScreen.h"
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
@@ -53,8 +54,8 @@ private:
   UserSelectionInterface *_userSelectionInterface;
   AppState _currentAppState;
 
-  ScreenInterface *_startupScreen;
-  ScreenInterface *_operateScreen;
+  StartupScreen *_startupScreen;
+  OperateScreen *_operateScreen;
 
   /// @brief When in startup mode, show the startup screen and wait for user interaction
   void _handleStartupState();
