@@ -17,6 +17,7 @@
  */
 
 #include "AppOrchestrator.h"
+#include "OperateScreen.h"
 #include "StartupScreen.h"
 
 AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface,
@@ -24,8 +25,9 @@ AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface,
                                  UserSelectionInterface *userSelectionInterface)
     : _displayInterface(displayInterface), _userConfirmationInterface(userConfirmationInterface),
       _userSelectionInterface(userSelectionInterface) {
-  _currentAppState = AppState::STARTUP;
-  _tempScreen = new StartupScreen();
+  _currentAppState = AppState::Startup;
+  _startupScreen = new StartupScreen();
+  _operateScreen = new OperateScreen();
 }
 
 void AppOrchestrator::begin() {
@@ -36,12 +38,20 @@ void AppOrchestrator::begin() {
 
 void AppOrchestrator::update() {
   switch (_currentAppState) {
-  case AppState::STARTUP:
+  case AppState::Startup:
     _handleStartupState();
     break;
-  case AppState::MENU:
+  case AppState::SelectServer:
+    _handleSelectServerState();
     break;
-  case AppState::OPERATION:
+  case AppState::SelectLoco:
+    _handleSelectLocoState();
+    break;
+  case AppState::Operate:
+    _handleOperateState();
+    break;
+  case AppState::SelectExtras:
+    _handleSelectExtrasState();
     break;
   default:
     break;
@@ -77,17 +87,22 @@ void AppOrchestrator::update() {
 // }
 
 void AppOrchestrator::_handleStartupState() {
-  _tempScreen->drawScreen(_displayInterface);
+  _startupScreen->drawScreen(_displayInterface);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
-    _displayInterface->clear();
+    _currentAppState = AppState::Operate;
+    _displayInterface->setNeedsRedraw(true);
   default:
     break;
   }
 }
 
-void AppOrchestrator::_handleMenuState() {}
+void AppOrchestrator::_handleSelectServerState() {}
 
-void AppOrchestrator::_handleOperationState() {}
+void AppOrchestrator::_handleSelectLocoState() {}
+
+void AppOrchestrator::_handleOperateState() { _operateScreen->drawScreen(_displayInterface); }
+
+void AppOrchestrator::_handleSelectExtrasState() {}

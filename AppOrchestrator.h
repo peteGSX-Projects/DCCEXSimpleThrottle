@@ -24,7 +24,7 @@
 #include "UserSelectionInterface.h"
 #include "ScreenInterface.h"
 
-enum class AppState { STARTUP, MENU, OPERATION };
+enum class AppState { Startup, SelectServer, SelectLoco, SelectExtras, Operate };
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens, and
 /// displays
@@ -50,16 +50,23 @@ private:
   UserSelectionInterface *_userSelectionInterface;
   AppState _currentAppState;
 
-  ScreenInterface *_tempScreen;
+  ScreenInterface *_startupScreen;
+  ScreenInterface *_operateScreen;
 
   /// @brief When in startup mode, show the startup screen and wait for user interaction
   void _handleStartupState();
   
   /// @brief 
-  void _handleMenuState();
+  void _handleSelectServerState();
+
+  /// @brief 
+  void _handleSelectLocoState();
   
   /// @brief 
-  void _handleOperationState();
+  void _handleOperateState();
+
+  /// @brief 
+  void _handleSelectExtrasState();
 };
 
 #endif // APPORCHESTRATOR_H

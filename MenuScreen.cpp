@@ -16,12 +16,26 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "OperationScreen.h"
+#include "MenuScreen.h"
 
-void OperationScreen::update() {}
+MenuScreen::MenuScreen(BaseMenu *menu) : _menu(menu) {}
 
-void OperationScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
+void MenuScreen::update() {}
 
-void OperationScreen::handleUserSelectionAction(UserSelectionAction action) {}
+void MenuScreen::handleUserConfirmationAction(UserConfirmationAction action) {
+  if (!_menu)
+    return;
+  _menu->handleUserConfirmationAction(action);
+}
 
-void OperationScreen::drawScreen(DisplayInterface *display) {}
+void MenuScreen::handleUserSelectionAction(UserSelectionAction action) {
+  if (!_menu)
+    return;
+  _menu->handleUserSelectionAction(action);
+}
+
+void MenuScreen::drawScreen(DisplayInterface *display) {
+  if (!_menu)
+    return;
+  _menu->displayMenu(display);
+}

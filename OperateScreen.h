@@ -16,15 +16,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef OPERATIONSCREEN_H
-#define OPERATIONSCREEN_H
+#ifndef OPERATESCREEN_H
+#define OPERATESCREEN_H
 
 #include "ScreenInterface.h"
 
-class OperationScreen : public ScreenInterface {
+class OperateScreen : public ScreenInterface {
 public:
   /// @brief Constructor for the operation screen
-  OperationScreen();
+  OperateScreen();
 
   /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
   /// actions, and to ensure displays are updated
@@ -45,4 +45,4 @@ public:
 private:
 };
 
-#endif // OPERATIONSCREEN_H
+#endif // OPERATESCREEN_H

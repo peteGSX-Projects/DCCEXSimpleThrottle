@@ -16,15 +16,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "Menu.h"
+#include "BaseMenu.h"
 
-Menu::Menu(const char *name) : _name(name) {
+BaseMenu::BaseMenu(const char *name) : _name(name) {
   _firstMenuItem = nullptr;
   _menuItemCount = 0;
   _currentItemIndex = 0;
 }
 
-void Menu::addItem(BaseMenuItem *menuItem) {
+void BaseMenu::addItem(BaseMenuItem *menuItem) {
   if (this->_firstMenuItem == nullptr) { // If it's the first menu item, set it
     this->_firstMenuItem = menuItem;
   } else { // Otherwise add it to the list
@@ -38,9 +38,9 @@ void Menu::addItem(BaseMenuItem *menuItem) {
   _menuItemCount++;                        // Increment the item count
 }
 
-BaseMenuItem *Menu::getFirstMenuItem() { return _firstMenuItem; }
+BaseMenuItem *BaseMenu::getFirstMenuItem() { return _firstMenuItem; }
 
-BaseMenuItem *Menu::getMenuItemAtIndex(uint8_t index) {
+BaseMenuItem *BaseMenu::getMenuItemAtIndex(uint8_t index) {
   if (!_firstMenuItem) {
     return nullptr;
   }
@@ -53,6 +53,6 @@ BaseMenuItem *Menu::getMenuItemAtIndex(uint8_t index) {
   return nullptr;
 }
 
-uint8_t Menu::getMenuItemCount() { return _menuItemCount; }
+uint8_t BaseMenu::getMenuItemCount() { return _menuItemCount; }
 
-const char *Menu::getMenuName() { return _name; }
+const char *BaseMenu::getMenuName() { return _name; }

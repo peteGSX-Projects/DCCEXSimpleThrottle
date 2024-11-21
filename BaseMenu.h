@@ -16,18 +16,33 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef MENU_H
-#define MENU_H
+#ifndef BASEMENU_H
+#define BASEMENU_H
 
 #include "BaseMenuItem.h"
+#include "DisplayInterface.h"
+#include "UserConfirmationInterface.h"
+#include "UserSelectionInterface.h"
 #include <Arduino.h>
 
 /// @brief Class for maintaining a linked list of menu items to form a menu
-class Menu {
+class BaseMenu {
 public:
   /// @brief Constructor for each menu
   /// @param name Pointer to the char array containing the name of the menu
-  Menu(const char *name);
+  BaseMenu(const char *name);
+
+  /// @brief Implement this method to display the menu on screen
+  /// @param displayInterface Pointer to the physical display
+  virtual void displayMenu(DisplayInterface *displayInterface) = 0;
+
+  /// @brief Implement this method to respond to user confirmation actions
+  /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
+  virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
+
+  /// @brief Implement this method to respond to user selection actions
+  /// @param action UserSelectionAction::[None|Up|Down]
+  virtual void handleUserSelectionAction(UserSelectionAction action) = 0;
 
   /// @brief Get the name of this menu
   /// @return Pointer to the char array containing the menu name
