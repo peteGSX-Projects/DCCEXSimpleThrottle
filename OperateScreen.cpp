@@ -27,10 +27,16 @@ void OperateScreen::update() {}
 
 void OperateScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
 
-void OperateScreen::handleUserSelectionAction(UserSelectionAction action) {
+void OperateScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
+  if (throttleInverted) {
+    if (action == UserSelectionAction::Up) {
+      action = UserSelectionAction::Down;
+    } else if (action == UserSelectionAction::Down) {
+      action = UserSelectionAction::Up;
+    }
+  }
   switch (action) {
   case UserSelectionAction::Up:
-    // If inverted here
     if (_speed < 128) {
       _speed++;
       _speedChanged = true;

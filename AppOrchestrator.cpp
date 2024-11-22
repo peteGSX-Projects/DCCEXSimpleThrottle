@@ -121,10 +121,6 @@ void AppOrchestrator::_handleSelectLocoState() {
 void AppOrchestrator::_handleOperateState() {
   _operateScreen->drawScreen(_displayInterface);
   switch (_userConfirmationInterface->getUserConfirmationAction()) {
-  // case UserConfirmationAction::SingleClick:
-  // case UserConfirmationAction::LongPress:
-  //   CONSOLE.println("AppOrchestrator::_handleOperateState UserConfirmationAction");
-  //   break;
   case UserConfirmationAction::DoubleClick:
     CONSOLE.println("AppOrchestrator::_handleOperateState DoubleClick");
     if (_operateScreen->getSpeed() == 0) {
@@ -133,7 +129,7 @@ void AppOrchestrator::_handleOperateState() {
     break;
   default:
     _operateScreen->handleUserConfirmationAction(_userConfirmationInterface->getUserConfirmationAction());
-    _operateScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
+    _operateScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(), _userSelectionInterface->throttleInverted());
     break;
   }
 }

@@ -28,7 +28,7 @@ void MenuScreen::handleUserConfirmationAction(UserConfirmationAction action) {
   _menu->handleUserConfirmationAction(action);
 }
 
-void MenuScreen::handleUserSelectionAction(UserSelectionAction action) {
+void MenuScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
   if (!_menu)
     return;
   _menu->handleUserSelectionAction(action);

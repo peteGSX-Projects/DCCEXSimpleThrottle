@@ -38,7 +38,7 @@ public:
 
   /// @brief Respond to user selection actions
   /// @param action UserSelectionAction::[None|Up|Down]
-  void handleUserSelectionAction(UserSelectionAction action) override;
+  void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) override;
 
   /// @brief Draw this screen on the specified display
   /// @param display Pointer to a display object

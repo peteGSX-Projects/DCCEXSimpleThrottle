@@ -114,7 +114,7 @@
 // MOSI - 23
 #endif // ARCH type
 
-// Rotary encoder defaults
+// UserConfirmationSelection Switch object defaults
 #ifndef BUTTON_PIN_MODE
 #define BUTTON_PIN_MODE INPUT_PULLUP
 #endif // BUTTON_PIN_MODE
@@ -134,7 +134,12 @@
 #define BUTTON_DEGLITCH_PERIOD 10
 #endif // BUTTON_DEGLITCH_PERIOD
 
-// Define fonts in use
+// Set invert throttle true as default is a rotary encoder
+#ifndef INVERT_THROTTLE
+#define INVERT_THROTTLE true
+#endif // INVERT_THROTTLE
+
+// Define fonts in use for U8g2lib
 #define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr
 #define MENU_FONT u8g2_font_5x8_mr
 #define SPEED_FONT u8g2_font_spleen12x24_mn

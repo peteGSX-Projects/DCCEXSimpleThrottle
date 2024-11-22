@@ -36,7 +36,7 @@ public:
 
   /// @brief Implement this method to define what to do when user selection actions are performed
   /// @param action UserSelectionAction::[None|Up|Down]
-  void handleUserSelectionAction(UserSelectionAction action) override;
+  void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) override;
 
   /// @brief Implement this method to draw the associated screen object on the specified display
   /// @param display Pointer to the display object

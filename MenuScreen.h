@@ -30,19 +30,19 @@ public:
 
   /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
   /// actions, and to ensure displays are updated
-  void update();
+  void update() override;
 
   /// @brief Implement this method to define what to do when user confirmation actions are performed
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
-  void handleUserConfirmationAction(UserConfirmationAction action);
+  void handleUserConfirmationAction(UserConfirmationAction action) override;
 
   /// @brief Implement this method to define what to do when user selection actions are performed
   /// @param action UserSelectionAction::[None|Up|Down]
-  void handleUserSelectionAction(UserSelectionAction action);
+  void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) override;
 
   /// @brief Implement this method to draw the associated screen object on the specified display
   /// @param display Pointer to the display object
-  void drawScreen(DisplayInterface *display);
+  void drawScreen(DisplayInterface *display) override;
 
 private:
   BaseMenu *_menu;

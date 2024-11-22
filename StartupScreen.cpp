@@ -25,7 +25,7 @@ void StartupScreen::update() {}
 
 void StartupScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
 
-void StartupScreen::handleUserSelectionAction(UserSelectionAction action) {}
+void StartupScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {}
 
 void StartupScreen::drawScreen(DisplayInterface *display) {
   if (!display->needsRedraw())

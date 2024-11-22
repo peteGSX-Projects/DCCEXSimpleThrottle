@@ -35,8 +35,11 @@ public:
   virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
 
   /// @brief Implement this method to define what to do when user selection actions are performed
+  /// throttleInverted enables an interface to decrease speed when moving up and vice versa, which is handy for a rotary
+  /// encoder
   /// @param action UserSelectionAction::[None|Up|Down]
-  virtual void handleUserSelectionAction(UserSelectionAction action) = 0;
+  /// @param throttleInverted True|False
+  virtual void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted = false) = 0;
 
   /// @brief Implement this method to draw the associated screen object on the specified display
   /// @param display Pointer to the display object
