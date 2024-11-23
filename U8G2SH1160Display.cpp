@@ -64,17 +64,30 @@ void U8G2SH1106Display::displayMenuItem(uint8_t index, const char *itemText, boo
 void U8G2SH1106Display::displaySoftwareVersion(const char *version) {
   _oled->setDrawColor(1);
   _oled->setFont(_menuFont);
+  uint8_t fontHeight = _oled->getMaxCharHeight();
   _oled->setCursor(0, 19);
   _oled->print("Version: ");
   _oled->print(version);
+  _oled->setCursor(0, 19 + (fontHeight * 4));
+  _oled->print("Press button to continue");
   _oled->sendBuffer();
 }
 
 void U8G2SH1106Display::updateSpeed(uint8_t speed) {
-  _oled->setCursor(40, 20);
   _oled->setFont(_speedFont);
-  _oled->print(F("   "));
-  _oled->setCursor(40, 20);
+  uint16_t displayWidth = _oled->getWidth();
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  char speedBuffer[4];
+  snprintf(speedBuffer, sizeof(speedBuffer), "%d", speed);
+  uint16_t speedWidth = _oled->getStrWidth(speedBuffer);
+  uint16_t clearWidth = _oled->getStrWidth("999");
+  uint16_t clearX = (displayWidth - clearWidth) / 2;
+  uint16_t x = (displayWidth - speedWidth) / 2;
+  uint16_t y = 20;
+  _oled->setDrawColor(0);
+  _oled->drawBox(clearX, y - fontHeight, clearWidth, fontHeight);
+  _oled->setDrawColor(1);
+  _oled->setCursor(x, y);
   _oled->print(speed);
   _oled->sendBuffer();
 }
@@ -89,15 +102,23 @@ void U8G2SH1106Display::updateLocoName(const char *name) {
 }
 
 void U8G2SH1106Display::updateLocoDirection(Direction direction) {
-  _oled->setCursor(30, 35);
-  _oled->setFont(_directionFont);
-  _oled->print(F("       "));
-  _oled->setCursor(30, 35);
+  const char *directionText;
   if (direction == Direction::Reverse) {
-    _oled->print(F("Reverse"));
+    directionText ="Reverse";
   } else {
-    _oled->print(F("Forward"));
+    directionText = "Forward";
   }
+  _oled->setFont(_directionFont);
+  uint16_t displayWidth = _oled->getWidth();
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t clearWidth = _oled->getStrWidth(directionText);
+  uint16_t x = (displayWidth - clearWidth) / 2;
+  uint16_t y = 35;
+  _oled->setDrawColor(0);
+  _oled->drawBox(x, y - fontHeight, clearWidth, fontHeight);
+  _oled->setDrawColor(1);
+  _oled->setCursor(x, y);
+  _oled->print(directionText);
   _oled->sendBuffer();
 }
 

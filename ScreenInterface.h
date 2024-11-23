@@ -26,10 +26,6 @@
 /// @brief
 class ScreenInterface {
 public:
-  /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
-  /// actions, and to ensure displays are updated
-  virtual void update() = 0;
-
   /// @brief Implement this method to define what to do when user confirmation actions are performed
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;

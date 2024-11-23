@@ -61,7 +61,8 @@ void AppOrchestrator::update() {
 
 void AppOrchestrator::_handleStartupState() {
   _startupScreen->drawScreen(_displayInterface);
-  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
+  switch (action) {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
@@ -80,7 +81,8 @@ void AppOrchestrator::_handleSelectServerState() {
   if (!menu)
     return;
   _displayMenu(menu);
-  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
+  switch (action) {
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
     CONSOLE.println("AppOrchestrator::_handleSelectServerState UserConfirmationAction");
@@ -101,7 +103,8 @@ void AppOrchestrator::_handleSelectLocoState() {
   if (!menu)
     return;
   _displayMenu(menu);
-  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
+  switch (action) {
   case UserConfirmationAction::LongPress:
     CONSOLE.println("AppOrchestrator::_handleSelectLocoState UserConfirmationAction");
     break;
@@ -120,15 +123,18 @@ void AppOrchestrator::_handleSelectLocoState() {
 
 void AppOrchestrator::_handleOperateState() {
   _operateScreen->drawScreen(_displayInterface);
-  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
+  switch (action) {
   case UserConfirmationAction::DoubleClick:
     CONSOLE.println("AppOrchestrator::_handleOperateState DoubleClick");
     if (_operateScreen->getSpeed() == 0) {
       _switchState(AppState::SelectLoco);
+    } else {
+      _operateScreen->handleUserConfirmationAction(action);
     }
     break;
   default:
-    _operateScreen->handleUserConfirmationAction(_userConfirmationInterface->getUserConfirmationAction());
+    _operateScreen->handleUserConfirmationAction(action);
     _operateScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(), _userSelectionInterface->throttleInverted());
     break;
   }
@@ -141,7 +147,8 @@ void AppOrchestrator::_handleSelectActionState() {
   if (!menu)
     return;
   _displayMenu(menu);
-  switch (_userConfirmationInterface->getUserConfirmationAction()) {
+  UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
+  switch (action) {
   case UserConfirmationAction::LongPress:
     CONSOLE.println("AppOrchestrator::_handleSelectActionState UserConfirmationAction");
     break;

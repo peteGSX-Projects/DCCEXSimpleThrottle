@@ -20,8 +20,6 @@
 
 MenuScreen::MenuScreen(BaseMenu *menu) : _menu(menu) {}
 
-void MenuScreen::update() {}
-
 void MenuScreen::handleUserConfirmationAction(UserConfirmationAction action) {
   if (!_menu)
     return;

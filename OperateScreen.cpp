@@ -16,16 +16,45 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "Defines.h"
 #include "OperateScreen.h"
 
 OperateScreen::OperateScreen() {
   _speed = 0;
   _speedChanged = false;
+  _direction = Direction::Forward;
+  _directionChanged = false;
+  _loco = nullptr;
 }
 
-void OperateScreen::update() {}
-
-void OperateScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
+void OperateScreen::handleUserConfirmationAction(UserConfirmationAction action) {
+  switch (action) {
+  case UserConfirmationAction::SingleClick:
+    if (_speed == 0) {
+      _directionChanged = true;
+      if (_direction == Direction::Forward) {
+        _direction = Direction::Reverse;
+      } else {
+        _direction = Direction::Forward;
+      }
+    } else {
+      _speed = 0;
+      _speedChanged = true;
+    }
+    break;
+  case UserConfirmationAction::DoubleClick:
+    CONSOLE.println("Toggle lights on|off");
+    break;
+  case UserConfirmationAction::LongPress:
+    if (_speed > 0) {
+      CONSOLE.println("Emergency stop");
+    }
+    break;
+  default:
+    _directionChanged = false;
+    break;
+  }
+}
 
 void OperateScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
   if (throttleInverted) {
@@ -58,6 +87,9 @@ void OperateScreen::drawScreen(DisplayInterface *display) {
   if (_speedChanged) {
     display->updateSpeed(_speed);
   }
+  if (_directionChanged) {
+    display->updateLocoDirection(_direction);
+  }
   if (!display->needsRedraw())
     return;
   display->setNeedsRedraw(false);
@@ -68,6 +100,11 @@ void OperateScreen::drawScreen(DisplayInterface *display) {
   display->updateTrackPowerState(TrackPower::PowerOff);
 }
 
-uint8_t OperateScreen::getSpeed() { return _speed; }
+void OperateScreen::setLoco(Loco *loco) { _loco = loco; }
 
-bool OperateScreen::speedChanged() { return _speedChanged; }
+void OperateScreen::locoUpdateReceived(Loco *loco) {
+  if (_loco != loco)
+    return;
+}
+
+uint8_t OperateScreen::getSpeed() { return _speed; }

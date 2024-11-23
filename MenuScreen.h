@@ -28,10 +28,6 @@ public:
   /// @param menu
   MenuScreen(BaseMenu *menu);
 
-  /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
-  /// actions, and to ensure displays are updated
-  void update() override;
-
   /// @brief Implement this method to define what to do when user confirmation actions are performed
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;

@@ -20,15 +20,12 @@
 #define OPERATESCREEN_H
 
 #include "ScreenInterface.h"
+#include <DCCEXProtocol.h>
 
 class OperateScreen : public ScreenInterface {
 public:
   /// @brief Constructor for the operation screen
   OperateScreen();
-
-  /// @brief Implement this method at least once per main loop iteraction to check for user selection and confirmation
-  /// actions, and to ensure displays are updated
-  void update() override;
 
   /// @brief Implement this method to define what to do when user confirmation actions are performed
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
@@ -42,17 +39,24 @@ public:
   /// @param display Pointer to the display object
   void drawScreen(DisplayInterface *display) override;
 
+  /// @brief Set the loco currently being operated
+  /// @param loco Pointer to the loco object
+  void setLoco(Loco *loco);
+
+  /// @brief Method to call when a loco update has been received
+  /// @param loco Pointer to the loco that has been updated
+  void locoUpdateReceived(Loco *loco);
+
   /// @brief Get the current speed
   /// @return Speed
   uint8_t getSpeed();
 
-  /// @brief Check if speed has changed
-  /// @return True|False
-  bool speedChanged();
-
 private:
   uint8_t _speed;
   bool _speedChanged;
+  Direction _direction;
+  bool _directionChanged;
+  Loco *_loco;
 };
 
 #endif // OPERATESCREEN_H

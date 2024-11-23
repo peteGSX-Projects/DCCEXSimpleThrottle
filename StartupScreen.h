@@ -29,9 +29,6 @@ public:
   /// @brief Constructor for the object
   StartupScreen();
 
-  /// @brief Update method is irrelevant in this context as content is static
-  void update() override;
-
   /// @brief Respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
