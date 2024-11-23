@@ -49,7 +49,7 @@ public:
 
   /// @brief Get the application orchestrator associated with the config
   /// @return Pointer to the application orchestrator
-  AppOrchestrator *getAppOrechstrator();
+  AppOrchestrator *getAppOrchestrator();
 
   /// @brief
   /// @return

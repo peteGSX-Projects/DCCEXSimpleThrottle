@@ -30,12 +30,10 @@ void setup() {
   CONSOLE.print("Version: ");
   CONSOLE.println(VERSION);
   appConfig.initialise();
-  AppOrchestrator *orchestrator = appConfig.getAppOrechstrator();
-  orchestrator->begin();
 }
 
 /// @brief Main loop
 void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrechstrator();
+  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
   orchestrator->update();
 }

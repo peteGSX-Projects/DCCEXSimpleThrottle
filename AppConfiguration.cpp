@@ -27,7 +27,11 @@ AppConfiguration::AppConfiguration() {
       new AppOrchestrator(_displayInterface, _menuManager, _userConfirmationInterface, _userSelectionInterface);
 }
 
-void AppConfiguration::initialise() {}
+void AppConfiguration::initialise() {
+  _userConfirmationInterface->begin();
+  _userSelectionInterface->begin();
+  _displayInterface->begin();
+}
 
 UserConfirmationInterface *AppConfiguration::getUserConfirmationInterface() { return _userConfirmationInterface; }
 
@@ -35,6 +39,6 @@ UserSelectionInterface *AppConfiguration::getUserSelectionInterface() { return _
 
 DisplayInterface *AppConfiguration::getDisplayInterface() { return _displayInterface; }
 
-AppOrchestrator *AppConfiguration::getAppOrechstrator() { return _appOrchestrator; }
+AppOrchestrator *AppConfiguration::getAppOrchestrator() { return _appOrchestrator; }
 
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }

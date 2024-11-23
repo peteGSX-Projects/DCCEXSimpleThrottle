@@ -31,12 +31,6 @@ AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, MenuManager
   _operateScreen = new OperateScreen();
 }
 
-void AppOrchestrator::begin() {
-  _userConfirmationInterface->begin();
-  _userSelectionInterface->begin();
-  _displayInterface->begin();
-}
-
 void AppOrchestrator::update() {
   switch (_currentAppState) {
   case AppState::Startup:
@@ -135,7 +129,8 @@ void AppOrchestrator::_handleOperateState() {
     break;
   default:
     _operateScreen->handleUserConfirmationAction(action);
-    _operateScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(), _userSelectionInterface->throttleInverted());
+    _operateScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(),
+                                              _userSelectionInterface->throttleInverted());
     break;
   }
 }

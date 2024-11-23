@@ -40,9 +40,6 @@ public:
   AppOrchestrator(DisplayInterface *displayInterface, MenuManager *menuManager,
                   UserConfirmationInterface *userConfirmationInterface, UserSelectionInterface *userSelectionInterface);
 
-  /// @brief Call this method to start all the associated interfaces
-  void begin();
-
   /// @brief Call this method at least once per main loop iteration to monitor for user interactions and ensure the
   /// display is updated
   void update();
