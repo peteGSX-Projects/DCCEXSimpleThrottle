@@ -35,16 +35,3 @@ void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction actio
     break;
   }
 }
-
-void SelectServerMenu::handleUserSelectionAction(UserSelectionAction action) {
-  switch (action) {
-  case UserSelectionAction::Down:
-    CONSOLE.println("Down");
-    break;
-  case UserSelectionAction::Up:
-    CONSOLE.println("Up");
-    break;
-  default:
-    break;
-  }
-}

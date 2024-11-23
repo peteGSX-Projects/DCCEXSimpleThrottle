@@ -16,20 +16,22 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef SELECTSERVERMENU_H
-#define SELECTSERVERMENU_H
+#ifndef SERVERMENUITEM_H
+#define SERVERMENUITEM_H
 
-#include "BaseMenu.h"
+#include "BaseMenuItem.h"
+#include "CommandStationDetails.h"
 
-class SelectServerMenu : public BaseMenu {
+class ServerMenuItem : public BaseMenuItem {
 public:
-  /// @brief Constructor for each menu
-  /// @param name Pointer to the char array containing the name of the menu
-  SelectServerMenu(const char *name);
+#ifdef WIFI_ENABLED
+  /// @brief Constructor for this menu item object
+  /// @param commandStation Details of the CommandStation for the user to select
+  ServerMenuItem(CommandStationDetails commandStation);
 
-  /// @brief Implement this method to respond to user confirmation actions
-  /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
-  void handleUserConfirmationAction(UserConfirmationAction action) override;
+private:
+  CommandStationDetails _commandStation;
+#endif // WIFI_ENABLED
 };
 
-#endif // SELECTSERVERMENU_H
+#endif // SERVERMENUITEM_H

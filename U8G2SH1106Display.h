@@ -39,11 +39,10 @@ public:
   /// @param headerText Pointer to the char array containing the header text
   void displayHeader(const char *headerText) override;
 
-  /// @brief Implement this to display the menu item's text at the correct position on a display
-  /// @param index Index of the item to be displayed
-  /// @param itemText Pointer to the char array containing the item's text
-  /// @param selected Flag if this item is selected or not so it can be highlighted
-  void displayMenuItem(uint8_t index, const char *itemText, bool selected) override;
+  /// @brief Implement this method to display the menu items on screen
+  /// @param firstItem Pointer to the first menu item to be displayed
+  /// @param selectedIndex Index of the item currently selected by the user
+  void displayMenuItems(BaseMenuItem *firstItem, uint8_t selectedIndex) override;
 
   /// @brief Display the software version below the header text
   /// @param version Pointer to the char array containing the version number

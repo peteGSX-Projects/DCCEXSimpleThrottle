@@ -16,20 +16,22 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef SELECTSERVERMENU_H
-#define SELECTSERVERMENU_H
+#ifndef COMMANDSTATIONDETAILS_H
+#define COMMANDSTATIONDETAILS_H
 
-#include "BaseMenu.h"
+#include "Defines.h"
+#include <Arduino.h>
 
-class SelectServerMenu : public BaseMenu {
-public:
-  /// @brief Constructor for each menu
-  /// @param name Pointer to the char array containing the name of the menu
-  SelectServerMenu(const char *name);
+#ifdef WIFI_ENABLED
+#include <WiFi.h>
 
-  /// @brief Implement this method to respond to user confirmation actions
-  /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
-  void handleUserConfirmationAction(UserConfirmationAction action) override;
+struct CommandStationDetails {
+  const char *name;
+  IPAddress ipAddress;
+  uint16_t port;
+  const char *ssid;
+  const char *password;
 };
+#endif // WIFI_ENABLED
 
-#endif // SELECTSERVERMENU_H
+#endif // COMMANDSTATIONDETAILS_H

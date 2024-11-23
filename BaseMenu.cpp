@@ -18,10 +18,35 @@
 
 #include "BaseMenu.h"
 
+void BaseMenu::handleUserSelectionAction(UserSelectionAction action) {
+  switch (action) {
+  case UserSelectionAction::Up:
+    _selectionChanged = true;
+    if (_selectedItemIndex > 0) {
+      _selectedItemIndex--;
+    } else {
+      _selectedItemIndex = _menuItemCount - 1;
+    }
+    break;
+  case UserSelectionAction::Down:
+    _selectionChanged = true;
+    if (_selectedItemIndex < _menuItemCount - 1) {
+      _selectedItemIndex++;
+    } else {
+      _selectedItemIndex = 0;
+    }
+    break;
+  default:
+    _selectionChanged = false;
+    break;
+  }
+}
+
 void BaseMenu::displayMenu(DisplayInterface *displayInterface) {
   displayInterface->setNeedsRedraw(false);
   displayInterface->clear();
   displayInterface->displayHeader(_name);
+  displayInterface->displayMenuItems(_firstMenuItem, _selectedItemIndex);
 }
 
 void BaseMenu::setMenuName(const char *name) { _name = name; }
@@ -58,3 +83,7 @@ BaseMenuItem *BaseMenu::getMenuItemAtIndex(uint8_t index) {
 }
 
 uint8_t BaseMenu::getMenuItemCount() { return _menuItemCount; }
+
+uint8_t BaseMenu::getSelectedItemIndex() { return _selectedItemIndex; }
+
+bool BaseMenu::getSelectionChanged() { return _selectionChanged; }

@@ -22,6 +22,12 @@ AppConfiguration::AppConfiguration() {
   _userConfirmationInterface = new Button();
   _userSelectionInterface = new RotaryEncoder();
   _displayInterface = new U8G2SH1106Display();
+
+#ifdef WIFI_ENABLED
+  _commandStationCount = COMMANDSTATION_COUNT;
+  _initialiseCommandStationArray();
+#endif // WIFI_ENABLED
+
   _menuManager = new MenuManager();
   _appOrchestrator =
       new AppOrchestrator(_displayInterface, _menuManager, _userConfirmationInterface, _userSelectionInterface);
@@ -31,6 +37,9 @@ void AppConfiguration::initialise() {
   _userConfirmationInterface->begin();
   _userSelectionInterface->begin();
   _displayInterface->begin();
+#ifdef WIFI_ENABLED
+  _menuManager->setupServerMenu(_commandStationList, _commandStationCount);
+#endif // WIFI_ENABLED
 }
 
 UserConfirmationInterface *AppConfiguration::getUserConfirmationInterface() { return _userConfirmationInterface; }
@@ -42,3 +51,39 @@ DisplayInterface *AppConfiguration::getDisplayInterface() { return _displayInter
 AppOrchestrator *AppConfiguration::getAppOrchestrator() { return _appOrchestrator; }
 
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
+
+#ifdef WIFI_ENABLED
+void AppConfiguration::_initialiseCommandStationArray() {
+  const char *csNames[] = COMMANDSTATION_NAMES;         // array to store names of CommandStations
+  const char *csIPs[] = COMMANDSTATION_IPS;             // array to store IPs of CommandStations
+  const uint16_t csPorts[] = COMMANDSTATION_PORTS;      // array to store ports of CommandStations
+  const char *csSSIDs[] = COMMANDSTATION_SSIDS;         // array to store SSIDs of CommandStations
+  const char *csPasswords[] = COMMANDSTATION_PASSWORDS; // array to store passwords of CommandStations
+
+  for (uint8_t i = 0; i < _commandStationCount; i++) {
+    _commandStationList[i].name = csNames[i];
+    _commandStationList[i].ipAddress = _convertIP(csIPs[i]);
+    _commandStationList[i].port = csPorts[i];
+    _commandStationList[i].ssid = csSSIDs[i];
+    _commandStationList[i].password = csPasswords[i];
+  }
+}
+
+IPAddress AppConfiguration::_convertIP(const char *ipAddressString) {
+  int first;
+  int second;
+  int third;
+  int fourth;
+  if (sscanf(ipAddressString, "%d.%d.%d.%d", &first, &second, &third, &fourth) == 4) {
+    if ((first >= 0 && first <= 255) && (second >= 0 && second <= 255) && (third >= 0 && third <= 255) &&
+        (fourth >= 0 && fourth <= 255)) {
+      return IPAddress(first, second, third, fourth);
+    } else {
+      CONSOLE.println("IP address is out of range");
+    }
+  } else {
+    CONSOLE.println("Invalid IP address format");
+  }
+  return IPAddress(0, 0, 0, 0);
+}
+#endif // WIFI_ENABLED

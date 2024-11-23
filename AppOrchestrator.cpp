@@ -60,7 +60,6 @@ void AppOrchestrator::_handleStartupState() {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
-    CONSOLE.println("AppOrchestrator::_handleStartupState UserConfirmationAction");
     _switchState(AppState::SelectServer);
     break;
   default:
@@ -75,14 +74,14 @@ void AppOrchestrator::_handleSelectServerState() {
   if (!menu)
     return;
   _displayMenu(menu);
+  UserSelectionAction selection = _userSelectionInterface->getUserSelectionAction();
+  menu->handleUserSelectionAction(selection);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
-    CONSOLE.println("AppOrchestrator::_handleSelectServerState UserConfirmationAction");
     break;
   case UserConfirmationAction::SingleClick:
-    CONSOLE.println("AppOrchestrator::_handleSelectServerState SingleClick");
     _switchState(AppState::SelectLoco);
     break;
   default:
@@ -100,14 +99,11 @@ void AppOrchestrator::_handleSelectLocoState() {
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
   case UserConfirmationAction::LongPress:
-    CONSOLE.println("AppOrchestrator::_handleSelectLocoState UserConfirmationAction");
     break;
   case UserConfirmationAction::SingleClick:
-    CONSOLE.println("AppOrchestrator::_handleSelectLocoState SingleClick");
     _switchState(AppState::Operate);
     break;
   case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("AppOrchestrator::_handleSelectLocoState DoubleClick");
     _switchState(AppState::SelectAction);
     break;
   default:
@@ -120,7 +116,6 @@ void AppOrchestrator::_handleOperateState() {
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
   case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("AppOrchestrator::_handleOperateState DoubleClick");
     if (_operateScreen->getSpeed() == 0) {
       _switchState(AppState::SelectLoco);
     } else {
@@ -145,14 +140,11 @@ void AppOrchestrator::_handleSelectActionState() {
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
   case UserConfirmationAction::LongPress:
-    CONSOLE.println("AppOrchestrator::_handleSelectActionState UserConfirmationAction");
     break;
   case UserConfirmationAction::SingleClick:
-    CONSOLE.println("AppOrchestrator::_handleSelectActionState SingleClick");
     _switchState(AppState::Operate);
     break;
   case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("AppOrchestrator::_handleSelectActionState DoubleClick");
     _switchState(AppState::SelectLoco);
     break;
   default:
@@ -161,27 +153,21 @@ void AppOrchestrator::_handleSelectActionState() {
 }
 
 void AppOrchestrator::_switchState(AppState appState) {
-  CONSOLE.println("Switch AppState");
   _displayInterface->setNeedsRedraw(true);
   switch (appState) {
   case AppState::Startup:
-    CONSOLE.println("Switch to Startup");
     _currentAppState = AppState::Startup;
     break;
   case AppState::Operate:
-    CONSOLE.println("Switch to Operate");
     _currentAppState = AppState::Operate;
     break;
   case AppState::SelectAction:
-    CONSOLE.println("Switch to SelectAction");
     _currentAppState = AppState::SelectAction;
     break;
   case AppState::SelectLoco:
-    CONSOLE.println("Switch to SelectLoco");
     _currentAppState = AppState::SelectLoco;
     break;
   case AppState::SelectServer:
-    CONSOLE.println("Switch to SelectServer");
     _currentAppState = AppState::SelectServer;
     break;
   default:
@@ -191,5 +177,8 @@ void AppOrchestrator::_switchState(AppState appState) {
 
 void AppOrchestrator::_displayMenu(BaseMenu *menu) {
   MenuScreen menuScreen(menu);
+  if (menu->getSelectionChanged()) {
+    _displayInterface->setNeedsRedraw(true);
+  }
   menuScreen.drawScreen(_displayInterface);
 }

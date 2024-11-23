@@ -33,9 +33,9 @@ public:
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
 
-  /// @brief Implement this method to respond to user selection actions
+  /// @brief Method to respond to user selection actions
   /// @param action UserSelectionAction::[None|Up|Down]
-  virtual void handleUserSelectionAction(UserSelectionAction action) = 0;
+  void handleUserSelectionAction(UserSelectionAction action);
 
   /// @brief Method to display the menu on screen
   /// @param displayInterface Pointer to the physical display
@@ -66,11 +66,21 @@ public:
   /// @return 8 bit integer count of menu items
   uint8_t getMenuItemCount();
 
+  /// @brief Get the index of the currently selected menu item
+  /// @return Index of the currently selected menu item
+  uint8_t getSelectedItemIndex();
+
+  /// @brief Check if the user selection has changed
+  /// @return True|False
+  bool getSelectionChanged();
+
 private:
   const char *_name = nullptr;            // Name of this menu
   BaseMenuItem *_firstMenuItem = nullptr; // Pointer to the first menu item in the linked list
   uint8_t _menuItemCount = 0;             // Count of menu items associated with this menu
   uint8_t _currentItemIndex = 0;          // Incrementing index to ensure each menu item has a unique index
+  uint8_t _selectedItemIndex = 0;         // Index of the item currently selected by the user
+  bool _selectionChanged = false;         // Flag if user has selected a different item
 };
 
 #endif // MENU_H

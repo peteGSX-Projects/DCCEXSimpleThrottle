@@ -21,6 +21,8 @@
 
 #include "AppOrchestrator.h"
 #include "Button.h"
+#include "CommandStationDetails.h"
+#include "Defines.h"
 #include "MenuManager.h"
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
@@ -61,6 +63,19 @@ private:
   DisplayInterface *_displayInterface;
   MenuManager *_menuManager;
   AppOrchestrator *_appOrchestrator;
+
+#ifdef WIFI_ENABLED
+  uint8_t _commandStationCount;
+  CommandStationDetails _commandStationList[COMMANDSTATION_COUNT];
+
+  /// @brief Initialise the array of CommandStationDetails to create the server menu list
+  void _initialiseCommandStationArray();
+
+  /// @brief Convert the provided IP address to an IP address object
+  /// @param ipAddressString Pointer to the char array containing the IP address
+  /// @return IPAddress object
+  IPAddress _convertIP(const char *ipAddressString);
+#endif // WIFI_ENABLED
 };
 
 #endif // APPCONFIGURATION_H

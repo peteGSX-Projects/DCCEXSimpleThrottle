@@ -59,7 +59,43 @@ void U8G2SH1106Display::displayHeader(const char *headerText) {
   _oled->sendBuffer();
 }
 
-void U8G2SH1106Display::displayMenuItem(uint8_t index, const char *itemText, bool selected) {}
+void U8G2SH1106Display::displayMenuItems(BaseMenuItem *firstItem, uint8_t selectedIndex) {
+  if (!firstItem)
+    return;
+  uint8_t itemsPerPage = getMenuItemsPerPage();
+  uint8_t currentPage = (selectedIndex / itemsPerPage);
+  uint8_t startIndex = currentPage * itemsPerPage;
+  _oled->setFont(_menuFont);
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t x = 0;
+  uint16_t y = 11;
+  for (uint8_t i = 0; i < itemsPerPage; i++) {
+    uint8_t index = startIndex + i;
+    BaseMenuItem *displayItem = nullptr;
+    for (BaseMenuItem *item = firstItem; item; item = item->getNext()) {
+      if (item->getIndex() == index) {
+        displayItem = item;
+        break;
+      }
+    }
+    if (displayItem) {
+      _oled->setDrawColor(1);
+      if (index == selectedIndex) {
+        _oled->setDrawColor(0); // Highlight if this item is selected
+      }
+      _oled->drawStr(x, y += fontHeight, displayItem->getName());
+    }
+  }
+  _oled->setDrawColor(1);
+  _oled->drawHLine(0, 55, 128);
+  _oled->setCursor(75, 63);
+  _oled->print(F("Page #: "));
+  _oled->setCursor(115, 63);
+  _oled->print("   ");
+  _oled->setCursor(115, 63);
+  _oled->print(currentPage + 1);
+  _oled->sendBuffer();
+}
 
 void U8G2SH1106Display::displaySoftwareVersion(const char *version) {
   _oled->setDrawColor(1);
@@ -104,7 +140,7 @@ void U8G2SH1106Display::updateLocoName(const char *name) {
 void U8G2SH1106Display::updateLocoDirection(Direction direction) {
   const char *directionText;
   if (direction == Direction::Reverse) {
-    directionText ="Reverse";
+    directionText = "Reverse";
   } else {
     directionText = "Forward";
   }

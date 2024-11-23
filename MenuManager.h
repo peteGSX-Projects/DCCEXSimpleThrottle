@@ -19,26 +19,33 @@
 #ifndef MENUMANAGER_H
 #define MENUMANAGER_H
 
+#include "CommandStationDetails.h"
 #include "SelectActionMenu.h"
 #include "SelectLocoMenu.h"
 #include "SelectServerMenu.h"
+#include "ServerMenuItem.h"
 
 class MenuManager {
 public:
-  /// @brief
+  /// @brief Constructor for the menu manager
   MenuManager();
 
-  /// @brief
-  /// @return
+  /// @brief Get the Select Action menu
+  /// @return Menu
   SelectActionMenu *getSelectActionMenu();
 
-  /// @brief
-  /// @return
+  /// @brief Get the Select Loco menu
+  /// @return Menu
   SelectLocoMenu *getSelectLocoMenu();
 
-  /// @brief
-  /// @return
+  /// @brief Get the Select Server menu
+  /// @return Menu
   SelectServerMenu *getSelectServerMenu();
+
+#ifdef WIFI_ENABLED
+  /// @brief Add the list of CommandStations and WiFi networks to the server menu
+  void setupServerMenu(CommandStationDetails *commandStationList, uint8_t commandStationCount);
+#endif // WIFI_ENABLED
 
 private:
   SelectActionMenu *_selectActionMenu;

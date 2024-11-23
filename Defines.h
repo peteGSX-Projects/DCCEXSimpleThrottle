@@ -58,8 +58,13 @@
 #error Invalid OLED connection type specific, must be OLED_I2C or OLED_SPI
 #endif // OLED_CONNECTION
 
-// Default pin definitions for Bluepill/Blackpill
+// Device/platform specific definitions
 #if defined(ARDUINO_ARCH_STM32)
+// No WiFi on Bluepill
+#ifdef WIFI_ENABLED
+// #undef WIFI_ENABLED
+#endif // WIFI_ENABLED
+// Default pins for Bluepill
 #ifndef ENCODER_DT_PIN
 #define ENCODER_DT_PIN PC14
 #endif // ENCODER_DT_PIN
@@ -85,8 +90,35 @@
 // SCK - PA5
 // MISO - PA6
 // MOSI - PA7
-// Default pin definitions for ESP32
 #elif defined(ARDUINO_ARCH_ESP32)
+// WiFi on for ESP32
+#ifndef WIFI_ENABLED
+#define WIFI_ENABLED
+#endif // WIFI_ENABLED
+
+// Define example WiFi connection parameters here
+#ifndef COMMANDSTATION_COUNT
+#define COMMANDSTATION_COUNT 2 // The number of EX-CommandStations to define
+#endif // COMMANDSTATION_COUNT
+
+// Define example connection options for each EX-CommandStation entry
+#ifndef COMMANDSTATION_NAMES
+#define COMMANDSTATION_NAMES {"Example 1", "Example 2"}
+#endif // COMMANDSTATION_NAMES
+#ifndef COMMANDSTATION_IPS
+#define COMMANDSTATION_IPS {"192.168.4.1", "192.168.0.1"}
+#endif // COMMANDSTATION_IPS
+#ifndef COMMANDSTATION_PORTS
+#define COMMANDSTATION_PORTS {2560, 2560}
+#endif // COMMANDSTATION_PORTS
+#ifndef COMMANDSTATION_SSIDS
+#define COMMANDSTATION_SSIDS {"SSID1", "SSID2"}
+#endif // COMMANDSTATION_SSIDS
+#ifndef COMMANDSTATION_PASSWORDS
+#define COMMANDSTATION_PASSWORDS {"Password1", "Password2"}
+#endif // COMMANDSTATION_PASSWORDS
+
+// Default pin definitions for ESP32
 #ifndef ENCODER_DT_PIN
 #define ENCODER_DT_PIN 12
 #endif // ENCODER_DT_PIN

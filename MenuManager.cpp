@@ -29,3 +29,14 @@ SelectActionMenu *MenuManager::getSelectActionMenu() { return _selectActionMenu;
 SelectLocoMenu *MenuManager::getSelectLocoMenu() { return _selectLocoMenu; }
 
 SelectServerMenu *MenuManager::getSelectServerMenu() { return _selectServerMenu; }
+
+#ifdef WIFI_ENABLED
+void MenuManager::setupServerMenu(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
+  if (!_selectServerMenu)
+    return;
+  for (uint8_t i = 0; i < commandStationCount; i++) {
+    ServerMenuItem *item = new ServerMenuItem(commandStationList[i]);
+    _selectServerMenu->addItem(item);
+  }
+}
+#endif // WIFI_ENABLED

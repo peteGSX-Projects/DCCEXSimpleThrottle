@@ -30,13 +30,6 @@ public:
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
-
-  /// @brief Implement this method to respond to user selection actions
-  /// @param action UserSelectionAction::[None|Up|Down]
-  void handleUserSelectionAction(UserSelectionAction action) override;
-
-private:
-
 };
 
 #endif // SELECTLOCOMENU_H
