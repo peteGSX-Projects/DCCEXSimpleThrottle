@@ -28,9 +28,10 @@ AppConfiguration::AppConfiguration() {
   _initialiseCommandStationArray();
 #endif // WIFI_ENABLED
 
+  _connectionManager = new ConnectionManager();
   _menuManager = new MenuManager();
-  _appOrchestrator =
-      new AppOrchestrator(_displayInterface, _menuManager, _userConfirmationInterface, _userSelectionInterface);
+  _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager,
+                                         _userConfirmationInterface, _userSelectionInterface);
 }
 
 void AppConfiguration::initialise() {
@@ -39,6 +40,13 @@ void AppConfiguration::initialise() {
   _displayInterface->begin();
 #ifdef WIFI_ENABLED
   _menuManager->setupServerMenu(_commandStationList, _commandStationCount);
+  _connectionManager->setCommandStationList(_commandStationList, _commandStationCount);
+  if (_menuManager->getSelectServerMenu()) {
+    auto *menu = _menuManager->getSelectServerMenu();
+    if (_connectionManager) {
+      menu->setConnectionCallback(ConnectionManager::staticConnectCallback, _connectionManager);
+    }
+  }
 #endif // WIFI_ENABLED
 }
 
@@ -49,6 +57,8 @@ UserSelectionInterface *AppConfiguration::getUserSelectionInterface() { return _
 DisplayInterface *AppConfiguration::getDisplayInterface() { return _displayInterface; }
 
 AppOrchestrator *AppConfiguration::getAppOrchestrator() { return _appOrchestrator; }
+
+ConnectionManager *AppConfiguration::getConnectionManager() { return _connectionManager; }
 
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
 

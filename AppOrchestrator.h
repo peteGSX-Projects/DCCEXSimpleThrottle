@@ -19,6 +19,7 @@
 #ifndef APPORCHESTRATOR_H
 #define APPORCHESTRATOR_H
 
+#include "ConnectionManager.h"
 #include "DisplayInterface.h"
 #include "MenuManager.h"
 #include "OperateScreen.h"
@@ -34,11 +35,15 @@ class AppOrchestrator {
 public:
   /// @brief Constructor for the application orchestrator object
   /// @param displayInterface Pointer to the display interface to ensure is updated
-  /// @param menuManager
+  /// @param connectionManager Pointer to the connection manager
+  /// @param menuManager Pointer to the menu manager
   /// @param userConfirmationInterface Pointer to the user confirmation interface to monitor
   /// @param userSelectionInterface Pointer the user selection interface to monitor
-  AppOrchestrator(DisplayInterface *displayInterface, MenuManager *menuManager,
+  AppOrchestrator(DisplayInterface *displayInterface, ConnectionManager *connectionManager, MenuManager *menuManager,
                   UserConfirmationInterface *userConfirmationInterface, UserSelectionInterface *userSelectionInterface);
+
+  /// @brief
+  void begin();
 
   /// @brief Call this method at least once per main loop iteration to monitor for user interactions and ensure the
   /// display is updated
@@ -46,6 +51,7 @@ public:
 
 private:
   DisplayInterface *_displayInterface;
+  ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;

@@ -20,7 +20,7 @@
 
 #ifdef WIFI_ENABLED
 
-ServerMenuItem::ServerMenuItem(CommandStationDetails commandStation)
-    : BaseMenuItem(commandStation.name), _commandStation(commandStation) {}
+ServerMenuItem::ServerMenuItem(const char *name, uint8_t commandStationIndex)
+    : BaseMenuItem(name), _commandStationIndex(commandStationIndex) {}
 
 #endif // WIFI_ENABLED

@@ -21,17 +21,22 @@
 #include "OperateScreen.h"
 #include "StartupScreen.h"
 
-AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, MenuManager *menuManager,
-                                 UserConfirmationInterface *userConfirmationInterface,
+AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, ConnectionManager *connectionManager,
+                                 MenuManager *menuManager, UserConfirmationInterface *userConfirmationInterface,
                                  UserSelectionInterface *userSelectionInterface)
-    : _displayInterface(displayInterface), _menuManager(menuManager),
+    : _displayInterface(displayInterface), _connectionManager(connectionManager), _menuManager(menuManager),
       _userConfirmationInterface(userConfirmationInterface), _userSelectionInterface(userSelectionInterface) {
   _currentAppState = AppState::Startup;
   _startupScreen = new StartupScreen();
   _operateScreen = new OperateScreen();
 }
 
+void AppOrchestrator::begin() {}
+
 void AppOrchestrator::update() {
+  if (!_connectionManager) {
+    _connectionManager->update();
+  }
   switch (_currentAppState) {
   case AppState::Startup:
     _handleStartupState();
@@ -74,19 +79,8 @@ void AppOrchestrator::_handleSelectServerState() {
   if (!menu)
     return;
   _displayMenu(menu);
-  UserSelectionAction selection = _userSelectionInterface->getUserSelectionAction();
-  menu->handleUserSelectionAction(selection);
-  UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
-  switch (action) {
-  case UserConfirmationAction::DoubleClick:
-  case UserConfirmationAction::LongPress:
-    break;
-  case UserConfirmationAction::SingleClick:
-    _switchState(AppState::SelectLoco);
-    break;
-  default:
-    break;
-  }
+  menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
+  menu->handleUserConfirmationAction(_userConfirmationInterface->getUserConfirmationAction());
 }
 
 void AppOrchestrator::_handleSelectLocoState() {

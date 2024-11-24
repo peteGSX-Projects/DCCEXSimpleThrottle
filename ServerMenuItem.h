@@ -26,11 +26,12 @@ class ServerMenuItem : public BaseMenuItem {
 public:
 #ifdef WIFI_ENABLED
   /// @brief Constructor for this menu item object
-  /// @param commandStation Details of the CommandStation for the user to select
-  ServerMenuItem(CommandStationDetails commandStation);
+  /// @param name Pointer to the char array containing the name of this CommandStation
+  /// @param commandStationIndex The index of this CommandStation entry in the list of CommandStations
+  ServerMenuItem(const char *name, uint8_t commandStationIndex);
 
 private:
-  CommandStationDetails _commandStation;
+  uint8_t _commandStationIndex;
 #endif // WIFI_ENABLED
 };
 

@@ -35,7 +35,7 @@ void MenuManager::setupServerMenu(CommandStationDetails *commandStationList, uin
   if (!_selectServerMenu)
     return;
   for (uint8_t i = 0; i < commandStationCount; i++) {
-    ServerMenuItem *item = new ServerMenuItem(commandStationList[i]);
+    ServerMenuItem *item = new ServerMenuItem(commandStationList[i].name, i);
     _selectServerMenu->addItem(item);
   }
 }

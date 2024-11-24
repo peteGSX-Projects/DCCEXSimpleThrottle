@@ -22,6 +22,7 @@
 #include "AppOrchestrator.h"
 #include "Button.h"
 #include "CommandStationDetails.h"
+#include "ConnectionManager.h"
 #include "Defines.h"
 #include "MenuManager.h"
 #include "RotaryEncoder.h"
@@ -53,14 +54,19 @@ public:
   /// @return Pointer to the application orchestrator
   AppOrchestrator *getAppOrchestrator();
 
-  /// @brief
-  /// @return
+  /// @brief Get the connection manager
+  /// @return Pointer to the connection manager
+  ConnectionManager *getConnectionManager();
+
+  /// @brief Get the menu manager
+  /// @return Pointer to the menu manager
   MenuManager *getMenuManager();
 
 private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   DisplayInterface *_displayInterface;
+  ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
   AppOrchestrator *_appOrchestrator;
 

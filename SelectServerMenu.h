@@ -20,6 +20,8 @@
 #define SELECTSERVERMENU_H
 
 #include "BaseMenu.h"
+#include "ConnectionManager.h"
+#include "ServerMenuItem.h"
 
 class SelectServerMenu : public BaseMenu {
 public:
@@ -30,6 +32,17 @@ public:
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
+
+  /// @brief
+  /// @param connectionCallback
+  /// @param connectionManager
+  void setConnectionCallback(void (*connectionCallback)(void *, uint8_t), ConnectionManager *connectionManager);
+
+private:
+  void (*_connectionCallback)(void *, uint8_t);
+  ConnectionManager *_connectionManager;
+
+  void _initiateServerConnection(BaseMenuItem *item);
 };
 
 #endif // SELECTSERVERMENU_H

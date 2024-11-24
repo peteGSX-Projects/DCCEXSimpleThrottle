@@ -88,8 +88,8 @@ void U8G2SH1106Display::displayMenuItems(BaseMenuItem *firstItem, uint8_t select
   }
   _oled->setDrawColor(1);
   _oled->drawHLine(0, 55, 128);
-  _oled->setCursor(75, 63);
-  _oled->print(F("Page #: "));
+  _oled->setCursor(80, 63);
+  _oled->print(F("Page # "));
   _oled->setCursor(115, 63);
   _oled->print("   ");
   _oled->setCursor(115, 63);

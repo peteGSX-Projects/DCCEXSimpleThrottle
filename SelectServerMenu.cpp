@@ -18,20 +18,35 @@
 
 #include "SelectServerMenu.h"
 
-SelectServerMenu::SelectServerMenu(const char *name) { setMenuName(name); }
+SelectServerMenu::SelectServerMenu(const char *name) {
+  setMenuName(name);
+  _connectionCallback = nullptr;
+  _connectionManager = nullptr;
+}
 
 void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
-  case UserConfirmationAction::SingleClick:
-    CONSOLE.println("Single click");
+  case UserConfirmationAction::SingleClick: {
+    BaseMenuItem *selectedItem = getMenuItemAtIndex(getSelectedItemIndex());
+    _initiateServerConnection(selectedItem);
     break;
-  case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("Double click");
-    break;
-  case UserConfirmationAction::LongPress:
-    CONSOLE.println("Long press");
-    break;
+  }
   default:
     break;
+  }
+}
+
+void SelectServerMenu::setConnectionCallback(void (*connectionCallback)(void *, uint8_t), ConnectionManager *connectionManager) {
+  _connectionCallback = connectionCallback;
+  _connectionManager = connectionManager;
+}
+
+void SelectServerMenu::_initiateServerConnection(BaseMenuItem *item) {
+  ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(item);
+  uint8_t index = serverItem->getIndex();
+  // CONSOLE.print("_connectionManager instance ID: ");
+  // CONSOLE.println(_connectionManager->getInstanceID());
+  if (_connectionCallback) {
+    _connectionCallback(_connectionManager, index);
   }
 }
