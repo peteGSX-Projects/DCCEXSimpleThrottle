@@ -37,6 +37,12 @@
 #define CONSOLE Serial
 #endif // CONSOLE
 
+// Define the default CommandStation connection serial object
+// If using WiFi, this will not be used
+#ifndef COMMANDSTATION_CONNECTION
+#define COMMANDSTATION_CONNECTION Serial1
+#endif // COMMANDSTATION_CONNECTION
+
 // Give OLED connection types a value
 #define OLED_I2C 1
 #define OLED_SPI 2

@@ -20,24 +20,46 @@
 
 ConnectionManager::ConnectionManager() {
   _connected = false;
+#ifdef WIFI_ENABLED
   _receivedUserSelection = false;
   _selectedCommandStation = 255;
   _commandStationCount = 0;
   _commandStationList = nullptr;
+  _wifiStarted = false;
   _wifiRetryDelay = 1000;
   _lastWifiRetry = 0;
   _wifiRetries = 10;
   _serverRetryDelay = 1000;
   _lastServerRetry = 0;
   _serverRetries = 10;
+#endif // WIFI_ENABLED
 }
 
 void ConnectionManager::update() {
-  _connectWiFi();
-  _connectServer();
+#ifdef WIFI_ENABLED
+  if (!_receivedUserSelection)
+    return;
+  unsigned long currentMillis = millis();
+  bool wifiConnected = _connectWiFi(currentMillis);
+  bool serverConnected = false;
+  if (wifiConnected) {
+    serverConnected = _connectServer(currentMillis);
+  }
+  if (wifiConnected && serverConnected) {
+    _connected = true;
+  }
+#endif // WIFI_ENABLED
 }
 
 bool ConnectionManager::connected() { return _connected; }
+
+Stream &ConnectionManager::getConnectionStream() {
+#ifdef WIFI_ENABLED
+  return _wifiClient;
+#else
+  return COMMANDSTATION_CONNECTION;
+#endif // WIFI_ENABLED
+}
 
 #ifdef WIFI_ENABLED
 void ConnectionManager::setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
@@ -64,8 +86,35 @@ void ConnectionManager::staticConnectCallback(void *instance, uint8_t commandSta
   static_cast<ConnectionManager *>(instance)->selectCommandStation(commandStationIndex);
 }
 
-void ConnectionManager::_connectWiFi() {}
+bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
+  if (WiFi.status() == WL_CONNECTED)
+    return true;
+  if (!_wifiStarted) {
+    WiFi.begin(_commandStationList[_selectedCommandStation].ssid,
+               _commandStationList[_selectedCommandStation].password);
+    _wifiStarted = true;
+    return false;
+  }
+  if ((currentMillis - _lastWifiRetry > _wifiRetryDelay) && _wifiRetries > 0) {
+    _lastWifiRetry = currentMillis;
+    CONSOLE.print("WiFi connect retries left ");
+    CONSOLE.println(_wifiRetries);
+    _wifiRetries--;
+  }
+  return false;
+}
 
-void ConnectionManager::_connectServer() {}
+bool ConnectionManager::_connectServer(unsigned long currentMillis) {
+  if (_wifiClient.connected())
+    return true;
+  if ((currentMillis - _lastServerRetry > _serverRetryDelay) && _serverRetries > 0) {
+    _lastServerRetry = currentMillis;
+    _serverRetries--;
+    bool connected = _wifiClient.connect(_commandStationList[_selectedCommandStation].ipAddress,
+                                         _commandStationList[_selectedCommandStation].port);
+    return connected;
+  }
+  return false;
+}
 
 #endif // WIFI_ENABLED

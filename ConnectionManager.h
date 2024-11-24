@@ -20,6 +20,7 @@
 #define CONNECTIONMANAGER_H
 
 #include "CommandStationDetails.h"
+#include "Defines.h"
 
 #ifdef WIFI_ENABLED
 #include <WiFi.h>
@@ -30,12 +31,16 @@ public:
   /// @brief Constructor for the ConnectionManager
   ConnectionManager();
 
-  /// @brief Ensure all connections are active
+  /// @brief Managed all connections, reconnect if necessary
   void update();
 
   /// @brief Check if connections are active
   /// @return True|False
   bool connected();
+
+  /// @brief Get the connect stream managed by this ConnectionManager
+  /// @return Stream object
+  Stream &getConnectionStream();
 
 #ifdef WIFI_ENABLED
   /// @brief Set the list of CommandStations
@@ -51,13 +56,16 @@ public:
   /// @param instance Pointer to the ConnectionManager object
   /// @param commandStationIndex Index of the CommandStation list item to connect to
   static void staticConnectCallback(void *instance, uint8_t commandStationIndex);
+#endif // WIFI_ENABLED
 
 private:
   bool _connected;
+#ifdef WIFI_ENABLED
   bool _receivedUserSelection;
   uint8_t _selectedCommandStation;
   uint8_t _commandStationCount;
   CommandStationDetails *_commandStationList;
+  bool _wifiStarted;
   unsigned long _wifiRetryDelay;
   unsigned long _lastWifiRetry;
   uint8_t _wifiRetries;
@@ -68,10 +76,10 @@ private:
   WiFiClient _wifiClient;
 
   /// @brief Ensure WiFi client is connected and reconnects if disconnected
-  void _connectWiFi();
+  bool _connectWiFi(unsigned long currentMillis);
 
   /// @brief Ensure server is connected and reconnects if disconnected
-  void _connectServer();
+  bool _connectServer(unsigned long currentMillis);
 #endif // WIFI_ENABLED
 };
 
