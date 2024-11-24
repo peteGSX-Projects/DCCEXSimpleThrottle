@@ -27,7 +27,7 @@
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-enum class AppState { Startup, SelectServer, SelectLoco, SelectAction, Operate };
+enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Operate, SelectAction };
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens, and
 /// displays
@@ -65,6 +65,9 @@ private:
 
   /// @brief
   void _handleSelectServerState();
+
+  /// @brief 
+  void _handleConnectServerState();
 
   /// @brief
   void _handleSelectLocoState();

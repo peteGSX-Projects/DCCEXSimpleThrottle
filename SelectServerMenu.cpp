@@ -44,8 +44,6 @@ void SelectServerMenu::setConnectionCallback(void (*connectionCallback)(void *, 
 void SelectServerMenu::_initiateServerConnection(BaseMenuItem *item) {
   ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(item);
   uint8_t index = serverItem->getIndex();
-  // CONSOLE.print("_connectionManager instance ID: ");
-  // CONSOLE.println(_connectionManager->getInstanceID());
   if (_connectionCallback) {
     _connectionCallback(_connectionManager, index);
   }

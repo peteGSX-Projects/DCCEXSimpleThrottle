@@ -34,7 +34,7 @@ AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, ConnectionM
 void AppOrchestrator::begin() {}
 
 void AppOrchestrator::update() {
-  if (!_connectionManager) {
+  if (_connectionManager) {
     _connectionManager->update();
   }
   switch (_currentAppState) {
@@ -43,6 +43,9 @@ void AppOrchestrator::update() {
     break;
   case AppState::SelectServer:
     _handleSelectServerState();
+    break;
+  case AppState::ConnectServer:
+    _handleConnectServerState();
     break;
   case AppState::SelectLoco:
     _handleSelectLocoState();
@@ -82,6 +85,8 @@ void AppOrchestrator::_handleSelectServerState() {
   menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   menu->handleUserConfirmationAction(_userConfirmationInterface->getUserConfirmationAction());
 }
+
+void AppOrchestrator::_handleConnectServerState() {}
 
 void AppOrchestrator::_handleSelectLocoState() {
   if (!_menuManager)

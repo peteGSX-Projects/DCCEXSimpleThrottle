@@ -19,11 +19,25 @@
 #include "ConnectionManager.h"
 
 ConnectionManager::ConnectionManager() {
+  _connected = false;
+  _receivedUserSelection = false;
+  _selectedCommandStation = 255;
   _commandStationCount = 0;
   _commandStationList = nullptr;
+  _wifiRetryDelay = 1000;
+  _lastWifiRetry = 0;
+  _wifiRetries = 10;
+  _serverRetryDelay = 1000;
+  _lastServerRetry = 0;
+  _serverRetries = 10;
 }
 
-void ConnectionManager::update() {}
+void ConnectionManager::update() {
+  _connectWiFi();
+  _connectServer();
+}
+
+bool ConnectionManager::connected() { return _connected; }
 
 #ifdef WIFI_ENABLED
 void ConnectionManager::setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
@@ -31,19 +45,27 @@ void ConnectionManager::setCommandStationList(CommandStationDetails *commandStat
   _commandStationList = commandStationList;
 }
 
-void ConnectionManager::connectWiFi(uint8_t commandStationIndex) {
+void ConnectionManager::selectCommandStation(uint8_t commandStationIndex) {
   if (!_commandStationList)
     return;
-  CONSOLE.print("Connect to CS index ");
-  CONSOLE.println(commandStationIndex);
-  CONSOLE.print("Connect to WiFi SSID|Password: ");
+  if (commandStationIndex >= _commandStationCount)
+    return;
+  _receivedUserSelection = true;
+  _selectedCommandStation = commandStationIndex;
+  CONSOLE.print("Connect to CS index|WiFi SSID|Password: ");
+  CONSOLE.print(_selectedCommandStation);
+  CONSOLE.print("|");
   CONSOLE.print(_commandStationList[commandStationIndex].ssid);
   CONSOLE.print("|");
   CONSOLE.println(_commandStationList[commandStationIndex].password);
 }
 
 void ConnectionManager::staticConnectCallback(void *instance, uint8_t commandStationIndex) {
-  static_cast<ConnectionManager *>(instance)->connectWiFi(commandStationIndex);
+  static_cast<ConnectionManager *>(instance)->selectCommandStation(commandStationIndex);
 }
+
+void ConnectionManager::_connectWiFi() {}
+
+void ConnectionManager::_connectServer() {}
 
 #endif // WIFI_ENABLED

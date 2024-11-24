@@ -21,13 +21,21 @@
 
 #include "CommandStationDetails.h"
 
+#ifdef WIFI_ENABLED
+#include <WiFi.h>
+#endif // WIFI_ENABLED
+
 class ConnectionManager {
 public:
   /// @brief Constructor for the ConnectionManager
   ConnectionManager();
-  
+
   /// @brief Ensure all connections are active
   void update();
+
+  /// @brief Check if connections are active
+  /// @return True|False
+  bool connected();
 
 #ifdef WIFI_ENABLED
   /// @brief Set the list of CommandStations
@@ -35,20 +43,35 @@ public:
   /// @param commandStationCount Count of CommandStations
   void setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount);
 
-  /// @brief Initiate a WiFi connection using the provided CommandStation details
+  /// @brief Select the CommandStation to connect to
   /// @param commandStationIndex Index of the list of CommandStationDetails to connect to
-  void connectWiFi(uint8_t commandStationIndex);
+  void selectCommandStation(uint8_t commandStationIndex);
 
   /// @brief Wrapper method to enable callbacks to call connection methods
   /// @param instance Pointer to the ConnectionManager object
   /// @param commandStationIndex Index of the CommandStation list item to connect to
   static void staticConnectCallback(void *instance, uint8_t commandStationIndex);
 
-  uint8_t getInstanceID();
-
 private:
+  bool _connected;
+  bool _receivedUserSelection;
+  uint8_t _selectedCommandStation;
   uint8_t _commandStationCount;
   CommandStationDetails *_commandStationList;
+  unsigned long _wifiRetryDelay;
+  unsigned long _lastWifiRetry;
+  uint8_t _wifiRetries;
+  unsigned long _serverRetryDelay;
+  unsigned long _lastServerRetry;
+  uint8_t _serverRetries;
+
+  WiFiClient _wifiClient;
+
+  /// @brief Ensure WiFi client is connected and reconnects if disconnected
+  void _connectWiFi();
+
+  /// @brief Ensure server is connected and reconnects if disconnected
+  void _connectServer();
 #endif // WIFI_ENABLED
 };
 
