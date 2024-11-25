@@ -48,7 +48,8 @@ public:
   /// @param pageChanged True|False
   virtual void displayPageNumber(uint8_t pageNumber, bool pageChanged) = 0;
 
-  virtual void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex) = 0;
+  virtual void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex,
+                           bool selectionChanged) = 0;
 
   /// @brief Implement this to display the software version below the header text
   /// @param version Pointer to the char array containing the version number
@@ -92,14 +93,6 @@ public:
 private:
   bool _needsRedraw = false;
   uint8_t _menuItemsPerPage = 0;
-
-  virtual void _displayHeader(const char *headerText) = 0;
-
-  virtual uint8_t _displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex) = 0;
-
-  virtual void _displayPageNumber(uint8_t pageNumber) = 0;
-  
-  virtual void _displayMenuFooter() = 0;
 };
 
 #endif // DISPLAYINTERFACE_H

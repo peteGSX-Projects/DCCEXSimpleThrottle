@@ -176,8 +176,5 @@ void AppOrchestrator::_switchState(AppState appState) {
 
 void AppOrchestrator::_displayMenu(BaseMenu *menu) {
   MenuScreen menuScreen(menu);
-  if (menu->getSelectionChanged()) {
-    _displayInterface->setNeedsRedraw(true);
-  }
   menuScreen.drawScreen(_displayInterface);
 }

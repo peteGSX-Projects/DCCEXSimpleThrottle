@@ -47,7 +47,7 @@ void BaseMenu::displayMenu(DisplayInterface *displayInterface) {
   // displayInterface->clear();
   // displayInterface->displayHeader(_name);
   // displayInterface->displayMenuItems(_firstMenuItem, _selectedItemIndex);
-  displayInterface->displayMenu(_name, _firstMenuItem, _selectedItemIndex);
+  displayInterface->displayMenu(_name, _firstMenuItem, _selectedItemIndex, _selectionChanged);
 }
 
 void BaseMenu::setMenuName(const char *name) { _name = name; }

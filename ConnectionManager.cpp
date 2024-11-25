@@ -87,8 +87,10 @@ void ConnectionManager::staticConnectCallback(void *instance, uint8_t commandSta
 }
 
 bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
-  if (WiFi.status() == WL_CONNECTED)
+  if (WiFi.status() == WL_CONNECTED) {
+    _wifiRetries = 10;
     return true;
+  }
   if (!_wifiStarted) {
     WiFi.begin(_commandStationList[_selectedCommandStation].ssid,
                _commandStationList[_selectedCommandStation].password);
@@ -105,9 +107,13 @@ bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
 }
 
 bool ConnectionManager::_connectServer(unsigned long currentMillis) {
-  if (_wifiClient.connected())
+  if (_wifiClient.connected()) {
+    _serverRetries = 10;
     return true;
+  }
   if ((currentMillis - _lastServerRetry > _serverRetryDelay) && _serverRetries > 0) {
+    CONSOLE.print("Server connect retries left ");
+    CONSOLE.println(_serverRetries);
     _lastServerRetry = currentMillis;
     _serverRetries--;
     bool connected = _wifiClient.connect(_commandStationList[_selectedCommandStation].ipAddress,

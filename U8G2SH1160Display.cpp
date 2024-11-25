@@ -34,7 +34,8 @@ U8G2SH1106Display::U8G2SH1106Display() {
   _wifiFont = WIFI_FONT;
   _csFont = CS_FONT;
   _errorFont = ERROR_FONT;
-  setMenuItemsPerPage(5);
+  // setMenuItemsPerPage(5);
+  setMenuItemsPerPage(_calculateMenuItemsPerPage());
   setNeedsRedraw(true);
 }
 
@@ -102,11 +103,18 @@ void U8G2SH1106Display::displayPageNumber(uint8_t pageNumber, bool pageChanged) 
   _oled->sendBuffer();
 }
 
-void U8G2SH1106Display::displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex) {
+void U8G2SH1106Display::displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex,
+                                    bool selectionChanged) {
   if (needsRedraw()) {
+    CONSOLE.print("Menu items per page: ");
+    CONSOLE.println(getMenuItemsPerPage());
     setNeedsRedraw(false);
+    _clearDisplay();
     _displayHeader(menuName);
     _displayMenuFooter();
+    uint8_t pageNumber = _displayMenuItems(menuItems, selectedItemIndex);
+    _displayPageNumber(pageNumber);
+  } else if (selectionChanged) {
     uint8_t pageNumber = _displayMenuItems(menuItems, selectedItemIndex);
     _displayPageNumber(pageNumber);
   }
@@ -120,6 +128,7 @@ void U8G2SH1106Display::displayMenu(const char *menuName, BaseMenuItem *menuItem
   If pageChanged:
   - displayPageNumber() - but only change page number
   - Page number only known to the display, and only display can flag if it changed
+  - Need to clear all menu items when changing page
   */
 }
 
@@ -211,11 +220,22 @@ void U8G2SH1106Display::updateTrackPowerState(TrackPower trackPower) {
   _oled->sendBuffer();
 }
 
+void U8G2SH1106Display::_clearDisplay() {
+  _oled->clear();
+  _oled->sendBuffer();
+}
+
 void U8G2SH1106Display::_displayHeader(const char *headerText) {
+  _calculateHeaderHeight();
   _oled->setDrawColor(1);
   _oled->setFont(_menuFont);
-  _oled->drawHLine(0, 7, 128);
-  _oled->setCursor(0, 6);
+  uint16_t x = 0;
+  uint16_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t lineWidth = _oled->getWidth();
+  // _oled->drawHLine(0, 7, 128);
+  // _oled->setCursor(0, 6);
+  _oled->drawHLine(x, fontHeight + 1, lineWidth);
+  _oled->setCursor(x, fontHeight);
   _oled->print(headerText);
   _oled->sendBuffer();
 }
@@ -252,6 +272,7 @@ uint8_t U8G2SH1106Display::_displayMenuItems(BaseMenuItem *firstMenuItem, uint8_
 }
 
 void U8G2SH1106Display::_displayPageNumber(uint8_t pageNumber) {
+  _oled->setDrawColor(1);
   _oled->setCursor(115, 63);
   _oled->print("   ");
   _oled->setCursor(115, 63);
@@ -260,9 +281,54 @@ void U8G2SH1106Display::_displayPageNumber(uint8_t pageNumber) {
 }
 
 void U8G2SH1106Display::_displayMenuFooter() {
+  _calculateMenuFooterHeight();
   _oled->setDrawColor(1);
-  _oled->drawHLine(0, 55, 128);
-  _oled->setCursor(80, 63);
-  _oled->print("Page # ");
+  _oled->setFont(_menuFont);
+  uint16_t x = 0;
+  uint16_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t lineWidth = _oled->getWidth();
+  uint16_t y = _oled->getHeight() - fontHeight - 1;
+  // _oled->drawHLine(0, 55, 128);
+  // _oled->setCursor(80, 63);
+  _oled->drawHLine(0, y, lineWidth);
+  y += fontHeight;
+  _oled->drawStr(x, y, "Page #");
+  // _oled->setCursor(x, y);
+  // _oled->print("Page # ");
   _oled->sendBuffer();
 }
+
+uint8_t U8G2SH1106Display::_calculateMenuItemsPerPage() {
+  _oled->setFont(_menuFont);
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  uint8_t itemsPerPage = _calculateMenuItemHeight() / fontHeight;
+  return itemsPerPage;
+}
+
+uint16_t U8G2SH1106Display::_calculateHeaderHeight() {
+  /*
+  Menu header starts at 6
+  Header line is at 7
+  Menu items start at 11
+  Footer line is at 55
+  Footer text is at 63
+  */
+  _oled->setFont(_menuFont);
+  uint16_t fontHeight = _oled->getMaxCharHeight();
+  CONSOLE.print("width|height|fontHeight: ");
+  CONSOLE.print(_oled->getWidth());
+  CONSOLE.print("|");
+  CONSOLE.print(_oled->getHeight());
+  CONSOLE.print("|");
+  CONSOLE.println(fontHeight);
+  return 10;
+  }
+
+uint16_t U8G2SH1106Display::_calculateMenuItemHeight() {
+  uint16_t menuItemHeight = _oled->getHeight() - _calculateHeaderHeight() - _calculateMenuFooterHeight();
+  return menuItemHeight;
+}
+
+uint16_t U8G2SH1106Display::_calculateMenuFooterHeight() { return 9; }
+
+void U8G2SH1106Display::_clearMenuItems() {}

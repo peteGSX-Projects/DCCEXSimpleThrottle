@@ -49,7 +49,8 @@ public:
   /// @param pageChanged True|False
   void displayPageNumber(uint8_t pageNumber, bool pageChanged) override;
 
-  void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex) override;
+  void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex,
+                   bool selectionChanged) override;
 
   /// @brief Display the software version below the header text
   /// @param version Pointer to the char array containing the version number
@@ -83,13 +84,25 @@ private:
   const uint8_t *_csFont;
   const uint8_t *_errorFont;
 
-  void _displayHeader(const char *headerText) override;
+  void _clearDisplay();
 
-  uint8_t _displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex) override;
+  void _displayHeader(const char *headerText);
 
-  void _displayPageNumber(uint8_t pageNumber) override;
-  
-  void _displayMenuFooter() override;
+  uint8_t _displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex);
+
+  void _displayPageNumber(uint8_t pageNumber);
+
+  void _displayMenuFooter();
+
+  uint8_t _calculateMenuItemsPerPage();
+
+  uint16_t _calculateHeaderHeight();
+
+  uint16_t _calculateMenuItemHeight();
+
+  uint16_t _calculateMenuFooterHeight();
+
+  void _clearMenuItems();
 };
 
 #endif // U8G2SH1106DISPLAY_H
