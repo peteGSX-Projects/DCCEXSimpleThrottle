@@ -26,10 +26,5 @@ void StartupScreen::handleUserConfirmationAction(UserConfirmationAction action) 
 void StartupScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {}
 
 void StartupScreen::drawScreen(DisplayInterface *display) {
-  if (!display->needsRedraw())
-    return;
-  display->setNeedsRedraw(false);
-  display->clear();
-  display->displayHeader("DCC-EX Simple Throttle");
-  display->displaySoftwareVersion(VERSION);
+  display->displayStartupScreen("DCC-EX Simple Throttle", VERSION);
 }

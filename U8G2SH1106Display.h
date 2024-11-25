@@ -35,21 +35,18 @@ public:
   /// @brief Clear the display
   void clear() override;
 
-  /// @brief Display the header text with horizontal line separator from other items
-  /// @param headerText Pointer to the char array containing the header text
-  void displayHeader(const char *headerText) override;
+  /// @brief Display the startup screen
+  /// @param headerText Header text to display
+  /// @param version Software version to display
+  void displayStartupScreen(const char *headerText, const char *version) override;
 
   /// @brief Display a menu
   /// @param menuName Name of the menu being displayed
   /// @param firstMenuItem Pointer to the first menu item in the list of items
   /// @param selectedItemIndex Index of the currently selected item to be highlighted
   /// @param selectionChanged Flag if the user has changed the selection
-  void displayMenu(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
+  void displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                    bool selectionChanged) override;
-
-  /// @brief Display the software version below the header text
-  /// @param version Pointer to the char array containing the version number
-  void displaySoftwareVersion(const char *version) override;
 
   /// @brief Update the currenty selected loco's speed
   /// @param speed 8 bit integer of the speed
@@ -85,6 +82,10 @@ private:
   /// @brief Display the header text with a horizontal line separator
   /// @param headerText Text to display
   void _displayHeader(const char *headerText);
+
+  /// @brief Display the software version below the header text
+  /// @param version Pointer to the char array containing the version number
+  void _displayStartupInfo(const char *version);
 
   /// @brief Display the list of menu items, paginated by the number that will fit on screen
   /// @param firstMenuItem Pointer to the first menu item in the list

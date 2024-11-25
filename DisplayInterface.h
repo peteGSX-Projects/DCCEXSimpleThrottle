@@ -34,21 +34,18 @@ public:
   /// @brief Implement this to entirely clear a display
   virtual void clear() = 0;
 
-  /// @brief Implement this to display the header text with a horizontal line separator from other items
-  /// @param headerText Pointer to the char array containing the header text
-  virtual void displayHeader(const char *headerText) = 0;
+  /// @brief Display the startup screen
+  /// @param headerText Header text to display
+  /// @param version Software version to display
+  virtual void displayStartupScreen(const char *headerText, const char *version) = 0;
 
   /// @brief Display a menu
   /// @param menuName Name of the menu being displayed
   /// @param firstMenuItem Pointer to the first menu item in the list of items
   /// @param selectedItemIndex Index of the currently selected item to be highlighted
   /// @param selectionChanged Flag if the user has changed the selection
-  virtual void displayMenu(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
+  virtual void displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                            bool selectionChanged) = 0;
-
-  /// @brief Implement this to display the software version below the header text
-  /// @param version Pointer to the char array containing the version number
-  virtual void displaySoftwareVersion(const char *version) = 0;
 
   /// @brief Implement this to update the currenty selected loco's speed
   /// @param speed 8 bit integer of the speed

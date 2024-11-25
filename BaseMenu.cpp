@@ -43,11 +43,7 @@ void BaseMenu::handleUserSelectionAction(UserSelectionAction action) {
 }
 
 void BaseMenu::displayMenu(DisplayInterface *displayInterface) {
-  // displayInterface->setNeedsRedraw(false);
-  // displayInterface->clear();
-  // displayInterface->displayHeader(_name);
-  // displayInterface->displayMenuItems(_firstMenuItem, _selectedItemIndex);
-  displayInterface->displayMenu(_name, _firstMenuItem, _selectedItemIndex, _selectionChanged);
+  displayInterface->displayMenuScreen(_name, _firstMenuItem, _selectedItemIndex, _selectionChanged);
 }
 
 void BaseMenu::setMenuName(const char *name) { _name = name; }

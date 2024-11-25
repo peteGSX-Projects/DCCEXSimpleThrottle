@@ -50,17 +50,16 @@ void U8G2SH1106Display::clear() {
   _oled->sendBuffer();
 }
 
-void U8G2SH1106Display::displayHeader(const char *headerText) {
-  _oled->setDrawColor(1);
-  _oled->setFont(_menuFont);
-  _oled->drawHLine(0, 7, 128);
-  _oled->setCursor(0, 6);
-  _oled->print(headerText);
-  _oled->sendBuffer();
+void U8G2SH1106Display::displayStartupScreen(const char *headerText, const char *version) {
+  if (needsRedraw()) {
+    setNeedsRedraw(false);
+    _displayHeader(headerText);
+    _displayStartupInfo(version);
+  }
 }
 
-void U8G2SH1106Display::displayMenu(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
-                                    bool selectionChanged) {
+void U8G2SH1106Display::displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
+                                          bool selectionChanged) {
   if (needsRedraw()) {
     setNeedsRedraw(false);
     _clearDisplay();
@@ -72,18 +71,6 @@ void U8G2SH1106Display::displayMenu(const char *menuName, BaseMenuItem *firstMen
     uint8_t pageNumber = _displayMenuItems(firstMenuItem, selectedItemIndex);
     _displayPageNumber(pageNumber);
   }
-}
-
-void U8G2SH1106Display::displaySoftwareVersion(const char *version) {
-  _oled->setDrawColor(1);
-  _oled->setFont(_menuFont);
-  uint8_t fontHeight = _oled->getMaxCharHeight();
-  _oled->setCursor(0, 19);
-  _oled->print("Version: ");
-  _oled->print(version);
-  _oled->setCursor(0, 19 + (fontHeight * 4));
-  _oled->print("Press button to continue");
-  _oled->sendBuffer();
 }
 
 void U8G2SH1106Display::updateSpeed(uint8_t speed) {
@@ -178,6 +165,23 @@ void U8G2SH1106Display::_displayHeader(const char *headerText) {
   _oled->sendBuffer();
 }
 
+void U8G2SH1106Display::_displayStartupInfo(const char *version) {
+  _oled->setDrawColor(1);
+  _oled->setFont(_menuFont);
+  uint16_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t x = 0;
+  uint16_t y = _calculateHeaderHeight() + fontHeight + 1;
+  const char *text = "Version: ";
+  uint16_t textWidth = _oled->getStrWidth(text);
+  _oled->drawStr(x, y, text);
+  x += textWidth;
+  _oled->drawStr(x, y, version);
+  y = _oled->getHeight() - 1;
+  x = 0;
+  _oled->drawStr(x, y, "Press button to continue");
+  _oled->sendBuffer();
+}
+
 uint8_t U8G2SH1106Display::_displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex) {
   if (!firstMenuItem)
     return 0;
@@ -268,4 +272,4 @@ uint16_t U8G2SH1106Display::_calculateMenuFooterHeight() {
   _oled->setFont(_menuFont);
   uint16_t fontHeight = _oled->getMaxCharHeight();
   return fontHeight + 2;
-  }
+}
