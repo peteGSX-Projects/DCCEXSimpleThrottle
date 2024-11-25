@@ -39,17 +39,12 @@ public:
   /// @param headerText Pointer to the char array containing the header text
   void displayHeader(const char *headerText) override;
 
-  /// @brief Implement this method to display the menu items on screen
-  /// @param firstItem Pointer to the first menu item to be displayed
-  /// @param selectedIndex Index of the item currently selected by the user
-  void displayMenuItems(BaseMenuItem *firstItem, uint8_t selectedIndex) override;
-
-  /// @brief Implement this method to display the page number of a menu on screen
-  /// @param pageNumber Page number to display
-  /// @param pageChanged True|False
-  void displayPageNumber(uint8_t pageNumber, bool pageChanged) override;
-
-  void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex,
+  /// @brief Display a menu
+  /// @param menuName Name of the menu being displayed
+  /// @param firstMenuItem Pointer to the first menu item in the list of items
+  /// @param selectedItemIndex Index of the currently selected item to be highlighted
+  /// @param selectionChanged Flag if the user has changed the selection
+  void displayMenu(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                    bool selectionChanged) override;
 
   /// @brief Display the software version below the header text
@@ -84,25 +79,41 @@ private:
   const uint8_t *_csFont;
   const uint8_t *_errorFont;
 
+  /// @brief Clear the display
   void _clearDisplay();
 
+  /// @brief Display the header text with a horizontal line separator
+  /// @param headerText Text to display
   void _displayHeader(const char *headerText);
 
+  /// @brief Display the list of menu items, paginated by the number that will fit on screen
+  /// @param firstMenuItem Pointer to the first menu item in the list
+  /// @param selectedItemIndex Index of the currently selected item to highlight
+  /// @return Current page number
   uint8_t _displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex);
 
-  void _displayPageNumber(uint8_t pageNumber);
-
+  /// @brief Displays the horizontal line separator and Page # text
   void _displayMenuFooter();
 
+  /// @brief Displays the provided page number within the menu footer
+  /// @param pageNumber Page number
+  void _displayPageNumber(uint8_t pageNumber);
+
+  /// @brief Calculates the number of menu items that will fit on screen
+  /// @return Number of items that will fit on screen
   uint8_t _calculateMenuItemsPerPage();
 
+  /// @brief Calculates the height of the header area
+  /// @return Header height
   uint16_t _calculateHeaderHeight();
 
+  /// @brief Calculates the height of the menu item area
+  /// @return Menu item height
   uint16_t _calculateMenuItemHeight();
 
+  /// @brief Calculates the height of the footer area
+  /// @return Footer height
   uint16_t _calculateMenuFooterHeight();
-
-  void _clearMenuItems();
 };
 
 #endif // U8G2SH1106DISPLAY_H

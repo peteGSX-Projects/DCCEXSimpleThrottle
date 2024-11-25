@@ -38,17 +38,12 @@ public:
   /// @param headerText Pointer to the char array containing the header text
   virtual void displayHeader(const char *headerText) = 0;
 
-  /// @brief Implement this method to display the menu items on screen
-  /// @param firstItem Pointer to the first menu item to be displayed
-  /// @param selectedIndex Index of the item currently selected by the user
-  virtual void displayMenuItems(BaseMenuItem *firstItem, uint8_t selectedIndex) = 0;
-
-  /// @brief Implement this method to display the page number of a menu on screen
-  /// @param pageNumber Page number to display
-  /// @param pageChanged True|False
-  virtual void displayPageNumber(uint8_t pageNumber, bool pageChanged) = 0;
-
-  virtual void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex,
+  /// @brief Display a menu
+  /// @param menuName Name of the menu being displayed
+  /// @param firstMenuItem Pointer to the first menu item in the list of items
+  /// @param selectedItemIndex Index of the currently selected item to be highlighted
+  /// @param selectionChanged Flag if the user has changed the selection
+  virtual void displayMenu(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                            bool selectionChanged) = 0;
 
   /// @brief Implement this to display the software version below the header text
