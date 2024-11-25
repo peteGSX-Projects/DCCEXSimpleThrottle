@@ -43,6 +43,13 @@ public:
   /// @param selectedIndex Index of the item currently selected by the user
   virtual void displayMenuItems(BaseMenuItem *firstItem, uint8_t selectedIndex) = 0;
 
+  /// @brief Implement this method to display the page number of a menu on screen
+  /// @param pageNumber Page number to display
+  /// @param pageChanged True|False
+  virtual void displayPageNumber(uint8_t pageNumber, bool pageChanged) = 0;
+
+  virtual void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex) = 0;
+
   /// @brief Implement this to display the software version below the header text
   /// @param version Pointer to the char array containing the version number
   virtual void displaySoftwareVersion(const char *version) = 0;
@@ -85,6 +92,14 @@ public:
 private:
   bool _needsRedraw = false;
   uint8_t _menuItemsPerPage = 0;
+
+  virtual void _displayHeader(const char *headerText) = 0;
+
+  virtual uint8_t _displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex) = 0;
+
+  virtual void _displayPageNumber(uint8_t pageNumber) = 0;
+  
+  virtual void _displayMenuFooter() = 0;
 };
 
 #endif // DISPLAYINTERFACE_H

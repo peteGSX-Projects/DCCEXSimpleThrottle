@@ -86,6 +86,11 @@ void U8G2SH1106Display::displayMenuItems(BaseMenuItem *firstItem, uint8_t select
       _oled->drawStr(x, y += fontHeight, displayItem->getName());
     }
   }
+  displayPageNumber(currentPage + 1, false);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::displayPageNumber(uint8_t pageNumber, bool pageChanged) {
   _oled->setDrawColor(1);
   _oled->drawHLine(0, 55, 128);
   _oled->setCursor(80, 63);
@@ -93,8 +98,29 @@ void U8G2SH1106Display::displayMenuItems(BaseMenuItem *firstItem, uint8_t select
   _oled->setCursor(115, 63);
   _oled->print("   ");
   _oled->setCursor(115, 63);
-  _oled->print(currentPage + 1);
+  _oled->print(pageNumber);
   _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex) {
+  if (needsRedraw()) {
+    setNeedsRedraw(false);
+    _displayHeader(menuName);
+    _displayMenuFooter();
+    uint8_t pageNumber = _displayMenuItems(menuItems, selectedItemIndex);
+    _displayPageNumber(pageNumber);
+  }
+  /*
+  If needsRedraw:
+  - displayHeader()
+  - displayMenuItems()
+  - displayPageNumber()
+  If selectionChanged:
+  - displayMenuItems() - but only change highlight
+  If pageChanged:
+  - displayPageNumber() - but only change page number
+  - Page number only known to the display, and only display can flag if it changed
+  */
 }
 
 void U8G2SH1106Display::displaySoftwareVersion(const char *version) {
@@ -182,5 +208,61 @@ void U8G2SH1106Display::updateTrackPowerState(TrackPower trackPower) {
   default:
     break;
   }
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::_displayHeader(const char *headerText) {
+  _oled->setDrawColor(1);
+  _oled->setFont(_menuFont);
+  _oled->drawHLine(0, 7, 128);
+  _oled->setCursor(0, 6);
+  _oled->print(headerText);
+  _oled->sendBuffer();
+}
+
+uint8_t U8G2SH1106Display::_displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex) {
+  if (!firstMenuItem)
+    return 0;
+  uint8_t itemsPerPage = getMenuItemsPerPage();
+  uint8_t currentPage = (selectedItemIndex / itemsPerPage);
+  uint8_t startIndex = currentPage * itemsPerPage;
+  _oled->setFont(_menuFont);
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t x = 0;
+  uint16_t y = 11;
+  for (uint8_t i = 0; i < itemsPerPage; i++) {
+    uint8_t index = startIndex + i;
+    BaseMenuItem *displayItem = nullptr;
+    for (BaseMenuItem *item = firstMenuItem; item; item = item->getNext()) {
+      if (item->getIndex() == index) {
+        displayItem = item;
+        break;
+      }
+    }
+    if (displayItem) {
+      _oled->setDrawColor(1);
+      if (index == selectedItemIndex) {
+        _oled->setDrawColor(0); // Highlight if this item is selected
+      }
+      _oled->drawStr(x, y += fontHeight, displayItem->getName());
+    }
+  }
+  _oled->sendBuffer();
+  return currentPage + 1;
+}
+
+void U8G2SH1106Display::_displayPageNumber(uint8_t pageNumber) {
+  _oled->setCursor(115, 63);
+  _oled->print("   ");
+  _oled->setCursor(115, 63);
+  _oled->print(pageNumber);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::_displayMenuFooter() {
+  _oled->setDrawColor(1);
+  _oled->drawHLine(0, 55, 128);
+  _oled->setCursor(80, 63);
+  _oled->print("Page # ");
   _oled->sendBuffer();
 }

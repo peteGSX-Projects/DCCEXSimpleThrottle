@@ -44,6 +44,13 @@ public:
   /// @param selectedIndex Index of the item currently selected by the user
   void displayMenuItems(BaseMenuItem *firstItem, uint8_t selectedIndex) override;
 
+  /// @brief Implement this method to display the page number of a menu on screen
+  /// @param pageNumber Page number to display
+  /// @param pageChanged True|False
+  void displayPageNumber(uint8_t pageNumber, bool pageChanged) override;
+
+  void displayMenu(const char *menuName, BaseMenuItem *menuItems, uint8_t selectedItemIndex) override;
+
   /// @brief Display the software version below the header text
   /// @param version Pointer to the char array containing the version number
   void displaySoftwareVersion(const char *version) override;
@@ -75,6 +82,14 @@ private:
   const uint8_t *_wifiFont;
   const uint8_t *_csFont;
   const uint8_t *_errorFont;
+
+  void _displayHeader(const char *headerText) override;
+
+  uint8_t _displayMenuItems(BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex) override;
+
+  void _displayPageNumber(uint8_t pageNumber) override;
+  
+  void _displayMenuFooter() override;
 };
 
 #endif // U8G2SH1106DISPLAY_H
