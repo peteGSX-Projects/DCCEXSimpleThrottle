@@ -21,13 +21,15 @@
 
 #include "ConnectionManager.h"
 #include "DisplayInterface.h"
+#include "ErrorScreen.h"
 #include "MenuManager.h"
 #include "OperateScreen.h"
+#include "ProgressScreen.h"
 #include "StartupScreen.h"
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Operate, SelectAction };
+enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Operate, SelectAction, Error };
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens, and
 /// displays
@@ -59,31 +61,36 @@ private:
 
   StartupScreen *_startupScreen;
   OperateScreen *_operateScreen;
+  ErrorScreen *_errorScreen;
+  ProgressScreen *_progressScreen;
 
-  /// @brief When in startup mode, show the startup screen and wait for user interaction
+  /// @brief Show the startup screen and wait for user interaction before continuing
   void _handleStartupState();
 
-  /// @brief
+  /// @brief Display the server menu and process user interaction to select one
   void _handleSelectServerState();
 
-  /// @brief 
+  /// @brief Show the connection progress screen until a connection is made
   void _handleConnectServerState();
 
-  /// @brief
+  /// @brief Show the loco selection menu and process user interaction to select one
   void _handleSelectLocoState();
 
-  /// @brief
+  /// @brief Show the operate screen and process user interaction
   void _handleOperateState();
 
-  /// @brief
+  /// @brief Show the select action menu and process user interaction to select one
   void _handleSelectActionState();
 
-  /// @brief
-  /// @param appState
+  /// @brief Show any errors on screen and process user interaction to recover
+  void _handleErrorState();
+
+  /// @brief Switch application states
+  /// @param appState State to switch to
   void _switchState(AppState appState);
 
-  /// @brief
-  /// @param menu
+  /// @brief Display a menu
+  /// @param menu Pointer to the menu to be displayed
   void _displayMenu(BaseMenu *menu);
 };
 

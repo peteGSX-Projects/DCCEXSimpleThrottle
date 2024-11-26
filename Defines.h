@@ -19,6 +19,8 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
+#include "U8g2lib.h"
+
 /// @brief Provide default definitions that can be overridden by a user creating myConfig.h
 
 #if __has_include("myConfig.h")
@@ -56,9 +58,9 @@
 #endif // OLED_ADDRESS
 
 // Define the correct OLED type based on connection
-#if (OLED_CONNECTION==OLED_I2C)
+#if (OLED_CONNECTION == OLED_I2C)
 #define OLED_TYPE U8G2_SH1106_128X64_NONAME_F_HW_I2C
-#elif (OLED_CONNECTION==OLED_SPI)
+#elif (OLED_CONNECTION == OLED_SPI)
 #define OLED_TYPE U8G2_SH1106_128X64_NONAME_F_4W_HW_SPI
 #else
 #error Invalid OLED connection type specific, must be OLED_I2C or OLED_SPI
@@ -105,23 +107,28 @@
 // Define example WiFi connection parameters here
 #ifndef COMMANDSTATION_COUNT
 #define COMMANDSTATION_COUNT 2 // The number of EX-CommandStations to define
-#endif // COMMANDSTATION_COUNT
+#endif                         // COMMANDSTATION_COUNT
 
 // Define example connection options for each EX-CommandStation entry
 #ifndef COMMANDSTATION_NAMES
-#define COMMANDSTATION_NAMES {"Example 1", "Example 2"}
+#define COMMANDSTATION_NAMES                                                                                           \
+  { "Example 1", "Example 2" }
 #endif // COMMANDSTATION_NAMES
 #ifndef COMMANDSTATION_IPS
-#define COMMANDSTATION_IPS {"192.168.4.1", "192.168.0.1"}
+#define COMMANDSTATION_IPS                                                                                             \
+  { "192.168.4.1", "192.168.0.1" }
 #endif // COMMANDSTATION_IPS
 #ifndef COMMANDSTATION_PORTS
-#define COMMANDSTATION_PORTS {2560, 2560}
+#define COMMANDSTATION_PORTS                                                                                           \
+  { 2560, 2560 }
 #endif // COMMANDSTATION_PORTS
 #ifndef COMMANDSTATION_SSIDS
-#define COMMANDSTATION_SSIDS {"SSID1", "SSID2"}
+#define COMMANDSTATION_SSIDS                                                                                           \
+  { "SSID1", "SSID2" }
 #endif // COMMANDSTATION_SSIDS
 #ifndef COMMANDSTATION_PASSWORDS
-#define COMMANDSTATION_PASSWORDS {"Password1", "Password2"}
+#define COMMANDSTATION_PASSWORDS                                                                                       \
+  { "Password1", "Password2" }
 #endif // COMMANDSTATION_PASSWORDS
 
 // Default pin definitions for ESP32

@@ -43,6 +43,30 @@ public:
   Stream &getConnectionStream();
 
 #ifdef WIFI_ENABLED
+  /// @brief Check if user has selected a server
+  /// @return True|False
+  bool receivedUserSelection();
+
+  /// @brief Check if a connection is in progress
+  /// @return True|False
+  bool isConnecting();
+
+  /// @brief Get the current connection name in progress
+  /// @return Connection name
+  const char *getConnectionName();
+
+  /// @brief Check if a connection has errored
+  /// @return True|False
+  bool connectionError();
+
+  /// @brief Get the connection error message
+  /// @return Error message
+  const char *getConnectionErrorMessage();
+
+  /// @brief Get the current count of retries
+  /// @return Retry counter
+  uint8_t getRetryCounter();
+
   /// @brief Set the list of CommandStations
   /// @param commandStationList Pointer to the array of CommandStations
   /// @param commandStationCount Count of CommandStations
@@ -68,10 +92,17 @@ private:
   bool _wifiStarted;
   unsigned long _wifiRetryDelay;
   unsigned long _lastWifiRetry;
-  uint8_t _wifiRetries;
+  uint8_t _wifiMaxRetries;
+  uint8_t _wifiRetry;
   unsigned long _serverRetryDelay;
   unsigned long _lastServerRetry;
-  uint8_t _serverRetries;
+  uint8_t _serverMaxRetries;
+  uint8_t _serverRetry;
+  bool _isConnecting;
+  const char *_connectionName;
+  bool _connectionError;
+  const char *_connectionErrorMessage;
+  uint8_t _retryCounter;
 
   WiFiClient _wifiClient;
 

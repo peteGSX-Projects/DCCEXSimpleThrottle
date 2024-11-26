@@ -58,6 +58,23 @@ void U8G2SH1106Display::displayStartupScreen(const char *headerText, const char 
   }
 }
 
+void U8G2SH1106Display::displayProgressScreen(const char *activity, uint8_t counter) {
+  if (needsRedraw()) {
+    setNeedsRedraw(false);
+    _clearDisplay();
+    _displayHeader(activity);
+  }
+  _displayProgress(counter);
+}
+
+void U8G2SH1106Display::displayErrorScreen(const char *errorText) {
+  if (needsRedraw()) {
+    setNeedsRedraw(false);
+    _clearDisplay();
+    _displayErrorMessage(errorText);
+  }
+}
+
 void U8G2SH1106Display::displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                                           bool selectionChanged) {
   if (needsRedraw()) {
@@ -147,6 +164,30 @@ void U8G2SH1106Display::updateTrackPowerState(TrackPower trackPower) {
     break;
   }
   _oled->sendBuffer();
+}
+
+uint8_t U8G2SH1106Display::_calculateMenuItemsPerPage() {
+  _oled->setFont(_menuFont);
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  uint8_t itemsPerPage = _calculateMenuItemHeight() / fontHeight;
+  return itemsPerPage;
+}
+
+uint16_t U8G2SH1106Display::_calculateHeaderHeight() {
+  _oled->setFont(_menuFont);
+  uint16_t fontHeight = _oled->getMaxCharHeight();
+  return fontHeight + 1;
+}
+
+uint16_t U8G2SH1106Display::_calculateMenuItemHeight() {
+  uint16_t menuItemHeight = _oled->getHeight() - _calculateHeaderHeight() - _calculateMenuFooterHeight();
+  return menuItemHeight;
+}
+
+uint16_t U8G2SH1106Display::_calculateMenuFooterHeight() {
+  _oled->setFont(_menuFont);
+  uint16_t fontHeight = _oled->getMaxCharHeight();
+  return fontHeight + 2;
 }
 
 void U8G2SH1106Display::_clearDisplay() {
@@ -250,26 +291,27 @@ void U8G2SH1106Display::_displayPageNumber(uint8_t pageNumber) {
   _oled->sendBuffer();
 }
 
-uint8_t U8G2SH1106Display::_calculateMenuItemsPerPage() {
-  _oled->setFont(_menuFont);
-  uint8_t fontHeight = _oled->getMaxCharHeight();
-  uint8_t itemsPerPage = _calculateMenuItemHeight() / fontHeight;
-  return itemsPerPage;
+void U8G2SH1106Display::_displayProgress(uint8_t counter) {
+  _oled->setFont(_wifiFont);
+  uint16_t indicatorWidth = _oled->getMaxCharWidth();
+  uint16_t indicatorHeight = _oled->getMaxCharHeight();
+  uint16_t x = 0;
+  uint16_t y = _calculateHeaderHeight() + (indicatorHeight * 3);
+  for (uint8_t i = 0; i < counter; i++) {
+    _oled->drawGlyph(x, y, 0x0048);
+    x += indicatorWidth;
+  }
+  _oled->sendBuffer();
 }
 
-uint16_t U8G2SH1106Display::_calculateHeaderHeight() {
-  _oled->setFont(_menuFont);
-  uint16_t fontHeight = _oled->getMaxCharHeight();
-  return fontHeight + 1;
-}
-
-uint16_t U8G2SH1106Display::_calculateMenuItemHeight() {
-  uint16_t menuItemHeight = _oled->getHeight() - _calculateHeaderHeight() - _calculateMenuFooterHeight();
-  return menuItemHeight;
-}
-
-uint16_t U8G2SH1106Display::_calculateMenuFooterHeight() {
-  _oled->setFont(_menuFont);
-  uint16_t fontHeight = _oled->getMaxCharHeight();
-  return fontHeight + 2;
+void U8G2SH1106Display::_displayErrorMessage(const char *errorMessage) {
+  _oled->setFont(_defaultFont);
+  uint16_t x = 0;
+  uint16_t y = 10;
+  _oled->drawStr(x, y, errorMessage);
+  x = 50;
+  y = 50;
+  _oled->setFont(_errorFont);
+  _oled->drawGlyph(x, y, 0x0029);
+  _oled->sendBuffer();
 }

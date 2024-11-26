@@ -29,6 +29,8 @@ AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, ConnectionM
   _currentAppState = AppState::Startup;
   _startupScreen = new StartupScreen();
   _operateScreen = new OperateScreen();
+  _errorScreen = new ErrorScreen();
+  _progressScreen = new ProgressScreen();
 }
 
 void AppOrchestrator::begin() {}
@@ -36,6 +38,11 @@ void AppOrchestrator::begin() {}
 void AppOrchestrator::update() {
   if (_connectionManager) {
     _connectionManager->update();
+    if (_connectionManager->isConnecting() && _currentAppState != AppState::ConnectServer) {
+      _switchState(AppState::ConnectServer);
+    } else if (_connectionManager->connectionError() && _currentAppState != AppState::Error) {
+      _switchState(AppState::Error);
+    }
   }
   switch (_currentAppState) {
   case AppState::Startup:
@@ -55,6 +62,9 @@ void AppOrchestrator::update() {
     break;
   case AppState::SelectAction:
     _handleSelectActionState();
+    break;
+  case AppState::Error:
+    _handleErrorState();
     break;
   default:
     break;
@@ -84,9 +94,20 @@ void AppOrchestrator::_handleSelectServerState() {
   _displayMenu(menu);
   menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   menu->handleUserConfirmationAction(_userConfirmationInterface->getUserConfirmationAction());
+  if (_connectionManager) {
+    if (_connectionManager->receivedUserSelection()) {
+      _switchState(AppState::ConnectServer);
+    }
+  }
 }
 
-void AppOrchestrator::_handleConnectServerState() {}
+void AppOrchestrator::_handleConnectServerState() {
+  if (!_progressScreen)
+    return;
+  _progressScreen->setActivity(_connectionManager->getConnectionName());
+  _progressScreen->setCounter(_connectionManager->getRetryCounter());
+  _progressScreen->drawScreen(_displayInterface);
+}
 
 void AppOrchestrator::_handleSelectLocoState() {
   if (!_menuManager)
@@ -151,23 +172,43 @@ void AppOrchestrator::_handleSelectActionState() {
   }
 }
 
+void AppOrchestrator::_handleErrorState() {
+  if (!_errorScreen)
+    return;
+  _errorScreen->setErrorMessage(_connectionManager->getConnectionErrorMessage());
+  _errorScreen->drawScreen(_displayInterface);
+}
+
 void AppOrchestrator::_switchState(AppState appState) {
   _displayInterface->setNeedsRedraw(true);
   switch (appState) {
   case AppState::Startup:
+    CONSOLE.println("Switch to AppState::Startup");
     _currentAppState = AppState::Startup;
     break;
   case AppState::Operate:
+    CONSOLE.println("Switch to AppState::Operate");
     _currentAppState = AppState::Operate;
     break;
   case AppState::SelectAction:
+    CONSOLE.println("Switch to AppState::SelectAction");
     _currentAppState = AppState::SelectAction;
     break;
   case AppState::SelectLoco:
+    CONSOLE.println("Switch to AppState::SelectLoco");
     _currentAppState = AppState::SelectLoco;
     break;
   case AppState::SelectServer:
+    CONSOLE.println("Switch to AppState::SelectServer");
     _currentAppState = AppState::SelectServer;
+    break;
+  case AppState::ConnectServer:
+    CONSOLE.println("Switch to AppState::ConnectServer");
+    _currentAppState = AppState::ConnectServer;
+    break;
+  case AppState::Error:
+    CONSOLE.println("Switch to AppState::Error");
+    _currentAppState = AppState::Error;
     break;
   default:
     break;

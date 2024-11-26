@@ -28,10 +28,17 @@ ConnectionManager::ConnectionManager() {
   _wifiStarted = false;
   _wifiRetryDelay = 1000;
   _lastWifiRetry = 0;
-  _wifiRetries = 10;
+  _wifiMaxRetries = 10;
+  _wifiRetry = 1;
   _serverRetryDelay = 1000;
   _lastServerRetry = 0;
-  _serverRetries = 10;
+  _serverMaxRetries = 10;
+  _serverRetry = 1;
+  _isConnecting = false;
+  _connectionName = nullptr;
+  _connectionError = false;
+  _connectionErrorMessage = nullptr;
+  _retryCounter = 0;
 #endif // WIFI_ENABLED
 }
 
@@ -46,6 +53,8 @@ void ConnectionManager::update() {
     serverConnected = _connectServer(currentMillis);
   }
   if (wifiConnected && serverConnected) {
+    _isConnecting = false;
+    _connectionError = false;
     _connected = true;
   }
 #endif // WIFI_ENABLED
@@ -62,6 +71,18 @@ Stream &ConnectionManager::getConnectionStream() {
 }
 
 #ifdef WIFI_ENABLED
+bool ConnectionManager::receivedUserSelection() { return _receivedUserSelection; }
+
+bool ConnectionManager::isConnecting() { return _isConnecting; }
+
+const char *ConnectionManager::getConnectionName() { return _connectionName; }
+
+bool ConnectionManager::connectionError() { return _connectionError; }
+
+const char *ConnectionManager::getConnectionErrorMessage() { return _connectionErrorMessage; }
+
+uint8_t ConnectionManager::getRetryCounter() { return _retryCounter; }
+
 void ConnectionManager::setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
   _commandStationCount = commandStationCount;
   _commandStationList = commandStationList;
@@ -74,12 +95,6 @@ void ConnectionManager::selectCommandStation(uint8_t commandStationIndex) {
     return;
   _receivedUserSelection = true;
   _selectedCommandStation = commandStationIndex;
-  CONSOLE.print("Connect to CS index|WiFi SSID|Password: ");
-  CONSOLE.print(_selectedCommandStation);
-  CONSOLE.print("|");
-  CONSOLE.print(_commandStationList[commandStationIndex].ssid);
-  CONSOLE.print("|");
-  CONSOLE.println(_commandStationList[commandStationIndex].password);
 }
 
 void ConnectionManager::staticConnectCallback(void *instance, uint8_t commandStationIndex) {
@@ -88,37 +103,48 @@ void ConnectionManager::staticConnectCallback(void *instance, uint8_t commandSta
 
 bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
   if (WiFi.status() == WL_CONNECTED) {
-    _wifiRetries = 10;
+    _wifiRetry = 1;
     return true;
   }
+  _connectionName = "Connect WiFi";
   if (!_wifiStarted) {
     WiFi.begin(_commandStationList[_selectedCommandStation].ssid,
                _commandStationList[_selectedCommandStation].password);
     _wifiStarted = true;
+    _isConnecting = true;
     return false;
   }
-  if ((currentMillis - _lastWifiRetry > _wifiRetryDelay) && _wifiRetries > 0) {
+  if ((currentMillis - _lastWifiRetry > _wifiRetryDelay) && _wifiRetry <= _wifiMaxRetries) {
     _lastWifiRetry = currentMillis;
-    CONSOLE.print("WiFi connect retries left ");
-    CONSOLE.println(_wifiRetries);
-    _wifiRetries--;
+    _retryCounter = _wifiRetry;
+    _wifiRetry++;
+    _isConnecting = true;
+  } else if (_wifiRetry > _wifiMaxRetries && _isConnecting) {
+    _connectionError = true;
+    _connectionErrorMessage = "WiFi timeout";
+    _isConnecting = false;
   }
   return false;
 }
 
 bool ConnectionManager::_connectServer(unsigned long currentMillis) {
   if (_wifiClient.connected()) {
-    _serverRetries = 10;
+    _serverRetry = 1;
     return true;
   }
-  if ((currentMillis - _lastServerRetry > _serverRetryDelay) && _serverRetries > 0) {
-    CONSOLE.print("Server connect retries left ");
-    CONSOLE.println(_serverRetries);
+  _connectionName = "Connect CommandStation";
+  if ((currentMillis - _lastServerRetry > _serverRetryDelay) && _serverRetry <= _serverMaxRetries) {
     _lastServerRetry = currentMillis;
-    _serverRetries--;
+    _retryCounter = _serverRetry;
+    _serverRetry++;
+    _isConnecting = true;
     bool connected = _wifiClient.connect(_commandStationList[_selectedCommandStation].ipAddress,
                                          _commandStationList[_selectedCommandStation].port);
     return connected;
+  } else if (_serverRetry > _serverMaxRetries && _isConnecting) {
+    _connectionError = true;
+    _connectionErrorMessage = "CommandStation timeout";
+    _isConnecting = false;
   }
   return false;
 }

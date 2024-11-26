@@ -39,13 +39,22 @@ public:
   /// @param version Software version to display
   virtual void displayStartupScreen(const char *headerText, const char *version) = 0;
 
+  /// @brief Display progress screen for the specified activity
+  /// @param activity Text of the activity in progress
+  /// @param counter Counter of the current attempt
+  virtual void displayProgressScreen(const char *activity, uint8_t counter) = 0;
+
+  /// @brief Display error screen
+  /// @param errorText Error text to display
+  virtual void displayErrorScreen(const char *errorText) = 0;
+
   /// @brief Display a menu
   /// @param menuName Name of the menu being displayed
   /// @param firstMenuItem Pointer to the first menu item in the list of items
   /// @param selectedItemIndex Index of the currently selected item to be highlighted
   /// @param selectionChanged Flag if the user has changed the selection
   virtual void displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
-                           bool selectionChanged) = 0;
+                                 bool selectionChanged) = 0;
 
   /// @brief Implement this to update the currenty selected loco's speed
   /// @param speed 8 bit integer of the speed
