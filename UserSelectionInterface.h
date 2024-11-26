@@ -20,7 +20,7 @@
 #define USERSELECTIONINTERFACE_H
 
 /// @brief User selection action data types available
-enum class UserSelectionAction { None, Up, Down };
+enum class UserSelectionAction { None, Up, UpFaster, UpFastest, Down, DownFaster, DownFastest };
 
 /// @brief Interface class to abstract user selection actions from physical implementations
 /// All physical user selection classes must extend this
@@ -35,7 +35,7 @@ public:
 
   /// @brief Implement this to check for any user selection actions
   /// This should be called at least once per main loop iteration
-  /// @return UserSelectionAction::[None|Up|Down]
+  /// @return UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   virtual UserSelectionAction getUserSelectionAction() = 0;
 
   /// @brief Destructor for the object

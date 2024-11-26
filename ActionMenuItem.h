@@ -22,8 +22,10 @@
 #include "BaseMenuItem.h"
 
 /// @brief Extension of the BaseMenuItem class for users to select items that call a function or method
+/// Each action should be a callback to a method requiring no parameters
 class ActionMenuItem : public BaseMenuItem {
 public:
+  /// @brief Define a non-typed method to call requiring no parameters
   typedef void (*Action)();
 
   /// @brief Constructor for the action menu item objects

@@ -18,17 +18,17 @@
 
 #include "AppOrchestrator.h"
 #include "MenuScreen.h"
-#include "OperateScreen.h"
-#include "StartupScreen.h"
 
 AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, ConnectionManager *connectionManager,
-                                 MenuManager *menuManager, UserConfirmationInterface *userConfirmationInterface,
+                                 MenuManager *menuManager, CommandStationClient *commandStationClient,
+                                 UserConfirmationInterface *userConfirmationInterface,
                                  UserSelectionInterface *userSelectionInterface)
     : _displayInterface(displayInterface), _connectionManager(connectionManager), _menuManager(menuManager),
-      _userConfirmationInterface(userConfirmationInterface), _userSelectionInterface(userSelectionInterface) {
+      _commandStationClient(commandStationClient), _userConfirmationInterface(userConfirmationInterface),
+      _userSelectionInterface(userSelectionInterface) {
   _currentAppState = AppState::Startup;
   _startupScreen = new StartupScreen();
-  _operateScreen = new OperateScreen();
+  _throttleScreen = new ThrottleScreen();
   _errorScreen = new ErrorScreen();
   _progressScreen = new ProgressScreen();
 }
@@ -42,6 +42,8 @@ void AppOrchestrator::update() {
       _switchState(AppState::ConnectServer);
     } else if (_connectionManager->connectionError() && _currentAppState != AppState::Error) {
       _switchState(AppState::Error);
+    } else if (_connectionManager->connected()) {
+      _commandStationClient->update();
     }
   }
   switch (_currentAppState) {
@@ -57,8 +59,8 @@ void AppOrchestrator::update() {
   case AppState::SelectLoco:
     _handleSelectLocoState();
     break;
-  case AppState::Operate:
-    _handleOperateState();
+  case AppState::Throttle:
+    _handleThrottleState();
     break;
   case AppState::SelectAction:
     _handleSelectActionState();
@@ -127,7 +129,7 @@ void AppOrchestrator::_handleSelectLocoState() {
   case UserConfirmationAction::LongPress:
     break;
   case UserConfirmationAction::SingleClick:
-    _switchState(AppState::Operate);
+    _switchState(AppState::Throttle);
     break;
   case UserConfirmationAction::DoubleClick:
     _switchState(AppState::SelectAction);
@@ -137,21 +139,21 @@ void AppOrchestrator::_handleSelectLocoState() {
   }
 }
 
-void AppOrchestrator::_handleOperateState() {
-  _operateScreen->drawScreen(_displayInterface);
+void AppOrchestrator::_handleThrottleState() {
+  _throttleScreen->drawScreen(_displayInterface);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
   case UserConfirmationAction::DoubleClick:
-    if (_operateScreen->getSpeed() == 0) {
+    if (_throttleScreen->getSpeed() == 0) {
       _switchState(AppState::SelectLoco);
     } else {
-      _operateScreen->handleUserConfirmationAction(action);
+      _throttleScreen->handleUserConfirmationAction(action);
     }
     break;
   default:
-    _operateScreen->handleUserConfirmationAction(action);
-    _operateScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(),
-                                              _userSelectionInterface->throttleInverted());
+    _throttleScreen->handleUserConfirmationAction(action);
+    _throttleScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(),
+                                               _userSelectionInterface->throttleInverted());
     break;
   }
 }
@@ -168,7 +170,7 @@ void AppOrchestrator::_handleSelectActionState() {
   case UserConfirmationAction::LongPress:
     break;
   case UserConfirmationAction::SingleClick:
-    _switchState(AppState::Operate);
+    _switchState(AppState::Throttle);
     break;
   case UserConfirmationAction::DoubleClick:
     _switchState(AppState::SelectLoco);
@@ -192,9 +194,9 @@ void AppOrchestrator::_switchState(AppState appState) {
     CONSOLE.println("Switch to AppState::Startup");
     _currentAppState = AppState::Startup;
     break;
-  case AppState::Operate:
-    CONSOLE.println("Switch to AppState::Operate");
-    _currentAppState = AppState::Operate;
+  case AppState::Throttle:
+    CONSOLE.println("Switch to AppState::Throttle");
+    _currentAppState = AppState::Throttle;
     break;
   case AppState::SelectAction:
     CONSOLE.println("Switch to AppState::SelectAction");

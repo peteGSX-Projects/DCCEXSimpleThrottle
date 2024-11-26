@@ -21,7 +21,9 @@
 
 #include "AppOrchestrator.h"
 #include "Button.h"
+#include "CommandStationClient.h"
 #include "CommandStationDetails.h"
+#include "CommandStationListener.h"
 #include "ConnectionManager.h"
 #include "Defines.h"
 #include "MenuManager.h"
@@ -29,7 +31,7 @@
 #include "U8G2SH1106Display.h"
 
 /// @brief Class to perform all application configuration on startup
-/// All interfaces and menus are created within this class
+/// All interfaces, menus, and other application objects are created within this class
 class AppConfiguration {
 public:
   /// @brief Constructor for the app configuration object
@@ -62,12 +64,18 @@ public:
   /// @return Pointer to the menu manager
   MenuManager *getMenuManager();
 
+  /// @brief Get the CommandStation client
+  /// @return Pointer to the CommandStation client
+  CommandStationClient *getCommandStationClient();
+
 private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   DisplayInterface *_displayInterface;
   ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
+  CommandStationListener *_commandStationListener;
+  CommandStationClient *_commandStationClient;
   AppOrchestrator *_appOrchestrator;
 
 #ifdef WIFI_ENABLED
@@ -82,6 +90,11 @@ private:
   /// @return IPAddress object
   IPAddress _convertIP(const char *ipAddressString);
 #endif // WIFI_ENABLED
+
+  /// @brief Disabling JTAG is required to avoid pin conflicts when using Bluepill
+#if defined(ARDUINO_BLUEPILL_F103C8)
+  void _disableJTAG();
+#endif // BLUEPILL
 };
 
 #endif // APPCONFIGURATION_H

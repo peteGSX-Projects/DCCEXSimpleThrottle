@@ -33,7 +33,7 @@ public:
   /// @brief Implement this method to define what to do when user selection actions are performed
   /// throttleInverted enables an interface to decrease speed when moving up and vice versa, which is handy for a rotary
   /// encoder
-  /// @param action UserSelectionAction::[None|Up|Down]
+  /// @param action UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   /// @param throttleInverted True|False
   void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted = false) override;
 

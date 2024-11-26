@@ -37,7 +37,7 @@ public:
   /// This should be called at least once per main loop iteration
   /// Note that with a rotary encoder, clockwise is down but also increases speed, and counter clockwise is up but also
   /// decreases speed
-  /// @return UserSelectionAction::[None|Up|Down]
+  /// @return UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   UserSelectionAction getUserSelectionAction() override;
 
 private:

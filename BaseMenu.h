@@ -34,7 +34,7 @@ public:
   virtual void handleUserConfirmationAction(UserConfirmationAction action) = 0;
 
   /// @brief Method to respond to user selection actions
-  /// @param action UserSelectionAction::[None|Up|Down]
+  /// @param action UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   void handleUserSelectionAction(UserSelectionAction action);
 
   /// @brief Method to display the menu on screen

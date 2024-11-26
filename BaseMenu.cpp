@@ -21,6 +21,8 @@
 void BaseMenu::handleUserSelectionAction(UserSelectionAction action) {
   switch (action) {
   case UserSelectionAction::Up:
+  case UserSelectionAction::UpFaster:
+  case UserSelectionAction::UpFastest:
     _selectionChanged = true;
     if (_selectedItemIndex > 0) {
       _selectedItemIndex--;
@@ -29,6 +31,8 @@ void BaseMenu::handleUserSelectionAction(UserSelectionAction action) {
     }
     break;
   case UserSelectionAction::Down:
+  case UserSelectionAction::DownFaster:
+  case UserSelectionAction::DownFastest:
     _selectionChanged = true;
     if (_selectedItemIndex < _menuItemCount - 1) {
       _selectedItemIndex++;

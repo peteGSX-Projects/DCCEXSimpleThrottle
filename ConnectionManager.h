@@ -26,12 +26,13 @@
 #include <WiFi.h>
 #endif // WIFI_ENABLED
 
+/// @brief Class to manage all WiFi and serial connections used to connect to a CommandStation
 class ConnectionManager {
 public:
   /// @brief Constructor for the ConnectionManager
   ConnectionManager();
 
-  /// @brief Managed all connections, reconnect if necessary
+  /// @brief Ensure all connections are alive and retries are managed
   void update();
 
   /// @brief Check if connections are active

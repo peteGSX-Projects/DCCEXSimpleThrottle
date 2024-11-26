@@ -19,48 +19,53 @@
 #ifndef APPORCHESTRATOR_H
 #define APPORCHESTRATOR_H
 
+#include "CommandStationClient.h"
 #include "ConnectionManager.h"
 #include "DisplayInterface.h"
 #include "ErrorScreen.h"
 #include "MenuManager.h"
-#include "OperateScreen.h"
 #include "ProgressScreen.h"
 #include "StartupScreen.h"
+#include "ThrottleScreen.h"
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Operate, SelectAction, Error };
 
-/// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens, and
-/// displays
+enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Throttle, SelectAction, Error };
+
+/// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens,
+/// displays, connection management, and other application states
 class AppOrchestrator {
 public:
   /// @brief Constructor for the application orchestrator object
   /// @param displayInterface Pointer to the display interface to ensure is updated
   /// @param connectionManager Pointer to the connection manager
   /// @param menuManager Pointer to the menu manager
+  /// @param commandStationClient Pointer to the CommandStation client
   /// @param userConfirmationInterface Pointer to the user confirmation interface to monitor
   /// @param userSelectionInterface Pointer the user selection interface to monitor
   AppOrchestrator(DisplayInterface *displayInterface, ConnectionManager *connectionManager, MenuManager *menuManager,
-                  UserConfirmationInterface *userConfirmationInterface, UserSelectionInterface *userSelectionInterface);
+                  CommandStationClient *commandStationClient, UserConfirmationInterface *userConfirmationInterface,
+                  UserSelectionInterface *userSelectionInterface);
 
-  /// @brief
+  /// @brief Anything required to be initiated when the orchestrator starts is called here
   void begin();
 
-  /// @brief Call this method at least once per main loop iteration to monitor for user interactions and ensure the
-  /// display is updated
+  /// @brief Call this method at least once per main loop iteration to monitor for user interactions, ensure the
+  /// display is updated, and connections are managed
   void update();
 
 private:
   DisplayInterface *_displayInterface;
   ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
+  CommandStationClient *_commandStationClient;
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   AppState _currentAppState;
 
   StartupScreen *_startupScreen;
-  OperateScreen *_operateScreen;
+  ThrottleScreen *_throttleScreen;
   ErrorScreen *_errorScreen;
   ProgressScreen *_progressScreen;
 
@@ -76,8 +81,8 @@ private:
   /// @brief Show the loco selection menu and process user interaction to select one
   void _handleSelectLocoState();
 
-  /// @brief Show the operate screen and process user interaction
-  void _handleOperateState();
+  /// @brief Show the throttle screen and process user interaction with the throttle
+  void _handleThrottleState();
 
   /// @brief Show the select action menu and process user interaction to select one
   void _handleSelectActionState();

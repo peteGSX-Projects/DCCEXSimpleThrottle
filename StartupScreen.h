@@ -34,7 +34,7 @@ public:
   void handleUserConfirmationAction(UserConfirmationAction action) override;
 
   /// @brief Respond to user selection actions
-  /// @param action UserSelectionAction::[None|Up|Down]
+  /// @param action UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) override;
 
   /// @brief Draw this screen on the specified display

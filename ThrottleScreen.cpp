@@ -17,9 +17,9 @@
  */
 
 #include "Defines.h"
-#include "OperateScreen.h"
+#include "ThrottleScreen.h"
 
-OperateScreen::OperateScreen() {
+ThrottleScreen::ThrottleScreen() {
   _speed = 0;
   _speedChanged = false;
   _direction = Direction::Forward;
@@ -27,7 +27,7 @@ OperateScreen::OperateScreen() {
   _loco = nullptr;
 }
 
-void OperateScreen::handleUserConfirmationAction(UserConfirmationAction action) {
+void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
   case UserConfirmationAction::SingleClick:
     if (_speed == 0) {
@@ -56,12 +56,20 @@ void OperateScreen::handleUserConfirmationAction(UserConfirmationAction action) 
   }
 }
 
-void OperateScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
+void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
   if (throttleInverted) {
     if (action == UserSelectionAction::Up) {
       action = UserSelectionAction::Down;
+    } else if (action == UserSelectionAction::UpFaster) {
+      action = UserSelectionAction::DownFaster;
+    } else if (action == UserSelectionAction::UpFastest) {
+      action = UserSelectionAction::DownFastest;
     } else if (action == UserSelectionAction::Down) {
       action = UserSelectionAction::Up;
+    } else if (action == UserSelectionAction::DownFaster) {
+      action = UserSelectionAction::UpFaster;
+    } else if (action == UserSelectionAction::DownFastest) {
+      action = UserSelectionAction::UpFastest;
     }
   }
   switch (action) {
@@ -71,9 +79,33 @@ void OperateScreen::handleUserSelectionAction(UserSelectionAction action, bool t
       _speedChanged = true;
     }
     break;
+  case UserSelectionAction::UpFaster:
+    if (_speed < 128) {
+      _speed += 2;
+      _speedChanged = true;
+    }
+    break;
+  case UserSelectionAction::UpFastest:
+    if (_speed < 128) {
+      _speed += 5;
+      _speedChanged = true;
+    }
+    break;
   case UserSelectionAction::Down:
     if (_speed > 0) {
       _speed--;
+      _speedChanged = true;
+    }
+    break;
+  case UserSelectionAction::DownFaster:
+    if (_speed > 0) {
+      _speed -= 2;
+      _speedChanged = true;
+    }
+    break;
+  case UserSelectionAction::DownFastest:
+    if (_speed > 0) {
+      _speed -= 5;
       _speedChanged = true;
     }
     break;
@@ -83,7 +115,7 @@ void OperateScreen::handleUserSelectionAction(UserSelectionAction action, bool t
   }
 }
 
-void OperateScreen::drawScreen(DisplayInterface *display) {
+void ThrottleScreen::drawScreen(DisplayInterface *display) {
   if (_speedChanged) {
     display->updateSpeed(_speed);
   }
@@ -100,11 +132,11 @@ void OperateScreen::drawScreen(DisplayInterface *display) {
   display->updateTrackPowerState(TrackPower::PowerOff);
 }
 
-void OperateScreen::setLoco(Loco *loco) { _loco = loco; }
+void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
 
-void OperateScreen::locoUpdateReceived(Loco *loco) {
+void ThrottleScreen::locoUpdateReceived(Loco *loco) {
   if (_loco != loco)
     return;
 }
 
-uint8_t OperateScreen::getSpeed() { return _speed; }
+uint8_t ThrottleScreen::getSpeed() { return _speed; }

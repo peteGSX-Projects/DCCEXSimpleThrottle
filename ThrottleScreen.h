@@ -16,23 +16,23 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef OPERATESCREEN_H
-#define OPERATESCREEN_H
+#ifndef THROTTLESCREEN_H
+#define THROTTLESCREEN_H
 
 #include "ScreenInterface.h"
 #include <DCCEXProtocol.h>
 
-class OperateScreen : public ScreenInterface {
+class ThrottleScreen : public ScreenInterface {
 public:
   /// @brief Constructor for the operation screen
-  OperateScreen();
+  ThrottleScreen();
 
   /// @brief Implement this method to define what to do when user confirmation actions are performed
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
 
   /// @brief Implement this method to define what to do when user selection actions are performed
-  /// @param action UserSelectionAction::[None|Up|Down]
+  /// @param action UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) override;
 
   /// @brief Implement this method to draw the associated screen object on the specified display
@@ -59,4 +59,4 @@ private:
   Loco *_loco;
 };
 
-#endif // OPERATESCREEN_H
+#endif // THROTTLESCREEN_H

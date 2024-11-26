@@ -33,7 +33,7 @@ public:
   void handleUserConfirmationAction(UserConfirmationAction action) override;
 
   /// @brief Implement this method to define what to do when user selection actions are performed
-  /// @param action UserSelectionAction::[None|Up|Down]
+  /// @param action UserSelectionAction::[None|Up|UpFaster|UpFastest|Down|DownFaster|DownFastest]
   void handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) override;
 
   /// @brief Implement this method to draw the associated screen object on the specified display

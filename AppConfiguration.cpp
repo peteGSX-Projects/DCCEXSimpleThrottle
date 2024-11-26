@@ -30,11 +30,16 @@ AppConfiguration::AppConfiguration() {
 
   _connectionManager = new ConnectionManager();
   _menuManager = new MenuManager();
-  _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager,
+  _commandStationListener = new CommandStationListener();
+  _commandStationClient = new CommandStationClient(&CONSOLE, _commandStationListener);
+  _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager, _commandStationClient,
                                          _userConfirmationInterface, _userSelectionInterface);
 }
 
 void AppConfiguration::initialise() {
+#if defined(ARDUINO_BLUEPILL_F103C8)
+  _disableJTAG();
+#endif // BLUEPILL
   _userConfirmationInterface->begin();
   _userSelectionInterface->begin();
   _displayInterface->begin();
@@ -48,6 +53,7 @@ void AppConfiguration::initialise() {
     }
   }
 #endif // WIFI_ENABLED
+  _commandStationClient->begin();
 }
 
 UserConfirmationInterface *AppConfiguration::getUserConfirmationInterface() { return _userConfirmationInterface; }
@@ -61,6 +67,8 @@ AppOrchestrator *AppConfiguration::getAppOrchestrator() { return _appOrchestrato
 ConnectionManager *AppConfiguration::getConnectionManager() { return _connectionManager; }
 
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
+
+CommandStationClient *AppConfiguration::getCommandStationClient() { return _commandStationClient; }
 
 #ifdef WIFI_ENABLED
 void AppConfiguration::_initialiseCommandStationArray() {
@@ -97,3 +105,13 @@ IPAddress AppConfiguration::_convertIP(const char *ipAddressString) {
   return IPAddress(0, 0, 0, 0);
 }
 #endif // WIFI_ENABLED
+
+#if defined(ARDUINO_BLUEPILL_F103C8)
+void AppConfiguration::_disableJTAG() {
+  // Disable JTAG and enable SWD by clearing the SWJ_CFG bits
+  // Assuming the register is named AFIO_MAPR or AFIO_MAPR2
+  AFIO->MAPR &= ~(AFIO_MAPR_SWJ_CFG);
+  // or
+  // AFIO->MAPR2 &= ~(AFIO_MAPR2_SWJ_CFG);
+}
+#endif // BLUEPILL
