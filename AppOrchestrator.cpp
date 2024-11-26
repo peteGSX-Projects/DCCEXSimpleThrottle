@@ -28,7 +28,7 @@ AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, ConnectionM
       _userSelectionInterface(userSelectionInterface) {
   _currentAppState = AppState::Startup;
   _startupScreen = new StartupScreen();
-  _throttleScreen = new ThrottleScreen();
+  _throttleScreen = new ThrottleScreen(THROTTLE_STEP, THROTTLE_STEP_FASTER, THROTTLE_STEP_FASTEST);
   _errorScreen = new ErrorScreen();
   _progressScreen = new ProgressScreen();
 }

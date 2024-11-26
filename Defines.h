@@ -184,6 +184,17 @@
 #define INVERT_THROTTLE true
 #endif // INVERT_THROTTLE
 
+// Set default throttle speed change steps (used to increment/decrement speed)
+#ifndef THROTTLE_STEP
+#define THROTTLE_STEP 1
+#endif // THROTTLE_STEP
+#ifndef THROTTLE_STEP_FASTER
+#define THROTTLE_STEP_FASTER 2
+#endif // THROTTLE_STEP_FASTER
+#ifndef THROTTLE_STEP_FASTEST
+#define THROTTLE_STEP_FASTEST 5
+#endif // THROTTLE_STEP_FASTEST
+
 // Define fonts in use for U8g2lib
 #define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr
 #define MENU_FONT u8g2_font_5x8_mr

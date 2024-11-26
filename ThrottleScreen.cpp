@@ -19,7 +19,8 @@
 #include "Defines.h"
 #include "ThrottleScreen.h"
 
-ThrottleScreen::ThrottleScreen() {
+ThrottleScreen::ThrottleScreen(uint8_t throttleStep, uint8_t throttleStepFaster, uint8_t throttleStepFastest)
+    : _throttleStep(throttleStep), _throttleStepFaster(throttleStepFaster), _throttleStepFastest(throttleStepFastest) {
   _speed = 0;
   _speedChanged = false;
   _direction = Direction::Forward;
@@ -75,37 +76,37 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
   switch (action) {
   case UserSelectionAction::Up:
     if (_speed < 128) {
-      _speed++;
+      _speed += _throttleStep;
       _speedChanged = true;
     }
     break;
   case UserSelectionAction::UpFaster:
     if (_speed < 128) {
-      _speed += 2;
+      _speed += _throttleStepFaster;
       _speedChanged = true;
     }
     break;
   case UserSelectionAction::UpFastest:
     if (_speed < 128) {
-      _speed += 5;
+      _speed += _throttleStepFastest;
       _speedChanged = true;
     }
     break;
   case UserSelectionAction::Down:
     if (_speed > 0) {
-      _speed--;
+      _speed -= _throttleStep;
       _speedChanged = true;
     }
     break;
   case UserSelectionAction::DownFaster:
     if (_speed > 0) {
-      _speed -= 2;
+      _speed -= _throttleStepFaster;
       _speedChanged = true;
     }
     break;
   case UserSelectionAction::DownFastest:
     if (_speed > 0) {
-      _speed -= 5;
+      _speed -= _throttleStepFastest;
       _speedChanged = true;
     }
     break;
