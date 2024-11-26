@@ -104,9 +104,15 @@ void AppOrchestrator::_handleSelectServerState() {
 void AppOrchestrator::_handleConnectServerState() {
   if (!_progressScreen)
     return;
+  if (_connectionManager->newAttempt()) {
+    _displayInterface->setNeedsRedraw(true);
+  }
   _progressScreen->setActivity(_connectionManager->getConnectionName());
   _progressScreen->setCounter(_connectionManager->getRetryCounter());
   _progressScreen->drawScreen(_displayInterface);
+  if (_connectionManager->connected()) {
+    _switchState(AppState::SelectLoco);
+  }
 }
 
 void AppOrchestrator::_handleSelectLocoState() {

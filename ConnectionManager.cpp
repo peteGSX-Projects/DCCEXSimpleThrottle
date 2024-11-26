@@ -39,6 +39,7 @@ ConnectionManager::ConnectionManager() {
   _connectionError = false;
   _connectionErrorMessage = nullptr;
   _retryCounter = 0;
+  _newAttempt = false;
 #endif // WIFI_ENABLED
 }
 
@@ -82,6 +83,8 @@ bool ConnectionManager::connectionError() { return _connectionError; }
 const char *ConnectionManager::getConnectionErrorMessage() { return _connectionErrorMessage; }
 
 uint8_t ConnectionManager::getRetryCounter() { return _retryCounter; }
+
+bool ConnectionManager::newAttempt() { return _newAttempt; }
 
 void ConnectionManager::setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
   _commandStationCount = commandStationCount;
@@ -130,9 +133,11 @@ bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
 bool ConnectionManager::_connectServer(unsigned long currentMillis) {
   if (_wifiClient.connected()) {
     _serverRetry = 1;
+    _newAttempt = false;
     return true;
   }
   _connectionName = "Connect CommandStation";
+  _newAttempt = true;
   if ((currentMillis - _lastServerRetry > _serverRetryDelay) && _serverRetry <= _serverMaxRetries) {
     _lastServerRetry = currentMillis;
     _retryCounter = _serverRetry;

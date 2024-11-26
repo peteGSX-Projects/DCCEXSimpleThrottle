@@ -67,6 +67,10 @@ public:
   /// @return Retry counter
   uint8_t getRetryCounter();
 
+  /// @brief Flag if this is a new connection attempt to ensure display can be redrawn
+  /// @return True|False
+  bool newAttempt();
+
   /// @brief Set the list of CommandStations
   /// @param commandStationList Pointer to the array of CommandStations
   /// @param commandStationCount Count of CommandStations
@@ -103,6 +107,7 @@ private:
   bool _connectionError;
   const char *_connectionErrorMessage;
   uint8_t _retryCounter;
+  bool _newAttempt;
 
   WiFiClient _wifiClient;
 
