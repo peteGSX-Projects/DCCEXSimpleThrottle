@@ -16,23 +16,25 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "CommandStationListener.h"
+#include "EventManager.h"
 
-CommandStationListener::CommandStationListener() {}
-
-void CommandStationListener::receivedRosterList() { CONSOLE.println("Received roster list"); }
-
-void CommandStationListener::receivedLocoUpdate(Loco *loco) {
-  CONSOLE.print("Received loco update for ");
-  CONSOLE.println(loco->getAddress());
+EventManager::EventManager() {
+  _eventCount = 0;
+  _intEventCount = 0;
+  _locoEventCount = 0;
 }
 
-void CommandStationListener::receivedTrackPower(TrackPower powerState) {
-  CONSOLE.print("Received track power state: ");
-  CONSOLE.println(powerState);
+void EventManager::registerIntEvent(EventType eventType, void (*function)(void *, int), void *instance) {
+  if (_intEventCount < _maxIntEvents) {
+    _intEvents[_intEventCount] = {eventType, function, instance};
+    _intEventCount++;
+  }
 }
 
-void CommandStationListener::receivedReadLoco(int address) {
-  CONSOLE.print("Read loco address: ");
-  CONSOLE.println(address);
+void EventManager::triggerIntEvent(EventType eventType, int intParameter) {
+  for (uint8_t i = 0; i < _intEventCount; i++) {
+    if (_intEvents[i].eventType == eventType) {
+      _intEvents[i].function(_intEvents[i].instance, intParameter);
+    }
+  }
 }

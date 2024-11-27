@@ -60,8 +60,6 @@ void CommandStationClient::update() {
       _commandStationClient->getLists(true, false, false, false);
       CONSOLE.println("_commandStationClient->getLists()");
     }
-  } else {
-    CONSOLE.println("Got lists");
   }
 }
 

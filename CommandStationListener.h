@@ -19,6 +19,7 @@
 #ifndef COMMANDSTATIONLISTENER_H
 #define COMMANDSTATIONLISTENER_H
 
+#include "Defines.h"
 #include <DCCEXProtocol.h>
 
 /// @brief Class to manage broadcasts and responses from the CommandStation
@@ -26,6 +27,22 @@ class CommandStationListener : public DCCEXProtocolDelegate {
 public:
   /// @brief Consructor for the CommandStation listener
   CommandStationListener();
+
+  /// @brief Respond to receiving the roster list which updates the roster menu
+  void receivedRosterList() override;
+
+  /// @brief Respond to receiving an update for a loco to update the throttle screen
+  /// @param loco Pointer to the loco address the update is related to
+  void receivedLocoUpdate(Loco *loco) override;
+
+  /// @brief Respond to receiving a track power state broadcast to update the throttle screen
+  /// @param powerState [PowerOff|PowerOn|PowerUnknown]
+  void receivedTrackPower(TrackPower powerState) override;
+
+  /// @brief Respond to receiving the loco address read from the programming track
+  /// If valid (not -1), sets this as the loco controlled by the throttle
+  /// @param address DCC address of the loco on the programming track, -1 if not read
+  void receivedReadLoco(int address) override;
 
 private:
 };
