@@ -30,7 +30,6 @@
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-
 enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Throttle, SelectAction, Error };
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens,

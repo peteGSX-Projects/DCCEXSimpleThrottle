@@ -43,7 +43,15 @@ void AppOrchestrator::update() {
     } else if (_connectionManager->connectionError() && _currentAppState != AppState::Error) {
       _switchState(AppState::Error);
     } else if (_connectionManager->connected()) {
-      _commandStationClient->update();
+      if (!_commandStationClient->isConnected()) {
+        Stream *connectionStream = _connectionManager->getConnectionStream();
+        if (connectionStream) {
+          _commandStationClient->setConnectionStream(connectionStream);
+          CONSOLE.println("Connecting to CS");
+        }
+      } else {
+        _commandStationClient->update();
+      }
     }
   }
   switch (_currentAppState) {

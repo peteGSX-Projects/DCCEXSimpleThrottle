@@ -39,9 +39,9 @@ public:
   /// @return True|False
   bool connected();
 
-  /// @brief Get the connect stream managed by this ConnectionManager
-  /// @return Stream object
-  Stream &getConnectionStream();
+  /// @brief Get the connection stream managed by this ConnectionManager
+  /// @return Pointer to the connection stream object
+  Stream *getConnectionStream();
 
 #ifdef WIFI_ENABLED
   /// @brief Check if user has selected a server

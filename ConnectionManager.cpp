@@ -63,11 +63,11 @@ void ConnectionManager::update() {
 
 bool ConnectionManager::connected() { return _connected; }
 
-Stream &ConnectionManager::getConnectionStream() {
+Stream *ConnectionManager::getConnectionStream() {
 #ifdef WIFI_ENABLED
-  return _wifiClient;
+  return &_wifiClient;
 #else
-  return COMMANDSTATION_CONNECTION;
+  return &COMMANDSTATION_CONNECTION;
 #endif // WIFI_ENABLED
 }
 

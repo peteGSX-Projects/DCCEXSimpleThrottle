@@ -20,7 +20,13 @@
 
 CommandStationClient::CommandStationClient(Stream *logStream, CommandStationListener *commandStationListener)
     : _logStream(logStream), _commandStationListener(commandStationListener) {
+  _connectionStream = nullptr;
   _commandStationClient = new DCCEXProtocol();
+  _isConnected = false;
+  _rosterMaxRetries = 10;
+  _rosterRetry = 1;
+  _lastRosterRetry = 0;
+  _rosterRetryDelay = 1000;
 }
 
 void CommandStationClient::begin() {
@@ -32,4 +38,31 @@ void CommandStationClient::begin() {
   }
 }
 
-void CommandStationClient::update() { _commandStationClient->check(); }
+void CommandStationClient::setConnectionStream(Stream *connectionStream) {
+  _connectionStream = connectionStream;
+  if (_connectionStream) {
+    _commandStationClient->connect(_connectionStream);
+    _isConnected = true;
+  } else {
+    _isConnected = false;
+  }
+}
+
+void CommandStationClient::update() {
+  if (!_isConnected)
+    return;
+  _commandStationClient->check();
+  if (!_commandStationClient->receivedLists()) {
+    unsigned long currentMillis = millis();
+    if ((currentMillis - _lastRosterRetry > _rosterRetryDelay) && (_rosterRetry <= _rosterMaxRetries)) {
+      _lastRosterRetry = currentMillis;
+      _rosterRetry++;
+      _commandStationClient->getLists(true, false, false, false);
+      CONSOLE.println("_commandStationClient->getLists()");
+    }
+  } else {
+    CONSOLE.println("Got lists");
+  }
+}
+
+bool CommandStationClient::isConnected() { return _isConnected; }

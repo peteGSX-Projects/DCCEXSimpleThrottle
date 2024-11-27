@@ -20,6 +20,7 @@
 #define COMMANDSTATIONCLIENT_H
 
 #include "CommandStationListener.h"
+#include "Defines.h"
 #include <DCCEXProtocol.h>
 
 /// @brief
@@ -33,13 +34,28 @@ public:
   /// @brief Setup the CommandStation client with log stream and listener ready to connect
   void begin();
 
+  /// @brief Set the stream object used to connect to the CommandStation, call after begin()
+  /// Once set, the client is flagged as connected which will initiate communication with the CommandStation
+  /// @param connectionStream Pointer to the stream object (WiFi client or serial)
+  void setConnectionStream(Stream *connectionStream);
+
   /// @brief Ensure client is updated regularly
   void update();
+
+  /// @brief Check if the CommandStation client is connected
+  /// @return True|False
+  bool isConnected();
 
 private:
   Stream *_logStream;
   CommandStationListener *_commandStationListener;
+  Stream *_connectionStream;
   DCCEXProtocol *_commandStationClient;
+  bool _isConnected;
+  uint8_t _rosterMaxRetries;
+  uint8_t _rosterRetry;
+  unsigned long _lastRosterRetry;
+  unsigned long _rosterRetryDelay;
 };
 
 #endif // COMMANDSTATIONCLIENT_H
