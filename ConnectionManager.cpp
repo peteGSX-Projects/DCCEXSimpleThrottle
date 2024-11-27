@@ -100,10 +100,6 @@ void ConnectionManager::selectCommandStation(uint8_t commandStationIndex) {
   _selectedCommandStation = commandStationIndex;
 }
 
-void ConnectionManager::staticConnectCallback(void *instance, uint8_t commandStationIndex) {
-  static_cast<ConnectionManager *>(instance)->selectCommandStation(commandStationIndex);
-}
-
 bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
   if (WiFi.status() == WL_CONNECTED) {
     _wifiRetry = 1;

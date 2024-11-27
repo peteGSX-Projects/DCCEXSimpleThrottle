@@ -81,10 +81,6 @@ public:
   /// @param commandStationIndex Index of the list of CommandStationDetails to connect to
   void selectCommandStation(uint8_t commandStationIndex);
 
-  /// @brief Wrapper method to enable callbacks to call connection methods
-  /// @param instance Pointer to the ConnectionManager object
-  /// @param commandStationIndex Index of the CommandStation list item to connect to
-  static void staticConnectCallback(void *instance, uint8_t commandStationIndex);
 #endif // WIFI_ENABLED
 
 private:

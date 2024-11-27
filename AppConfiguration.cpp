@@ -49,7 +49,7 @@ void AppConfiguration::initialise() {
   if (_menuManager->getSelectServerMenu()) {
     auto *menu = _menuManager->getSelectServerMenu();
     if (_connectionManager) {
-      menu->setConnectionCallback(ConnectionManager::staticConnectCallback, _connectionManager);
+      menu->setConnectionCallback(CallbackHelper::staticConnectCallback, _connectionManager);
     }
   }
 #endif // WIFI_ENABLED
