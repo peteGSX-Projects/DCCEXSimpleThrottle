@@ -31,7 +31,7 @@ AppConfiguration::AppConfiguration() {
   _eventManager = new EventManager();
   _connectionManager = new ConnectionManager();
   _menuManager = new MenuManager(_eventManager);
-  _commandStationListener = new CommandStationListener();
+  _commandStationListener = new CommandStationListener(_eventManager);
   _commandStationClient = new CommandStationClient(&CONSOLE, _commandStationListener);
   _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager, _commandStationClient,
                                          _userConfirmationInterface, _userSelectionInterface);
@@ -47,9 +47,8 @@ void AppConfiguration::initialise() {
 #ifdef WIFI_ENABLED
   _menuManager->setupServerMenu(_commandStationList, _commandStationCount);
   _connectionManager->setCommandStationList(_commandStationList, _commandStationCount);
-  _eventManager->registerByteEvent(EventType::SelectedCommandStation, EventManager::staticSelectCommandStation,
-                                  _connectionManager);
 #endif // WIFI_ENABLED
+  _registerEvents();
   _commandStationClient->begin();
 }
 
@@ -66,6 +65,11 @@ ConnectionManager *AppConfiguration::getConnectionManager() { return _connection
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
 
 CommandStationClient *AppConfiguration::getCommandStationClient() { return _commandStationClient; }
+
+void AppConfiguration::_registerEvents() {
+  _eventManager->registerByteEvent(EventType::SelectedCommandStation, EventManager::staticSelectCommandStation,
+                                   _connectionManager);
+}
 
 #ifdef WIFI_ENABLED
 void AppConfiguration::_initialiseCommandStationArray() {

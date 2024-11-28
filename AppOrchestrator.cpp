@@ -81,6 +81,13 @@ void AppOrchestrator::update() {
   }
 }
 
+void AppOrchestrator::setupRoster() {
+  if (_commandStationClient && _commandStationClient->isConnected()) {
+    Loco *firstLoco = _commandStationClient->getFirstRosterEntry();
+    _menuManager->setupLocoMenu(firstLoco);
+  }
+}
+
 void AppOrchestrator::_handleStartupState() {
   _startupScreen->drawScreen(_displayInterface);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();

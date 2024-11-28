@@ -18,9 +18,14 @@
 
 #include "CommandStationListener.h"
 
-CommandStationListener::CommandStationListener() {}
+CommandStationListener::CommandStationListener(EventManager *eventManager) : _eventManager(eventManager) {}
 
-void CommandStationListener::receivedRosterList() { CONSOLE.println("Received roster list"); }
+void CommandStationListener::receivedRosterList() {
+  CONSOLE.println("Received roster list");
+  if (!_eventManager)
+    return;
+  // _eventManager->triggerEvent(EventType::ReceivedRoster);
+}
 
 void CommandStationListener::receivedLocoUpdate(Loco *loco) {
   CONSOLE.print("Received loco update for ");

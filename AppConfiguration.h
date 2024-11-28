@@ -39,6 +39,7 @@ public:
   AppConfiguration();
 
   /// @brief Start all associated user interfaces and instantiate all objects
+  /// EventManager registrations are done here
   void initialise();
 
   /// @brief Get the user confirmation interface associated with the config
@@ -79,6 +80,9 @@ private:
   CommandStationListener *_commandStationListener;
   CommandStationClient *_commandStationClient;
   AppOrchestrator *_appOrchestrator;
+
+  /// @brief All event registrations are performed here, called by the initialise() method
+  void _registerEvents();
 
 #ifdef WIFI_ENABLED
   uint8_t _commandStationCount;

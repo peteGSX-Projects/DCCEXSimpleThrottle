@@ -16,7 +16,9 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "ConnectionManager.h"
 #include "EventManager.h"
+#include "MenuManager.h"
 
 EventManager::EventManager() {
   _eventCount = 0;
@@ -39,7 +41,12 @@ void EventManager::triggerByteEvent(EventType eventType, uint8_t byteParameter) 
   }
 }
 
-void EventManager::staticSelectCommandStation(void *instance, uint8_t commandStationIndex) {
-  ConnectionManager *connectionManager = static_cast<ConnectionManager *>(instance);
+void EventManager::staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex) {
+  ConnectionManager *connectionManager = static_cast<ConnectionManager *>(connectionManagerInstance);
   connectionManager->selectCommandStation(commandStationIndex);
 }
+
+void EventManager::staticReceivedRoster(void *menuManagerInstance) {
+  MenuManager *menuManager = static_cast<MenuManager *>(menuManagerInstance);
+  // menuManager->setupLocoMenu();
+  }

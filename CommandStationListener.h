@@ -20,13 +20,15 @@
 #define COMMANDSTATIONLISTENER_H
 
 #include "Defines.h"
+#include "EventManager.h"
 #include <DCCEXProtocol.h>
 
 /// @brief Class to manage broadcasts and responses from the CommandStation
 class CommandStationListener : public DCCEXProtocolDelegate {
 public:
   /// @brief Consructor for the CommandStation listener
-  CommandStationListener();
+  /// @param Pointer to the event manager
+  CommandStationListener(EventManager *eventManager);
 
   /// @brief Respond to receiving the roster list which updates the roster menu
   void receivedRosterList() override;
@@ -45,6 +47,7 @@ public:
   void receivedReadLoco(int address) override;
 
 private:
+  EventManager *_eventManager;
 };
 
 #endif // COMMANDSTATIONLISTENER_H

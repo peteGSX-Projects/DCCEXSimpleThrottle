@@ -54,6 +54,9 @@ public:
   /// display is updated, and connections are managed
   void update();
 
+  /// @brief Method to setup the roster list in the SelectLocoMenu when the roster has been received
+  void setupRoster();
+
 private:
   DisplayInterface *_displayInterface;
   ConnectionManager *_connectionManager;

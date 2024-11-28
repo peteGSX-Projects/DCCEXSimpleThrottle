@@ -19,7 +19,6 @@
 #ifndef EVENTMANAGER_H
 #define EVENTMANAGER_H
 
-#include "ConnectionManager.h"
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 
@@ -64,9 +63,13 @@ public:
   void triggerByteEvent(EventType eventType, uint8_t intParameter);
 
   /// @brief Static method to trigger selection of a CommandStation to connect to
-  /// @param instance Pointer to the ConnectionManager object
+  /// @param connectionManagerInstance Pointer to the ConnectionManager object
   /// @param commandStationIndex Index of the CommandStation list item to connect to
-  static void staticSelectCommandStation(void *instance, uint8_t commandStationIndex);
+  static void staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex);
+
+  /// @brief Static method to trigger updating the SelectLocoMenu when the roster is received
+  /// @param menuManagerInstance Pointer to the MenuManager object
+  static void staticReceivedRoster(void *menuManagerInstance);
 
 private:
   static const uint8_t _maxEvents = 10;
