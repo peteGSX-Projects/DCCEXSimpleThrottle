@@ -86,7 +86,7 @@ void AppOrchestrator::setupSelectLocoMenu() {
     Loco *firstLoco = _commandStationClient->getFirstRosterEntry();
     if (firstLoco) {
       _menuManager->setupLocoMenu(firstLoco);
-      _displayInterface->setNeedsRedraw(true);
+      _displayInterface->setNeedsMenuRefresh(true);
     }
   }
 }
@@ -108,7 +108,7 @@ void AppOrchestrator::_handleStartupState() {
 void AppOrchestrator::_handleSelectServerState() {
   if (!_menuManager)
     return;
-  auto *menu = _menuManager->getSelectServerMenu();
+  SelectServerMenu *menu = _menuManager->getSelectServerMenu();
   if (!menu)
     return;
   _displayMenu(menu);
@@ -138,21 +138,18 @@ void AppOrchestrator::_handleConnectServerState() {
 void AppOrchestrator::_handleSelectLocoState() {
   if (!_menuManager)
     return;
-  auto *menu = _menuManager->getSelectLocoMenu();
+  SelectLocoMenu *menu = _menuManager->getSelectLocoMenu();
   if (!menu)
     return;
   _displayMenu(menu);
+  menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
-  case UserConfirmationAction::LongPress:
-    break;
-  case UserConfirmationAction::SingleClick:
-    _switchState(AppState::Throttle);
-    break;
   case UserConfirmationAction::DoubleClick:
     _switchState(AppState::SelectAction);
     break;
   default:
+    menu->handleUserConfirmationAction(action);
     break;
   }
 }
@@ -179,21 +176,18 @@ void AppOrchestrator::_handleThrottleState() {
 void AppOrchestrator::_handleSelectActionState() {
   if (!_menuManager)
     return;
-  auto *menu = _menuManager->getSelectActionMenu();
+  SelectActionMenu *menu = _menuManager->getSelectActionMenu();
   if (!menu)
     return;
   _displayMenu(menu);
+  menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
-  case UserConfirmationAction::LongPress:
-    break;
-  case UserConfirmationAction::SingleClick:
-    _switchState(AppState::Throttle);
-    break;
   case UserConfirmationAction::DoubleClick:
     _switchState(AppState::SelectLoco);
     break;
   default:
+    menu->handleUserConfirmationAction(action);
     break;
   }
 }

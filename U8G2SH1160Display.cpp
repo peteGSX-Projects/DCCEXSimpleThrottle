@@ -79,12 +79,14 @@ void U8G2SH1106Display::displayMenuScreen(const char *menuName, BaseMenuItem *fi
                                           bool selectionChanged) {
   if (needsRedraw()) {
     setNeedsRedraw(false);
+    setNeedsMenuRefresh(false);
     _clearDisplay();
     _displayHeader(menuName);
     _displayMenuFooter();
     uint8_t pageNumber = _displayMenuItems(firstMenuItem, selectedItemIndex);
     _displayPageNumber(pageNumber);
-  } else if (selectionChanged) {
+  } else if (selectionChanged || needsMenuRefresh()) {
+    setNeedsMenuRefresh(false);
     uint8_t pageNumber = _displayMenuItems(firstMenuItem, selectedItemIndex);
     _displayPageNumber(pageNumber);
   }

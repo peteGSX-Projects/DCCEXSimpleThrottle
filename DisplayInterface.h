@@ -80,6 +80,14 @@ public:
   /// @param redraw True|False
   void setNeedsRedraw(bool redraw) { _needsRedraw = redraw; }
 
+  /// @brief Check if the menu needs refreshing - avoids a complete redraw for menu screens
+  /// @return True|False
+  bool needsMenuRefresh() { return _needsMenuRefresh; }
+
+  /// @brief Set the refresh menu flag for this display
+  /// @param refresh True|False
+  void setNeedsMenuRefresh(bool refresh) { _needsMenuRefresh = refresh; }
+
   /// @brief Get the number of menu items to be displayed per page for this display
   /// @return Number of items per page this display can handle
   uint8_t getMenuItemsPerPage() { return _menuItemsPerPage; }
@@ -93,6 +101,7 @@ public:
 
 private:
   bool _needsRedraw = false;
+  bool _needsMenuRefresh = false;
   uint8_t _menuItemsPerPage = 0;
 };
 
