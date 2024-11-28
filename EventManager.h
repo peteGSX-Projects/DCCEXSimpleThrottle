@@ -25,6 +25,33 @@
 /// @brief Enum of valid event types to register and trigger
 enum class EventType { SelectedCommandStation, ReceivedRoster };
 
+/// @brief Struct to cater for events with different data types
+struct EventData {
+  enum class DataType { Byte, Integer, Loco, None };
+  DataType dataType;
+
+  union {
+    uint8_t byteValue;
+    int intValue;
+    Loco *locoValue;
+  };
+
+  /// @brief Constructor for events with a uint8_t parameter
+  /// @param value 8 bit integer
+  EventData(uint8_t value) : dataType(DataType::Byte), byteValue(value) {}
+
+  /// @brief Constructor for events with an int parameter
+  /// @param value Signed integer
+  EventData(int value) : dataType(DataType::Integer), intValue(value) {}
+
+  /// @brief Constructor for events with a Loco pointer
+  /// @param value Pointer to a loco object
+  EventData(Loco *value) : dataType(DataType::Loco), locoValue(value) {}
+
+  /// @brief Constructor for events with no data or parameters
+  EventData() : dataType(DataType::None) {}
+};
+
 /// @brief Event structure for events without parameters
 struct Event {
   EventType eventType;
