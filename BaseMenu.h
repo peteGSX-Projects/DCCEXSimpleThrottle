@@ -22,6 +22,7 @@
 #include "BaseMenuItem.h"
 #include "Defines.h"
 #include "DisplayInterface.h"
+#include "EventManager.h"
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 #include <Arduino.h>
@@ -74,6 +75,14 @@ public:
   /// @return True|False
   bool getSelectionChanged();
 
+  /// @brief Set the event manager instance in use
+  /// @param eventManager Pointer to the event manager
+  void setEventManager(EventManager *eventManager);
+
+  /// @brief Get the event manager
+  /// @return Pointer to the EventManager instance
+  EventManager *getEventManager();
+
 private:
   const char *_name = nullptr;            // Name of this menu
   BaseMenuItem *_firstMenuItem = nullptr; // Pointer to the first menu item in the linked list
@@ -81,6 +90,7 @@ private:
   uint8_t _currentItemIndex = 0;          // Incrementing index to ensure each menu item has a unique index
   uint8_t _selectedItemIndex = 0;         // Index of the item currently selected by the user
   bool _selectionChanged = false;         // Flag if user has selected a different item
+  EventManager *_eventManager = nullptr;
 };
 
 #endif // MENU_H

@@ -20,21 +20,26 @@
 
 EventManager::EventManager() {
   _eventCount = 0;
-  _intEventCount = 0;
+  _byteEventCount = 0;
   _locoEventCount = 0;
 }
 
-void EventManager::registerIntEvent(EventType eventType, void (*function)(void *, int), void *instance) {
-  if (_intEventCount < _maxIntEvents) {
-    _intEvents[_intEventCount] = {eventType, function, instance};
-    _intEventCount++;
+void EventManager::registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance) {
+  if (_byteEventCount < _maxByteEvents) {
+    _byteEvents[_byteEventCount] = {eventType, function, instance};
+    _byteEventCount++;
   }
 }
 
-void EventManager::triggerIntEvent(EventType eventType, int intParameter) {
-  for (uint8_t i = 0; i < _intEventCount; i++) {
-    if (_intEvents[i].eventType == eventType) {
-      _intEvents[i].function(_intEvents[i].instance, intParameter);
+void EventManager::triggerByteEvent(EventType eventType, uint8_t byteParameter) {
+  for (uint8_t i = 0; i < _byteEventCount; i++) {
+    if (_byteEvents[i].eventType == eventType) {
+      _byteEvents[i].function(_byteEvents[i].instance, byteParameter);
     }
   }
+}
+
+void EventManager::staticSelectCommandStation(void *instance, uint8_t commandStationIndex) {
+  ConnectionManager *connectionManager = static_cast<ConnectionManager *>(instance);
+  connectionManager->selectCommandStation(commandStationIndex);
 }

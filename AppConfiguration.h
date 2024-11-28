@@ -21,12 +21,12 @@
 
 #include "AppOrchestrator.h"
 #include "Button.h"
-#include "CallbackHelper.h"
 #include "CommandStationClient.h"
 #include "CommandStationDetails.h"
 #include "CommandStationListener.h"
 #include "ConnectionManager.h"
 #include "Defines.h"
+#include "EventManager.h"
 #include "MenuManager.h"
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
@@ -73,6 +73,7 @@ private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   DisplayInterface *_displayInterface;
+  EventManager *_eventManager;
   ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
   CommandStationListener *_commandStationListener;

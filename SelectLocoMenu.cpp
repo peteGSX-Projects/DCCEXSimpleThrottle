@@ -18,7 +18,10 @@
 
 #include "SelectLocoMenu.h"
 
-SelectLocoMenu::SelectLocoMenu(const char *name) { setMenuName(name); }
+SelectLocoMenu::SelectLocoMenu(const char *name, EventManager *eventManager) {
+  setMenuName(name);
+  setEventManager(eventManager);
+}
 
 void SelectLocoMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {

@@ -16,12 +16,13 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "LocoMenuItem.h"
 #include "MenuManager.h"
 
-MenuManager::MenuManager() {
-  _selectActionMenu = new SelectActionMenu("Select action");
-  _selectLocoMenu = new SelectLocoMenu("Select loco");
-  _selectServerMenu = new SelectServerMenu("Select server");
+MenuManager::MenuManager(EventManager *eventManager) : _eventManager(eventManager) {
+  _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
+  _selectLocoMenu = new SelectLocoMenu("Select loco", _eventManager);
+  _selectServerMenu = new SelectServerMenu("Select server", _eventManager);
 }
 
 SelectActionMenu *MenuManager::getSelectActionMenu() { return _selectActionMenu; }
@@ -40,3 +41,12 @@ void MenuManager::setupServerMenu(CommandStationDetails *commandStationList, uin
   }
 }
 #endif // WIFI_ENABLED
+
+void MenuManager::setupLocoMenu(Loco *firstRosterLoco) {
+  if (!firstRosterLoco)
+    return;
+  for (Loco *rosterLoco = firstRosterLoco; rosterLoco; rosterLoco = rosterLoco->getNext()) {
+    _selectLocoMenu->addItem(new LocoMenuItem(rosterLoco));
+  }
+  // Need to ensure orchestrator knows it has been updated here
+}

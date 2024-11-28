@@ -19,11 +19,12 @@
 #ifndef EVENTMANAGER_H
 #define EVENTMANAGER_H
 
+#include "ConnectionManager.h"
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 
 /// @brief Enum of valid event types to register and trigger
-enum class EventType { ServerSelected };
+enum class EventType { SelectedCommandStation, ReceivedRoster };
 
 /// @brief Event structure for events without parameters
 struct Event {
@@ -33,9 +34,9 @@ struct Event {
 };
 
 /// @brief Event structure for events that accept a single int
-struct IntEvent {
+struct ByteEvent {
   EventType eventType;
-  void (*function)(void *instance, int intParameter);
+  void (*function)(void *instance, uint8_t byteParameter);
   void *instance;
 };
 
@@ -48,21 +49,34 @@ struct LocoEvent {
 
 class EventManager {
 public:
+  /// @brief Constructor for the event manager
   EventManager();
 
-  void registerIntEvent(EventType eventType, void (*function)(void *, int), void *instance);
+  /// @brief Register an event requiring a single integer as a parameter
+  /// @param eventType Valid EventType enum
+  /// @param function Function of the specified instance to call
+  /// @param instance Pointer to the instance of the class containing the function
+  void registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance);
 
-  void triggerIntEvent(EventType eventType, int intParameter);
+  /// @brief Trigger the specified event
+  /// @param eventType Valid EventType enum
+  /// @param intParameter Integer parameter to pass
+  void triggerByteEvent(EventType eventType, uint8_t intParameter);
+
+  /// @brief Static method to trigger selection of a CommandStation to connect to
+  /// @param instance Pointer to the ConnectionManager object
+  /// @param commandStationIndex Index of the CommandStation list item to connect to
+  static void staticSelectCommandStation(void *instance, uint8_t commandStationIndex);
 
 private:
   static const uint8_t _maxEvents = 10;
-  static const uint8_t _maxIntEvents = 10;
-  static const uint8_t _maxLocoEvents = 1;
+  static const uint8_t _maxByteEvents = 10;
+  static const uint8_t _maxLocoEvents = 10;
   Event _events[_maxEvents];
-  IntEvent _intEvents[_maxIntEvents];
+  ByteEvent _byteEvents[_maxByteEvents];
   LocoEvent _locoEvents[_maxLocoEvents];
   uint8_t _eventCount;
-  uint8_t _intEventCount;
+  uint8_t _byteEventCount;
   uint8_t _locoEventCount;
 };
 

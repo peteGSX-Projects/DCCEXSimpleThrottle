@@ -20,15 +20,18 @@
 #define MENUMANAGER_H
 
 #include "CommandStationDetails.h"
+#include "EventManager.h"
 #include "SelectActionMenu.h"
 #include "SelectLocoMenu.h"
 #include "SelectServerMenu.h"
 #include "ServerMenuItem.h"
+#include <DCCEXProtocol.h>
 
 class MenuManager {
 public:
   /// @brief Constructor for the menu manager
-  MenuManager();
+  /// @param eventManager Pointer to the event manager
+  MenuManager(EventManager *eventManager);
 
   /// @brief Get the Select Action menu
   /// @return Menu
@@ -47,7 +50,12 @@ public:
   void setupServerMenu(CommandStationDetails *commandStationList, uint8_t commandStationCount);
 #endif // WIFI_ENABLED
 
+  /// @brief Set up the loco menu based on the provided roster linked list
+  /// @param firstRosterLoco Pointer to the first loco in the roster
+  void setupLocoMenu(Loco *firstRosterLoco);
+
 private:
+  EventManager *_eventManager;
   SelectActionMenu *_selectActionMenu;
   SelectLocoMenu *_selectLocoMenu;
   SelectServerMenu *_selectServerMenu;

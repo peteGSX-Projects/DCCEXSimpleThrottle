@@ -27,21 +27,16 @@ class SelectServerMenu : public BaseMenu {
 public:
   /// @brief Constructor for each menu
   /// @param name Pointer to the char array containing the name of the menu
-  SelectServerMenu(const char *name);
+  /// @param eventManager Point to the event manager
+  SelectServerMenu(const char *name, EventManager *eventManager);
 
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
 
-  /// @brief
-  /// @param connectionCallback
-  /// @param connectionManager
-  void setConnectionCallback(void (*connectionCallback)(void *, uint8_t), ConnectionManager *connectionManager);
-
 private:
-  void (*_connectionCallback)(void *, uint8_t);
-  ConnectionManager *_connectionManager;
-
+  /// @brief Trigger the event manager to send the selected CommandStation to the connection manager
+  /// @param item Pointer to the selected menu item
   void _initiateServerConnection(BaseMenuItem *item);
 };
 

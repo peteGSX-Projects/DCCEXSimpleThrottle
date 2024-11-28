@@ -88,3 +88,7 @@ uint8_t BaseMenu::getMenuItemCount() { return _menuItemCount; }
 uint8_t BaseMenu::getSelectedItemIndex() { return _selectedItemIndex; }
 
 bool BaseMenu::getSelectionChanged() { return _selectionChanged; }
+
+void BaseMenu::setEventManager(EventManager *eventManager) { _eventManager = eventManager; }
+
+EventManager *BaseMenu::getEventManager() { return _eventManager; }

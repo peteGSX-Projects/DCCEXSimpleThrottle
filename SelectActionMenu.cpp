@@ -18,7 +18,10 @@
 
 #include "SelectActionMenu.h"
 
-SelectActionMenu::SelectActionMenu(const char *name) { setMenuName(name); }
+SelectActionMenu::SelectActionMenu(const char *name, EventManager *eventManager) {
+  setMenuName(name);
+  setEventManager(eventManager);
+}
 
 void SelectActionMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {

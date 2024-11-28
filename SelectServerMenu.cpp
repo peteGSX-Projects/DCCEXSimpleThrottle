@@ -18,10 +18,9 @@
 
 #include "SelectServerMenu.h"
 
-SelectServerMenu::SelectServerMenu(const char *name) {
+SelectServerMenu::SelectServerMenu(const char *name, EventManager *eventManager) {
   setMenuName(name);
-  _connectionCallback = nullptr;
-  _connectionManager = nullptr;
+  setEventManager(eventManager);
 }
 
 void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction action) {
@@ -36,15 +35,11 @@ void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction actio
   }
 }
 
-void SelectServerMenu::setConnectionCallback(void (*connectionCallback)(void *, uint8_t), ConnectionManager *connectionManager) {
-  _connectionCallback = connectionCallback;
-  _connectionManager = connectionManager;
-}
-
 void SelectServerMenu::_initiateServerConnection(BaseMenuItem *item) {
   ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(item);
   uint8_t index = serverItem->getIndex();
-  if (_connectionCallback) {
-    _connectionCallback(_connectionManager, index);
+  EventManager *eventManager = getEventManager();
+  if (eventManager) {
+    eventManager->triggerByteEvent(EventType::SelectedCommandStation, index);
   }
 }
