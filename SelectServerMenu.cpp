@@ -39,7 +39,10 @@ void SelectServerMenu::_initiateServerConnection(BaseMenuItem *item) {
   ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(item);
   uint8_t index = serverItem->getIndex();
   EventManager *eventManager = getEventManager();
+  EventData eventData(index);
   if (eventManager) {
-    eventManager->triggerByteEvent(EventType::SelectedCommandStation, index);
+    // SINGLE EVENT TYPE
+    // eventManager->triggerByteEvent(EventType::SelectedCommandStation, index);
+    eventManager->triggerEvent(EventType::SelectedCommandStation, eventData);
   }
 }

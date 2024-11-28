@@ -52,26 +52,28 @@ struct EventData {
   EventData() : dataType(DataType::None) {}
 };
 
-/// @brief Event structure for events without parameters
+/// @brief Event structure for events using EventData structure
 struct Event {
   EventType eventType;
-  void (*function)(void *instance);
+  void (*function)(void *instance, EventData eventData);
   void *instance;
 };
 
-/// @brief Event structure for events that accept a single int
-struct ByteEvent {
-  EventType eventType;
-  void (*function)(void *instance, uint8_t byteParameter);
-  void *instance;
-};
+// SINGLE EVENT TYPE
+// /// @brief Event structure for events that accept a single int
+// struct ByteEvent {
+//   EventType eventType;
+//   void (*function)(void *instance, uint8_t byteParameter);
+//   void *instance;
+// };
 
-/// @brief Event structure for events that accept a Loco pointer
-struct LocoEvent {
-  EventType eventType;
-  void (*function)(void *instance, Loco *loco);
-  void *instance;
-};
+// SINGLE EVENT TYPE
+// /// @brief Event structure for events that accept a Loco pointer
+// struct LocoEvent {
+//   EventType eventType;
+//   void (*function)(void *instance, Loco *loco);
+//   void *instance;
+// };
 
 class EventManager {
 public:
@@ -82,17 +84,22 @@ public:
   /// @param eventType Valid EventType enum
   /// @param function Function of the specified instance to call
   /// @param instance Pointer to the instance of the class containing the function
-  void registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance);
+  // SINGLE EVENT TYPE
+  // void registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance);
+  void registerEvent(EventType eventType, void (*function)(void *, EventData), void *instance);
 
   /// @brief Trigger the specified event
   /// @param eventType Valid EventType enum
   /// @param intParameter Integer parameter to pass
-  void triggerByteEvent(EventType eventType, uint8_t intParameter);
+  // SINGLE EVENT TYPE
+  // void triggerByteEvent(EventType eventType, uint8_t intParameter);
+  void triggerEvent(EventType eventType, EventData eventData);
 
   /// @brief Static method to trigger selection of a CommandStation to connect to
   /// @param connectionManagerInstance Pointer to the ConnectionManager object
   /// @param commandStationIndex Index of the CommandStation list item to connect to
-  static void staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex);
+  // static void staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex);
+  static void staticSelectCommandStation(void *connectionManagerInstance, EventData eventData);
 
   /// @brief Static method to trigger updating the SelectLocoMenu when the roster is received
   /// @param menuManagerInstance Pointer to the MenuManager object
@@ -100,14 +107,17 @@ public:
 
 private:
   static const uint8_t _maxEvents = 10;
-  static const uint8_t _maxByteEvents = 10;
-  static const uint8_t _maxLocoEvents = 10;
+  // SINGLE EVENT TYPE
+  // static const uint8_t _maxByteEvents = 10;
+  // static const uint8_t _maxLocoEvents = 10;
   Event _events[_maxEvents];
-  ByteEvent _byteEvents[_maxByteEvents];
-  LocoEvent _locoEvents[_maxLocoEvents];
+  // SINGLE EVENT TYPE
+  // ByteEvent _byteEvents[_maxByteEvents];
+  // LocoEvent _locoEvents[_maxLocoEvents];
   uint8_t _eventCount;
-  uint8_t _byteEventCount;
-  uint8_t _locoEventCount;
+  // SINGLE EVENT TYPE
+  // uint8_t _byteEventCount;
+  // uint8_t _locoEventCount;
 };
 
 #endif // EVENTMANAGER_H

@@ -22,26 +22,53 @@
 
 EventManager::EventManager() {
   _eventCount = 0;
-  _byteEventCount = 0;
-  _locoEventCount = 0;
+  // SINGLE EVENT TYPE
+  // _byteEventCount = 0;
+  // _locoEventCount = 0;
 }
 
-void EventManager::registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance) {
-  if (_byteEventCount < _maxByteEvents) {
-    _byteEvents[_byteEventCount] = {eventType, function, instance};
-    _byteEventCount++;
+// SINGLE EVENT TYPE
+// void EventManager::registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance) {
+//   if (_byteEventCount < _maxByteEvents) {
+//     _byteEvents[_byteEventCount] = {eventType, function, instance};
+//     _byteEventCount++;
+//   }
+// }
+
+void EventManager::registerEvent(EventType eventType, void (*function)(void *, EventData), void *instance) {
+  if (_eventCount < _maxEvents) {
+    _events[_eventCount] = {eventType, function, instance};
+    _eventCount++;
   }
 }
 
-void EventManager::triggerByteEvent(EventType eventType, uint8_t byteParameter) {
-  for (uint8_t i = 0; i < _byteEventCount; i++) {
-    if (_byteEvents[i].eventType == eventType) {
-      _byteEvents[i].function(_byteEvents[i].instance, byteParameter);
+// SINGLE EVENT TYPE
+// void EventManager::triggerByteEvent(EventType eventType, uint8_t byteParameter) {
+//   for (uint8_t i = 0; i < _byteEventCount; i++) {
+//     if (_byteEvents[i].eventType == eventType) {
+//       _byteEvents[i].function(_byteEvents[i].instance, byteParameter);
+//     }
+//   }
+// }
+
+void EventManager::triggerEvent(EventType eventType, EventData eventData) {
+  for (uint8_t i = 0; i < _eventCount; i++) {
+    if (_events[i].eventType == eventType) {
+      _events[i].function(_events[i].instance, eventData);
     }
   }
 }
 
-void EventManager::staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex) {
+// SINGLE EVENT TYPE
+// void EventManager::staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex) {
+//   ConnectionManager *connectionManager = static_cast<ConnectionManager *>(connectionManagerInstance);
+//   connectionManager->selectCommandStation(commandStationIndex);
+// }
+
+void EventManager::staticSelectCommandStation(void *connectionManagerInstance, EventData eventData) {
+  if (eventData.dataType != EventData::DataType::Byte)
+    return;
+  uint8_t commandStationIndex = eventData.byteValue;
   ConnectionManager *connectionManager = static_cast<ConnectionManager *>(connectionManagerInstance);
   connectionManager->selectCommandStation(commandStationIndex);
 }
@@ -49,4 +76,4 @@ void EventManager::staticSelectCommandStation(void *connectionManagerInstance, u
 void EventManager::staticReceivedRoster(void *menuManagerInstance) {
   MenuManager *menuManager = static_cast<MenuManager *>(menuManagerInstance);
   // menuManager->setupLocoMenu();
-  }
+}
