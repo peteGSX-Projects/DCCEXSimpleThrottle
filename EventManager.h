@@ -22,8 +22,14 @@
 #include <Arduino.h>
 #include <DCCEXProtocol.h>
 
-/// @brief Enum of valid event types to register and trigger
-enum class EventType { SelectedCommandStation, ReceivedRoster };
+struct EventType {
+  const char *name;
+  EventType *next;
+
+  /// @brief Constructor for each event type
+  /// @param name Name of the event type
+  EventType(const char *name) : name(name), next(nullptr) {}
+};
 
 /// @brief Struct to cater for events with different data types
 struct EventData {
@@ -54,16 +60,16 @@ struct EventData {
 
 /// @brief Event structure for events using EventData structure
 struct Event {
-  EventType eventType;
+  EventType *eventType;
   void (*function)(void *instance, EventData eventData);
   void *instance;
   Event *next;
 
   /// @brief Constructor for each Event
-  /// @param eventType Valid EventType enum
+  /// @param eventType Pointer to an event type
   /// @param function Function that this event calls
   /// @param instance Instance of the relevant class containing the function
-  Event(EventType eventType, void (*function)(void *, EventData), void *instance)
+  Event(EventType *eventType, void (*function)(void *, EventData), void *instance)
       : eventType(eventType), function(function), instance(instance), next(nullptr) {}
 };
 
@@ -72,30 +78,41 @@ public:
   /// @brief Constructor for the event manager
   EventManager();
 
-  /// @brief Register an event requiring a single integer as a parameter
-  /// @param eventType Valid EventType enum
+  /// @brief Register an event with the provided type name
+  /// @param typeName Name of the event type to register
   /// @param function Function of the specified instance to call
   /// @param instance Pointer to the instance of the class containing the function
-  void registerEvent(EventType eventType, void (*function)(void *, EventData), void *instance);
+  void registerEvent(const char *typeName, void (*function)(void *, EventData), void *instance);
 
-  /// @brief Trigger the specified event
-  /// @param eventType Valid EventType enum
-  /// @param eventData
-  void triggerEvent(EventType eventType, EventData eventData);
+  /// @brief Trigger the specified event by name
+  /// @param typeName Name of the event type to trigger
+  /// @param eventData Valid EventData structure
+  void triggerEvent(const char *typeName, EventData eventData);
 
   /// @brief Static method to trigger selection of a CommandStation to connect to
   /// @param connectionManagerInstance Pointer to the ConnectionManager object
   /// @param commandStationIndex Index of the CommandStation list item to connect to
-  /// @param eventData
+  /// @param eventData Valid EventData structure
   static void staticSelectCommandStation(void *connectionManagerInstance, EventData eventData);
 
   /// @brief Static method to trigger updating the SelectLocoMenu when the roster is received
   /// @param appOrchestratorInstance Pointer to the AppOrchestrator object
-  /// @param eventData
+  /// @param eventData Valid EventData structure
   static void staticReceivedRoster(void *appOrchestratorInstance, EventData eventData);
 
 private:
-  Event *_first;
+  Event *_firstEvent;
+  EventType *_firstEventType;
+
+  /// @brief Add a new event type by name
+  /// @param name Name of the event type
+  /// @return Pointer to the created event type
+  EventType *_addEventType(const char *name);
+
+  /// @brief Check if the named event type exists
+  /// @param name Name of the event type
+  /// @return Pointer to the event type
+  EventType *_getEventType(const char *name);
 };
 
 #endif // EVENTMANAGER_H

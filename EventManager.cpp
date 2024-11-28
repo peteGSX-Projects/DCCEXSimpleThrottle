@@ -20,14 +20,18 @@
 #include "ConnectionManager.h"
 #include "EventManager.h"
 
-EventManager::EventManager() : _first(nullptr) {}
+EventManager::EventManager() : _firstEvent(nullptr), _firstEventType(nullptr) {}
 
-void EventManager::registerEvent(EventType eventType, void (*function)(void *, EventData), void *instance) {
+void EventManager::registerEvent(const char *typeName, void (*function)(void *, EventData), void *instance) {
+  EventType *eventType = _getEventType(typeName);
+  if (eventType == nullptr) {
+    eventType = _addEventType(typeName);
+  }
   Event *newEvent = new Event(eventType, function, instance);
-  if (_first == nullptr) {
-    _first = newEvent;
+  if (_firstEvent == nullptr) {
+    _firstEvent = newEvent;
   } else {
-    Event *currentEvent = _first;
+    Event *currentEvent = _firstEvent;
     while (currentEvent->next != nullptr) {
       currentEvent = currentEvent->next;
     }
@@ -35,9 +39,9 @@ void EventManager::registerEvent(EventType eventType, void (*function)(void *, E
   }
 }
 
-void EventManager::triggerEvent(EventType eventType, EventData eventData) {
-  for (Event *event = _first; event; event = event->next) {
-    if (event->eventType == eventType) {
+void EventManager::triggerEvent(const char *typeName, EventData eventData) {
+  for (Event *event = _firstEvent; event; event = event->next) {
+    if (event->eventType->name == typeName) {
       event->function(event->instance, eventData);
       break;
     }
@@ -56,4 +60,27 @@ void EventManager::staticReceivedRoster(void *appOrchestratorInstance, EventData
   CONSOLE.println("EventManager::staticReceivedRoster");
   AppOrchestrator *appOrchestrator = static_cast<AppOrchestrator *>(appOrchestratorInstance);
   appOrchestrator->setupSelectLocoMenu();
+}
+
+EventType *EventManager::_addEventType(const char *name) {
+  EventType *newEventType = new EventType(name);
+  if (_firstEventType == nullptr) {
+    _firstEventType = newEventType;
+  } else {
+    EventType *currentEventType = _firstEventType;
+    while (currentEventType->next != nullptr) {
+      currentEventType = currentEventType->next;
+    }
+    currentEventType->next = newEventType;
+  }
+  return newEventType;
+}
+
+EventType *EventManager::_getEventType(const char *name) {
+  for (EventType *eventType = _firstEventType; eventType; eventType = eventType->next) {
+    if (eventType->name == name) {
+      return eventType;
+    }
+  }
+  return nullptr;
 }

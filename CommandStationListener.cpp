@@ -24,7 +24,7 @@ void CommandStationListener::receivedRosterList() {
   if (!_eventManager)
     return;
   EventData eventData;
-  _eventManager->triggerEvent(EventType::ReceivedRoster, eventData);
+  _eventManager->triggerEvent("ReceivedRoster", eventData);
 }
 
 void CommandStationListener::receivedLocoUpdate(Loco *loco) {

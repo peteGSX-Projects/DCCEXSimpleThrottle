@@ -41,6 +41,6 @@ void SelectServerMenu::_initiateServerConnection(BaseMenuItem *item) {
   EventManager *eventManager = getEventManager();
   EventData eventData(index);
   if (eventManager) {
-    eventManager->triggerEvent(EventType::SelectedCommandStation, eventData);
+    eventManager->triggerEvent("SelectedCommandStation", eventData);
   }
 }
