@@ -20,19 +20,26 @@
 #include "ConnectionManager.h"
 #include "EventManager.h"
 
-EventManager::EventManager() { _eventCount = 0; }
+EventManager::EventManager() : _first(nullptr) {}
 
 void EventManager::registerEvent(EventType eventType, void (*function)(void *, EventData), void *instance) {
-  if (_eventCount < _maxEvents) {
-    _events[_eventCount] = {eventType, function, instance};
-    _eventCount++;
+  Event *newEvent = new Event(eventType, function, instance);
+  if (_first == nullptr) {
+    _first = newEvent;
+  } else {
+    Event *currentEvent = _first;
+    while (currentEvent->next != nullptr) {
+      currentEvent = currentEvent->next;
+    }
+    currentEvent->next = newEvent;
   }
 }
 
 void EventManager::triggerEvent(EventType eventType, EventData eventData) {
-  for (uint8_t i = 0; i < _eventCount; i++) {
-    if (_events[i].eventType == eventType) {
-      _events[i].function(_events[i].instance, eventData);
+  for (Event *event = _first; event; event = event->next) {
+    if (event->eventType == eventType) {
+      event->function(event->instance, eventData);
+      break;
     }
   }
 }

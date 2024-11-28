@@ -57,7 +57,14 @@ struct Event {
   EventType eventType;
   void (*function)(void *instance, EventData eventData);
   void *instance;
-  // Event *next = nullptr;
+  Event *next;
+
+  /// @brief Constructor for each Event
+  /// @param eventType Valid EventType enum
+  /// @param function Function that this event calls
+  /// @param instance Instance of the relevant class containing the function
+  Event(EventType eventType, void (*function)(void *, EventData), void *instance)
+      : eventType(eventType), function(function), instance(instance), next(nullptr) {}
 };
 
 class EventManager {
@@ -88,9 +95,7 @@ public:
   static void staticReceivedRoster(void *appOrchestratorInstance, EventData eventData);
 
 private:
-  static const uint8_t _maxEvents = 10;
-  Event _events[_maxEvents];
-  uint8_t _eventCount;
+  Event *_first;
 };
 
 #endif // EVENTMANAGER_H

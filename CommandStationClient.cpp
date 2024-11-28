@@ -58,7 +58,6 @@ void CommandStationClient::update() {
       _lastRosterRetry = currentMillis;
       _rosterRetry++;
       _commandStationClient->getLists(true, false, false, false);
-      CONSOLE.println("_commandStationClient->getLists()");
     }
   }
 }
