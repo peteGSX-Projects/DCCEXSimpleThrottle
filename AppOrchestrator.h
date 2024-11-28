@@ -55,7 +55,7 @@ public:
   void update();
 
   /// @brief Method to setup the roster list in the SelectLocoMenu when the roster has been received
-  void setupRoster();
+  void setupSelectLocoMenu();
 
 private:
   DisplayInterface *_displayInterface;

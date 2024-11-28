@@ -66,7 +66,7 @@ void CommandStationClient::update() {
 bool CommandStationClient::isConnected() { return _isConnected; }
 
 Loco *CommandStationClient::getFirstRosterEntry() {
-  if (_isConnected && _commandStationClient->roster) {
+  if (_isConnected) {
     return _commandStationClient->roster->getFirst();
   }
   return nullptr;

@@ -16,24 +16,11 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "AppOrchestrator.h"
 #include "ConnectionManager.h"
 #include "EventManager.h"
-#include "MenuManager.h"
 
-EventManager::EventManager() {
-  _eventCount = 0;
-  // SINGLE EVENT TYPE
-  // _byteEventCount = 0;
-  // _locoEventCount = 0;
-}
-
-// SINGLE EVENT TYPE
-// void EventManager::registerByteEvent(EventType eventType, void (*function)(void *, uint8_t), void *instance) {
-//   if (_byteEventCount < _maxByteEvents) {
-//     _byteEvents[_byteEventCount] = {eventType, function, instance};
-//     _byteEventCount++;
-//   }
-// }
+EventManager::EventManager() { _eventCount = 0; }
 
 void EventManager::registerEvent(EventType eventType, void (*function)(void *, EventData), void *instance) {
   if (_eventCount < _maxEvents) {
@@ -41,15 +28,6 @@ void EventManager::registerEvent(EventType eventType, void (*function)(void *, E
     _eventCount++;
   }
 }
-
-// SINGLE EVENT TYPE
-// void EventManager::triggerByteEvent(EventType eventType, uint8_t byteParameter) {
-//   for (uint8_t i = 0; i < _byteEventCount; i++) {
-//     if (_byteEvents[i].eventType == eventType) {
-//       _byteEvents[i].function(_byteEvents[i].instance, byteParameter);
-//     }
-//   }
-// }
 
 void EventManager::triggerEvent(EventType eventType, EventData eventData) {
   for (uint8_t i = 0; i < _eventCount; i++) {
@@ -59,12 +37,6 @@ void EventManager::triggerEvent(EventType eventType, EventData eventData) {
   }
 }
 
-// SINGLE EVENT TYPE
-// void EventManager::staticSelectCommandStation(void *connectionManagerInstance, uint8_t commandStationIndex) {
-//   ConnectionManager *connectionManager = static_cast<ConnectionManager *>(connectionManagerInstance);
-//   connectionManager->selectCommandStation(commandStationIndex);
-// }
-
 void EventManager::staticSelectCommandStation(void *connectionManagerInstance, EventData eventData) {
   if (eventData.dataType != EventData::DataType::Byte)
     return;
@@ -73,7 +45,8 @@ void EventManager::staticSelectCommandStation(void *connectionManagerInstance, E
   connectionManager->selectCommandStation(commandStationIndex);
 }
 
-void EventManager::staticReceivedRoster(void *menuManagerInstance) {
-  MenuManager *menuManager = static_cast<MenuManager *>(menuManagerInstance);
-  // menuManager->setupLocoMenu();
+void EventManager::staticReceivedRoster(void *appOrchestratorInstance, EventData eventData) {
+  CONSOLE.println("EventManager::staticReceivedRoster");
+  AppOrchestrator *appOrchestrator = static_cast<AppOrchestrator *>(appOrchestratorInstance);
+  appOrchestrator->setupSelectLocoMenu();
 }

@@ -21,10 +21,10 @@
 CommandStationListener::CommandStationListener(EventManager *eventManager) : _eventManager(eventManager) {}
 
 void CommandStationListener::receivedRosterList() {
-  CONSOLE.println("Received roster list");
   if (!_eventManager)
     return;
-  // _eventManager->triggerEvent(EventType::ReceivedRoster);
+  EventData eventData;
+  _eventManager->triggerEvent(EventType::ReceivedRoster, eventData);
 }
 
 void CommandStationListener::receivedLocoUpdate(Loco *loco) {

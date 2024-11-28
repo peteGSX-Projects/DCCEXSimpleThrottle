@@ -81,10 +81,13 @@ void AppOrchestrator::update() {
   }
 }
 
-void AppOrchestrator::setupRoster() {
+void AppOrchestrator::setupSelectLocoMenu() {
   if (_commandStationClient && _commandStationClient->isConnected()) {
     Loco *firstLoco = _commandStationClient->getFirstRosterEntry();
-    _menuManager->setupLocoMenu(firstLoco);
+    if (firstLoco) {
+      _menuManager->setupLocoMenu(firstLoco);
+      _displayInterface->setNeedsRedraw(true);
+    }
   }
 }
 
