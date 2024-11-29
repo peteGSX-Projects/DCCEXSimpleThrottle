@@ -27,7 +27,7 @@ public:
   /// @brief Constructor for each menu
   /// @param name Pointer to the char array containing the name of the menu
   /// @param eventManager Point to the event manager
-  SelectServerMenu(const char *name, EventManager *eventManager);
+  SelectServerMenu(const char *name);
 
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]

@@ -19,10 +19,10 @@
 #include "LocoMenuItem.h"
 #include "MenuManager.h"
 
-MenuManager::MenuManager(EventManager *eventManager) : _eventManager(eventManager) {
-  _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
-  _selectLocoMenu = new SelectLocoMenu("Select loco", _eventManager);
-  _selectServerMenu = new SelectServerMenu("Select server", _eventManager);
+MenuManager::MenuManager() {
+  _selectActionMenu = new SelectActionMenu("Select action");
+  _selectLocoMenu = new SelectLocoMenu("Select loco");
+  _selectServerMenu = new SelectServerMenu("Select server");
 }
 
 SelectActionMenu *MenuManager::getSelectActionMenu() { return _selectActionMenu; }

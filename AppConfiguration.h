@@ -26,7 +26,6 @@
 #include "CommandStationListener.h"
 #include "ConnectionManager.h"
 #include "Defines.h"
-#include "EventManager.h"
 #include "MenuManager.h"
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
@@ -74,15 +73,11 @@ private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   DisplayInterface *_displayInterface;
-  EventManager *_eventManager;
   ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
   CommandStationListener *_commandStationListener;
   CommandStationClient *_commandStationClient;
   AppOrchestrator *_appOrchestrator;
-
-  /// @brief All event registrations are performed here, called by the initialise() method
-  void _registerEvents();
 
 #ifdef WIFI_ENABLED
   uint8_t _commandStationCount;

@@ -18,32 +18,20 @@
 
 #include "CommandStationListener.h"
 
-CommandStationListener::CommandStationListener(EventManager *eventManager) : _eventManager(eventManager) {}
+CommandStationListener::CommandStationListener() {}
 
 void CommandStationListener::receivedRosterList() {
-  if (!_eventManager)
-    return;
-  EventData eventData;
-  _eventManager->triggerEvent("ReceivedRosterList", eventData);
+
 }
 
 void CommandStationListener::receivedLocoUpdate(Loco *loco) {
-  if (!_eventManager)
-    return;
-  EventData eventData(loco);
-  _eventManager->triggerEvent("ReceivedLocoUpdate", eventData);
+
 }
 
 void CommandStationListener::receivedTrackPower(TrackPower powerState) {
-  if (!_eventManager)
-    return;
-  EventData eventData(powerState);
-  _eventManager->triggerEvent("ReceivedTrackPower", eventData);
+
 }
 
 void CommandStationListener::receivedReadLoco(int address) {
-  if (!_eventManager)
-    return;
-  EventData eventData(address);
-  _eventManager->triggerEvent("ReceivedReadLoco", eventData);
+
 }

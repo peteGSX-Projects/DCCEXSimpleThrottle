@@ -20,7 +20,6 @@
 #define COMMANDSTATIONLISTENER_H
 
 #include "Defines.h"
-#include "EventManager.h"
 #include <DCCEXProtocol.h>
 
 /// @brief Class to manage broadcasts and responses from the CommandStation
@@ -28,7 +27,9 @@ class CommandStationListener : public DCCEXProtocolDelegate {
 public:
   /// @brief Consructor for the CommandStation listener
   /// @param Pointer to the event manager
-  CommandStationListener(EventManager *eventManager);
+  // EVENTBUS
+  // CommandStationListener(EventManager *eventManager);
+  CommandStationListener();
 
   /// @brief Respond to receiving the roster list which updates the roster menu
   void receivedRosterList() override;
@@ -45,9 +46,6 @@ public:
   /// If valid (not -1), sets this as the loco controlled by the throttle
   /// @param address DCC address of the loco on the programming track, -1 if not read
   void receivedReadLoco(int address) override;
-
-private:
-  EventManager *_eventManager;
 };
 
 #endif // COMMANDSTATIONLISTENER_H

@@ -28,10 +28,9 @@ AppConfiguration::AppConfiguration() {
   _initialiseCommandStationArray();
 #endif // WIFI_ENABLED
 
-  _eventManager = new EventManager();
   _connectionManager = new ConnectionManager();
-  _menuManager = new MenuManager(_eventManager);
-  _commandStationListener = new CommandStationListener(_eventManager);
+  _menuManager = new MenuManager();
+  _commandStationListener = new CommandStationListener();
   _commandStationClient = new CommandStationClient(&CONSOLE, _commandStationListener);
   _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager, _commandStationClient,
                                          _userConfirmationInterface, _userSelectionInterface);
@@ -48,7 +47,6 @@ void AppConfiguration::initialise() {
   _menuManager->setupServerMenu(_commandStationList, _commandStationCount);
   _connectionManager->setCommandStationList(_commandStationList, _commandStationCount);
 #endif // WIFI_ENABLED
-  _registerEvents();
   _commandStationClient->begin();
 }
 
@@ -65,13 +63,6 @@ ConnectionManager *AppConfiguration::getConnectionManager() { return _connection
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
 
 CommandStationClient *AppConfiguration::getCommandStationClient() { return _commandStationClient; }
-
-void AppConfiguration::_registerEvents() {
-  _eventManager->registerEvent("SelectedCommandStation", EventManager::staticSelectCommandStation, _connectionManager);
-  _eventManager->registerEvent("ReceivedRosterList", EventManager::staticReceivedRosterList, _appOrchestrator);
-  _eventManager->registerEvent("SelectedLoco", EventManager::staticSelectLoco, _appOrchestrator);
-  _eventManager->registerEvent("ReceivedLocoUpdate", EventManager::staticReceivedLocoUpdate, _appOrchestrator);
-}
 
 #ifdef WIFI_ENABLED
 void AppConfiguration::_initialiseCommandStationArray() {

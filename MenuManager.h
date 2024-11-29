@@ -20,7 +20,6 @@
 #define MENUMANAGER_H
 
 #include "CommandStationDetails.h"
-#include "EventManager.h"
 #include "SelectActionMenu.h"
 #include "SelectLocoMenu.h"
 #include "SelectServerMenu.h"
@@ -31,7 +30,7 @@ class MenuManager {
 public:
   /// @brief Constructor for the menu manager
   /// @param eventManager Pointer to the event manager
-  MenuManager(EventManager *eventManager);
+  MenuManager();
 
   /// @brief Get the Select Action menu
   /// @return Menu
@@ -55,7 +54,6 @@ public:
   void setupLocoMenu(Loco *firstRosterLoco);
 
 private:
-  EventManager *_eventManager;
   SelectActionMenu *_selectActionMenu;
   SelectLocoMenu *_selectLocoMenu;
   SelectServerMenu *_selectServerMenu;
