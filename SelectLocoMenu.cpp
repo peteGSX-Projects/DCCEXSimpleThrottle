@@ -16,6 +16,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "LocoMenuItem.h"
 #include "SelectLocoMenu.h"
 
 SelectLocoMenu::SelectLocoMenu(const char *name, EventManager *eventManager) {
@@ -25,16 +26,26 @@ SelectLocoMenu::SelectLocoMenu(const char *name, EventManager *eventManager) {
 
 void SelectLocoMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
-  case UserConfirmationAction::SingleClick:
-    CONSOLE.println("Single click");
+  case UserConfirmationAction::SingleClick: {
+    uint8_t locoIndex = getSelectedItemIndex();
+    _selectLoco(locoIndex);
     break;
-  case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("Double click");
+  }
+  case UserConfirmationAction::LongPress: {
+    CONSOLE.println("NOT IMPLEMENTED: trigger read loco address from PROG track");
     break;
-  case UserConfirmationAction::LongPress:
-    CONSOLE.println("Long press");
-    break;
+  }
   default:
     break;
+  }
+}
+
+void SelectLocoMenu::_selectLoco(uint8_t locoIndex) {
+  LocoMenuItem *locoItem = static_cast<LocoMenuItem *>(getMenuItemAtIndex(locoIndex));
+  Loco *loco = locoItem->getLoco();
+  EventManager *eventManager = getEventManager();
+  if (eventManager) {
+    EventData EventData(loco);
+    eventManager->triggerEvent("SelectedLoco", EventData);
   }
 }

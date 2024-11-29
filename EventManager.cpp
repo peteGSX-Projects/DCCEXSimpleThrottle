@@ -40,6 +40,8 @@ void EventManager::registerEvent(const char *typeName, void (*function)(void *, 
 }
 
 void EventManager::triggerEvent(const char *typeName, EventData eventData) {
+  CONSOLE.print("Received event ");
+  CONSOLE.println(typeName);
   for (Event *event = _firstEvent; event; event = event->next) {
     if (event->eventType->name == typeName) {
       event->function(event->instance, eventData);
@@ -56,10 +58,19 @@ void EventManager::staticSelectCommandStation(void *connectionManagerInstance, E
   connectionManager->selectCommandStation(commandStationIndex);
 }
 
-void EventManager::staticReceivedRoster(void *appOrchestratorInstance, EventData eventData) {
-  CONSOLE.println("EventManager::staticReceivedRoster");
+void EventManager::staticReceivedRosterList(void *appOrchestratorInstance, EventData eventData) {
   AppOrchestrator *appOrchestrator = static_cast<AppOrchestrator *>(appOrchestratorInstance);
   appOrchestrator->setupSelectLocoMenu();
+}
+
+void EventManager::staticSelectLoco(void *appOrchestratorInstance, EventData eventData) {
+  AppOrchestrator *appOrchestrator = static_cast<AppOrchestrator *>(appOrchestratorInstance);
+  appOrchestrator->setThrottleLoco(eventData.locoValue);
+}
+
+void EventManager::staticReceivedLocoUpdate(void *appOrchestratorInstance, EventData eventData) {
+  AppOrchestrator *appOrchestrator = static_cast<AppOrchestrator *>(appOrchestratorInstance);
+  appOrchestrator->updateThrottleLoco(eventData.locoValue);
 }
 
 EventType *EventManager::_addEventType(const char *name) {

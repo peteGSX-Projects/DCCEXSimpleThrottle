@@ -127,9 +127,15 @@ void ThrottleScreen::drawScreen(DisplayInterface *display) {
     return;
   display->setNeedsRedraw(false);
   display->clear();
-  display->updateSpeed(_speed);
-  display->updateLocoDirection(Direction::Forward);
-  display->updateLocoName("Dummy");
+  if (_loco) {
+    display->updateSpeed(_loco->getSpeed());
+    display->updateLocoName(_loco->getName());
+    display->updateLocoDirection(_loco->getDirection());
+  } else {
+    display->updateSpeed(0);
+    display->updateLocoName("No Loco Selected");
+    display->updateLocoDirection(Direction::Forward);
+  }
   display->updateTrackPowerState(TrackPower::PowerOff);
 }
 
@@ -138,6 +144,10 @@ void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
 void ThrottleScreen::locoUpdateReceived(Loco *loco) {
   if (_loco != loco)
     return;
+  CONSOLE.print("Loco update speed|direction: ");
+  CONSOLE.print(_loco->getSpeed());
+  CONSOLE.print("|");
+  CONSOLE.println(_loco->getDirection());
 }
 
 uint8_t ThrottleScreen::getSpeed() { return _speed; }

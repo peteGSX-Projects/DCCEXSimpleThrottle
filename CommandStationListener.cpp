@@ -24,20 +24,26 @@ void CommandStationListener::receivedRosterList() {
   if (!_eventManager)
     return;
   EventData eventData;
-  _eventManager->triggerEvent("ReceivedRoster", eventData);
+  _eventManager->triggerEvent("ReceivedRosterList", eventData);
 }
 
 void CommandStationListener::receivedLocoUpdate(Loco *loco) {
-  CONSOLE.print("Received loco update for ");
-  CONSOLE.println(loco->getAddress());
+  if (!_eventManager)
+    return;
+  EventData eventData(loco);
+  _eventManager->triggerEvent("ReceivedLocoUpdate", eventData);
 }
 
 void CommandStationListener::receivedTrackPower(TrackPower powerState) {
-  CONSOLE.print("Received track power state: ");
-  CONSOLE.println(powerState);
+  if (!_eventManager)
+    return;
+  EventData eventData(powerState);
+  _eventManager->triggerEvent("ReceivedTrackPower", eventData);
 }
 
 void CommandStationListener::receivedReadLoco(int address) {
-  CONSOLE.print("Read loco address: ");
-  CONSOLE.println(address);
+  if (!_eventManager)
+    return;
+  EventData eventData(address);
+  _eventManager->triggerEvent("ReceivedReadLoco", eventData);
 }

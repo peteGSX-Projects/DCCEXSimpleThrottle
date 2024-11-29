@@ -31,6 +31,11 @@ public:
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
+
+private:
+  /// @brief Trigger an event that sets the currently selected Loco and switches to the Throttle screen
+  /// @param locoIndex Index of the currently selected Loco entry
+  void _selectLoco(uint8_t locoIndex);
 };
 
 #endif // SELECTLOCOMENU_H

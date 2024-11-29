@@ -17,6 +17,7 @@
  */
 
 #include "SelectServerMenu.h"
+// #include "ServerMenuItem.h"
 
 SelectServerMenu::SelectServerMenu(const char *name, EventManager *eventManager) {
   setMenuName(name);
@@ -26,8 +27,10 @@ SelectServerMenu::SelectServerMenu(const char *name, EventManager *eventManager)
 void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
   case UserConfirmationAction::SingleClick: {
-    BaseMenuItem *selectedItem = getMenuItemAtIndex(getSelectedItemIndex());
-    _initiateServerConnection(selectedItem);
+    // BaseMenuItem *selectedItem = getMenuItemAtIndex(getSelectedItemIndex());
+    // _initiateServerConnection(selectedItem);
+    uint8_t serverIndex = getSelectedItemIndex();
+    _initiateServerConnection(serverIndex);
     break;
   }
   default:
@@ -35,12 +38,11 @@ void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction actio
   }
 }
 
-void SelectServerMenu::_initiateServerConnection(BaseMenuItem *item) {
-  ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(item);
-  uint8_t index = serverItem->getIndex();
+void SelectServerMenu::_initiateServerConnection(uint8_t serverIndex) {
+  // ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(getMenuItemAtIndex(serverIndex));
   EventManager *eventManager = getEventManager();
-  EventData eventData(index);
   if (eventManager) {
+    EventData eventData(serverIndex);
     eventManager->triggerEvent("SelectedCommandStation", eventData);
   }
 }

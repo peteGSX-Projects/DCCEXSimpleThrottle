@@ -67,9 +67,10 @@ MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
 CommandStationClient *AppConfiguration::getCommandStationClient() { return _commandStationClient; }
 
 void AppConfiguration::_registerEvents() {
-  _eventManager->registerEvent("SelectedCommandStation", EventManager::staticSelectCommandStation,
-                               _connectionManager);
-  _eventManager->registerEvent("ReceivedRoster", EventManager::staticReceivedRoster, _appOrchestrator);
+  _eventManager->registerEvent("SelectedCommandStation", EventManager::staticSelectCommandStation, _connectionManager);
+  _eventManager->registerEvent("ReceivedRosterList", EventManager::staticReceivedRosterList, _appOrchestrator);
+  _eventManager->registerEvent("SelectedLoco", EventManager::staticSelectLoco, _appOrchestrator);
+  _eventManager->registerEvent("ReceivedLocoUpdate", EventManager::staticReceivedLocoUpdate, _appOrchestrator);
 }
 
 #ifdef WIFI_ENABLED

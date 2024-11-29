@@ -98,7 +98,11 @@ public:
   /// @brief Static method to trigger updating the SelectLocoMenu when the roster is received
   /// @param appOrchestratorInstance Pointer to the AppOrchestrator object
   /// @param eventData Valid EventData structure
-  static void staticReceivedRoster(void *appOrchestratorInstance, EventData eventData);
+  static void staticReceivedRosterList(void *appOrchestratorInstance, EventData eventData);
+
+  static void staticSelectLoco(void *appOrchestratorInstance, EventData eventData);
+
+  static void staticReceivedLocoUpdate(void *appOrchestratorInstance, EventData eventData);
 
 private:
   Event *_firstEvent;

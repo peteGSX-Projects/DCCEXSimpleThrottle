@@ -91,6 +91,19 @@ void AppOrchestrator::setupSelectLocoMenu() {
   }
 }
 
+void AppOrchestrator::setThrottleLoco(Loco *loco) {
+  if (_throttleScreen) {
+    _throttleScreen->setLoco(loco);
+    _switchState(AppState::Throttle);
+  }
+}
+
+void AppOrchestrator::updateThrottleLoco(Loco *loco) {
+  if (_throttleScreen) {
+    _throttleScreen->locoUpdateReceived(loco);
+  }
+}
+
 void AppOrchestrator::_handleStartupState() {
   _startupScreen->drawScreen(_displayInterface);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();

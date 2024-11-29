@@ -21,7 +21,6 @@
 
 #include "BaseMenu.h"
 #include "ConnectionManager.h"
-#include "ServerMenuItem.h"
 
 class SelectServerMenu : public BaseMenu {
 public:
@@ -36,8 +35,8 @@ public:
 
 private:
   /// @brief Trigger the event manager to send the selected CommandStation to the connection manager
-  /// @param item Pointer to the selected menu item
-  void _initiateServerConnection(BaseMenuItem *item);
+  /// @param serverIndex Index of the selected server item
+  void _initiateServerConnection(uint8_t serverIndex);
 };
 
 #endif // SELECTSERVERMENU_H

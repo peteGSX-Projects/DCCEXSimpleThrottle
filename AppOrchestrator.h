@@ -57,6 +57,14 @@ public:
   /// @brief Method to setup the roster list in the SelectLocoMenu when the roster has been received
   void setupSelectLocoMenu();
 
+  /// @brief Set the loco being managed by the throttle screen
+  /// @param loco Pointer to the loco object
+  void setThrottleLoco(Loco *loco);
+
+  /// @brief Notify the throttle screen an update has been received for the associated loco
+  /// @param loco Pointer to the loco object
+  void updateThrottleLoco(Loco *loco);
+
 private:
   DisplayInterface *_displayInterface;
   ConnectionManager *_connectionManager;
