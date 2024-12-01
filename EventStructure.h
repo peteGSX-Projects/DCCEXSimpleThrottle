@@ -29,7 +29,8 @@ enum EventType {
   LocoSelected,
   ReceivedLocoUpdate,
   ReceivedTrackPower,
-  ReceivedReadLoco
+  ReceivedReadLoco,
+  ToggleTrackPower
 };
 
 /// @brief Structure to enable supporting EventData that has various different types

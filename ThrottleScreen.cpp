@@ -54,6 +54,8 @@ void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action)
   case UserConfirmationAction::LongPress:
     if (_speed > 0) {
       _dccexProtocolClient->emergencyStop();
+    } else {
+      _toggleTrackPower();
     }
     break;
   default:
@@ -167,3 +169,11 @@ void ThrottleScreen::trackPowerUpdateReceived(TrackPower trackPower) {
 void ThrottleScreen::requestLocoUpdate() { _dccexProtocolClient->requestLocoUpdate(_loco->getAddress()); }
 
 void ThrottleScreen::requestTrackPowerUpdate() { _dccexProtocolClient->requestServerVersion(); }
+
+void ThrottleScreen::_toggleTrackPower() {
+  if (_trackPower == TrackPower::PowerOff || _trackPower == TrackPower::PowerUnknown) {
+    _dccexProtocolClient->powerOn();
+  } else {
+    _dccexProtocolClient->powerOff();
+  }
+}

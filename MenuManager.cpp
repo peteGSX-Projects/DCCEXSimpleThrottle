@@ -20,7 +20,8 @@
 #include "MenuManager.h"
 
 MenuManager::MenuManager(EventManager *eventManager) : _eventManager(eventManager) {
-  _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
+  // Disable action menu for now, available for future use
+  // _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
   _selectLocoMenu = new SelectLocoMenu("Select loco", _eventManager);
   _selectCommandStationMenu = new SelectCommandStationMenu("Select CommandStation", _eventManager);
 }
@@ -48,5 +49,4 @@ void MenuManager::setupLocoMenu(Loco *firstRosterLoco) {
   for (Loco *rosterLoco = firstRosterLoco; rosterLoco; rosterLoco = rosterLoco->getNext()) {
     _selectLocoMenu->addItem(new LocoMenuItem(rosterLoco));
   }
-  // Need to ensure orchestrator knows it has been updated here
 }

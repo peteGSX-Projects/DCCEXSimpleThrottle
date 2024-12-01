@@ -194,9 +194,10 @@ void AppOrchestrator::_handleSelectLocoState() {
   menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
-  case UserConfirmationAction::DoubleClick:
-    _switchState(AppState::SelectAction);
-    break;
+  // Disable action menu for now, reserved for future use
+  // case UserConfirmationAction::DoubleClick:
+  //   _switchState(AppState::SelectAction);
+  //   break;
   default:
     menu->handleUserConfirmationAction(action);
     break;
@@ -211,13 +212,14 @@ void AppOrchestrator::_handleThrottleState() {
   _throttleScreen->drawScreen(_displayInterface);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
-  case UserConfirmationAction::DoubleClick:
+  case UserConfirmationAction::DoubleClick: {
     if (_throttleScreen->getSpeed() == 0) {
       _switchState(AppState::SelectLoco);
     } else {
       _throttleScreen->handleUserConfirmationAction(action);
     }
     break;
+  }
   default:
     _throttleScreen->handleUserConfirmationAction(action);
     _throttleScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(),
@@ -256,31 +258,24 @@ void AppOrchestrator::_switchState(AppState appState) {
   _displayInterface->setNeedsRedraw(true);
   switch (appState) {
   case AppState::Startup:
-    CONSOLE.println("Switch to AppState::Startup");
     _currentAppState = AppState::Startup;
     break;
   case AppState::Throttle:
-    CONSOLE.println("Switch to AppState::Throttle");
     _currentAppState = AppState::Throttle;
     break;
   case AppState::SelectAction:
-    CONSOLE.println("Switch to AppState::SelectAction");
     _currentAppState = AppState::SelectAction;
     break;
   case AppState::SelectLoco:
-    CONSOLE.println("Switch to AppState::SelectLoco");
     _currentAppState = AppState::SelectLoco;
     break;
   case AppState::SelectCommandStation:
-    CONSOLE.println("Switch to AppState::SelectCommandStation");
     _currentAppState = AppState::SelectCommandStation;
     break;
   case AppState::ConnectCommandStation:
-    CONSOLE.println("Switch to AppState::ConnectCommandStation");
     _currentAppState = AppState::ConnectCommandStation;
     break;
   case AppState::Error:
-    CONSOLE.println("Switch to AppState::Error");
     _currentAppState = AppState::Error;
     break;
   default:

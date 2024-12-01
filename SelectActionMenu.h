@@ -21,6 +21,8 @@
 
 #include "BaseMenu.h"
 
+/// @brief Menu to allow for extra actions to be performed
+/// For future use, not actually enabled yet
 class SelectActionMenu : public BaseMenu {
 public:
   /// @brief Constructor for each menu
