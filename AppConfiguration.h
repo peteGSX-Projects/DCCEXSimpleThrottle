@@ -29,6 +29,7 @@
 #include "EventManager.h"
 #include "MenuManager.h"
 #include "RotaryEncoder.h"
+#include "ThrottleScreen.h"
 #include "U8G2SH1106Display.h"
 
 /// @brief Class to perform all application configuration on startup
@@ -83,6 +84,7 @@ private:
   MenuManager *_menuManager;
   CommandStationListener *_commandStationListener;
   CommandStationClient *_commandStationClient;
+  ThrottleScreen *_throttleScreen;
   AppOrchestrator *_appOrchestrator;
 
   /// @brief Register all required event subscriptions, called by initialise()

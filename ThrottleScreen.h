@@ -25,10 +25,12 @@
 class ThrottleScreen : public ScreenInterface {
 public:
   /// @brief Constructor for the throttle screen, requires throttle step values
+  /// @param dccexProtocolClient Pointer to the DCCEXProtocol client connection in use by the application
   /// @param throttleStep Normal throttle step change
   /// @param throttleStepFaster Faster throttle step change (eg. rotary encoder moves faster)
   /// @param throttleStepFastest Fastest throttle step change (eg. rotary encoder moves fastest)
-  ThrottleScreen(uint8_t throttleStep, uint8_t throttleStepFaster, uint8_t throttleStepFastest);
+  ThrottleScreen(DCCEXProtocol *dccexProtocolClient, uint8_t throttleStep, uint8_t throttleStepFaster,
+                 uint8_t throttleStepFastest);
 
   /// @brief Implement this method to define what to do when user confirmation actions are performed
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
@@ -63,6 +65,7 @@ private:
   uint8_t _throttleStep;
   uint8_t _throttleStepFaster;
   uint8_t _throttleStepFastest;
+  DCCEXProtocol *_dccexProtocolClient;
 };
 
 #endif // THROTTLESCREEN_H

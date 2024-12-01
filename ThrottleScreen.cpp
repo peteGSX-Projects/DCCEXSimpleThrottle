@@ -19,8 +19,10 @@
 #include "Defines.h"
 #include "ThrottleScreen.h"
 
-ThrottleScreen::ThrottleScreen(uint8_t throttleStep, uint8_t throttleStepFaster, uint8_t throttleStepFastest)
-    : _throttleStep(throttleStep), _throttleStepFaster(throttleStepFaster), _throttleStepFastest(throttleStepFastest) {
+ThrottleScreen::ThrottleScreen(DCCEXProtocol *dccexProtocolClient, uint8_t throttleStep, uint8_t throttleStepFaster,
+                               uint8_t throttleStepFastest)
+    : _dccexProtocolClient(dccexProtocolClient), _throttleStep(throttleStep), _throttleStepFaster(throttleStepFaster),
+      _throttleStepFastest(throttleStepFastest) {
   _speed = 0;
   _speedChanged = false;
   _direction = Direction::Forward;

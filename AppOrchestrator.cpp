@@ -22,13 +22,12 @@
 AppOrchestrator::AppOrchestrator(DisplayInterface *displayInterface, ConnectionManager *connectionManager,
                                  MenuManager *menuManager, CommandStationClient *commandStationClient,
                                  UserConfirmationInterface *userConfirmationInterface,
-                                 UserSelectionInterface *userSelectionInterface)
+                                 UserSelectionInterface *userSelectionInterface, ThrottleScreen *throttleScreen)
     : _displayInterface(displayInterface), _connectionManager(connectionManager), _menuManager(menuManager),
       _commandStationClient(commandStationClient), _userConfirmationInterface(userConfirmationInterface),
-      _userSelectionInterface(userSelectionInterface) {
+      _userSelectionInterface(userSelectionInterface), _throttleScreen(throttleScreen) {
   _currentAppState = AppState::Startup;
   _startupScreen = new StartupScreen();
-  _throttleScreen = new ThrottleScreen(THROTTLE_STEP, THROTTLE_STEP_FASTER, THROTTLE_STEP_FASTEST);
   _errorScreen = new ErrorScreen();
   _progressScreen = new ProgressScreen();
 }

@@ -70,3 +70,5 @@ Loco *CommandStationClient::getFirstRosterEntry() {
   }
   return nullptr;
 }
+
+DCCEXProtocol *CommandStationClient::getClient() { return _commandStationClient; }

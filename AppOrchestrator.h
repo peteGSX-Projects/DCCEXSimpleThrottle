@@ -44,9 +44,10 @@ public:
   /// @param commandStationClient Pointer to the CommandStation client
   /// @param userConfirmationInterface Pointer to the user confirmation interface to monitor
   /// @param userSelectionInterface Pointer the user selection interface to monitor
+  /// @param throttleScreen Pointer to the throttle screen
   AppOrchestrator(DisplayInterface *displayInterface, ConnectionManager *connectionManager, MenuManager *menuManager,
                   CommandStationClient *commandStationClient, UserConfirmationInterface *userConfirmationInterface,
-                  UserSelectionInterface *userSelectionInterface);
+                  UserSelectionInterface *userSelectionInterface, ThrottleScreen *throttleScreen);
 
   /// @brief Anything required to be initiated when the orchestrator starts is called here
   void begin();

@@ -33,8 +33,10 @@ AppConfiguration::AppConfiguration() {
   _menuManager = new MenuManager(_eventManager);
   _commandStationListener = new CommandStationListener(_eventManager);
   _commandStationClient = new CommandStationClient(&CONSOLE, _commandStationListener);
+  _throttleScreen = new ThrottleScreen(_commandStationClient->getClient(), THROTTLE_STEP, THROTTLE_STEP_FASTER,
+                                       THROTTLE_STEP_FASTEST);
   _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager, _commandStationClient,
-                                         _userConfirmationInterface, _userSelectionInterface);
+                                         _userConfirmationInterface, _userSelectionInterface, _throttleScreen);
 }
 
 void AppConfiguration::initialise() {
@@ -74,6 +76,9 @@ void AppConfiguration::_registerEventSubscriptions() {
   _eventManager->subscribe(_appOrchestrator, EventType::CommandStationSelected);
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedRosterList);
   _eventManager->subscribe(_appOrchestrator, EventType::LocoSelected);
+  _eventManager->subscribe(_appOrchestrator, EventType::ReceivedLocoUpdate);
+  _eventManager->subscribe(_appOrchestrator, EventType::ReceivedTrackPower);
+  _eventManager->subscribe(_appOrchestrator, EventType::ReceivedReadLoco);
 }
 
 #ifdef WIFI_ENABLED

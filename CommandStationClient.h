@@ -50,6 +50,10 @@ public:
   /// @return Pointer to the first Loco in the roster
   Loco *getFirstRosterEntry();
 
+  /// @brief Get the actual DCCEXProtocol client to interact with
+  /// @return Pointer to the DCCEXProtocol client
+  DCCEXProtocol *getClient();
+
 private:
   Stream *_logStream;
   CommandStationListener *_commandStationListener;
