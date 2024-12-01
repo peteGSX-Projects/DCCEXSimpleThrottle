@@ -16,24 +16,14 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#include "ErrorScreen.h"
 
-AppConfiguration appConfig;
+ErrorScreen::ErrorScreen() { _errorMessage = nullptr; }
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+void ErrorScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+void ErrorScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {}
+
+void ErrorScreen::drawScreen(DisplayInterface *display) { display->displayErrorScreen(_errorMessage); }
+
+void ErrorScreen::setErrorMessage(const char *errorMessage) { _errorMessage = errorMessage; }

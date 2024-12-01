@@ -16,24 +16,24 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#include "MenuScreen.h"
 
-AppConfiguration appConfig;
+MenuScreen::MenuScreen(BaseMenu *menu) : _menu(menu) {}
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
+void MenuScreen::handleUserConfirmationAction(UserConfirmationAction action) {
+  if (!_menu)
+    return;
+  _menu->handleUserConfirmationAction(action);
 }
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
+void MenuScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
+  if (!_menu)
+    return;
+  _menu->handleUserSelectionAction(action);
+}
+
+void MenuScreen::drawScreen(DisplayInterface *display) {
+  if (!_menu)
+    return;
+  _menu->displayMenu(display);
 }

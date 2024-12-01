@@ -16,24 +16,25 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#include "SelectActionMenu.h"
 
-AppConfiguration appConfig;
-
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
+SelectActionMenu::SelectActionMenu(const char *name, EventManager *eventManager) {
+  setMenuName(name);
+  setEventManager(eventManager);
 }
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
+void SelectActionMenu::handleUserConfirmationAction(UserConfirmationAction action) {
+  switch (action) {
+  case UserConfirmationAction::SingleClick:
+    CONSOLE.println("Single click");
+    break;
+  case UserConfirmationAction::DoubleClick:
+    CONSOLE.println("Double click");
+    break;
+  case UserConfirmationAction::LongPress:
+    CONSOLE.println("Long press");
+    break;
+  default:
+    break;
+  }
 }

@@ -16,24 +16,19 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#include "BaseMenuItem.h"
 
-AppConfiguration appConfig;
-
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
+BaseMenuItem::BaseMenuItem(const char *name) : _name(strdup(name)) {
+  _next = nullptr;
+  _index = 0;
 }
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+const char *BaseMenuItem::getName() { return _name; }
+
+void BaseMenuItem::setNext(BaseMenuItem *item) { _next = item; }
+
+BaseMenuItem *BaseMenuItem::getNext() { return _next; }
+
+void BaseMenuItem::setIndex(uint8_t index) { _index = index; }
+
+uint8_t BaseMenuItem::getIndex() { return _index; }

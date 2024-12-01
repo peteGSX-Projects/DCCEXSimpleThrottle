@@ -16,24 +16,15 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
+#include "StartupScreen.h"
 #include "Version.h"
-#include <Arduino.h>
 
-AppConfiguration appConfig;
+StartupScreen::StartupScreen() {}
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+void StartupScreen::handleUserConfirmationAction(UserConfirmationAction action) {}
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
+void StartupScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {}
+
+void StartupScreen::drawScreen(DisplayInterface *display) {
+  display->displayStartupScreen("DCC-EX Simple Throttle", VERSION);
 }

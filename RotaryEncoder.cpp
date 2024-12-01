@@ -16,24 +16,24 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#include "RotaryEncoder.h"
 
-AppConfiguration appConfig;
-
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
+RotaryEncoder::RotaryEncoder() {
+  _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN);
+  setThrottleInverted();
 }
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
+void RotaryEncoder::begin() {}
+
+UserSelectionAction RotaryEncoder::getUserSelectionAction() {
+  if (!_rotary)
+    return UserSelectionAction::None;
+  UserSelectionAction action = UserSelectionAction::None;
+  unsigned char result = _rotary->process();
+  if (result == DIR_CW) {
+    action = UserSelectionAction::Down;
+  } else if (result == DIR_CCW) {
+    action = UserSelectionAction::Up;
+  }
+  return action;
 }

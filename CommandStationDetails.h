@@ -16,24 +16,22 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
+#ifndef COMMANDSTATIONDETAILS_H
+#define COMMANDSTATIONDETAILS_H
+
 #include "Defines.h"
-#include "Version.h"
 #include <Arduino.h>
 
-AppConfiguration appConfig;
+#ifdef WIFI_ENABLED
+#include <WiFi.h>
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+struct CommandStationDetails {
+  const char *name;
+  IPAddress ipAddress;
+  uint16_t port;
+  const char *ssid;
+  const char *password;
+};
+#endif // WIFI_ENABLED
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+#endif // COMMANDSTATIONDETAILS_H

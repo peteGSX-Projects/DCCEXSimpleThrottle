@@ -16,24 +16,25 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#ifndef LOCOMENUITEM_H
+#define LOCOMENUITEM_H
 
-AppConfiguration appConfig;
+#include "BaseMenuItem.h"
+#include <DCCEXProtocol.h>
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+/// @brief Extension of the BaseMenuItem class to allow users to select a Loco
+class LocoMenuItem : public BaseMenuItem {
+public:
+  /// @brief Constructor for the loco menu item objects
+  /// @param object Pointer to the Loco object to associate with this menu item
+  LocoMenuItem(Loco *loco);
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+  /// @brief Get the Loco object associated with this menu item
+  /// @return Pointer to the Loco object
+  Loco *getLoco();
+
+private:
+  Loco *_loco;
+};
+
+#endif // LOCOMENUITEM_H

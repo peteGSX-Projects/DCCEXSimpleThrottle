@@ -1,6 +1,5 @@
 /*
  *  © 2024 Peter Cole
- *  © 2023 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,24 +15,19 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#ifndef EVENTLISTENER_H
+#define EVENTLISTENER_H
 
-AppConfiguration appConfig;
+#include "EventStructure.h"
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+/// @brief Class to extend for all other classes that need to respond to events
+/// For example: Class <MyClass> : public EventListener () {}
+/// The recommended approach is to implement a switch/case in the onEvent() implementation to handle valid event types
+class EventListener {
+public:
+  /// @brief Virtual method to implement in the inheriting class to respond to events
+  /// @param event The event to respond to
+  virtual void onEvent(Event &event) = 0;
+};
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+#endif // EVENTLISTENER_H

@@ -16,24 +16,27 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#ifndef BUTTON_H
+#define BUTTON_H
 
-AppConfiguration appConfig;
+#include "UserConfirmationInterface.h"
+#include "avdweb_Switch.h"
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+class Button : public UserConfirmationInterface {
+public:
+  /// @brief Constructor for the button object
+  Button();
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+  /// @brief Not required to be implemented for this type
+  void begin() override;
+
+  /// @brief Check for any user confirmation actions
+  /// This should be called at least once per main loop iteration
+  /// @return UserSelectionConfirmation::[None|SingleClick|DoubleClick|LongPress]
+  UserConfirmationAction getUserConfirmationAction();
+
+private:
+  Switch *_button;
+};
+
+#endif // BUTTON_H

@@ -16,24 +16,23 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "AppConfiguration.h"
-#include "Defines.h"
-#include "Version.h"
-#include <Arduino.h>
+#ifndef COMMANDSTATIONMENUITEM_H
+#define COMMANDSTATIONMENUITEM_H
 
-AppConfiguration appConfig;
+#include "BaseMenuItem.h"
+#include "CommandStationDetails.h"
 
-/// @brief Initial setup
-void setup() {
-  CONSOLE.begin(115200);
-  CONSOLE.println("DCC-EX Simple Throttle");
-  CONSOLE.print("Version: ");
-  CONSOLE.println(VERSION);
-  appConfig.initialise();
-}
+class CommandStationMenuItem : public BaseMenuItem {
+public:
+#ifdef WIFI_ENABLED
+  /// @brief Constructor for this menu item object
+  /// @param name Pointer to the char array containing the name of this CommandStation
+  /// @param commandStationIndex The index of this CommandStation entry in the list of CommandStations
+  CommandStationMenuItem(const char *name, uint8_t commandStationIndex);
 
-/// @brief Main loop
-void loop() {
-  AppOrchestrator *orchestrator = appConfig.getAppOrchestrator();
-  orchestrator->update();
-}
+private:
+  uint8_t _commandStationIndex;
+#endif // WIFI_ENABLED
+};
+
+#endif // COMMANDSTATIONMENUITEM_H
