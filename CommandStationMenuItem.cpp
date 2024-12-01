@@ -16,11 +16,11 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "ServerMenuItem.h"
+#include "CommandStationMenuItem.h"
 
 #ifdef WIFI_ENABLED
 
-ServerMenuItem::ServerMenuItem(const char *name, uint8_t commandStationIndex)
+CommandStationMenuItem::CommandStationMenuItem(const char *name, uint8_t commandStationIndex)
     : BaseMenuItem(name), _commandStationIndex(commandStationIndex) {}
 
 #endif // WIFI_ENABLED

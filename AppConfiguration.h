@@ -54,6 +54,10 @@ public:
   /// @return Pointer to the display interface
   DisplayInterface *getDisplayInterface();
 
+  /// @brief Get the event manager instance associated with the config
+  /// @return Pointer to the event manager instance
+  EventManager *getEventManager();
+
   /// @brief Get the application orchestrator associated with the config
   /// @return Pointer to the application orchestrator
   AppOrchestrator *getAppOrchestrator();
@@ -81,8 +85,8 @@ private:
   CommandStationClient *_commandStationClient;
   AppOrchestrator *_appOrchestrator;
 
-  /// @brief All event registrations are performed here, called by the initialise() method
-  void _registerEvents();
+  /// @brief Register all required event subscriptions, called by initialise()
+  void _registerEventSubscriptions();
 
 #ifdef WIFI_ENABLED
   uint8_t _commandStationCount;

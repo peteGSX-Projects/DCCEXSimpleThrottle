@@ -75,12 +75,12 @@ public:
   /// @return True|False
   bool getSelectionChanged();
 
-  /// @brief Set the event manager instance in use
-  /// @param eventManager Pointer to the event manager
+  /// @brief Set the application's event manager instance
+  /// @param eventManager Pointer to the event manager instance
   void setEventManager(EventManager *eventManager);
 
-  /// @brief Get the event manager
-  /// @return Pointer to the EventManager instance
+  /// @brief Get the application's event manager instance
+  /// @return Pointer to the event manager instance
   EventManager *getEventManager();
 
 private:
@@ -90,7 +90,7 @@ private:
   uint8_t _currentItemIndex = 0;          // Incrementing index to ensure each menu item has a unique index
   uint8_t _selectedItemIndex = 0;         // Index of the item currently selected by the user
   bool _selectionChanged = false;         // Flag if user has selected a different item
-  EventManager *_eventManager = nullptr;
+  EventManager *_eventManager = nullptr;  // pointer to the application event manager
 };
 
 #endif // MENU_H

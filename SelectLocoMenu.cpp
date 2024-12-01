@@ -45,7 +45,7 @@ void SelectLocoMenu::_selectLoco(uint8_t locoIndex) {
   Loco *loco = locoItem->getLoco();
   EventManager *eventManager = getEventManager();
   if (eventManager) {
-    EventData EventData(loco);
-    eventManager->triggerEvent("SelectedLoco", EventData);
+    EventData eventData(loco);
+    eventManager->publish(EventType::LocoSelected, eventData);
   }
 }

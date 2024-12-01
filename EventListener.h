@@ -1,6 +1,5 @@
 /*
  *  © 2024 Peter Cole
- *  © 2023 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,23 +15,19 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef SERVERMENUITEM_H
-#define SERVERMENUITEM_H
+#ifndef EVENTLISTENER_H
+#define EVENTLISTENER_H
 
-#include "BaseMenuItem.h"
-#include "CommandStationDetails.h"
+#include "EventStructure.h"
 
-class ServerMenuItem : public BaseMenuItem {
+/// @brief Class to extend for all other classes that need to respond to events
+/// For example: Class <MyClass> : public EventListener () {}
+/// The recommended approach is to implement a switch/case in the onEvent() implementation to handle valid event types
+class EventListener {
 public:
-#ifdef WIFI_ENABLED
-  /// @brief Constructor for this menu item object
-  /// @param name Pointer to the char array containing the name of this CommandStation
-  /// @param commandStationIndex The index of this CommandStation entry in the list of CommandStations
-  ServerMenuItem(const char *name, uint8_t commandStationIndex);
-
-private:
-  uint8_t _commandStationIndex;
-#endif // WIFI_ENABLED
+  /// @brief Virtual method to implement in the inheriting class to respond to events
+  /// @param event The event to respond to
+  virtual void onEvent(Event &event) = 0;
 };
 
-#endif // SERVERMENUITEM_H
+#endif // EVENTLISTENER_H

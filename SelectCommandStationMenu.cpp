@@ -16,21 +16,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "SelectServerMenu.h"
-// #include "ServerMenuItem.h"
+#include "SelectCommandStationMenu.h"
 
-SelectServerMenu::SelectServerMenu(const char *name, EventManager *eventManager) {
+SelectCommandStationMenu::SelectCommandStationMenu(const char *name, EventManager *eventManager) {
   setMenuName(name);
   setEventManager(eventManager);
 }
 
-void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction action) {
+void SelectCommandStationMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
   case UserConfirmationAction::SingleClick: {
-    // BaseMenuItem *selectedItem = getMenuItemAtIndex(getSelectedItemIndex());
-    // _initiateServerConnection(selectedItem);
     uint8_t serverIndex = getSelectedItemIndex();
-    _initiateServerConnection(serverIndex);
+    _initiateCommandStationConnection(serverIndex);
     break;
   }
   default:
@@ -38,11 +35,10 @@ void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction actio
   }
 }
 
-void SelectServerMenu::_initiateServerConnection(uint8_t serverIndex) {
-  // ServerMenuItem *serverItem = static_cast<ServerMenuItem *>(getMenuItemAtIndex(serverIndex));
+void SelectCommandStationMenu::_initiateCommandStationConnection(uint8_t serverIndex) {
   EventManager *eventManager = getEventManager();
   if (eventManager) {
     EventData eventData(serverIndex);
-    eventManager->triggerEvent("SelectedCommandStation", eventData);
+    eventManager->publish(EventType::CommandStationSelected, eventData);
   }
 }

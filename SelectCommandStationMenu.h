@@ -16,18 +16,18 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef SELECTSERVERMENU_H
-#define SELECTSERVERMENU_H
+#ifndef SELECTCOMMANDSTATIONMENU_H
+#define SELECTCOMMANDSTATIONMENU_H
 
 #include "BaseMenu.h"
 #include "ConnectionManager.h"
 
-class SelectServerMenu : public BaseMenu {
+class SelectCommandStationMenu : public BaseMenu {
 public:
   /// @brief Constructor for each menu
   /// @param name Pointer to the char array containing the name of the menu
   /// @param eventManager Point to the event manager
-  SelectServerMenu(const char *name, EventManager *eventManager);
+  SelectCommandStationMenu(const char *name, EventManager *eventManager);
 
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
@@ -36,7 +36,7 @@ public:
 private:
   /// @brief Trigger the event manager to send the selected CommandStation to the connection manager
   /// @param serverIndex Index of the selected server item
-  void _initiateServerConnection(uint8_t serverIndex);
+  void _initiateCommandStationConnection(uint8_t serverIndex);
 };
 
-#endif // SELECTSERVERMENU_H
+#endif // SELECTCOMMANDSTATIONMENU_H

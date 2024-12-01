@@ -16,17 +16,23 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "CommandStationListener.h"
+#ifndef COMMANDSTATIONMENUITEM_H
+#define COMMANDSTATIONMENUITEM_H
 
-CommandStationListener::CommandStationListener(EventManager *eventManager) : _eventManager(eventManager) {}
+#include "BaseMenuItem.h"
+#include "CommandStationDetails.h"
 
-void CommandStationListener::receivedRosterList() {
-  EventData eventData;
-  _eventManager->publish(EventType::ReceivedRosterList, eventData);
-}
+class CommandStationMenuItem : public BaseMenuItem {
+public:
+#ifdef WIFI_ENABLED
+  /// @brief Constructor for this menu item object
+  /// @param name Pointer to the char array containing the name of this CommandStation
+  /// @param commandStationIndex The index of this CommandStation entry in the list of CommandStations
+  CommandStationMenuItem(const char *name, uint8_t commandStationIndex);
 
-void CommandStationListener::receivedLocoUpdate(Loco *loco) {}
+private:
+  uint8_t _commandStationIndex;
+#endif // WIFI_ENABLED
+};
 
-void CommandStationListener::receivedTrackPower(TrackPower powerState) {}
-
-void CommandStationListener::receivedReadLoco(int address) {}
+#endif // COMMANDSTATIONMENUITEM_H

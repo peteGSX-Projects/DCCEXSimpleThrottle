@@ -27,7 +27,7 @@
 class CommandStationListener : public DCCEXProtocolDelegate {
 public:
   /// @brief Consructor for the CommandStation listener
-  /// @param Pointer to the event manager
+  /// @param eventManager Pointer to the event manager
   CommandStationListener(EventManager *eventManager);
 
   /// @brief Respond to receiving the roster list which updates the roster menu
