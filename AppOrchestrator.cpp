@@ -101,6 +101,8 @@ void AppOrchestrator::onEvent(Event &event) {
     break;
   }
   case EventType::ReceivedTrackPower: {
+    updateThrottleTrackPower(event.eventData.trackPowerValue);
+    break;
   }
   default:
     CONSOLE.print("AppOrchestrator received unknown event ");
@@ -202,6 +204,10 @@ void AppOrchestrator::_handleSelectLocoState() {
 }
 
 void AppOrchestrator::_handleThrottleState() {
+  if (_displayInterface->needsRedraw()) {
+    _throttleScreen->requestLocoUpdate();
+    _throttleScreen->requestTrackPowerUpdate();
+  }
   _throttleScreen->drawScreen(_displayInterface);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {

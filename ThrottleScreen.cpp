@@ -145,13 +145,13 @@ void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
 void ThrottleScreen::locoUpdateReceived(Loco *loco) {
   if (_loco != loco)
     return;
+  _speedChanged = true;
+  _directionChanged = true;
   if (_loco->getSpeed() != _speed) {
     _speed = _loco->getSpeed();
-    _speedChanged = true;
   }
   if (_loco->getDirection() != _direction) {
     _direction = _loco->getDirection();
-    _directionChanged = true;
   }
 }
 
@@ -163,3 +163,7 @@ void ThrottleScreen::trackPowerUpdateReceived(TrackPower trackPower) {
     _trackPowerChanged = true;
   }
 }
+
+void ThrottleScreen::requestLocoUpdate() { _dccexProtocolClient->requestLocoUpdate(_loco->getAddress()); }
+
+void ThrottleScreen::requestTrackPowerUpdate() { _dccexProtocolClient->requestServerVersion(); }

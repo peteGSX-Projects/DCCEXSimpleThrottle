@@ -60,6 +60,12 @@ public:
   /// @param trackPower Track power state
   void trackPowerUpdateReceived(TrackPower trackPower);
 
+  /// @brief Explicitly request an update for the currently selected loco address
+  void requestLocoUpdate();
+
+  /// @brief Explicitly request a track power update (actually sends <s> for server version which does this)
+  void requestTrackPowerUpdate();
+
 private:
   uint8_t _speed;
   bool _speedChanged;
