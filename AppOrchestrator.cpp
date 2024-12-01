@@ -96,6 +96,12 @@ void AppOrchestrator::onEvent(Event &event) {
     setThrottleLoco(event.eventData.locoValue);
     break;
   }
+  case EventType::ReceivedLocoUpdate: {
+    updateThrottleLoco(event.eventData.locoValue);
+    break;
+  }
+  case EventType::ReceivedTrackPower: {
+  }
   default:
     CONSOLE.print("AppOrchestrator received unknown event ");
     CONSOLE.println(event.eventType);
@@ -123,6 +129,12 @@ void AppOrchestrator::setThrottleLoco(Loco *loco) {
 void AppOrchestrator::updateThrottleLoco(Loco *loco) {
   if (_throttleScreen) {
     _throttleScreen->locoUpdateReceived(loco);
+  }
+}
+
+void AppOrchestrator::updateThrottleTrackPower(TrackPower trackPower) {
+  if (_throttleScreen) {
+    _throttleScreen->trackPowerUpdateReceived(trackPower);
   }
 }
 

@@ -56,12 +56,18 @@ public:
   /// @return Speed
   uint8_t getSpeed();
 
+  /// @brief Method to call when a track power update has been received
+  /// @param trackPower Track power state
+  void trackPowerUpdateReceived(TrackPower trackPower);
+
 private:
   uint8_t _speed;
   bool _speedChanged;
   Direction _direction;
   bool _directionChanged;
   Loco *_loco;
+  TrackPower _trackPower;
+  bool _trackPowerChanged;
   DCCEXProtocol *_dccexProtocolClient;
   uint8_t _throttleStep;
   uint8_t _throttleStepFaster;

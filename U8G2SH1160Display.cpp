@@ -92,80 +92,27 @@ void U8G2SH1106Display::displayMenuScreen(const char *menuName, BaseMenuItem *fi
   }
 }
 
-void U8G2SH1106Display::updateSpeed(uint8_t speed) {
-  _oled->setFont(_speedFont);
-  uint16_t displayWidth = _oled->getWidth();
-  uint8_t fontHeight = _oled->getMaxCharHeight();
-  char speedBuffer[4];
-  snprintf(speedBuffer, sizeof(speedBuffer), "%d", speed);
-  uint16_t speedWidth = _oled->getStrWidth(speedBuffer);
-  uint16_t clearWidth = _oled->getStrWidth("999");
-  uint16_t clearX = (displayWidth - clearWidth) / 2;
-  uint16_t x = (displayWidth - speedWidth) / 2;
-  uint16_t y = 20;
-  _oled->setDrawColor(0);
-  _oled->drawBox(clearX, y - fontHeight, clearWidth, fontHeight);
-  _oled->setDrawColor(1);
-  _oled->setCursor(x, y);
-  _oled->print(speed);
-  _oled->sendBuffer();
-}
-
-void U8G2SH1106Display::updateLocoName(const char *name) {
-  _oled->setCursor(0, 50);
-  _oled->setFont(_addressFont);
-  _oled->print(F("                      "));
-  _oled->setCursor(0, 50);
-  _oled->print(name);
-  _oled->sendBuffer();
-}
-
-void U8G2SH1106Display::updateLocoDirection(Direction direction) {
-  const char *directionText;
-  if (direction == Direction::Reverse) {
-    directionText = "Reverse";
-  } else {
-    directionText = "Forward";
+void U8G2SH1106Display::displayThrottleScreen(const char *locoName, uint8_t speed, Direction direction,
+                                              TrackPower trackPower, bool speedChanged, bool directionChange,
+                                              bool trackPowerChanged) {
+  if (needsRedraw()) {
+    setNeedsRedraw(false);
+    _clearDisplay();
+    _displayLocoSpeed(speed);
+    _displayLocoDirection(direction);
+    _displayLocoName(locoName);
+    _displayTrackPowerState(trackPower);
+    return;
   }
-  _oled->setFont(_directionFont);
-  uint16_t displayWidth = _oled->getWidth();
-  uint8_t fontHeight = _oled->getMaxCharHeight();
-  uint16_t clearWidth = _oled->getStrWidth(directionText);
-  uint16_t x = (displayWidth - clearWidth) / 2;
-  uint16_t y = 35;
-  _oled->setDrawColor(0);
-  _oled->drawBox(x, y - fontHeight, clearWidth, fontHeight);
-  _oled->setDrawColor(1);
-  _oled->setCursor(x, y);
-  _oled->print(directionText);
-  _oled->sendBuffer();
-}
-
-void U8G2SH1106Display::updateTrackPowerState(TrackPower trackPower) {
-  _oled->drawHLine(0, 55, 128);
-  _oled->setCursor(50, 63);
-  _oled->setFont(_menuFont);
-  _oled->print(F("Track power: "));
-  _oled->setCursor(112, 63);
-  _oled->print("   ");
-  _oled->setCursor(112, 63);
-  switch (trackPower) {
-  case TrackPower::PowerOff:
-    _oled->print(F("Off"));
-    break;
-
-  case TrackPower::PowerOn:
-    _oled->print(F("On"));
-    break;
-
-  case TrackPower::PowerUnknown:
-    _oled->print(F("?"));
-    break;
-
-  default:
-    break;
+  if (speedChanged) {
+    _displayLocoSpeed(speed);
   }
-  _oled->sendBuffer();
+  if (directionChange) {
+    _displayLocoDirection(direction);
+  }
+  if (trackPowerChanged) {
+    _displayTrackPowerState(trackPower);
+  }
 }
 
 uint8_t U8G2SH1106Display::_calculateMenuItemsPerPage() {
@@ -315,5 +262,81 @@ void U8G2SH1106Display::_displayErrorMessage(const char *errorMessage) {
   y = 50;
   _oled->setFont(_errorFont);
   _oled->drawGlyph(x, y, 0x0029);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::_displayLocoSpeed(uint8_t speed) {
+  _oled->setFont(_speedFont);
+  uint16_t displayWidth = _oled->getWidth();
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  char speedBuffer[4];
+  snprintf(speedBuffer, sizeof(speedBuffer), "%d", speed);
+  uint16_t speedWidth = _oled->getStrWidth(speedBuffer);
+  uint16_t clearWidth = _oled->getStrWidth("999");
+  uint16_t clearX = (displayWidth - clearWidth) / 2;
+  uint16_t x = (displayWidth - speedWidth) / 2;
+  uint16_t y = 20;
+  _oled->setDrawColor(0);
+  _oled->drawBox(clearX, y - fontHeight, clearWidth, fontHeight);
+  _oled->setDrawColor(1);
+  _oled->setCursor(x, y);
+  _oled->print(speed);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::_displayLocoDirection(Direction direction) {
+  const char *directionText;
+  if (direction == Direction::Reverse) {
+    directionText = "Reverse";
+  } else {
+    directionText = "Forward";
+  }
+  _oled->setFont(_directionFont);
+  uint16_t displayWidth = _oled->getWidth();
+  uint8_t fontHeight = _oled->getMaxCharHeight();
+  uint16_t clearWidth = _oled->getStrWidth(directionText);
+  uint16_t x = (displayWidth - clearWidth) / 2;
+  uint16_t y = 35;
+  _oled->setDrawColor(0);
+  _oled->drawBox(x, y - fontHeight, clearWidth, fontHeight);
+  _oled->setDrawColor(1);
+  _oled->setCursor(x, y);
+  _oled->print(directionText);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::_displayLocoName(const char *name) {
+  _oled->setCursor(0, 50);
+  _oled->setFont(_addressFont);
+  _oled->print(F("                      "));
+  _oled->setCursor(0, 50);
+  _oled->print(name);
+  _oled->sendBuffer();
+}
+
+void U8G2SH1106Display::_displayTrackPowerState(TrackPower trackPower) {
+  _oled->drawHLine(0, 55, 128);
+  _oled->setCursor(50, 63);
+  _oled->setFont(_menuFont);
+  _oled->print(F("Track power: "));
+  _oled->setCursor(112, 63);
+  _oled->print("   ");
+  _oled->setCursor(112, 63);
+  switch (trackPower) {
+  case TrackPower::PowerOff:
+    _oled->print(F("Off"));
+    break;
+
+  case TrackPower::PowerOn:
+    _oled->print(F("On"));
+    break;
+
+  case TrackPower::PowerUnknown:
+    _oled->print(F("?"));
+    break;
+
+  default:
+    break;
+  }
   _oled->sendBuffer();
 }

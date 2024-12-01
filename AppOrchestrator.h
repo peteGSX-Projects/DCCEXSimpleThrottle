@@ -71,6 +71,10 @@ public:
   /// @param loco Pointer to the loco object
   void updateThrottleLoco(Loco *loco);
 
+  /// @brief Notify the throttle screen of a track power update
+  /// @param trackPower Track power state
+  void updateThrottleTrackPower(TrackPower trackPower);
+
 private:
   DisplayInterface *_displayInterface;
   ConnectionManager *_connectionManager;

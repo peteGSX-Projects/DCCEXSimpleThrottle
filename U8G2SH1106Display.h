@@ -57,21 +57,16 @@ public:
   void displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                          bool selectionChanged) override;
 
-  /// @brief Update the currenty selected loco's speed
-  /// @param speed 8 bit integer of the speed
-  void updateSpeed(uint8_t speed) override;
-
-  /// @brief Update the address of the currently selected loco
-  /// @param address Pointer to the char array containing the name
-  void updateLocoName(const char *name) override;
-
-  /// @brief Update the currently selected loco's direction
-  /// @param direction Forward|Reverse
-  void updateLocoDirection(Direction direction) override;
-
-  /// @brief Update the current track power status
-  /// @param trackPower PowerOff|PowerOn|PowerUnknown
-  void updateTrackPowerState(TrackPower trackPower) override;
+  /// @brief Display the throttle screen
+  /// @param locoName Name of the loco currently being operated
+  /// @param speed Current speed of the loco
+  /// @param direction Current direction of the loco
+  /// @param trackPower Current track power state
+  /// @param speedChanged Flag if the speed has changed
+  /// @param directionChange Flag if the direction has changed
+  /// @param trackPowerChanged Flag if the track power state has changed
+  void displayThrottleScreen(const char *locoName, uint8_t speed, Direction direction, TrackPower trackPower,
+                             bool speedChanged, bool directionChange, bool trackPowerChanged) override;
 
 private:
   U8G2 *_oled;
@@ -132,6 +127,22 @@ private:
   /// @brief Display an error message with emoji
   /// @param errorMessage Error message to display
   void _displayErrorMessage(const char *errorMessage);
+
+  /// @brief Update the currenty selected loco's speed
+  /// @param speed 8 bit integer of the speed
+  void _displayLocoSpeed(uint8_t speed);
+
+  /// @brief Update the currently selected loco's direction
+  /// @param direction Forward|Reverse
+  void _displayLocoDirection(Direction direction);
+
+  /// @brief Update the address of the currently selected loco
+  /// @param address Pointer to the char array containing the name
+  void _displayLocoName(const char *name);
+
+  /// @brief Update the current track power status
+  /// @param trackPower PowerOff|PowerOn|PowerUnknown
+  void _displayTrackPowerState(TrackPower trackPower);
 };
 
 #endif // U8G2SH1106DISPLAY_H

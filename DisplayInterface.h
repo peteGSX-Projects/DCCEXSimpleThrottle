@@ -56,21 +56,16 @@ public:
   virtual void displayMenuScreen(const char *menuName, BaseMenuItem *firstMenuItem, uint8_t selectedItemIndex,
                                  bool selectionChanged) = 0;
 
-  /// @brief Implement this to update the currenty selected loco's speed
-  /// @param speed 8 bit integer of the speed
-  virtual void updateSpeed(uint8_t speed) = 0;
-
-  /// @brief Implement this to update the name of the currently selected loco
-  /// @param name Pointer to the char array containing the name
-  virtual void updateLocoName(const char *name) = 0;
-
-  /// @brief Implement this to update the currently selected loco's direction
-  /// @param direction Forward|Reverse
-  virtual void updateLocoDirection(Direction direction) = 0;
-
-  /// @brief Implement this to update the current track power status
-  /// @param trackPower PowerOff|PowerOn|PowerUnknown
-  virtual void updateTrackPowerState(TrackPower trackPower) = 0;
+  /// @brief Display the throttle screen
+  /// @param locoName Name of the loco currently being operated
+  /// @param speed Current speed of the loco
+  /// @param direction Current direction of the loco
+  /// @param trackPower Current track power state
+  /// @param speedChanged Flag if the speed has changed
+  /// @param directionChange Flag if the direction has changed
+  /// @param trackPowerChanged Flag if the track power state has changed
+  virtual void displayThrottleScreen(const char *locoName, uint8_t speed, Direction direction, TrackPower trackPower,
+                                     bool speedChanged, bool directionChange, bool trackPowerChanged) = 0;
 
   /// @brief Check if the display needs to be redrawn to prevent unnecessary redraws and flicker
   /// @return True|False

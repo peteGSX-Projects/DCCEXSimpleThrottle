@@ -30,6 +30,12 @@ void CommandStationListener::receivedLocoUpdate(Loco *loco) {
   _eventManager->publish(EventType::ReceivedLocoUpdate, eventData);
 }
 
-void CommandStationListener::receivedTrackPower(TrackPower powerState) {}
+void CommandStationListener::receivedTrackPower(TrackPower powerState) {
+  EventData eventData(powerState);
+  _eventManager->publish(EventType::ReceivedTrackPower, eventData);
+}
 
-void CommandStationListener::receivedReadLoco(int address) {}
+void CommandStationListener::receivedReadLoco(int address) {
+  EventData eventData(address);
+  _eventManager->publish(EventType::ReceivedReadLoco, eventData);
+}
