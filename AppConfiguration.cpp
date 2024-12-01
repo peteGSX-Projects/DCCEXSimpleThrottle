@@ -28,9 +28,10 @@ AppConfiguration::AppConfiguration() {
   _initialiseCommandStationArray();
 #endif // WIFI_ENABLED
 
+  _eventManager = new EventManager();
   _connectionManager = new ConnectionManager();
-  _menuManager = new MenuManager();
-  _commandStationListener = new CommandStationListener();
+  _menuManager = new MenuManager(_eventManager);
+  _commandStationListener = new CommandStationListener(_eventManager);
   _commandStationClient = new CommandStationClient(&CONSOLE, _commandStationListener);
   _appOrchestrator = new AppOrchestrator(_displayInterface, _connectionManager, _menuManager, _commandStationClient,
                                          _userConfirmationInterface, _userSelectionInterface);
@@ -43,8 +44,9 @@ void AppConfiguration::initialise() {
   _userConfirmationInterface->begin();
   _userSelectionInterface->begin();
   _displayInterface->begin();
+  _registerEventSubscriptions();
 #ifdef WIFI_ENABLED
-  _menuManager->setupServerMenu(_commandStationList, _commandStationCount);
+  _menuManager->setupCommandStationMenu(_commandStationList, _commandStationCount);
   _connectionManager->setCommandStationList(_commandStationList, _commandStationCount);
 #endif // WIFI_ENABLED
   _commandStationClient->begin();
@@ -56,6 +58,8 @@ UserSelectionInterface *AppConfiguration::getUserSelectionInterface() { return _
 
 DisplayInterface *AppConfiguration::getDisplayInterface() { return _displayInterface; }
 
+EventManager *AppConfiguration::getEventManager() { return _eventManager; }
+
 AppOrchestrator *AppConfiguration::getAppOrchestrator() { return _appOrchestrator; }
 
 ConnectionManager *AppConfiguration::getConnectionManager() { return _connectionManager; }
@@ -63,6 +67,14 @@ ConnectionManager *AppConfiguration::getConnectionManager() { return _connection
 MenuManager *AppConfiguration::getMenuManager() { return _menuManager; }
 
 CommandStationClient *AppConfiguration::getCommandStationClient() { return _commandStationClient; }
+
+void AppConfiguration::_registerEventSubscriptions() {
+  if (!_eventManager)
+    return;
+  _eventManager->subscribe(_appOrchestrator, EventType::CommandStationSelected);
+  _eventManager->subscribe(_appOrchestrator, EventType::ReceivedRosterList);
+  _eventManager->subscribe(_appOrchestrator, EventType::LocoSelected);
+}
 
 #ifdef WIFI_ENABLED
 void AppConfiguration::_initialiseCommandStationArray() {

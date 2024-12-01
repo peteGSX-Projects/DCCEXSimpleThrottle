@@ -38,8 +38,8 @@ void AppOrchestrator::begin() {}
 void AppOrchestrator::update() {
   if (_connectionManager) {
     _connectionManager->update();
-    if (_connectionManager->isConnecting() && _currentAppState != AppState::ConnectServer) {
-      _switchState(AppState::ConnectServer);
+    if (_connectionManager->isConnecting() && _currentAppState != AppState::ConnectCommandStation) {
+      _switchState(AppState::ConnectCommandStation);
     } else if (_connectionManager->connectionError() && _currentAppState != AppState::Error) {
       _switchState(AppState::Error);
     } else if (_connectionManager->connected()) {
@@ -58,11 +58,11 @@ void AppOrchestrator::update() {
   case AppState::Startup:
     _handleStartupState();
     break;
-  case AppState::SelectServer:
-    _handleSelectServerState();
+  case AppState::SelectCommandStation:
+    _handleSelectCommandStationState();
     break;
-  case AppState::ConnectServer:
-    _handleConnectServerState();
+  case AppState::ConnectCommandStation:
+    _handleConnectCommandStationState();
     break;
   case AppState::SelectLoco:
     _handleSelectLocoState();
@@ -77,6 +77,29 @@ void AppOrchestrator::update() {
     _handleErrorState();
     break;
   default:
+    break;
+  }
+}
+
+void AppOrchestrator::onEvent(Event &event) {
+  switch (event.eventType) {
+  case EventType::CommandStationSelected: {
+    if (_connectionManager) {
+      _connectionManager->selectCommandStation(event.eventData.byteValue);
+    }
+    break;
+  }
+  case EventType::ReceivedRosterList: {
+    setupSelectLocoMenu();
+    break;
+  }
+  case EventType::LocoSelected: {
+    setThrottleLoco(event.eventData.locoValue);
+    break;
+  }
+  default:
+    CONSOLE.print("AppOrchestrator received unknown event ");
+    CONSOLE.println(event.eventType);
     break;
   }
 }
@@ -111,17 +134,17 @@ void AppOrchestrator::_handleStartupState() {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
-    _switchState(AppState::SelectServer);
+    _switchState(AppState::SelectCommandStation);
     break;
   default:
     break;
   }
 }
 
-void AppOrchestrator::_handleSelectServerState() {
+void AppOrchestrator::_handleSelectCommandStationState() {
   if (!_menuManager)
     return;
-  SelectServerMenu *menu = _menuManager->getSelectServerMenu();
+  SelectCommandStationMenu *menu = _menuManager->getSelectCommandStationMenu();
   if (!menu)
     return;
   _displayMenu(menu);
@@ -129,12 +152,12 @@ void AppOrchestrator::_handleSelectServerState() {
   menu->handleUserConfirmationAction(_userConfirmationInterface->getUserConfirmationAction());
   if (_connectionManager) {
     if (_connectionManager->receivedUserSelection()) {
-      _switchState(AppState::ConnectServer);
+      _switchState(AppState::ConnectCommandStation);
     }
   }
 }
 
-void AppOrchestrator::_handleConnectServerState() {
+void AppOrchestrator::_handleConnectCommandStationState() {
   if (!_progressScreen)
     return;
   if (_connectionManager->newAttempt()) {
@@ -231,13 +254,13 @@ void AppOrchestrator::_switchState(AppState appState) {
     CONSOLE.println("Switch to AppState::SelectLoco");
     _currentAppState = AppState::SelectLoco;
     break;
-  case AppState::SelectServer:
-    CONSOLE.println("Switch to AppState::SelectServer");
-    _currentAppState = AppState::SelectServer;
+  case AppState::SelectCommandStation:
+    CONSOLE.println("Switch to AppState::SelectCommandStation");
+    _currentAppState = AppState::SelectCommandStation;
     break;
-  case AppState::ConnectServer:
-    CONSOLE.println("Switch to AppState::ConnectServer");
-    _currentAppState = AppState::ConnectServer;
+  case AppState::ConnectCommandStation:
+    CONSOLE.println("Switch to AppState::ConnectCommandStation");
+    _currentAppState = AppState::ConnectCommandStation;
     break;
   case AppState::Error:
     CONSOLE.println("Switch to AppState::Error");

@@ -23,6 +23,7 @@
 #include "ConnectionManager.h"
 #include "DisplayInterface.h"
 #include "ErrorScreen.h"
+#include "EventListener.h"
 #include "MenuManager.h"
 #include "ProgressScreen.h"
 #include "StartupScreen.h"
@@ -30,11 +31,11 @@
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-enum class AppState { Startup, SelectServer, ConnectServer, SelectLoco, Throttle, SelectAction, Error };
+enum class AppState { Startup, SelectCommandStation, ConnectCommandStation, SelectLoco, Throttle, SelectAction, Error };
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens,
 /// displays, connection management, and other application states
-class AppOrchestrator {
+class AppOrchestrator : public EventListener {
 public:
   /// @brief Constructor for the application orchestrator object
   /// @param displayInterface Pointer to the display interface to ensure is updated
@@ -53,6 +54,10 @@ public:
   /// @brief Call this method at least once per main loop iteration to monitor for user interactions, ensure the
   /// display is updated, and connections are managed
   void update();
+
+  /// @brief Implementation of the EventListener to respond to subscribed events
+  /// @param event Valid Event
+  void onEvent(Event &event);
 
   /// @brief Method to setup the roster list in the SelectLocoMenu when the roster has been received
   void setupSelectLocoMenu();
@@ -82,11 +87,11 @@ private:
   /// @brief Show the startup screen and wait for user interaction before continuing
   void _handleStartupState();
 
-  /// @brief Display the server menu and process user interaction to select one
-  void _handleSelectServerState();
+  /// @brief Display the CommandStation menu and process user interaction to select one
+  void _handleSelectCommandStationState();
 
   /// @brief Show the connection progress screen until a connection is made
-  void _handleConnectServerState();
+  void _handleConnectCommandStationState();
 
   /// @brief Show the loco selection menu and process user interaction to select one
   void _handleSelectLocoState();

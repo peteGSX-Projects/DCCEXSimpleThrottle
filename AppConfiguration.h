@@ -26,6 +26,7 @@
 #include "CommandStationListener.h"
 #include "ConnectionManager.h"
 #include "Defines.h"
+#include "EventManager.h"
 #include "MenuManager.h"
 #include "RotaryEncoder.h"
 #include "U8G2SH1106Display.h"
@@ -53,6 +54,10 @@ public:
   /// @return Pointer to the display interface
   DisplayInterface *getDisplayInterface();
 
+  /// @brief Get the event manager instance associated with the config
+  /// @return Pointer to the event manager instance
+  EventManager *getEventManager();
+
   /// @brief Get the application orchestrator associated with the config
   /// @return Pointer to the application orchestrator
   AppOrchestrator *getAppOrchestrator();
@@ -73,11 +78,15 @@ private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   DisplayInterface *_displayInterface;
+  EventManager *_eventManager;
   ConnectionManager *_connectionManager;
   MenuManager *_menuManager;
   CommandStationListener *_commandStationListener;
   CommandStationClient *_commandStationClient;
   AppOrchestrator *_appOrchestrator;
+
+  /// @brief Register all required event subscriptions, called by initialise()
+  void _registerEventSubscriptions();
 
 #ifdef WIFI_ENABLED
   uint8_t _commandStationCount;

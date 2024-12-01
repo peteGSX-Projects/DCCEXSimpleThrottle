@@ -19,8 +19,9 @@
 #include "LocoMenuItem.h"
 #include "SelectLocoMenu.h"
 
-SelectLocoMenu::SelectLocoMenu(const char *name) {
+SelectLocoMenu::SelectLocoMenu(const char *name, EventManager *eventManager) {
   setMenuName(name);
+  setEventManager(eventManager);
 }
 
 void SelectLocoMenu::handleUserConfirmationAction(UserConfirmationAction action) {
@@ -42,9 +43,9 @@ void SelectLocoMenu::handleUserConfirmationAction(UserConfirmationAction action)
 void SelectLocoMenu::_selectLoco(uint8_t locoIndex) {
   LocoMenuItem *locoItem = static_cast<LocoMenuItem *>(getMenuItemAtIndex(locoIndex));
   Loco *loco = locoItem->getLoco();
-  // EventManager *eventManager = getEventManager();
-  // if (eventManager) {
-  //   EventData EventData(loco);
-  //   eventManager->triggerEvent("SelectedLoco", EventData);
-  // }
+  EventManager *eventManager = getEventManager();
+  if (eventManager) {
+    EventData eventData(loco);
+    eventManager->publish(EventType::LocoSelected, eventData);
+  }
 }

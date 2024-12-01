@@ -1,6 +1,5 @@
 /*
  *  © 2024 Peter Cole
- *  © 2023 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,27 +15,19 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "SelectServerMenu.h"
+#ifndef EVENTLISTENER_H
+#define EVENTLISTENER_H
 
-SelectServerMenu::SelectServerMenu(const char *name) {
-  setMenuName(name);
-}
+#include "EventStructure.h"
 
-void SelectServerMenu::handleUserConfirmationAction(UserConfirmationAction action) {
-  switch (action) {
-  case UserConfirmationAction::SingleClick: {
-    uint8_t serverIndex = getSelectedItemIndex();
-    _initiateServerConnection(serverIndex);
-    break;
-  }
-  default:
-    break;
-  }
-}
+/// @brief Class to extend for all other classes that need to respond to events
+/// For example: Class <MyClass> : public EventListener () {}
+/// The recommended approach is to implement a switch/case in the onEvent() implementation to handle valid event types
+class EventListener {
+public:
+  /// @brief Virtual method to implement in the inheriting class to respond to events
+  /// @param event The event to respond to
+  virtual void onEvent(Event &event) = 0;
+};
 
-void SelectServerMenu::_initiateServerConnection(uint8_t serverIndex) {
-  // if (eventManager) {
-  //   EventData eventData(serverIndex);
-  //   eventManager->triggerEvent("SelectedCommandStation", eventData);
-  // }
-}
+#endif // EVENTLISTENER_H

@@ -16,23 +16,23 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef SERVERMENUITEM_H
-#define SERVERMENUITEM_H
+#ifndef COMMANDSTATIONMENUITEM_H
+#define COMMANDSTATIONMENUITEM_H
 
 #include "BaseMenuItem.h"
 #include "CommandStationDetails.h"
 
-class ServerMenuItem : public BaseMenuItem {
+class CommandStationMenuItem : public BaseMenuItem {
 public:
 #ifdef WIFI_ENABLED
   /// @brief Constructor for this menu item object
   /// @param name Pointer to the char array containing the name of this CommandStation
   /// @param commandStationIndex The index of this CommandStation entry in the list of CommandStations
-  ServerMenuItem(const char *name, uint8_t commandStationIndex);
+  CommandStationMenuItem(const char *name, uint8_t commandStationIndex);
 
 private:
   uint8_t _commandStationIndex;
 #endif // WIFI_ENABLED
 };
 
-#endif // SERVERMENUITEM_H
+#endif // COMMANDSTATIONMENUITEM_H

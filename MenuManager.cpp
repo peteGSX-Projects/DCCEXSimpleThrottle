@@ -19,25 +19,25 @@
 #include "LocoMenuItem.h"
 #include "MenuManager.h"
 
-MenuManager::MenuManager() {
-  _selectActionMenu = new SelectActionMenu("Select action");
-  _selectLocoMenu = new SelectLocoMenu("Select loco");
-  _selectServerMenu = new SelectServerMenu("Select server");
+MenuManager::MenuManager(EventManager *eventManager) : _eventManager(eventManager) {
+  _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
+  _selectLocoMenu = new SelectLocoMenu("Select loco", _eventManager);
+  _selectCommandStationMenu = new SelectCommandStationMenu("Select CommandStation", _eventManager);
 }
 
 SelectActionMenu *MenuManager::getSelectActionMenu() { return _selectActionMenu; }
 
 SelectLocoMenu *MenuManager::getSelectLocoMenu() { return _selectLocoMenu; }
 
-SelectServerMenu *MenuManager::getSelectServerMenu() { return _selectServerMenu; }
+SelectCommandStationMenu *MenuManager::getSelectCommandStationMenu() { return _selectCommandStationMenu; }
 
 #ifdef WIFI_ENABLED
-void MenuManager::setupServerMenu(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
-  if (!_selectServerMenu)
+void MenuManager::setupCommandStationMenu(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
+  if (!_selectCommandStationMenu)
     return;
   for (uint8_t i = 0; i < commandStationCount; i++) {
-    ServerMenuItem *item = new ServerMenuItem(commandStationList[i].name, i);
-    _selectServerMenu->addItem(item);
+    CommandStationMenuItem *item = new CommandStationMenuItem(commandStationList[i].name, i);
+    _selectCommandStationMenu->addItem(item);
   }
 }
 #endif // WIFI_ENABLED

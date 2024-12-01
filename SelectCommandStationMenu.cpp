@@ -16,25 +16,29 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "SelectActionMenu.h"
+#include "SelectCommandStationMenu.h"
 
-SelectActionMenu::SelectActionMenu(const char *name, EventManager *eventManager) {
+SelectCommandStationMenu::SelectCommandStationMenu(const char *name, EventManager *eventManager) {
   setMenuName(name);
   setEventManager(eventManager);
 }
 
-void SelectActionMenu::handleUserConfirmationAction(UserConfirmationAction action) {
+void SelectCommandStationMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
-  case UserConfirmationAction::SingleClick:
-    CONSOLE.println("Single click");
+  case UserConfirmationAction::SingleClick: {
+    uint8_t serverIndex = getSelectedItemIndex();
+    _initiateCommandStationConnection(serverIndex);
     break;
-  case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("Double click");
-    break;
-  case UserConfirmationAction::LongPress:
-    CONSOLE.println("Long press");
-    break;
+  }
   default:
     break;
+  }
+}
+
+void SelectCommandStationMenu::_initiateCommandStationConnection(uint8_t serverIndex) {
+  EventManager *eventManager = getEventManager();
+  if (eventManager) {
+    EventData eventData(serverIndex);
+    eventManager->publish(EventType::CommandStationSelected, eventData);
   }
 }

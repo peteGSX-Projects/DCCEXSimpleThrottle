@@ -18,20 +18,15 @@
 
 #include "CommandStationListener.h"
 
-CommandStationListener::CommandStationListener() {}
+CommandStationListener::CommandStationListener(EventManager *eventManager) : _eventManager(eventManager) {}
 
 void CommandStationListener::receivedRosterList() {
-
+  EventData eventData;
+  _eventManager->publish(EventType::ReceivedRosterList, eventData);
 }
 
-void CommandStationListener::receivedLocoUpdate(Loco *loco) {
+void CommandStationListener::receivedLocoUpdate(Loco *loco) {}
 
-}
+void CommandStationListener::receivedTrackPower(TrackPower powerState) {}
 
-void CommandStationListener::receivedTrackPower(TrackPower powerState) {
-
-}
-
-void CommandStationListener::receivedReadLoco(int address) {
-
-}
+void CommandStationListener::receivedReadLoco(int address) {}

@@ -25,7 +25,8 @@ class SelectActionMenu : public BaseMenu {
 public:
   /// @brief Constructor for each menu
   /// @param name Pointer to the char array containing the name of the menu
-  SelectActionMenu(const char *name);
+  /// @param eventManager Pointer to the event manager for the application
+  SelectActionMenu(const char *name, EventManager *eventManager);
 
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
