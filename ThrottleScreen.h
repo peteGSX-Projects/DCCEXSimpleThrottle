@@ -62,10 +62,10 @@ private:
   Direction _direction;
   bool _directionChanged;
   Loco *_loco;
+  DCCEXProtocol *_dccexProtocolClient;
   uint8_t _throttleStep;
   uint8_t _throttleStepFaster;
   uint8_t _throttleStepFastest;
-  DCCEXProtocol *_dccexProtocolClient;
 };
 
 #endif // THROTTLESCREEN_H

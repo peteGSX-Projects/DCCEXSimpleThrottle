@@ -25,7 +25,10 @@ void CommandStationListener::receivedRosterList() {
   _eventManager->publish(EventType::ReceivedRosterList, eventData);
 }
 
-void CommandStationListener::receivedLocoUpdate(Loco *loco) {}
+void CommandStationListener::receivedLocoUpdate(Loco *loco) {
+  EventData eventData(loco);
+  _eventManager->publish(EventType::ReceivedLocoUpdate, eventData);
+}
 
 void CommandStationListener::receivedTrackPower(TrackPower powerState) {}
 

@@ -37,8 +37,10 @@ void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action)
       _directionChanged = true;
       if (_direction == Direction::Forward) {
         _direction = Direction::Reverse;
+        _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
       } else {
         _direction = Direction::Forward;
+        _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
       }
     } else {
       _speed = 0;
@@ -80,36 +82,42 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
     if (_speed < 128) {
       _speed += _throttleStep;
       _speedChanged = true;
+      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
     }
     break;
   case UserSelectionAction::UpFaster:
     if (_speed < 128) {
       _speed += _throttleStepFaster;
       _speedChanged = true;
+      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
     }
     break;
   case UserSelectionAction::UpFastest:
     if (_speed < 128) {
       _speed += _throttleStepFastest;
       _speedChanged = true;
+      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
     }
     break;
   case UserSelectionAction::Down:
     if (_speed > 0) {
       _speed -= _throttleStep;
       _speedChanged = true;
+      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
     }
     break;
   case UserSelectionAction::DownFaster:
     if (_speed > 0) {
       _speed -= _throttleStepFaster;
       _speedChanged = true;
+      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
     }
     break;
   case UserSelectionAction::DownFastest:
     if (_speed > 0) {
       _speed -= _throttleStepFastest;
       _speedChanged = true;
+      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
     }
     break;
   default:
