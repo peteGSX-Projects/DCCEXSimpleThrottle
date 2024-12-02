@@ -54,6 +54,9 @@ public:
   /// @param firstRosterLoco Pointer to the first loco in the roster
   void setupLocoMenu(Loco *firstRosterLoco);
 
+  /// @brief If a local roster is defined in myConfig.h, set it up in the SelectLocoMenu
+  void setupLocalRoster();
+
 private:
   EventManager *_eventManager;
   SelectActionMenu *_selectActionMenu;

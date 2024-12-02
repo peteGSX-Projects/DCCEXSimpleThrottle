@@ -1,7 +1,8 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.10"
+#define VERSION "0.0.11"
+// 0.0.11 - Implement support for a local roster list in myConfig.h
 // 0.0.10 - Implement turning lights on/off with double click
 // 0.0.9  - Re-write codebase
 // 0.0.8  - Simplify user configuration

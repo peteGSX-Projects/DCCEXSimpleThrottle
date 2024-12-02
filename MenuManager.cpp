@@ -50,3 +50,17 @@ void MenuManager::setupLocoMenu(Loco *firstRosterLoco) {
     _selectLocoMenu->addItem(new LocoMenuItem(rosterLoco));
   }
 }
+
+void MenuManager::setupLocalRoster() {
+#if defined(LOCAL_ROSTER_COUNT)
+  const uint8_t localRosterCount = LOCAL_ROSTER_COUNT;
+  const char *rosterNames[] = LOCAL_ROSTER_NAMES;       // array to store names of local roster entries
+  const int rosterAddresses[] = LOCAL_ROSTER_ADDRESSES; // array to store addresses of local roster entries
+  for (uint8_t i = 0; i < localRosterCount; i++) {
+    Loco *localLoco = new Loco(rosterAddresses[i], LocoSource::LocoSourceRoster);
+    localLoco->setName(rosterNames[i]);
+    LocoMenuItem *locoItem = new LocoMenuItem(localLoco);
+    _selectLocoMenu->addItem(locoItem);
+  }
+#endif // LOCAL_ROSTER_COUNT
+}

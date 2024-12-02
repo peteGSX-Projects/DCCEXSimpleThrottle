@@ -51,6 +51,9 @@ void AppConfiguration::initialise() {
   _menuManager->setupCommandStationMenu(_commandStationList, _commandStationCount);
   _connectionManager->setCommandStationList(_commandStationList, _commandStationCount);
 #endif // WIFI_ENABLED
+#if defined (LOCAL_ROSTER_COUNT)
+  _menuManager->setupLocalRoster();
+#endif // LOCAL_ROSTER_COUNT
   _commandStationClient->begin();
 }
 
