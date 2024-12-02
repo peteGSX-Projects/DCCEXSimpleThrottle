@@ -81,6 +81,9 @@ private:
 
   /// @brief Toggle track power state - if unknown, turn on
   void _toggleTrackPower();
+
+  /// @brief Toggle lights (assumed to be F0) on/off
+  void _toggleLights();
 };
 
 #endif // THROTTLESCREEN_H
