@@ -22,7 +22,7 @@ CommandStationListener::CommandStationListener(EventManager *eventManager) : _ev
 
 void CommandStationListener::receivedRosterList() {
   EventData eventData;
-  _eventManager->publish(EventType::ReceivedRosterList, eventData);
+  // _eventManager->publish(EventType::ReceivedRosterList, eventData);
 }
 
 void CommandStationListener::receivedLocoUpdate(Loco *loco) {

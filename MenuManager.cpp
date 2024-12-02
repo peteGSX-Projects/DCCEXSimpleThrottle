@@ -58,7 +58,10 @@ void MenuManager::setupLocalRoster() {
   const int rosterAddresses[] = LOCAL_ROSTER_ADDRESSES; // array to store addresses of local roster entries
   for (uint8_t i = 0; i < localRosterCount; i++) {
     Loco *localLoco = new Loco(rosterAddresses[i], LocoSource::LocoSourceRoster);
-    localLoco->setName(rosterNames[i]);
+    char tempName[strlen(rosterNames[i]) + 3];
+    snprintf(tempName, sizeof(tempName), "* %s", rosterNames[i]);
+    char *menuItemName = strdup(tempName);
+    localLoco->setName(menuItemName);
     LocoMenuItem *locoItem = new LocoMenuItem(localLoco);
     _selectLocoMenu->addItem(locoItem);
   }
