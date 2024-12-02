@@ -49,7 +49,7 @@ void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action)
     }
     break;
   case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("Toggle lights on|off");
+    _toggleLights();
     break;
   case UserConfirmationAction::LongPress:
     if (_speed > 0) {
@@ -175,5 +175,14 @@ void ThrottleScreen::_toggleTrackPower() {
     _dccexProtocolClient->powerOn();
   } else {
     _dccexProtocolClient->powerOff();
+  }
+}
+
+void ThrottleScreen::_toggleLights() {
+  int function = 0;
+  if (_dccexProtocolClient->isFunctionOn(_loco, function)) {
+    _dccexProtocolClient->functionOff(_loco, function);
+  } else {
+    _dccexProtocolClient->functionOn(_loco, function);
   }
 }
