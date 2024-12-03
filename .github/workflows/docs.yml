@@ -12,13 +12,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Requirements
         run: |
-          pip3 install -r requirements.txt
           sudo apt-get install doxygen graphviz
       - name: Build docs
         run: |
           cd docs
-          make html
           touch _build/html/.nojekyll
+          doxygen Doxyfile.in
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@ba1486788b0490a235422264426c45848eac35c6
         with:
