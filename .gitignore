@@ -37,3 +37,5 @@ myWiFiConfig.h
 
 .vscode
 .pio
+venv
+_build
