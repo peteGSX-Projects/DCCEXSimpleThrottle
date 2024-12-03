@@ -1,0 +1,4 @@
+<map id="ProgressScreen::drawScreen" name="ProgressScreen::drawScreen">
+<area shape="rect" id="node1" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="5,13,212,39"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31" title="Display progress screen for the specified activity." alt="" coords="260,5,444,47"/>
+</map>

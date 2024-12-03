@@ -1,0 +1,10 @@
+<map id="DisplayInterface::needsRedraw" name="DisplayInterface::needsRedraw">
+<area shape="rect" id="node1" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="469,177,695,203"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a7bfa8d8282b926ed6b32d61d1fba2885" title="Display error screen." alt="" coords="246,71,410,112"/>
+<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="246,136,410,177"/>
+<area shape="rect" id="node6" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="243,201,413,243"/>
+<area shape="rect" id="node7" href="$classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231" title="Display the startup screen." alt="" coords="246,267,410,308"/>
+<area shape="rect" id="node8" href="$classU8G2SH1106Display.html#ad2e068b4be3350c3e12dbf461befdafb" title="Display the throttle screen." alt="" coords="246,332,410,373"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>

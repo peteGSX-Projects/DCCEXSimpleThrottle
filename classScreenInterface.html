@@ -64,39 +64,49 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classScreenInterface-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ScreenInterface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ScreenInterface_8h_source.html">ScreenInterface.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ScreenInterface:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classScreenInterface.png" usemap="#ScreenInterface_map" alt=""/>
-  <map id="ScreenInterface_map" name="ScreenInterface_map">
-<area href="classErrorScreen.html" alt="ErrorScreen" shape="rect" coords="0,56,104,80"/>
-<area href="classMenuScreen.html" alt="MenuScreen" shape="rect" coords="114,56,218,80"/>
-<area href="classProgressScreen.html" alt="ProgressScreen" shape="rect" coords="228,56,332,80"/>
-<area href="classStartupScreen.html" title="Class to display startup information on screen and respond to user interactions Displays the DCC-EX S..." alt="StartupScreen" shape="rect" coords="342,56,446,80"/>
-<area href="classThrottleScreen.html" alt="ThrottleScreen" shape="rect" coords="456,56,560,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="classScreenInterface__inherit__graph.png" border="0" usemap="#aScreenInterface_inherit__map" alt="Inheritance graph"/></div>
+<map name="aScreenInterface_inherit__map" id="aScreenInterface_inherit__map">
+<area shape="rect" title=" " alt="" coords="253,5,377,32"/>
+<area shape="rect" href="classErrorScreen.html" title=" " alt="" coords="5,80,103,107"/>
+<area shape="rect" href="classMenuScreen.html" title=" " alt="" coords="127,80,229,107"/>
+<area shape="rect" href="classProgressScreen.html" title=" " alt="" coords="254,80,377,107"/>
+<area shape="rect" href="classStartupScreen.html" title="Class to display startup information on screen and respond to user interactions Displays the DCC&#45;EX S..." alt="" coords="401,80,515,107"/>
+<area shape="rect" href="classThrottleScreen.html" title=" " alt="" coords="539,80,657,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ScreenInterface:</div>
+<div class="dyncontent">
+<div class="center"><img src="classScreenInterface__coll__graph.png" border="0" usemap="#aScreenInterface_coll__map" alt="Collaboration graph"/></div>
+<map name="aScreenInterface_coll__map" id="aScreenInterface_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,129,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f8f461dacc438bd7057bdc50eb01901"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a3f8f461dacc438bd7057bdc50eb01901">handleUserConfirmationAction</a> (UserConfirmationAction action)=0</td></tr>
+<tr class="memitem:a3f8f461dacc438bd7057bdc50eb01901"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a3f8f461dacc438bd7057bdc50eb01901">handleUserConfirmationAction</a> (<a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a> action)=0</td></tr>
 <tr class="memdesc:a3f8f461dacc438bd7057bdc50eb01901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to define what to do when user confirmation actions are performed.  <a href="classScreenInterface.html#a3f8f461dacc438bd7057bdc50eb01901">More...</a><br /></td></tr>
 <tr class="separator:a3f8f461dacc438bd7057bdc50eb01901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b54a42e1b558083f6a53a455ac82a01"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a3b54a42e1b558083f6a53a455ac82a01">handleUserSelectionAction</a> (UserSelectionAction action, bool throttleInverted=false)=0</td></tr>
+<tr class="memitem:a3b54a42e1b558083f6a53a455ac82a01"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a3b54a42e1b558083f6a53a455ac82a01">handleUserSelectionAction</a> (<a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a> action, bool throttleInverted=false)=0</td></tr>
 <tr class="memdesc:a3b54a42e1b558083f6a53a455ac82a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to define what to do when user selection actions are performed throttleInverted enables an interface to decrease speed when moving up and vice versa, which is handy for a rotary encoder.  <a href="classScreenInterface.html#a3b54a42e1b558083f6a53a455ac82a01">More...</a><br /></td></tr>
 <tr class="separator:a3b54a42e1b558083f6a53a455ac82a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b29b27e201f65cf7be827e58814f8c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a47b29b27e201f65cf7be827e58814f8c">drawScreen</a> (<a class="el" href="classDisplayInterface.html">DisplayInterface</a> *display)=0</td></tr>
 <tr class="memdesc:a47b29b27e201f65cf7be827e58814f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to draw the associated screen object on the specified display.  <a href="classScreenInterface.html#a47b29b27e201f65cf7be827e58814f8c">More...</a><br /></td></tr>
 <tr class="separator:a47b29b27e201f65cf7be827e58814f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbdcf780ef2da66d1a77069dd1bf9224"><td class="memItemLeft" align="right" valign="top"><a id="acbdcf780ef2da66d1a77069dd1bf9224"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">~ScreenInterface</a> ()=default</td></tr>
-<tr class="memdesc:acbdcf780ef2da66d1a77069dd1bf9224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object. <br /></td></tr>
+<tr class="memitem:acbdcf780ef2da66d1a77069dd1bf9224"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">~ScreenInterface</a> ()=default</td></tr>
+<tr class="memdesc:acbdcf780ef2da66d1a77069dd1bf9224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object.  <a href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">More...</a><br /></td></tr>
 <tr class="separator:acbdcf780ef2da66d1a77069dd1bf9224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63c5fee6885b582e1af60668db96df33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreenInterface.html">ScreenInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a63c5fee6885b582e1af60668db96df33">getNext</a> ()</td></tr>
 <tr class="memdesc:a63c5fee6885b582e1af60668db96df33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next screen object in the linked list.  <a href="classScreenInterface.html#a63c5fee6885b582e1af60668db96df33">More...</a><br /></td></tr>
@@ -104,7 +114,40 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:aa2e7fcb2e1c7e5739a9251804063698a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#aa2e7fcb2e1c7e5739a9251804063698a">setNext</a> (<a class="el" href="classScreenInterface.html">ScreenInterface</a> *screen)</td></tr>
 <tr class="memdesc:aa2e7fcb2e1c7e5739a9251804063698a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next screen object in the linked list.  <a href="classScreenInterface.html#aa2e7fcb2e1c7e5739a9251804063698a">More...</a><br /></td></tr>
 <tr class="separator:aa2e7fcb2e1c7e5739a9251804063698a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2e1412488ff3cb2c1e12cf08448c2e69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreenInterface.html">ScreenInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a2e1412488ff3cb2c1e12cf08448c2e69">_next</a></td></tr>
+<tr class="separator:a2e1412488ff3cb2c1e12cf08448c2e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acbdcf780ef2da66d1a77069dd1bf9224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbdcf780ef2da66d1a77069dd1bf9224">&#9670;&nbsp;</a></span>~ScreenInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ScreenInterface::~ScreenInterface </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor for the object. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a47b29b27e201f65cf7be827e58814f8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a47b29b27e201f65cf7be827e58814f8c">&#9670;&nbsp;</a></span>drawScreen()</h2>
@@ -182,7 +225,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">virtual void ScreenInterface::handleUserConfirmationAction </td>
           <td>(</td>
-          <td class="paramtype">UserConfirmationAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a>&#160;</td>
           <td class="paramname"><em>action</em></td><td>)</td>
           <td></td>
         </tr>
@@ -218,7 +261,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">virtual void ScreenInterface::handleUserSelectionAction </td>
           <td>(</td>
-          <td class="paramtype">UserSelectionAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a>&#160;</td>
           <td class="paramname"><em>action</em>, </td>
         </tr>
         <tr>
@@ -284,6 +327,29 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2e1412488ff3cb2c1e12cf08448c2e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e1412488ff3cb2c1e12cf08448c2e69">&#9670;&nbsp;</a></span>_next</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScreenInterface.html">ScreenInterface</a>* ScreenInterface::_next</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

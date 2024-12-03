@@ -64,11 +64,30 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classMenuManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MenuManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="MenuManager_8h_source.html">MenuManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for MenuManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuManager__coll__graph.png" border="0" usemap="#aMenuManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aMenuManager_coll__map" id="aMenuManager_coll__map">
+<area shape="rect" title=" " alt="" coords="347,452,461,479"/>
+<area shape="rect" href="classSelectCommandStationMenu.html" title=" " alt="" coords="5,363,216,389"/>
+<area shape="rect" href="classBaseMenu.html" title="Class for maintaining a linked list of menu items to form a menu." alt="" coords="289,273,380,300"/>
+<area shape="rect" href="classSelectActionMenu.html" title="Menu to allow for extra actions to be performed For future use, not actually enabled yet." alt="" coords="256,363,395,389"/>
+<area shape="rect" href="classSelectLocoMenu.html" title=" " alt="" coords="420,363,548,389"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="275,184,395,211"/>
+<area shape="rect" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="510,184,626,211"/>
+<area shape="rect" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="453,95,683,121"/>
+<area shape="rect" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="513,5,623,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -87,6 +106,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a897bd7549b7bec6ff8366ea39ac1b14a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a">setupLocoMenu</a> (Loco *firstRosterLoco)</td></tr>
 <tr class="memdesc:a897bd7549b7bec6ff8366ea39ac1b14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the loco menu based on the provided roster linked list and (if enabled) the local roster.  <a href="classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a">More...</a><br /></td></tr>
 <tr class="separator:a897bd7549b7bec6ff8366ea39ac1b14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5498aa7ce889bbe33286b2ddeb0a6f65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuManager.html#a5498aa7ce889bbe33286b2ddeb0a6f65">_eventManager</a></td></tr>
+<tr class="separator:a5498aa7ce889bbe33286b2ddeb0a6f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf63c74d74b1ef20b40d1d8b35940770"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSelectActionMenu.html">SelectActionMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuManager.html#adf63c74d74b1ef20b40d1d8b35940770">_selectActionMenu</a></td></tr>
+<tr class="separator:adf63c74d74b1ef20b40d1d8b35940770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72a72fa6e82ad165b3eb93408074955"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSelectLocoMenu.html">SelectLocoMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuManager.html#ad72a72fa6e82ad165b3eb93408074955">_selectLocoMenu</a></td></tr>
+<tr class="separator:ad72a72fa6e82ad165b3eb93408074955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e9aede1e5708fe7fd0ec3f6a697975"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSelectCommandStationMenu.html">SelectCommandStationMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuManager.html#ac1e9aede1e5708fe7fd0ec3f6a697975">_selectCommandStationMenu</a></td></tr>
+<tr class="separator:ac1e9aede1e5708fe7fd0ec3f6a697975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7780f71b57ac755cf5292af3a5732be7"></a>
@@ -133,6 +163,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the Select Action menu. </p>
 <dl class="section return"><dt>Returns</dt><dd>Menu </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuManager_a81e53fff9a93681ebfcc7e563a38459b_icgraph.png" border="0" usemap="#aclassMenuManager_a81e53fff9a93681ebfcc7e563a38459b_icgraph" alt=""/></div>
+<map name="aclassMenuManager_a81e53fff9a93681ebfcc7e563a38459b_icgraph" id="aclassMenuManager_a81e53fff9a93681ebfcc7e563a38459b_icgraph">
+<area shape="rect" title="Get the Select Action menu." alt="" coords="469,13,731,39"/>
+<area shape="rect" href="classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -153,6 +193,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the Select CommandStation menu. </p>
 <dl class="section return"><dt>Returns</dt><dd>Menu </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuManager_a5c69017e3aa561385b5bfb40d9516a70_icgraph.png" border="0" usemap="#aclassMenuManager_a5c69017e3aa561385b5bfb40d9516a70_icgraph" alt=""/></div>
+<map name="aclassMenuManager_a5c69017e3aa561385b5bfb40d9516a70_icgraph" id="aclassMenuManager_a5c69017e3aa561385b5bfb40d9516a70_icgraph">
+<area shape="rect" title="Get the Select CommandStation menu." alt="" coords="492,5,743,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,5,444,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -173,6 +223,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the Select Loco menu. </p>
 <dl class="section return"><dt>Returns</dt><dd>Menu </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuManager_ab70aebed1c668b2072f63baf8a78ce54_icgraph.png" border="0" usemap="#aclassMenuManager_ab70aebed1c668b2072f63baf8a78ce54_icgraph" alt=""/></div>
+<map name="aclassMenuManager_ab70aebed1c668b2072f63baf8a78ce54_icgraph" id="aclassMenuManager_ab70aebed1c668b2072f63baf8a78ce54_icgraph">
+<area shape="rect" title="Get the Select Loco menu." alt="" coords="469,13,720,39"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -199,12 +259,123 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_cgraph.png" border="0" usemap="#aclassMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_cgraph" alt=""/></div>
+<map name="aclassMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_cgraph" id="aclassMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_cgraph">
+<area shape="rect" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="5,56,231,83"/>
+<area shape="rect" href="classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="279,56,431,83"/>
+<area shape="rect" href="classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="481,5,661,32"/>
+<area shape="rect" href="classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="479,56,663,83"/>
+<area shape="rect" href="classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="481,107,660,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_icgraph.png" border="0" usemap="#aclassMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_icgraph" alt=""/></div>
+<map name="aclassMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_icgraph" id="aclassMenuManager_a897bd7549b7bec6ff8366ea39ac1b14a_icgraph">
+<area shape="rect" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="503,13,728,39"/>
+<area shape="rect" href="classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,5,455,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5498aa7ce889bbe33286b2ddeb0a6f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5498aa7ce889bbe33286b2ddeb0a6f65">&#9670;&nbsp;</a></span>_eventManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEventManager.html">EventManager</a>* MenuManager::_eventManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf63c74d74b1ef20b40d1d8b35940770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf63c74d74b1ef20b40d1d8b35940770">&#9670;&nbsp;</a></span>_selectActionMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSelectActionMenu.html">SelectActionMenu</a>* MenuManager::_selectActionMenu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1e9aede1e5708fe7fd0ec3f6a697975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e9aede1e5708fe7fd0ec3f6a697975">&#9670;&nbsp;</a></span>_selectCommandStationMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSelectCommandStationMenu.html">SelectCommandStationMenu</a>* MenuManager::_selectCommandStationMenu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad72a72fa6e82ad165b3eb93408074955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72a72fa6e82ad165b3eb93408074955">&#9670;&nbsp;</a></span>_selectLocoMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSelectLocoMenu.html">SelectLocoMenu</a>* MenuManager::_selectLocoMenu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="MenuManager_8h_source.html">MenuManager.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/MenuManager.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="MenuManager_8cpp.html">MenuManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

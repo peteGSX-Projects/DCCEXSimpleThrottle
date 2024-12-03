@@ -1,0 +1,7 @@
+<map id="MenuManager::setupLocoMenu" name="MenuManager::setupLocoMenu">
+<area shape="rect" id="node1" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="5,56,231,83"/>
+<area shape="rect" id="node2" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="279,56,431,83"/>
+<area shape="rect" id="node3" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="481,5,661,32"/>
+<area shape="rect" id="node4" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="479,56,663,83"/>
+<area shape="rect" id="node5" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="481,107,660,133"/>
+</map>

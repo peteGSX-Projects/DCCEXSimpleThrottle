@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['displayerrorscreen_162',['displayErrorScreen',['../classU8G2SH1106Display.html#a7bfa8d8282b926ed6b32d61d1fba2885',1,'U8G2SH1106Display::displayErrorScreen()'],['../classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58',1,'DisplayInterface::displayErrorScreen()']]],
-  ['displaymenu_163',['displayMenu',['../classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6',1,'BaseMenu']]],
-  ['displaymenuscreen_164',['displayMenuScreen',['../classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4',1,'DisplayInterface::displayMenuScreen()'],['../classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6',1,'U8G2SH1106Display::displayMenuScreen()']]],
-  ['displayprogressscreen_165',['displayProgressScreen',['../classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31',1,'DisplayInterface::displayProgressScreen()'],['../classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda',1,'U8G2SH1106Display::displayProgressScreen(const char *activity, uint8_t counter) override']]],
-  ['displaystartupscreen_166',['displayStartupScreen',['../classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231',1,'U8G2SH1106Display::displayStartupScreen()'],['../classDisplayInterface.html#a810a76dde10eb647ecda0a732f52346f',1,'DisplayInterface::displayStartupScreen(const char *headerText, const char *version)=0']]],
-  ['displaythrottlescreen_167',['displayThrottleScreen',['../classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6',1,'DisplayInterface::displayThrottleScreen()'],['../classU8G2SH1106Display.html#ad2e068b4be3350c3e12dbf461befdafb',1,'U8G2SH1106Display::displayThrottleScreen()']]],
-  ['drawscreen_168',['drawScreen',['../classErrorScreen.html#acc54926b9c1387d3007bd2861e47f85b',1,'ErrorScreen::drawScreen()'],['../classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b',1,'MenuScreen::drawScreen()'],['../classProgressScreen.html#a7b33a3a2c99b0bc8d48bea6b7be2581a',1,'ProgressScreen::drawScreen()'],['../classScreenInterface.html#a47b29b27e201f65cf7be827e58814f8c',1,'ScreenInterface::drawScreen()'],['../classStartupScreen.html#a1997937f85258571a79e47ca255865ad',1,'StartupScreen::drawScreen()'],['../classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69',1,'ThrottleScreen::drawScreen()']]]
+  ['calcdoubleclick_546',['calcDoubleClick',['../classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e',1,'Switch']]],
+  ['calclongpress_547',['calcLongPress',['../classSwitch.html#afcb029f60baed406f88167af02954051',1,'Switch']]],
+  ['calcsingleclick_548',['calcSingleClick',['../classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0',1,'Switch']]],
+  ['callaction_549',['callAction',['../classActionMenuItem.html#a119d5788f12d4558351c805fcc922db6',1,'ActionMenuItem']]],
+  ['clear_550',['clear',['../classDisplayInterface.html#a340f52ad8338b0929ec78d4d0cb629c3',1,'DisplayInterface::clear()'],['../classU8G2SH1106Display.html#a4a110bc67c9b1571346146691f8a8c39',1,'U8G2SH1106Display::clear()']]],
+  ['commandstationclient_551',['CommandStationClient',['../classCommandStationClient.html#acf7d07ae39ea8ad4ecf9ba94c8cf8cba',1,'CommandStationClient']]],
+  ['commandstationlistener_552',['CommandStationListener',['../classCommandStationListener.html#a230cebb526a1496ae59425cefb2d4fe8',1,'CommandStationListener']]],
+  ['connected_553',['connected',['../classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f',1,'ConnectionManager']]],
+  ['connectionmanager_554',['ConnectionManager',['../classConnectionManager.html#a68db2f9138942ef16d50ebd753188410',1,'ConnectionManager']]]
 ];

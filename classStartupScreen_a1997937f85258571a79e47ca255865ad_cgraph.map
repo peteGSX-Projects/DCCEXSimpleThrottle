@@ -1,0 +1,4 @@
+<map id="StartupScreen::drawScreen" name="StartupScreen::drawScreen">
+<area shape="rect" id="node1" title="Draw this screen on the specified display." alt="" coords="5,13,203,39"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#a810a76dde10eb647ecda0a732f52346f" title="Display the startup screen." alt="" coords="251,5,435,47"/>
+</map>

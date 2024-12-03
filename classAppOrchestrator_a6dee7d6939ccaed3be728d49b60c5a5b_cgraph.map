@@ -1,0 +1,4 @@
+<map id="AppOrchestrator::updateThrottleTrackPower" name="AppOrchestrator::updateThrottleTrackPower">
+<area shape="rect" id="node1" title="Notify the throttle screen of a track power update." alt="" coords="5,5,237,47"/>
+<area shape="rect" id="node2" href="$classThrottleScreen.html#a126ba15f59a91e2b29f08ac948262c50" title="Method to call when a track power update has been received." alt="" coords="285,5,484,47"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="BaseMenuItem" name="BaseMenuItem">
+<area shape="rect" id="node1" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,5,125,32"/>
+</map>

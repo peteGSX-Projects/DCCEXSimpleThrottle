@@ -64,30 +64,43 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classThrottleScreen-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ThrottleScreen Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ThrottleScreen_8h_source.html">ThrottleScreen.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ThrottleScreen:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classThrottleScreen.png" usemap="#ThrottleScreen_map" alt=""/>
-  <map id="ThrottleScreen_map" name="ThrottleScreen_map">
-<area href="classScreenInterface.html" alt="ScreenInterface" shape="rect" coords="0,0,103,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classThrottleScreen__inherit__graph.png" border="0" usemap="#aThrottleScreen_inherit__map" alt="Inheritance graph"/></div>
+<map name="aThrottleScreen_inherit__map" id="aThrottleScreen_inherit__map">
+<area shape="rect" title=" " alt="" coords="9,80,126,107"/>
+<area shape="rect" href="classScreenInterface.html" title=" " alt="" coords="5,5,129,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ThrottleScreen:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen__coll__graph.png" border="0" usemap="#aThrottleScreen_coll__map" alt="Collaboration graph"/></div>
+<map name="aThrottleScreen_coll__map" id="aThrottleScreen_coll__map">
+<area shape="rect" title=" " alt="" coords="9,81,126,108"/>
+<area shape="rect" href="classScreenInterface.html" title=" " alt="" coords="5,5,129,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4358f2adf6e43c03bd5ea78445615ea1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a4358f2adf6e43c03bd5ea78445615ea1">ThrottleScreen</a> (DCCEXProtocol *dccexProtocolClient, uint8_t throttleStep, uint8_t throttleStepFaster, uint8_t throttleStepFastest)</td></tr>
 <tr class="memdesc:a4358f2adf6e43c03bd5ea78445615ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the throttle screen, requires throttle step values.  <a href="classThrottleScreen.html#a4358f2adf6e43c03bd5ea78445615ea1">More...</a><br /></td></tr>
 <tr class="separator:a4358f2adf6e43c03bd5ea78445615ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5db2ee5376bdce83703696bbe6f921f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1">handleUserConfirmationAction</a> (UserConfirmationAction action) override</td></tr>
+<tr class="memitem:a5db2ee5376bdce83703696bbe6f921f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1">handleUserConfirmationAction</a> (<a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a> action) override</td></tr>
 <tr class="memdesc:a5db2ee5376bdce83703696bbe6f921f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to define what to do when user confirmation actions are performed.  <a href="classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1">More...</a><br /></td></tr>
 <tr class="separator:a5db2ee5376bdce83703696bbe6f921f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7aefd5e5912167d38bcbb7b48a98462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462">handleUserSelectionAction</a> (UserSelectionAction action, bool throttleInverted) override</td></tr>
+<tr class="memitem:aa7aefd5e5912167d38bcbb7b48a98462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462">handleUserSelectionAction</a> (<a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a> action, bool throttleInverted) override</td></tr>
 <tr class="memdesc:aa7aefd5e5912167d38bcbb7b48a98462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to define what to do when user selection actions are performed.  <a href="classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462">More...</a><br /></td></tr>
 <tr class="separator:aa7aefd5e5912167d38bcbb7b48a98462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75de25e87feda8ce74e36d03b1cf7f69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69">drawScreen</a> (<a class="el" href="classDisplayInterface.html">DisplayInterface</a> *display) override</td></tr>
@@ -105,18 +118,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a126ba15f59a91e2b29f08ac948262c50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a126ba15f59a91e2b29f08ac948262c50">trackPowerUpdateReceived</a> (TrackPower trackPower)</td></tr>
 <tr class="memdesc:a126ba15f59a91e2b29f08ac948262c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to call when a track power update has been received.  <a href="classThrottleScreen.html#a126ba15f59a91e2b29f08ac948262c50">More...</a><br /></td></tr>
 <tr class="separator:a126ba15f59a91e2b29f08ac948262c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32002fa4856678a9977725bf2c5e4756"><td class="memItemLeft" align="right" valign="top"><a id="a32002fa4856678a9977725bf2c5e4756"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756">requestLocoUpdate</a> ()</td></tr>
-<tr class="memdesc:a32002fa4856678a9977725bf2c5e4756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly request an update for the currently selected loco address. <br /></td></tr>
+<tr class="memitem:a32002fa4856678a9977725bf2c5e4756"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756">requestLocoUpdate</a> ()</td></tr>
+<tr class="memdesc:a32002fa4856678a9977725bf2c5e4756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly request an update for the currently selected loco address.  <a href="classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756">More...</a><br /></td></tr>
 <tr class="separator:a32002fa4856678a9977725bf2c5e4756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9c10d7a8f1fb45f8d0f64030c13d885"><td class="memItemLeft" align="right" valign="top"><a id="ab9c10d7a8f1fb45f8d0f64030c13d885"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885">requestTrackPowerUpdate</a> ()</td></tr>
-<tr class="memdesc:ab9c10d7a8f1fb45f8d0f64030c13d885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly request a track power update (actually sends <s> for server version which does this) </s><br /></td></tr>
+<tr class="memitem:ab9c10d7a8f1fb45f8d0f64030c13d885"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885">requestTrackPowerUpdate</a> ()</td></tr>
+<tr class="memdesc:ab9c10d7a8f1fb45f8d0f64030c13d885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly request a track power update (actually sends <s> for server version which does this) </s> <a href="classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885">More...</a><br /></td></tr>
 <tr class="separator:ab9c10d7a8f1fb45f8d0f64030c13d885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classScreenInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classScreenInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classScreenInterface.html">ScreenInterface</a></td></tr>
-<tr class="memitem:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top"><a id="acbdcf780ef2da66d1a77069dd1bf9224"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">~ScreenInterface</a> ()=default</td></tr>
-<tr class="memdesc:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object. <br /></td></tr>
+<tr class="memitem:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">~ScreenInterface</a> ()=default</td></tr>
+<tr class="memdesc:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object.  <a href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">More...</a><br /></td></tr>
 <tr class="separator:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63c5fee6885b582e1af60668db96df33 inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreenInterface.html">ScreenInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a63c5fee6885b582e1af60668db96df33">getNext</a> ()</td></tr>
 <tr class="memdesc:a63c5fee6885b582e1af60668db96df33 inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next screen object in the linked list.  <a href="classScreenInterface.html#a63c5fee6885b582e1af60668db96df33">More...</a><br /></td></tr>
@@ -124,6 +134,40 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:aa2e7fcb2e1c7e5739a9251804063698a inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#aa2e7fcb2e1c7e5739a9251804063698a">setNext</a> (<a class="el" href="classScreenInterface.html">ScreenInterface</a> *screen)</td></tr>
 <tr class="memdesc:aa2e7fcb2e1c7e5739a9251804063698a inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next screen object in the linked list.  <a href="classScreenInterface.html#aa2e7fcb2e1c7e5739a9251804063698a">More...</a><br /></td></tr>
 <tr class="separator:aa2e7fcb2e1c7e5739a9251804063698a inherit pub_methods_classScreenInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0be6cce46a38220fe324c425803f0c52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52">_toggleTrackPower</a> ()</td></tr>
+<tr class="memdesc:a0be6cce46a38220fe324c425803f0c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle track power state - if unknown, turn on.  <a href="classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52">More...</a><br /></td></tr>
+<tr class="separator:a0be6cce46a38220fe324c425803f0c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036f266f412384948ca6a132d08ba5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3">_toggleLights</a> ()</td></tr>
+<tr class="memdesc:a036f266f412384948ca6a132d08ba5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle lights (assumed to be F0) on/off.  <a href="classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3">More...</a><br /></td></tr>
+<tr class="separator:a036f266f412384948ca6a132d08ba5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3208e52bb8389959c5dd4b564dc9b3e3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a3208e52bb8389959c5dd4b564dc9b3e3">_speed</a></td></tr>
+<tr class="separator:a3208e52bb8389959c5dd4b564dc9b3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e3579cd0f03ebddf6b49d838620cd7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a14e3579cd0f03ebddf6b49d838620cd7">_speedChanged</a></td></tr>
+<tr class="separator:a14e3579cd0f03ebddf6b49d838620cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bf4fe1bf4026d4782a8f4bbc82f5c10"><td class="memItemLeft" align="right" valign="top">Direction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a6bf4fe1bf4026d4782a8f4bbc82f5c10">_direction</a></td></tr>
+<tr class="separator:a6bf4fe1bf4026d4782a8f4bbc82f5c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126b8a7638e155d198d0129238a57fd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a126b8a7638e155d198d0129238a57fd8">_directionChanged</a></td></tr>
+<tr class="separator:a126b8a7638e155d198d0129238a57fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d23b6afd7dfad41f5d6f4eb26251776"><td class="memItemLeft" align="right" valign="top">Loco *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a7d23b6afd7dfad41f5d6f4eb26251776">_loco</a></td></tr>
+<tr class="separator:a7d23b6afd7dfad41f5d6f4eb26251776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0b30b73da3d9d8a004bc574a482894"><td class="memItemLeft" align="right" valign="top">TrackPower&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a4b0b30b73da3d9d8a004bc574a482894">_trackPower</a></td></tr>
+<tr class="separator:a4b0b30b73da3d9d8a004bc574a482894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d165389b7e7fd2d5ef002da537d2b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a79d165389b7e7fd2d5ef002da537d2b4">_trackPowerChanged</a></td></tr>
+<tr class="separator:a79d165389b7e7fd2d5ef002da537d2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e7cf20ac59204c2a17d2d23eb83710"><td class="memItemLeft" align="right" valign="top">DCCEXProtocol *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a19e7cf20ac59204c2a17d2d23eb83710">_dccexProtocolClient</a></td></tr>
+<tr class="separator:a19e7cf20ac59204c2a17d2d23eb83710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c311cc12a5e83b71fd6026d90a3392"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#ad9c311cc12a5e83b71fd6026d90a3392">_throttleStep</a></td></tr>
+<tr class="separator:ad9c311cc12a5e83b71fd6026d90a3392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938551dcb7f9718cbb29b80aa5794a59"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a938551dcb7f9718cbb29b80aa5794a59">_throttleStepFaster</a></td></tr>
+<tr class="separator:a938551dcb7f9718cbb29b80aa5794a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68dcd401dd54100164bd1ccf3244d97c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThrottleScreen.html#a68dcd401dd54100164bd1ccf3244d97c">_throttleStepFastest</a></td></tr>
+<tr class="separator:a68dcd401dd54100164bd1ccf3244d97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4358f2adf6e43c03bd5ea78445615ea1"></a>
@@ -178,6 +222,82 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a036f266f412384948ca6a132d08ba5e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a036f266f412384948ca6a132d08ba5e3">&#9670;&nbsp;</a></span>_toggleLights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThrottleScreen::_toggleLights </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggle lights (assumed to be F0) on/off. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a036f266f412384948ca6a132d08ba5e3_icgraph.png" border="0" usemap="#aclassThrottleScreen_a036f266f412384948ca6a132d08ba5e3_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a036f266f412384948ca6a132d08ba5e3_icgraph" id="aclassThrottleScreen_a036f266f412384948ca6a132d08ba5e3_icgraph">
+<area shape="rect" title="Toggle lights (assumed to be F0) on/off." alt="" coords="716,13,928,39"/>
+<area shape="rect" href="classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="469,5,668,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0be6cce46a38220fe324c425803f0c52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be6cce46a38220fe324c425803f0c52">&#9670;&nbsp;</a></span>_toggleTrackPower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThrottleScreen::_toggleTrackPower </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggle track power state - if unknown, turn on. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a0be6cce46a38220fe324c425803f0c52_icgraph.png" border="0" usemap="#aclassThrottleScreen_a0be6cce46a38220fe324c425803f0c52_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a0be6cce46a38220fe324c425803f0c52_icgraph" id="aclassThrottleScreen_a0be6cce46a38220fe324c425803f0c52_icgraph">
+<area shape="rect" title="Toggle track power state &#45; if unknown, turn on." alt="" coords="716,5,923,47"/>
+<area shape="rect" href="classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="469,5,668,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a75de25e87feda8ce74e36d03b1cf7f69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75de25e87feda8ce74e36d03b1cf7f69">&#9670;&nbsp;</a></span>drawScreen()</h2>
 
@@ -211,6 +331,25 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classScreenInterface.html#a47b29b27e201f65cf7be827e58814f8c">ScreenInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_cgraph.png" border="0" usemap="#aclassThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_cgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_cgraph" id="aclassThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_cgraph">
+<area shape="rect" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="5,13,207,39"/>
+<area shape="rect" href="classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6" title="Display the throttle screen." alt="" coords="255,5,439,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_icgraph.png" border="0" usemap="#aclassThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_icgraph" id="aclassThrottleScreen_a75de25e87feda8ce74e36d03b1cf7f69_icgraph">
+<area shape="rect" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="469,13,671,39"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -231,6 +370,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 <p>Get the current speed. </p>
 <dl class="section return"><dt>Returns</dt><dd>Speed </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a9f2f0bb6c023da81ba8d9a1eefc81cdc_icgraph.png" border="0" usemap="#aclassThrottleScreen_a9f2f0bb6c023da81ba8d9a1eefc81cdc_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a9f2f0bb6c023da81ba8d9a1eefc81cdc_icgraph" id="aclassThrottleScreen_a9f2f0bb6c023da81ba8d9a1eefc81cdc_icgraph">
+<area shape="rect" title="Get the current speed." alt="" coords="469,13,656,39"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -246,7 +395,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">void ThrottleScreen::handleUserConfirmationAction </td>
           <td>(</td>
-          <td class="paramtype">UserConfirmationAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a>&#160;</td>
           <td class="paramname"><em>action</em></td><td>)</td>
           <td></td>
         </tr>
@@ -267,6 +416,26 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classScreenInterface.html#a3f8f461dacc438bd7057bdc50eb01901">ScreenInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_cgraph.png" border="0" usemap="#aclassThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_cgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_cgraph" id="aclassThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_cgraph">
+<area shape="rect" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="5,27,204,69"/>
+<area shape="rect" href="classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3" title="Toggle lights (assumed to be F0) on/off." alt="" coords="252,5,464,32"/>
+<area shape="rect" href="classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52" title="Toggle track power state &#45; if unknown, turn on." alt="" coords="255,57,461,98"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_icgraph.png" border="0" usemap="#aclassThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_icgraph" id="aclassThrottleScreen_a5db2ee5376bdce83703696bbe6f921f1_icgraph">
+<area shape="rect" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="469,5,668,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -282,7 +451,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">void ThrottleScreen::handleUserSelectionAction </td>
           <td>(</td>
-          <td class="paramtype">UserSelectionAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a>&#160;</td>
           <td class="paramname"><em>action</em>, </td>
         </tr>
         <tr>
@@ -313,6 +482,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classScreenInterface.html#a3b54a42e1b558083f6a53a455ac82a01">ScreenInterface</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_aa7aefd5e5912167d38bcbb7b48a98462_icgraph.png" border="0" usemap="#aclassThrottleScreen_aa7aefd5e5912167d38bcbb7b48a98462_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_aa7aefd5e5912167d38bcbb7b48a98462_icgraph" id="aclassThrottleScreen_aa7aefd5e5912167d38bcbb7b48a98462_icgraph">
+<area shape="rect" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="469,5,668,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -339,6 +518,74 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a8281b32f84f656eb191c665a32f575f0_icgraph.png" border="0" usemap="#aclassThrottleScreen_a8281b32f84f656eb191c665a32f575f0_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a8281b32f84f656eb191c665a32f575f0_icgraph" id="aclassThrottleScreen_a8281b32f84f656eb191c665a32f575f0_icgraph">
+<area shape="rect" title="Method to call when a loco update has been received." alt="" coords="553,5,752,47"/>
+<area shape="rect" href="classAppOrchestrator.html#acb066a00e369a611282e2225bc1dd35f" title="Notify the throttle screen an update has been received for the associated loco." alt="" coords="243,13,505,39"/>
+<area shape="rect" href="classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32002fa4856678a9977725bf2c5e4756"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32002fa4856678a9977725bf2c5e4756">&#9670;&nbsp;</a></span>requestLocoUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThrottleScreen::requestLocoUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly request an update for the currently selected loco address. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a32002fa4856678a9977725bf2c5e4756_icgraph.png" border="0" usemap="#aclassThrottleScreen_a32002fa4856678a9977725bf2c5e4756_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a32002fa4856678a9977725bf2c5e4756_icgraph" id="aclassThrottleScreen_a32002fa4856678a9977725bf2c5e4756_icgraph">
+<area shape="rect" title="Explicitly request an update for the currently selected loco address." alt="" coords="469,5,673,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab9c10d7a8f1fb45f8d0f64030c13d885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c10d7a8f1fb45f8d0f64030c13d885">&#9670;&nbsp;</a></span>requestTrackPowerUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThrottleScreen::requestTrackPowerUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly request a track power update (actually sends <s> for server version which does this) </s></p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_ab9c10d7a8f1fb45f8d0f64030c13d885_icgraph.png" border="0" usemap="#aclassThrottleScreen_ab9c10d7a8f1fb45f8d0f64030c13d885_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_ab9c10d7a8f1fb45f8d0f64030c13d885_icgraph" id="aclassThrottleScreen_ab9c10d7a8f1fb45f8d0f64030c13d885_icgraph">
+<area shape="rect" title="Explicitly request a track power update (actually sends &#160;for server version which does this)" alt="" coords="469,5,677,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -365,6 +612,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a32c7ad9203743f2b32d375cafcdf1844_icgraph.png" border="0" usemap="#aclassThrottleScreen_a32c7ad9203743f2b32d375cafcdf1844_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a32c7ad9203743f2b32d375cafcdf1844_icgraph" id="aclassThrottleScreen_a32c7ad9203743f2b32d375cafcdf1844_icgraph">
+<area shape="rect" title="Set the loco currently being operated." alt="" coords="528,5,703,32"/>
+<area shape="rect" href="classAppOrchestrator.html#af356082abb38a9f71779a94c0cf3a607" title="Set the loco being managed by the throttle screen." alt="" coords="243,5,480,32"/>
+<area shape="rect" href="classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,5,195,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -391,12 +648,265 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classThrottleScreen_a126ba15f59a91e2b29f08ac948262c50_icgraph.png" border="0" usemap="#aclassThrottleScreen_a126ba15f59a91e2b29f08ac948262c50_icgraph" alt=""/></div>
+<map name="aclassThrottleScreen_a126ba15f59a91e2b29f08ac948262c50_icgraph" id="aclassThrottleScreen_a126ba15f59a91e2b29f08ac948262c50_icgraph">
+<area shape="rect" title="Method to call when a track power update has been received." alt="" coords="523,5,721,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a6dee7d6939ccaed3be728d49b60c5a5b" title="Notify the throttle screen of a track power update." alt="" coords="243,5,475,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a19e7cf20ac59204c2a17d2d23eb83710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e7cf20ac59204c2a17d2d23eb83710">&#9670;&nbsp;</a></span>_dccexProtocolClient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DCCEXProtocol* ThrottleScreen::_dccexProtocolClient</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bf4fe1bf4026d4782a8f4bbc82f5c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf4fe1bf4026d4782a8f4bbc82f5c10">&#9670;&nbsp;</a></span>_direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Direction ThrottleScreen::_direction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a126b8a7638e155d198d0129238a57fd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126b8a7638e155d198d0129238a57fd8">&#9670;&nbsp;</a></span>_directionChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ThrottleScreen::_directionChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d23b6afd7dfad41f5d6f4eb26251776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d23b6afd7dfad41f5d6f4eb26251776">&#9670;&nbsp;</a></span>_loco</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Loco* ThrottleScreen::_loco</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3208e52bb8389959c5dd4b564dc9b3e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3208e52bb8389959c5dd4b564dc9b3e3">&#9670;&nbsp;</a></span>_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ThrottleScreen::_speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14e3579cd0f03ebddf6b49d838620cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e3579cd0f03ebddf6b49d838620cd7">&#9670;&nbsp;</a></span>_speedChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ThrottleScreen::_speedChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9c311cc12a5e83b71fd6026d90a3392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c311cc12a5e83b71fd6026d90a3392">&#9670;&nbsp;</a></span>_throttleStep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ThrottleScreen::_throttleStep</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a938551dcb7f9718cbb29b80aa5794a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938551dcb7f9718cbb29b80aa5794a59">&#9670;&nbsp;</a></span>_throttleStepFaster</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ThrottleScreen::_throttleStepFaster</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68dcd401dd54100164bd1ccf3244d97c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68dcd401dd54100164bd1ccf3244d97c">&#9670;&nbsp;</a></span>_throttleStepFastest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ThrottleScreen::_throttleStepFastest</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b0b30b73da3d9d8a004bc574a482894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b0b30b73da3d9d8a004bc574a482894">&#9670;&nbsp;</a></span>_trackPower</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TrackPower ThrottleScreen::_trackPower</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a79d165389b7e7fd2d5ef002da537d2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d165389b7e7fd2d5ef002da537d2b4">&#9670;&nbsp;</a></span>_trackPowerChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ThrottleScreen::_trackPowerChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="ThrottleScreen_8h_source.html">ThrottleScreen.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ThrottleScreen.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="ThrottleScreen_8cpp.html">ThrottleScreen.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

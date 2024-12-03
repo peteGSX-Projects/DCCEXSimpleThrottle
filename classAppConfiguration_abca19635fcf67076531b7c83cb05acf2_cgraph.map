@@ -1,0 +1,9 @@
+<map id="AppConfiguration::initialise" name="AppConfiguration::initialise">
+<area shape="rect" id="node1" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,137,204,163"/>
+<area shape="rect" id="node2" href="$classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3" title="Register all required event subscriptions, called by initialise()" alt="" coords="252,5,455,47"/>
+<area shape="rect" id="node4" href="$classCommandStationClient.html#af35b5d90b074aac256a2eb3da90dff4e" title="Setup the CommandStation client with log stream and listener ready to connect." alt="" coords="267,71,440,112"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#abcb04126efa9ce5ef701f0ef6217c85d" title="Implement this to perform any initial startup methods or activities." alt="" coords="267,137,440,163"/>
+<area shape="rect" id="node6" href="$classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0" title="Implement this to perform any initial startup methods or activities." alt="" coords="256,188,451,229"/>
+<area shape="rect" id="node7" href="$classUserSelectionInterface.html#adbd2af2ef47ad1a4d20c7c08b685380b" title="Implement this to perform any initial startup methods or activities." alt="" coords="268,253,439,295"/>
+<area shape="rect" id="node3" href="$classEventManager.html#ad898edd8057126492c57325e23b62984" title="Method to subscribe a listener to the specified event type." alt="" coords="503,13,689,39"/>
+</map>

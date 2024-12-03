@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classBaseMenu-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">BaseMenu Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -77,21 +78,33 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for BaseMenu:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classBaseMenu.png" usemap="#BaseMenu_map" alt=""/>
-  <map id="BaseMenu_map" name="BaseMenu_map">
-<area href="classSelectActionMenu.html" title="Menu to allow for extra actions to be performed For future use, not actually enabled yet." alt="SelectActionMenu" shape="rect" coords="0,56,172,80"/>
-<area href="classSelectCommandStationMenu.html" alt="SelectCommandStationMenu" shape="rect" coords="182,56,354,80"/>
-<area href="classSelectLocoMenu.html" alt="SelectLocoMenu" shape="rect" coords="364,56,536,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="classBaseMenu__inherit__graph.png" border="0" usemap="#aBaseMenu_inherit__map" alt="Inheritance graph"/></div>
+<map name="aBaseMenu_inherit__map" id="aBaseMenu_inherit__map">
+<area shape="rect" title="Class for maintaining a linked list of menu items to form a menu." alt="" coords="228,5,319,32"/>
+<area shape="rect" href="classSelectActionMenu.html" title="Menu to allow for extra actions to be performed For future use, not actually enabled yet." alt="" coords="5,80,144,107"/>
+<area shape="rect" href="classSelectCommandStationMenu.html" title=" " alt="" coords="168,80,379,107"/>
+<area shape="rect" href="classSelectLocoMenu.html" title=" " alt="" coords="403,80,531,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for BaseMenu:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu__coll__graph.png" border="0" usemap="#aBaseMenu_coll__map" alt="Collaboration graph"/></div>
+<map name="aBaseMenu_coll__map" id="aBaseMenu_coll__map">
+<area shape="rect" title="Class for maintaining a linked list of menu items to form a menu." alt="" coords="124,273,215,300"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,184,125,211"/>
+<area shape="rect" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="215,184,331,211"/>
+<area shape="rect" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="159,95,388,121"/>
+<area shape="rect" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="218,5,329,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a771ae4a2011f1cf496255c2f79c847c6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a771ae4a2011f1cf496255c2f79c847c6">handleUserConfirmationAction</a> (UserConfirmationAction action)=0</td></tr>
+<tr class="memitem:a771ae4a2011f1cf496255c2f79c847c6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a771ae4a2011f1cf496255c2f79c847c6">handleUserConfirmationAction</a> (<a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a> action)=0</td></tr>
 <tr class="memdesc:a771ae4a2011f1cf496255c2f79c847c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to respond to user confirmation actions.  <a href="classBaseMenu.html#a771ae4a2011f1cf496255c2f79c847c6">More...</a><br /></td></tr>
 <tr class="separator:a771ae4a2011f1cf496255c2f79c847c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31a48ad14d159bc43f9e9d76d11da70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c">handleUserSelectionAction</a> (UserSelectionAction action)</td></tr>
+<tr class="memitem:a31a48ad14d159bc43f9e9d76d11da70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c">handleUserSelectionAction</a> (<a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a> action)</td></tr>
 <tr class="memdesc:a31a48ad14d159bc43f9e9d76d11da70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to respond to user selection actions.  <a href="classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c">More...</a><br /></td></tr>
 <tr class="separator:a31a48ad14d159bc43f9e9d76d11da70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a759164698eca3dc8a683a7230cd95fc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6">displayMenu</a> (<a class="el" href="classDisplayInterface.html">DisplayInterface</a> *displayInterface)</td></tr>
@@ -127,6 +140,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd63930db511d0d5d957be2f5c7977f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8">getEventManager</a> ()</td></tr>
 <tr class="memdesc:acd63930db511d0d5d957be2f5c7977f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the application's event manager instance.  <a href="classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8">More...</a><br /></td></tr>
 <tr class="separator:acd63930db511d0d5d957be2f5c7977f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a57ae6127136146accfa774de7f1fa0b4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a57ae6127136146accfa774de7f1fa0b4">_name</a> = nullptr</td></tr>
+<tr class="separator:a57ae6127136146accfa774de7f1fa0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a077782436385491d8071e8680e71edf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBaseMenuItem.html">BaseMenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a077782436385491d8071e8680e71edf2">_firstMenuItem</a> = nullptr</td></tr>
+<tr class="separator:a077782436385491d8071e8680e71edf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837d2fd3c0f70dad0db603d922e754ec"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a837d2fd3c0f70dad0db603d922e754ec">_menuItemCount</a> = 0</td></tr>
+<tr class="separator:a837d2fd3c0f70dad0db603d922e754ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58727539aaffd308f6a294e178bbe3f8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a58727539aaffd308f6a294e178bbe3f8">_currentItemIndex</a> = 0</td></tr>
+<tr class="separator:a58727539aaffd308f6a294e178bbe3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ed9c35d8cc4e34069bb6dec04f0af8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a10ed9c35d8cc4e34069bb6dec04f0af8">_selectedItemIndex</a> = 0</td></tr>
+<tr class="separator:a10ed9c35d8cc4e34069bb6dec04f0af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2a38f24245af9b165699c95e9b66f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#a0b2a38f24245af9b165699c95e9b66f2">_selectionChanged</a> = false</td></tr>
+<tr class="separator:a0b2a38f24245af9b165699c95e9b66f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac899fa9fa34651b7b4d27e88936b9bed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenu.html#ac899fa9fa34651b7b4d27e88936b9bed">_eventManager</a> = nullptr</td></tr>
+<tr class="separator:ac899fa9fa34651b7b4d27e88936b9bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for maintaining a linked list of menu items to form a menu. </p>
@@ -154,6 +184,28 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_cgraph.png" border="0" usemap="#aclassBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_cgraph" alt=""/></div>
+<map name="aclassBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_cgraph" id="aclassBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_cgraph">
+<area shape="rect" title="Add a menu item to this menu." alt="" coords="5,56,157,83"/>
+<area shape="rect" href="classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="207,5,387,32"/>
+<area shape="rect" href="classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="205,56,389,83"/>
+<area shape="rect" href="classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="208,107,387,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_icgraph.png" border="0" usemap="#aclassBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_icgraph" id="aclassBaseMenu_afc87a0ee1cc1d56bec429890c13b12eb_icgraph">
+<area shape="rect" title="Add a menu item to this menu." alt="" coords="776,13,928,39"/>
+<area shape="rect" href="classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="503,13,728,39"/>
+<area shape="rect" href="classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,5,455,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -180,6 +232,29 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a759164698eca3dc8a683a7230cd95fc6_cgraph.png" border="0" usemap="#aclassBaseMenu_a759164698eca3dc8a683a7230cd95fc6_cgraph" alt=""/></div>
+<map name="aclassBaseMenu_a759164698eca3dc8a683a7230cd95fc6_cgraph" id="aclassBaseMenu_a759164698eca3dc8a683a7230cd95fc6_cgraph">
+<area shape="rect" title="Method to display the menu on screen." alt="" coords="5,13,187,39"/>
+<area shape="rect" href="classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="235,5,419,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a759164698eca3dc8a683a7230cd95fc6_icgraph.png" border="0" usemap="#aclassBaseMenu_a759164698eca3dc8a683a7230cd95fc6_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_a759164698eca3dc8a683a7230cd95fc6_icgraph" id="aclassBaseMenu_a759164698eca3dc8a683a7230cd95fc6_icgraph">
+<area shape="rect" title="Method to display the menu on screen." alt="" coords="1001,78,1183,105"/>
+<area shape="rect" href="classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="767,78,953,105"/>
+<area shape="rect" href="classAppOrchestrator.html#a8bfc05c50a19a90d0f64b69290d4994c" title="Display a menu." alt="" coords="492,78,719,105"/>
+<area shape="rect" href="classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,71,444,112"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,136,433,177"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,78,187,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -200,6 +275,21 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the application's event manager instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the event manager instance </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_acd63930db511d0d5d957be2f5c7977f8_icgraph.png" border="0" usemap="#aclassBaseMenu_acd63930db511d0d5d957be2f5c7977f8_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_acd63930db511d0d5d957be2f5c7977f8_icgraph" id="aclassBaseMenu_acd63930db511d0d5d957be2f5c7977f8_icgraph">
+<area shape="rect" title="Get the application&#39;s event manager instance." alt="" coords="1087,46,1300,73"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="769,8,1039,49"/>
+<area shape="rect" href="classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="798,75,1010,102"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="492,5,721,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,5,444,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,46,187,73"/>
+<area shape="rect" href="classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="501,71,712,112"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,71,433,112"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -247,6 +337,28 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the specified menu item, or nullptr if it doesn't exist </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_cgraph.png" border="0" usemap="#aclassBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_cgraph" alt=""/></div>
+<map name="aclassBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_cgraph" id="aclassBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_cgraph">
+<area shape="rect" title="Get the menu item at the specified index." alt="" coords="5,31,240,57"/>
+<area shape="rect" href="classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="288,5,473,32"/>
+<area shape="rect" href="classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="291,56,471,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_icgraph.png" border="0" usemap="#aclassBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_icgraph" id="aclassBaseMenu_a8d92a97d728ce6d172ba6e003607fc67_icgraph">
+<area shape="rect" title="Get the menu item at the specified index." alt="" coords="988,13,1223,39"/>
+<area shape="rect" href="classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="728,13,940,39"/>
+<area shape="rect" href="classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="469,5,680,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -307,6 +419,19 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the index of the currently selected menu item. </p>
 <dl class="section return"><dt>Returns</dt><dd>Index of the currently selected menu item </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_adea2473be8fe7e33ca0859e88afda694_icgraph.png" border="0" usemap="#aclassBaseMenu_adea2473be8fe7e33ca0859e88afda694_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_adea2473be8fe7e33ca0859e88afda694_icgraph" id="aclassBaseMenu_adea2473be8fe7e33ca0859e88afda694_icgraph">
+<area shape="rect" title="Get the index of the currently selected menu item." alt="" coords="769,39,975,80"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="492,5,721,47"/>
+<area shape="rect" href="classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="501,71,712,112"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,5,444,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,46,187,73"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,71,433,112"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -342,7 +467,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void BaseMenu::handleUserConfirmationAction </td>
           <td>(</td>
-          <td class="paramtype">UserConfirmationAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a>&#160;</td>
           <td class="paramname"><em>action</em></td><td>)</td>
           <td></td>
         </tr>
@@ -363,6 +488,15 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa">SelectLocoMenu</a>, <a class="el" href="classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd">SelectCommandStationMenu</a>, and <a class="el" href="classSelectActionMenu.html#acdeddf70807012fcb535ff46006cab33">SelectActionMenu</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a771ae4a2011f1cf496255c2f79c847c6_icgraph.png" border="0" usemap="#aclassBaseMenu_a771ae4a2011f1cf496255c2f79c847c6_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_a771ae4a2011f1cf496255c2f79c847c6_icgraph" id="aclassBaseMenu_a771ae4a2011f1cf496255c2f79c847c6_icgraph">
+<area shape="rect" title="Implement this method to respond to user confirmation actions." alt="" coords="321,5,577,47"/>
+<area shape="rect" href="classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="5,5,273,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -375,7 +509,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void BaseMenu::handleUserSelectionAction </td>
           <td>(</td>
-          <td class="paramtype">UserSelectionAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a>&#160;</td>
           <td class="paramname"><em>action</em></td><td>)</td>
           <td></td>
         </tr>
@@ -389,6 +523,19 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a31a48ad14d159bc43f9e9d76d11da70c_icgraph.png" border="0" usemap="#aclassBaseMenu_a31a48ad14d159bc43f9e9d76d11da70c_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_a31a48ad14d159bc43f9e9d76d11da70c_icgraph" id="aclassBaseMenu_a31a48ad14d159bc43f9e9d76d11da70c_icgraph">
+<area shape="rect" title="Method to respond to user selection actions." alt="" coords="527,104,759,145"/>
+<area shape="rect" href="classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="263,5,450,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="252,71,461,112"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="263,136,450,177"/>
+<area shape="rect" href="classMenuScreen.html#ac48f54c3a5127a467789d9fd358513be" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="235,201,479,243"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,78,187,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -415,6 +562,17 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_a05814c9a61c15319a365520266042904_icgraph.png" border="0" usemap="#aclassBaseMenu_a05814c9a61c15319a365520266042904_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_a05814c9a61c15319a365520266042904_icgraph" id="aclassBaseMenu_a05814c9a61c15319a365520266042904_icgraph">
+<area shape="rect" title="Set the application&#39;s event manager instance." alt="" coords="296,78,508,105"/>
+<area shape="rect" href="classSelectActionMenu.html#aeeebc8a3184add4f5b4838e657da9f0a" title="Constructor for each menu." alt="" coords="33,5,220,47"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a6ef34b3caa3235dc631e21ae45ea6d9c" title="Constructor for each menu." alt="" coords="17,71,236,112"/>
+<area shape="rect" href="classSelectLocoMenu.html#ad25186c69b79e74c126efad6c06f5b6a" title="Constructor for each menu." alt="" coords="5,137,248,163"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -441,12 +599,178 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBaseMenu_ae96ed7880c75c24f73552c10c060416f_icgraph.png" border="0" usemap="#aclassBaseMenu_ae96ed7880c75c24f73552c10c060416f_icgraph" alt=""/></div>
+<map name="aclassBaseMenu_ae96ed7880c75c24f73552c10c060416f_icgraph" id="aclassBaseMenu_ae96ed7880c75c24f73552c10c060416f_icgraph">
+<area shape="rect" title="Set the name of this menu." alt="" coords="296,78,489,105"/>
+<area shape="rect" href="classSelectActionMenu.html#aeeebc8a3184add4f5b4838e657da9f0a" title="Constructor for each menu." alt="" coords="33,5,220,47"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a6ef34b3caa3235dc631e21ae45ea6d9c" title="Constructor for each menu." alt="" coords="17,71,236,112"/>
+<area shape="rect" href="classSelectLocoMenu.html#ad25186c69b79e74c126efad6c06f5b6a" title="Constructor for each menu." alt="" coords="5,137,248,163"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a58727539aaffd308f6a294e178bbe3f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58727539aaffd308f6a294e178bbe3f8">&#9670;&nbsp;</a></span>_currentItemIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BaseMenu::_currentItemIndex = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac899fa9fa34651b7b4d27e88936b9bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac899fa9fa34651b7b4d27e88936b9bed">&#9670;&nbsp;</a></span>_eventManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEventManager.html">EventManager</a>* BaseMenu::_eventManager = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a077782436385491d8071e8680e71edf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077782436385491d8071e8680e71edf2">&#9670;&nbsp;</a></span>_firstMenuItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBaseMenuItem.html">BaseMenuItem</a>* BaseMenu::_firstMenuItem = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a837d2fd3c0f70dad0db603d922e754ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837d2fd3c0f70dad0db603d922e754ec">&#9670;&nbsp;</a></span>_menuItemCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BaseMenu::_menuItemCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57ae6127136146accfa774de7f1fa0b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ae6127136146accfa774de7f1fa0b4">&#9670;&nbsp;</a></span>_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* BaseMenu::_name = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10ed9c35d8cc4e34069bb6dec04f0af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ed9c35d8cc4e34069bb6dec04f0af8">&#9670;&nbsp;</a></span>_selectedItemIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BaseMenu::_selectedItemIndex = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b2a38f24245af9b165699c95e9b66f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b2a38f24245af9b165699c95e9b66f2">&#9670;&nbsp;</a></span>_selectionChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BaseMenu::_selectionChanged = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="BaseMenu_8h_source.html">BaseMenu.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/BaseMenu.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="BaseMenu_8cpp.html">BaseMenu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

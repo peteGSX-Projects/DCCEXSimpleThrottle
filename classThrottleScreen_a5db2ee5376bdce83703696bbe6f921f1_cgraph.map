@@ -1,0 +1,5 @@
+<map id="ThrottleScreen::handleUserConfirmationAction" name="ThrottleScreen::handleUserConfirmationAction">
+<area shape="rect" id="node1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="5,27,204,69"/>
+<area shape="rect" id="node2" href="$classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3" title="Toggle lights (assumed to be F0) on/off." alt="" coords="252,5,464,32"/>
+<area shape="rect" id="node3" href="$classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52" title="Toggle track power state &#45; if unknown, turn on." alt="" coords="255,57,461,98"/>
+</map>

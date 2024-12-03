@@ -1,0 +1,6 @@
+<map id="CommandStationClient::getClient" name="CommandStationClient::getClient">
+<area shape="rect" id="node1" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="545,27,719,69"/>
+<area shape="rect" id="node2" href="$classAppConfiguration.html#af6ecc1985af3db347504449066b16cee" title="Constructor for the app configuration object." alt="" coords="243,5,497,32"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="264,57,476,98"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,64,195,91"/>
+</map>

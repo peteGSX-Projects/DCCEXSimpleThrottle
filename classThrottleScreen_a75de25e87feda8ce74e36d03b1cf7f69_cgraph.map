@@ -1,0 +1,4 @@
+<map id="ThrottleScreen::drawScreen" name="ThrottleScreen::drawScreen">
+<area shape="rect" id="node1" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="5,13,207,39"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6" title="Display the throttle screen." alt="" coords="255,5,439,47"/>
+</map>

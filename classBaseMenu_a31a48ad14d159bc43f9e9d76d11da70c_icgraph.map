@@ -1,0 +1,8 @@
+<map id="BaseMenu::handleUserSelectionAction" name="BaseMenu::handleUserSelectionAction">
+<area shape="rect" id="node1" title="Method to respond to user selection actions." alt="" coords="527,104,759,145"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="263,5,450,47"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="252,71,461,112"/>
+<area shape="rect" id="node5" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="263,136,450,177"/>
+<area shape="rect" id="node6" href="$classMenuScreen.html#ac48f54c3a5127a467789d9fd358513be" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="235,201,479,243"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,78,187,105"/>
+</map>

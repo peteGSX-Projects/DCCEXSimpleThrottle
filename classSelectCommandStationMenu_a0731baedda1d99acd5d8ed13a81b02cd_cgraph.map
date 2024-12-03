@@ -1,0 +1,7 @@
+<map id="SelectCommandStationMenu::handleUserConfirmationAction" name="SelectCommandStationMenu::handleUserConfirmationAction">
+<area shape="rect" id="node1" title="Implement this method to respond to user confirmation actions." alt="" coords="5,57,235,98"/>
+<area shape="rect" id="node2" href="$classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="283,23,552,65"/>
+<area shape="rect" id="node5" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="315,89,520,130"/>
+<area shape="rect" id="node3" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="600,5,813,32"/>
+<area shape="rect" id="node4" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="621,56,792,83"/>
+</map>

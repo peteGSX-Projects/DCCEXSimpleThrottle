@@ -1,0 +1,6 @@
+<map id="BaseMenu::addItem" name="BaseMenu::addItem">
+<area shape="rect" id="node1" title="Add a menu item to this menu." alt="" coords="5,56,157,83"/>
+<area shape="rect" id="node2" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="207,5,387,32"/>
+<area shape="rect" id="node3" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="205,56,389,83"/>
+<area shape="rect" id="node4" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="208,107,387,133"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="AppConfiguration::_registerEventSubscriptions" name="AppConfiguration::_registerEventSubscriptions">
+<area shape="rect" id="node1" title="Register all required event subscriptions, called by initialise()" alt="" coords="5,5,208,47"/>
+<area shape="rect" id="node2" href="$classEventManager.html#ad898edd8057126492c57325e23b62984" title="Method to subscribe a listener to the specified event type." alt="" coords="256,13,443,39"/>
+</map>

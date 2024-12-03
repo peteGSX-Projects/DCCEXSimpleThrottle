@@ -77,30 +77,94 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for UserConfirmationInterface:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classUserConfirmationInterface.png" usemap="#UserConfirmationInterface_map" alt=""/>
-  <map id="UserConfirmationInterface_map" name="UserConfirmationInterface_map">
-<area href="classButton.html" alt="Button" shape="rect" coords="0,56,159,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="classUserConfirmationInterface__inherit__graph.png" border="0" usemap="#aUserConfirmationInterface_inherit__map" alt="Inheritance graph"/></div>
+<map name="aUserConfirmationInterface_inherit__map" id="aUserConfirmationInterface_inherit__map">
+<area shape="rect" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="" coords="5,5,200,32"/>
+<area shape="rect" href="classButton.html" title=" " alt="" coords="70,80,135,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab62190e6bd656d13b94d7560588c7f0"><td class="memItemLeft" align="right" valign="top"><a id="aab62190e6bd656d13b94d7560588c7f0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0">begin</a> ()=0</td></tr>
-<tr class="memdesc:aab62190e6bd656d13b94d7560588c7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this to perform any initial startup methods or activities. <br /></td></tr>
+<tr class="memitem:aab62190e6bd656d13b94d7560588c7f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0">begin</a> ()=0</td></tr>
+<tr class="memdesc:aab62190e6bd656d13b94d7560588c7f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this to perform any initial startup methods or activities.  <a href="classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0">More...</a><br /></td></tr>
 <tr class="separator:aab62190e6bd656d13b94d7560588c7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9adc2551ce2ab09a96f3abe87339e3ef"><td class="memItemLeft" align="right" valign="top">virtual UserConfirmationAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef">getUserConfirmationAction</a> ()=0</td></tr>
+<tr class="memitem:a9adc2551ce2ab09a96f3abe87339e3ef"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef">getUserConfirmationAction</a> ()=0</td></tr>
 <tr class="memdesc:a9adc2551ce2ab09a96f3abe87339e3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this to check for any user confirmation actions This should be called at least once per main loop iteration.  <a href="classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef">More...</a><br /></td></tr>
 <tr class="separator:a9adc2551ce2ab09a96f3abe87339e3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee1400770a9f969bbf2f8f9aadda2c71"><td class="memItemLeft" align="right" valign="top"><a id="aee1400770a9f969bbf2f8f9aadda2c71"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#aee1400770a9f969bbf2f8f9aadda2c71">~UserConfirmationInterface</a> ()=default</td></tr>
-<tr class="memdesc:aee1400770a9f969bbf2f8f9aadda2c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object. <br /></td></tr>
+<tr class="memitem:aee1400770a9f969bbf2f8f9aadda2c71"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#aee1400770a9f969bbf2f8f9aadda2c71">~UserConfirmationInterface</a> ()=default</td></tr>
+<tr class="memdesc:aee1400770a9f969bbf2f8f9aadda2c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object.  <a href="classUserConfirmationInterface.html#aee1400770a9f969bbf2f8f9aadda2c71">More...</a><br /></td></tr>
 <tr class="separator:aee1400770a9f969bbf2f8f9aadda2c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface class to abstract user confirmation actions from physical implementations All physical user confirmation classes must extend this This allows the use of the button on a rotary encoder, other buttons, touch screens, and other user interface methods that can trigger single click, double click, or long press type actions. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aee1400770a9f969bbf2f8f9aadda2c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1400770a9f969bbf2f8f9aadda2c71">&#9670;&nbsp;</a></span>~UserConfirmationInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual UserConfirmationInterface::~UserConfirmationInterface </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor for the object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aab62190e6bd656d13b94d7560588c7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab62190e6bd656d13b94d7560588c7f0">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserConfirmationInterface::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implement this to perform any initial startup methods or activities. </p>
+
+<p>Implemented in <a class="el" href="classButton.html#abc120a470db47d50e08ce7dd3d3a656d">Button</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUserConfirmationInterface_aab62190e6bd656d13b94d7560588c7f0_icgraph.png" border="0" usemap="#aclassUserConfirmationInterface_aab62190e6bd656d13b94d7560588c7f0_icgraph" alt=""/></div>
+<map name="aclassUserConfirmationInterface_aab62190e6bd656d13b94d7560588c7f0_icgraph" id="aclassUserConfirmationInterface_aab62190e6bd656d13b94d7560588c7f0_icgraph">
+<area shape="rect" title="Implement this to perform any initial startup methods or activities." alt="" coords="252,5,447,47"/>
+<area shape="rect" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,13,204,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a9adc2551ce2ab09a96f3abe87339e3ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9adc2551ce2ab09a96f3abe87339e3ef">&#9670;&nbsp;</a></span>getUserConfirmationAction()</h2>
 
@@ -111,7 +175,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual UserConfirmationAction UserConfirmationInterface::getUserConfirmationAction </td>
+          <td class="memname">virtual <a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a> UserConfirmationInterface::getUserConfirmationAction </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -128,6 +192,20 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <dl class="section return"><dt>Returns</dt><dd>UserSelectionConfirmation::[None|SingleClick|DoubleClick|LongPress] </dd></dl>
 
 <p>Implemented in <a class="el" href="classButton.html#a043d8102c82da710ce158415fc646cbf">Button</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUserConfirmationInterface_a9adc2551ce2ab09a96f3abe87339e3ef_icgraph.png" border="0" usemap="#aclassUserConfirmationInterface_a9adc2551ce2ab09a96f3abe87339e3ef_icgraph" alt=""/></div>
+<map name="aclassUserConfirmationInterface_a9adc2551ce2ab09a96f3abe87339e3ef_icgraph" id="aclassUserConfirmationInterface_a9adc2551ce2ab09a96f3abe87339e3ef_icgraph">
+<area shape="rect" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="492,136,699,177"/>
+<area shape="rect" href="classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,71,444,112"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,136,433,177"/>
+<area shape="rect" href="classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="246,201,433,243"/>
+<area shape="rect" href="classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="246,267,433,308"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,143,187,170"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,0 +1,4 @@
+<map id="BaseMenu::displayMenu" name="BaseMenu::displayMenu">
+<area shape="rect" id="node1" title="Method to display the menu on screen." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="235,5,419,47"/>
+</map>

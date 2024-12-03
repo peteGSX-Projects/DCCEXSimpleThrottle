@@ -1,0 +1,5 @@
+<map id="ThrottleScreen::setLoco" name="ThrottleScreen::setLoco">
+<area shape="rect" id="node1" title="Set the loco currently being operated." alt="" coords="528,5,703,32"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#af356082abb38a9f71779a94c0cf3a607" title="Set the loco being managed by the throttle screen." alt="" coords="243,5,480,32"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,5,195,32"/>
+</map>

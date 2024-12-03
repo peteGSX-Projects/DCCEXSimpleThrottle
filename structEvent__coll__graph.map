@@ -1,0 +1,4 @@
+<map id="Event" name="Event">
+<area shape="rect" id="node1" title="Structure for each Event that is published." alt="" coords="21,95,80,121"/>
+<area shape="rect" id="node2" href="$structEventData.html" title="Structure to enable supporting EventData that has various different types Byte &#45; caters for 8 bit uns..." alt="" coords="5,5,96,32"/>
+</map>

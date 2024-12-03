@@ -1,0 +1,6 @@
+<map id="BaseMenuItem" name="BaseMenuItem">
+<area shape="rect" id="node1" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="199,5,319,32"/>
+<area shape="rect" id="node2" href="$classActionMenuItem.html" title="Extension of the BaseMenuItem class for users to select items that call a function or method Each act..." alt="" coords="5,80,135,107"/>
+<area shape="rect" id="node3" href="$classCommandStationMenuItem.html" title=" " alt="" coords="159,80,360,107"/>
+<area shape="rect" id="node4" href="$classLocoMenuItem.html" title="Extension of the BaseMenuItem class to allow users to select a Loco." alt="" coords="384,80,503,107"/>
+</map>

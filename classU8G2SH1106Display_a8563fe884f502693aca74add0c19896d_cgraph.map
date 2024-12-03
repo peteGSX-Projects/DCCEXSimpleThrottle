@@ -1,0 +1,9 @@
+<map id="U8G2SH1106Display::U8G2SH1106Display" name="U8G2SH1106Display::U8G2SH1106Display">
+<area shape="rect" id="node1" title="Constructor for the display object." alt="" coords="5,104,169,145"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a2044e4dc070cad6597b58ef3718d0f47" title="Calculates the number of menu items that will fit on screen." alt="" coords="217,39,431,80"/>
+<area shape="rect" id="node6" href="$classDisplayInterface.html#a7bf180edb5ab479ce5c2f0848b5feb6e" title="Set the number of menu items per page this display can handle." alt="" coords="227,104,421,145"/>
+<area shape="rect" id="node7" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="225,169,423,211"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a53d3b9d5c894028d26881101767e6b27" title="Calculates the height of the menu item area." alt="" coords="479,39,676,80"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="739,5,917,47"/>
+<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#a7cb461f6b06af59b6fa24e6de1ac53a9" title="Calculates the height of the footer area." alt="" coords="724,71,932,112"/>
+</map>

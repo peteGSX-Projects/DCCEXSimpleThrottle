@@ -1,0 +1,11 @@
+<map id="AppOrchestrator::setupSelectLocoMenu" name="AppOrchestrator::setupSelectLocoMenu">
+<area shape="rect" id="node1" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="5,104,217,145"/>
+<area shape="rect" id="node2" href="$classCommandStationClient.html#a3ccddff0529052f378ebb9523172f711" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="291,5,465,47"/>
+<area shape="rect" id="node3" href="$classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e" title="Check if the CommandStation client is connected." alt="" coords="291,71,465,112"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html#ab258c3ac2934efb55701724c123d244e" title="Set the refresh menu flag for this display." alt="" coords="279,136,477,177"/>
+<area shape="rect" id="node5" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="265,202,491,229"/>
+<area shape="rect" id="node6" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="539,202,691,229"/>
+<area shape="rect" id="node7" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="741,151,921,178"/>
+<area shape="rect" id="node8" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="739,202,923,229"/>
+<area shape="rect" id="node9" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="741,253,920,279"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="DisplayInterface::needsMenuRefresh" name="DisplayInterface::needsMenuRefresh">
+<area shape="rect" id="node1" title="Check if the menu needs refreshing &#45; avoids a complete redraw for menu screens." alt="" coords="217,5,429,47"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="5,5,169,47"/>
+</map>

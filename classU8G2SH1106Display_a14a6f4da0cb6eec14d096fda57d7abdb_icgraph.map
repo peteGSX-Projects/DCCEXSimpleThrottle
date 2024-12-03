@@ -1,0 +1,7 @@
+<map id="U8G2SH1106Display::_clearDisplay" name="U8G2SH1106Display::_clearDisplay">
+<area shape="rect" id="node1" title="Clear the display." alt="" coords="223,104,387,145"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a7bfa8d8282b926ed6b32d61d1fba2885" title="Display error screen." alt="" coords="8,5,172,47"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="8,71,172,112"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="5,136,175,177"/>
+<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#ad2e068b4be3350c3e12dbf461befdafb" title="Display the throttle screen." alt="" coords="8,201,172,243"/>
+</map>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['onevent_211',['onEvent',['../classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac',1,'AppOrchestrator::onEvent()'],['../classEventListener.html#ac1365587d6bfb62d4e698550d7cb9c4d',1,'EventListener::onEvent()']]]
+  ['needsmenurefresh_607',['needsMenuRefresh',['../classDisplayInterface.html#a5ae77397fd14206d8735a5ced7cdfbee',1,'DisplayInterface']]],
+  ['needsredraw_608',['needsRedraw',['../classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3',1,'DisplayInterface']]]
 ];

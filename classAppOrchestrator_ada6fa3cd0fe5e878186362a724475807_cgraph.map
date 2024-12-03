@@ -1,0 +1,10 @@
+<map id="AppOrchestrator::_handleConnectCommandStationState" name="AppOrchestrator::_handleConnectCommandStationState">
+<area shape="rect" id="node1" title="Show the connection progress screen until a connection is made." alt="" coords="5,152,228,193"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="287,5,472,47"/>
+<area shape="rect" id="node3" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="531,35,729,76"/>
+<area shape="rect" id="node4" href="$classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f" title="Check if connections are active." alt="" coords="299,123,459,164"/>
+<area shape="rect" id="node5" href="$classProgressScreen.html#a7b33a3a2c99b0bc8d48bea6b7be2581a" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="276,189,483,215"/>
+<area shape="rect" id="node7" href="$classProgressScreen.html#a99e5662cfd10b2b29c615b6a1c0eab29" title="Set the current activity in progress." alt="" coords="279,239,479,266"/>
+<area shape="rect" id="node8" href="$classProgressScreen.html#a236d3d1296261257db881182060247e9" title="Set the current attempt in progress." alt="" coords="279,290,480,317"/>
+<area shape="rect" id="node6" href="$classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31" title="Display progress screen for the specified activity." alt="" coords="538,181,722,223"/>
+</map>

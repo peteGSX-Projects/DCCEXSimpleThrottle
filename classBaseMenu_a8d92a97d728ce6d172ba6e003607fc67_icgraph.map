@@ -1,0 +1,7 @@
+<map id="BaseMenu::getMenuItemAtIndex" name="BaseMenu::getMenuItemAtIndex">
+<area shape="rect" id="node1" title="Get the menu item at the specified index." alt="" coords="988,13,1223,39"/>
+<area shape="rect" id="node2" href="$classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="728,13,940,39"/>
+<area shape="rect" id="node3" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="469,5,680,47"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="235,5,421,47"/>
+<area shape="rect" id="node5" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>

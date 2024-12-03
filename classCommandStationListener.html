@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCommandStationListener-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CommandStationListener Class Reference</div>  </div>
@@ -77,18 +78,32 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for CommandStationListener:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classCommandStationListener.png" alt=""/>
- </div></div>
+<div class="center"><img src="classCommandStationListener__inherit__graph.png" border="0" usemap="#aCommandStationListener_inherit__map" alt="Inheritance graph"/></div>
+<map name="aCommandStationListener_inherit__map" id="aCommandStationListener_inherit__map">
+<area shape="rect" title="Class to manage broadcasts and responses from the CommandStation." alt="" coords="5,80,192,107"/>
+<area shape="rect" title=" " alt="" coords="9,5,188,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for CommandStationListener:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCommandStationListener__coll__graph.png" border="0" usemap="#aCommandStationListener_coll__map" alt="Collaboration graph"/></div>
+<map name="aCommandStationListener_coll__map" id="aCommandStationListener_coll__map">
+<area shape="rect" title="Class to manage broadcasts and responses from the CommandStation." alt="" coords="23,273,209,300"/>
+<area shape="rect" title=" " alt="" coords="5,184,184,211"/>
+<area shape="rect" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="209,184,325,211"/>
+<area shape="rect" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="152,95,381,121"/>
+<area shape="rect" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="211,5,322,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a230cebb526a1496ae59425cefb2d4fe8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandStationListener.html#a230cebb526a1496ae59425cefb2d4fe8">CommandStationListener</a> (<a class="el" href="classEventManager.html">EventManager</a> *eventManager)</td></tr>
 <tr class="memdesc:a230cebb526a1496ae59425cefb2d4fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consructor for the CommandStation listener.  <a href="classCommandStationListener.html#a230cebb526a1496ae59425cefb2d4fe8">More...</a><br /></td></tr>
 <tr class="separator:a230cebb526a1496ae59425cefb2d4fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab045eb28c050dc3b81165a395e74491f"><td class="memItemLeft" align="right" valign="top"><a id="ab045eb28c050dc3b81165a395e74491f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandStationListener.html#ab045eb28c050dc3b81165a395e74491f">receivedRosterList</a> () override</td></tr>
-<tr class="memdesc:ab045eb28c050dc3b81165a395e74491f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to receiving the roster list which updates the roster menu. <br /></td></tr>
+<tr class="memitem:ab045eb28c050dc3b81165a395e74491f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandStationListener.html#ab045eb28c050dc3b81165a395e74491f">receivedRosterList</a> () override</td></tr>
+<tr class="memdesc:ab045eb28c050dc3b81165a395e74491f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to receiving the roster list which updates the roster menu.  <a href="classCommandStationListener.html#ab045eb28c050dc3b81165a395e74491f">More...</a><br /></td></tr>
 <tr class="separator:ab045eb28c050dc3b81165a395e74491f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ed9f127a04ea8c5df4d93c07284f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandStationListener.html#a76ed9f127a04ea8c5df4d93c07284f32">receivedLocoUpdate</a> (Loco *loco) override</td></tr>
 <tr class="memdesc:a76ed9f127a04ea8c5df4d93c07284f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to receiving an update for a loco to update the throttle screen.  <a href="classCommandStationListener.html#a76ed9f127a04ea8c5df4d93c07284f32">More...</a><br /></td></tr>
@@ -99,6 +114,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a19c3bef8292c11653d7897470c141c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandStationListener.html#a19c3bef8292c11653d7897470c141c5d">receivedReadLoco</a> (int address) override</td></tr>
 <tr class="memdesc:a19c3bef8292c11653d7897470c141c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to receiving the loco address read from the programming track If valid (not -1), sets this as the loco controlled by the throttle.  <a href="classCommandStationListener.html#a19c3bef8292c11653d7897470c141c5d">More...</a><br /></td></tr>
 <tr class="separator:a19c3bef8292c11653d7897470c141c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adad1b4529675458eff063235490ffea6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCommandStationListener.html#adad1b4529675458eff063235490ffea6">_eventManager</a></td></tr>
+<tr class="separator:adad1b4529675458eff063235490ffea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to manage broadcasts and responses from the CommandStation. </p>
@@ -161,6 +181,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCommandStationListener_a76ed9f127a04ea8c5df4d93c07284f32_cgraph.png" border="0" usemap="#aclassCommandStationListener_a76ed9f127a04ea8c5df4d93c07284f32_cgraph" alt=""/></div>
+<map name="aclassCommandStationListener_a76ed9f127a04ea8c5df4d93c07284f32_cgraph" id="aclassCommandStationListener_a76ed9f127a04ea8c5df4d93c07284f32_cgraph">
+<area shape="rect" title="Respond to receiving an update for a loco to update the throttle screen." alt="" coords="5,5,192,47"/>
+<area shape="rect" href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="240,13,411,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -195,6 +224,51 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCommandStationListener_a19c3bef8292c11653d7897470c141c5d_cgraph.png" border="0" usemap="#aclassCommandStationListener_a19c3bef8292c11653d7897470c141c5d_cgraph" alt=""/></div>
+<map name="aclassCommandStationListener_a19c3bef8292c11653d7897470c141c5d_cgraph" id="aclassCommandStationListener_a19c3bef8292c11653d7897470c141c5d_cgraph">
+<area shape="rect" title="Respond to receiving the loco address read from the programming track If valid (not &#45;1),..." alt="" coords="5,5,192,47"/>
+<area shape="rect" href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="240,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab045eb28c050dc3b81165a395e74491f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab045eb28c050dc3b81165a395e74491f">&#9670;&nbsp;</a></span>receivedRosterList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CommandStationListener::receivedRosterList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Respond to receiving the roster list which updates the roster menu. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCommandStationListener_ab045eb28c050dc3b81165a395e74491f_cgraph.png" border="0" usemap="#aclassCommandStationListener_ab045eb28c050dc3b81165a395e74491f_cgraph" alt=""/></div>
+<map name="aclassCommandStationListener_ab045eb28c050dc3b81165a395e74491f_cgraph" id="aclassCommandStationListener_ab045eb28c050dc3b81165a395e74491f_cgraph">
+<area shape="rect" title="Respond to receiving the roster list which updates the roster menu." alt="" coords="5,5,192,47"/>
+<area shape="rect" href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="240,13,411,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -229,12 +303,44 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCommandStationListener_a60afa459d25db8593bf40fa08c46194b_cgraph.png" border="0" usemap="#aclassCommandStationListener_a60afa459d25db8593bf40fa08c46194b_cgraph" alt=""/></div>
+<map name="aclassCommandStationListener_a60afa459d25db8593bf40fa08c46194b_cgraph" id="aclassCommandStationListener_a60afa459d25db8593bf40fa08c46194b_cgraph">
+<area shape="rect" title="Respond to receiving a track power state broadcast to update the throttle screen." alt="" coords="5,5,192,47"/>
+<area shape="rect" href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="240,13,411,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="adad1b4529675458eff063235490ffea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad1b4529675458eff063235490ffea6">&#9670;&nbsp;</a></span>_eventManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEventManager.html">EventManager</a>* CommandStationListener::_eventManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="CommandStationListener_8h_source.html">CommandStationListener.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationListener.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="CommandStationListener_8cpp.html">CommandStationListener.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

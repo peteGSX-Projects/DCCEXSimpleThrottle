@@ -1,0 +1,11 @@
+<map id="SelectLocoMenu::handleUserConfirmationAction" name="SelectLocoMenu::handleUserConfirmationAction">
+<area shape="rect" id="node1" title="Implement this method to respond to user confirmation actions." alt="" coords="5,103,216,145"/>
+<area shape="rect" id="node2" href="$classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="264,81,476,108"/>
+<area shape="rect" id="node9" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="267,133,473,174"/>
+<area shape="rect" id="node3" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="535,5,748,32"/>
+<area shape="rect" id="node4" href="$classLocoMenuItem.html#aa7ac392d5d21a887a83a25cd6b3b9ff9" title="Get the Loco object associated with this menu item." alt="" coords="553,56,730,83"/>
+<area shape="rect" id="node5" href="$classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67" title="Get the menu item at the specified index." alt="" coords="524,107,759,133"/>
+<area shape="rect" id="node8" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="556,157,727,184"/>
+<area shape="rect" id="node6" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="807,81,992,108"/>
+<area shape="rect" id="node7" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="809,132,989,159"/>
+</map>

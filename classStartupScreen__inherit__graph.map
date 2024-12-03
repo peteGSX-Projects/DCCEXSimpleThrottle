@@ -1,0 +1,4 @@
+<map id="StartupScreen" name="StartupScreen">
+<area shape="rect" id="node1" title="Class to display startup information on screen and respond to user interactions Displays the DCC&#45;EX S..." alt="" coords="11,80,124,107"/>
+<area shape="rect" id="node2" href="$classScreenInterface.html" title=" " alt="" coords="5,5,129,32"/>
+</map>

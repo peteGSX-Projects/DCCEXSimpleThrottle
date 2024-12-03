@@ -1,0 +1,7 @@
+<map id="U8G2SH1106Display::_displayMenuItems" name="U8G2SH1106Display::_displayMenuItems">
+<area shape="rect" id="node1" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="5,100,169,141"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="225,5,404,47"/>
+<area shape="rect" id="node3" href="$classDisplayInterface.html#a346ffb39867cd715c7544d942c34e613" title="Get the number of menu items to be displayed per page for this display." alt="" coords="217,71,412,112"/>
+<area shape="rect" id="node4" href="$classBaseMenuItem.html#af5dbacdf90800e184a1ee33a97db3b47" title="Get menu item name." alt="" coords="221,137,409,163"/>
+<area shape="rect" id="node5" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="225,187,405,214"/>
+</map>

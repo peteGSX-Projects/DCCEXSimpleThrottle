@@ -1,0 +1,20 @@
+<map id="AppOrchestrator::onEvent" name="AppOrchestrator::onEvent">
+<area shape="rect" id="node1" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,290,195,317"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#af356082abb38a9f71779a94c0cf3a607" title="Set the loco being managed by the throttle screen." alt="" coords="255,71,493,98"/>
+<area shape="rect" id="node6" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="268,253,480,295"/>
+<area shape="rect" id="node15" href="$classAppOrchestrator.html#acb066a00e369a611282e2225bc1dd35f" title="Notify the throttle screen an update has been received for the associated loco." alt="" coords="243,349,505,375"/>
+<area shape="rect" id="node17" href="$classAppOrchestrator.html#a6dee7d6939ccaed3be728d49b60c5a5b" title="Notify the throttle screen of a track power update." alt="" coords="258,403,490,444"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="573,5,759,47"/>
+<area shape="rect" id="node5" href="$classThrottleScreen.html#a32c7ad9203743f2b32d375cafcdf1844" title="Set the loco currently being operated." alt="" coords="579,71,753,98"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="827,5,1025,47"/>
+<area shape="rect" id="node7" href="$classCommandStationClient.html#a3ccddff0529052f378ebb9523172f711" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="579,123,753,164"/>
+<area shape="rect" id="node8" href="$classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e" title="Check if the CommandStation client is connected." alt="" coords="579,188,753,229"/>
+<area shape="rect" id="node9" href="$classDisplayInterface.html#ab258c3ac2934efb55701724c123d244e" title="Set the refresh menu flag for this display." alt="" coords="567,253,765,295"/>
+<area shape="rect" id="node10" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="553,319,779,346"/>
+<area shape="rect" id="node11" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="850,319,1002,346"/>
+<area shape="rect" id="node12" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="1075,269,1255,295"/>
+<area shape="rect" id="node13" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="1073,319,1257,346"/>
+<area shape="rect" id="node14" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="1076,370,1255,397"/>
+<area shape="rect" id="node16" href="$classThrottleScreen.html#a8281b32f84f656eb191c665a32f575f0" title="Method to call when a loco update has been received." alt="" coords="567,371,765,412"/>
+<area shape="rect" id="node18" href="$classThrottleScreen.html#a126ba15f59a91e2b29f08ac948262c50" title="Method to call when a track power update has been received." alt="" coords="567,436,765,477"/>
+</map>

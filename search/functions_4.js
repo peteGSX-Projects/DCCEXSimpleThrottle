@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['errorscreen_169',['ErrorScreen',['../classErrorScreen.html#ae39878fa2ff4ae66bbc9af4376cabf11',1,'ErrorScreen']]],
-  ['event_170',['Event',['../structEvent.html#a49fe6aee736637198cd2c5c7589b44a6',1,'Event']]],
-  ['eventdata_171',['EventData',['../structEventData.html#a3a1a394e4a6057631dae79d62f2ddb54',1,'EventData::EventData(uint8_t value)'],['../structEventData.html#ab76c3007537b1209cc9cbc889fc1b753',1,'EventData::EventData(int value)'],['../structEventData.html#ab9dee21e093b5831394ec1b6802ef67e',1,'EventData::EventData(Loco *value)'],['../structEventData.html#a5ccfae751d54851f1069e9e4985183b2',1,'EventData::EventData()'],['../structEventData.html#a76563e100a9046a1b4533b3efdada582',1,'EventData::EventData(TrackPower value)']]],
-  ['eventmanager_172',['EventManager',['../classEventManager.html#a89099b22114f158b5c530edfea52371d',1,'EventManager']]]
+  ['debounce_555',['debounce',['../classSwitch.html#aa15d1bb5e8ede49d4f91931b0ed5a0de',1,'Switch']]],
+  ['deglitch_556',['deglitch',['../classSwitch.html#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7',1,'Switch']]],
+  ['displayerrorscreen_557',['displayErrorScreen',['../classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58',1,'DisplayInterface::displayErrorScreen()'],['../classU8G2SH1106Display.html#a7bfa8d8282b926ed6b32d61d1fba2885',1,'U8G2SH1106Display::displayErrorScreen()']]],
+  ['displaymenu_558',['displayMenu',['../classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6',1,'BaseMenu']]],
+  ['displaymenuscreen_559',['displayMenuScreen',['../classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4',1,'DisplayInterface::displayMenuScreen()'],['../classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6',1,'U8G2SH1106Display::displayMenuScreen()']]],
+  ['displayprogressscreen_560',['displayProgressScreen',['../classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31',1,'DisplayInterface::displayProgressScreen()'],['../classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda',1,'U8G2SH1106Display::displayProgressScreen(const char *activity, uint8_t counter) override']]],
+  ['displaystartupscreen_561',['displayStartupScreen',['../classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231',1,'U8G2SH1106Display::displayStartupScreen()'],['../classDisplayInterface.html#a810a76dde10eb647ecda0a732f52346f',1,'DisplayInterface::displayStartupScreen(const char *headerText, const char *version)=0']]],
+  ['displaythrottlescreen_562',['displayThrottleScreen',['../classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6',1,'DisplayInterface::displayThrottleScreen()'],['../classU8G2SH1106Display.html#ad2e068b4be3350c3e12dbf461befdafb',1,'U8G2SH1106Display::displayThrottleScreen()']]],
+  ['doubleclick_563',['doubleClick',['../classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9',1,'Switch']]],
+  ['drawscreen_564',['drawScreen',['../classErrorScreen.html#acc54926b9c1387d3007bd2861e47f85b',1,'ErrorScreen::drawScreen()'],['../classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b',1,'MenuScreen::drawScreen()'],['../classProgressScreen.html#a7b33a3a2c99b0bc8d48bea6b7be2581a',1,'ProgressScreen::drawScreen()'],['../classScreenInterface.html#a47b29b27e201f65cf7be827e58814f8c',1,'ScreenInterface::drawScreen()'],['../classStartupScreen.html#a1997937f85258571a79e47ca255865ad',1,'StartupScreen::drawScreen()'],['../classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69',1,'ThrottleScreen::drawScreen()']]]
 ];

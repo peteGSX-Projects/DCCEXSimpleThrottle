@@ -73,189 +73,974 @@ $(function() {
 <div class="title">Switch Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="avdweb__Switch_8h_source.html">avdweb_Switch.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afe605da5e62089b597b5db785e595396"><td class="memItemLeft" align="right" valign="top"><a id="afe605da5e62089b597b5db785e595396"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Switch</b> (byte _pin, byte PinMode=INPUT_PULLUP, bool polarity=LOW, unsigned long debouncePeriod=50, unsigned long longPressPeriod=300, unsigned long doubleClickPeriod=250, unsigned long deglitchPeriod=10)</td></tr>
+<tr class="memitem:afe605da5e62089b597b5db785e595396"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#afe605da5e62089b597b5db785e595396">Switch</a> (byte _pin, byte PinMode=INPUT_PULLUP, bool <a class="el" href="classSwitch.html#ad8e6e9dca1157436ec6ba0a1f1f06e0e">polarity</a>=LOW, unsigned long <a class="el" href="classSwitch.html#a322389bbe913428d237a40b74d4aad1f">debouncePeriod</a>=50, unsigned long <a class="el" href="classSwitch.html#aea440e149d2e2a386f49a0950e7e00a2">longPressPeriod</a>=300, unsigned long <a class="el" href="classSwitch.html#ad5713cab0c09ce7b4833de136253a0c6">doubleClickPeriod</a>=250, unsigned long <a class="el" href="classSwitch.html#a2324b761c3d89f2ed5c9c0e269724971">deglitchPeriod</a>=10)</td></tr>
 <tr class="separator:afe605da5e62089b597b5db785e595396"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54c7bb4078fda81710158fd6d3e7e5ae"><td class="memItemLeft" align="right" valign="top"><a id="a54c7bb4078fda81710158fd6d3e7e5ae"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>poll</b> ()</td></tr>
+<tr class="memitem:a54c7bb4078fda81710158fd6d3e7e5ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae">poll</a> ()</td></tr>
 <tr class="separator:a54c7bb4078fda81710158fd6d3e7e5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4967769dcf150dae6ea23e77509ee35e"><td class="memItemLeft" align="right" valign="top"><a id="a4967769dcf150dae6ea23e77509ee35e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>switched</b> ()</td></tr>
+<tr class="memitem:a4967769dcf150dae6ea23e77509ee35e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e">switched</a> ()</td></tr>
 <tr class="separator:a4967769dcf150dae6ea23e77509ee35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dc6ecface0d7c560efa3983687f1a92"><td class="memItemLeft" align="right" valign="top"><a id="a0dc6ecface0d7c560efa3983687f1a92"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>on</b> ()</td></tr>
+<tr class="memitem:a0dc6ecface0d7c560efa3983687f1a92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92">on</a> ()</td></tr>
 <tr class="separator:a0dc6ecface0d7c560efa3983687f1a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc965ba9f8f4ea9e11db6ed5b48f0be7"><td class="memItemLeft" align="right" valign="top"><a id="afc965ba9f8f4ea9e11db6ed5b48f0be7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>pushed</b> ()</td></tr>
+<tr class="memitem:afc965ba9f8f4ea9e11db6ed5b48f0be7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7">pushed</a> ()</td></tr>
 <tr class="separator:afc965ba9f8f4ea9e11db6ed5b48f0be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85afd0589b71159575c8523c57f4f9fa"><td class="memItemLeft" align="right" valign="top"><a id="a85afd0589b71159575c8523c57f4f9fa"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>released</b> ()</td></tr>
+<tr class="memitem:a85afd0589b71159575c8523c57f4f9fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa">released</a> ()</td></tr>
 <tr class="separator:a85afd0589b71159575c8523c57f4f9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28631a0592b4453f279069cc1617d1e7"><td class="memItemLeft" align="right" valign="top"><a id="a28631a0592b4453f279069cc1617d1e7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>longPress</b> ()</td></tr>
+<tr class="memitem:a28631a0592b4453f279069cc1617d1e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a28631a0592b4453f279069cc1617d1e7">longPress</a> ()</td></tr>
 <tr class="separator:a28631a0592b4453f279069cc1617d1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf65d60a2577803d7e0c1cc04e22d6d9"><td class="memItemLeft" align="right" valign="top"><a id="aaf65d60a2577803d7e0c1cc04e22d6d9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>doubleClick</b> ()</td></tr>
+<tr class="memitem:aaf65d60a2577803d7e0c1cc04e22d6d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9">doubleClick</a> ()</td></tr>
 <tr class="separator:aaf65d60a2577803d7e0c1cc04e22d6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dc0e5dff7a88420edc151ef24bd91da"><td class="memItemLeft" align="right" valign="top"><a id="a6dc0e5dff7a88420edc151ef24bd91da"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>singleClick</b> ()</td></tr>
+<tr class="memitem:a6dc0e5dff7a88420edc151ef24bd91da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da">singleClick</a> ()</td></tr>
 <tr class="separator:a6dc0e5dff7a88420edc151ef24bd91da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1a5fdcd2e0fe475fc2209e9052ae37a"><td class="memItemLeft" align="right" valign="top"><a id="ab1a5fdcd2e0fe475fc2209e9052ae37a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPushedCallback</b> (switchCallback_t cb, void *param=nullptr)</td></tr>
+<tr class="memitem:ab1a5fdcd2e0fe475fc2209e9052ae37a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ab1a5fdcd2e0fe475fc2209e9052ae37a">setPushedCallback</a> (<a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> cb, void *param=nullptr)</td></tr>
 <tr class="separator:ab1a5fdcd2e0fe475fc2209e9052ae37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d356acfca72333f8c292d4cf51435aa"><td class="memItemLeft" align="right" valign="top"><a id="a6d356acfca72333f8c292d4cf51435aa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setReleasedCallback</b> (switchCallback_t cb, void *param=nullptr)</td></tr>
+<tr class="memitem:a6d356acfca72333f8c292d4cf51435aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a6d356acfca72333f8c292d4cf51435aa">setReleasedCallback</a> (<a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> cb, void *param=nullptr)</td></tr>
 <tr class="separator:a6d356acfca72333f8c292d4cf51435aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1db56f6c8d6998f63d688ded2f62e61e"><td class="memItemLeft" align="right" valign="top"><a id="a1db56f6c8d6998f63d688ded2f62e61e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLongPressCallback</b> (switchCallback_t cb, void *param=nullptr)</td></tr>
+<tr class="memitem:a1db56f6c8d6998f63d688ded2f62e61e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a1db56f6c8d6998f63d688ded2f62e61e">setLongPressCallback</a> (<a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> cb, void *param=nullptr)</td></tr>
 <tr class="separator:a1db56f6c8d6998f63d688ded2f62e61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ac86e781f4f0ba2d1f2b0fd810d7438"><td class="memItemLeft" align="right" valign="top"><a id="a6ac86e781f4f0ba2d1f2b0fd810d7438"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDoubleClickCallback</b> (switchCallback_t cb, void *param=nullptr)</td></tr>
+<tr class="memitem:a6ac86e781f4f0ba2d1f2b0fd810d7438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a6ac86e781f4f0ba2d1f2b0fd810d7438">setDoubleClickCallback</a> (<a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> cb, void *param=nullptr)</td></tr>
 <tr class="separator:a6ac86e781f4f0ba2d1f2b0fd810d7438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26432a7fbf818665686629de567a5aca"><td class="memItemLeft" align="right" valign="top"><a id="a26432a7fbf818665686629de567a5aca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSingleClickCallback</b> (switchCallback_t cb, void *param=nullptr)</td></tr>
+<tr class="memitem:a26432a7fbf818665686629de567a5aca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a26432a7fbf818665686629de567a5aca">setSingleClickCallback</a> (<a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> cb, void *param=nullptr)</td></tr>
 <tr class="separator:a26432a7fbf818665686629de567a5aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe935516287f826469129cc15e2f5fbf"><td class="memItemLeft" align="right" valign="top"><a id="abe935516287f826469129cc15e2f5fbf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBeepAllCallback</b> (switchCallback_t cb, void *param=nullptr)</td></tr>
+<tr class="memitem:abe935516287f826469129cc15e2f5fbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#abe935516287f826469129cc15e2f5fbf">setBeepAllCallback</a> (<a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> cb, void *param=nullptr)</td></tr>
 <tr class="separator:abe935516287f826469129cc15e2f5fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2324b761c3d89f2ed5c9c0e269724971"><td class="memItemLeft" align="right" valign="top"><a id="a2324b761c3d89f2ed5c9c0e269724971"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>deglitchPeriod</b></td></tr>
+<tr class="memitem:a2324b761c3d89f2ed5c9c0e269724971"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a2324b761c3d89f2ed5c9c0e269724971">deglitchPeriod</a></td></tr>
 <tr class="separator:a2324b761c3d89f2ed5c9c0e269724971"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a322389bbe913428d237a40b74d4aad1f"><td class="memItemLeft" align="right" valign="top"><a id="a322389bbe913428d237a40b74d4aad1f"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>debouncePeriod</b></td></tr>
+<tr class="memitem:a322389bbe913428d237a40b74d4aad1f"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a322389bbe913428d237a40b74d4aad1f">debouncePeriod</a></td></tr>
 <tr class="separator:a322389bbe913428d237a40b74d4aad1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea440e149d2e2a386f49a0950e7e00a2"><td class="memItemLeft" align="right" valign="top"><a id="aea440e149d2e2a386f49a0950e7e00a2"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>longPressPeriod</b></td></tr>
+<tr class="memitem:aea440e149d2e2a386f49a0950e7e00a2"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#aea440e149d2e2a386f49a0950e7e00a2">longPressPeriod</a></td></tr>
 <tr class="separator:aea440e149d2e2a386f49a0950e7e00a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5713cab0c09ce7b4833de136253a0c6"><td class="memItemLeft" align="right" valign="top"><a id="ad5713cab0c09ce7b4833de136253a0c6"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>doubleClickPeriod</b></td></tr>
+<tr class="memitem:ad5713cab0c09ce7b4833de136253a0c6"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ad5713cab0c09ce7b4833de136253a0c6">doubleClickPeriod</a></td></tr>
 <tr class="separator:ad5713cab0c09ce7b4833de136253a0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a5dd4555ee2b69ffed62e99a2c2164938"><td class="memItemLeft" align="right" valign="top"><a id="a5dd4555ee2b69ffed62e99a2c2164938"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>process</b> ()</td></tr>
+<tr class="memitem:a5dd4555ee2b69ffed62e99a2c2164938"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938">process</a> ()</td></tr>
 <tr class="separator:a5dd4555ee2b69ffed62e99a2c2164938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35c42c5bfb7dde8cf4e1df4cc1d3e7d7"><td class="memItemLeft" align="right" valign="top"><a id="a35c42c5bfb7dde8cf4e1df4cc1d3e7d7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deglitch</b> ()</td></tr>
+<tr class="memitem:a35c42c5bfb7dde8cf4e1df4cc1d3e7d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7">deglitch</a> ()</td></tr>
 <tr class="separator:a35c42c5bfb7dde8cf4e1df4cc1d3e7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa15d1bb5e8ede49d4f91931b0ed5a0de"><td class="memItemLeft" align="right" valign="top"><a id="aa15d1bb5e8ede49d4f91931b0ed5a0de"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>debounce</b> ()</td></tr>
+<tr class="memitem:aa15d1bb5e8ede49d4f91931b0ed5a0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#aa15d1bb5e8ede49d4f91931b0ed5a0de">debounce</a> ()</td></tr>
 <tr class="separator:aa15d1bb5e8ede49d4f91931b0ed5a0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcb029f60baed406f88167af02954051"><td class="memItemLeft" align="right" valign="top"><a id="afcb029f60baed406f88167af02954051"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcLongPress</b> ()</td></tr>
+<tr class="memitem:afcb029f60baed406f88167af02954051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#afcb029f60baed406f88167af02954051">calcLongPress</a> ()</td></tr>
 <tr class="separator:afcb029f60baed406f88167af02954051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad09c0fa1af35f85993e7ca5ae9d60d8e"><td class="memItemLeft" align="right" valign="top"><a id="ad09c0fa1af35f85993e7ca5ae9d60d8e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcDoubleClick</b> ()</td></tr>
+<tr class="memitem:ad09c0fa1af35f85993e7ca5ae9d60d8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e">calcDoubleClick</a> ()</td></tr>
 <tr class="separator:ad09c0fa1af35f85993e7ca5ae9d60d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8100a6970d6e21fe581396bbf4926ee0"><td class="memItemLeft" align="right" valign="top"><a id="a8100a6970d6e21fe581396bbf4926ee0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcSingleClick</b> ()</td></tr>
+<tr class="memitem:a8100a6970d6e21fe581396bbf4926ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0">calcSingleClick</a> ()</td></tr>
 <tr class="separator:a8100a6970d6e21fe581396bbf4926ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3380e6ae40fde8f5ec82751e59d735f"><td class="memItemLeft" align="right" valign="top"><a id="ab3380e6ae40fde8f5ec82751e59d735f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>triggerCallbacks</b> ()</td></tr>
+<tr class="memitem:ab3380e6ae40fde8f5ec82751e59d735f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f">triggerCallbacks</a> ()</td></tr>
 <tr class="separator:ab3380e6ae40fde8f5ec82751e59d735f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a1cf96feb468a8137631fd4e30eff75b5"><td class="memItemLeft" align="right" valign="top"><a id="a1cf96feb468a8137631fd4e30eff75b5"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>deglitchTime</b></td></tr>
+<tr class="memitem:a1cf96feb468a8137631fd4e30eff75b5"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a1cf96feb468a8137631fd4e30eff75b5">deglitchTime</a></td></tr>
 <tr class="separator:a1cf96feb468a8137631fd4e30eff75b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c01ab740eed37221058dd0c28af301"><td class="memItemLeft" align="right" valign="top"><a id="ad8c01ab740eed37221058dd0c28af301"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>switchedTime</b></td></tr>
+<tr class="memitem:ad8c01ab740eed37221058dd0c28af301"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ad8c01ab740eed37221058dd0c28af301">switchedTime</a></td></tr>
 <tr class="separator:ad8c01ab740eed37221058dd0c28af301"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46a137d99e5a5cbcbd1afa22f89fc2e7"><td class="memItemLeft" align="right" valign="top"><a id="a46a137d99e5a5cbcbd1afa22f89fc2e7"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>pushedTime</b></td></tr>
+<tr class="memitem:a46a137d99e5a5cbcbd1afa22f89fc2e7"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a46a137d99e5a5cbcbd1afa22f89fc2e7">pushedTime</a></td></tr>
 <tr class="separator:a46a137d99e5a5cbcbd1afa22f89fc2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48407e9c43de0f6a87817db1cda7bff5"><td class="memItemLeft" align="right" valign="top"><a id="a48407e9c43de0f6a87817db1cda7bff5"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>releasedTime</b></td></tr>
+<tr class="memitem:a48407e9c43de0f6a87817db1cda7bff5"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a48407e9c43de0f6a87817db1cda7bff5">releasedTime</a></td></tr>
 <tr class="separator:a48407e9c43de0f6a87817db1cda7bff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5839214b4ebc7c4bdbf06c25b5a5af8"><td class="memItemLeft" align="right" valign="top"><a id="aa5839214b4ebc7c4bdbf06c25b5a5af8"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>ms</b></td></tr>
+<tr class="memitem:aa5839214b4ebc7c4bdbf06c25b5a5af8"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#aa5839214b4ebc7c4bdbf06c25b5a5af8">ms</a></td></tr>
 <tr class="separator:aa5839214b4ebc7c4bdbf06c25b5a5af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64b4b7dbd453139a6474af02a294d625"><td class="memItemLeft" align="right" valign="top"><a id="a64b4b7dbd453139a6474af02a294d625"></a>
-const byte&#160;</td><td class="memItemRight" valign="bottom"><b>pin</b></td></tr>
+<tr class="memitem:a64b4b7dbd453139a6474af02a294d625"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a64b4b7dbd453139a6474af02a294d625">pin</a></td></tr>
 <tr class="separator:a64b4b7dbd453139a6474af02a294d625"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8e6e9dca1157436ec6ba0a1f1f06e0e"><td class="memItemLeft" align="right" valign="top"><a id="ad8e6e9dca1157436ec6ba0a1f1f06e0e"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><b>polarity</b></td></tr>
+<tr class="memitem:ad8e6e9dca1157436ec6ba0a1f1f06e0e"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ad8e6e9dca1157436ec6ba0a1f1f06e0e">polarity</a></td></tr>
 <tr class="separator:ad8e6e9dca1157436ec6ba0a1f1f06e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b9c6894c60d1bf6483831b495db5d9e"><td class="memItemLeft" align="right" valign="top"><a id="a9b9c6894c60d1bf6483831b495db5d9e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
+<tr class="memitem:a9b9c6894c60d1bf6483831b495db5d9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a9b9c6894c60d1bf6483831b495db5d9e">input</a></td></tr>
 <tr class="separator:a9b9c6894c60d1bf6483831b495db5d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df995280c5c1a453aed7ee651d82f64"><td class="memItemLeft" align="right" valign="top"><a id="a0df995280c5c1a453aed7ee651d82f64"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>lastInput</b></td></tr>
+<tr class="memitem:a0df995280c5c1a453aed7ee651d82f64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a0df995280c5c1a453aed7ee651d82f64">lastInput</a></td></tr>
 <tr class="separator:a0df995280c5c1a453aed7ee651d82f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a4d1886a2aa72ca4f8d7995133243f5"><td class="memItemLeft" align="right" valign="top"><a id="a0a4d1886a2aa72ca4f8d7995133243f5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>equal</b></td></tr>
+<tr class="memitem:a0a4d1886a2aa72ca4f8d7995133243f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a0a4d1886a2aa72ca4f8d7995133243f5">equal</a></td></tr>
 <tr class="separator:a0a4d1886a2aa72ca4f8d7995133243f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7470cef1e5c776c18fa46f90a1ab60fd"><td class="memItemLeft" align="right" valign="top"><a id="a7470cef1e5c776c18fa46f90a1ab60fd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>deglitched</b></td></tr>
+<tr class="memitem:a7470cef1e5c776c18fa46f90a1ab60fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a7470cef1e5c776c18fa46f90a1ab60fd">deglitched</a></td></tr>
 <tr class="separator:a7470cef1e5c776c18fa46f90a1ab60fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa8a10302c342c330948ab1e391e01a7"><td class="memItemLeft" align="right" valign="top"><a id="aaa8a10302c342c330948ab1e391e01a7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>debounced</b></td></tr>
+<tr class="memitem:aaa8a10302c342c330948ab1e391e01a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#aaa8a10302c342c330948ab1e391e01a7">debounced</a></td></tr>
 <tr class="separator:aaa8a10302c342c330948ab1e391e01a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae90c53dd890f5b2741064080954cd804"><td class="memItemLeft" align="right" valign="top"><a id="ae90c53dd890f5b2741064080954cd804"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_switched</b></td></tr>
+<tr class="memitem:ae90c53dd890f5b2741064080954cd804"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ae90c53dd890f5b2741064080954cd804">_switched</a></td></tr>
 <tr class="separator:ae90c53dd890f5b2741064080954cd804"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad025b20cd27a3cef78302b477480f033"><td class="memItemLeft" align="right" valign="top"><a id="ad025b20cd27a3cef78302b477480f033"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_longPress</b></td></tr>
+<tr class="memitem:ad025b20cd27a3cef78302b477480f033"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ad025b20cd27a3cef78302b477480f033">_longPress</a></td></tr>
 <tr class="separator:ad025b20cd27a3cef78302b477480f033"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c0c1078c8a839d8f1327ac97f9d1ce"><td class="memItemLeft" align="right" valign="top"><a id="a12c0c1078c8a839d8f1327ac97f9d1ce"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>longPressDisable</b></td></tr>
+<tr class="memitem:a12c0c1078c8a839d8f1327ac97f9d1ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a12c0c1078c8a839d8f1327ac97f9d1ce">longPressDisable</a></td></tr>
 <tr class="separator:a12c0c1078c8a839d8f1327ac97f9d1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b59f35f9d9422b03669d4915ebebd3"><td class="memItemLeft" align="right" valign="top"><a id="a65b59f35f9d9422b03669d4915ebebd3"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_doubleClick</b></td></tr>
+<tr class="memitem:a65b59f35f9d9422b03669d4915ebebd3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a65b59f35f9d9422b03669d4915ebebd3">_doubleClick</a></td></tr>
 <tr class="separator:a65b59f35f9d9422b03669d4915ebebd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6728051791185475f4ab0d77a47f5104"><td class="memItemLeft" align="right" valign="top"><a id="a6728051791185475f4ab0d77a47f5104"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_singleClick</b></td></tr>
+<tr class="memitem:a6728051791185475f4ab0d77a47f5104"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a6728051791185475f4ab0d77a47f5104">_singleClick</a></td></tr>
 <tr class="separator:a6728051791185475f4ab0d77a47f5104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1721509d513902315c5b38ca255d7ffd"><td class="memItemLeft" align="right" valign="top"><a id="a1721509d513902315c5b38ca255d7ffd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>singleClickDisable</b></td></tr>
+<tr class="memitem:a1721509d513902315c5b38ca255d7ffd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a1721509d513902315c5b38ca255d7ffd">singleClickDisable</a></td></tr>
 <tr class="separator:a1721509d513902315c5b38ca255d7ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a5fad7bbde3d5fad131ff97b32e1af6"><td class="memItemLeft" align="right" valign="top"><a id="a4a5fad7bbde3d5fad131ff97b32e1af6"></a>
-switchCallback_t&#160;</td><td class="memItemRight" valign="bottom"><b>_pushedCallback</b> = nullptr</td></tr>
+<tr class="memitem:a4a5fad7bbde3d5fad131ff97b32e1af6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a4a5fad7bbde3d5fad131ff97b32e1af6">_pushedCallback</a> = nullptr</td></tr>
 <tr class="separator:a4a5fad7bbde3d5fad131ff97b32e1af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9b4dcf56fcb89107bff91af07472abe"><td class="memItemLeft" align="right" valign="top"><a id="ab9b4dcf56fcb89107bff91af07472abe"></a>
-switchCallback_t&#160;</td><td class="memItemRight" valign="bottom"><b>_releasedCallback</b> = nullptr</td></tr>
+<tr class="memitem:ab9b4dcf56fcb89107bff91af07472abe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ab9b4dcf56fcb89107bff91af07472abe">_releasedCallback</a> = nullptr</td></tr>
 <tr class="separator:ab9b4dcf56fcb89107bff91af07472abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbd37f6cdd7752edaea72627db9cf075"><td class="memItemLeft" align="right" valign="top"><a id="afbd37f6cdd7752edaea72627db9cf075"></a>
-switchCallback_t&#160;</td><td class="memItemRight" valign="bottom"><b>_longPressCallback</b> = nullptr</td></tr>
+<tr class="memitem:afbd37f6cdd7752edaea72627db9cf075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#afbd37f6cdd7752edaea72627db9cf075">_longPressCallback</a> = nullptr</td></tr>
 <tr class="separator:afbd37f6cdd7752edaea72627db9cf075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a865a4f45839bd09d210222d7351a8b76"><td class="memItemLeft" align="right" valign="top"><a id="a865a4f45839bd09d210222d7351a8b76"></a>
-switchCallback_t&#160;</td><td class="memItemRight" valign="bottom"><b>_doubleClickCallback</b> = nullptr</td></tr>
+<tr class="memitem:a865a4f45839bd09d210222d7351a8b76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a865a4f45839bd09d210222d7351a8b76">_doubleClickCallback</a> = nullptr</td></tr>
 <tr class="separator:a865a4f45839bd09d210222d7351a8b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45367fbc0024cb329079399bc6da9c6b"><td class="memItemLeft" align="right" valign="top"><a id="a45367fbc0024cb329079399bc6da9c6b"></a>
-switchCallback_t&#160;</td><td class="memItemRight" valign="bottom"><b>_singleClickCallback</b> = nullptr</td></tr>
+<tr class="memitem:a45367fbc0024cb329079399bc6da9c6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a45367fbc0024cb329079399bc6da9c6b">_singleClickCallback</a> = nullptr</td></tr>
 <tr class="separator:a45367fbc0024cb329079399bc6da9c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27c76c0acc691e4a555aebcf5a630563"><td class="memItemLeft" align="right" valign="top"><a id="a27c76c0acc691e4a555aebcf5a630563"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>_pushedCallbackParam</b> = nullptr</td></tr>
+<tr class="memitem:a27c76c0acc691e4a555aebcf5a630563"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a27c76c0acc691e4a555aebcf5a630563">_pushedCallbackParam</a> = nullptr</td></tr>
 <tr class="separator:a27c76c0acc691e4a555aebcf5a630563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cee34ce706c6ff20e788a1051fdb384"><td class="memItemLeft" align="right" valign="top"><a id="a8cee34ce706c6ff20e788a1051fdb384"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>_releasedCallbackParam</b> = nullptr</td></tr>
+<tr class="memitem:a8cee34ce706c6ff20e788a1051fdb384"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a8cee34ce706c6ff20e788a1051fdb384">_releasedCallbackParam</a> = nullptr</td></tr>
 <tr class="separator:a8cee34ce706c6ff20e788a1051fdb384"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3d164eced17ba366ab6f9f114fba8be"><td class="memItemLeft" align="right" valign="top"><a id="ac3d164eced17ba366ab6f9f114fba8be"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>_longPressCallbackParam</b> = nullptr</td></tr>
+<tr class="memitem:ac3d164eced17ba366ab6f9f114fba8be"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ac3d164eced17ba366ab6f9f114fba8be">_longPressCallbackParam</a> = nullptr</td></tr>
 <tr class="separator:ac3d164eced17ba366ab6f9f114fba8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad71bf5f3f4f22df4ab177e69e9bc9de9"><td class="memItemLeft" align="right" valign="top"><a id="ad71bf5f3f4f22df4ab177e69e9bc9de9"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>_doubleClickCallbackParam</b> = nullptr</td></tr>
+<tr class="memitem:ad71bf5f3f4f22df4ab177e69e9bc9de9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#ad71bf5f3f4f22df4ab177e69e9bc9de9">_doubleClickCallbackParam</a> = nullptr</td></tr>
 <tr class="separator:ad71bf5f3f4f22df4ab177e69e9bc9de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65fd95660d65a6d72373c84ca72faade"><td class="memItemLeft" align="right" valign="top"><a id="a65fd95660d65a6d72373c84ca72faade"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>_singleClickCallbackParam</b> = nullptr</td></tr>
+<tr class="memitem:a65fd95660d65a6d72373c84ca72faade"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a65fd95660d65a6d72373c84ca72faade">_singleClickCallbackParam</a> = nullptr</td></tr>
 <tr class="separator:a65fd95660d65a6d72373c84ca72faade"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a749a57d38b44af2f5f751cfb7ab07694"><td class="memItemLeft" align="right" valign="top">static switchCallback_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a749a57d38b44af2f5f751cfb7ab07694">_beepAllCallback</a> = nullptr</td></tr>
+<tr class="memitem:a749a57d38b44af2f5f751cfb7ab07694"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a749a57d38b44af2f5f751cfb7ab07694">_beepAllCallback</a> = nullptr</td></tr>
 <tr class="separator:a749a57d38b44af2f5f751cfb7ab07694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a940fbcac85d35f278a9c3096dfdcdf1f"><td class="memItemLeft" align="right" valign="top"><a id="a940fbcac85d35f278a9c3096dfdcdf1f"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>_beepAllCallbackParam</b> = nullptr</td></tr>
+<tr class="memitem:a940fbcac85d35f278a9c3096dfdcdf1f"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSwitch.html#a940fbcac85d35f278a9c3096dfdcdf1f">_beepAllCallbackParam</a> = nullptr</td></tr>
 <tr class="separator:a940fbcac85d35f278a9c3096dfdcdf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afe605da5e62089b597b5db785e595396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe605da5e62089b597b5db785e595396">&#9670;&nbsp;</a></span>Switch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Switch::Switch </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>_pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>PinMode</em> = <code>INPUT_PULLUP</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>polarity</em> = <code>LOW</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>debouncePeriod</em> = <code>50</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>longPressPeriod</em> = <code>300</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>doubleClickPeriod</em> = <code>250</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>deglitchPeriod</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_afe605da5e62089b597b5db785e595396_cgraph.png" border="0" usemap="#aclassSwitch_afe605da5e62089b597b5db785e595396_cgraph" alt=""/></div>
+<map name="aclassSwitch_afe605da5e62089b597b5db785e595396_cgraph" id="aclassSwitch_afe605da5e62089b597b5db785e595396_cgraph">
+<area shape="rect" title=" " alt="" coords="5,229,121,256"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="169,229,267,256"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="315,229,437,256"/>
+<area shape="rect" href="classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e" title=" " alt="" coords="486,65,663,92"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="727,5,847,32"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="492,255,657,281"/>
+<area shape="rect" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="721,309,852,336"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="489,204,660,231"/>
+<area shape="rect" href="classSwitch.html#aa15d1bb5e8ede49d4f91931b0ed5a0de" title=" " alt="" coords="507,356,643,383"/>
+<area shape="rect" href="classSwitch.html#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7" title=" " alt="" coords="512,407,637,433"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="485,128,664,155"/>
+<area shape="rect" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="742,259,831,285"/>
+<area shape="rect" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="722,208,851,235"/>
+<area shape="rect" href="classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="712,157,861,184"/>
+<area shape="rect" href="classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="719,56,855,83"/>
+<area shape="rect" href="classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="715,107,859,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad09c0fa1af35f85993e7ca5ae9d60d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad09c0fa1af35f85993e7ca5ae9d60d8e">&#9670;&nbsp;</a></span>calcDoubleClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::calcDoubleClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_cgraph.png" border="0" usemap="#aclassSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_cgraph" alt=""/></div>
+<map name="aclassSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_cgraph" id="aclassSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,183,32"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="231,5,351,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_icgraph.png" border="0" usemap="#aclassSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_icgraph" alt=""/></div>
+<map name="aclassSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_icgraph" id="aclassSwitch_ad09c0fa1af35f85993e7ca5ae9d60d8e_icgraph">
+<area shape="rect" title=" " alt="" coords="577,42,755,69"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afcb029f60baed406f88167af02954051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb029f60baed406f88167af02954051">&#9670;&nbsp;</a></span>calcLongPress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::calcLongPress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_afcb029f60baed406f88167af02954051_cgraph.png" border="0" usemap="#aclassSwitch_afcb029f60baed406f88167af02954051_cgraph" alt=""/></div>
+<map name="aclassSwitch_afcb029f60baed406f88167af02954051_cgraph" id="aclassSwitch_afcb029f60baed406f88167af02954051_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,171,83"/>
+<area shape="rect" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="239,5,329,32"/>
+<area shape="rect" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="219,56,349,83"/>
+<area shape="rect" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="219,107,349,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_afcb029f60baed406f88167af02954051_icgraph.png" border="0" usemap="#aclassSwitch_afcb029f60baed406f88167af02954051_icgraph" alt=""/></div>
+<map name="aclassSwitch_afcb029f60baed406f88167af02954051_icgraph" id="aclassSwitch_afcb029f60baed406f88167af02954051_icgraph">
+<area shape="rect" title=" " alt="" coords="577,42,743,69"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8100a6970d6e21fe581396bbf4926ee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8100a6970d6e21fe581396bbf4926ee0">&#9670;&nbsp;</a></span>calcSingleClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::calcSingleClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a8100a6970d6e21fe581396bbf4926ee0_cgraph.png" border="0" usemap="#aclassSwitch_a8100a6970d6e21fe581396bbf4926ee0_cgraph" alt=""/></div>
+<map name="aclassSwitch_a8100a6970d6e21fe581396bbf4926ee0_cgraph" id="aclassSwitch_a8100a6970d6e21fe581396bbf4926ee0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,176,83"/>
+<area shape="rect" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="245,5,334,32"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="229,56,349,83"/>
+<area shape="rect" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="224,107,355,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a8100a6970d6e21fe581396bbf4926ee0_icgraph.png" border="0" usemap="#aclassSwitch_a8100a6970d6e21fe581396bbf4926ee0_icgraph" alt=""/></div>
+<map name="aclassSwitch_a8100a6970d6e21fe581396bbf4926ee0_icgraph" id="aclassSwitch_a8100a6970d6e21fe581396bbf4926ee0_icgraph">
+<area shape="rect" title=" " alt="" coords="577,42,748,69"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa15d1bb5e8ede49d4f91931b0ed5a0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa15d1bb5e8ede49d4f91931b0ed5a0de">&#9670;&nbsp;</a></span>debounce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::debounce </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_aa15d1bb5e8ede49d4f91931b0ed5a0de_icgraph.png" border="0" usemap="#aclassSwitch_aa15d1bb5e8ede49d4f91931b0ed5a0de_icgraph" alt=""/></div>
+<map name="aclassSwitch_aa15d1bb5e8ede49d4f91931b0ed5a0de_icgraph" id="aclassSwitch_aa15d1bb5e8ede49d4f91931b0ed5a0de_icgraph">
+<area shape="rect" title=" " alt="" coords="577,42,713,69"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a35c42c5bfb7dde8cf4e1df4cc1d3e7d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7">&#9670;&nbsp;</a></span>deglitch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::deglitch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a35c42c5bfb7dde8cf4e1df4cc1d3e7d7_icgraph.png" border="0" usemap="#aclassSwitch_a35c42c5bfb7dde8cf4e1df4cc1d3e7d7_icgraph" alt=""/></div>
+<map name="aclassSwitch_a35c42c5bfb7dde8cf4e1df4cc1d3e7d7_icgraph" id="aclassSwitch_a35c42c5bfb7dde8cf4e1df4cc1d3e7d7_icgraph">
+<area shape="rect" title=" " alt="" coords="577,42,703,69"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf65d60a2577803d7e0c1cc04e22d6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf65d60a2577803d7e0c1cc04e22d6d9">&#9670;&nbsp;</a></span>doubleClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::doubleClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_aaf65d60a2577803d7e0c1cc04e22d6d9_icgraph.png" border="0" usemap="#aclassSwitch_aaf65d60a2577803d7e0c1cc04e22d6d9_icgraph" alt=""/></div>
+<map name="aclassSwitch_aaf65d60a2577803d7e0c1cc04e22d6d9_icgraph" id="aclassSwitch_aaf65d60a2577803d7e0c1cc04e22d6d9_icgraph">
+<area shape="rect" title=" " alt="" coords="804,38,953,65"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="577,63,756,90"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,63,529,90"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,63,359,90"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a28631a0592b4453f279069cc1617d1e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28631a0592b4453f279069cc1617d1e7">&#9670;&nbsp;</a></span>longPress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::longPress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a28631a0592b4453f279069cc1617d1e7_icgraph.png" border="0" usemap="#aclassSwitch_a28631a0592b4453f279069cc1617d1e7_icgraph" alt=""/></div>
+<map name="aclassSwitch_a28631a0592b4453f279069cc1617d1e7_icgraph" id="aclassSwitch_a28631a0592b4453f279069cc1617d1e7_icgraph">
+<area shape="rect" title=" " alt="" coords="804,38,940,65"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="577,63,756,90"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,63,529,90"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,63,359,90"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0dc6ecface0d7c560efa3983687f1a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc6ecface0d7c560efa3983687f1a92">&#9670;&nbsp;</a></span>on()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::on </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a0dc6ecface0d7c560efa3983687f1a92_icgraph.png" border="0" usemap="#aclassSwitch_a0dc6ecface0d7c560efa3983687f1a92_icgraph" alt=""/></div>
+<map name="aclassSwitch_a0dc6ecface0d7c560efa3983687f1a92_icgraph" id="aclassSwitch_a0dc6ecface0d7c560efa3983687f1a92_icgraph">
+<area shape="rect" title=" " alt="" coords="796,42,885,69"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="580,17,745,43"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="577,67,748,94"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a54c7bb4078fda81710158fd6d3e7e5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c7bb4078fda81710158fd6d3e7e5ae">&#9670;&nbsp;</a></span>poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::poll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_cgraph.png" border="0" usemap="#aclassSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_cgraph" alt=""/></div>
+<map name="aclassSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_cgraph" id="aclassSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,229,103,256"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="151,229,273,256"/>
+<area shape="rect" href="classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e" title=" " alt="" coords="322,65,499,92"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="563,5,683,32"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="328,255,493,281"/>
+<area shape="rect" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="557,309,688,336"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="325,204,496,231"/>
+<area shape="rect" href="classSwitch.html#aa15d1bb5e8ede49d4f91931b0ed5a0de" title=" " alt="" coords="343,356,479,383"/>
+<area shape="rect" href="classSwitch.html#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7" title=" " alt="" coords="348,407,473,433"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="321,128,500,155"/>
+<area shape="rect" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="578,259,667,285"/>
+<area shape="rect" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="558,208,687,235"/>
+<area shape="rect" href="classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="548,157,697,184"/>
+<area shape="rect" href="classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="555,56,691,83"/>
+<area shape="rect" href="classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="551,107,695,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_icgraph.png" border="0" usemap="#aclassSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_icgraph" alt=""/></div>
+<map name="aclassSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_icgraph" id="aclassSwitch_a54c7bb4078fda81710158fd6d3e7e5ae_icgraph">
+<area shape="rect" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5dd4555ee2b69ffed62e99a2c2164938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd4555ee2b69ffed62e99a2c2164938">&#9670;&nbsp;</a></span>process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::process </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a5dd4555ee2b69ffed62e99a2c2164938_cgraph.png" border="0" usemap="#aclassSwitch_a5dd4555ee2b69ffed62e99a2c2164938_cgraph" alt=""/></div>
+<map name="aclassSwitch_a5dd4555ee2b69ffed62e99a2c2164938_cgraph" id="aclassSwitch_a5dd4555ee2b69ffed62e99a2c2164938_cgraph">
+<area shape="rect" title=" " alt="" coords="5,229,128,256"/>
+<area shape="rect" href="classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e" title=" " alt="" coords="177,65,354,92"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="417,5,537,32"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="183,255,348,281"/>
+<area shape="rect" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="412,309,543,336"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="180,204,351,231"/>
+<area shape="rect" href="classSwitch.html#aa15d1bb5e8ede49d4f91931b0ed5a0de" title=" " alt="" coords="197,356,333,383"/>
+<area shape="rect" href="classSwitch.html#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7" title=" " alt="" coords="203,407,328,433"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="176,128,355,155"/>
+<area shape="rect" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="433,259,522,285"/>
+<area shape="rect" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="413,208,542,235"/>
+<area shape="rect" href="classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="403,157,552,184"/>
+<area shape="rect" href="classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="409,56,545,83"/>
+<area shape="rect" href="classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="405,107,549,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a5dd4555ee2b69ffed62e99a2c2164938_icgraph.png" border="0" usemap="#aclassSwitch_a5dd4555ee2b69ffed62e99a2c2164938_icgraph" alt=""/></div>
+<map name="aclassSwitch_a5dd4555ee2b69ffed62e99a2c2164938_icgraph" id="aclassSwitch_a5dd4555ee2b69ffed62e99a2c2164938_icgraph">
+<area shape="rect" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc965ba9f8f4ea9e11db6ed5b48f0be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc965ba9f8f4ea9e11db6ed5b48f0be7">&#9670;&nbsp;</a></span>pushed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::pushed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_afc965ba9f8f4ea9e11db6ed5b48f0be7_icgraph.png" border="0" usemap="#aclassSwitch_afc965ba9f8f4ea9e11db6ed5b48f0be7_icgraph" alt=""/></div>
+<map name="aclassSwitch_afc965ba9f8f4ea9e11db6ed5b48f0be7_icgraph" id="aclassSwitch_afc965ba9f8f4ea9e11db6ed5b48f0be7_icgraph">
+<area shape="rect" title=" " alt="" coords="804,81,924,108"/>
+<area shape="rect" href="classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e" title=" " alt="" coords="578,5,755,32"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,81,529,108"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="581,107,752,133"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="577,157,756,184"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,81,359,108"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,45,213,86"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,111,167,137"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a85afd0589b71159575c8523c57f4f9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85afd0589b71159575c8523c57f4f9fa">&#9670;&nbsp;</a></span>released()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::released </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a85afd0589b71159575c8523c57f4f9fa_icgraph.png" border="0" usemap="#aclassSwitch_a85afd0589b71159575c8523c57f4f9fa_icgraph" alt=""/></div>
+<map name="aclassSwitch_a85afd0589b71159575c8523c57f4f9fa_icgraph" id="aclassSwitch_a85afd0589b71159575c8523c57f4f9fa_icgraph">
+<area shape="rect" title=" " alt="" coords="804,42,933,69"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="584,17,749,43"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="577,67,756,94"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abe935516287f826469129cc15e2f5fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe935516287f826469129cc15e2f5fbf">&#9670;&nbsp;</a></span>setBeepAllCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::setBeepAllCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ac86e781f4f0ba2d1f2b0fd810d7438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac86e781f4f0ba2d1f2b0fd810d7438">&#9670;&nbsp;</a></span>setDoubleClickCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::setDoubleClickCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1db56f6c8d6998f63d688ded2f62e61e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db56f6c8d6998f63d688ded2f62e61e">&#9670;&nbsp;</a></span>setLongPressCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::setLongPressCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1a5fdcd2e0fe475fc2209e9052ae37a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a5fdcd2e0fe475fc2209e9052ae37a">&#9670;&nbsp;</a></span>setPushedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::setPushedCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d356acfca72333f8c292d4cf51435aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d356acfca72333f8c292d4cf51435aa">&#9670;&nbsp;</a></span>setReleasedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::setReleasedCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26432a7fbf818665686629de567a5aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26432a7fbf818665686629de567a5aca">&#9670;&nbsp;</a></span>setSingleClickCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::setSingleClickCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6dc0e5dff7a88420edc151ef24bd91da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dc0e5dff7a88420edc151ef24bd91da">&#9670;&nbsp;</a></span>singleClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::singleClick </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a6dc0e5dff7a88420edc151ef24bd91da_icgraph.png" border="0" usemap="#aclassSwitch_a6dc0e5dff7a88420edc151ef24bd91da_icgraph" alt=""/></div>
+<map name="aclassSwitch_a6dc0e5dff7a88420edc151ef24bd91da_icgraph" id="aclassSwitch_a6dc0e5dff7a88420edc151ef24bd91da_icgraph">
+<area shape="rect" title=" " alt="" coords="804,38,948,65"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="577,63,756,90"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,63,529,90"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,63,359,90"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4967769dcf150dae6ea23e77509ee35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4967769dcf150dae6ea23e77509ee35e">&#9670;&nbsp;</a></span>switched()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::switched </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_a4967769dcf150dae6ea23e77509ee35e_icgraph.png" border="0" usemap="#aclassSwitch_a4967769dcf150dae6ea23e77509ee35e_icgraph" alt=""/></div>
+<map name="aclassSwitch_a4967769dcf150dae6ea23e77509ee35e_icgraph" id="aclassSwitch_a4967769dcf150dae6ea23e77509ee35e_icgraph">
+<area shape="rect" title=" " alt="" coords="796,56,927,83"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="580,5,745,32"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,56,529,83"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="577,107,748,133"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,56,359,83"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,19,213,61"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,85,167,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab3380e6ae40fde8f5ec82751e59d735f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3380e6ae40fde8f5ec82751e59d735f">&#9670;&nbsp;</a></span>triggerCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Switch::triggerCallbacks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_ab3380e6ae40fde8f5ec82751e59d735f_cgraph.png" border="0" usemap="#aclassSwitch_ab3380e6ae40fde8f5ec82751e59d735f_cgraph" alt=""/></div>
+<map name="aclassSwitch_ab3380e6ae40fde8f5ec82751e59d735f_cgraph" id="aclassSwitch_ab3380e6ae40fde8f5ec82751e59d735f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,184,133"/>
+<area shape="rect" href="classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="232,5,381,32"/>
+<area shape="rect" href="classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="239,56,375,83"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="247,107,367,133"/>
+<area shape="rect" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="242,157,371,184"/>
+<area shape="rect" href="classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="235,208,379,235"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSwitch_ab3380e6ae40fde8f5ec82751e59d735f_icgraph.png" border="0" usemap="#aclassSwitch_ab3380e6ae40fde8f5ec82751e59d735f_icgraph" alt=""/></div>
+<map name="aclassSwitch_ab3380e6ae40fde8f5ec82751e59d735f_icgraph" id="aclassSwitch_ab3380e6ae40fde8f5ec82751e59d735f_icgraph">
+<area shape="rect" title=" " alt="" coords="577,42,756,69"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
+<area shape="rect" href="classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
+<area shape="rect" href="classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+</map>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a749a57d38b44af2f5f751cfb7ab07694"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a749a57d38b44af2f5f751cfb7ab07694">&#9670;&nbsp;</a></span>_beepAllCallback</h2>
@@ -267,7 +1052,7 @@ static void *&#160;</td><td class="memItemRight" valign="bottom"><b>_beepAllCall
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">switchCallback_t Switch::_beepAllCallback = nullptr</td>
+          <td class="memname"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> Switch::_beepAllCallback = nullptr</td>
         </tr>
       </table>
   </td>
@@ -276,7 +1061,7 @@ static void *&#160;</td><td class="memItemRight" valign="bottom"><b>_beepAllCall
   </tr>
 </table>
 </div><div class="memdoc">
-<p>avdweb_Switch.cpp</p>
+<p><a class="el" href="avdweb__Switch_8cpp.html">avdweb_Switch.cpp</a></p>
 <p><a class="el" href="classSwitch.html">Switch</a> - Arduino switch and button library with Short/Long Press, </p>
 <h1><a class="anchor" id="autotoc_md0"></a>
 Double Click and Beep.</h1>
@@ -331,9 +1116,703 @@ Notes</h2>
 
 </div>
 </div>
+<a id="a940fbcac85d35f278a9c3096dfdcdf1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940fbcac85d35f278a9c3096dfdcdf1f">&#9670;&nbsp;</a></span>_beepAllCallbackParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Switch::_beepAllCallbackParam = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65b59f35f9d9422b03669d4915ebebd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b59f35f9d9422b03669d4915ebebd3">&#9670;&nbsp;</a></span>_doubleClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::_doubleClick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a865a4f45839bd09d210222d7351a8b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a865a4f45839bd09d210222d7351a8b76">&#9670;&nbsp;</a></span>_doubleClickCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> Switch::_doubleClickCallback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad71bf5f3f4f22df4ab177e69e9bc9de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad71bf5f3f4f22df4ab177e69e9bc9de9">&#9670;&nbsp;</a></span>_doubleClickCallbackParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Switch::_doubleClickCallbackParam = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad025b20cd27a3cef78302b477480f033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad025b20cd27a3cef78302b477480f033">&#9670;&nbsp;</a></span>_longPress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::_longPress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbd37f6cdd7752edaea72627db9cf075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd37f6cdd7752edaea72627db9cf075">&#9670;&nbsp;</a></span>_longPressCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> Switch::_longPressCallback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3d164eced17ba366ab6f9f114fba8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d164eced17ba366ab6f9f114fba8be">&#9670;&nbsp;</a></span>_longPressCallbackParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Switch::_longPressCallbackParam = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a5fad7bbde3d5fad131ff97b32e1af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a5fad7bbde3d5fad131ff97b32e1af6">&#9670;&nbsp;</a></span>_pushedCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> Switch::_pushedCallback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27c76c0acc691e4a555aebcf5a630563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c76c0acc691e4a555aebcf5a630563">&#9670;&nbsp;</a></span>_pushedCallbackParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Switch::_pushedCallbackParam = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9b4dcf56fcb89107bff91af07472abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b4dcf56fcb89107bff91af07472abe">&#9670;&nbsp;</a></span>_releasedCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> Switch::_releasedCallback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8cee34ce706c6ff20e788a1051fdb384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cee34ce706c6ff20e788a1051fdb384">&#9670;&nbsp;</a></span>_releasedCallbackParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Switch::_releasedCallbackParam = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6728051791185475f4ab0d77a47f5104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6728051791185475f4ab0d77a47f5104">&#9670;&nbsp;</a></span>_singleClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::_singleClick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45367fbc0024cb329079399bc6da9c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45367fbc0024cb329079399bc6da9c6b">&#9670;&nbsp;</a></span>_singleClickCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="avdweb__Switch_8h.html#a99643c700a9db643346b097decca3381">switchCallback_t</a> Switch::_singleClickCallback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65fd95660d65a6d72373c84ca72faade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fd95660d65a6d72373c84ca72faade">&#9670;&nbsp;</a></span>_singleClickCallbackParam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Switch::_singleClickCallbackParam = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae90c53dd890f5b2741064080954cd804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae90c53dd890f5b2741064080954cd804">&#9670;&nbsp;</a></span>_switched</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::_switched</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa8a10302c342c330948ab1e391e01a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8a10302c342c330948ab1e391e01a7">&#9670;&nbsp;</a></span>debounced</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::debounced</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a322389bbe913428d237a40b74d4aad1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322389bbe913428d237a40b74d4aad1f">&#9670;&nbsp;</a></span>debouncePeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::debouncePeriod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7470cef1e5c776c18fa46f90a1ab60fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7470cef1e5c776c18fa46f90a1ab60fd">&#9670;&nbsp;</a></span>deglitched</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::deglitched</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2324b761c3d89f2ed5c9c0e269724971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2324b761c3d89f2ed5c9c0e269724971">&#9670;&nbsp;</a></span>deglitchPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::deglitchPeriod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1cf96feb468a8137631fd4e30eff75b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf96feb468a8137631fd4e30eff75b5">&#9670;&nbsp;</a></span>deglitchTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::deglitchTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5713cab0c09ce7b4833de136253a0c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5713cab0c09ce7b4833de136253a0c6">&#9670;&nbsp;</a></span>doubleClickPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::doubleClickPeriod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a4d1886a2aa72ca4f8d7995133243f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4d1886a2aa72ca4f8d7995133243f5">&#9670;&nbsp;</a></span>equal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::equal</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b9c6894c60d1bf6483831b495db5d9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9c6894c60d1bf6483831b495db5d9e">&#9670;&nbsp;</a></span>input</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::input</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0df995280c5c1a453aed7ee651d82f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df995280c5c1a453aed7ee651d82f64">&#9670;&nbsp;</a></span>lastInput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::lastInput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12c0c1078c8a839d8f1327ac97f9d1ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c0c1078c8a839d8f1327ac97f9d1ce">&#9670;&nbsp;</a></span>longPressDisable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::longPressDisable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea440e149d2e2a386f49a0950e7e00a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea440e149d2e2a386f49a0950e7e00a2">&#9670;&nbsp;</a></span>longPressPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::longPressPeriod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5839214b4ebc7c4bdbf06c25b5a5af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5839214b4ebc7c4bdbf06c25b5a5af8">&#9670;&nbsp;</a></span>ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64b4b7dbd453139a6474af02a294d625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b4b7dbd453139a6474af02a294d625">&#9670;&nbsp;</a></span>pin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const byte Switch::pin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8e6e9dca1157436ec6ba0a1f1f06e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e6e9dca1157436ec6ba0a1f1f06e0e">&#9670;&nbsp;</a></span>polarity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool Switch::polarity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46a137d99e5a5cbcbd1afa22f89fc2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a137d99e5a5cbcbd1afa22f89fc2e7">&#9670;&nbsp;</a></span>pushedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::pushedTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48407e9c43de0f6a87817db1cda7bff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48407e9c43de0f6a87817db1cda7bff5">&#9670;&nbsp;</a></span>releasedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::releasedTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1721509d513902315c5b38ca255d7ffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1721509d513902315c5b38ca255d7ffd">&#9670;&nbsp;</a></span>singleClickDisable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Switch::singleClickDisable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8c01ab740eed37221058dd0c28af301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c01ab740eed37221058dd0c28af301">&#9670;&nbsp;</a></span>switchedTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long Switch::switchedTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="avdweb__Switch_8h_source.html">avdweb_Switch.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/avdweb_Switch.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="avdweb__Switch_8cpp.html">avdweb_Switch.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

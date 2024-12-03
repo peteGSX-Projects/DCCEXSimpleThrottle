@@ -1,0 +1,5 @@
+<map id="EventManager::subscribe" name="EventManager::subscribe">
+<area shape="rect" id="node1" title="Method to subscribe a listener to the specified event type." alt="" coords="503,13,689,39"/>
+<area shape="rect" id="node2" href="$classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3" title="Register all required event subscriptions, called by initialise()" alt="" coords="252,5,455,47"/>
+<area shape="rect" id="node3" href="$classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,13,204,39"/>
+</map>

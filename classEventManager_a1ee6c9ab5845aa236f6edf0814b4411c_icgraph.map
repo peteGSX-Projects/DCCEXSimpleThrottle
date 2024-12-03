@@ -1,0 +1,14 @@
+<map id="EventManager::publish" name="EventManager::publish">
+<area shape="rect" id="node1" title="Method to publish an event." alt="" coords="1087,167,1257,194"/>
+<area shape="rect" id="node2" href="$classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="769,7,1039,48"/>
+<area shape="rect" id="node6" href="$classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="798,75,1010,102"/>
+<area shape="rect" id="node9" href="$classCommandStationListener.html#a76ed9f127a04ea8c5df4d93c07284f32" title="Respond to receiving an update for a loco to update the throttle screen." alt="" coords="811,127,997,168"/>
+<area shape="rect" id="node10" href="$classCommandStationListener.html#a19c3bef8292c11653d7897470c141c5d" title="Respond to receiving the loco address read from the programming track If valid (not &#45;1),..." alt="" coords="811,192,997,233"/>
+<area shape="rect" id="node11" href="$classCommandStationListener.html#ab045eb28c050dc3b81165a395e74491f" title="Respond to receiving the roster list which updates the roster menu." alt="" coords="811,257,997,299"/>
+<area shape="rect" id="node12" href="$classCommandStationListener.html#a60afa459d25db8593bf40fa08c46194b" title="Respond to receiving a track power state broadcast to update the throttle screen." alt="" coords="811,323,997,364"/>
+<area shape="rect" id="node3" href="$classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="492,5,721,47"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,5,444,47"/>
+<area shape="rect" id="node5" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,46,187,73"/>
+<area shape="rect" id="node7" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="501,71,712,112"/>
+<area shape="rect" id="node8" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,71,433,112"/>
+</map>

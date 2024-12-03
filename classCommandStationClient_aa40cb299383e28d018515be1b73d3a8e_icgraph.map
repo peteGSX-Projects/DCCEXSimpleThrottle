@@ -1,0 +1,6 @@
+<map id="CommandStationClient::isConnected" name="CommandStationClient::isConnected">
+<area shape="rect" id="node1" title="Check if the CommandStation client is connected." alt="" coords="503,35,676,76"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,5,455,47"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="258,71,439,98"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>

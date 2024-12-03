@@ -66,7 +66,7 @@ $(function() {
 <div class="title">/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/Rotary.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="Rotary_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Rotary encoder library for Arduino.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -79,31 +79,36 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// #define HALF_STEP</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Enable weak pullups</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define ENABLE_PULLUPS</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="Rotary_8h.html#a21ab10d332da42c1b97a7d82292d254e">   14</a></span>&#160;<span class="preprocessor">#define ENABLE_PULLUPS</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Values returned by &#39;process&#39;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// No complete step yet.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define DIR_NONE 0x0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="Rotary_8h.html#a665390e734d124195aa8d263d475c73a">   18</a></span>&#160;<span class="preprocessor">#define DIR_NONE 0x0</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Clockwise step.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define DIR_CW 0x10</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="Rotary_8h.html#a32aebb0062f8833d08b204b072721245">   20</a></span>&#160;<span class="preprocessor">#define DIR_CW 0x10</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Anti-clockwise step.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define DIR_CCW 0x20</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="Rotary_8h.html#a6d4cfbbc36469e74e77804b0c3c9d0ba">   22</a></span>&#160;<span class="preprocessor">#define DIR_CCW 0x20</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classRotary.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRotary.html">Rotary</a></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classRotary.html">Rotary</a>(<span class="keywordtype">char</span>, <span class="keywordtype">char</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classRotary.html#a93b9b8d0cf3f89dff99df344f6ce0d91">Rotary</a>(<span class="keywordtype">char</span>, <span class="keywordtype">char</span>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Process pin(s)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> process();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classRotary.html#add09cfff4c69778268cd80a6edb6713e">process</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> state;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin1;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pin2;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classRotary.html#a2cadb2fb33e9c99b8391f26275f4f961">   31</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classRotary.html#a2cadb2fb33e9c99b8391f26275f4f961">state</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classRotary.html#a0d5a3dc18b0c206e2aeab97df68c31d1">   32</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classRotary.html#a0d5a3dc18b0c206e2aeab97df68c31d1">pin1</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classRotary.html#a27ddee6d1ecc4104c19ad375633e5675">   33</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classRotary.html#a27ddee6d1ecc4104c19ad375633e5675">pin2</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="ttc" id="aclassRotary_html"><div class="ttname"><a href="classRotary.html">Rotary</a></div><div class="ttdef"><b>Definition:</b> Rotary.h:25</div></div>
+<div class="ttc" id="aclassRotary_html_a0d5a3dc18b0c206e2aeab97df68c31d1"><div class="ttname"><a href="classRotary.html#a0d5a3dc18b0c206e2aeab97df68c31d1">Rotary::pin1</a></div><div class="ttdeci">unsigned char pin1</div><div class="ttdef"><b>Definition:</b> Rotary.h:32</div></div>
+<div class="ttc" id="aclassRotary_html_a27ddee6d1ecc4104c19ad375633e5675"><div class="ttname"><a href="classRotary.html#a27ddee6d1ecc4104c19ad375633e5675">Rotary::pin2</a></div><div class="ttdeci">unsigned char pin2</div><div class="ttdef"><b>Definition:</b> Rotary.h:33</div></div>
+<div class="ttc" id="aclassRotary_html_a2cadb2fb33e9c99b8391f26275f4f961"><div class="ttname"><a href="classRotary.html#a2cadb2fb33e9c99b8391f26275f4f961">Rotary::state</a></div><div class="ttdeci">unsigned char state</div><div class="ttdef"><b>Definition:</b> Rotary.h:31</div></div>
+<div class="ttc" id="aclassRotary_html_a93b9b8d0cf3f89dff99df344f6ce0d91"><div class="ttname"><a href="classRotary.html#a93b9b8d0cf3f89dff99df344f6ce0d91">Rotary::Rotary</a></div><div class="ttdeci">Rotary(char, char)</div><div class="ttdef"><b>Definition:</b> Rotary.cpp:126</div></div>
+<div class="ttc" id="aclassRotary_html_add09cfff4c69778268cd80a6edb6713e"><div class="ttname"><a href="classRotary.html#add09cfff4c69778268cd80a6edb6713e">Rotary::process</a></div><div class="ttdeci">unsigned char process()</div><div class="ttdef"><b>Definition:</b> Rotary.cpp:141</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

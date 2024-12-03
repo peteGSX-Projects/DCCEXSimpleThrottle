@@ -1,0 +1,4 @@
+<map id="AppOrchestrator::_switchState" name="AppOrchestrator::_switchState">
+<area shape="rect" id="node1" title="Switch application states." alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node2" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="239,5,437,47"/>
+</map>

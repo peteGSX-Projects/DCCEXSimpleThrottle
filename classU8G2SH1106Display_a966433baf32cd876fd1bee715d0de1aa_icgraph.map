@@ -1,0 +1,4 @@
+<map id="U8G2SH1106Display::_displayLocoSpeed" name="U8G2SH1106Display::_displayLocoSpeed">
+<area shape="rect" id="node1" title="Update the currenty selected loco&#39;s speed." alt="" coords="217,5,381,47"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#ad2e068b4be3350c3e12dbf461befdafb" title="Display the throttle screen." alt="" coords="5,5,169,47"/>
+</map>

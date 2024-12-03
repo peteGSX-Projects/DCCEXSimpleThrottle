@@ -1,0 +1,6 @@
+<map id="AppOrchestrator::_handleErrorState" name="AppOrchestrator::_handleErrorState">
+<area shape="rect" id="node1" title="Show any errors on screen and process user interaction to recover." alt="" coords="5,31,192,72"/>
+<area shape="rect" id="node2" href="$classErrorScreen.html#acc54926b9c1387d3007bd2861e47f85b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="257,13,438,39"/>
+<area shape="rect" id="node4" href="$classErrorScreen.html#a895eb76681a5be273fa7b4636d60d491" title="Set the error message to be displayed." alt="" coords="240,63,455,90"/>
+<area shape="rect" id="node3" href="$classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58" title="Display error screen." alt="" coords="503,5,687,47"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="U8G2SH1106Display::displayThrottleScreen" name="U8G2SH1106Display::displayThrottleScreen">
+<area shape="rect" id="node1" title="Display the throttle screen." alt="" coords="5,201,169,243"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a14a6f4da0cb6eec14d096fda57d7abdb" title="Clear the display." alt="" coords="248,5,412,47"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#ab523d369924cf310d7b05f6d70a9320c" title="Update the currently selected loco&#39;s direction." alt="" coords="247,71,413,112"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#ad5a4d5928aab8c7578d210ed25048b0b" title="Update the address of the currently selected loco." alt="" coords="248,136,412,177"/>
+<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#a966433baf32cd876fd1bee715d0de1aa" title="Update the currenty selected loco&#39;s speed." alt="" coords="248,201,412,243"/>
+<area shape="rect" id="node6" href="$classU8G2SH1106Display.html#afab93eaa1d7afdb49dc5d3005e840972" title="Update the current track power status." alt="" coords="238,267,422,308"/>
+<area shape="rect" id="node7" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="217,333,443,359"/>
+<area shape="rect" id="node8" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="231,384,429,425"/>
+</map>

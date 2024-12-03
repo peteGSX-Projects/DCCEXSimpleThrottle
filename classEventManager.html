@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classEventManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">EventManager Class Reference</div>  </div>
@@ -75,29 +76,69 @@ $(function() {
  <a href="classEventManager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="EventManager_8h_source.html">EventManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for EventManager:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEventManager__coll__graph.png" border="0" usemap="#aEventManager_coll__map" alt="Collaboration graph"/></div>
+<map name="aEventManager_coll__map" id="aEventManager_coll__map">
+<area shape="rect" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="62,184,178,211"/>
+<area shape="rect" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="5,95,235,121"/>
+<area shape="rect" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="65,5,175,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEventManager_1_1EventSubscriber.html">EventSubscriber</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers.">EventSubscriber</a> structure to maintain the linked list of subscribers.  <a href="structEventManager_1_1EventSubscriber.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a89099b22114f158b5c530edfea52371d"><td class="memItemLeft" align="right" valign="top"><a id="a89099b22114f158b5c530edfea52371d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a89099b22114f158b5c530edfea52371d">EventManager</a> ()</td></tr>
-<tr class="memdesc:a89099b22114f158b5c530edfea52371d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the instance. <br /></td></tr>
+<tr class="memitem:a89099b22114f158b5c530edfea52371d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a89099b22114f158b5c530edfea52371d">EventManager</a> ()</td></tr>
+<tr class="memdesc:a89099b22114f158b5c530edfea52371d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the instance.  <a href="classEventManager.html#a89099b22114f158b5c530edfea52371d">More...</a><br /></td></tr>
 <tr class="separator:a89099b22114f158b5c530edfea52371d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad898edd8057126492c57325e23b62984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ad898edd8057126492c57325e23b62984">subscribe</a> (<a class="el" href="classEventListener.html">EventListener</a> *eventListener, EventType eventType)</td></tr>
+<tr class="memitem:ad898edd8057126492c57325e23b62984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ad898edd8057126492c57325e23b62984">subscribe</a> (<a class="el" href="classEventListener.html">EventListener</a> *eventListener, <a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> eventType)</td></tr>
 <tr class="memdesc:ad898edd8057126492c57325e23b62984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to subscribe a listener to the specified event type.  <a href="classEventManager.html#ad898edd8057126492c57325e23b62984">More...</a><br /></td></tr>
 <tr class="separator:ad898edd8057126492c57325e23b62984"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d182f09bb439a5f19962e680741163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ad9d182f09bb439a5f19962e680741163">unsubscribe</a> (<a class="el" href="classEventListener.html">EventListener</a> *eventListener, EventType eventType)</td></tr>
+<tr class="memitem:ad9d182f09bb439a5f19962e680741163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ad9d182f09bb439a5f19962e680741163">unsubscribe</a> (<a class="el" href="classEventListener.html">EventListener</a> *eventListener, <a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> eventType)</td></tr>
 <tr class="memdesc:ad9d182f09bb439a5f19962e680741163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to unsubscribe the listener from the specified event type.  <a href="classEventManager.html#ad9d182f09bb439a5f19962e680741163">More...</a><br /></td></tr>
 <tr class="separator:ad9d182f09bb439a5f19962e680741163"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab748a70c5bfab96a8a3794e1e5a9e128"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ab748a70c5bfab96a8a3794e1e5a9e128">isSubscribed</a> (<a class="el" href="classEventListener.html">EventListener</a> *eventListener, EventType eventType)</td></tr>
+<tr class="memitem:ab748a70c5bfab96a8a3794e1e5a9e128"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#ab748a70c5bfab96a8a3794e1e5a9e128">isSubscribed</a> (<a class="el" href="classEventListener.html">EventListener</a> *eventListener, <a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> eventType)</td></tr>
 <tr class="memdesc:ab748a70c5bfab96a8a3794e1e5a9e128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to check if the specified listener is subscribed to the specified event type.  <a href="classEventManager.html#ab748a70c5bfab96a8a3794e1e5a9e128">More...</a><br /></td></tr>
 <tr class="separator:ab748a70c5bfab96a8a3794e1e5a9e128"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ee6c9ab5845aa236f6edf0814b4411c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c">publish</a> (EventType eventType, <a class="el" href="structEventData.html">EventData</a> eventData)</td></tr>
+<tr class="memitem:a1ee6c9ab5845aa236f6edf0814b4411c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c">publish</a> (<a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> eventType, <a class="el" href="structEventData.html">EventData</a> eventData)</td></tr>
 <tr class="memdesc:a1ee6c9ab5845aa236f6edf0814b4411c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to publish an event.  <a href="classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c">More...</a><br /></td></tr>
 <tr class="separator:a1ee6c9ab5845aa236f6edf0814b4411c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a902b56ef8a1ef59f5c69972997d6a4af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEventManager_1_1EventSubscriber.html">EventSubscriber</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventManager.html#a902b56ef8a1ef59f5c69972997d6a4af">_firstEventSubscriber</a></td></tr>
+<tr class="separator:a902b56ef8a1ef59f5c69972997d6a4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to centrally manage all events for the application Exposes methods to register subscribers that need to respond to events, and to publish events Dynamically manages a linked list of subscribers to be notified when a relevant event is published Subscribers must extend the <a class="el" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p...">EventListener</a> class and implement the onEvent() virtual method provided. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a89099b22114f158b5c530edfea52371d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89099b22114f158b5c530edfea52371d">&#9670;&nbsp;</a></span>EventManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventManager::EventManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the instance. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab748a70c5bfab96a8a3794e1e5a9e128"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab748a70c5bfab96a8a3794e1e5a9e128">&#9670;&nbsp;</a></span>isSubscribed()</h2>
 
@@ -113,7 +154,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">EventType&#160;</td>
+          <td class="paramtype"><a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>&#160;</td>
           <td class="paramname"><em>eventType</em>&#160;</td>
         </tr>
         <tr>
@@ -145,7 +186,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void EventManager::publish </td>
           <td>(</td>
-          <td class="paramtype">EventType&#160;</td>
+          <td class="paramtype"><a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>&#160;</td>
           <td class="paramname"><em>eventType</em>, </td>
         </tr>
         <tr>
@@ -170,6 +211,25 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEventManager_a1ee6c9ab5845aa236f6edf0814b4411c_icgraph.png" border="0" usemap="#aclassEventManager_a1ee6c9ab5845aa236f6edf0814b4411c_icgraph" alt=""/></div>
+<map name="aclassEventManager_a1ee6c9ab5845aa236f6edf0814b4411c_icgraph" id="aclassEventManager_a1ee6c9ab5845aa236f6edf0814b4411c_icgraph">
+<area shape="rect" title="Method to publish an event." alt="" coords="1087,167,1257,194"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="769,7,1039,48"/>
+<area shape="rect" href="classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="798,75,1010,102"/>
+<area shape="rect" href="classCommandStationListener.html#a76ed9f127a04ea8c5df4d93c07284f32" title="Respond to receiving an update for a loco to update the throttle screen." alt="" coords="811,127,997,168"/>
+<area shape="rect" href="classCommandStationListener.html#a19c3bef8292c11653d7897470c141c5d" title="Respond to receiving the loco address read from the programming track If valid (not &#45;1),..." alt="" coords="811,192,997,233"/>
+<area shape="rect" href="classCommandStationListener.html#ab045eb28c050dc3b81165a395e74491f" title="Respond to receiving the roster list which updates the roster menu." alt="" coords="811,257,997,299"/>
+<area shape="rect" href="classCommandStationListener.html#a60afa459d25db8593bf40fa08c46194b" title="Respond to receiving a track power state broadcast to update the throttle screen." alt="" coords="811,323,997,364"/>
+<area shape="rect" href="classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="492,5,721,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,5,444,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,46,187,73"/>
+<area shape="rect" href="classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="501,71,712,112"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,71,433,112"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -188,7 +248,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">EventType&#160;</td>
+          <td class="paramtype"><a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>&#160;</td>
           <td class="paramname"><em>eventType</em>&#160;</td>
         </tr>
         <tr>
@@ -207,6 +267,16 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEventManager_ad898edd8057126492c57325e23b62984_icgraph.png" border="0" usemap="#aclassEventManager_ad898edd8057126492c57325e23b62984_icgraph" alt=""/></div>
+<map name="aclassEventManager_ad898edd8057126492c57325e23b62984_icgraph" id="aclassEventManager_ad898edd8057126492c57325e23b62984_icgraph">
+<area shape="rect" title="Method to subscribe a listener to the specified event type." alt="" coords="503,13,689,39"/>
+<area shape="rect" href="classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3" title="Register all required event subscriptions, called by initialise()" alt="" coords="252,5,455,47"/>
+<area shape="rect" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,13,204,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -225,7 +295,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">EventType&#160;</td>
+          <td class="paramtype"><a class="el" href="EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>&#160;</td>
           <td class="paramname"><em>eventType</em>&#160;</td>
         </tr>
         <tr>
@@ -247,9 +317,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a902b56ef8a1ef59f5c69972997d6a4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902b56ef8a1ef59f5c69972997d6a4af">&#9670;&nbsp;</a></span>_firstEventSubscriber</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEventManager_1_1EventSubscriber.html">EventSubscriber</a>* EventManager::_firstEventSubscriber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="EventManager_8h_source.html">EventManager.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/EventManager.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="EventManager_8cpp.html">EventManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

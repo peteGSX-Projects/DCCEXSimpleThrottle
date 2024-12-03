@@ -1,0 +1,6 @@
+<map id="AppOrchestrator::setThrottleLoco" name="AppOrchestrator::setThrottleLoco">
+<area shape="rect" id="node1" title="Set the loco being managed by the throttle screen." alt="" coords="5,42,243,69"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="291,5,476,47"/>
+<area shape="rect" id="node4" href="$classThrottleScreen.html#a32c7ad9203743f2b32d375cafcdf1844" title="Set the loco currently being operated." alt="" coords="296,71,471,98"/>
+<area shape="rect" id="node3" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="524,5,723,47"/>
+</map>

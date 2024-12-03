@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classLocoMenuItem-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LocoMenuItem Class Reference</div>  </div>
@@ -77,12 +78,21 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for LocoMenuItem:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classLocoMenuItem.png" usemap="#LocoMenuItem_map" alt=""/>
-  <map id="LocoMenuItem_map" name="LocoMenuItem_map">
-<area href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="BaseMenuItem" shape="rect" coords="0,0,94,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classLocoMenuItem__inherit__graph.png" border="0" usemap="#aLocoMenuItem_inherit__map" alt="Inheritance graph"/></div>
+<map name="aLocoMenuItem_inherit__map" id="aLocoMenuItem_inherit__map">
+<area shape="rect" title="Extension of the BaseMenuItem class to allow users to select a Loco." alt="" coords="6,80,125,107"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,5,125,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for LocoMenuItem:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLocoMenuItem__coll__graph.png" border="0" usemap="#aLocoMenuItem_coll__map" alt="Collaboration graph"/></div>
+<map name="aLocoMenuItem_coll__map" id="aLocoMenuItem_coll__map">
+<area shape="rect" title="Extension of the BaseMenuItem class to allow users to select a Loco." alt="" coords="6,81,125,108"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,5,125,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,6 +121,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42269f7409ba65420e4e7969e4743b69 inherit pub_methods_classBaseMenuItem"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69">getIndex</a> ()</td></tr>
 <tr class="memdesc:a42269f7409ba65420e4e7969e4743b69 inherit pub_methods_classBaseMenuItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of this item.  <a href="classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69">More...</a><br /></td></tr>
 <tr class="separator:a42269f7409ba65420e4e7969e4743b69 inherit pub_methods_classBaseMenuItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad4050b0649db538b3670d8e0c5ab9984"><td class="memItemLeft" align="right" valign="top">Loco *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLocoMenuItem.html#ad4050b0649db538b3670d8e0c5ab9984">_loco</a></td></tr>
+<tr class="separator:ad4050b0649db538b3670d8e0c5ab9984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension of the <a class="el" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this....">BaseMenuItem</a> class to allow users to select a Loco. </p>
@@ -159,12 +174,47 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the Loco object associated with this menu item. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the Loco object </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLocoMenuItem_aa7ac392d5d21a887a83a25cd6b3b9ff9_icgraph.png" border="0" usemap="#aclassLocoMenuItem_aa7ac392d5d21a887a83a25cd6b3b9ff9_icgraph" alt=""/></div>
+<map name="aclassLocoMenuItem_aa7ac392d5d21a887a83a25cd6b3b9ff9_icgraph" id="aclassLocoMenuItem_aa7ac392d5d21a887a83a25cd6b3b9ff9_icgraph">
+<area shape="rect" title="Get the Loco object associated with this menu item." alt="" coords="988,13,1165,39"/>
+<area shape="rect" href="classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="728,13,940,39"/>
+<area shape="rect" href="classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="469,5,680,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="235,5,421,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad4050b0649db538b3670d8e0c5ab9984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4050b0649db538b3670d8e0c5ab9984">&#9670;&nbsp;</a></span>_loco</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Loco* LocoMenuItem::_loco</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="LocoMenuItem_8h_source.html">LocoMenuItem.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/LocoMenuItem.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="LocoMenuItem_8cpp.html">LocoMenuItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

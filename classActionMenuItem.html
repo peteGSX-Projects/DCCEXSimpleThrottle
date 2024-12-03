@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classActionMenuItem-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ActionMenuItem Class Reference</div>  </div>
@@ -78,18 +79,26 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for ActionMenuItem:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classActionMenuItem.png" usemap="#ActionMenuItem_map" alt=""/>
-  <map id="ActionMenuItem_map" name="ActionMenuItem_map">
-<area href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="BaseMenuItem" shape="rect" coords="0,0,102,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classActionMenuItem__inherit__graph.png" border="0" usemap="#aActionMenuItem_inherit__map" alt="Inheritance graph"/></div>
+<map name="aActionMenuItem_inherit__map" id="aActionMenuItem_inherit__map">
+<area shape="rect" title="Extension of the BaseMenuItem class for users to select items that call a function or method Each act..." alt="" coords="5,80,135,107"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="10,5,130,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ActionMenuItem:</div>
+<div class="dyncontent">
+<div class="center"><img src="classActionMenuItem__coll__graph.png" border="0" usemap="#aActionMenuItem_coll__map" alt="Collaboration graph"/></div>
+<map name="aActionMenuItem_coll__map" id="aActionMenuItem_coll__map">
+<area shape="rect" title="Extension of the BaseMenuItem class for users to select items that call a function or method Each act..." alt="" coords="5,81,135,108"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="10,5,130,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:acb6e2268cae72f97ce02e8d59938ff7e"><td class="memItemLeft" align="right" valign="top"><a id="acb6e2268cae72f97ce02e8d59938ff7e"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActionMenuItem.html#acb6e2268cae72f97ce02e8d59938ff7e">Action</a>) ()</td></tr>
-<tr class="memdesc:acb6e2268cae72f97ce02e8d59938ff7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a non-typed method to call requiring no parameters. <br /></td></tr>
+<tr class="memitem:acb6e2268cae72f97ce02e8d59938ff7e"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActionMenuItem.html#acb6e2268cae72f97ce02e8d59938ff7e">Action</a>) ()</td></tr>
+<tr class="memdesc:acb6e2268cae72f97ce02e8d59938ff7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a non-typed method to call requiring no parameters.  <a href="classActionMenuItem.html#acb6e2268cae72f97ce02e8d59938ff7e">More...</a><br /></td></tr>
 <tr class="separator:acb6e2268cae72f97ce02e8d59938ff7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -97,9 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1dfebfd0259866109baacf35d6053875"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActionMenuItem.html#a1dfebfd0259866109baacf35d6053875">ActionMenuItem</a> (const char *name, <a class="el" href="classActionMenuItem.html#acb6e2268cae72f97ce02e8d59938ff7e">Action</a> action)</td></tr>
 <tr class="memdesc:a1dfebfd0259866109baacf35d6053875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the action menu item objects.  <a href="classActionMenuItem.html#a1dfebfd0259866109baacf35d6053875">More...</a><br /></td></tr>
 <tr class="separator:a1dfebfd0259866109baacf35d6053875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a119d5788f12d4558351c805fcc922db6"><td class="memItemLeft" align="right" valign="top"><a id="a119d5788f12d4558351c805fcc922db6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActionMenuItem.html#a119d5788f12d4558351c805fcc922db6">callAction</a> ()</td></tr>
-<tr class="memdesc:a119d5788f12d4558351c805fcc922db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the action associated with this menu item object. <br /></td></tr>
+<tr class="memitem:a119d5788f12d4558351c805fcc922db6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActionMenuItem.html#a119d5788f12d4558351c805fcc922db6">callAction</a> ()</td></tr>
+<tr class="memdesc:a119d5788f12d4558351c805fcc922db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the action associated with this menu item object.  <a href="classActionMenuItem.html#a119d5788f12d4558351c805fcc922db6">More...</a><br /></td></tr>
 <tr class="separator:a119d5788f12d4558351c805fcc922db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classBaseMenuItem"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classBaseMenuItem')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classBaseMenuItem.html">BaseMenuItem</a></td></tr>
 <tr class="memitem:a702145d8b3e5d8ca835516e7b9767bf5 inherit pub_methods_classBaseMenuItem"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenuItem.html#a702145d8b3e5d8ca835516e7b9767bf5">BaseMenuItem</a> (const char *name)</td></tr>
@@ -120,10 +128,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a42269f7409ba65420e4e7969e4743b69 inherit pub_methods_classBaseMenuItem"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69">getIndex</a> ()</td></tr>
 <tr class="memdesc:a42269f7409ba65420e4e7969e4743b69 inherit pub_methods_classBaseMenuItem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of this item.  <a href="classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69">More...</a><br /></td></tr>
 <tr class="separator:a42269f7409ba65420e4e7969e4743b69 inherit pub_methods_classBaseMenuItem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1a471b6e942629d715b480dba6438b3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classActionMenuItem.html#acb6e2268cae72f97ce02e8d59938ff7e">Action</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classActionMenuItem.html#a1a471b6e942629d715b480dba6438b3c">_action</a></td></tr>
+<tr class="separator:a1a471b6e942629d715b480dba6438b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Extension of the <a class="el" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this....">BaseMenuItem</a> class for users to select items that call a function or method Each action should be a callback to a method requiring no parameters. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="acb6e2268cae72f97ce02e8d59938ff7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6e2268cae72f97ce02e8d59938ff7e">&#9670;&nbsp;</a></span>Action</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* ActionMenuItem::Action) ()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a non-typed method to call requiring no parameters. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1dfebfd0259866109baacf35d6053875"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1dfebfd0259866109baacf35d6053875">&#9670;&nbsp;</a></span>ActionMenuItem()</h2>
 
@@ -161,9 +191,52 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a119d5788f12d4558351c805fcc922db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a119d5788f12d4558351c805fcc922db6">&#9670;&nbsp;</a></span>callAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ActionMenuItem::callAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call the action associated with this menu item object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1a471b6e942629d715b480dba6438b3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a471b6e942629d715b480dba6438b3c">&#9670;&nbsp;</a></span>_action</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classActionMenuItem.html#acb6e2268cae72f97ce02e8d59938ff7e">Action</a> ActionMenuItem::_action</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="ActionMenuItem_8h_source.html">ActionMenuItem.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ActionMenuItem.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="ActionMenuItem_8cpp.html">ActionMenuItem.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

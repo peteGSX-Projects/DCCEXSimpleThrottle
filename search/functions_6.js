@@ -1,5 +1,30 @@
 var searchData=
 [
-  ['handleuserconfirmationaction_200',['handleUserConfirmationAction',['../classErrorScreen.html#acd467ae469f5ddbc70549dbdef969214',1,'ErrorScreen::handleUserConfirmationAction()'],['../classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1',1,'ThrottleScreen::handleUserConfirmationAction()'],['../classStartupScreen.html#adf3145d4b29c8412c19c029db6625742',1,'StartupScreen::handleUserConfirmationAction()'],['../classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa',1,'SelectLocoMenu::handleUserConfirmationAction()'],['../classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd',1,'SelectCommandStationMenu::handleUserConfirmationAction()'],['../classSelectActionMenu.html#acdeddf70807012fcb535ff46006cab33',1,'SelectActionMenu::handleUserConfirmationAction()'],['../classScreenInterface.html#a3f8f461dacc438bd7057bdc50eb01901',1,'ScreenInterface::handleUserConfirmationAction()'],['../classProgressScreen.html#af2679eadd0b1db868f248285fd223ea6',1,'ProgressScreen::handleUserConfirmationAction()'],['../classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab',1,'MenuScreen::handleUserConfirmationAction()'],['../classBaseMenu.html#a771ae4a2011f1cf496255c2f79c847c6',1,'BaseMenu::handleUserConfirmationAction(UserConfirmationAction action)=0']]],
-  ['handleuserselectionaction_201',['handleUserSelectionAction',['../classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c',1,'BaseMenu::handleUserSelectionAction()'],['../classErrorScreen.html#a2d4a569f6bd35e61654d440013828f87',1,'ErrorScreen::handleUserSelectionAction()'],['../classMenuScreen.html#ac48f54c3a5127a467789d9fd358513be',1,'MenuScreen::handleUserSelectionAction()'],['../classProgressScreen.html#af4b7cf292a32d2d6f77cab940c36c025',1,'ProgressScreen::handleUserSelectionAction()'],['../classScreenInterface.html#a3b54a42e1b558083f6a53a455ac82a01',1,'ScreenInterface::handleUserSelectionAction()'],['../classStartupScreen.html#aff75ea69f644d0d01d1358a60a8cb9e4',1,'StartupScreen::handleUserSelectionAction()'],['../classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462',1,'ThrottleScreen::handleUserSelectionAction()']]]
+  ['getapporchestrator_570',['getAppOrchestrator',['../classAppConfiguration.html#a1926f2cdd4eebe72a9e532a79028ccda',1,'AppConfiguration']]],
+  ['getclient_571',['getClient',['../classCommandStationClient.html#a3ccddff0529052f378ebb9523172f711',1,'CommandStationClient']]],
+  ['getcommandstationclient_572',['getCommandStationClient',['../classAppConfiguration.html#a11f0dd026e6aac021dfa6556439d2e4d',1,'AppConfiguration']]],
+  ['getconnectionmanager_573',['getConnectionManager',['../classAppConfiguration.html#a0345a9b0d76003b86aabbe39af1cc0da',1,'AppConfiguration']]],
+  ['getconnectionstream_574',['getConnectionStream',['../classConnectionManager.html#af126a90b47e9ab97d4c0ea0ac285b1f3',1,'ConnectionManager']]],
+  ['getdisplayinterface_575',['getDisplayInterface',['../classAppConfiguration.html#ab34027320d3be5a75eb30e4b899ec608',1,'AppConfiguration']]],
+  ['geteventmanager_576',['getEventManager',['../classAppConfiguration.html#a8d7aeea618fc3045775cbcae997b0548',1,'AppConfiguration::getEventManager()'],['../classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8',1,'BaseMenu::getEventManager()']]],
+  ['getfirstmenuitem_577',['getFirstMenuItem',['../classBaseMenu.html#a92f683ada7a26e6e36f42e32414b8cba',1,'BaseMenu']]],
+  ['getindex_578',['getIndex',['../classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69',1,'BaseMenuItem']]],
+  ['getloco_579',['getLoco',['../classLocoMenuItem.html#aa7ac392d5d21a887a83a25cd6b3b9ff9',1,'LocoMenuItem']]],
+  ['getmenuitematindex_580',['getMenuItemAtIndex',['../classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67',1,'BaseMenu']]],
+  ['getmenuitemcount_581',['getMenuItemCount',['../classBaseMenu.html#a915cfd3ae9b40769d072b60e7f3360d7',1,'BaseMenu']]],
+  ['getmenuitemsperpage_582',['getMenuItemsPerPage',['../classDisplayInterface.html#a346ffb39867cd715c7544d942c34e613',1,'DisplayInterface']]],
+  ['getmenumanager_583',['getMenuManager',['../classAppConfiguration.html#a976cf1828e7a78ba3cd91ec3b6f0fcce',1,'AppConfiguration']]],
+  ['getmenuname_584',['getMenuName',['../classBaseMenu.html#af648f02660df388d7e91ad5ad9a97e79',1,'BaseMenu']]],
+  ['getname_585',['getName',['../classBaseMenuItem.html#af5dbacdf90800e184a1ee33a97db3b47',1,'BaseMenuItem']]],
+  ['getnext_586',['getNext',['../classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28',1,'BaseMenuItem::getNext()'],['../classScreenInterface.html#a63c5fee6885b582e1af60668db96df33',1,'ScreenInterface::getNext()']]],
+  ['getselectactionmenu_587',['getSelectActionMenu',['../classMenuManager.html#a81e53fff9a93681ebfcc7e563a38459b',1,'MenuManager']]],
+  ['getselectcommandstationmenu_588',['getSelectCommandStationMenu',['../classMenuManager.html#a5c69017e3aa561385b5bfb40d9516a70',1,'MenuManager']]],
+  ['getselecteditemindex_589',['getSelectedItemIndex',['../classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694',1,'BaseMenu']]],
+  ['getselectionchanged_590',['getSelectionChanged',['../classBaseMenu.html#ad217de34dc3593413a56c47d70ad00a3',1,'BaseMenu']]],
+  ['getselectlocomenu_591',['getSelectLocoMenu',['../classMenuManager.html#ab70aebed1c668b2072f63baf8a78ce54',1,'MenuManager']]],
+  ['getspeed_592',['getSpeed',['../classThrottleScreen.html#a9f2f0bb6c023da81ba8d9a1eefc81cdc',1,'ThrottleScreen']]],
+  ['getuserconfirmationaction_593',['getUserConfirmationAction',['../classButton.html#a043d8102c82da710ce158415fc646cbf',1,'Button::getUserConfirmationAction()'],['../classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef',1,'UserConfirmationInterface::getUserConfirmationAction()']]],
+  ['getuserconfirmationinterface_594',['getUserConfirmationInterface',['../classAppConfiguration.html#ada4120824f9d9722e2431cfcc4a60e40',1,'AppConfiguration']]],
+  ['getuserselectionaction_595',['getUserSelectionAction',['../classRotaryEncoder.html#a993f0dd4d7c462e8f17947af785942ed',1,'RotaryEncoder::getUserSelectionAction()'],['../classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3',1,'UserSelectionInterface::getUserSelectionAction()']]],
+  ['getuserselectioninterface_596',['getUserSelectionInterface',['../classAppConfiguration.html#a51a95e641b04f32ab4dcfacc96148258',1,'AppConfiguration']]]
 ];

@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classConnectionManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ConnectionManager Class Reference</div>  </div>
@@ -77,13 +78,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a68db2f9138942ef16d50ebd753188410"><td class="memItemLeft" align="right" valign="top"><a id="a68db2f9138942ef16d50ebd753188410"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#a68db2f9138942ef16d50ebd753188410">ConnectionManager</a> ()</td></tr>
-<tr class="memdesc:a68db2f9138942ef16d50ebd753188410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classConnectionManager.html" title="Class to manage all WiFi and serial connections used to connect to a CommandStation.">ConnectionManager</a>. <br /></td></tr>
+<tr class="memitem:a68db2f9138942ef16d50ebd753188410"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#a68db2f9138942ef16d50ebd753188410">ConnectionManager</a> ()</td></tr>
+<tr class="memdesc:a68db2f9138942ef16d50ebd753188410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classConnectionManager.html" title="Class to manage all WiFi and serial connections used to connect to a CommandStation.">ConnectionManager</a>.  <a href="classConnectionManager.html#a68db2f9138942ef16d50ebd753188410">More...</a><br /></td></tr>
 <tr class="separator:a68db2f9138942ef16d50ebd753188410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055e0561b1c729748fe7df16c07c5608"><td class="memItemLeft" align="right" valign="top"><a id="a055e0561b1c729748fe7df16c07c5608"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#a055e0561b1c729748fe7df16c07c5608">update</a> ()</td></tr>
-<tr class="memdesc:a055e0561b1c729748fe7df16c07c5608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure all connections are alive and retries are managed. <br /></td></tr>
+<tr class="memitem:a055e0561b1c729748fe7df16c07c5608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#a055e0561b1c729748fe7df16c07c5608">update</a> ()</td></tr>
+<tr class="memdesc:a055e0561b1c729748fe7df16c07c5608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure all connections are alive and retries are managed.  <a href="classConnectionManager.html#a055e0561b1c729748fe7df16c07c5608">More...</a><br /></td></tr>
 <tr class="separator:a055e0561b1c729748fe7df16c07c5608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a044438149a169fa61fd5a0b15d37439f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f">connected</a> ()</td></tr>
 <tr class="memdesc:a044438149a169fa61fd5a0b15d37439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if connections are active.  <a href="classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f">More...</a><br /></td></tr>
@@ -91,10 +90,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af126a90b47e9ab97d4c0ea0ac285b1f3"><td class="memItemLeft" align="right" valign="top">Stream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#af126a90b47e9ab97d4c0ea0ac285b1f3">getConnectionStream</a> ()</td></tr>
 <tr class="memdesc:af126a90b47e9ab97d4c0ea0ac285b1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the connection stream managed by this <a class="el" href="classConnectionManager.html" title="Class to manage all WiFi and serial connections used to connect to a CommandStation.">ConnectionManager</a>.  <a href="classConnectionManager.html#af126a90b47e9ab97d4c0ea0ac285b1f3">More...</a><br /></td></tr>
 <tr class="separator:af126a90b47e9ab97d4c0ea0ac285b1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae6917d5d52fe2f362056948fcff13c73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnectionManager.html#ae6917d5d52fe2f362056948fcff13c73">_connected</a></td></tr>
+<tr class="separator:ae6917d5d52fe2f362056948fcff13c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to manage all WiFi and serial connections used to connect to a CommandStation. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a68db2f9138942ef16d50ebd753188410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68db2f9138942ef16d50ebd753188410">&#9670;&nbsp;</a></span>ConnectionManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConnectionManager::ConnectionManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classConnectionManager.html" title="Class to manage all WiFi and serial connections used to connect to a CommandStation.">ConnectionManager</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a044438149a169fa61fd5a0b15d37439f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a044438149a169fa61fd5a0b15d37439f">&#9670;&nbsp;</a></span>connected()</h2>
 
@@ -112,6 +136,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Check if connections are active. </p>
 <dl class="section return"><dt>Returns</dt><dd>True|False </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classConnectionManager_a044438149a169fa61fd5a0b15d37439f_icgraph.png" border="0" usemap="#aclassConnectionManager_a044438149a169fa61fd5a0b15d37439f_icgraph" alt=""/></div>
+<map name="aclassConnectionManager_a044438149a169fa61fd5a0b15d37439f_icgraph" id="aclassConnectionManager_a044438149a169fa61fd5a0b15d37439f_icgraph">
+<area shape="rect" title="Check if connections are active." alt="" coords="505,35,665,76"/>
+<area shape="rect" href="classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="235,5,457,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,42,187,69"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -132,12 +166,72 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Get the connection stream managed by this <a class="el" href="classConnectionManager.html" title="Class to manage all WiFi and serial connections used to connect to a CommandStation.">ConnectionManager</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the connection stream object </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classConnectionManager_af126a90b47e9ab97d4c0ea0ac285b1f3_icgraph.png" border="0" usemap="#aclassConnectionManager_af126a90b47e9ab97d4c0ea0ac285b1f3_icgraph" alt=""/></div>
+<map name="aclassConnectionManager_af126a90b47e9ab97d4c0ea0ac285b1f3_icgraph" id="aclassConnectionManager_af126a90b47e9ab97d4c0ea0ac285b1f3_icgraph">
+<area shape="rect" title="Get the connection stream managed by this ConnectionManager." alt="" coords="235,5,397,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a055e0561b1c729748fe7df16c07c5608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055e0561b1c729748fe7df16c07c5608">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConnectionManager::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ensure all connections are alive and retries are managed. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classConnectionManager_a055e0561b1c729748fe7df16c07c5608_icgraph.png" border="0" usemap="#aclassConnectionManager_a055e0561b1c729748fe7df16c07c5608_icgraph" alt=""/></div>
+<map name="aclassConnectionManager_a055e0561b1c729748fe7df16c07c5608_icgraph" id="aclassConnectionManager_a055e0561b1c729748fe7df16c07c5608_icgraph">
+<area shape="rect" title="Ensure all connections are alive and retries are managed." alt="" coords="235,5,395,47"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae6917d5d52fe2f362056948fcff13c73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6917d5d52fe2f362056948fcff13c73">&#9670;&nbsp;</a></span>_connected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConnectionManager::_connected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="ConnectionManager_8h_source.html">ConnectionManager.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ConnectionManager.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="ConnectionManager_8cpp.html">ConnectionManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

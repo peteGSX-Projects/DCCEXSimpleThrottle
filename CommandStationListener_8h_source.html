@@ -66,7 +66,7 @@ $(function() {
 <div class="title">/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationListener.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="CommandStationListener_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  © 2024 Peter Cole</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  © 2023 Peter Cole</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
@@ -87,8 +87,8 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef COMMANDSTATIONLISTENER_H</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define COMMANDSTATIONLISTENER_H</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;Defines.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;EventManager.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Defines_8h.html">Defines.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EventManager_8h.html">EventManager.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;DCCEXProtocol.h&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classCommandStationListener.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCommandStationListener.html">CommandStationListener</a> : <span class="keyword">public</span> DCCEXProtocolDelegate {</div>
@@ -104,16 +104,19 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCommandStationListener.html#a19c3bef8292c11653d7897470c141c5d">receivedReadLoco</a>(<span class="keywordtype">int</span> address) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="classEventManager.html">EventManager</a> *_eventManager;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classCommandStationListener.html#adad1b4529675458eff063235490ffea6">   50</a></span>&#160;  <a class="code" href="classEventManager.html">EventManager</a> *<a class="code" href="classCommandStationListener.html#adad1b4529675458eff063235490ffea6">_eventManager</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// COMMANDSTATIONLISTENER_H</span></div>
+<div class="ttc" id="aDefines_8h_html"><div class="ttname"><a href="Defines_8h.html">Defines.h</a></div></div>
+<div class="ttc" id="aEventManager_8h_html"><div class="ttname"><a href="EventManager_8h.html">EventManager.h</a></div></div>
 <div class="ttc" id="aclassCommandStationListener_html"><div class="ttname"><a href="classCommandStationListener.html">CommandStationListener</a></div><div class="ttdoc">Class to manage broadcasts and responses from the CommandStation.</div><div class="ttdef"><b>Definition:</b> CommandStationListener.h:27</div></div>
 <div class="ttc" id="aclassCommandStationListener_html_a19c3bef8292c11653d7897470c141c5d"><div class="ttname"><a href="classCommandStationListener.html#a19c3bef8292c11653d7897470c141c5d">CommandStationListener::receivedReadLoco</a></div><div class="ttdeci">void receivedReadLoco(int address) override</div><div class="ttdoc">Respond to receiving the loco address read from the programming track If valid (not -1),...</div><div class="ttdef"><b>Definition:</b> CommandStationListener.cpp:38</div></div>
 <div class="ttc" id="aclassCommandStationListener_html_a230cebb526a1496ae59425cefb2d4fe8"><div class="ttname"><a href="classCommandStationListener.html#a230cebb526a1496ae59425cefb2d4fe8">CommandStationListener::CommandStationListener</a></div><div class="ttdeci">CommandStationListener(EventManager *eventManager)</div><div class="ttdoc">Consructor for the CommandStation listener.</div><div class="ttdef"><b>Definition:</b> CommandStationListener.cpp:21</div></div>
 <div class="ttc" id="aclassCommandStationListener_html_a60afa459d25db8593bf40fa08c46194b"><div class="ttname"><a href="classCommandStationListener.html#a60afa459d25db8593bf40fa08c46194b">CommandStationListener::receivedTrackPower</a></div><div class="ttdeci">void receivedTrackPower(TrackPower powerState) override</div><div class="ttdoc">Respond to receiving a track power state broadcast to update the throttle screen.</div><div class="ttdef"><b>Definition:</b> CommandStationListener.cpp:33</div></div>
 <div class="ttc" id="aclassCommandStationListener_html_a76ed9f127a04ea8c5df4d93c07284f32"><div class="ttname"><a href="classCommandStationListener.html#a76ed9f127a04ea8c5df4d93c07284f32">CommandStationListener::receivedLocoUpdate</a></div><div class="ttdeci">void receivedLocoUpdate(Loco *loco) override</div><div class="ttdoc">Respond to receiving an update for a loco to update the throttle screen.</div><div class="ttdef"><b>Definition:</b> CommandStationListener.cpp:28</div></div>
 <div class="ttc" id="aclassCommandStationListener_html_ab045eb28c050dc3b81165a395e74491f"><div class="ttname"><a href="classCommandStationListener.html#ab045eb28c050dc3b81165a395e74491f">CommandStationListener::receivedRosterList</a></div><div class="ttdeci">void receivedRosterList() override</div><div class="ttdoc">Respond to receiving the roster list which updates the roster menu.</div><div class="ttdef"><b>Definition:</b> CommandStationListener.cpp:23</div></div>
+<div class="ttc" id="aclassCommandStationListener_html_adad1b4529675458eff063235490ffea6"><div class="ttname"><a href="classCommandStationListener.html#adad1b4529675458eff063235490ffea6">CommandStationListener::_eventManager</a></div><div class="ttdeci">EventManager * _eventManager</div><div class="ttdef"><b>Definition:</b> CommandStationListener.h:50</div></div>
 <div class="ttc" id="aclassEventManager_html"><div class="ttname"><a href="classEventManager.html">EventManager</a></div><div class="ttdoc">Class to centrally manage all events for the application Exposes methods to register subscribers that...</div><div class="ttdef"><b>Definition:</b> EventManager.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

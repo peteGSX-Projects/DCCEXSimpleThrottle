@@ -64,41 +64,105 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classButton-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Button Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Button_8h_source.html">Button.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Button:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classButton.png" usemap="#Button_map" alt=""/>
-  <map id="Button_map" name="Button_map">
-<area href="classUserConfirmationInterface.html" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="UserConfirmationInterface" shape="rect" coords="0,0,159,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classButton__inherit__graph.png" border="0" usemap="#aButton_inherit__map" alt="Inheritance graph"/></div>
+<map name="aButton_inherit__map" id="aButton_inherit__map">
+<area shape="rect" title=" " alt="" coords="70,80,135,107"/>
+<area shape="rect" href="classUserConfirmationInterface.html" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="" coords="5,5,200,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Button:</div>
+<div class="dyncontent">
+<div class="center"><img src="classButton__coll__graph.png" border="0" usemap="#aButton_coll__map" alt="Collaboration graph"/></div>
+<map name="aButton_coll__map" id="aButton_coll__map">
+<area shape="rect" title=" " alt="" coords="147,95,213,121"/>
+<area shape="rect" href="classUserConfirmationInterface.html" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="" coords="5,5,200,32"/>
+<area shape="rect" href="classSwitch.html" title=" " alt="" coords="225,5,290,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3b36df1ae23c58aedb9e15a713159459"><td class="memItemLeft" align="right" valign="top"><a id="a3b36df1ae23c58aedb9e15a713159459"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#a3b36df1ae23c58aedb9e15a713159459">Button</a> ()</td></tr>
-<tr class="memdesc:a3b36df1ae23c58aedb9e15a713159459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the button object. <br /></td></tr>
+<tr class="memitem:a3b36df1ae23c58aedb9e15a713159459"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#a3b36df1ae23c58aedb9e15a713159459">Button</a> ()</td></tr>
+<tr class="memdesc:a3b36df1ae23c58aedb9e15a713159459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the button object.  <a href="classButton.html#a3b36df1ae23c58aedb9e15a713159459">More...</a><br /></td></tr>
 <tr class="separator:a3b36df1ae23c58aedb9e15a713159459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc120a470db47d50e08ce7dd3d3a656d"><td class="memItemLeft" align="right" valign="top"><a id="abc120a470db47d50e08ce7dd3d3a656d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#abc120a470db47d50e08ce7dd3d3a656d">begin</a> () override</td></tr>
-<tr class="memdesc:abc120a470db47d50e08ce7dd3d3a656d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not required to be implemented for this type. <br /></td></tr>
+<tr class="memitem:abc120a470db47d50e08ce7dd3d3a656d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#abc120a470db47d50e08ce7dd3d3a656d">begin</a> () override</td></tr>
+<tr class="memdesc:abc120a470db47d50e08ce7dd3d3a656d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not required to be implemented for this type.  <a href="classButton.html#abc120a470db47d50e08ce7dd3d3a656d">More...</a><br /></td></tr>
 <tr class="separator:abc120a470db47d50e08ce7dd3d3a656d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043d8102c82da710ce158415fc646cbf"><td class="memItemLeft" align="right" valign="top">UserConfirmationAction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#a043d8102c82da710ce158415fc646cbf">getUserConfirmationAction</a> ()</td></tr>
+<tr class="memitem:a043d8102c82da710ce158415fc646cbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#a043d8102c82da710ce158415fc646cbf">getUserConfirmationAction</a> ()</td></tr>
 <tr class="memdesc:a043d8102c82da710ce158415fc646cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for any user confirmation actions This should be called at least once per main loop iteration.  <a href="classButton.html#a043d8102c82da710ce158415fc646cbf">More...</a><br /></td></tr>
 <tr class="separator:a043d8102c82da710ce158415fc646cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUserConfirmationInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUserConfirmationInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classUserConfirmationInterface.html">UserConfirmationInterface</a></td></tr>
-<tr class="memitem:aee1400770a9f969bbf2f8f9aadda2c71 inherit pub_methods_classUserConfirmationInterface"><td class="memItemLeft" align="right" valign="top"><a id="aee1400770a9f969bbf2f8f9aadda2c71"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#aee1400770a9f969bbf2f8f9aadda2c71">~UserConfirmationInterface</a> ()=default</td></tr>
-<tr class="memdesc:aee1400770a9f969bbf2f8f9aadda2c71 inherit pub_methods_classUserConfirmationInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object. <br /></td></tr>
+<tr class="memitem:aee1400770a9f969bbf2f8f9aadda2c71 inherit pub_methods_classUserConfirmationInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUserConfirmationInterface.html#aee1400770a9f969bbf2f8f9aadda2c71">~UserConfirmationInterface</a> ()=default</td></tr>
+<tr class="memdesc:aee1400770a9f969bbf2f8f9aadda2c71 inherit pub_methods_classUserConfirmationInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object.  <a href="classUserConfirmationInterface.html#aee1400770a9f969bbf2f8f9aadda2c71">More...</a><br /></td></tr>
 <tr class="separator:aee1400770a9f969bbf2f8f9aadda2c71 inherit pub_methods_classUserConfirmationInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a36f9b0faa76edee5ce6092c4cf6001b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSwitch.html">Switch</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html#a36f9b0faa76edee5ce6092c4cf6001b3">_button</a></td></tr>
+<tr class="separator:a36f9b0faa76edee5ce6092c4cf6001b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3b36df1ae23c58aedb9e15a713159459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b36df1ae23c58aedb9e15a713159459">&#9670;&nbsp;</a></span>Button()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button::Button </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the button object. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abc120a470db47d50e08ce7dd3d3a656d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc120a470db47d50e08ce7dd3d3a656d">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Button::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Not required to be implemented for this type. </p>
+
+<p>Implements <a class="el" href="classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0">UserConfirmationInterface</a>.</p>
+
+</div>
+</div>
 <a id="a043d8102c82da710ce158415fc646cbf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a043d8102c82da710ce158415fc646cbf">&#9670;&nbsp;</a></span>getUserConfirmationAction()</h2>
 
@@ -109,7 +173,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">UserConfirmationAction Button::getUserConfirmationAction </td>
+          <td class="memname"><a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a> Button::getUserConfirmationAction </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -126,12 +190,58 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <dl class="section return"><dt>Returns</dt><dd>UserSelectionConfirmation::[None|SingleClick|DoubleClick|LongPress] </dd></dl>
 
 <p>Implements <a class="el" href="classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef">UserConfirmationInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classButton_a043d8102c82da710ce158415fc646cbf_cgraph.png" border="0" usemap="#aclassButton_a043d8102c82da710ce158415fc646cbf_cgraph" alt=""/></div>
+<map name="aclassButton_a043d8102c82da710ce158415fc646cbf_cgraph" id="aclassButton_a043d8102c82da710ce158415fc646cbf_cgraph">
+<area shape="rect" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,63,213,104"/>
+<area shape="rect" href="classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="804,7,953,34"/>
+<area shape="rect" href="classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="811,95,947,122"/>
+<area shape="rect" href="classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,171,359,198"/>
+<area shape="rect" href="classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="807,273,951,299"/>
+<area shape="rect" href="classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,222,529,249"/>
+<area shape="rect" href="classSwitch.html#ad09c0fa1af35f85993e7ca5ae9d60d8e" title=" " alt="" coords="578,171,755,198"/>
+<area shape="rect" href="classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="819,222,939,249"/>
+<area shape="rect" href="classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="584,425,749,451"/>
+<area shape="rect" href="classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="813,425,944,451"/>
+<area shape="rect" href="classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="581,374,752,401"/>
+<area shape="rect" href="classSwitch.html#aa15d1bb5e8ede49d4f91931b0ed5a0de" title=" " alt="" coords="599,70,735,97"/>
+<area shape="rect" href="classSwitch.html#a35c42c5bfb7dde8cf4e1df4cc1d3e7d7" title=" " alt="" coords="604,121,729,147"/>
+<area shape="rect" href="classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f" title=" " alt="" coords="577,273,756,299"/>
+<area shape="rect" href="classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="834,374,923,401"/>
+<area shape="rect" href="classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="814,323,943,350"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a36f9b0faa76edee5ce6092c4cf6001b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f9b0faa76edee5ce6092c4cf6001b3">&#9670;&nbsp;</a></span>_button</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSwitch.html">Switch</a>* Button::_button</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="Button_8h_source.html">Button.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/Button.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="Button_8cpp.html">Button.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

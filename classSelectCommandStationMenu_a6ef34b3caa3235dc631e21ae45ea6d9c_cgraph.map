@@ -1,0 +1,5 @@
+<map id="SelectCommandStationMenu::SelectCommandStationMenu" name="SelectCommandStationMenu::SelectCommandStationMenu">
+<area shape="rect" id="node1" title="Constructor for each menu." alt="" coords="5,23,224,65"/>
+<area shape="rect" id="node2" href="$classBaseMenu.html#a05814c9a61c15319a365520266042904" title="Set the application&#39;s event manager instance." alt="" coords="272,5,484,32"/>
+<area shape="rect" id="node3" href="$classBaseMenu.html#ae96ed7880c75c24f73552c10c060416f" title="Set the name of this menu." alt="" coords="281,56,475,83"/>
+</map>

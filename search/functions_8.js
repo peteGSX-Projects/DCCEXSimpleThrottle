@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['locomenuitem_205',['LocoMenuItem',['../classLocoMenuItem.html#a8c623e1c762e0b328c22d8ea19498cc0',1,'LocoMenuItem']]],
-  ['locoupdatereceived_206',['locoUpdateReceived',['../classThrottleScreen.html#a8281b32f84f656eb191c665a32f575f0',1,'ThrottleScreen']]]
+  ['initialise_599',['initialise',['../classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2',1,'AppConfiguration']]],
+  ['isconnected_600',['isConnected',['../classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e',1,'CommandStationClient']]],
+  ['issubscribed_601',['isSubscribed',['../classEventManager.html#ab748a70c5bfab96a8a3794e1e5a9e128',1,'EventManager']]]
 ];

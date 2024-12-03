@@ -64,6 +64,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classAppConfiguration-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AppConfiguration Class Reference</div>  </div>
@@ -74,16 +76,44 @@ $(function() {
  <a href="classAppConfiguration.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AppConfiguration_8h_source.html">AppConfiguration.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for AppConfiguration:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAppConfiguration__coll__graph.png" border="0" usemap="#aAppConfiguration_coll__map" alt="Collaboration graph"/></div>
+<map name="aAppConfiguration_coll__map" id="aAppConfiguration_coll__map">
+<area shape="rect" title="Class to perform all application configuration on startup All interfaces, menus, and other applicatio..." alt="" coords="2511,300,2645,327"/>
+<area shape="rect" href="classCommandStationClient.html" title=" " alt="" coords="1751,109,1924,136"/>
+<area shape="rect" href="classAppOrchestrator.html" title="This class is for the overall application orchestration to coordinate all the user interactions,..." alt="" coords="2191,416,2319,443"/>
+<area shape="rect" href="classCommandStationListener.html" title="Class to manage broadcasts and responses from the CommandStation." alt="" coords="1293,85,1480,112"/>
+<area shape="rect" title=" " alt="" coords="949,180,1128,207"/>
+<area shape="rect" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="678,119,794,145"/>
+<area shape="rect" href="classMenuManager.html" title=" " alt="" coords="1780,207,1895,233"/>
+<area shape="rect" href="classBaseMenu.html" title="Class for maintaining a linked list of menu items to form a menu." alt="" coords="993,239,1084,265"/>
+<area shape="rect" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="257,277,487,304"/>
+<area shape="rect" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="5,465,116,492"/>
+<area shape="rect" href="classSelectCommandStationMenu.html" title=" " alt="" coords="1281,237,1492,264"/>
+<area shape="rect" href="classSelectActionMenu.html" title="Menu to allow for extra actions to be performed For future use, not actually enabled yet." alt="" coords="1317,288,1456,315"/>
+<area shape="rect" href="classSelectLocoMenu.html" title=" " alt="" coords="1323,187,1451,213"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="676,239,796,265"/>
+<area shape="rect" href="classThrottleScreen.html" title=" " alt="" coords="1779,284,1896,311"/>
+<area shape="rect" href="classScreenInterface.html" title=" " alt="" coords="1325,381,1449,408"/>
+<area shape="rect" href="classErrorScreen.html" title=" " alt="" coords="1789,335,1886,361"/>
+<area shape="rect" href="classProgressScreen.html" title=" " alt="" coords="1776,385,1899,412"/>
+<area shape="rect" href="classStartupScreen.html" title="Class to display startup information on screen and respond to user interactions Displays the DCC&#45;EX S..." alt="" coords="1781,436,1894,463"/>
+<area shape="rect" href="classUserSelectionInterface.html" title="Interface class to abstract user selection actions from physical implementations All physical user se..." alt="" coords="1752,613,1923,640"/>
+<area shape="rect" href="classUserConfirmationInterface.html" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="" coords="1740,700,1935,727"/>
+<area shape="rect" href="classConnectionManager.html" title="Class to manage all WiFi and serial connections used to connect to a CommandStation." alt="" coords="1761,775,1913,801"/>
+<area shape="rect" href="classDisplayInterface.html" title="Interface class to abstract construction of what is displayed on screen from the physical implementat..." alt="" coords="1773,540,1902,567"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af6ecc1985af3db347504449066b16cee"><td class="memItemLeft" align="right" valign="top"><a id="af6ecc1985af3db347504449066b16cee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#af6ecc1985af3db347504449066b16cee">AppConfiguration</a> ()</td></tr>
-<tr class="memdesc:af6ecc1985af3db347504449066b16cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the app configuration object. <br /></td></tr>
+<tr class="memitem:af6ecc1985af3db347504449066b16cee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#af6ecc1985af3db347504449066b16cee">AppConfiguration</a> ()</td></tr>
+<tr class="memdesc:af6ecc1985af3db347504449066b16cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the app configuration object.  <a href="classAppConfiguration.html#af6ecc1985af3db347504449066b16cee">More...</a><br /></td></tr>
 <tr class="separator:af6ecc1985af3db347504449066b16cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca19635fcf67076531b7c83cb05acf2"><td class="memItemLeft" align="right" valign="top"><a id="abca19635fcf67076531b7c83cb05acf2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2">initialise</a> ()</td></tr>
-<tr class="memdesc:abca19635fcf67076531b7c83cb05acf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start all associated user interfaces and instantiate all objects <a class="el" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that...">EventManager</a> registrations are done here. <br /></td></tr>
+<tr class="memitem:abca19635fcf67076531b7c83cb05acf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2">initialise</a> ()</td></tr>
+<tr class="memdesc:abca19635fcf67076531b7c83cb05acf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start all associated user interfaces and instantiate all objects <a class="el" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that...">EventManager</a> registrations are done here.  <a href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2">More...</a><br /></td></tr>
 <tr class="separator:abca19635fcf67076531b7c83cb05acf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada4120824f9d9722e2431cfcc4a60e40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUserConfirmationInterface.html">UserConfirmationInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#ada4120824f9d9722e2431cfcc4a60e40">getUserConfirmationInterface</a> ()</td></tr>
 <tr class="memdesc:ada4120824f9d9722e2431cfcc4a60e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the user confirmation interface associated with the config.  <a href="classAppConfiguration.html#ada4120824f9d9722e2431cfcc4a60e40">More...</a><br /></td></tr>
@@ -109,10 +139,113 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a11f0dd026e6aac021dfa6556439d2e4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommandStationClient.html">CommandStationClient</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a11f0dd026e6aac021dfa6556439d2e4d">getCommandStationClient</a> ()</td></tr>
 <tr class="memdesc:a11f0dd026e6aac021dfa6556439d2e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the CommandStation client.  <a href="classAppConfiguration.html#a11f0dd026e6aac021dfa6556439d2e4d">More...</a><br /></td></tr>
 <tr class="separator:a11f0dd026e6aac021dfa6556439d2e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6b8cd2a7114e3cb06a9980bf788e29f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3">_registerEventSubscriptions</a> ()</td></tr>
+<tr class="memdesc:a6b8cd2a7114e3cb06a9980bf788e29f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register all required event subscriptions, called by <a class="el" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ...">initialise()</a>  <a href="classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3">More...</a><br /></td></tr>
+<tr class="separator:a6b8cd2a7114e3cb06a9980bf788e29f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad0987e3c985c3393dfc14d1fdded6d72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUserConfirmationInterface.html">UserConfirmationInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#ad0987e3c985c3393dfc14d1fdded6d72">_userConfirmationInterface</a></td></tr>
+<tr class="separator:ad0987e3c985c3393dfc14d1fdded6d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affdf08c654f9a04a770cc84d32f21cf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUserSelectionInterface.html">UserSelectionInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#affdf08c654f9a04a770cc84d32f21cf8">_userSelectionInterface</a></td></tr>
+<tr class="separator:affdf08c654f9a04a770cc84d32f21cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd4e2557622186196aae24464480f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDisplayInterface.html">DisplayInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a5fd4e2557622186196aae24464480f67">_displayInterface</a></td></tr>
+<tr class="separator:a5fd4e2557622186196aae24464480f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95633739c947f2c601353545f7e4b83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventManager.html">EventManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#ab95633739c947f2c601353545f7e4b83">_eventManager</a></td></tr>
+<tr class="separator:ab95633739c947f2c601353545f7e4b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba13a0bc114b4c99125d48616ffe043"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classConnectionManager.html">ConnectionManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#aaba13a0bc114b4c99125d48616ffe043">_connectionManager</a></td></tr>
+<tr class="separator:aaba13a0bc114b4c99125d48616ffe043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c526f2a76868545e6bff0dbe911bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMenuManager.html">MenuManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#af9c526f2a76868545e6bff0dbe911bdc">_menuManager</a></td></tr>
+<tr class="separator:af9c526f2a76868545e6bff0dbe911bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbbf8803d150b3992b6f34072a2f79f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommandStationListener.html">CommandStationListener</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a5cbbf8803d150b3992b6f34072a2f79f">_commandStationListener</a></td></tr>
+<tr class="separator:a5cbbf8803d150b3992b6f34072a2f79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434329cb992a294847dc5bec709a35ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCommandStationClient.html">CommandStationClient</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a434329cb992a294847dc5bec709a35ab">_commandStationClient</a></td></tr>
+<tr class="separator:a434329cb992a294847dc5bec709a35ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f7614bfb8b17ce305b3764721becf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classThrottleScreen.html">ThrottleScreen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a08f7614bfb8b17ce305b3764721becf7">_throttleScreen</a></td></tr>
+<tr class="separator:a08f7614bfb8b17ce305b3764721becf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a85c7208e7ca360acb866179efaeac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAppOrchestrator.html">AppOrchestrator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAppConfiguration.html#a23a85c7208e7ca360acb866179efaeac">_appOrchestrator</a></td></tr>
+<tr class="separator:a23a85c7208e7ca360acb866179efaeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to perform all application configuration on startup All interfaces, menus, and other application objects are created within this class. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af6ecc1985af3db347504449066b16cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6ecc1985af3db347504449066b16cee">&#9670;&nbsp;</a></span>AppConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AppConfiguration::AppConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the app configuration object. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAppConfiguration_af6ecc1985af3db347504449066b16cee_cgraph.png" border="0" usemap="#aclassAppConfiguration_af6ecc1985af3db347504449066b16cee_cgraph" alt=""/></div>
+<map name="aclassAppConfiguration_af6ecc1985af3db347504449066b16cee_cgraph" id="aclassAppConfiguration_af6ecc1985af3db347504449066b16cee_cgraph">
+<area shape="rect" title="Constructor for the app configuration object." alt="" coords="5,13,260,39"/>
+<area shape="rect" href="classCommandStationClient.html#a3ccddff0529052f378ebb9523172f711" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="308,5,481,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6b8cd2a7114e3cb06a9980bf788e29f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8cd2a7114e3cb06a9980bf788e29f3">&#9670;&nbsp;</a></span>_registerEventSubscriptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AppConfiguration::_registerEventSubscriptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register all required event subscriptions, called by <a class="el" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ...">initialise()</a> </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_cgraph.png" border="0" usemap="#aclassAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_cgraph" alt=""/></div>
+<map name="aclassAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_cgraph" id="aclassAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_cgraph">
+<area shape="rect" title="Register all required event subscriptions, called by initialise()" alt="" coords="5,5,208,47"/>
+<area shape="rect" href="classEventManager.html#ad898edd8057126492c57325e23b62984" title="Method to subscribe a listener to the specified event type." alt="" coords="256,13,443,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_icgraph.png" border="0" usemap="#aclassAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_icgraph" alt=""/></div>
+<map name="aclassAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_icgraph" id="aclassAppConfiguration_a6b8cd2a7114e3cb06a9980bf788e29f3_icgraph">
+<area shape="rect" title="Register all required event subscriptions, called by initialise()" alt="" coords="252,5,455,47"/>
+<area shape="rect" href="classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,13,204,39"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1926f2cdd4eebe72a9e532a79028ccda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1926f2cdd4eebe72a9e532a79028ccda">&#9670;&nbsp;</a></span>getAppOrchestrator()</h2>
 
@@ -273,9 +406,263 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="abca19635fcf67076531b7c83cb05acf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca19635fcf67076531b7c83cb05acf2">&#9670;&nbsp;</a></span>initialise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AppConfiguration::initialise </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start all associated user interfaces and instantiate all objects <a class="el" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that...">EventManager</a> registrations are done here. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAppConfiguration_abca19635fcf67076531b7c83cb05acf2_cgraph.png" border="0" usemap="#aclassAppConfiguration_abca19635fcf67076531b7c83cb05acf2_cgraph" alt=""/></div>
+<map name="aclassAppConfiguration_abca19635fcf67076531b7c83cb05acf2_cgraph" id="aclassAppConfiguration_abca19635fcf67076531b7c83cb05acf2_cgraph">
+<area shape="rect" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,137,204,163"/>
+<area shape="rect" href="classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3" title="Register all required event subscriptions, called by initialise()" alt="" coords="252,5,455,47"/>
+<area shape="rect" href="classCommandStationClient.html#af35b5d90b074aac256a2eb3da90dff4e" title="Setup the CommandStation client with log stream and listener ready to connect." alt="" coords="267,71,440,112"/>
+<area shape="rect" href="classDisplayInterface.html#abcb04126efa9ce5ef701f0ef6217c85d" title="Implement this to perform any initial startup methods or activities." alt="" coords="267,137,440,163"/>
+<area shape="rect" href="classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0" title="Implement this to perform any initial startup methods or activities." alt="" coords="256,188,451,229"/>
+<area shape="rect" href="classUserSelectionInterface.html#adbd2af2ef47ad1a4d20c7c08b685380b" title="Implement this to perform any initial startup methods or activities." alt="" coords="268,253,439,295"/>
+<area shape="rect" href="classEventManager.html#ad898edd8057126492c57325e23b62984" title="Method to subscribe a listener to the specified event type." alt="" coords="503,13,689,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a23a85c7208e7ca360acb866179efaeac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23a85c7208e7ca360acb866179efaeac">&#9670;&nbsp;</a></span>_appOrchestrator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAppOrchestrator.html">AppOrchestrator</a>* AppConfiguration::_appOrchestrator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a434329cb992a294847dc5bec709a35ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434329cb992a294847dc5bec709a35ab">&#9670;&nbsp;</a></span>_commandStationClient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCommandStationClient.html">CommandStationClient</a>* AppConfiguration::_commandStationClient</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cbbf8803d150b3992b6f34072a2f79f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbbf8803d150b3992b6f34072a2f79f">&#9670;&nbsp;</a></span>_commandStationListener</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCommandStationListener.html">CommandStationListener</a>* AppConfiguration::_commandStationListener</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaba13a0bc114b4c99125d48616ffe043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba13a0bc114b4c99125d48616ffe043">&#9670;&nbsp;</a></span>_connectionManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classConnectionManager.html">ConnectionManager</a>* AppConfiguration::_connectionManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fd4e2557622186196aae24464480f67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fd4e2557622186196aae24464480f67">&#9670;&nbsp;</a></span>_displayInterface</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDisplayInterface.html">DisplayInterface</a>* AppConfiguration::_displayInterface</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab95633739c947f2c601353545f7e4b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab95633739c947f2c601353545f7e4b83">&#9670;&nbsp;</a></span>_eventManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEventManager.html">EventManager</a>* AppConfiguration::_eventManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9c526f2a76868545e6bff0dbe911bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c526f2a76868545e6bff0dbe911bdc">&#9670;&nbsp;</a></span>_menuManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMenuManager.html">MenuManager</a>* AppConfiguration::_menuManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08f7614bfb8b17ce305b3764721becf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f7614bfb8b17ce305b3764721becf7">&#9670;&nbsp;</a></span>_throttleScreen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classThrottleScreen.html">ThrottleScreen</a>* AppConfiguration::_throttleScreen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0987e3c985c3393dfc14d1fdded6d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0987e3c985c3393dfc14d1fdded6d72">&#9670;&nbsp;</a></span>_userConfirmationInterface</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classUserConfirmationInterface.html">UserConfirmationInterface</a>* AppConfiguration::_userConfirmationInterface</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affdf08c654f9a04a770cc84d32f21cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affdf08c654f9a04a770cc84d32f21cf8">&#9670;&nbsp;</a></span>_userSelectionInterface</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classUserSelectionInterface.html">UserSelectionInterface</a>* AppConfiguration::_userSelectionInterface</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="AppConfiguration_8h_source.html">AppConfiguration.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/AppConfiguration.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="AppConfiguration_8cpp.html">AppConfiguration.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

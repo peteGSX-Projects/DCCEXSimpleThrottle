@@ -1,0 +1,9 @@
+<map id="UserConfirmationInterface::getUserConfirmationAction" name="UserConfirmationInterface::getUserConfirmationAction">
+<area shape="rect" id="node1" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="492,136,699,177"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,47"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,71,444,112"/>
+<area shape="rect" id="node5" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,136,433,177"/>
+<area shape="rect" id="node6" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="246,201,433,243"/>
+<area shape="rect" id="node7" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="246,267,433,308"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,143,187,170"/>
+</map>

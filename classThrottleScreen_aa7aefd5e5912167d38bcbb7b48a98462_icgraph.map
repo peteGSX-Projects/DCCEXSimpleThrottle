@@ -1,0 +1,5 @@
+<map id="ThrottleScreen::handleUserSelectionAction" name="ThrottleScreen::handleUserSelectionAction">
+<area shape="rect" id="node1" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="469,5,668,47"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+</map>

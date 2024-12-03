@@ -1,0 +1,8 @@
+<map id="AppOrchestrator::_handleStartupState" name="AppOrchestrator::_handleStartupState">
+<area shape="rect" id="node1" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="5,69,192,111"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="251,8,436,49"/>
+<area shape="rect" id="node4" href="$classStartupScreen.html#a1997937f85258571a79e47ca255865ad" title="Draw this screen on the specified display." alt="" coords="245,77,442,103"/>
+<area shape="rect" id="node6" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="240,128,447,169"/>
+<area shape="rect" id="node3" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="495,5,693,47"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#a810a76dde10eb647ecda0a732f52346f" title="Display the startup screen." alt="" coords="502,71,686,112"/>
+</map>

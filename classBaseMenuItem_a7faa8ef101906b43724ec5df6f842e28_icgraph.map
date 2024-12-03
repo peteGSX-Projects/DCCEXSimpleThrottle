@@ -1,0 +1,14 @@
+<map id="BaseMenuItem::getNext" name="BaseMenuItem::getNext">
+<area shape="rect" id="node1" title="Get the next menu item." alt="" coords="1288,71,1468,98"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a9916a1244fe550bca23fda97600cd704" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="1041,5,1205,47"/>
+<area shape="rect" id="node4" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="1047,71,1199,98"/>
+<area shape="rect" id="node8" href="$classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67" title="Get the menu item at the specified index." alt="" coords="1005,123,1240,150"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="763,5,927,47"/>
+<area shape="rect" id="node5" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="732,71,957,98"/>
+<area shape="rect" id="node6" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="472,61,684,103"/>
+<area shape="rect" id="node7" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="235,69,424,95"/>
+<area shape="rect" id="node9" href="$classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="739,127,951,154"/>
+<area shape="rect" id="node10" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="473,127,683,168"/>
+<area shape="rect" id="node11" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="236,127,423,168"/>
+<area shape="rect" id="node12" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,134,187,161"/>
+</map>

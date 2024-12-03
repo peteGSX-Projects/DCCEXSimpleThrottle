@@ -1,0 +1,4 @@
+<map id="UserSelectionInterface::setThrottleInverted" name="UserSelectionInterface::setThrottleInverted">
+<area shape="rect" id="node1" title="Call this method to ensure throttle is inverted compared to selection options." alt="" coords="273,5,444,47"/>
+<area shape="rect" id="node2" href="$classRotaryEncoder.html#a9fb92819b800b4ed392ed065cf9c31b1" title="Constructor for the rotary encoder object." alt="" coords="5,13,225,39"/>
+</map>

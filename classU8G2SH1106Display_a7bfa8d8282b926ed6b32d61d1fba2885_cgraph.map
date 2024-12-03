@@ -1,0 +1,7 @@
+<map id="U8G2SH1106Display::displayErrorScreen" name="U8G2SH1106Display::displayErrorScreen">
+<area shape="rect" id="node1" title="Display error screen." alt="" coords="5,100,169,141"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a14a6f4da0cb6eec14d096fda57d7abdb" title="Clear the display." alt="" coords="248,5,412,47"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a79aa304e03d7da2d53a74c9acca1837b" title="Display an error message with emoji." alt="" coords="247,71,413,112"/>
+<area shape="rect" id="node4" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="217,137,443,163"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="231,188,429,229"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="U8G2SH1106Display::displayStartupScreen" name="U8G2SH1106Display::displayStartupScreen">
+<area shape="rect" id="node1" title="Display the startup screen." alt="" coords="5,100,169,141"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="248,5,412,47"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a9a02b7aef51172fa0fd37a6ac87fc339" title="Display the software version below the header text." alt="" coords="248,71,412,112"/>
+<area shape="rect" id="node5" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="217,137,443,163"/>
+<area shape="rect" id="node6" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="231,188,429,229"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="491,39,669,80"/>
+</map>

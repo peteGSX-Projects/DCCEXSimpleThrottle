@@ -1,0 +1,4 @@
+<map id="DisplayInterface::setMenuItemsPerPage" name="DisplayInterface::setMenuItemsPerPage">
+<area shape="rect" id="node1" title="Set the number of menu items per page this display can handle." alt="" coords="217,5,411,47"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a8563fe884f502693aca74add0c19896d" title="Constructor for the display object." alt="" coords="5,5,169,47"/>
+</map>

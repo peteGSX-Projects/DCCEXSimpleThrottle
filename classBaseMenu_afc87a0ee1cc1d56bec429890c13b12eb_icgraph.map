@@ -1,0 +1,6 @@
+<map id="BaseMenu::addItem" name="BaseMenu::addItem">
+<area shape="rect" id="node1" title="Add a menu item to this menu." alt="" coords="776,13,928,39"/>
+<area shape="rect" id="node2" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="503,13,728,39"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,5,455,47"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>

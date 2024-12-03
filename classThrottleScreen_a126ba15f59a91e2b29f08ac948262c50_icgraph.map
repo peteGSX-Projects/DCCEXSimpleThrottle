@@ -1,0 +1,5 @@
+<map id="ThrottleScreen::trackPowerUpdateReceived" name="ThrottleScreen::trackPowerUpdateReceived">
+<area shape="rect" id="node1" title="Method to call when a track power update has been received." alt="" coords="523,5,721,47"/>
+<area shape="rect" id="node2" href="$classAppOrchestrator.html#a6dee7d6939ccaed3be728d49b60c5a5b" title="Notify the throttle screen of a track power update." alt="" coords="243,5,475,47"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+</map>

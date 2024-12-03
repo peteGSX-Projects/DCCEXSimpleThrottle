@@ -1,0 +1,5 @@
+<map id="DisplayInterface::getMenuItemsPerPage" name="DisplayInterface::getMenuItemsPerPage">
+<area shape="rect" id="node1" title="Get the number of menu items to be displayed per page for this display." alt="" coords="429,5,624,47"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a9916a1244fe550bca23fda97600cd704" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="217,5,381,47"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="5,5,169,47"/>
+</map>

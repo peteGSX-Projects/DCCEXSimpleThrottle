@@ -1,0 +1,8 @@
+<map id="U8G2SH1106Display::_calculateMenuFooterHeight" name="U8G2SH1106Display::_calculateMenuFooterHeight">
+<area shape="rect" id="node1" title="Calculates the height of the footer area." alt="" coords="724,39,932,80"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a53d3b9d5c894028d26881101767e6b27" title="Calculates the height of the menu item area." alt="" coords="479,5,676,47"/>
+<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#ae36b7876ce66e286210f8480b1ef7033" title="Displays the horizontal line separator and Page # text." alt="" coords="495,71,659,112"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a2044e4dc070cad6597b58ef3718d0f47" title="Calculates the number of menu items that will fit on screen." alt="" coords="217,5,431,47"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a8563fe884f502693aca74add0c19896d" title="Constructor for the display object." alt="" coords="5,5,169,47"/>
+<area shape="rect" id="node6" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="242,71,406,112"/>
+</map>

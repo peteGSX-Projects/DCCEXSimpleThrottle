@@ -1,0 +1,8 @@
+<map id="ScreenInterface" name="ScreenInterface">
+<area shape="rect" id="node1" title=" " alt="" coords="253,5,377,32"/>
+<area shape="rect" id="node2" href="$classErrorScreen.html" title=" " alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node3" href="$classMenuScreen.html" title=" " alt="" coords="127,80,229,107"/>
+<area shape="rect" id="node4" href="$classProgressScreen.html" title=" " alt="" coords="254,80,377,107"/>
+<area shape="rect" id="node5" href="$classStartupScreen.html" title="Class to display startup information on screen and respond to user interactions Displays the DCC&#45;EX S..." alt="" coords="401,80,515,107"/>
+<area shape="rect" id="node6" href="$classThrottleScreen.html" title=" " alt="" coords="539,80,657,107"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="DisplayInterface::setNeedsMenuRefresh" name="DisplayInterface::setNeedsMenuRefresh">
+<area shape="rect" id="node1" title="Set the refresh menu flag for this display." alt="" coords="503,39,701,80"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="267,5,431,47"/>
+<area shape="rect" id="node3" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,71,455,112"/>
+<area shape="rect" id="node4" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,78,195,105"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="U8G2SH1106Display::_displayHeader" name="U8G2SH1106Display::_displayHeader">
+<area shape="rect" id="node1" title="Display the header text with a horizontal line separator." alt="" coords="223,71,387,112"/>
+<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="8,5,172,47"/>
+<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="5,71,175,112"/>
+<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231" title="Display the startup screen." alt="" coords="8,136,172,177"/>
+</map>

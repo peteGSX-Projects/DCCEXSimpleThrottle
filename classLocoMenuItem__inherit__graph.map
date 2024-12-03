@@ -1,0 +1,4 @@
+<map id="LocoMenuItem" name="LocoMenuItem">
+<area shape="rect" id="node1" title="Extension of the BaseMenuItem class to allow users to select a Loco." alt="" coords="6,80,125,107"/>
+<area shape="rect" id="node2" href="$classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,5,125,32"/>
+</map>

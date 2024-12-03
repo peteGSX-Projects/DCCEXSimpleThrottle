@@ -64,38 +64,54 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classMenuScreen-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MenuScreen Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="MenuScreen_8h_source.html">MenuScreen.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MenuScreen:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classMenuScreen.png" usemap="#MenuScreen_map" alt=""/>
-  <map id="MenuScreen_map" name="MenuScreen_map">
-<area href="classScreenInterface.html" alt="ScreenInterface" shape="rect" coords="0,0,103,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="classMenuScreen__inherit__graph.png" border="0" usemap="#aMenuScreen_inherit__map" alt="Inheritance graph"/></div>
+<map name="aMenuScreen_inherit__map" id="aMenuScreen_inherit__map">
+<area shape="rect" title=" " alt="" coords="16,80,119,107"/>
+<area shape="rect" href="classScreenInterface.html" title=" " alt="" coords="5,5,129,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for MenuScreen:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuScreen__coll__graph.png" border="0" usemap="#aMenuScreen_coll__map" alt="Collaboration graph"/></div>
+<map name="aMenuScreen_coll__map" id="aMenuScreen_coll__map">
+<area shape="rect" title=" " alt="" coords="113,363,216,389"/>
+<area shape="rect" href="classScreenInterface.html" title=" " alt="" coords="5,273,129,300"/>
+<area shape="rect" href="classBaseMenu.html" title="Class for maintaining a linked list of menu items to form a menu." alt="" coords="219,273,310,300"/>
+<area shape="rect" href="classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="91,184,211,211"/>
+<area shape="rect" href="classEventManager.html" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="301,184,417,211"/>
+<area shape="rect" href="structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="245,95,474,121"/>
+<area shape="rect" href="classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="304,5,415,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae9d4cb8c6889692cbe72e6c4b1a4b322"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#ae9d4cb8c6889692cbe72e6c4b1a4b322">MenuScreen</a> (<a class="el" href="classBaseMenu.html">BaseMenu</a> *menu)</td></tr>
 <tr class="separator:ae9d4cb8c6889692cbe72e6c4b1a4b322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab06610f76229a492d6cc74953878e9ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab">handleUserConfirmationAction</a> (UserConfirmationAction action) override</td></tr>
+<tr class="memitem:ab06610f76229a492d6cc74953878e9ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab">handleUserConfirmationAction</a> (<a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a> action) override</td></tr>
 <tr class="memdesc:ab06610f76229a492d6cc74953878e9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to define what to do when user confirmation actions are performed.  <a href="classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab">More...</a><br /></td></tr>
 <tr class="separator:ab06610f76229a492d6cc74953878e9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac48f54c3a5127a467789d9fd358513be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#ac48f54c3a5127a467789d9fd358513be">handleUserSelectionAction</a> (UserSelectionAction action, bool throttleInverted) override</td></tr>
+<tr class="memitem:ac48f54c3a5127a467789d9fd358513be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#ac48f54c3a5127a467789d9fd358513be">handleUserSelectionAction</a> (<a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a> action, bool throttleInverted) override</td></tr>
 <tr class="memdesc:ac48f54c3a5127a467789d9fd358513be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to define what to do when user selection actions are performed.  <a href="classMenuScreen.html#ac48f54c3a5127a467789d9fd358513be">More...</a><br /></td></tr>
 <tr class="separator:ac48f54c3a5127a467789d9fd358513be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03de42ff6d0d543bb2f50312d580dc7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b">drawScreen</a> (<a class="el" href="classDisplayInterface.html">DisplayInterface</a> *display) override</td></tr>
 <tr class="memdesc:a03de42ff6d0d543bb2f50312d580dc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement this method to draw the associated screen object on the specified display.  <a href="classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b">More...</a><br /></td></tr>
 <tr class="separator:a03de42ff6d0d543bb2f50312d580dc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classScreenInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classScreenInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classScreenInterface.html">ScreenInterface</a></td></tr>
-<tr class="memitem:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top"><a id="acbdcf780ef2da66d1a77069dd1bf9224"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">~ScreenInterface</a> ()=default</td></tr>
-<tr class="memdesc:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object. <br /></td></tr>
+<tr class="memitem:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">~ScreenInterface</a> ()=default</td></tr>
+<tr class="memdesc:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the object.  <a href="classScreenInterface.html#acbdcf780ef2da66d1a77069dd1bf9224">More...</a><br /></td></tr>
 <tr class="separator:acbdcf780ef2da66d1a77069dd1bf9224 inherit pub_methods_classScreenInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63c5fee6885b582e1af60668db96df33 inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScreenInterface.html">ScreenInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#a63c5fee6885b582e1af60668db96df33">getNext</a> ()</td></tr>
 <tr class="memdesc:a63c5fee6885b582e1af60668db96df33 inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next screen object in the linked list.  <a href="classScreenInterface.html#a63c5fee6885b582e1af60668db96df33">More...</a><br /></td></tr>
@@ -103,6 +119,11 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:aa2e7fcb2e1c7e5739a9251804063698a inherit pub_methods_classScreenInterface"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScreenInterface.html#aa2e7fcb2e1c7e5739a9251804063698a">setNext</a> (<a class="el" href="classScreenInterface.html">ScreenInterface</a> *screen)</td></tr>
 <tr class="memdesc:aa2e7fcb2e1c7e5739a9251804063698a inherit pub_methods_classScreenInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the next screen object in the linked list.  <a href="classScreenInterface.html#aa2e7fcb2e1c7e5739a9251804063698a">More...</a><br /></td></tr>
 <tr class="separator:aa2e7fcb2e1c7e5739a9251804063698a inherit pub_methods_classScreenInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a69aba8b425a90b265ace38a3f60c175d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBaseMenu.html">BaseMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMenuScreen.html#a69aba8b425a90b265ace38a3f60c175d">_menu</a></td></tr>
+<tr class="separator:a69aba8b425a90b265ace38a3f60c175d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae9d4cb8c6889692cbe72e6c4b1a4b322"></a>
@@ -163,6 +184,29 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classScreenInterface.html#a47b29b27e201f65cf7be827e58814f8c">ScreenInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_cgraph.png" border="0" usemap="#aclassMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_cgraph" alt=""/></div>
+<map name="aclassMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_cgraph" id="aclassMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_cgraph">
+<area shape="rect" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="5,13,192,39"/>
+<area shape="rect" href="classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6" title="Method to display the menu on screen." alt="" coords="240,13,421,39"/>
+<area shape="rect" href="classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="469,5,653,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_icgraph.png" border="0" usemap="#aclassMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_icgraph" alt=""/></div>
+<map name="aclassMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_icgraph" id="aclassMenuScreen_a03de42ff6d0d543bb2f50312d580dc7b_icgraph">
+<area shape="rect" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="767,78,953,105"/>
+<area shape="rect" href="classAppOrchestrator.html#a8bfc05c50a19a90d0f64b69290d4994c" title="Display a menu." alt="" coords="492,78,719,105"/>
+<area shape="rect" href="classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,47"/>
+<area shape="rect" href="classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,71,444,112"/>
+<area shape="rect" href="classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,136,433,177"/>
+<area shape="rect" href="classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,78,187,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -178,7 +222,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">void MenuScreen::handleUserConfirmationAction </td>
           <td>(</td>
-          <td class="paramtype">UserConfirmationAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2a">UserConfirmationAction</a>&#160;</td>
           <td class="paramname"><em>action</em></td><td>)</td>
           <td></td>
         </tr>
@@ -199,6 +243,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classScreenInterface.html#a3f8f461dacc438bd7057bdc50eb01901">ScreenInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuScreen_ab06610f76229a492d6cc74953878e9ab_cgraph.png" border="0" usemap="#aclassMenuScreen_ab06610f76229a492d6cc74953878e9ab_cgraph" alt=""/></div>
+<map name="aclassMenuScreen_ab06610f76229a492d6cc74953878e9ab_cgraph" id="aclassMenuScreen_ab06610f76229a492d6cc74953878e9ab_cgraph">
+<area shape="rect" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="5,5,273,47"/>
+<area shape="rect" href="classBaseMenu.html#a771ae4a2011f1cf496255c2f79c847c6" title="Implement this method to respond to user confirmation actions." alt="" coords="321,5,577,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -214,7 +267,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">void MenuScreen::handleUserSelectionAction </td>
           <td>(</td>
-          <td class="paramtype">UserSelectionAction&#160;</td>
+          <td class="paramtype"><a class="el" href="UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267">UserSelectionAction</a>&#160;</td>
           <td class="paramname"><em>action</em>, </td>
         </tr>
         <tr>
@@ -245,12 +298,44 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </dl>
 
 <p>Implements <a class="el" href="classScreenInterface.html#a3b54a42e1b558083f6a53a455ac82a01">ScreenInterface</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMenuScreen_ac48f54c3a5127a467789d9fd358513be_cgraph.png" border="0" usemap="#aclassMenuScreen_ac48f54c3a5127a467789d9fd358513be_cgraph" alt=""/></div>
+<map name="aclassMenuScreen_ac48f54c3a5127a467789d9fd358513be_cgraph" id="aclassMenuScreen_ac48f54c3a5127a467789d9fd358513be_cgraph">
+<area shape="rect" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="5,5,249,47"/>
+<area shape="rect" href="classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c" title="Method to respond to user selection actions." alt="" coords="297,5,529,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a69aba8b425a90b265ace38a3f60c175d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69aba8b425a90b265ace38a3f60c175d">&#9670;&nbsp;</a></span>_menu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBaseMenu.html">BaseMenu</a>* MenuScreen::_menu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="MenuScreen_8h_source.html">MenuScreen.h</a></li>
-<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/MenuScreen.cpp</li>
+<li>/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/<a class="el" href="MenuScreen_8cpp.html">MenuScreen.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

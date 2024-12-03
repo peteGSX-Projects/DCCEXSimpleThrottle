@@ -1,0 +1,4 @@
+<map id="CommandStationListener::receivedTrackPower" name="CommandStationListener::receivedTrackPower">
+<area shape="rect" id="node1" title="Respond to receiving a track power state broadcast to update the throttle screen." alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="240,13,411,39"/>
+</map>

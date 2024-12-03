@@ -1,0 +1,4 @@
+<map id="DisplayInterface::begin" name="DisplayInterface::begin">
+<area shape="rect" id="node1" title="Implement this to perform any initial startup methods or activities." alt="" coords="252,5,425,32"/>
+<area shape="rect" id="node2" href="$classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,5,204,32"/>
+</map>
