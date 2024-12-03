@@ -78,6 +78,8 @@ private:
   uint8_t _throttleStep;
   uint8_t _throttleStepFaster;
   uint8_t _throttleStepFastest;
+  unsigned long _speedUpdateDelay;
+  unsigned long _lastSpeedUpdate;
 
   /// @brief Toggle track power state - if unknown, turn on
   void _toggleTrackPower();

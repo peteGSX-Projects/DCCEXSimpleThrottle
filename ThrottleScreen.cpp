@@ -30,6 +30,8 @@ ThrottleScreen::ThrottleScreen(DCCEXProtocol *dccexProtocolClient, uint8_t throt
   _loco = nullptr;
   _trackPower = TrackPower::PowerUnknown;
   _trackPowerChanged = false;
+  _speedUpdateDelay = 500;
+  _lastSpeedUpdate = 0;
 }
 
 void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action) {
@@ -140,7 +142,15 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
 }
 
 void ThrottleScreen::drawScreen(DisplayInterface *display) {
-  display->displayThrottleScreen(_loco->getName(), _loco->getSpeed(), _loco->getDirection(), _trackPower, _speedChanged,
+  if (millis() - _lastSpeedUpdate > _speedUpdateDelay) {
+    _lastSpeedUpdate = millis();
+    _speed = _loco->getSpeed();
+    _speedChanged = true;
+  }
+  if (_speed == 127) {
+    _speed = 126; // bit ugly, but prevents displaying 127 momentarily
+  }
+  display->displayThrottleScreen(_loco->getName(), _speed, _loco->getDirection(), _trackPower, _speedChanged,
                                  _directionChanged, _trackPowerChanged);
   _speedChanged = false;
   _directionChanged = false;
@@ -152,11 +162,7 @@ void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
 void ThrottleScreen::locoUpdateReceived(Loco *loco) {
   if (_loco != loco)
     return;
-  _speedChanged = true;
   _directionChanged = true;
-  if (_loco->getSpeed() != _speed) {
-    _speed = _loco->getSpeed();
-  }
   if (_loco->getDirection() != _direction) {
     _direction = _loco->getDirection();
   }
