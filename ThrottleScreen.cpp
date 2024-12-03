@@ -79,57 +79,63 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
       action = UserSelectionAction::UpFastest;
     }
   }
+  uint8_t minSpeed = 0;
+  uint8_t maxSpeed = 127;
+  uint8_t changeStep = 0;
+  bool speedUp = false;
   switch (action) {
   case UserSelectionAction::Up: {
-    if (_speed < 128) {
-      _speed += _throttleStep;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
-    }
+    changeStep = _throttleStep;
+    speedUp = true;
     break;
   }
   case UserSelectionAction::UpFaster: {
-    if (_speed < 128) {
-      _speed += _throttleStepFaster;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
-    }
+    changeStep = _throttleStepFaster;
+    speedUp = true;
     break;
   }
   case UserSelectionAction::UpFastest: {
-    if (_speed < 128) {
-      _speed += _throttleStepFastest;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
-    }
+    changeStep = _throttleStepFastest;
+    speedUp = true;
     break;
   }
   case UserSelectionAction::Down: {
-    if (_speed > 0) {
-      _speed -= _throttleStep;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
-    }
+    changeStep = _throttleStep;
+    speedUp = false;
     break;
   }
   case UserSelectionAction::DownFaster: {
-    if (_speed > 0) {
-      _speed -= _throttleStepFaster;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
-    }
+    changeStep = _throttleStepFaster;
+    speedUp = false;
     break;
   }
   case UserSelectionAction::DownFastest: {
-    if (_speed > 0) {
-      _speed -= _throttleStepFastest;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
-    }
+    changeStep = _throttleStepFastest;
+    speedUp = false;
     break;
   }
   default:
     break;
+  }
+  if (speedUp && changeStep > 0) {
+    if (maxSpeed - _speed >= changeStep) {
+      _speed += changeStep;
+      _speedChanged = true;
+    } else if (_speed < maxSpeed) {
+      _speed += 1;
+      _speedChanged = true;
+    }
+  } else if (changeStep > 0) {
+    if (minSpeed + changeStep <= _speed) {
+      _speed -= changeStep;
+      _speedChanged = true;
+    } else if (_speed > 0) {
+      _speed -= 1;
+      _speedChanged = true;
+    }
+  }
+  if (_speedChanged) {
+    _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
   }
 }
 
