@@ -20,6 +20,10 @@
 
 RotaryEncoder::RotaryEncoder() {
   _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN);
+  _throttleStepFasterThreshold = THROTTLE_STEP_FASTER_THRESHOLD;
+  _throttleStepFastestThreshold = THROTTLE_STEP_FASTEST_THRESHOLD;
+  _lastUpThrottleStep = 0;
+  _lastDownThrottleStep = 0;
   setThrottleInverted();
 }
 
@@ -29,11 +33,28 @@ UserSelectionAction RotaryEncoder::getUserSelectionAction() {
   if (!_rotary)
     return UserSelectionAction::None;
   UserSelectionAction action = UserSelectionAction::None;
+  unsigned long currentMillis = millis();
   unsigned char result = _rotary->process();
   if (result == DIR_CW) {
-    action = UserSelectionAction::Down;
+    unsigned long timeDifference = currentMillis - _lastDownThrottleStep;
+    if (timeDifference < _throttleStepFastestThreshold) {
+      action = UserSelectionAction::DownFastest;
+    } else if (timeDifference < _throttleStepFasterThreshold) {
+      action = UserSelectionAction::DownFaster;
+    } else {
+      action = UserSelectionAction::Down;
+    }
+    _lastDownThrottleStep = currentMillis;
   } else if (result == DIR_CCW) {
-    action = UserSelectionAction::Up;
+    unsigned long timeDifference = currentMillis - _lastUpThrottleStep;
+    if (timeDifference < _throttleStepFastestThreshold) {
+      action = UserSelectionAction::UpFastest;
+    } else if (timeDifference < _throttleStepFasterThreshold) {
+      action = UserSelectionAction::UpFaster;
+    } else {
+      action = UserSelectionAction::Up;
+    }
+    _lastUpThrottleStep = currentMillis;
   }
   return action;
 }
