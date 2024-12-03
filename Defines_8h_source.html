@@ -262,18 +262,26 @@ $(function() {
 <div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="Defines_8h.html#aa6ed9d3e5f0e3ad9a42d4b3c4112d780">  195</a></span>&#160;<span class="preprocessor">#define THROTTLE_STEP_FASTEST 5</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// THROTTLE_STEP_FASTEST</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">// Define fonts in use for U8g2lib</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="Defines_8h.html#a0502f8673f5b0a113d593b9a84f5f775">  199</a></span>&#160;<span class="preprocessor">#define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="Defines_8h.html#a04d46f28d25d5b97d577aa8ddc949fee">  200</a></span>&#160;<span class="preprocessor">#define MENU_FONT u8g2_font_5x8_mr</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="Defines_8h.html#af4db3b1da3f62c2312c6dad85512d1f3">  201</a></span>&#160;<span class="preprocessor">#define SPEED_FONT u8g2_font_spleen12x24_mn</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="Defines_8h.html#ab55568f0ac474f3b20c874e612372d64">  202</a></span>&#160;<span class="preprocessor">#define DIRECTION_FONT u8g2_font_6x10_mr</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="Defines_8h.html#a6ffb744b6896d53d4719aa47a4800158">  203</a></span>&#160;<span class="preprocessor">#define ADDRESS_FONT u8g2_font_6x10_mr</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="Defines_8h.html#a3b1a85e2d918b129830b943dde0d9f7f">  204</a></span>&#160;<span class="preprocessor">#define ESTOP_FONT u8g2_font_6x12_mr</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="Defines_8h.html#a49c7b8efc9f7a661c0826623c559c5c8">  205</a></span>&#160;<span class="preprocessor">#define WIFI_FONT u8g2_font_open_iconic_www_1x_t      </span><span class="comment">// use 0048</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="Defines_8h.html#ae2fb5d313328d2e0940e2574baa218fa">  206</a></span>&#160;<span class="preprocessor">#define CS_FONT u8g2_font_streamline_transportation_t </span><span class="comment">// use 0034</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="Defines_8h.html#a62c3165997c54b9bbd43cac25a8f78b7">  207</a></span>&#160;<span class="preprocessor">#define ERROR_FONT u8g2_font_emoticons21_tr           </span><span class="comment">// use 0029 for error</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">// Set default thresholds to determine speed steps</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#ifndef THROTTLE_STEP_FASTER_THRESHOLD</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="Defines_8h.html#a97dcbbd51e943405fea899d84ca9f773">  200</a></span>&#160;<span class="preprocessor">#define THROTTLE_STEP_FASTER_THRESHOLD 200</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// THROTTLE_STEP_FASTER_THRESHOLD</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#ifndef THROTTLE_STEP_FASTEST_THRESHOLD</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="Defines_8h.html#a5810ec735fb664cad085f6a2486951fd">  203</a></span>&#160;<span class="preprocessor">#define THROTTLE_STEP_FASTEST_THRESHOLD 125</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// THROTTLE_STEP_FASTEST_THRESHOLD</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">// Define fonts in use for U8g2lib</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="Defines_8h.html#a0502f8673f5b0a113d593b9a84f5f775">  207</a></span>&#160;<span class="preprocessor">#define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="Defines_8h.html#a04d46f28d25d5b97d577aa8ddc949fee">  208</a></span>&#160;<span class="preprocessor">#define MENU_FONT u8g2_font_5x8_mr</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="Defines_8h.html#af4db3b1da3f62c2312c6dad85512d1f3">  209</a></span>&#160;<span class="preprocessor">#define SPEED_FONT u8g2_font_spleen12x24_mn</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="Defines_8h.html#ab55568f0ac474f3b20c874e612372d64">  210</a></span>&#160;<span class="preprocessor">#define DIRECTION_FONT u8g2_font_6x10_mr</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="Defines_8h.html#a6ffb744b6896d53d4719aa47a4800158">  211</a></span>&#160;<span class="preprocessor">#define ADDRESS_FONT u8g2_font_6x10_mr</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="Defines_8h.html#a3b1a85e2d918b129830b943dde0d9f7f">  212</a></span>&#160;<span class="preprocessor">#define ESTOP_FONT u8g2_font_6x12_mr</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="Defines_8h.html#a49c7b8efc9f7a661c0826623c559c5c8">  213</a></span>&#160;<span class="preprocessor">#define WIFI_FONT u8g2_font_open_iconic_www_1x_t      </span><span class="comment">// use 0048</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="Defines_8h.html#ae2fb5d313328d2e0940e2574baa218fa">  214</a></span>&#160;<span class="preprocessor">#define CS_FONT u8g2_font_streamline_transportation_t </span><span class="comment">// use 0034</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="Defines_8h.html#a62c3165997c54b9bbd43cac25a8f78b7">  215</a></span>&#160;<span class="preprocessor">#define ERROR_FONT u8g2_font_emoticons21_tr           </span><span class="comment">// use 0029 for error</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

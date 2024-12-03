@@ -121,6 +121,14 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5ea1ba571e431c76867f5a39e208d485"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRotary.html">Rotary</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRotaryEncoder.html#a5ea1ba571e431c76867f5a39e208d485">_rotary</a></td></tr>
 <tr class="separator:a5ea1ba571e431c76867f5a39e208d485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae2eceb8d55d21a337f6d9858d8022a"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRotaryEncoder.html#aaae2eceb8d55d21a337f6d9858d8022a">_throttleStepFasterThreshold</a></td></tr>
+<tr class="separator:aaae2eceb8d55d21a337f6d9858d8022a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63715dfe2d7ced996b041d5787699a4e"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRotaryEncoder.html#a63715dfe2d7ced996b041d5787699a4e">_throttleStepFastestThreshold</a></td></tr>
+<tr class="separator:a63715dfe2d7ced996b041d5787699a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1be71534d39d68512c4834a6293860f"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRotaryEncoder.html#ac1be71534d39d68512c4834a6293860f">_lastUpThrottleStep</a></td></tr>
+<tr class="separator:ac1be71534d39d68512c4834a6293860f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa850ed4b39b5b7faf1c3c3db29f2a838"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRotaryEncoder.html#aa850ed4b39b5b7faf1c3c3db29f2a838">_lastDownThrottleStep</a></td></tr>
+<tr class="separator:aa850ed4b39b5b7faf1c3c3db29f2a838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to implement a physical rotary encoder for user selection activities Clockwise moves down/increases speed, counter clockwise moves up/decreases speed. </p>
@@ -223,6 +231,50 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa850ed4b39b5b7faf1c3c3db29f2a838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa850ed4b39b5b7faf1c3c3db29f2a838">&#9670;&nbsp;</a></span>_lastDownThrottleStep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long RotaryEncoder::_lastDownThrottleStep</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1be71534d39d68512c4834a6293860f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1be71534d39d68512c4834a6293860f">&#9670;&nbsp;</a></span>_lastUpThrottleStep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long RotaryEncoder::_lastUpThrottleStep</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a5ea1ba571e431c76867f5a39e208d485"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ea1ba571e431c76867f5a39e208d485">&#9670;&nbsp;</a></span>_rotary</h2>
 
@@ -234,6 +286,50 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classRotary.html">Rotary</a>* RotaryEncoder::_rotary</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaae2eceb8d55d21a337f6d9858d8022a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae2eceb8d55d21a337f6d9858d8022a">&#9670;&nbsp;</a></span>_throttleStepFasterThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long RotaryEncoder::_throttleStepFasterThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63715dfe2d7ced996b041d5787699a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63715dfe2d7ced996b041d5787699a4e">&#9670;&nbsp;</a></span>_throttleStepFastestThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long RotaryEncoder::_throttleStepFastestThreshold</td>
         </tr>
       </table>
   </td>
