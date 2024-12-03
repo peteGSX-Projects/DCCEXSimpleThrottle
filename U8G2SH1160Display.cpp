@@ -198,7 +198,11 @@ uint8_t U8G2SH1106Display::_displayMenuItems(BaseMenuItem *firstMenuItem, uint8_
       if (index == selectedItemIndex) {
         _oled->setDrawColor(0); // Highlight if this item is selected
       }
-      _oled->drawStr(x, y += fontHeight, displayItem->getName());
+      const char *displayName = displayItem->getName();
+      if (displayName == nullptr) {
+        displayName = "No display name";
+      }
+      _oled->drawStr(x, y += fontHeight, displayName);
     }
   }
   _oled->sendBuffer();

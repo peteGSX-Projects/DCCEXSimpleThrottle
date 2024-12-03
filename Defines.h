@@ -19,7 +19,7 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
-#include "U8g2lib.h"
+#include <U8g2lib.h>
 
 /// @brief Provide default definitions that can be overridden by a user creating myConfig.h
 

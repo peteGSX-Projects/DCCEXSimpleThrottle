@@ -64,11 +64,4 @@ void CommandStationClient::update() {
 
 bool CommandStationClient::isConnected() { return _isConnected; }
 
-Loco *CommandStationClient::getFirstRosterEntry() {
-  if (_isConnected) {
-    return _commandStationClient->roster->getFirst();
-  }
-  return nullptr;
-}
-
 DCCEXProtocol *CommandStationClient::getClient() { return _commandStationClient; }
