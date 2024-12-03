@@ -46,10 +46,6 @@ public:
   /// @return True|False
   bool isConnected();
 
-  /// @brief Get the first Loco in the roster
-  /// @return Pointer to the first Loco in the roster
-  Loco *getFirstRosterEntry();
-
   /// @brief Get the actual DCCEXProtocol client to interact with
   /// @return Pointer to the DCCEXProtocol client
   DCCEXProtocol *getClient();

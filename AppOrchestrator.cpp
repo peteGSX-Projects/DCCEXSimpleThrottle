@@ -113,9 +113,10 @@ void AppOrchestrator::onEvent(Event &event) {
 
 void AppOrchestrator::setupSelectLocoMenu() {
   if (_commandStationClient && _commandStationClient->isConnected()) {
-    Loco *firstLoco = _commandStationClient->getFirstRosterEntry();
-    if (firstLoco) {
-      _menuManager->setupLocoMenu(firstLoco);
+    DCCEXProtocol *dccexClient = _commandStationClient->getClient();
+    Loco *firstRosterLoco = dccexClient->roster->getFirst();
+    if (firstRosterLoco) {
+      _menuManager->setupLocoMenu(firstRosterLoco);
       _displayInterface->setNeedsMenuRefresh(true);
     }
   }

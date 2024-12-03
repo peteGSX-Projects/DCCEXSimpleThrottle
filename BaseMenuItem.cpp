@@ -18,7 +18,10 @@
 
 #include "BaseMenuItem.h"
 
-BaseMenuItem::BaseMenuItem(const char *name) : _name(strdup(name)) {
+BaseMenuItem::BaseMenuItem(const char *name) : _name(nullptr) {
+  if (name != nullptr) {
+    _name = strdup(name);
+  }
   _next = nullptr;
   _index = 0;
 }

@@ -50,7 +50,7 @@ public:
   void setupCommandStationMenu(CommandStationDetails *commandStationList, uint8_t commandStationCount);
 #endif // WIFI_ENABLED
 
-  /// @brief Set up the loco menu based on the provided roster linked list
+  /// @brief Set up the loco menu based on the provided roster linked list and (if enabled) the local roster
   /// @param firstRosterLoco Pointer to the first loco in the roster
   void setupLocoMenu(Loco *firstRosterLoco);
 
