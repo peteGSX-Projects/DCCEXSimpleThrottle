@@ -1,6 +1,5 @@
 # Local user files
 myConfig.h
-myWiFiConfig.h
 
 # Prerequisites
 *.d
@@ -39,3 +38,4 @@ myWiFiConfig.h
 .pio
 venv
 _build
+docs/api
