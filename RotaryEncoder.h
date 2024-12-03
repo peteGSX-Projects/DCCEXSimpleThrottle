@@ -42,6 +42,10 @@ public:
 
 private:
   Rotary *_rotary;
+  unsigned long _throttleStepFasterThreshold;
+  unsigned long _throttleStepFastestThreshold;
+  unsigned long _lastUpThrottleStep;
+  unsigned long _lastDownThrottleStep;
 };
 
 #endif // ROTARYENCODER_H

@@ -1,7 +1,8 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.11"
+#define VERSION "0.0.12"
+// 0.0.12 - Implement support for rate changes based on rotary encoder speed
 // 0.0.11 - Implement support for a local roster list in myConfig.h
 // 0.0.10 - Implement turning lights on/off with double click
 // 0.0.9  - Re-write codebase

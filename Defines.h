@@ -195,6 +195,14 @@
 #define THROTTLE_STEP_FASTEST 5
 #endif // THROTTLE_STEP_FASTEST
 
+// Set default thresholds to determine speed steps
+#ifndef THROTTLE_STEP_FASTER_THRESHOLD
+#define THROTTLE_STEP_FASTER_THRESHOLD 200
+#endif // THROTTLE_STEP_FASTER_THRESHOLD
+#ifndef THROTTLE_STEP_FASTEST_THRESHOLD
+#define THROTTLE_STEP_FASTEST_THRESHOLD 125
+#endif // THROTTLE_STEP_FASTEST_THRESHOLD
+
 // Define fonts in use for U8g2lib
 #define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr
 #define MENU_FONT u8g2_font_5x8_mr

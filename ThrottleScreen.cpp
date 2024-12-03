@@ -30,6 +30,8 @@ ThrottleScreen::ThrottleScreen(DCCEXProtocol *dccexProtocolClient, uint8_t throt
   _loco = nullptr;
   _trackPower = TrackPower::PowerUnknown;
   _trackPowerChanged = false;
+  _speedUpdateDelay = 500;
+  _lastSpeedUpdate = 0;
 }
 
 void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action) {
@@ -79,63 +81,76 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
       action = UserSelectionAction::UpFastest;
     }
   }
-  uint8_t speed = _loco->getSpeed();
+  uint8_t minSpeed = 0;
+  uint8_t maxSpeed = 127;
+  uint8_t changeStep = 0;
+  bool speedUp = false;
   switch (action) {
   case UserSelectionAction::Up: {
-    if (speed < 128) {
-      speed += _throttleStep;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, speed, _direction);
-    }
+    changeStep = _throttleStep;
+    speedUp = true;
     break;
   }
   case UserSelectionAction::UpFaster: {
-    if (speed < 128) {
-      _speed += _throttleStepFaster;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, speed, _direction);
-    }
+    changeStep = _throttleStepFaster;
+    speedUp = true;
     break;
   }
   case UserSelectionAction::UpFastest: {
-    if (speed < 128) {
-      speed += _throttleStepFastest;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, speed, _direction);
-    }
+    changeStep = _throttleStepFastest;
+    speedUp = true;
     break;
   }
   case UserSelectionAction::Down: {
-    if (speed > 0) {
-      speed -= _throttleStep;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, speed, _direction);
-    }
+    changeStep = _throttleStep;
+    speedUp = false;
     break;
   }
   case UserSelectionAction::DownFaster: {
-    if (speed > 0) {
-      speed -= _throttleStepFaster;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, speed, _direction);
-    }
+    changeStep = _throttleStepFaster;
+    speedUp = false;
     break;
   }
   case UserSelectionAction::DownFastest: {
-    if (speed > 0) {
-      speed -= _throttleStepFastest;
-      _speedChanged = true;
-      _dccexProtocolClient->setThrottle(_loco, speed, _direction);
-    }
+    changeStep = _throttleStepFastest;
+    speedUp = false;
     break;
   }
   default:
     break;
   }
+  if (speedUp && changeStep > 0) {
+    if (maxSpeed - _speed >= changeStep) {
+      _speed += changeStep;
+      _speedChanged = true;
+    } else if (_speed < maxSpeed) {
+      _speed += 1;
+      _speedChanged = true;
+    }
+  } else if (changeStep > 0) {
+    if (minSpeed + changeStep <= _speed) {
+      _speed -= changeStep;
+      _speedChanged = true;
+    } else if (_speed > 0) {
+      _speed -= 1;
+      _speedChanged = true;
+    }
+  }
+  if (_speedChanged) {
+    _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
+  }
 }
 
 void ThrottleScreen::drawScreen(DisplayInterface *display) {
-  display->displayThrottleScreen(_loco->getName(), _loco->getSpeed(), _loco->getDirection(), _trackPower, _speedChanged,
+  if (millis() - _lastSpeedUpdate > _speedUpdateDelay) {
+    _lastSpeedUpdate = millis();
+    _speed = _loco->getSpeed();
+    _speedChanged = true;
+  }
+  if (_speed == 127) {
+    _speed = 126; // bit ugly, but prevents displaying 127 momentarily
+  }
+  display->displayThrottleScreen(_loco->getName(), _speed, _loco->getDirection(), _trackPower, _speedChanged,
                                  _directionChanged, _trackPowerChanged);
   _speedChanged = false;
   _directionChanged = false;
@@ -147,11 +162,7 @@ void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
 void ThrottleScreen::locoUpdateReceived(Loco *loco) {
   if (_loco != loco)
     return;
-  _speedChanged = true;
   _directionChanged = true;
-  if (_loco->getSpeed() != _speed) {
-    _speed = _loco->getSpeed();
-  }
   if (_loco->getDirection() != _direction) {
     _direction = _loco->getDirection();
   }
