@@ -39,3 +39,4 @@ myConfig.h
 venv
 _build
 docs/api
+build
