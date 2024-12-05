@@ -19,6 +19,16 @@
 #define DCCEXSIMPLETHROTTLETEST_H
 
 #include <DCCEXSimpleThrottle>
+#include <StreamMock.h>
+#include <string>
+
+#if defined(CONSOLE)
+#define CONSOLE StreamMock
+#endif
+
+#if defined(COMMANDSTATION_CONNECTION)
+#define COMMANDSTATION_CONNECT StreamMock
+#endif
 
 class DCCEXSimpleThrottleTest : public Test {
 public:
