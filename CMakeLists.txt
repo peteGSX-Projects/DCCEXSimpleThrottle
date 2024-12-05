@@ -12,10 +12,8 @@ if(NOT TARGET ArduinoCore-API)
     GIT_TAG 1.4.0)
   FetchContent_Populate(ArduinoCore-API)
   find_package(ArduinoCore-API REQUIRED)
-  find_package(ArduinoCore-Test REQUIRED)
+  # find_package(ArduinoCore-Test REQUIRED)
 endif()
-
-message(STATUS "ArduinoCore-API DIR: ${arduinocore-api_SOURCE_DIR}")
 
 # Fetch U8g2 library
 if(NOT TARGET U8g2lib)
@@ -39,36 +37,38 @@ endif()
 add_library(DCCEXSimpleThrottle STATIC DCCEXSimpleThrottle.ino)
 
 # Include all .cpp files
-file(GLOB_RECURSE SOURCE_FILES *.cpp)
-target_sources(DCCEXSimpleThrottle PRIVATE ${SOURCE_FILES})
+# file(GLOB_RECURSE SOURCE_FILES *.cpp)
+# target_sources(DCCEXSimpleThrottle PRIVATE ${SOURCE_FILES})
 
 # Include all Arduino Core test .cpp files
-file(GLOB_RECURSE ARDUINO_TEST_SOURCE_FILES ${arduinocore-api_SOURCE_DIR}/src/*.cpp)
-target_sources(DCCEXSimpleThrottle PRIVATE ${ARDUINO_TEST_SOURCE_FILES})
+# file(GLOB_RECURSE ARDUINO_TEST_SOURCE_FILES ${arduinocore-api_SOURCE_DIR}/src/*.cpp)
+# target_sources(DCCEXSimpleThrottle PRIVATE ${ARDUINO_TEST_SOURCE_FILES})
 
 # Include all U8g2lib .cpp files
-file(GLOB_RECURSE U8G2_SOURCE_FILES ${u8g2lib_SOURCE_DIR}/cppsrc/*.cpp)
-target_sources(DCCEXSimpleThrottle PRIVATE ${U8G2_SOURCE_FILES})
+# file(GLOB_RECURSE U8G2_SOURCE_FILES ${u8g2lib_SOURCE_DIR}/cppsrc/*.cpp)
+# target_sources(DCCEXSimpleThrottle PRIVATE ${U8G2_SOURCE_FILES})
 
 # Set target compile options
 target_compile_options(DCCEXSimpleThrottle PRIVATE -std=c++11)
 
 # Include Arduino core API, library, and GoogleTest mock headers
-target_include_directories(DCCEXSimpleThrottle PRIVATE ${arduinocore-api_SOURCE_DIR}/api)
-target_include_directories(DCCEXSimpleThrottle PRIVATE ${arduinocore-api_SOURCE_DIR}/test/include)
-target_include_directories(DCCEXSimpleThrottle PRIVATE ${arduinocore-api_SOURCE_DIR}/test/external/catch/v2.13.9/include)
-target_include_directories(DCCEXSimpleThrottle PRIVATE ${u8g2lib_SOURCE_DIR}/cppsrc)
-target_include_directories(DCCEXSimpleThrottle PRIVATE ${u8g2lib_SOURCE_DIR}/csrc)
-target_include_directories(DCCEXSimpleThrottle PRIVATE ${dccexprotocol_SOURCE_DIR}/src)
+# target_include_directories(DCCEXSimpleThrottle PRIVATE ${arduinocore-api_SOURCE_DIR}/api)
+# target_include_directories(DCCEXSimpleThrottle PRIVATE ${arduinocore-api_SOURCE_DIR}/test/include)
+# target_include_directories(DCCEXSimpleThrottle PRIVATE ${arduinocore-api_SOURCE_DIR}/test/external/catch/v2.13.9/include)
+# target_include_directories(DCCEXSimpleThrottle PRIVATE ${u8g2lib_SOURCE_DIR}/cppsrc)
+# target_include_directories(DCCEXSimpleThrottle PRIVATE ${u8g2lib_SOURCE_DIR}/csrc)
+# target_include_directories(DCCEXSimpleThrottle PRIVATE ${dccexprotocol_SOURCE_DIR}/src)
 
 # Link against the Arduino core API and other libraries
 target_link_libraries(DCCEXSimpleThrottle PUBLIC ArduinoCore-API)
-target_link_libraries(DCCEXSimpleThrottle PUBLIC ArduinoCore-Test)
-target_link_libraries(DCCEXSimpleThrottle PUBLIC ${dccexprotocol_SOURCE_DIR}/src/DCCEXProtocol.cpp)
+target_link_libraries(DCCEXSimpleThrottle PUBLIC U8g2lib)
+target_link_libraries(DCCEXSimpleThrottle PUBLIC DCCEXProtocol)
+# target_link_libraries(DCCEXSimpleThrottle PUBLIC ArduinoCore-Test)
+# target_link_libraries(DCCEXSimpleThrottle PUBLIC ${dccexprotocol_SOURCE_DIR}/src/DCCEXProtocol.cpp)
 
 # Override stream preprocessor definitions for mocking
-target_compile_definitions(DCCEXSimpleThrottle PUBLIC CONSOLE=StreamMock)
-target_compile_definitions(DCCEXSimpleThrottle PUBLIC COMMANDSTATION_CONNECTION=StreamMock)
+# target_compile_definitions(DCCEXSimpleThrottle PUBLIC CONSOLE=StreamMock)
+# target_compile_definitions(DCCEXSimpleThrottle PUBLIC COMMANDSTATION_CONNECTION=StreamMock)
 
 # Enable testing
 enable_testing()
