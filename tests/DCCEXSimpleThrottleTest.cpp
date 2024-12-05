@@ -16,7 +16,3 @@
  */
 
 #include "DCCEXSimpleThrottleTest.h"
-
-DCCEXSimpleThrottleTest::DCCEXSimpleThrottleTest() {}
-
-DCCEXSimpleThrottleTest::~DCCEXSimpleThrottleTest() {}
