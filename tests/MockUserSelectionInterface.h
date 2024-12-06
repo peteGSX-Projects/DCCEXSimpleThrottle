@@ -15,12 +15,19 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef DCCEXSIMPLETHROTTLETEST_H
-#define DCCEXSIMPLETHROTTLETEST_H
+#ifndef MOCKUSERSELECTIONINTERFACE_H
+#define MOCKUSERSELECTIONINTERFACE_H
 
-class DCCEXSimpleThrottleTest {
+#include "UserSelectionInterface.h"
+#include <gmock/gmock.h>
+
+/// @brief Mock class for UserSelectionInterface for testing user interaction
+/// All class methods are mocked here
+class MockUserSelectionInterface : public UserSelectionInterface {
 public:
-private:
+  MOCK_METHOD(void, begin, (), (override));
+
+  MOCK_METHOD(UserSelectionAction, getUserSelectionAction, (), (override));
 };
 
 #endif

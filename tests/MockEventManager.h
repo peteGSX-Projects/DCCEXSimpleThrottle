@@ -15,4 +15,23 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "DCCEXSimpleThrottleTest.h"
+#ifndef MOCKEVENTMANAGER_H
+#define MOCKEVENTMANAGER_H
+
+#include "EventManager.h"
+#include <gmock/gmock.h>
+
+/// @brief Mock of the EventManager class for testing
+/// All public methods are mocked here
+class MockEventManager : public EventManager {
+public:
+  MOCK_METHOD(void, subscribe, (EventListener * eventListener, EventType eventType));
+
+  MOCK_METHOD(void, unsubscribe, (EventListener * eventListener, EventType eventType));
+
+  MOCK_METHOD(bool, isSubscribed, (EventListener * eventListener, EventType eventType));
+
+  MOCK_METHOD(void, publish, (EventType eventType, EventData eventData));
+};
+
+#endif

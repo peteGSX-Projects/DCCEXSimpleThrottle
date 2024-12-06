@@ -18,6 +18,16 @@ target_include_directories(DCCEXSimpleThrottleTests
 target_include_directories(DCCEXSimpleThrottleTests
                            PUBLIC ${arduinocore-api_SOURCE_DIR}/test/include)
 
+# Include main source directory for application headers
+target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${CMAKE_SOURCE_DIR})
+
+# Include U8g2 headers
+target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${u8g2lib_SOURCE_DIR}/cppsrc)
+target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${u8g2lib_SOURCE_DIR}/csrc)
+
+# Include DCCEXProtocol headers
+target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${dccexprotocol_SOURCE_DIR}/src)
+
 # Run the sanitizer
 sanitize(address,undefined)
 
@@ -35,5 +45,7 @@ FetchContent_MakeAvailable(googletest)
 # Link GoogleTest libraries
 target_link_libraries(DCCEXSimpleThrottleTests PRIVATE
                       DCCEXSimpleThrottle
+                      DCCEXProtocol
+                      u8g2
                       GTest::gtest_main
                       GTest::gmock)
