@@ -12,21 +12,10 @@ target_sources(
           ${arduinocore-api_SOURCE_DIR}/test/src/PrintMock.cpp
           ${arduinocore-api_SOURCE_DIR}/test/src/StreamMock.cpp)
 
-# Include the Arduino Core headers, both API and tests/mocks
-target_include_directories(DCCEXSimpleThrottleTests
-                           PUBLIC ${arduinocore-api_SOURCE_DIR}/api)
-target_include_directories(DCCEXSimpleThrottleTests
-                           PUBLIC ${arduinocore-api_SOURCE_DIR}/test/include)
-
-# Include main source directory for application headers
-target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${CMAKE_SOURCE_DIR})
-
-# Include U8g2 headers
-target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${u8g2lib_SOURCE_DIR}/cppsrc)
-target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${u8g2lib_SOURCE_DIR}/csrc)
-
-# Include DCCEXProtocol headers
-target_include_directories(DCCEXSimpleThrottleTests PUBLIC ${dccexprotocol_SOURCE_DIR}/src)
+# Include the Arduino Core test/mock and U8g2lib headers
+target_include_directories(DCCEXSimpleThrottleTests PUBLIC
+  ${arduinocore-api_SOURCE_DIR}/test/include
+  ${u8g2lib_SOURCE_DIR}/cppsrc)
 
 # Run the sanitizer
 sanitize(address,undefined)
