@@ -9,7 +9,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 project(DCCEXSimpleThrottle LANGUAGES CXX)
 
 # Include all source files
-file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR})
+file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 # Create this application as a library to run tests against
 add_library(DCCEXSimpleThrottle STATIC
@@ -20,7 +20,7 @@ add_library(DCCEXSimpleThrottle STATIC
 target_compile_options(DCCEXSimpleThrottle PRIVATE -std=c++11)
 
 # Include application headers
-target_include_directories(DCCEXSimpleThrottle PUBLIC .)
+target_include_directories(DCCEXSimpleThrottle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Fetch ArduinoCore-API
 if(NOT TARGET ArduinoCore-API)
@@ -49,6 +49,9 @@ if(NOT TARGET DCCEXProtocol)
     GIT_TAG v0.0.17-Devel)
   FetchContent_MakeAvailable(DCCEXProtocol)
 endif()
+
+# Include U8g2lib headers
+target_include_directories(DCCEXSimpleThrottle PUBLIC ${u8g2lib_SOURCE_DIR}/cppsrc)
 
 # Link against the Arduino core API and other required libraries
 target_link_libraries(DCCEXSimpleThrottle PUBLIC

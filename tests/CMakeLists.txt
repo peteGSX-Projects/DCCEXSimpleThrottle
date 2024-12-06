@@ -2,7 +2,7 @@
 include(${CMAKE_SOURCE_DIR}/cmake/sanitize.cmake)
 
 # Include all source files and add the test executable
-file(GLOB_RECURSE SRC *.cpp)
+file(GLOB SRC *.cpp)
 add_executable(DCCEXSimpleThrottleTests ${SRC})
 
 # Reuse ArduinoCore-API fakes and mocks in our exe
