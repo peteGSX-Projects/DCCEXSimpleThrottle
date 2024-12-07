@@ -8,20 +8,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 # Define the project name and language
 project(DCCEXSimpleThrottle LANGUAGES CXX)
 
-# Include all source files
-file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-
-# Create this application as a library to run tests against
-add_library(DCCEXSimpleThrottle STATIC
-  DCCEXSimpleThrottle.ino
-  ${SOURCES})
-
-# Set target compile options
-target_compile_options(DCCEXSimpleThrottle PRIVATE -std=c++11)
-
-# Include application headers
-target_include_directories(DCCEXSimpleThrottle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
 # Fetch ArduinoCore-API
 if(NOT TARGET ArduinoCore-API)
   FetchContent_Declare(
@@ -50,8 +36,26 @@ if(NOT TARGET DCCEXProtocol)
   FetchContent_MakeAvailable(DCCEXProtocol)
 endif()
 
-# Include U8g2lib headers
-target_include_directories(DCCEXSimpleThrottle PUBLIC ${u8g2lib_SOURCE_DIR}/cppsrc)
+# Include all application source files
+file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+
+# Create this application as a library to run tests against including mocks to build
+add_library(DCCEXSimpleThrottle STATIC
+  DCCEXSimpleThrottle.ino
+  ${SOURCES}
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/mocks/MockSerial.cpp)
+
+# Set target compile options
+target_compile_options(DCCEXSimpleThrottle PRIVATE -std=c++11)
+
+# Set compiler flag for AUTOMATED_TESTING and ARDUINO_ARCH_STM32
+target_compile_definitions(DCCEXSimpleThrottle PRIVATE AUTOMATED_TESTING)
+
+# Include application headers, U8g2lib headers, and mock headers
+target_include_directories(DCCEXSimpleThrottle PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${u8g2lib_SOURCE_DIR}/cppsrc
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/mocks)
 
 # Link against the Arduino core API and other required libraries
 target_link_libraries(DCCEXSimpleThrottle PUBLIC

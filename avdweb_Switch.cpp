@@ -152,7 +152,7 @@
 switchCallback_t Switch::_beepAllCallback = nullptr; // definition static function pointer with typedef
 void* Switch::_beepAllCallbackParam = nullptr;
 
-Switch::Switch(byte _pin, byte PinMode, bool polarity,
+Switch::Switch(byte _pin, byte setPinMode, bool polarity,
     unsigned long debouncePeriod, unsigned long longPressPeriod,
     unsigned long doubleClickPeriod, unsigned long deglitchPeriod)
     : deglitchPeriod(deglitchPeriod)
@@ -162,7 +162,7 @@ Switch::Switch(byte _pin, byte PinMode, bool polarity,
     , pin(_pin)
     , polarity(polarity)
 {
-    pinMode(pin, PinMode);
+    pinMode(pin, setPinMode);
     switchedTime = millis();
     debounced = digitalRead(pin);
     singleClickDisable = true;

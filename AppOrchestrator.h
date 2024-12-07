@@ -92,11 +92,13 @@ private:
   /// @brief Show the startup screen and wait for user interaction before continuing
   void _handleStartupState();
 
+#ifdef WIFI_ENABLED
   /// @brief Display the CommandStation menu and process user interaction to select one
   void _handleSelectCommandStationState();
 
   /// @brief Show the connection progress screen until a connection is made
   void _handleConnectCommandStationState();
+#endif // WIFI_ENABLED
 
   /// @brief Show the loco selection menu and process user interaction to select one
   void _handleSelectLocoState();

@@ -36,10 +36,12 @@ void AppOrchestrator::begin() {}
 
 void AppOrchestrator::update() {
   if (_connectionManager) {
+#ifdef WIFI_ENABLED
     _connectionManager->update();
     if (_connectionManager->isConnecting() && _currentAppState != AppState::ConnectCommandStation) {
       _switchState(AppState::ConnectCommandStation);
     } else if (_connectionManager->connectionError() && _currentAppState != AppState::Error) {
+      _errorScreen->setErrorMessage(_connectionManager->getConnectionErrorMessage());
       _switchState(AppState::Error);
     } else if (_connectionManager->connected()) {
       if (!_commandStationClient->isConnected()) {
@@ -52,17 +54,20 @@ void AppOrchestrator::update() {
         _commandStationClient->update();
       }
     }
+#endif // WIFI_ENABLED
   }
   switch (_currentAppState) {
   case AppState::Startup:
     _handleStartupState();
     break;
+#ifdef WIFI_ENABLED
   case AppState::SelectCommandStation:
     _handleSelectCommandStationState();
     break;
   case AppState::ConnectCommandStation:
     _handleConnectCommandStationState();
     break;
+#endif // WIFI_ENABLED
   case AppState::SelectLoco:
     _handleSelectLocoState();
     break;
@@ -82,12 +87,14 @@ void AppOrchestrator::update() {
 
 void AppOrchestrator::onEvent(Event &event) {
   switch (event.eventType) {
+#ifdef WIFI_ENABLED
   case EventType::CommandStationSelected: {
     if (_connectionManager) {
       _connectionManager->selectCommandStation(event.eventData.byteValue);
     }
     break;
   }
+#endif // WIFI_ENABLED
   case EventType::ReceivedRosterList: {
     setupSelectLocoMenu();
     break;
@@ -155,6 +162,7 @@ void AppOrchestrator::_handleStartupState() {
   }
 }
 
+#ifdef WIFI_ENABLED
 void AppOrchestrator::_handleSelectCommandStationState() {
   if (!_menuManager)
     return;
@@ -184,6 +192,7 @@ void AppOrchestrator::_handleConnectCommandStationState() {
     _switchState(AppState::SelectLoco);
   }
 }
+#endif // WIFI_ENABLED
 
 void AppOrchestrator::_handleSelectLocoState() {
   if (!_menuManager)
@@ -251,7 +260,6 @@ void AppOrchestrator::_handleSelectActionState() {
 void AppOrchestrator::_handleErrorState() {
   if (!_errorScreen)
     return;
-  _errorScreen->setErrorMessage(_connectionManager->getConnectionErrorMessage());
   _errorScreen->drawScreen(_displayInterface);
 }
 

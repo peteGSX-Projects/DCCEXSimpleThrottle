@@ -273,7 +273,8 @@ void U8G2SH1106Display::_displayLocoSpeed(uint8_t speed) {
   _oled->setFont(_speedFont);
   uint16_t displayWidth = _oled->getWidth();
   uint8_t fontHeight = _oled->getMaxCharHeight();
-  char speedBuffer[4];
+  uint8_t speedDigits = (speed == 0) ? 1 : log10(speed) + 1;
+  char speedBuffer[speedDigits + 1];
   snprintf(speedBuffer, sizeof(speedBuffer), "%d", speed);
   uint16_t speedWidth = _oled->getStrWidth(speedBuffer);
   uint16_t clearWidth = _oled->getStrWidth("999");
@@ -283,8 +284,7 @@ void U8G2SH1106Display::_displayLocoSpeed(uint8_t speed) {
   _oled->setDrawColor(0);
   _oled->drawBox(clearX, y - fontHeight, clearWidth, fontHeight);
   _oled->setDrawColor(1);
-  _oled->setCursor(x, y);
-  _oled->print(speed);
+  _oled->drawStr(x, y, speedBuffer);
   _oled->sendBuffer();
 }
 
@@ -304,39 +304,33 @@ void U8G2SH1106Display::_displayLocoDirection(Direction direction) {
   _oled->setDrawColor(0);
   _oled->drawBox(x, y - fontHeight, clearWidth, fontHeight);
   _oled->setDrawColor(1);
-  _oled->setCursor(x, y);
-  _oled->print(directionText);
+  _oled->drawStr(x, y, directionText);
   _oled->sendBuffer();
 }
 
 void U8G2SH1106Display::_displayLocoName(const char *name) {
-  _oled->setCursor(0, 50);
   _oled->setFont(_addressFont);
-  _oled->print(F("                      "));
-  _oled->setCursor(0, 50);
-  _oled->print(name);
+  _oled->drawStr(0, 50, "                      ");
+  _oled->drawStr(0, 50, name);
   _oled->sendBuffer();
 }
 
 void U8G2SH1106Display::_displayTrackPowerState(TrackPower trackPower) {
-  _oled->drawHLine(0, 55, 128);
-  _oled->setCursor(50, 63);
   _oled->setFont(_menuFont);
-  _oled->print(F("Track power: "));
-  _oled->setCursor(112, 63);
-  _oled->print("   ");
-  _oled->setCursor(112, 63);
+  _oled->drawHLine(0, 55, 128);
+  _oled->drawStr(50, 63, "Track power: ");
+  _oled->drawStr(112, 63, "   ");
   switch (trackPower) {
   case TrackPower::PowerOff:
-    _oled->print(F("Off"));
+    _oled->drawStr(112, 63, "Off");
     break;
 
   case TrackPower::PowerOn:
-    _oled->print(F("On"));
+    _oled->drawStr(112, 63, "On");
     break;
 
   case TrackPower::PowerUnknown:
-    _oled->print(F("?"));
+    _oled->drawStr(112, 63, "?");
     break;
 
   default:
