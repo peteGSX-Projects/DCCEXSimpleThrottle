@@ -15,29 +15,23 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/MockBaseMenu.h"
-#include <MockDisplayInterface.h>
-#include <MockEventManager.h>
-#include <gtest/gtest.h>
+#ifndef ARDUINO_H
+#define ARDUINO_H
 
-using ::testing::AtLeast;
-TEST(BaseMenuTests, CanGetName) {
-  MockBaseMenu *menu = new MockBaseMenu();
+/// @brief Mock Arduino.h to define required types and methods to satisfy dependencies
 
-  const char *name = "Mock Test Menu name";
-  menu->setMenuName(name);
+#include <stdint.h>
 
-  EXPECT_STREQ(menu->getMenuName(), name);
-}
+// Define common Arduino types
+typedef uint8_t byte;
 
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  // if you plan to use GMock, replace the line above with
-  // ::testing::InitGo ogleMock(&argc, argv);
+// Mock Arduino functions
+inline void pinMode(int pin, int mode) {}
+inline void digitalWrite(int pin, int value) {}
+inline int digitalRead(int pin) { return 0; }
+inline void delay(unsigned long ms) {}
+inline unsigned long millis() { return 0; }
+inline void analogWrite(int pin, int value) {}
+inline int analogRead(int pin) { return 0; }
 
-  if (RUN_ALL_TESTS())
-    ;
-
-  // Always return zero-code and allow PlatformIO to parse results
-  return 0;
-}
+#endif // ARDUINO_H

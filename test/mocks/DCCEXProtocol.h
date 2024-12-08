@@ -18,9 +18,57 @@
 #ifndef DCCEXPROTOCOL_H
 #define DCCEXPROTOCOL_H
 
-class DCCEXProtocol {
+/// @brief Mock DCCEXProtocol class to satisfy code dependencies
 
-
+/// @brief Loco direction
+enum Direction {
+  Reverse = 0,
+  Forward = 1,
 };
+
+/// @brief Loco source
+enum LocoSource {
+  LocoSourceRoster = 0,
+  LocoSourceEntry = 1,
+};
+
+/// @brief Consist loco facing
+enum Facing {
+  FacingForward = 0,
+  FacingReversed = 1,
+};
+
+/// @brief Track power states
+enum TrackPower {
+  PowerOff = 0,
+  PowerOn = 1,
+  PowerUnknown = 2,
+};
+
+// Valid TrackManager types
+enum TrackManagerMode {
+  MAIN, // Normal DCC track mode
+  PROG, // Programming DCC track mode
+  DC,   // DC mode
+  DCX,  // Reverse polarity DC mode
+  NONE, // Track is unused
+};
+
+/// @brief Route types
+enum RouteType {
+  RouteTypeRoute = 'R',
+  RouteTypeAutomation = 'A',
+};
+
+/// @brief Turntable types
+enum TurntableType {
+  TurntableTypeDCC = 0,
+  TurntableTypeEXTT = 1,
+  TurntableTypeUnknown = 9,
+};
+
+class Loco {};
+
+class DCCEXProtocol {};
 
 #endif // DCCEXPROTOCOL_H

@@ -15,29 +15,9 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "include/MockBaseMenu.h"
-#include <MockDisplayInterface.h>
-#include <MockEventManager.h>
-#include <gtest/gtest.h>
+#ifndef U8G2LIB_H
+#define U8G2LIB_H
 
-using ::testing::AtLeast;
-TEST(BaseMenuTests, CanGetName) {
-  MockBaseMenu *menu = new MockBaseMenu();
+/// @brief Mock U8g2lib to satisfy code dependencies
 
-  const char *name = "Mock Test Menu name";
-  menu->setMenuName(name);
-
-  EXPECT_STREQ(menu->getMenuName(), name);
-}
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  // if you plan to use GMock, replace the line above with
-  // ::testing::InitGo ogleMock(&argc, argv);
-
-  if (RUN_ALL_TESTS())
-    ;
-
-  // Always return zero-code and allow PlatformIO to parse results
-  return 0;
-}
+#endif // U8G2LIB_H
