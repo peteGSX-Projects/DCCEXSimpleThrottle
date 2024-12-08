@@ -21,18 +21,19 @@
 
 #include <U8g2lib.h>
 
-#ifdef AUTOMATED_TESTING
-#include "MockSerial.h"
+// DISABLE OLDTESTS
+// #ifdef AUTOMATED_TESTING
+// #include "MockSerial.h"
 
-// Use the pin definitions for ESP32 for AUTOMATED TESTING so we dont have to include other libraries/platforms
-#define ENCODER_DT_PIN 12
-#define ENCODER_CLK_PIN 14
-#define BUTTON_PIN 13
-#define SCL_PIN 22
-#define SDA_PIN 23
-#define CS_PIN 5
-#define DC_PIN 2
-#endif // AUTOMATED_TESTING
+// // Use the pin definitions for ESP32 for AUTOMATED TESTING so we dont have to include other libraries/platforms
+// #define ENCODER_DT_PIN 12
+// #define ENCODER_CLK_PIN 14
+// #define BUTTON_PIN 13
+// #define SCL_PIN 22
+// #define SDA_PIN 23
+// #define CS_PIN 5
+// #define DC_PIN 2
+// #endif // AUTOMATED_TESTING
 
 /// @brief Provide default definitions that can be overridden by a user creating myConfig.h
 
@@ -83,7 +84,7 @@
 #if defined(ARDUINO_ARCH_STM32)
 // No WiFi on Bluepill
 #ifdef WIFI_ENABLED
-// #undef WIFI_ENABLED
+#undef WIFI_ENABLED
 #endif // WIFI_ENABLED
 // Default pins for Bluepill
 #ifndef ENCODER_DT_PIN
