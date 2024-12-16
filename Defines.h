@@ -45,6 +45,14 @@
 #define COMMANDSTATION_CONNECTION Serial1
 #endif // COMMANDSTATION_CONNECTION
 
+// Define default DCCEXProtocol buffer and param values if not in myConfig.h
+#ifndef DCCEX_MAX_COMMAND_BUFFER_SIZE
+#define DCCEX_MAX_COMMAND_BUFFER_SIZE 500
+#endif // DCCEX_MAX_COMMAND_BUFFER_SIZE
+#ifndef DCCEX_MAX_COMMAND_PARAMS
+#define DCCEX_MAX_COMMAND_PARAMS 50
+#endif // DCCEX_MAX_COMMAND_PARAMS
+
 // Give OLED connection types a value
 #define OLED_I2C 1
 #define OLED_SPI 2

@@ -21,7 +21,7 @@
 CommandStationClient::CommandStationClient(Stream *logStream, CommandStationListener *commandStationListener)
     : _logStream(logStream), _commandStationListener(commandStationListener) {
   _connectionStream = nullptr;
-  _commandStationClient = new DCCEXProtocol();
+  _commandStationClient = new DCCEXProtocol(DCCEX_MAX_COMMAND_BUFFER_SIZE, DCCEX_MAX_COMMAND_PARAMS);
   _isConnected = false;
   _rosterMaxRetries = 10;
   _rosterRetry = 1;
