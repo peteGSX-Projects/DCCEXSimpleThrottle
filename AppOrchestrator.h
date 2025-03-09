@@ -117,6 +117,9 @@ private:
   /// @brief Display a menu
   /// @param menu Pointer to the menu to be displayed
   void _displayMenu(BaseMenu *menu);
+
+  /// @brief Join programming track to main and return to the Select Loco menu
+  void _handleJoinProgTrack();
 };
 
 #endif // APPORCHESTRATOR_H

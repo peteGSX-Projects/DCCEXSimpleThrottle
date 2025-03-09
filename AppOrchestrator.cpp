@@ -104,6 +104,10 @@ void AppOrchestrator::onEvent(Event &event) {
     updateThrottleTrackPower(event.eventData.trackPowerValue);
     break;
   }
+  case EventType::JoinProgTrack: {
+    _handleJoinProgTrack();
+    break;
+  }
   default:
     CONSOLE.print("AppOrchestrator received unknown event ");
     CONSOLE.println(event.eventType);
@@ -195,10 +199,9 @@ void AppOrchestrator::_handleSelectLocoState() {
   menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
-  // Disable action menu for now, reserved for future use
-  // case UserConfirmationAction::DoubleClick:
-  //   _switchState(AppState::SelectAction);
-  //   break;
+  case UserConfirmationAction::DoubleClick:
+    _switchState(AppState::SelectAction);
+    break;
   default:
     menu->handleUserConfirmationAction(action);
     break;
@@ -287,4 +290,9 @@ void AppOrchestrator::_switchState(AppState appState) {
 void AppOrchestrator::_displayMenu(BaseMenu *menu) {
   MenuScreen menuScreen(menu);
   menuScreen.drawScreen(_displayInterface);
+}
+
+void AppOrchestrator::_handleJoinProgTrack() {
+  CONSOLE.println("JOIN prog track");
+  _switchState(AppState::SelectLoco);
 }

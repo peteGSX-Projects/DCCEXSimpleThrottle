@@ -20,24 +20,23 @@
 #define ACTIONMENUITEM_H
 
 #include "BaseMenuItem.h"
+#include "EventStructure.h"
 
-/// @brief Extension of the BaseMenuItem class for users to select items that call a function or method
-/// Each action should be a callback to a method requiring no parameters
+/// @brief Extension of the BaseMenuItem class for users to select items that publish an event
+/// Each action must generate an event to be published to the AppOrchestrator
 class ActionMenuItem : public BaseMenuItem {
 public:
-  /// @brief Define a non-typed method to call requiring no parameters
-  typedef void (*Action)();
-
   /// @brief Constructor for the action menu item objects
   /// @param name Pointer to the char array containing the item's name to display
-  /// @param action Function to call when this item is selected
-  ActionMenuItem(const char *name, Action action);
+  /// @param event Pointer to the Event to publish when this item is selected
+  ActionMenuItem(const char *name, Event *event);
 
-  /// @brief Call the action associated with this menu item object
-  void callAction();
+  /// @brief Get the Event associated with this item
+  /// @return Pointer to the Event to publish
+  Event *getEvent();
 
 private:
-  Action _action;
+  Event *_event;
 };
 
 #endif // ACTIONMENUITEM_H

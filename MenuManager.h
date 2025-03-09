@@ -54,6 +54,9 @@ public:
   /// @param firstRosterLoco Pointer to the first loco in the roster
   void setupLocoMenu(Loco *firstRosterLoco);
 
+  /// @brief Set up the action menu
+  void setupActionMenu();
+
 private:
   EventManager *_eventManager;
   SelectActionMenu *_selectActionMenu;

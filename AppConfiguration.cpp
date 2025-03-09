@@ -51,6 +51,7 @@ void AppConfiguration::initialise() {
   _menuManager->setupCommandStationMenu(_commandStationList, _commandStationCount);
   _connectionManager->setCommandStationList(_commandStationList, _commandStationCount);
 #endif // WIFI_ENABLED
+  _menuManager->setupActionMenu();
   _commandStationClient->begin();
 }
 
@@ -79,6 +80,7 @@ void AppConfiguration::_registerEventSubscriptions() {
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedLocoUpdate);
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedTrackPower);
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedReadLoco);
+  _eventManager->subscribe(_appOrchestrator, EventType::JoinProgTrack);
 }
 
 #ifdef WIFI_ENABLED

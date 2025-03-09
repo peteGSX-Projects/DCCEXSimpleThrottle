@@ -18,6 +18,6 @@
 
 #include "ActionMenuItem.h"
 
-ActionMenuItem::ActionMenuItem(const char *name, Action action) : BaseMenuItem(name), _action(action) {}
+ActionMenuItem::ActionMenuItem(const char *name, Event *event) : BaseMenuItem(name), _event(event) {}
 
-void ActionMenuItem::callAction() { _action(); }
+Event *ActionMenuItem::getEvent() { return _event; }
