@@ -120,6 +120,10 @@ private:
 
   /// @brief Join programming track to main and return to the Select Loco menu
   void _handleJoinProgTrack();
+
+  /// @brief Set track power according to the provided EventType
+  /// @param eventType Valid EventType
+  void _handleSetTrackPower(EventType eventType);
 };
 
 #endif // APPORCHESTRATOR_H

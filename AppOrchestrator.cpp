@@ -108,6 +108,12 @@ void AppOrchestrator::onEvent(Event &event) {
     _handleJoinProgTrack();
     break;
   }
+  case EventType::PowerMainOn:
+  case EventType::PowerMainOff:
+  case EventType::PowerProgOn:
+  case EventType::PowerProgOff:
+    _handleSetTrackPower(event.eventType);
+    break;
   default:
     CONSOLE.print("AppOrchestrator received unknown event ");
     CONSOLE.println(event.eventType);
@@ -293,6 +299,11 @@ void AppOrchestrator::_displayMenu(BaseMenu *menu) {
 }
 
 void AppOrchestrator::_handleJoinProgTrack() {
-  CONSOLE.println("JOIN prog track");
+  _commandStationClient->joinProgTrack();
+  _switchState(AppState::SelectLoco);
+}
+
+void AppOrchestrator::_handleSetTrackPower(EventType eventType) {
+  _commandStationClient->setTrackPower(eventType);
   _switchState(AppState::SelectLoco);
 }

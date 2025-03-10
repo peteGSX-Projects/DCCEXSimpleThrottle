@@ -68,9 +68,9 @@ void MenuManager::setupLocoMenu(Loco *firstRosterLoco) {
 }
 
 void MenuManager::setupActionMenu() {
-  EventData none;
-  EventType type = EventType::JoinProgTrack;
-  Event *event = new Event(type, none);
-  ActionMenuItem *actionItem = new ActionMenuItem("Join PROG Track", event);
-  _selectActionMenu->addItem(actionItem);
+  _selectActionMenu->addItem(new ActionMenuItem("Join PROG Track", new Event(EventType::JoinProgTrack, EventData())));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Main On", new Event(EventType::PowerMainOn, EventData())));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Main Off", new Event(EventType::PowerMainOff, EventData())));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Prog On", new Event(EventType::PowerProgOn, EventData())));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Prog Off", new Event(EventType::PowerProgOff, EventData())));
 }

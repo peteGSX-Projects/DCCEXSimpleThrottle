@@ -50,6 +50,13 @@ public:
   /// @return Pointer to the DCCEXProtocol client
   DCCEXProtocol *getClient();
 
+  /// @brief Join Prog to Main
+  void joinProgTrack();
+
+  /// @brief Set track power according to the provided EventType
+  /// @param eventType Valid EventType
+  void setTrackPower(EventType eventType);
+
 private:
   Stream *_logStream;
   CommandStationListener *_commandStationListener;
