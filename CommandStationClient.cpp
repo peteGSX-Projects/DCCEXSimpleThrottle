@@ -72,20 +72,22 @@ void CommandStationClient::joinProgTrack() {
   }
 }
 
-void CommandStationClient::setTrackPower(EventType eventType) {
+void CommandStationClient::setTrackPower(Event event) {
   if (_isConnected) {
-    switch (eventType) {
-    case EventType::PowerMainOn:
-      _commandStationClient->powerMainOn();
+    switch (event.eventType) {
+    case EventType::SetPowerMain:
+      if (event.eventData.byteValue == 1) {
+        _commandStationClient->powerMainOn();
+      } else {
+        _commandStationClient->powerMainOff();
+      }
       break;
-    case EventType::PowerMainOff:
-      _commandStationClient->powerMainOff();
-      break;
-    case EventType::PowerProgOn:
-      _commandStationClient->powerProgOn();
-      break;
-    case EventType::PowerProgOff:
-      _commandStationClient->powerProgOff();
+    case EventType::SetPowerProg:
+      if (event.eventData.byteValue == 1) {
+        _commandStationClient->powerProgOn();
+      } else {
+        _commandStationClient->powerProgOff();
+      }
       break;
     default:
       break;

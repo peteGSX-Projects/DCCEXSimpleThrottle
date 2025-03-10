@@ -32,10 +32,8 @@ enum EventType {
   ReceivedReadLoco,
   ToggleTrackPower,
   JoinProgTrack,
-  PowerMainOn,
-  PowerMainOff,
-  PowerProgOn,
-  PowerProgOff
+  SetPowerMain,
+  SetPowerProg
 };
 
 /// @brief Structure to enable supporting EventData that has various different types

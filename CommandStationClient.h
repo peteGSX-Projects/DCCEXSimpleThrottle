@@ -54,8 +54,8 @@ public:
   void joinProgTrack();
 
   /// @brief Set track power according to the provided EventType
-  /// @param eventType Valid EventType
-  void setTrackPower(EventType eventType);
+  /// @param eventType Valid Event type and data
+  void setTrackPower(Event event);
 
 private:
   Stream *_logStream;

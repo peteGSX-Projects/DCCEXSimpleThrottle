@@ -81,10 +81,8 @@ void AppConfiguration::_registerEventSubscriptions() {
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedTrackPower);
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedReadLoco);
   _eventManager->subscribe(_appOrchestrator, EventType::JoinProgTrack);
-  _eventManager->subscribe(_appOrchestrator, EventType::PowerMainOn);
-  _eventManager->subscribe(_appOrchestrator, EventType::PowerMainOff);
-  _eventManager->subscribe(_appOrchestrator, EventType::PowerProgOn);
-  _eventManager->subscribe(_appOrchestrator, EventType::PowerProgOff);
+  _eventManager->subscribe(_appOrchestrator, EventType::SetPowerMain);
+  _eventManager->subscribe(_appOrchestrator, EventType::SetPowerProg);
 }
 
 #ifdef WIFI_ENABLED
