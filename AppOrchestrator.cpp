@@ -75,6 +75,8 @@ void AppOrchestrator::update() {
   case AppState::Error:
     _handleErrorState();
     break;
+  case AppState::ReadLocoAddress:
+    _handleReadLocoState();
   default:
     break;
   }
@@ -94,6 +96,10 @@ void AppOrchestrator::onEvent(Event &event) {
   }
   case EventType::LocoSelected: {
     setThrottleLoco(event.eventData.locoValue);
+    break;
+  }
+  case EventType::ReadLocoAddress: {
+    _readLoco();
     break;
   }
   case EventType::ReceivedLocoUpdate: {
@@ -286,6 +292,9 @@ void AppOrchestrator::_switchState(AppState appState) {
   case AppState::Error:
     _currentAppState = AppState::Error;
     break;
+  case AppState::ReadLocoAddress:
+    _currentAppState = AppState::ReadLocoAddress;
+    break;
   default:
     break;
   }
@@ -304,4 +313,19 @@ void AppOrchestrator::_handleJoinProgTrack() {
 void AppOrchestrator::_handleSetTrackPower(Event event) {
   _commandStationClient->setTrackPower(event);
   _switchState(AppState::SelectLoco);
+}
+
+void AppOrchestrator::_readLoco() {
+  if (_commandStationClient->isConnected()) {
+    _commandStationClient->getClient()->readLoco();
+    _switchState(AppState::ReadLocoAddress);
+  }
+}
+
+void AppOrchestrator::_handleReadLocoState() {
+  if (!_progressScreen)
+    return;
+  _progressScreen->setActivity("Reading Loco address");
+  _progressScreen->setCounter(15);
+  _progressScreen->drawScreen(_displayInterface);
 }

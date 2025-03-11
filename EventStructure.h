@@ -27,6 +27,7 @@ enum EventType {
   CommandStationSelected,
   ReceivedRosterList,
   LocoSelected,
+  ReadLocoAddress,
   ReceivedLocoUpdate,
   ReceivedTrackPower,
   ReceivedReadLoco,
