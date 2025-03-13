@@ -31,7 +31,16 @@
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-enum class AppState { Startup, SelectCommandStation, ConnectCommandStation, SelectLoco, Throttle, SelectAction, Error };
+enum class AppState {
+  Startup,
+  SelectCommandStation,
+  ConnectCommandStation,
+  SelectLoco,
+  Throttle,
+  SelectAction,
+  Error,
+  ReadLocoAddress
+};
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens,
 /// displays, connection management, and other application states
@@ -124,6 +133,12 @@ private:
   /// @brief Set track power according to the provided Event details
   /// @param eventType Valid Event
   void _handleSetTrackPower(Event event);
+
+  /// @brief Send read loco command to CommandStation client and set ReadLoco state for progress
+  void _readLoco();
+
+  /// @brief Show the read loco progress screen until it is read or times out
+  void _handleReadLocoState();
 };
 
 #endif // APPORCHESTRATOR_H
