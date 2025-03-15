@@ -65,3 +65,32 @@ void CommandStationClient::update() {
 bool CommandStationClient::isConnected() { return _isConnected; }
 
 DCCEXProtocol *CommandStationClient::getClient() { return _commandStationClient; }
+
+void CommandStationClient::joinProgTrack() {
+  if (_isConnected) {
+    _commandStationClient->joinProg();
+  }
+}
+
+void CommandStationClient::setTrackPower(Event event) {
+  if (_isConnected) {
+    switch (event.eventType) {
+    case EventType::SetPowerMain:
+      if (event.eventData.byteValue == 1) {
+        _commandStationClient->powerMainOn();
+      } else {
+        _commandStationClient->powerMainOff();
+      }
+      break;
+    case EventType::SetPowerProg:
+      if (event.eventData.byteValue == 1) {
+        _commandStationClient->powerProgOn();
+      } else {
+        _commandStationClient->powerProgOff();
+      }
+      break;
+    default:
+      break;
+    }
+  }
+}

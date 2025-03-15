@@ -27,10 +27,31 @@ enum EventType {
   CommandStationSelected,
   ReceivedRosterList,
   LocoSelected,
+  ReadLocoAddress,
   ReceivedLocoUpdate,
+  ReceivedLocoBroadcast,
   ReceivedTrackPower,
   ReceivedReadLoco,
-  ToggleTrackPower
+  ToggleTrackPower,
+  JoinProgTrack,
+  SetPowerMain,
+  SetPowerProg
+};
+
+/// @brief Structure for data from a Loco broadcast
+struct LocoBroadcast {
+  int address;
+  int speed;
+  Direction direction;
+  int functionMap;
+
+  /// @brief Constructor for LocoBroadcast data
+  /// @param address DCC address of the loco
+  /// @param speed Speed of the loco
+  /// @param direction Direction of the loco
+  /// @param functionMap Function map of functions states of the loco
+  LocoBroadcast(int address, int speed, Direction direction, int functionMap)
+      : address(address), speed(speed), direction(direction), functionMap(functionMap) {}
 };
 
 /// @brief Structure to enable supporting EventData that has various different types
@@ -43,7 +64,7 @@ enum EventType {
 /// - Add the type to the union
 /// - Add a new constructor for EventData
 struct EventData {
-  enum class DataType { ByteData, IntegerData, LocoData, NoneData, TrackPowerData };
+  enum class DataType { ByteData, IntegerData, LocoData, NoneData, TrackPowerData, LocoBroadcastData };
   DataType dataType;
 
   union {
@@ -51,6 +72,7 @@ struct EventData {
     int intValue;
     Loco *locoValue;
     TrackPower trackPowerValue;
+    LocoBroadcast locoBroadcastValue;
   };
 
   /// @brief Constructor for events with a uint8_t parameter
@@ -70,6 +92,10 @@ struct EventData {
 
   /// @brief Constructor for events containing track power
   EventData(TrackPower value) : dataType(DataType::TrackPowerData), trackPowerValue(value) {}
+
+  /// @brief Constructor for events containing loco broadcasts
+  /// @param value LocoBroadcast data structure
+  EventData(LocoBroadcast value) : dataType(DataType::LocoBroadcastData), locoBroadcastValue(value) {}
 };
 
 /// @brief Structure for each Event that is published

@@ -33,6 +33,11 @@ public:
   /// @brief Implement this method to respond to user confirmation actions
   /// @param action UserConfirmationAction::[None|SingleClick|DoubleClick|LongPress]
   void handleUserConfirmationAction(UserConfirmationAction action) override;
+
+private:
+  /// @brief Publish the Event chosen by the select action
+  /// @param actionIndex Index of the action containing the Event
+  void _selectAction(uint8_t actionIndex);
 };
 
 #endif // SELECTACTIONMENU_H

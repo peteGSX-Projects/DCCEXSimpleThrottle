@@ -75,6 +75,8 @@ void AppOrchestrator::update() {
   case AppState::Error:
     _handleErrorState();
     break;
+  case AppState::ReadLocoAddress:
+    _handleReadLocoState();
   default:
     break;
   }
@@ -96,18 +98,36 @@ void AppOrchestrator::onEvent(Event &event) {
     setThrottleLoco(event.eventData.locoValue);
     break;
   }
-  case EventType::ReceivedLocoUpdate: {
-    updateThrottleLoco(event.eventData.locoValue);
+  case EventType::ReadLocoAddress: {
+    _readLoco();
+    break;
+  }
+  case EventType::ReceivedReadLoco: {
+    _handleReceivedReadLoco(event.eventData.intValue);
+    break;
+  }
+  case EventType::ReceivedLocoBroadcast: {
+    updateThrottleLoco(event.eventData.locoBroadcastValue);
     break;
   }
   case EventType::ReceivedTrackPower: {
     updateThrottleTrackPower(event.eventData.trackPowerValue);
     break;
   }
-  default:
+  case EventType::JoinProgTrack: {
+    _handleJoinProgTrack();
+    break;
+  }
+  case EventType::SetPowerMain:
+  case EventType::SetPowerProg: {
+    _handleSetTrackPower(event);
+    break;
+  }
+  default: {
     CONSOLE.print("AppOrchestrator received unknown event ");
     CONSOLE.println(event.eventType);
     break;
+  }
   }
 }
 
@@ -129,9 +149,9 @@ void AppOrchestrator::setThrottleLoco(Loco *loco) {
   }
 }
 
-void AppOrchestrator::updateThrottleLoco(Loco *loco) {
+void AppOrchestrator::updateThrottleLoco(LocoBroadcast locoBroadcast) {
   if (_throttleScreen) {
-    _throttleScreen->locoUpdateReceived(loco);
+    _throttleScreen->locoBroadcastReceived(locoBroadcast);
   }
 }
 
@@ -195,10 +215,9 @@ void AppOrchestrator::_handleSelectLocoState() {
   menu->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction());
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
   switch (action) {
-  // Disable action menu for now, reserved for future use
-  // case UserConfirmationAction::DoubleClick:
-  //   _switchState(AppState::SelectAction);
-  //   break;
+  case UserConfirmationAction::DoubleClick:
+    _switchState(AppState::SelectAction);
+    break;
   default:
     menu->handleUserConfirmationAction(action);
     break;
@@ -279,6 +298,9 @@ void AppOrchestrator::_switchState(AppState appState) {
   case AppState::Error:
     _currentAppState = AppState::Error;
     break;
+  case AppState::ReadLocoAddress:
+    _currentAppState = AppState::ReadLocoAddress;
+    break;
   default:
     break;
   }
@@ -287,4 +309,55 @@ void AppOrchestrator::_switchState(AppState appState) {
 void AppOrchestrator::_displayMenu(BaseMenu *menu) {
   MenuScreen menuScreen(menu);
   menuScreen.drawScreen(_displayInterface);
+}
+
+void AppOrchestrator::_handleJoinProgTrack() {
+  _commandStationClient->joinProgTrack();
+  _switchState(AppState::SelectLoco);
+}
+
+void AppOrchestrator::_handleSetTrackPower(Event event) {
+  _commandStationClient->setTrackPower(event);
+  _switchState(AppState::SelectLoco);
+}
+
+void AppOrchestrator::_readLoco() {
+  if (_commandStationClient->isConnected()) {
+    _commandStationClient->getClient()->readLoco();
+    _switchState(AppState::ReadLocoAddress);
+  }
+}
+
+void AppOrchestrator::_handleReadLocoState() {
+  if (!_progressScreen)
+    return;
+  _progressScreen->setActivity("Reading Loco address");
+  _progressScreen->setCounter(15);
+  _progressScreen->drawScreen(_displayInterface);
+}
+
+void AppOrchestrator::_handleReceivedReadLoco(int address) {
+  if (address == -1 || address == 0) {
+    _switchState(AppState::SelectLoco);
+  } else {
+    Loco *readLoco = nullptr;
+    for (Loco *roster = _commandStationClient->getClient()->roster->getFirst(); roster; roster = roster->getNext()) {
+      if (roster->getAddress() == address) {
+        readLoco = roster;
+        break;
+      }
+    }
+    if (!readLoco) {
+      readLoco = new Loco(address, LocoSource::LocoSourceEntry);
+      // Get length of address
+      int addressLength = (address == 0) ? 1 : log10(abs(address)) + 1;
+      // Create a buffer for address + null terminator
+      char *nameBuffer = new char[addressLength + 1];
+      // Convert to string and set the name
+      itoa(address, nameBuffer, 10);
+      readLoco->setName(nameBuffer);
+      delete[] nameBuffer;
+    }
+    setThrottleLoco(readLoco);
+  }
 }

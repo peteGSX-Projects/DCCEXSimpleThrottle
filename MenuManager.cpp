@@ -16,12 +16,13 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "ActionMenuItem.h"
 #include "LocoMenuItem.h"
 #include "MenuManager.h"
 
 MenuManager::MenuManager(EventManager *eventManager) : _eventManager(eventManager) {
   // Disable action menu for now, available for future use
-  // _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
+  _selectActionMenu = new SelectActionMenu("Select action", _eventManager);
   _selectLocoMenu = new SelectLocoMenu("Select loco", _eventManager);
   _selectCommandStationMenu = new SelectCommandStationMenu("Select CommandStation", _eventManager);
 }
@@ -64,4 +65,12 @@ void MenuManager::setupLocoMenu(Loco *firstRosterLoco) {
     _selectLocoMenu->addItem(locoItem);
   }
 #endif // LOCAL_ROSTER_COUNT
+}
+
+void MenuManager::setupActionMenu() {
+  _selectActionMenu->addItem(new ActionMenuItem("Join PROG Track", new Event(EventType::JoinProgTrack, EventData())));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Main On", new Event(EventType::SetPowerMain, EventData(1))));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Main Off", new Event(EventType::SetPowerMain, EventData(0))));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Prog On", new Event(EventType::SetPowerProg, EventData(1))));
+  _selectActionMenu->addItem(new ActionMenuItem("Power Prog Off", new Event(EventType::SetPowerProg, EventData(0))));
 }

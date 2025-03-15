@@ -32,7 +32,10 @@ void SelectLocoMenu::handleUserConfirmationAction(UserConfirmationAction action)
     break;
   }
   case UserConfirmationAction::LongPress: {
-    CONSOLE.println("NOT IMPLEMENTED: trigger read loco address from PROG track");
+    EventManager *eventManager = getEventManager();
+    if (eventManager) {
+      eventManager->publish(EventType::ReadLocoAddress, EventData());
+    }
     break;
   }
   default:

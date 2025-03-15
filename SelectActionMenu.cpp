@@ -16,6 +16,7 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "ActionMenuItem.h"
 #include "SelectActionMenu.h"
 
 SelectActionMenu::SelectActionMenu(const char *name, EventManager *eventManager) {
@@ -25,16 +26,27 @@ SelectActionMenu::SelectActionMenu(const char *name, EventManager *eventManager)
 
 void SelectActionMenu::handleUserConfirmationAction(UserConfirmationAction action) {
   switch (action) {
-  case UserConfirmationAction::SingleClick:
-    CONSOLE.println("Single click");
+  case UserConfirmationAction::SingleClick: {
+    uint8_t itemIndex = getSelectedItemIndex();
+    _selectAction(itemIndex);
     break;
-  case UserConfirmationAction::DoubleClick:
-    CONSOLE.println("Double click");
-    break;
-  case UserConfirmationAction::LongPress:
-    CONSOLE.println("Long press");
-    break;
+  }
+  // case UserConfirmationAction::DoubleClick:
+  //   CONSOLE.println("Double click");
+  //   break;
+  // case UserConfirmationAction::LongPress:
+  //   CONSOLE.println("Long press");
+  //   break;
   default:
     break;
+  }
+}
+
+void SelectActionMenu::_selectAction(uint8_t actionIndex) {
+  ActionMenuItem *actionItem = static_cast<ActionMenuItem *>(getMenuItemAtIndex(actionIndex));
+  Event *event = actionItem->getEvent();
+  EventManager *eventManager = getEventManager();
+  if (eventManager) {
+    eventManager->publish(event->eventType, event->eventData);
   }
 }

@@ -159,9 +159,14 @@ void ThrottleScreen::drawScreen(DisplayInterface *display) {
 
 void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
 
-void ThrottleScreen::locoUpdateReceived(Loco *loco) {
-  if (_loco != loco)
+void ThrottleScreen::locoBroadcastReceived(LocoBroadcast locoBroadcast) {
+  if (_loco->getAddress() != locoBroadcast.address)
     return;
+  if (_loco->getSource() == LocoSource::LocoSourceEntry) {
+    _loco->setSpeed(locoBroadcast.speed);
+    _loco->setDirection(locoBroadcast.direction);
+    _loco->setFunctionStates(locoBroadcast.functionMap);
+  }
   _directionChanged = true;
   if (_loco->getDirection() != _direction) {
     _direction = _loco->getDirection();

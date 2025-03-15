@@ -19,6 +19,7 @@
 #ifndef THROTTLESCREEN_H
 #define THROTTLESCREEN_H
 
+#include "EventStructure.h"
 #include "ScreenInterface.h"
 #include <DCCEXProtocol.h>
 
@@ -48,9 +49,9 @@ public:
   /// @param loco Pointer to the loco object
   void setLoco(Loco *loco);
 
-  /// @brief Method to call when a loco update has been received
-  /// @param loco Pointer to the loco that has been updated
-  void locoUpdateReceived(Loco *loco);
+  /// @brief Method to call when a loco broadcast has been received
+  /// @param locoBroadcast LocoBroadcast data structure containing address, speed, direction, and function map
+  void locoBroadcastReceived(LocoBroadcast locoBroadcast);
 
   /// @brief Get the current speed
   /// @return Speed

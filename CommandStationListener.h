@@ -37,6 +37,13 @@ public:
   /// @param loco Pointer to the loco address the update is related to
   void receivedLocoUpdate(Loco *loco) override;
 
+  /// @brief Respond to receiving a loco broadcast to update throttle screen for non-roster locos
+  /// @param address DCC address of the loco
+  /// @param speed Current speed 0 - 126
+  /// @param direction Current direction
+  /// @param functionMap Current function map of states
+  void receivedLocoBroadcast(int address, int speed, Direction direction, int functionMap) override;
+
   /// @brief Respond to receiving a track power state broadcast to update the throttle screen
   /// @param powerState [PowerOff|PowerOn|PowerUnknown]
   void receivedTrackPower(TrackPower powerState) override;

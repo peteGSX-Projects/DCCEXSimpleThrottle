@@ -1,7 +1,11 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.13"
+#define VERSION "0.0.14"
+// 0.0.14 - Implement support to read loco from PROG track
+//        - Implement support to JOIN/UNJOIN PROG track
+//        - Fix non-roster locos not updating correctly
+//        - Requires DCCEXProtocol 1.2.0 or later
 // 0.0.13 - Implement support for changing protocol buffer size and param count
 //        - Requires DCCEXProtocol 1.0.0 or later
 // 0.0.12 - Implement support for rate changes based on rotary encoder speed

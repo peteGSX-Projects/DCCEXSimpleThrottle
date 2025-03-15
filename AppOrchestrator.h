@@ -31,7 +31,16 @@
 #include "UserConfirmationInterface.h"
 #include "UserSelectionInterface.h"
 
-enum class AppState { Startup, SelectCommandStation, ConnectCommandStation, SelectLoco, Throttle, SelectAction, Error };
+enum class AppState {
+  Startup,
+  SelectCommandStation,
+  ConnectCommandStation,
+  SelectLoco,
+  Throttle,
+  SelectAction,
+  Error,
+  ReadLocoAddress
+};
 
 /// @brief This class is for the overall application orchestration to coordinate all the user interactions, screens,
 /// displays, connection management, and other application states
@@ -68,8 +77,8 @@ public:
   void setThrottleLoco(Loco *loco);
 
   /// @brief Notify the throttle screen an update has been received for the associated loco
-  /// @param loco Pointer to the loco object
-  void updateThrottleLoco(Loco *loco);
+  /// @param locoBroadcast Loco broadcast data containing address, speed, direction, and function map
+  void updateThrottleLoco(LocoBroadcast locoBroadcast);
 
   /// @brief Notify the throttle screen of a track power update
   /// @param trackPower Track power state
@@ -117,6 +126,23 @@ private:
   /// @brief Display a menu
   /// @param menu Pointer to the menu to be displayed
   void _displayMenu(BaseMenu *menu);
+
+  /// @brief Join programming track to main and return to the Select Loco menu
+  void _handleJoinProgTrack();
+
+  /// @brief Set track power according to the provided Event details
+  /// @param eventType Valid Event
+  void _handleSetTrackPower(Event event);
+
+  /// @brief Send read loco command to CommandStation client and set ReadLoco state for progress
+  void _readLoco();
+
+  /// @brief Show the read loco progress screen until it is read or times out
+  void _handleReadLocoState();
+
+  /// @brief Set throttle to the received loco address when reading, or return to the select screen if failed
+  /// @param address DCC address of the loco read from the programming track, or -1 says fail
+  void _handleReceivedReadLoco(int address);
 };
 
 #endif // APPORCHESTRATOR_H
