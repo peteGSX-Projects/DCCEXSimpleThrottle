@@ -102,8 +102,12 @@ void AppOrchestrator::onEvent(Event &event) {
     _readLoco();
     break;
   }
-  case EventType::ReceivedLocoUpdate: {
-    updateThrottleLoco(event.eventData.locoValue);
+  case EventType::ReceivedReadLoco: {
+    _handleReceivedReadLoco(event.eventData.intValue);
+    break;
+  }
+  case EventType::ReceivedLocoBroadcast: {
+    updateThrottleLoco(event.eventData.locoBroadcastValue);
     break;
   }
   case EventType::ReceivedTrackPower: {
@@ -115,13 +119,15 @@ void AppOrchestrator::onEvent(Event &event) {
     break;
   }
   case EventType::SetPowerMain:
-  case EventType::SetPowerProg:
+  case EventType::SetPowerProg: {
     _handleSetTrackPower(event);
     break;
-  default:
+  }
+  default: {
     CONSOLE.print("AppOrchestrator received unknown event ");
     CONSOLE.println(event.eventType);
     break;
+  }
   }
 }
 
@@ -143,9 +149,9 @@ void AppOrchestrator::setThrottleLoco(Loco *loco) {
   }
 }
 
-void AppOrchestrator::updateThrottleLoco(Loco *loco) {
+void AppOrchestrator::updateThrottleLoco(LocoBroadcast locoBroadcast) {
   if (_throttleScreen) {
-    _throttleScreen->locoUpdateReceived(loco);
+    _throttleScreen->locoBroadcastReceived(locoBroadcast);
   }
 }
 
@@ -328,4 +334,30 @@ void AppOrchestrator::_handleReadLocoState() {
   _progressScreen->setActivity("Reading Loco address");
   _progressScreen->setCounter(15);
   _progressScreen->drawScreen(_displayInterface);
+}
+
+void AppOrchestrator::_handleReceivedReadLoco(int address) {
+  if (address == -1 || address == 0) {
+    _switchState(AppState::SelectLoco);
+  } else {
+    Loco *readLoco = nullptr;
+    for (Loco *roster = _commandStationClient->getClient()->roster->getFirst(); roster; roster = roster->getNext()) {
+      if (roster->getAddress() == address) {
+        readLoco = roster;
+        break;
+      }
+    }
+    if (!readLoco) {
+      readLoco = new Loco(address, LocoSource::LocoSourceEntry);
+      // Get length of address
+      int addressLength = (address == 0) ? 1 : log10(abs(address)) + 1;
+      // Create a buffer for address + null terminator
+      char *nameBuffer = new char[addressLength + 1];
+      // Convert to string and set the name
+      itoa(address, nameBuffer, 10);
+      readLoco->setName(nameBuffer);
+      delete[] nameBuffer;
+    }
+    setThrottleLoco(readLoco);
+  }
 }

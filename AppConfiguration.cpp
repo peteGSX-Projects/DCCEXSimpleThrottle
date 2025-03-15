@@ -78,7 +78,7 @@ void AppConfiguration::_registerEventSubscriptions() {
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedRosterList);
   _eventManager->subscribe(_appOrchestrator, EventType::LocoSelected);
   _eventManager->subscribe(_appOrchestrator, EventType::ReadLocoAddress);
-  _eventManager->subscribe(_appOrchestrator, EventType::ReceivedLocoUpdate);
+  _eventManager->subscribe(_appOrchestrator, EventType::ReceivedLocoBroadcast);
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedTrackPower);
   _eventManager->subscribe(_appOrchestrator, EventType::ReceivedReadLoco);
   _eventManager->subscribe(_appOrchestrator, EventType::JoinProgTrack);

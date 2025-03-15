@@ -77,8 +77,8 @@ public:
   void setThrottleLoco(Loco *loco);
 
   /// @brief Notify the throttle screen an update has been received for the associated loco
-  /// @param loco Pointer to the loco object
-  void updateThrottleLoco(Loco *loco);
+  /// @param locoBroadcast Loco broadcast data containing address, speed, direction, and function map
+  void updateThrottleLoco(LocoBroadcast locoBroadcast);
 
   /// @brief Notify the throttle screen of a track power update
   /// @param trackPower Track power state
@@ -139,6 +139,10 @@ private:
 
   /// @brief Show the read loco progress screen until it is read or times out
   void _handleReadLocoState();
+
+  /// @brief Set throttle to the received loco address when reading, or return to the select screen if failed
+  /// @param address DCC address of the loco read from the programming track, or -1 says fail
+  void _handleReceivedReadLoco(int address);
 };
 
 #endif // APPORCHESTRATOR_H
