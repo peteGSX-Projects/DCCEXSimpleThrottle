@@ -1,11 +1,40 @@
 <map id="AppOrchestrator::_switchState" name="AppOrchestrator::_switchState">
-<area shape="rect" id="node1" title="Switch application states." alt="" coords="528,188,713,229"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="250,5,473,47"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="9,163,191,190"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="268,123,455,164"/>
-<area shape="rect" id="node5" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="257,188,466,229"/>
-<area shape="rect" id="node6" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="268,253,455,295"/>
-<area shape="rect" id="node7" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="268,319,455,360"/>
-<area shape="rect" id="node8" href="$classAppOrchestrator.html#af356082abb38a9f71779a94c0cf3a607" title="Set the loco being managed by the throttle screen." alt="" coords="243,385,480,411"/>
-<area shape="rect" id="node9" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,385,195,411"/>
+<area shape="rect" id="Node000001" title="Switch application states." alt="" coords="779,355,964,395"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="501,325,723,365"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="765,365,723,361,724,355,765,360"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="253,205,435,230"/>
+<area shape="poly" id="edge24_Node000001_Node000003" title=" " alt="" coords="770,400,706,407,635,409,562,401,526,392,492,380,466,366,442,348,401,306,370,264,350,232,354,229,374,261,405,302,446,344,469,361,494,375,528,387,563,396,635,403,705,402,769,394"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#a68cdca0c979e4aed53c8686bef73e6f1" title="Join programming track to main and return to the Select Loco menu." alt="" coords="251,416,437,456"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="809,402,731,424,654,435,577,441,438,442,438,437,576,435,654,429,730,419,808,397"/>
+<area shape="rect" id="Node000006" href="$classAppOrchestrator.html#a567d08296e610885599d7be6d9a9dbcb" title="Set throttle to the received loco address when reading, or return to the select screen if failed." alt="" coords="251,531,437,571"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="854,408,833,439,805,473,771,505,732,530,696,545,658,556,580,568,504,571,437,567,437,561,504,565,580,563,657,551,694,540,729,526,768,501,801,469,829,436,849,405"/>
+<area shape="rect" id="Node000007" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="519,5,705,45"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="862,342,849,281,824,204,807,165,785,126,759,90,729,59,704,44,707,40,732,55,763,87,790,123,811,162,829,203,854,279,868,341"/>
+<area shape="rect" id="Node000008" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="507,69,717,109"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="858,342,841,293,815,234,778,174,755,147,729,123,710,112,713,107,732,119,759,143,782,171,820,231,846,291,863,341"/>
+<area shape="rect" id="Node000009" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="519,133,705,173"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="853,344,833,307,805,265,770,223,729,188,704,174,707,170,732,183,774,219,809,262,837,304,857,341"/>
+<area shape="rect" id="Node000010" href="$classAppOrchestrator.html#a5b5c47606b641e23180fabf4d6ef6a53" title="Set track power according to the provided Event details." alt="" coords="251,595,437,635"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="860,409,841,449,814,495,777,541,756,560,732,577,697,595,660,608,582,625,506,630,438,628,438,623,506,625,581,619,658,603,695,590,729,572,752,556,773,537,809,492,836,446,855,406"/>
+<area shape="rect" id="Node000011" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="519,197,705,237"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="842,346,793,297,762,273,729,252,703,240,705,235,732,247,765,268,796,293,846,342"/>
+<area shape="rect" id="Node000012" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="519,261,705,301"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="815,351,730,316,693,304,694,299,732,311,817,346"/>
+<area shape="rect" id="Node000013" href="$classAppOrchestrator.html#a8c276b866b9f97c38de97d6993daf132" title="Send read loco command to CommandStation client and set ReadLoco state for progress." alt="" coords="243,659,445,685"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="865,409,850,460,823,522,785,584,760,611,732,634,697,654,659,669,619,679,579,686,500,691,431,687,431,682,500,685,578,681,618,674,657,664,694,649,729,630,757,607,781,581,819,520,845,458,860,407"/>
+<area shape="rect" id="Node000014" href="$classAppOrchestrator.html#af356082abb38a9f71779a94c0cf3a607" title="Set the loco being managed by the throttle screen." alt="" coords="493,491,731,517"/>
+<area shape="poly" id="edge21_Node000001_Node000014" title=" " alt="" coords="838,406,789,441,732,474,677,494,675,489,730,470,786,437,834,401"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="511,323,492,316,416,273,360,232,363,228,419,268,494,311,513,319"/>
+<area shape="rect" id="Node000005" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,538,195,563"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="276,463,244,477,124,540,122,536,242,472,274,459"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="237,553,195,553,195,548,237,548"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="507,53,495,60,449,95,408,136,356,206,351,203,404,132,445,91,492,55,505,48"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="513,116,494,124,419,166,363,207,360,202,416,162,492,119,511,111"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="515,179,399,207,398,202,514,174"/>
+<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="253,594,149,566,150,561,254,588"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="505,220,435,220,435,215,505,215"/>
+<area shape="poly" id="edge18_Node000012_Node000003" title=" " alt="" coords="514,261,398,233,399,227,515,256"/>
+<area shape="poly" id="edge20_Node000013_Node000005" title=" " alt="" coords="264,658,242,649,204,629,168,607,115,566,118,561,172,602,207,625,244,644,266,653"/>
+<area shape="poly" id="edge23_Node000014_Node000005" title=" " alt="" coords="480,506,364,510,243,521,148,541,147,535,242,516,364,505,479,501"/>
+<area shape="poly" id="edge22_Node000014_Node000006" title=" " alt="" coords="526,522,438,537,437,532,525,516"/>
 </map>

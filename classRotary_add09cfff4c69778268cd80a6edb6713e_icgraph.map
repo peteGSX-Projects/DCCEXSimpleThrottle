@@ -1,4 +1,5 @@
 <map id="Rotary::process" name="Rotary::process">
-<area shape="rect" id="node1" title=" " alt="" coords="289,13,412,39"/>
-<area shape="rect" id="node2" href="$classRotaryEncoder.html#a993f0dd4d7c462e8f17947af785942ed" title="Check for any user selection actions This should be called at least once per main loop iteration Note..." alt="" coords="5,5,241,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="289,13,412,38"/>
+<area shape="rect" id="Node000002" href="$classRotaryEncoder.html#a993f0dd4d7c462e8f17947af785942ed" title="Check for any user selection actions This should be called at least once per main loop iteration Note..." alt="" coords="5,5,241,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,28,241,28,241,23,276,23"/>
 </map>

@@ -1,13 +1,26 @@
 <map id="U8G2SH1106Display::_calculateHeaderHeight" name="U8G2SH1106Display::_calculateHeaderHeight">
-<area shape="rect" id="node1" title="Calculates the height of the header area." alt="" coords="724,136,903,177"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a53d3b9d5c894028d26881101767e6b27" title="Calculates the height of the menu item area." alt="" coords="479,5,676,47"/>
-<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="495,201,659,243"/>
-<area shape="rect" id="node9" href="$classU8G2SH1106Display.html#a9916a1244fe550bca23fda97600cd704" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="495,71,659,112"/>
-<area shape="rect" id="node10" href="$classU8G2SH1106Display.html#a9fc7477da83c7bb40a85a1821a718928" title="Display progress bar." alt="" coords="495,136,659,177"/>
-<area shape="rect" id="node11" href="$classU8G2SH1106Display.html#a9a02b7aef51172fa0fd37a6ac87fc339" title="Display the software version below the header text." alt="" coords="495,267,659,308"/>
-<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a2044e4dc070cad6597b58ef3718d0f47" title="Calculates the number of menu items that will fit on screen." alt="" coords="217,5,431,47"/>
-<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a8563fe884f502693aca74add0c19896d" title="Constructor for the display object." alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node6" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="242,79,406,120"/>
-<area shape="rect" id="node7" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="239,160,409,201"/>
-<area shape="rect" id="node8" href="$classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231" title="Display the startup screen." alt="" coords="242,257,406,299"/>
+<area shape="rect" id="Node000001" title="Calculates the height of the header area." alt="" coords="724,133,903,173"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a53d3b9d5c894028d26881101767e6b27" title="Calculates the height of the menu item area." alt="" coords="479,5,676,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="776,127,729,92,675,60,647,48,649,43,677,55,732,88,779,123"/>
+<area shape="rect" id="Node000005" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="495,197,659,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="727,180,652,200,651,195,725,174"/>
+<area shape="rect" id="Node000009" href="$classU8G2SH1106Display.html#a9916a1244fe550bca23fda97600cd704" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="495,69,659,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="725,132,651,112,652,107,727,127"/>
+<area shape="rect" id="Node000010" href="$classU8G2SH1106Display.html#a9fc7477da83c7bb40a85a1821a718928" title="Display progress bar." alt="" coords="495,133,659,173"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="710,156,660,156,660,151,710,151"/>
+<area shape="rect" id="Node000011" href="$classU8G2SH1106Display.html#a9a02b7aef51172fa0fd37a6ac87fc339" title="Display the software version below the header text." alt="" coords="495,261,659,301"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="779,184,732,219,677,252,649,264,647,259,675,247,729,214,776,180"/>
+<area shape="rect" id="Node000003" href="$classU8G2SH1106Display.html#a2044e4dc070cad6597b58ef3718d0f47" title="Calculates the number of menu items that will fit on screen." alt="" coords="217,5,431,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="465,28,431,28,431,23,465,23"/>
+<area shape="rect" id="Node000004" href="$classU8G2SH1106Display.html#a8563fe884f502693aca74add0c19896d" title="Constructor for the display object." alt="" coords="5,5,169,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="204,28,170,28,170,23,204,23"/>
+<area shape="rect" id="Node000006" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="242,77,406,117"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="491,194,477,188,453,168,429,148,375,120,378,115,432,143,456,164,480,183,493,190"/>
+<area shape="rect" id="Node000007" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="239,157,409,197"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="482,205,408,193,409,188,483,200"/>
+<area shape="rect" id="Node000008" href="$classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231" title="Display the startup screen." alt="" coords="242,253,406,293"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="483,241,407,258,406,253,481,236"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="482,95,406,97,406,92,482,90"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="482,165,409,172,409,167,482,160"/>
+<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="482,281,406,279,406,273,482,276"/>
 </map>

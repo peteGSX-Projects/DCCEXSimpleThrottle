@@ -1,5 +1,7 @@
 <map id="BaseMenu::getMenuItemAtIndex" name="BaseMenu::getMenuItemAtIndex">
-<area shape="rect" id="node1" title="Get the menu item at the specified index." alt="" coords="5,31,240,57"/>
-<area shape="rect" id="node2" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="288,5,473,32"/>
-<area shape="rect" id="node3" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="291,56,471,83"/>
+<area shape="rect" id="Node000001" title="Get the menu item at the specified index." alt="" coords="5,31,240,56"/>
+<area shape="rect" id="Node000002" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="288,5,473,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,29,274,26,274,31,240,34"/>
+<area shape="rect" id="Node000003" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="291,55,471,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,52,277,55,277,60,240,57"/>
 </map>

@@ -1,52 +1,131 @@
 <map id="AppOrchestrator::update" name="AppOrchestrator::update">
-<area shape="rect" id="node1" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,1183,187,1209"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="235,1146,457,1187"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="543,670,729,711"/>
-<area shape="rect" id="node5" href="$classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f" title="Check if connections are active." alt="" coords="556,1423,716,1465"/>
-<area shape="rect" id="node10" href="$classAppOrchestrator.html#a13522558df396b17108274f55f8ee620" title="Show any errors on screen and process user interaction to recover." alt="" coords="253,1263,439,1305"/>
-<area shape="rect" id="node14" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="253,465,439,506"/>
-<area shape="rect" id="node22" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="241,370,451,411"/>
-<area shape="rect" id="node27" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="253,305,439,346"/>
-<area shape="rect" id="node31" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="253,641,439,682"/>
-<area shape="rect" id="node34" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="253,875,439,917"/>
-<area shape="rect" id="node46" href="$classConnectionManager.html#af126a90b47e9ab97d4c0ea0ac285b1f3" title="Get the connection stream managed by this ConnectionManager." alt="" coords="265,1329,427,1370"/>
-<area shape="rect" id="node47" href="$classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e" title="Check if the CommandStation client is connected." alt="" coords="259,1394,433,1435"/>
-<area shape="rect" id="node48" href="$classCommandStationClient.html#a3326e446575d04445f41daa2a6dbd516" title="Set the stream object used to connect to the CommandStation, call after begin() Once set,..." alt="" coords="259,1459,433,1501"/>
-<area shape="rect" id="node49" href="$classCommandStationClient.html#ac6b6a22a6ed008a557df26d2ea4b8e82" title="Ensure client is updated regularly." alt="" coords="259,1525,433,1566"/>
-<area shape="rect" id="node50" href="$classConnectionManager.html#a055e0561b1c729748fe7df16c07c5608" title="Ensure all connections are alive and retries are managed." alt="" coords="266,1590,426,1631"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="850,674,1049,715"/>
-<area shape="rect" id="node6" href="$classProgressScreen.html#a7b33a3a2c99b0bc8d48bea6b7be2581a" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="533,1372,739,1399"/>
-<area shape="rect" id="node8" href="$classProgressScreen.html#a99e5662cfd10b2b29c615b6a1c0eab29" title="Set the current activity in progress." alt="" coords="536,1271,736,1297"/>
-<area shape="rect" id="node9" href="$classProgressScreen.html#a236d3d1296261257db881182060247e9" title="Set the current attempt in progress." alt="" coords="535,1321,737,1348"/>
-<area shape="rect" id="node7" href="$classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31" title="Display progress screen for the specified activity." alt="" coords="857,1365,1041,1406"/>
-<area shape="rect" id="node11" href="$classErrorScreen.html#acc54926b9c1387d3007bd2861e47f85b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="545,1489,727,1516"/>
-<area shape="rect" id="node13" href="$classErrorScreen.html#a895eb76681a5be273fa7b4636d60d491" title="Set the error message to be displayed." alt="" coords="529,1540,743,1567"/>
-<area shape="rect" id="node12" href="$classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58" title="Display error screen." alt="" coords="857,1482,1041,1523"/>
-<area shape="rect" id="node15" href="$classAppOrchestrator.html#a8bfc05c50a19a90d0f64b69290d4994c" title="Display a menu." alt="" coords="523,319,749,345"/>
-<area shape="rect" id="node17" href="$classMenuManager.html#a81e53fff9a93681ebfcc7e563a38459b" title="Get the Select Action menu." alt="" coords="505,501,767,528"/>
-<area shape="rect" id="node18" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="533,553,739,594"/>
-<area shape="rect" id="node19" href="$classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="545,370,727,411"/>
-<area shape="rect" id="node20" href="$classSelectActionMenu.html#acdeddf70807012fcb535ff46006cab33" title="Implement this method to respond to user confirmation actions." alt="" coords="541,435,731,477"/>
-<area shape="rect" id="node21" href="$classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c" title="Method to respond to user selection actions." alt="" coords="520,253,752,294"/>
-<area shape="rect" id="node16" href="$classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="856,319,1043,345"/>
-<area shape="rect" id="node23" href="$classMenuManager.html#a5c69017e3aa561385b5bfb40d9516a70" title="Get the Select CommandStation menu." alt="" coords="511,122,761,163"/>
-<area shape="rect" id="node24" href="$classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="521,187,751,229"/>
-<area shape="rect" id="node25" href="$classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="815,187,1084,229"/>
-<area shape="rect" id="node26" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="847,118,1052,159"/>
-<area shape="rect" id="node28" href="$classMenuManager.html#ab70aebed1c668b2072f63baf8a78ce54" title="Get the Select Loco menu." alt="" coords="511,5,761,32"/>
-<area shape="rect" id="node29" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="531,57,741,98"/>
-<area shape="rect" id="node30" href="$classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="843,64,1055,91"/>
-<area shape="rect" id="node32" href="$classStartupScreen.html#a1997937f85258571a79e47ca255865ad" title="Draw this screen on the specified display." alt="" coords="537,619,735,645"/>
-<area shape="rect" id="node33" href="$classDisplayInterface.html#a810a76dde10eb647ecda0a732f52346f" title="Display the startup screen." alt="" coords="857,609,1041,650"/>
-<area shape="rect" id="node35" href="$classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="535,736,737,763"/>
-<area shape="rect" id="node37" href="$classThrottleScreen.html#a9f2f0bb6c023da81ba8d9a1eefc81cdc" title="Get the current speed." alt="" coords="543,971,729,997"/>
-<area shape="rect" id="node38" href="$classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="537,1205,735,1246"/>
-<area shape="rect" id="node41" href="$classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="537,787,735,829"/>
-<area shape="rect" id="node42" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="523,853,749,880"/>
-<area shape="rect" id="node43" href="$classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756" title="Explicitly request an update for the currently selected loco address." alt="" coords="534,905,738,946"/>
-<area shape="rect" id="node44" href="$classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885" title="Explicitly request a track power update (actually sends &#160;for server version which does this)" alt="" coords="532,1022,740,1063"/>
-<area shape="rect" id="node45" href="$classUserSelectionInterface.html#ad50f397a72e413b72bf6565fe8d4523a" title="Check if throttle is inverted compared to up/down." alt="" coords="551,1087,721,1129"/>
-<area shape="rect" id="node36" href="$classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6" title="Display the throttle screen." alt="" coords="857,739,1041,781"/>
-<area shape="rect" id="node39" href="$classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3" title="Toggle lights (assumed to be F0) on/off." alt="" coords="843,1241,1055,1268"/>
-<area shape="rect" id="node40" href="$classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52" title="Toggle track power state &#45; if unknown, turn on." alt="" coords="846,1175,1053,1217"/>
+<area shape="rect" id="Node000001" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,1265,187,1290"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="235,1258,457,1298"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,1275,221,1275,221,1280,187,1280"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="543,622,729,662"/>
+<area shape="poly" id="edge73_Node000001_Node000003" title=" " alt="" coords="96,1265,106,1149,130,966,148,870,171,783,199,712,215,685,233,665,267,641,305,624,345,613,387,607,469,607,543,617,543,622,469,612,387,613,346,619,307,629,270,646,236,669,220,688,204,714,176,784,153,871,135,967,111,1149,101,1265"/>
+<area shape="rect" id="Node000005" href="$classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f" title="Check if connections are active." alt="" coords="556,1207,716,1247"/>
+<area shape="poly" id="edge74_Node000001_Node000005" title=" " alt="" coords="142,1262,234,1243,397,1228,542,1224,542,1229,397,1234,235,1248,143,1268"/>
+<area shape="rect" id="Node000010" href="$classAppOrchestrator.html#a13522558df396b17108274f55f8ee620" title="Show any errors on screen and process user interaction to recover." alt="" coords="253,1386,439,1426"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="114,1288,166,1329,236,1371,253,1379,250,1383,233,1376,163,1333,110,1293"/>
+<area shape="rect" id="Node000014" href="$classAppOrchestrator.html#a00680b47a9bcde38012736ef9d47459f" title="Show the read loco progress screen until it is read or times out." alt="" coords="253,1322,439,1362"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="147,1288,255,1316,253,1321,146,1293"/>
+<area shape="rect" id="Node000015" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="253,355,439,395"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="95,1265,106,1118,131,876,150,746,173,624,200,522,216,481,232,448,256,421,285,400,288,404,260,425,237,451,220,483,205,523,178,625,155,747,137,877,112,1118,101,1265"/>
+<area shape="rect" id="Node000033" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="241,462,451,502"/>
+<area shape="poly" id="edge31_Node000001_Node000033" title=" " alt="" coords="95,1265,102,1169,123,1008,141,913,164,815,194,716,232,622,250,590,270,560,312,510,316,514,275,563,254,593,237,624,199,718,169,816,146,914,128,1009,108,1170,101,1265"/>
+<area shape="rect" id="Node000037" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="253,270,439,310"/>
+<area shape="poly" id="edge43_Node000001_Node000037" title=" " alt="" coords="95,1265,101,1100,121,825,139,677,163,538,193,423,212,377,233,342,247,326,264,314,267,319,250,330,237,345,217,379,198,424,168,540,144,677,127,825,107,1101,100,1265"/>
+<area shape="rect" id="Node000042" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="253,679,439,719"/>
+<area shape="poly" id="edge57_Node000001_Node000042" title=" " alt="" coords="98,1264,113,1200,141,1099,181,979,232,859,275,787,318,728,322,732,279,790,237,862,186,981,146,1101,118,1202,103,1266"/>
+<area shape="rect" id="Node000045" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="253,872,439,912"/>
+<area shape="poly" id="edge61_Node000001_Node000045" title=" " alt="" coords="103,1264,322,923,327,925,108,1266"/>
+<area shape="rect" id="Node000057" href="$classConnectionManager.html#af126a90b47e9ab97d4c0ea0ac285b1f3" title="Get the connection stream managed by this ConnectionManager." alt="" coords="265,1450,427,1490"/>
+<area shape="poly" id="edge75_Node000001_Node000057" title=" " alt="" coords="107,1289,155,1359,193,1400,236,1436,253,1445,250,1449,233,1440,189,1404,151,1362,103,1292"/>
+<area shape="rect" id="Node000058" href="$classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e" title="Check if the CommandStation client is connected." alt="" coords="259,1514,433,1554"/>
+<area shape="poly" id="edge76_Node000001_Node000058" title=" " alt="" coords="104,1290,119,1331,147,1387,186,1448,209,1476,236,1500,249,1508,246,1512,233,1504,206,1479,181,1451,142,1390,115,1333,99,1292"/>
+<area shape="rect" id="Node000059" href="$classCommandStationClient.html#a3326e446575d04445f41daa2a6dbd516" title="Set the stream object used to connect to the CommandStation, call after begin() Once set,..." alt="" coords="259,1578,433,1618"/>
+<area shape="poly" id="edge77_Node000001_Node000059" title=" " alt="" coords="102,1290,114,1342,139,1415,157,1456,179,1495,205,1532,236,1564,249,1572,246,1577,233,1568,201,1535,174,1498,152,1458,134,1417,109,1343,97,1292"/>
+<area shape="rect" id="Node000060" href="$classCommandStationClient.html#ac6b6a22a6ed008a557df26d2ea4b8e82" title="Ensure client is updated regularly." alt="" coords="259,1642,433,1682"/>
+<area shape="poly" id="edge78_Node000001_Node000060" title=" " alt="" coords="101,1290,109,1351,131,1442,148,1492,171,1541,200,1588,236,1628,249,1637,246,1642,233,1632,196,1591,167,1544,143,1494,126,1443,104,1352,96,1291"/>
+<area shape="rect" id="Node000061" href="$classConnectionManager.html#a055e0561b1c729748fe7df16c07c5608" title="Ensure all connections are alive and retries are managed." alt="" coords="266,1706,426,1746"/>
+<area shape="poly" id="edge79_Node000001_Node000061" title=" " alt="" coords="100,1290,105,1360,123,1468,140,1528,164,1588,196,1643,236,1692,255,1705,252,1709,233,1696,192,1646,159,1590,135,1530,118,1470,100,1361,95,1291"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,1257,398,1118,455,924,461,885,463,850,460,789,460,760,466,731,480,702,503,672,528,654,531,658,507,676,484,705,471,733,466,761,465,789,468,850,467,886,460,925,403,1120,357,1259"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="850,943,1049,983"/>
+<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="444,1295,519,1303,602,1302,645,1298,687,1289,727,1275,765,1257,800,1231,831,1200,858,1165,881,1128,915,1055,936,996,941,997,920,1057,886,1131,862,1168,835,1204,804,1235,768,1261,729,1280,688,1294,646,1303,602,1308,518,1308,444,1300"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="457,1256,542,1241,543,1246,458,1261"/>
+<area shape="rect" id="Node000006" href="$classProgressScreen.html#a7b33a3a2c99b0bc8d48bea6b7be2581a" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="533,1421,739,1446"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="441,1296,459,1308,471,1320,478,1333,483,1359,489,1384,496,1395,507,1406,521,1415,519,1420,504,1411,492,1399,484,1386,478,1360,473,1335,466,1323,456,1312,438,1300"/>
+<area shape="rect" id="Node000008" href="$classProgressScreen.html#a99e5662cfd10b2b29c615b6a1c0eab29" title="Set the current activity in progress." alt="" coords="536,1322,736,1348"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="448,1295,558,1317,557,1322,447,1300"/>
+<area shape="rect" id="Node000009" href="$classProgressScreen.html#a236d3d1296261257db881182060247e9" title="Set the current attempt in progress." alt="" coords="535,1372,737,1397"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="434,1296,459,1308,474,1320,483,1333,492,1346,507,1357,524,1365,522,1370,504,1361,488,1349,479,1336,470,1324,456,1312,432,1300"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="730,653,768,672,801,699,831,732,880,803,916,873,939,929,934,931,911,875,876,805,827,735,798,703,765,676,728,657"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31" title="Display progress screen for the specified activity." alt="" coords="857,1414,1041,1454"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="739,1431,844,1431,844,1436,739,1436"/>
+<area shape="rect" id="Node000011" href="$classErrorScreen.html#acc54926b9c1387d3007bd2861e47f85b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="545,1520,727,1545"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="438,1424,459,1436,476,1454,483,1473,491,1490,507,1506,533,1519,531,1524,504,1511,487,1493,478,1475,471,1457,456,1440,436,1428"/>
+<area shape="rect" id="Node000013" href="$classErrorScreen.html#a895eb76681a5be273fa7b4636d60d491" title="Set the error message to be displayed." alt="" coords="529,1470,743,1496"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="421,1423,458,1435,506,1455,544,1465,542,1470,504,1460,456,1440,420,1428"/>
+<area shape="rect" id="Node000012" href="$classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58" title="Display error screen." alt="" coords="857,1512,1041,1552"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="727,1530,843,1530,843,1535,727,1535"/>
+<area shape="poly" id="edge15_Node000014_Node000006" title=" " alt="" coords="429,1359,459,1371,483,1389,507,1406,531,1415,529,1420,504,1411,480,1394,456,1376,427,1364"/>
+<area shape="poly" id="edge16_Node000014_Node000008" title=" " alt="" coords="439,1337,522,1335,522,1340,439,1342"/>
+<area shape="poly" id="edge17_Node000014_Node000009" title=" " alt="" coords="440,1353,536,1367,535,1372,439,1358"/>
+<area shape="poly" id="edge21_Node000015_Node000003" title=" " alt="" coords="392,393,428,416,459,448,472,471,478,492,480,533,484,571,492,589,507,608,532,624,529,629,504,612,487,592,479,572,475,533,473,493,467,473,455,451,424,421,389,397"/>
+<area shape="rect" id="Node000016" href="$classAppOrchestrator.html#a8bfc05c50a19a90d0f64b69290d4994c" title="Display a menu." alt="" coords="523,266,749,292"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="387,353,452,322,504,301,536,292,537,297,506,306,454,327,389,357"/>
+<area shape="rect" id="Node000020" href="$classMenuManager.html#a81e53fff9a93681ebfcc7e563a38459b" title="Get the Select Action menu." alt="" coords="505,316,767,341"/>
+<area shape="poly" id="edge22_Node000015_Node000020" title=" " alt="" coords="439,358,543,341,544,346,440,363"/>
+<area shape="rect" id="Node000021" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="533,558,739,598"/>
+<area shape="poly" id="edge23_Node000015_Node000021" title=" " alt="" coords="388,393,425,417,459,448,475,475,482,499,489,522,507,544,522,554,519,558,504,548,484,525,477,501,470,477,455,451,422,421,385,397"/>
+<area shape="rect" id="Node000022" href="$classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="545,366,727,406"/>
+<area shape="poly" id="edge24_Node000015_Node000022" title=" " alt="" coords="440,376,531,379,531,385,439,381"/>
+<area shape="rect" id="Node000023" href="$classSelectActionMenu.html#acdeddf70807012fcb535ff46006cab33" title="Implement this method to respond to user confirmation actions." alt="" coords="541,138,731,178"/>
+<area shape="poly" id="edge25_Node000015_Node000023" title=" " alt="" coords="408,353,434,339,455,320,467,303,473,287,477,254,482,221,489,204,504,188,526,173,529,177,507,192,494,207,487,222,482,254,479,288,472,306,459,324,437,343,411,357"/>
+<area shape="rect" id="Node000032" href="$classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c" title="Method to respond to user selection actions." alt="" coords="520,202,752,242"/>
+<area shape="poly" id="edge30_Node000015_Node000032" title=" " alt="" coords="401,352,430,338,456,320,470,303,478,285,487,268,504,252,513,246,516,250,507,256,491,271,483,288,475,305,459,324,432,343,404,357"/>
+<area shape="rect" id="Node000017" href="$classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="856,266,1043,292"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="749,276,842,276,842,282,749,282"/>
+<area shape="rect" id="Node000024" href="$classSelectActionMenu.html#a4009821890802ed5dabd90f7d83093fc" title="Publish the Event chosen by the select action." alt="" coords="876,138,1023,178"/>
+<area shape="poly" id="edge26_Node000023_Node000024" title=" " alt="" coords="731,155,863,155,863,160,731,160"/>
+<area shape="rect" id="Node000031" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="847,202,1052,242"/>
+<area shape="poly" id="edge29_Node000023_Node000031" title=" " alt="" coords="732,175,838,196,837,202,731,180"/>
+<area shape="rect" id="Node000026" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="1132,53,1345,78"/>
+<area shape="poly" id="edge27_Node000024_Node000026" title=" " alt="" coords="1012,135,1184,80,1186,85,1014,140"/>
+<area shape="rect" id="Node000030" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="1153,117,1324,142"/>
+<area shape="poly" id="edge28_Node000024_Node000030" title=" " alt="" coords="1023,148,1140,137,1140,142,1023,153"/>
+<area shape="poly" id="edge33_Node000033_Node000003" title=" " alt="" coords="368,500,427,554,465,583,507,607,531,618,529,623,504,612,462,587,423,558,364,504"/>
+<area shape="poly" id="edge32_Node000033_Node000016" title=" " alt="" coords="386,459,422,436,455,405,471,378,476,352,483,326,491,313,504,301,510,296,513,301,507,305,495,317,488,328,481,353,476,380,459,409,425,440,389,464"/>
+<area shape="poly" id="edge35_Node000033_Node000021" title=" " alt="" coords="393,499,506,543,534,552,533,557,504,548,391,504"/>
+<area shape="poly" id="edge36_Node000033_Node000022" title=" " alt="" coords="391,459,504,415,533,407,534,412,506,420,393,464"/>
+<area shape="poly" id="edge42_Node000033_Node000032" title=" " alt="" coords="389,459,424,436,455,405,467,385,473,365,475,327,479,290,488,271,503,252,508,248,512,252,507,256,492,273,484,291,480,328,478,366,472,387,459,409,428,440,392,464"/>
+<area shape="rect" id="Node000034" href="$classMenuManager.html#a5c69017e3aa561385b5bfb40d9516a70" title="Get the Select CommandStation menu." alt="" coords="511,494,761,534"/>
+<area shape="poly" id="edge34_Node000033_Node000034" title=" " alt="" coords="451,491,497,496,497,501,451,496"/>
+<area shape="rect" id="Node000035" href="$classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="521,430,751,470"/>
+<area shape="poly" id="edge37_Node000033_Node000035" title=" " alt="" coords="451,468,507,461,508,467,451,473"/>
+<area shape="poly" id="edge41_Node000035_Node000031" title=" " alt="" coords="750,427,765,416,780,396,787,377,788,336,789,294,797,272,813,252,833,238,836,242,817,256,801,275,794,295,793,336,792,378,785,399,769,420,753,432"/>
+<area shape="rect" id="Node000036" href="$classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="815,316,1084,356"/>
+<area shape="poly" id="edge38_Node000035_Node000036" title=" " alt="" coords="727,427,766,415,834,388,896,360,898,365,836,393,768,420,728,432"/>
+<area shape="poly" id="edge39_Node000036_Node000026" title=" " alt="" coords="1066,314,1082,301,1100,278,1107,254,1109,230,1107,205,1104,180,1105,155,1113,129,1130,103,1158,82,1161,86,1134,106,1118,131,1111,155,1110,180,1112,205,1114,230,1113,255,1104,280,1086,305,1069,318"/>
+<area shape="poly" id="edge40_Node000036_Node000030" title=" " alt="" coords="1055,314,1083,301,1127,267,1166,227,1198,186,1221,152,1225,155,1202,189,1170,230,1131,271,1085,305,1058,319"/>
+<area shape="poly" id="edge45_Node000037_Node000003" title=" " alt="" coords="415,308,439,322,459,341,479,378,487,413,485,447,480,480,476,512,476,544,485,576,507,608,532,626,529,630,503,612,480,578,471,545,470,512,475,479,480,446,481,413,474,379,455,345,436,326,412,312"/>
+<area shape="poly" id="edge44_Node000037_Node000016" title=" " alt="" coords="439,284,509,281,509,286,440,289"/>
+<area shape="poly" id="edge47_Node000037_Node000021" title=" " alt="" coords="414,308,439,322,459,341,476,369,483,396,481,447,479,472,481,496,489,520,507,544,522,555,518,560,503,548,485,522,476,497,474,472,476,447,477,396,471,371,455,345,435,326,411,312"/>
+<area shape="poly" id="edge48_Node000037_Node000022" title=" " alt="" coords="394,307,506,350,538,360,536,365,504,355,392,312"/>
+<area shape="poly" id="edge56_Node000037_Node000032" title=" " alt="" coords="431,267,536,242,537,248,433,272"/>
+<area shape="rect" id="Node000038" href="$classMenuManager.html#ab70aebed1c668b2072f63baf8a78ce54" title="Get the Select Loco menu." alt="" coords="511,24,761,49"/>
+<area shape="poly" id="edge46_Node000037_Node000038" title=" " alt="" coords="353,268,373,224,405,167,448,108,475,82,504,60,517,52,520,57,507,64,478,86,452,112,409,170,377,226,358,270"/>
+<area shape="rect" id="Node000039" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="531,74,741,114"/>
+<area shape="poly" id="edge49_Node000037_Node000039" title=" " alt="" coords="359,268,416,197,457,157,504,123,517,117,520,121,507,128,461,161,420,200,363,271"/>
+<area shape="poly" id="edge53_Node000039_Node000026" title=" " alt="" coords="732,71,765,58,779,49,788,39,798,30,814,22,865,9,917,4,970,4,1022,8,1117,25,1191,46,1189,51,1115,30,1021,13,970,9,917,9,865,15,816,27,801,34,792,43,782,53,768,63,734,76"/>
+<area shape="poly" id="edge55_Node000039_Node000030" title=" " alt="" coords="742,97,1140,121,1140,127,741,103"/>
+<area shape="poly" id="edge54_Node000039_Node000031" title=" " alt="" coords="743,110,768,124,785,140,793,157,801,173,816,188,835,198,833,203,813,192,797,176,788,159,780,143,765,128,740,115"/>
+<area shape="rect" id="Node000040" href="$classSelectLocoMenu.html#a6f48d860900b828fbdd79e504c286359" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="843,37,1055,62"/>
+<area shape="poly" id="edge50_Node000039_Node000040" title=" " alt="" coords="741,76,845,62,845,67,742,82"/>
+<area shape="poly" id="edge51_Node000040_Node000026" title=" " alt="" coords="1056,53,1118,56,1118,62,1055,58"/>
+<area shape="poly" id="edge52_Node000040_Node000030" title=" " alt="" coords="1008,60,1085,79,1187,110,1185,115,1083,84,1007,65"/>
+<area shape="poly" id="edge58_Node000042_Node000003" title=" " alt="" coords="439,678,529,660,530,665,440,683"/>
+<area shape="poly" id="edge60_Node000042_Node000021" title=" " alt="" coords="376,677,434,642,504,607,527,599,529,604,506,612,436,646,378,681"/>
+<area shape="rect" id="Node000043" href="$classStartupScreen.html#a1997937f85258571a79e47ca255865ad" title="Draw this screen on the specified display." alt="" coords="537,686,735,712"/>
+<area shape="poly" id="edge59_Node000042_Node000043" title=" " alt="" coords="439,696,524,696,524,702,439,702"/>
+<area shape="poly" id="edge62_Node000045_Node000003" title=" " alt="" coords="359,871,436,757,477,702,504,672,529,658,531,663,507,676,481,705,441,760,363,874"/>
+<area shape="poly" id="edge65_Node000045_Node000021" title=" " alt="" coords="361,870,406,809,455,730,468,695,473,665,481,636,503,608,519,597,522,601,507,612,486,639,478,666,473,697,460,732,411,812,366,874"/>
+<area shape="poly" id="edge66_Node000045_Node000022" title=" " alt="" coords="363,871,410,810,435,771,455,730,468,684,471,642,462,565,459,528,462,492,476,454,503,416,530,397,533,401,507,420,480,457,468,493,465,528,468,564,476,641,473,685,460,732,440,774,415,813,368,874"/>
+<area shape="rect" id="Node000046" href="$classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="535,801,737,826"/>
+<area shape="poly" id="edge63_Node000045_Node000046" title=" " alt="" coords="398,870,505,835,542,827,543,832,506,840,400,875"/>
+<area shape="rect" id="Node000048" href="$classThrottleScreen.html#a9f2f0bb6c023da81ba8d9a1eefc81cdc" title="Get the current speed." alt="" coords="543,850,729,876"/>
+<area shape="poly" id="edge64_Node000045_Node000048" title=" " alt="" coords="439,880,529,871,530,877,440,886"/>
+<area shape="rect" id="Node000049" href="$classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="537,900,735,940"/>
+<area shape="poly" id="edge67_Node000045_Node000049" title=" " alt="" coords="440,899,523,907,523,912,439,904"/>
+<area shape="rect" id="Node000052" href="$classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="537,964,735,1004"/>
+<area shape="poly" id="edge68_Node000045_Node000052" title=" " alt="" coords="396,910,506,950,535,958,534,964,505,955,395,915"/>
+<area shape="rect" id="Node000053" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="523,1029,749,1054"/>
+<area shape="poly" id="edge69_Node000045_Node000053" title=" " alt="" coords="368,911,427,963,465,991,506,1014,529,1023,527,1028,504,1019,462,996,424,967,365,915"/>
+<area shape="rect" id="Node000054" href="$classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756" title="Explicitly request an update for the currently selected loco address." alt="" coords="534,1079,738,1119"/>
+<area shape="poly" id="edge70_Node000045_Node000054" title=" " alt="" coords="362,911,385,945,418,986,460,1028,507,1064,523,1072,520,1077,504,1068,456,1032,414,990,381,948,358,914"/>
+<area shape="rect" id="Node000055" href="$classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885" title="Explicitly request a track power update (actually sends &#160;for server version which does this)" alt="" coords="532,1143,740,1183"/>
+<area shape="poly" id="edge71_Node000045_Node000055" title=" " alt="" coords="357,912,377,957,408,1016,452,1078,478,1105,507,1129,521,1137,518,1142,504,1133,474,1109,448,1081,404,1019,372,960,352,914"/>
+<area shape="rect" id="Node000056" href="$classUserSelectionInterface.html#ad50f397a72e413b72bf6565fe8d4523a" title="Check if throttle is inverted compared to up/down." alt="" coords="551,736,721,776"/>
+<area shape="poly" id="edge72_Node000045_Node000056" title=" " alt="" coords="370,870,429,828,504,786,537,774,538,779,506,791,432,832,374,874"/>
 </map>

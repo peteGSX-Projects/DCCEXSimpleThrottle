@@ -1,9 +1,15 @@
 <map id="SelectLocoMenu::_selectLoco" name="SelectLocoMenu::_selectLoco">
-<area shape="rect" id="node1" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="5,81,217,108"/>
-<area shape="rect" id="node2" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="276,5,489,32"/>
-<area shape="rect" id="node3" href="$classLocoMenuItem.html#aa7ac392d5d21a887a83a25cd6b3b9ff9" title="Get the Loco object associated with this menu item." alt="" coords="294,56,471,83"/>
-<area shape="rect" id="node4" href="$classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67" title="Get the menu item at the specified index." alt="" coords="265,107,500,133"/>
-<area shape="rect" id="node7" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="297,157,468,184"/>
-<area shape="rect" id="node5" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="548,81,733,108"/>
-<area shape="rect" id="node6" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="551,132,731,159"/>
+<area shape="rect" id="Node000001" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="5,80,217,105"/>
+<area shape="rect" id="Node000002" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="276,5,489,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,77,265,39,299,31,301,36,266,45,148,82"/>
+<area shape="rect" id="Node000003" href="$classLocoMenuItem.html#aa7ac392d5d21a887a83a25cd6b3b9ff9" title="Get the Loco object associated with this menu item." alt="" coords="294,55,471,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,80,280,74,281,79,218,85"/>
+<area shape="rect" id="Node000004" href="$classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67" title="Get the menu item at the specified index." alt="" coords="265,104,500,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,99,252,102,252,108,217,105"/>
+<area shape="rect" id="Node000007" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="297,153,468,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="151,103,266,138,305,148,304,153,265,143,149,108"/>
+<area shape="rect" id="Node000005" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="548,80,733,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="500,103,534,100,534,105,500,108"/>
+<area shape="rect" id="Node000006" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="551,129,731,155"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="500,126,537,129,537,134,500,131"/>
 </map>

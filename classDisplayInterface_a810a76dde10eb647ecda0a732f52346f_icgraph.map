@@ -1,6 +1,9 @@
 <map id="DisplayInterface::displayStartupScreen" name="DisplayInterface::displayStartupScreen">
-<area shape="rect" id="node1" title="Display the startup screen." alt="" coords="715,5,899,47"/>
-<area shape="rect" id="node2" href="$classStartupScreen.html#a1997937f85258571a79e47ca255865ad" title="Draw this screen on the specified display." alt="" coords="469,13,667,39"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="235,5,421,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="Node000001" title="Display the startup screen." alt="" coords="715,5,899,45"/>
+<area shape="rect" id="Node000002" href="$classStartupScreen.html#a1997937f85258571a79e47ca255865ad" title="Draw this screen on the specified display." alt="" coords="469,13,667,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="701,28,667,28,667,23,701,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="235,5,421,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,28,422,28,422,23,456,23"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,28,187,28,187,23,220,23"/>
 </map>

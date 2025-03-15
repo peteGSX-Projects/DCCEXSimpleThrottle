@@ -1,5 +1,7 @@
 <map id="SelectActionMenu::SelectActionMenu" name="SelectActionMenu::SelectActionMenu">
-<area shape="rect" id="node1" title="Constructor for each menu." alt="" coords="5,23,192,65"/>
-<area shape="rect" id="node2" href="$classBaseMenu.html#a05814c9a61c15319a365520266042904" title="Set the application&#39;s event manager instance." alt="" coords="240,5,452,32"/>
-<area shape="rect" id="node3" href="$classBaseMenu.html#ae96ed7880c75c24f73552c10c060416f" title="Set the name of this menu." alt="" coords="249,56,443,83"/>
+<area shape="rect" id="Node000001" title="Constructor for each menu." alt="" coords="5,23,192,63"/>
+<area shape="rect" id="Node000002" href="$classBaseMenu.html#a05814c9a61c15319a365520266042904" title="Set the application&#39;s event manager instance." alt="" coords="240,5,452,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,31,226,28,227,33,192,36"/>
+<area shape="rect" id="Node000003" href="$classBaseMenu.html#ae96ed7880c75c24f73552c10c060416f" title="Set the name of this menu." alt="" coords="249,55,443,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,50,235,54,235,59,192,55"/>
 </map>

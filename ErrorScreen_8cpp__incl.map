@@ -1,11 +1,20 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ErrorScreen.cpp" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ErrorScreen.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="255,5,493,61"/>
-<area shape="rect" id="node2" href="$ErrorScreen_8h.html" title=" " alt="" coords="319,109,429,136"/>
-<area shape="rect" id="node3" href="$ScreenInterface_8h.html" title=" " alt="" coords="306,184,442,211"/>
-<area shape="rect" id="node4" href="$DisplayInterface_8h.html" title=" " alt="" coords="105,259,246,285"/>
-<area shape="rect" id="node8" href="$UserConfirmationInterface_8h.html" title=" " alt="" coords="271,259,477,285"/>
-<area shape="rect" id="node9" href="$UserSelectionInterface_8h.html" title=" " alt="" coords="501,259,684,285"/>
-<area shape="rect" id="node5" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,333,137,360"/>
-<area shape="rect" id="node6" title=" " alt="" coords="81,408,165,435"/>
-<area shape="rect" id="node7" title=" " alt="" coords="213,333,345,360"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="255,5,493,60"/>
+<area shape="rect" id="Node000002" href="$ErrorScreen_8h.html" title=" " alt="" coords="319,108,429,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="377,60,377,94,371,94,371,60"/>
+<area shape="rect" id="Node000003" href="$ScreenInterface_8h.html" title=" " alt="" coords="306,181,442,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="377,134,377,168,371,168,371,134"/>
+<area shape="rect" id="Node000004" href="$DisplayInterface_8h.html" title=" " alt="" coords="105,255,246,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="343,209,222,252,220,247,341,204"/>
+<area shape="rect" id="Node000008" href="$UserConfirmationInterface_8h.html" title=" " alt="" coords="271,255,477,280"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="377,207,377,241,371,241,371,207"/>
+<area shape="rect" id="Node000009" href="$UserSelectionInterface_8h.html" title=" " alt="" coords="501,255,684,280"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="410,204,545,248,543,253,408,209"/>
+<area shape="rect" id="Node000005" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,328,137,353"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,282,101,322,98,318,157,278"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="81,401,165,427"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="175,281,153,354,137,390,132,388,147,352,170,280"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="213,328,345,353"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="194,278,252,318,249,322,191,282"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="82,352,109,389,105,392,78,355"/>
 </map>

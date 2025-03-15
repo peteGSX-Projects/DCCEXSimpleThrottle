@@ -1,6 +1,13 @@
 <map id="BaseMenu::addItem" name="BaseMenu::addItem">
-<area shape="rect" id="node1" title="Add a menu item to this menu." alt="" coords="776,13,928,39"/>
-<area shape="rect" id="node2" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="503,13,728,39"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,5,455,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+<area shape="rect" id="Node000001" title="Add a menu item to this menu." alt="" coords="787,35,939,60"/>
+<area shape="rect" id="Node000002" href="$classMenuManager.html#afeef82461874ccd7b66741d5b46f1a72" title="Set up the action menu." alt="" coords="503,8,739,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="773,40,736,36,736,31,773,35"/>
+<area shape="rect" id="Node000004" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="508,59,733,84"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="773,59,734,63,733,57,772,54"/>
+<area shape="rect" id="Node000003" href="$classAppConfiguration.html#abca19635fcf67076531b7c83cb05acf2" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="249,5,448,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="489,22,448,22,448,16,489,17"/>
+<area shape="rect" id="Node000005" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,55,455,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="494,76,455,76,455,71,494,71"/>
+<area shape="rect" id="Node000006" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,63,195,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="229,78,195,78,195,73,229,73"/>
 </map>

@@ -1,11 +1,23 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationClient.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationClient.h">
-<area shape="rect" id="node1" title=" " alt="" coords="108,5,347,61"/>
-<area shape="rect" id="node2" href="$CommandStationListener_8h.html" title=" " alt="" coords="128,109,327,136"/>
-<area shape="rect" id="node3" href="$Defines_8h.html" title=" " alt="" coords="50,184,133,211"/>
-<area shape="rect" id="node9" title=" " alt="" coords="267,408,399,435"/>
-<area shape="rect" id="node5" href="$EventManager_8h.html" title=" " alt="" coords="160,184,287,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,259,89,285"/>
-<area shape="rect" id="node6" href="$EventListener_8h.html" title=" " alt="" coords="114,259,237,285"/>
-<area shape="rect" id="node7" href="$EventStructure_8h.html" title=" " alt="" coords="150,333,281,360"/>
-<area shape="rect" id="node8" title=" " alt="" coords="159,408,243,435"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="108,5,347,60"/>
+<area shape="rect" id="Node000002" href="$CommandStationListener_8h.html" title=" " alt="" coords="128,108,327,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,60,230,94,225,94,225,60"/>
+<area shape="rect" id="Node000003" href="$Defines_8h.html" title=" " alt="" coords="50,181,133,207"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="173,62,143,83,118,110,103,139,96,168,91,167,98,137,113,106,140,79,170,58"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="267,401,399,427"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="280,58,312,79,340,106,369,145,376,166,378,193,378,269,375,302,367,335,347,390,342,388,362,334,370,301,373,269,373,193,371,167,364,148,336,110,308,84,277,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="207,136,127,177,124,173,204,131"/>
+<area shape="rect" id="Node000005" href="$EventManager_8h.html" title=" " alt="" coords="160,181,287,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="229,134,227,168,222,168,224,134"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="250,132,277,152,300,180,322,235,334,293,338,346,337,388,332,388,332,346,328,293,317,236,296,183,273,156,247,136"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,255,89,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="86,208,64,244,59,242,82,206"/>
+<area shape="rect" id="Node000006" href="$EventListener_8h.html" title=" " alt="" coords="114,255,237,280"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="218,209,193,245,188,242,213,206"/>
+<area shape="rect" id="Node000007" href="$EventStructure_8h.html" title=" " alt="" coords="150,328,281,353"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="233,206,249,239,253,260,251,281,234,318,229,316,246,279,248,260,243,240,228,208"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="184,279,204,315,200,317,180,282"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="159,401,243,427"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="216,354,208,388,203,387,210,353"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="236,351,303,392,300,396,233,356"/>
 </map>

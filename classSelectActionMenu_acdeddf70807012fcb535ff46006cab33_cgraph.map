@@ -1,0 +1,19 @@
+<map id="SelectActionMenu::handleUserConfirmationAction" name="SelectActionMenu::handleUserConfirmationAction">
+<area shape="rect" id="Node000001" title="Implement this method to respond to user confirmation actions." alt="" coords="5,105,196,145"/>
+<area shape="rect" id="Node000002" href="$classSelectActionMenu.html#a4009821890802ed5dabd90f7d83093fc" title="Publish the Event chosen by the select action." alt="" coords="273,73,420,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,110,259,101,260,107,196,115"/>
+<area shape="rect" id="Node000009" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="244,137,449,177"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="196,134,231,139,230,144,196,140"/>
+<area shape="rect" id="Node000003" href="$classActionMenuItem.html#aa1be47cbeddb5d42ebcb9758d5e03ead" title="Get the Event associated with this item." alt="" coords="517,5,712,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,70,497,39,531,31,533,36,498,45,403,75"/>
+<area shape="rect" id="Node000004" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="508,55,721,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="420,83,494,76,495,81,420,88"/>
+<area shape="rect" id="Node000005" href="$classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67" title="Get the menu item at the specified index." alt="" coords="497,104,732,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="420,97,484,102,483,108,420,102"/>
+<area shape="rect" id="Node000008" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="529,153,700,179"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="413,110,450,122,498,138,537,148,535,153,497,143,449,127,412,115"/>
+<area shape="rect" id="Node000006" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="780,80,965,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="732,103,766,100,766,105,732,108"/>
+<area shape="rect" id="Node000007" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="783,129,963,155"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="732,126,769,129,769,134,732,131"/>
+</map>

@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['throttle_827',['Throttle',['../AppOrchestrator_8h.html#a83fc559664fc7c7e310c93586457b428ae8aa0585ad36d76c5b794fef4fe88857',1,'AppOrchestrator.h']]],
-  ['toggletrackpower_828',['ToggleTrackPower',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa0dbf47292857726489a8dd6f52afa9fd',1,'EventStructure.h']]],
-  ['trackpowerdata_829',['TrackPowerData',['../structEventData.html#ab86b0ac8a707a7b3a27e95cfdc03ccc3a47804e56df332edb4aa13f3687acedef',1,'EventData']]]
+  ['selectaction_0',['SelectAction',['../AppOrchestrator_8h.html#a83fc559664fc7c7e310c93586457b428ae71cbf541d4cdf24ca22c59d93aad046',1,'AppOrchestrator.h']]],
+  ['selectcommandstation_1',['SelectCommandStation',['../AppOrchestrator_8h.html#a83fc559664fc7c7e310c93586457b428aa6d93577000463754a476658e61fcbaf',1,'AppOrchestrator.h']]],
+  ['selectloco_2',['SelectLoco',['../AppOrchestrator_8h.html#a83fc559664fc7c7e310c93586457b428a19edbf019460660ab3c307ab53f5b149',1,'AppOrchestrator.h']]],
+  ['setpowermain_3',['SetPowerMain',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa6f079caaeb012b7efec717f83092fe2a',1,'EventStructure.h']]],
+  ['setpowerprog_4',['SetPowerProg',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa3736e6122b36edc856def92275c129e1',1,'EventStructure.h']]],
+  ['singleclick_5',['SingleClick',['../UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2aa6276db3bdb34c277449d4bfe85e107fd',1,'UserConfirmationInterface.h']]],
+  ['startup_6',['Startup',['../AppOrchestrator_8h.html#a83fc559664fc7c7e310c93586457b428a13e685964c2548aa748f7ea263bad4e5',1,'AppOrchestrator.h']]]
 ];

@@ -1,9 +1,16 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ScreenInterface.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ScreenInterface.h">
-<area shape="rect" id="node1" title=" " alt="" coords="255,5,493,61"/>
-<area shape="rect" id="node2" href="$DisplayInterface_8h.html" title=" " alt="" coords="105,109,246,136"/>
-<area shape="rect" id="node6" href="$UserConfirmationInterface_8h.html" title=" " alt="" coords="271,109,477,136"/>
-<area shape="rect" id="node7" href="$UserSelectionInterface_8h.html" title=" " alt="" coords="501,109,684,136"/>
-<area shape="rect" id="node3" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,184,137,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="81,259,165,285"/>
-<area shape="rect" id="node5" title=" " alt="" coords="213,184,345,211"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="255,5,493,60"/>
+<area shape="rect" id="Node000002" href="$DisplayInterface_8h.html" title=" " alt="" coords="105,108,246,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,63,216,105,213,100,312,58"/>
+<area shape="rect" id="Node000006" href="$UserConfirmationInterface_8h.html" title=" " alt="" coords="271,108,477,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="377,60,377,94,371,94,371,60"/>
+<area shape="rect" id="Node000007" href="$UserSelectionInterface_8h.html" title=" " alt="" coords="501,108,684,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="442,58,552,100,550,105,440,63"/>
+<area shape="rect" id="Node000003" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,181,137,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="160,136,101,175,98,171,157,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="81,255,165,280"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="175,134,153,208,137,243,132,241,147,206,170,133"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="213,181,345,207"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="194,131,252,171,249,175,191,136"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,205,109,242,105,245,78,209"/>
 </map>

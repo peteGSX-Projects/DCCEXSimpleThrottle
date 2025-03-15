@@ -1,6 +1,9 @@
 <map id="U8G2SH1106Display::_calculateMenuItemsPerPage" name="U8G2SH1106Display::_calculateMenuItemsPerPage">
-<area shape="rect" id="node1" title="Calculates the number of menu items that will fit on screen." alt="" coords="5,39,219,80"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a53d3b9d5c894028d26881101767e6b27" title="Calculates the height of the menu item area." alt="" coords="267,39,464,80"/>
-<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="527,5,705,47"/>
-<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a7cb461f6b06af59b6fa24e6de1ac53a9" title="Calculates the height of the footer area." alt="" coords="512,71,720,112"/>
+<area shape="rect" id="Node000001" title="Calculates the number of menu items that will fit on screen." alt="" coords="5,37,219,77"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a53d3b9d5c894028d26881101767e6b27" title="Calculates the height of the menu item area." alt="" coords="267,37,464,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,55,253,55,253,60,219,60"/>
+<area shape="rect" id="Node000003" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="527,5,705,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,42,513,36,513,41,465,47"/>
+<area shape="rect" id="Node000004" href="$classU8G2SH1106Display.html#a7cb461f6b06af59b6fa24e6de1ac53a9" title="Calculates the height of the footer area." alt="" coords="512,69,720,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="465,67,499,72,498,77,464,73"/>
 </map>

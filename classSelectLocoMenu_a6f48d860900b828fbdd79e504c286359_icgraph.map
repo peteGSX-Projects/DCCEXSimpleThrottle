@@ -1,6 +1,9 @@
 <map id="SelectLocoMenu::_selectLoco" name="SelectLocoMenu::_selectLoco">
-<area shape="rect" id="node1" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="728,13,940,39"/>
-<area shape="rect" id="node2" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="469,5,680,47"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="235,5,421,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="Node000001" title="Trigger an event that sets the currently selected Loco and switches to the Throttle screen." alt="" coords="728,13,940,38"/>
+<area shape="rect" id="Node000002" href="$classSelectLocoMenu.html#af62d15f32a4dc8fd0c2a3e4ba12d6daa" title="Implement this method to respond to user confirmation actions." alt="" coords="469,5,680,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="714,28,680,28,680,23,714,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="235,5,421,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,28,422,28,422,23,456,23"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,28,187,28,187,23,220,23"/>
 </map>

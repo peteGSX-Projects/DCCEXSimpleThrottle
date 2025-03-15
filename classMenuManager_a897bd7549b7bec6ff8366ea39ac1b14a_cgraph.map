@@ -1,7 +1,11 @@
 <map id="MenuManager::setupLocoMenu" name="MenuManager::setupLocoMenu">
-<area shape="rect" id="node1" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="5,56,231,83"/>
-<area shape="rect" id="node2" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="279,56,431,83"/>
-<area shape="rect" id="node3" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="481,5,661,32"/>
-<area shape="rect" id="node4" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="479,56,663,83"/>
-<area shape="rect" id="node5" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="481,107,660,133"/>
+<area shape="rect" id="Node000001" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="5,55,231,80"/>
+<area shape="rect" id="Node000002" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="279,55,431,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,65,264,65,264,70,231,70"/>
+<area shape="rect" id="Node000003" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="481,5,661,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,52,501,31,502,36,412,57"/>
+<area shape="rect" id="Node000004" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="479,55,663,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="431,65,465,65,465,70,431,70"/>
+<area shape="rect" id="Node000005" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="481,104,660,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="412,77,502,98,501,104,410,83"/>
 </map>

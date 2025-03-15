@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['on_619',['on',['../classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92',1,'Switch']]],
-  ['onevent_620',['onEvent',['../classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac',1,'AppOrchestrator::onEvent()'],['../classEventListener.html#ac1365587d6bfb62d4e698550d7cb9c4d',1,'EventListener::onEvent()']]]
+  ['needsmenurefresh_0',['needsMenuRefresh',['../classDisplayInterface.html#a5ae77397fd14206d8735a5ced7cdfbee',1,'DisplayInterface']]],
+  ['needsredraw_1',['needsRedraw',['../classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3',1,'DisplayInterface']]]
 ];

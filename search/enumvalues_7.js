@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['receivedlocoupdate_818',['ReceivedLocoUpdate',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa4e60868d6947f7181286eab07add2cbd',1,'EventStructure.h']]],
-  ['receivedreadloco_819',['ReceivedReadLoco',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa9b7804f9fefb87a5d318fe04b484fed7',1,'EventStructure.h']]],
-  ['receivedrosterlist_820',['ReceivedRosterList',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa0227dbb5062a2a3afefc29860f7e68b8',1,'EventStructure.h']]],
-  ['receivedtrackpower_821',['ReceivedTrackPower',['../EventStructure_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faabc9682889e3ae298f60a9b1a47cb3d82',1,'EventStructure.h']]]
+  ['none_0',['none',['../UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2aa6adf97f83acf6453d4a6a4b1070f3754',1,'None:&#160;UserConfirmationInterface.h'],['../UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267a6adf97f83acf6453d4a6a4b1070f3754',1,'None:&#160;UserSelectionInterface.h']]],
+  ['nonedata_1',['NoneData',['../structEventData.html#ab86b0ac8a707a7b3a27e95cfdc03ccc3a8bb298bc5b7389890c06cfeef42d914b',1,'EventData']]]
 ];

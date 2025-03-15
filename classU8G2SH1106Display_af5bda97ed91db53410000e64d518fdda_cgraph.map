@@ -1,9 +1,16 @@
 <map id="U8G2SH1106Display::displayProgressScreen" name="U8G2SH1106Display::displayProgressScreen">
-<area shape="rect" id="node1" title="Display progress screen for the specified activity." alt="" coords="5,136,175,177"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a14a6f4da0cb6eec14d096fda57d7abdb" title="Clear the display." alt="" coords="253,5,417,47"/>
-<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="253,71,417,112"/>
-<area shape="rect" id="node5" href="$classU8G2SH1106Display.html#a9fc7477da83c7bb40a85a1821a718928" title="Display progress bar." alt="" coords="253,136,417,177"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="223,202,448,229"/>
-<area shape="rect" id="node7" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="236,253,435,295"/>
-<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="496,104,675,145"/>
+<area shape="rect" id="Node000001" title="Display progress screen for the specified activity." alt="" coords="5,133,175,173"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a14a6f4da0cb6eec14d096fda57d7abdb" title="Clear the display." alt="" coords="253,5,417,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,131,161,93,221,55,239,47,241,52,224,60,164,97,116,135"/>
+<area shape="rect" id="Node000003" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="253,69,417,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,131,244,110,246,115,168,136"/>
+<area shape="rect" id="Node000005" href="$classU8G2SH1106Display.html#a9fc7477da83c7bb40a85a1821a718928" title="Display progress bar." alt="" coords="253,133,417,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="175,151,239,151,239,156,175,156"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="223,198,448,223"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="174,171,223,183,265,192,264,198,222,188,172,176"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="236,248,435,288"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="120,171,168,202,224,232,245,241,243,246,222,237,165,207,117,176"/>
+<area shape="rect" id="Node000004" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="496,101,675,141"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="418,97,483,106,482,111,417,102"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="417,140,482,132,483,137,418,145"/>
 </map>

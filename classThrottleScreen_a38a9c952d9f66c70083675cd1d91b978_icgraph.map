@@ -1,0 +1,7 @@
+<map id="ThrottleScreen::locoBroadcastReceived" name="ThrottleScreen::locoBroadcastReceived">
+<area shape="rect" id="Node000001" title="Method to call when a loco broadcast has been received." alt="" coords="553,5,771,45"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a541c9652c6eee7b2684cae82d70ae63f" title="Notify the throttle screen an update has been received for the associated loco." alt="" coords="243,13,505,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="540,28,506,28,506,23,540,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,28,195,28,195,23,229,23"/>
+</map>

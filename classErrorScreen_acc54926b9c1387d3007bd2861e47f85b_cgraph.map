@@ -1,4 +1,5 @@
 <map id="ErrorScreen::drawScreen" name="ErrorScreen::drawScreen">
-<area shape="rect" id="node1" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="5,13,187,39"/>
-<area shape="rect" id="node2" href="$classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58" title="Display error screen." alt="" coords="235,5,419,47"/>
+<area shape="rect" id="Node000001" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="5,13,187,38"/>
+<area shape="rect" id="Node000002" href="$classDisplayInterface.html#a0e26b101e8451f9ebea0acb06cca2c58" title="Display error screen." alt="" coords="235,5,419,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,23,221,23,221,28,187,28"/>
 </map>

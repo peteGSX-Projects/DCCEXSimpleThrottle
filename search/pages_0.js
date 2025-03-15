@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dcc_2dex_20simple_20throttle_876',['DCC-EX Simple Throttle',['../md__home_runner_work_DCCEXSimpleThrottle_DCCEXSimpleThrottle_README.html',1,'']]]
+  ['dcc_20ex_20simple_20throttle_0',['DCC-EX Simple Throttle',['../md__2home_2runner_2work_2DCCEXSimpleThrottle_2DCCEXSimpleThrottle_2README.html',1,'']]]
 ];

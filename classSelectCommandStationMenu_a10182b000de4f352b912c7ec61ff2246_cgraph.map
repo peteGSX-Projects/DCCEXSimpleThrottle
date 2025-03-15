@@ -1,5 +1,7 @@
 <map id="SelectCommandStationMenu::_initiateCommandStationConnection" name="SelectCommandStationMenu::_initiateCommandStationConnection">
-<area shape="rect" id="node1" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="5,23,275,65"/>
-<area shape="rect" id="node2" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="323,5,536,32"/>
-<area shape="rect" id="node3" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="344,56,515,83"/>
+<area shape="rect" id="Node000001" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="5,23,275,63"/>
+<area shape="rect" id="Node000002" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="323,5,536,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,29,309,26,309,31,275,34"/>
+<area shape="rect" id="Node000003" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="344,55,515,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,52,330,56,330,62,275,57"/>
 </map>

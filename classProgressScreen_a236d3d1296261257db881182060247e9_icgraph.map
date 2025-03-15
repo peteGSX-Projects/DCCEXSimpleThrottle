@@ -1,5 +1,10 @@
 <map id="ProgressScreen::setCounter" name="ProgressScreen::setCounter">
-<area shape="rect" id="node1" title="Set the current attempt in progress." alt="" coords="505,13,707,39"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="235,5,457,47"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="Node000001" title="Set the current attempt in progress." alt="" coords="505,45,707,70"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#ada6fa3cd0fe5e878186362a724475807" title="Show the connection progress screen until a connection is made." alt="" coords="235,5,457,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="492,46,457,42,458,36,492,41"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#a00680b47a9bcde38012736ef9d47459f" title="Show the read loco progress screen until it is read or times out." alt="" coords="253,69,439,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="492,74,440,81,439,75,492,69"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,45,187,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,44,187,48,187,43,221,39"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="239,78,187,72,187,66,239,73"/>
 </map>

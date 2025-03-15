@@ -1,7 +1,11 @@
 <map id="U8G2SH1106Display::_displayMenuItems" name="U8G2SH1106Display::_displayMenuItems">
-<area shape="rect" id="node1" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="5,100,169,141"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="225,5,404,47"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#a346ffb39867cd715c7544d942c34e613" title="Get the number of menu items to be displayed per page for this display." alt="" coords="217,71,412,112"/>
-<area shape="rect" id="node4" href="$classBaseMenuItem.html#af5dbacdf90800e184a1ee33a97db3b47" title="Get menu item name." alt="" coords="221,137,409,163"/>
-<area shape="rect" id="node5" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="225,187,405,214"/>
+<area shape="rect" id="Node000001" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="5,99,169,139"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="225,5,404,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,96,216,55,236,47,238,52,218,60,129,101"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#a346ffb39867cd715c7544d942c34e613" title="Get the number of menu items to be displayed per page for this display." alt="" coords="217,69,412,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,105,203,101,204,106,170,111"/>
+<area shape="rect" id="Node000004" href="$classBaseMenuItem.html#af5dbacdf90800e184a1ee33a97db3b47" title="Get menu item name." alt="" coords="221,134,409,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="170,126,207,131,207,136,169,131"/>
+<area shape="rect" id="Node000005" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="225,183,405,209"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="136,136,218,168,248,177,246,182,216,173,134,141"/>
 </map>

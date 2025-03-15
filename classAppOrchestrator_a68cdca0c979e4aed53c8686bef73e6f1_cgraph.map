@@ -1,0 +1,9 @@
+<map id="AppOrchestrator::_handleJoinProgTrack" name="AppOrchestrator::_handleJoinProgTrack">
+<area shape="rect" id="Node000001" title="Join programming track to main and return to the Select Loco menu." alt="" coords="5,37,192,77"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="240,5,425,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,42,226,37,227,42,192,47"/>
+<area shape="rect" id="Node000004" href="$classCommandStationClient.html#a2c9d4a8d4eecd5520416f33c9487e44e" title="Join Prog to Main." alt="" coords="246,69,419,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,67,233,73,232,78,192,73"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="473,5,672,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,23,460,23,460,28,425,28"/>
+</map>

@@ -1,11 +1,19 @@
 <map id="AppOrchestrator::setupSelectLocoMenu" name="AppOrchestrator::setupSelectLocoMenu">
-<area shape="rect" id="node1" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="5,104,217,145"/>
-<area shape="rect" id="node2" href="$classCommandStationClient.html#a3ccddff0529052f378ebb9523172f711" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="291,5,465,47"/>
-<area shape="rect" id="node3" href="$classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e" title="Check if the CommandStation client is connected." alt="" coords="291,71,465,112"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#ab258c3ac2934efb55701724c123d244e" title="Set the refresh menu flag for this display." alt="" coords="279,136,477,177"/>
-<area shape="rect" id="node5" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="265,202,491,229"/>
-<area shape="rect" id="node6" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="539,202,691,229"/>
-<area shape="rect" id="node7" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="741,151,921,178"/>
-<area shape="rect" id="node8" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="739,202,923,229"/>
-<area shape="rect" id="node9" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="741,253,920,279"/>
+<area shape="rect" id="Node000001" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="5,101,217,141"/>
+<area shape="rect" id="Node000002" href="$classCommandStationClient.html#a3ccddff0529052f378ebb9523172f711" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="291,5,465,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,99,264,55,288,47,290,52,266,60,158,104"/>
+<area shape="rect" id="Node000003" href="$classCommandStationClient.html#aa40cb299383e28d018515be1b73d3a8e" title="Check if the CommandStation client is connected." alt="" coords="291,69,465,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,106,277,99,278,104,218,111"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#ab258c3ac2934efb55701724c123d244e" title="Set the refresh menu flag for this display." alt="" coords="279,133,477,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,131,265,137,264,142,217,137"/>
+<area shape="rect" id="Node000005" href="$classMenuManager.html#a897bd7549b7bec6ff8366ea39ac1b14a" title="Set up the loco menu based on the provided roster linked list and (if enabled) the local roster." alt="" coords="265,198,491,223"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="156,139,208,162,266,183,300,192,298,197,265,188,206,167,154,144"/>
+<area shape="rect" id="Node000006" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="539,198,691,223"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="491,208,524,208,524,213,491,213"/>
+<area shape="rect" id="Node000007" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="741,149,921,174"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="670,195,761,174,762,180,672,201"/>
+<area shape="rect" id="Node000008" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="739,198,923,223"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="691,208,725,208,725,213,691,213"/>
+<area shape="rect" id="Node000009" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="741,247,920,273"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="672,221,762,242,761,247,670,226"/>
 </map>

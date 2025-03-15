@@ -1,9 +1,25 @@
 <map id="AppConfiguration::initialise" name="AppConfiguration::initialise">
-<area shape="rect" id="node1" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,137,204,163"/>
-<area shape="rect" id="node2" href="$classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3" title="Register all required event subscriptions, called by initialise()" alt="" coords="252,5,455,47"/>
-<area shape="rect" id="node4" href="$classCommandStationClient.html#af35b5d90b074aac256a2eb3da90dff4e" title="Setup the CommandStation client with log stream and listener ready to connect." alt="" coords="267,71,440,112"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#abcb04126efa9ce5ef701f0ef6217c85d" title="Implement this to perform any initial startup methods or activities." alt="" coords="267,137,440,163"/>
-<area shape="rect" id="node6" href="$classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0" title="Implement this to perform any initial startup methods or activities." alt="" coords="256,188,451,229"/>
-<area shape="rect" id="node7" href="$classUserSelectionInterface.html#adbd2af2ef47ad1a4d20c7c08b685380b" title="Implement this to perform any initial startup methods or activities." alt="" coords="268,253,439,295"/>
-<area shape="rect" id="node3" href="$classEventManager.html#ad898edd8057126492c57325e23b62984" title="Method to subscribe a listener to the specified event type." alt="" coords="503,13,689,39"/>
+<area shape="rect" id="Node000001" title="Start all associated user interfaces and instantiate all objects EventManager registrations are done ..." alt="" coords="5,163,204,189"/>
+<area shape="rect" id="Node000002" href="$classAppConfiguration.html#a6b8cd2a7114e3cb06a9980bf788e29f3" title="Register all required event subscriptions, called by initialise()" alt="" coords="269,5,471,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,161,171,110,209,80,251,55,266,48,269,53,253,60,212,85,174,114,120,165"/>
+<area shape="rect" id="Node000004" href="$classCommandStationClient.html#af35b5d90b074aac256a2eb3da90dff4e" title="Setup the CommandStation client with log stream and listener ready to connect." alt="" coords="283,69,457,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,161,251,119,278,111,279,116,253,124,139,166"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#abcb04126efa9ce5ef701f0ef6217c85d" title="Implement this to perform any initial startup methods or activities." alt="" coords="283,134,457,159"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="204,162,269,155,270,160,204,168"/>
+<area shape="rect" id="Node000006" href="$classUserConfirmationInterface.html#aab62190e6bd656d13b94d7560588c7f0" title="Implement this to perform any initial startup methods or activities." alt="" coords="273,184,467,224"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="204,184,259,190,258,195,204,189"/>
+<area shape="rect" id="Node000007" href="$classUserSelectionInterface.html#adbd2af2ef47ad1a4d20c7c08b685380b" title="Implement this to perform any initial startup methods or activities." alt="" coords="285,248,455,288"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="135,186,253,233,278,241,276,247,251,239,133,191"/>
+<area shape="rect" id="Node000008" href="$classMenuManager.html#afeef82461874ccd7b66741d5b46f1a72" title="Set up the action menu." alt="" coords="252,313,488,338"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="119,187,173,241,211,272,253,298,274,306,271,311,251,302,208,276,169,245,115,191"/>
+<area shape="rect" id="Node000003" href="$classEventManager.html#ad898edd8057126492c57325e23b62984" title="Method to subscribe a listener to the specified event type." alt="" coords="536,13,723,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="472,23,522,23,522,28,472,28"/>
+<area shape="rect" id="Node000009" href="$classBaseMenu.html#afc87a0ee1cc1d56bec429890c13b12eb" title="Add a menu item to this menu." alt="" coords="553,313,705,338"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="488,323,539,323,539,328,488,328"/>
+<area shape="rect" id="Node000010" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="773,263,953,289"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="690,310,788,289,789,294,691,315"/>
+<area shape="rect" id="Node000011" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="771,313,955,338"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="706,323,757,323,757,328,706,328"/>
+<area shape="rect" id="Node000012" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="773,362,952,387"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="691,335,789,356,788,362,690,341"/>
 </map>

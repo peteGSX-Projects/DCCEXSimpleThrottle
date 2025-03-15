@@ -1,5 +1,8 @@
 <map id="EventManager" name="EventManager">
-<area shape="rect" id="node1" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="62,184,178,211"/>
-<area shape="rect" id="node2" href="$structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="5,95,235,121"/>
-<area shape="rect" id="node3" href="$classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="65,5,175,32"/>
+<area shape="rect" id="Node000001" title="Class to centrally manage all events for the application Exposes methods to register subscribers that..." alt="" coords="62,181,178,207"/>
+<area shape="rect" id="Node000002" href="$structEventManager_1_1EventSubscriber.html" title="EventSubscriber structure to maintain the linked list of subscribers." alt="" coords="5,93,235,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,133,123,181,117,181,117,133"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="249,98,261,106,253,113,235,116,234,110,251,108,256,106,247,103"/>
+<area shape="rect" id="Node000003" href="$classEventListener.html" title="Class to extend for all other classes that need to respond to events For example: Class &lt;MyClass&gt; : p..." alt="" coords="65,5,175,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,45,123,93,117,93,117,45"/>
 </map>

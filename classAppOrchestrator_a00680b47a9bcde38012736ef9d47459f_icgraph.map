@@ -1,0 +1,5 @@
+<map id="AppOrchestrator::_handleReadLocoState" name="AppOrchestrator::_handleReadLocoState">
+<area shape="rect" id="Node000001" title="Show the read loco progress screen until it is read or times out." alt="" coords="235,5,421,45"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,28,187,28,187,23,220,23"/>
+</map>

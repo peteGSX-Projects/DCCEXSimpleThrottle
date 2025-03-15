@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['pin_299',['pin',['../classSwitch.html#a64b4b7dbd453139a6474af02a294d625',1,'Switch']]],
-  ['pin1_300',['pin1',['../classRotary.html#a0d5a3dc18b0c206e2aeab97df68c31d1',1,'Rotary']]],
-  ['pin2_301',['pin2',['../classRotary.html#a27ddee6d1ecc4104c19ad375633e5675',1,'Rotary']]],
-  ['polarity_302',['polarity',['../classSwitch.html#ad8e6e9dca1157436ec6ba0a1f1f06e0e',1,'Switch']]],
-  ['poll_303',['poll',['../classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae',1,'Switch']]],
-  ['process_304',['process',['../classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938',1,'Switch::process()'],['../classRotary.html#add09cfff4c69778268cd80a6edb6713e',1,'Rotary::process()']]],
-  ['progressscreen_305',['ProgressScreen',['../classProgressScreen.html',1,'ProgressScreen'],['../classProgressScreen.html#a1d577d543307bf94c38233b9a52144e6',1,'ProgressScreen::ProgressScreen()']]],
-  ['progressscreen_2ecpp_306',['ProgressScreen.cpp',['../ProgressScreen_8cpp.html',1,'']]],
-  ['progressscreen_2eh_307',['ProgressScreen.h',['../ProgressScreen_8h.html',1,'']]],
-  ['publish_308',['publish',['../classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c',1,'EventManager']]],
-  ['pushed_309',['pushed',['../classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7',1,'Switch']]],
-  ['pushedtime_310',['pushedTime',['../classSwitch.html#a46a137d99e5a5cbcbd1afa22f89fc2e7',1,'Switch']]]
+  ['needsmenurefresh_0',['needsMenuRefresh',['../classDisplayInterface.html#a5ae77397fd14206d8735a5ced7cdfbee',1,'DisplayInterface']]],
+  ['needsredraw_1',['needsRedraw',['../classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3',1,'DisplayInterface']]],
+  ['next_2',['next',['../structEventManager_1_1EventSubscriber.html#a1d80fcb44852a79b741c5cdf5f22e0c4',1,'EventManager::EventSubscriber']]],
+  ['none_3',['none',['../UserConfirmationInterface_8h.html#a769408c53bcf0f46dd4a0a12ee4b4d2aa6adf97f83acf6453d4a6a4b1070f3754',1,'None:&#160;UserConfirmationInterface.h'],['../UserSelectionInterface_8h.html#af7c4192d2e11646b0a2155c8ebc81267a6adf97f83acf6453d4a6a4b1070f3754',1,'None:&#160;UserSelectionInterface.h']]],
+  ['nonedata_4',['NoneData',['../structEventData.html#ab86b0ac8a707a7b3a27e95cfdc03ccc3a8bb298bc5b7389890c06cfeef42d914b',1,'EventData']]],
+  ['notes_5',['Notes',['../classSwitch.html#autotoc_md4',1,'']]]
 ];

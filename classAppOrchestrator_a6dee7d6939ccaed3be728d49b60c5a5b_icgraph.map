@@ -1,4 +1,5 @@
 <map id="AppOrchestrator::updateThrottleTrackPower" name="AppOrchestrator::updateThrottleTrackPower">
-<area shape="rect" id="node1" title="Notify the throttle screen of a track power update." alt="" coords="243,5,475,47"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+<area shape="rect" id="Node000001" title="Notify the throttle screen of a track power update." alt="" coords="243,5,475,45"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,28,195,28,195,23,229,23"/>
 </map>

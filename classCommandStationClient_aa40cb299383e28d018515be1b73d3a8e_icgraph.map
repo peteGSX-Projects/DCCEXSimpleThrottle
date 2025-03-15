@@ -1,6 +1,12 @@
 <map id="CommandStationClient::isConnected" name="CommandStationClient::isConnected">
-<area shape="rect" id="node1" title="Check if the CommandStation client is connected." alt="" coords="503,35,676,76"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,5,455,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="258,71,439,98"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,39"/>
+<area shape="rect" id="Node000001" title="Check if the CommandStation client is connected." alt="" coords="503,55,676,95"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a8c276b866b9f97c38de97d6993daf132" title="Send read loco command to CommandStation client and set ReadLoco state for progress." alt="" coords="247,5,450,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="491,55,402,33,403,28,492,49"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="243,55,455,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="489,78,455,78,455,73,489,73"/>
+<area shape="rect" id="Node000005" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="258,120,439,145"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="492,101,403,123,402,117,491,96"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,35,195,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,34,195,39,195,34,233,29"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="229,65,195,61,195,55,230,59"/>
 </map>

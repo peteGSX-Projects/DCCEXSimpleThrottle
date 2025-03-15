@@ -1,0 +1,11 @@
+<map id="AppOrchestrator::_handleReadLocoState" name="AppOrchestrator::_handleReadLocoState">
+<area shape="rect" id="Node000001" title="Show the read loco progress screen until it is read or times out." alt="" coords="5,55,192,95"/>
+<area shape="rect" id="Node000002" href="$classProgressScreen.html#a7b33a3a2c99b0bc8d48bea6b7be2581a" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="240,13,447,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,53,266,38,267,43,193,58"/>
+<area shape="rect" id="Node000004" href="$classProgressScreen.html#a99e5662cfd10b2b29c615b6a1c0eab29" title="Set the current activity in progress." alt="" coords="243,62,443,87"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,72,230,72,230,77,192,77"/>
+<area shape="rect" id="Node000005" href="$classProgressScreen.html#a236d3d1296261257db881182060247e9" title="Set the current attempt in progress." alt="" coords="243,111,444,137"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="193,91,267,106,266,111,192,96"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#a99832059104d5de85e66c819cd9c4a31" title="Display progress screen for the specified activity." alt="" coords="495,5,679,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,23,481,23,481,28,447,28"/>
+</map>

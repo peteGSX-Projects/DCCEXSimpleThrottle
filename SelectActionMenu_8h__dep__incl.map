@@ -1,10 +1,18 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/SelectActionMenu.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/SelectActionMenu.h">
-<area shape="rect" id="node1" title=" " alt="" coords="293,5,532,61"/>
-<area shape="rect" id="node2" href="$MenuManager_8h.html" title=" " alt="" coords="163,109,401,165"/>
-<area shape="rect" id="node8" href="$SelectActionMenu_8cpp.html" title=" " alt="" coords="425,109,664,165"/>
-<area shape="rect" id="node3" href="$AppConfiguration_8h.html" title=" " alt="" coords="5,317,244,373"/>
-<area shape="rect" id="node5" href="$AppOrchestrator_8h.html" title=" " alt="" coords="163,213,401,269"/>
-<area shape="rect" id="node7" href="$MenuManager_8cpp.html" title=" " alt="" coords="425,213,664,269"/>
-<area shape="rect" id="node4" href="$AppConfiguration_8cpp.html" title=" " alt="" coords="5,421,244,477"/>
-<area shape="rect" id="node6" href="$AppOrchestrator_8cpp.html" title=" " alt="" coords="268,317,507,373"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="293,5,532,60"/>
+<area shape="rect" id="Node000002" href="$MenuManager_8h.html" title=" " alt="" coords="163,108,401,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="370,70,318,110,315,106,366,66"/>
+<area shape="rect" id="Node000008" href="$SelectActionMenu_8cpp.html" title=" " alt="" coords="425,108,664,163"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="459,66,512,106,508,110,456,70"/>
+<area shape="rect" id="Node000003" href="$AppConfiguration_8h.html" title=" " alt="" coords="5,313,244,368"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,171,175,190,153,212,140,237,132,263,127,313,121,313,127,262,135,234,149,209,172,186,198,167"/>
+<area shape="rect" id="Node000005" href="$AppOrchestrator_8h.html" title=" " alt="" coords="163,211,401,265"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="285,176,285,211,279,211,279,176"/>
+<area shape="rect" id="Node000007" href="$MenuManager_8cpp.html" title=" " alt="" coords="425,211,664,265"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="364,165,477,208,475,213,362,170"/>
+<area shape="rect" id="Node000004" href="$AppConfiguration_8cpp.html" title=" " alt="" coords="5,416,244,471"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="127,382,127,416,122,416,122,382"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="231,275,167,315,165,311,228,271"/>
+<area shape="rect" id="Node000006" href="$AppOrchestrator_8cpp.html" title=" " alt="" coords="268,313,507,368"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="321,273,362,311,358,315,318,277"/>
 </map>

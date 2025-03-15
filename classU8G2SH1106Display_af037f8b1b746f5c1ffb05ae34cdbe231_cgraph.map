@@ -1,8 +1,14 @@
 <map id="U8G2SH1106Display::displayStartupScreen" name="U8G2SH1106Display::displayStartupScreen">
-<area shape="rect" id="node1" title="Display the startup screen." alt="" coords="5,100,169,141"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="248,5,412,47"/>
-<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#a9a02b7aef51172fa0fd37a6ac87fc339" title="Display the software version below the header text." alt="" coords="248,71,412,112"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="217,137,443,163"/>
-<area shape="rect" id="node6" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="231,188,429,229"/>
-<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="491,39,669,80"/>
+<area shape="rect" id="Node000001" title="Display the startup screen." alt="" coords="5,99,169,139"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a8a0f931c2a63026670e5916dbf874289" title="Display the header text with a horizontal line separator." alt="" coords="248,5,412,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,96,216,55,239,47,241,52,218,60,128,101"/>
+<area shape="rect" id="Node000004" href="$classU8G2SH1106Display.html#a9a02b7aef51172fa0fd37a6ac87fc339" title="Display the software version below the header text." alt="" coords="248,69,412,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,106,234,98,234,104,170,111"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="217,134,443,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="170,125,207,130,206,135,169,131"/>
+<area shape="rect" id="Node000006" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="231,184,429,224"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="136,136,218,168,245,177,243,182,216,173,134,141"/>
+<area shape="rect" id="Node000003" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="491,37,669,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,33,477,42,477,47,412,38"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="412,76,477,68,477,73,413,81"/>
 </map>

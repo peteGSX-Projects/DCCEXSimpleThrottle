@@ -1,6 +1,9 @@
 <map id="ThrottleScreen::_toggleLights" name="ThrottleScreen::_toggleLights">
-<area shape="rect" id="node1" title="Toggle lights (assumed to be F0) on/off." alt="" coords="716,13,928,39"/>
-<area shape="rect" id="node2" href="$classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="469,5,668,47"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="Node000001" title="Toggle lights (assumed to be F0) on/off." alt="" coords="716,13,928,38"/>
+<area shape="rect" id="Node000002" href="$classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="469,5,668,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="702,28,668,28,668,23,702,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,28,422,28,422,23,456,23"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,28,187,28,187,23,220,23"/>
 </map>

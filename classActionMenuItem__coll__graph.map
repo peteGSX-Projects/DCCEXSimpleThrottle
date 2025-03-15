@@ -1,4 +1,12 @@
 <map id="ActionMenuItem" name="ActionMenuItem">
-<area shape="rect" id="node1" title="Extension of the BaseMenuItem class for users to select items that call a function or method Each act..." alt="" coords="5,81,135,108"/>
-<area shape="rect" id="node2" href="$classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="10,5,130,32"/>
+<area shape="rect" id="Node000001" title="Extension of the BaseMenuItem class for users to select items that publish an event Each action must ..." alt="" coords="89,269,218,295"/>
+<area shape="rect" id="Node000002" href="$classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,181,125,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,214,143,267,139,271,85,218"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="140,185,152,194,144,202,126,204,125,199,141,197,147,194,138,190"/>
+<area shape="rect" id="Node000003" href="$structEvent.html" title="Structure for each Event that is published." alt="" coords="215,181,273,207"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="224,218,168,271,164,267,220,214"/>
+<area shape="rect" id="Node000004" href="$structEventData.html" title="Structure to enable supporting EventData that has various different types Byte &#45; caters for 8 bit uns..." alt="" coords="199,93,289,119"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="247,133,247,181,241,181,241,133"/>
+<area shape="rect" id="Node000005" href="$structLocoBroadcast.html" title="Structure for data from a Loco broadcast." alt="" coords="185,5,303,31"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="247,45,247,93,241,93,241,45"/>
 </map>

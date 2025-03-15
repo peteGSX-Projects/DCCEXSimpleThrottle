@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['needsmenurefresh_617',['needsMenuRefresh',['../classDisplayInterface.html#a5ae77397fd14206d8735a5ced7cdfbee',1,'DisplayInterface']]],
-  ['needsredraw_618',['needsRedraw',['../classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3',1,'DisplayInterface']]]
+  ['menumanager_0',['MenuManager',['../classMenuManager.html#a7780f71b57ac755cf5292af3a5732be7',1,'MenuManager']]],
+  ['menuscreen_1',['MenuScreen',['../classMenuScreen.html#ae9d4cb8c6889692cbe72e6c4b1a4b322',1,'MenuScreen']]]
 ];

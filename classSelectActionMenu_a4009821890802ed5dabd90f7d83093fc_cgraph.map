@@ -1,0 +1,15 @@
+<map id="SelectActionMenu::_selectAction" name="SelectActionMenu::_selectAction">
+<area shape="rect" id="Node000001" title="Publish the Event chosen by the select action." alt="" coords="5,73,152,113"/>
+<area shape="rect" id="Node000002" href="$classActionMenuItem.html#aa1be47cbeddb5d42ebcb9758d5e03ead" title="Get the Event associated with this item." alt="" coords="220,5,415,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,70,199,39,230,31,231,36,201,45,123,75"/>
+<area shape="rect" id="Node000003" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="211,55,424,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,82,197,77,197,83,152,88"/>
+<area shape="rect" id="Node000004" href="$classBaseMenu.html#a8d92a97d728ce6d172ba6e003607fc67" title="Get the menu item at the specified index." alt="" coords="200,104,435,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,97,187,101,186,106,152,103"/>
+<area shape="rect" id="Node000007" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="232,153,403,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="126,110,201,138,236,148,235,153,199,143,124,115"/>
+<area shape="rect" id="Node000005" href="$classBaseMenuItem.html#a42269f7409ba65420e4e7969e4743b69" title="Get the index of this item." alt="" coords="483,80,668,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="435,103,469,100,469,105,435,108"/>
+<area shape="rect" id="Node000006" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="485,129,665,155"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="435,126,472,129,471,134,434,131"/>
+</map>

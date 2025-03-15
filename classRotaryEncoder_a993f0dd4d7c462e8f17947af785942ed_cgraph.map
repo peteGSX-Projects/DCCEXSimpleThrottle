@@ -1,4 +1,5 @@
 <map id="RotaryEncoder::getUserSelectionAction" name="RotaryEncoder::getUserSelectionAction">
-<area shape="rect" id="node1" title="Check for any user selection actions This should be called at least once per main loop iteration Note..." alt="" coords="5,5,241,47"/>
-<area shape="rect" id="node2" href="$classRotary.html#add09cfff4c69778268cd80a6edb6713e" title=" " alt="" coords="289,13,412,39"/>
+<area shape="rect" id="Node000001" title="Check for any user selection actions This should be called at least once per main loop iteration Note..." alt="" coords="5,5,241,45"/>
+<area shape="rect" id="Node000002" href="$classRotary.html#add09cfff4c69778268cd80a6edb6713e" title=" " alt="" coords="289,13,412,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,23,276,23,276,28,242,28"/>
 </map>

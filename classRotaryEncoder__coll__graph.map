@@ -1,5 +1,7 @@
 <map id="RotaryEncoder" name="RotaryEncoder">
-<area shape="rect" id="node1" title="Class to implement a physical rotary encoder for user selection activities Clockwise moves down/incre..." alt="" coords="103,95,220,121"/>
-<area shape="rect" id="node2" href="$classUserSelectionInterface.html" title="Interface class to abstract user selection actions from physical implementations All physical user se..." alt="" coords="5,5,176,32"/>
-<area shape="rect" id="node3" href="$classRotary.html" title=" " alt="" coords="201,5,266,32"/>
+<area shape="rect" id="Node000001" title="Class to implement a physical rotary encoder for user selection activities Clockwise moves down/incre..." alt="" coords="103,93,220,119"/>
+<area shape="rect" id="Node000002" href="$classUserSelectionInterface.html" title="Interface class to abstract user selection actions from physical implementations All physical user se..." alt="" coords="5,5,176,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,39,154,91,149,94,107,43"/>
+<area shape="rect" id="Node000003" href="$classRotary.html" title=" " alt="" coords="201,5,266,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,43,173,95,169,91,213,39"/>
 </map>

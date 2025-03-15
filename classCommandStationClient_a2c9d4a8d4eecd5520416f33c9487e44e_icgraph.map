@@ -1,0 +1,7 @@
+<map id="CommandStationClient::joinProgTrack" name="CommandStationClient::joinProgTrack">
+<area shape="rect" id="Node000001" title="Join Prog to Main." alt="" coords="477,5,651,45"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a68cdca0c979e4aed53c8686bef73e6f1" title="Join programming track to main and return to the Select Loco menu." alt="" coords="243,5,429,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="463,28,430,28,430,23,463,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,13,195,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,28,195,28,195,23,229,23"/>
+</map>

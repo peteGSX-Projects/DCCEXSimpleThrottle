@@ -1,6 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,56,125,83"/>
-<area shape="rect" id="node2" href="$classActionMenuItem.html" title="Extension of the BaseMenuItem class for users to select items that call a function or method Each act..." alt="" coords="209,5,339,32"/>
-<area shape="rect" id="node3" href="$classCommandStationMenuItem.html" title=" " alt="" coords="173,56,375,83"/>
-<area shape="rect" id="node4" href="$classLocoMenuItem.html" title="Extension of the BaseMenuItem class to allow users to select a Loco." alt="" coords="215,107,333,133"/>
+<area shape="rect" id="Node000000" href="$classBaseMenuItem.html" title="Base class for all menu item types, and all menu item types must inherit from this...." alt="" coords="5,55,125,80"/>
+<area shape="rect" id="Node000001" href="$classActionMenuItem.html" title="Extension of the BaseMenuItem class for users to select items that publish an event Each action must ..." alt="" coords="209,5,339,31"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="132,49,219,28,220,33,134,54"/>
+<area shape="rect" id="Node000002" href="$classCommandStationMenuItem.html" title=" " alt="" coords="173,55,375,80"/>
+<area shape="poly" id="edge5_Node000000_Node000002" title=" " alt="" coords="139,65,173,65,173,70,139,70"/>
+<area shape="rect" id="Node000003" href="$classLocoMenuItem.html" title="Extension of the BaseMenuItem class to allow users to select a Loco." alt="" coords="215,104,333,129"/>
+<area shape="poly" id="edge6_Node000000_Node000003" title=" " alt="" coords="134,81,220,101,219,107,132,86"/>
 </map>

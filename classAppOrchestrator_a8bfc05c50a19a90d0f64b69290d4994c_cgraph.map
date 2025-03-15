@@ -1,6 +1,9 @@
 <map id="AppOrchestrator::_displayMenu" name="AppOrchestrator::_displayMenu">
-<area shape="rect" id="node1" title="Display a menu." alt="" coords="5,13,232,39"/>
-<area shape="rect" id="node2" href="$classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="280,13,467,39"/>
-<area shape="rect" id="node3" href="$classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6" title="Method to display the menu on screen." alt="" coords="515,13,696,39"/>
-<area shape="rect" id="node4" href="$classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="744,5,928,47"/>
+<area shape="rect" id="Node000001" title="Display a menu." alt="" coords="5,13,232,38"/>
+<area shape="rect" id="Node000002" href="$classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="280,13,467,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,23,266,23,266,28,232,28"/>
+<area shape="rect" id="Node000003" href="$classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6" title="Method to display the menu on screen." alt="" coords="515,13,696,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="467,23,501,23,501,28,467,28"/>
+<area shape="rect" id="Node000004" href="$classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="744,5,928,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="696,23,731,23,731,28,696,28"/>
 </map>

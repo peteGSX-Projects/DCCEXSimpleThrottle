@@ -1,9 +1,19 @@
 <map id="UserConfirmationInterface::getUserConfirmationAction" name="UserConfirmationInterface::getUserConfirmationAction">
-<area shape="rect" id="node1" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="492,136,699,177"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,71,444,112"/>
-<area shape="rect" id="node5" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,136,433,177"/>
-<area shape="rect" id="node6" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="246,201,433,243"/>
-<area shape="rect" id="node7" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="246,267,433,308"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,143,187,170"/>
+<area shape="rect" id="Node000001" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="492,133,699,173"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="555,128,503,93,443,60,413,48,415,43,445,55,506,88,558,123"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,69,444,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="501,133,419,112,420,107,502,127"/>
+<area shape="rect" id="Node000005" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,133,433,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="478,156,433,156,433,151,478,151"/>
+<area shape="rect" id="Node000006" href="$classAppOrchestrator.html#a0ec213491688a2552baaaab41459eca8" title="Show the startup screen and wait for user interaction before continuing." alt="" coords="246,197,433,237"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="502,179,420,200,419,195,501,174"/>
+<area shape="rect" id="Node000007" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="246,261,433,301"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="558,183,506,218,445,252,415,264,413,259,443,247,503,214,555,179"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,141,187,166"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,53,236,60,166,102,114,143,111,138,163,98,233,55,250,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="250,116,146,143,145,138,249,110"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="232,156,187,156,187,151,232,151"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="249,196,145,169,146,164,250,191"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="250,259,233,252,163,209,111,168,114,164,166,204,236,247,252,254"/>
 </map>

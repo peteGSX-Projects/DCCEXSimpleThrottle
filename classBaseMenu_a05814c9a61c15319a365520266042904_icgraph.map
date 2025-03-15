@@ -1,6 +1,9 @@
 <map id="BaseMenu::setEventManager" name="BaseMenu::setEventManager">
-<area shape="rect" id="node1" title="Set the application&#39;s event manager instance." alt="" coords="296,78,508,105"/>
-<area shape="rect" id="node2" href="$classSelectActionMenu.html#aeeebc8a3184add4f5b4838e657da9f0a" title="Constructor for each menu." alt="" coords="33,5,220,47"/>
-<area shape="rect" id="node3" href="$classSelectCommandStationMenu.html#a6ef34b3caa3235dc631e21ae45ea6d9c" title="Constructor for each menu." alt="" coords="17,71,236,112"/>
-<area shape="rect" id="node4" href="$classSelectLocoMenu.html#ad25186c69b79e74c126efad6c06f5b6a" title="Constructor for each menu." alt="" coords="5,137,248,163"/>
+<area shape="rect" id="Node000001" title="Set the application&#39;s event manager instance." alt="" coords="296,77,508,102"/>
+<area shape="rect" id="Node000002" href="$classSelectActionMenu.html#aeeebc8a3184add4f5b4838e657da9f0a" title="Constructor for each menu." alt="" coords="33,5,220,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="332,76,213,48,214,43,333,71"/>
+<area shape="rect" id="Node000003" href="$classSelectCommandStationMenu.html#a6ef34b3caa3235dc631e21ae45ea6d9c" title="Constructor for each menu." alt="" coords="17,69,236,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="282,92,236,92,236,87,282,87"/>
+<area shape="rect" id="Node000004" href="$classSelectLocoMenu.html#ad25186c69b79e74c126efad6c06f5b6a" title="Constructor for each menu." alt="" coords="5,134,248,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="328,107,189,137,188,131,326,102"/>
 </map>

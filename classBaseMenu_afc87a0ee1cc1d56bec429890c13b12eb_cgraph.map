@@ -1,6 +1,9 @@
 <map id="BaseMenu::addItem" name="BaseMenu::addItem">
-<area shape="rect" id="node1" title="Add a menu item to this menu." alt="" coords="5,56,157,83"/>
-<area shape="rect" id="node2" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="207,5,387,32"/>
-<area shape="rect" id="node3" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="205,56,389,83"/>
-<area shape="rect" id="node4" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="208,107,387,133"/>
+<area shape="rect" id="Node000001" title="Add a menu item to this menu." alt="" coords="5,55,157,80"/>
+<area shape="rect" id="Node000002" href="$classBaseMenuItem.html#a7faa8ef101906b43724ec5df6f842e28" title="Get the next menu item." alt="" coords="207,5,387,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,52,227,31,228,36,138,57"/>
+<area shape="rect" id="Node000003" href="$classBaseMenuItem.html#a9e21877f579848bfb59363c25434780a" title="Set the index of this menu item." alt="" coords="205,55,389,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,65,192,65,192,70,158,70"/>
+<area shape="rect" id="Node000004" href="$classBaseMenuItem.html#a03c6965948c9d3cd69d414e5939ef76f" title="Set the next menu item." alt="" coords="208,104,387,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="138,77,228,98,227,104,137,83"/>
 </map>

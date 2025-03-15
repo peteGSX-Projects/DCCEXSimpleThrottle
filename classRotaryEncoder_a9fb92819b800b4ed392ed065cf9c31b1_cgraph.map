@@ -1,4 +1,5 @@
 <map id="RotaryEncoder::RotaryEncoder" name="RotaryEncoder::RotaryEncoder">
-<area shape="rect" id="node1" title="Constructor for the rotary encoder object." alt="" coords="5,13,225,39"/>
-<area shape="rect" id="node2" href="$classUserSelectionInterface.html#abc02c1dbd33054a80dab04e0d76a49e0" title="Call this method to ensure throttle is inverted compared to selection options." alt="" coords="273,5,444,47"/>
+<area shape="rect" id="Node000001" title="Constructor for the rotary encoder object." alt="" coords="5,13,225,38"/>
+<area shape="rect" id="Node000002" href="$classUserSelectionInterface.html#abc02c1dbd33054a80dab04e0d76a49e0" title="Call this method to ensure throttle is inverted compared to selection options." alt="" coords="273,5,444,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,23,260,23,260,28,225,28"/>
 </map>

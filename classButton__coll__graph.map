@@ -1,5 +1,7 @@
 <map id="Button" name="Button">
-<area shape="rect" id="node1" title=" " alt="" coords="147,95,213,121"/>
-<area shape="rect" id="node2" href="$classUserConfirmationInterface.html" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="" coords="5,5,200,32"/>
-<area shape="rect" id="node3" href="$classSwitch.html" title=" " alt="" coords="225,5,290,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="147,93,213,119"/>
+<area shape="rect" id="Node000002" href="$classUserConfirmationInterface.html" title="Interface class to abstract user confirmation actions from physical implementations All physical user..." alt="" coords="5,5,200,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,39,171,91,167,95,120,43"/>
+<area shape="rect" id="Node000003" href="$classSwitch.html" title=" " alt="" coords="225,5,290,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,43,193,95,189,91,236,39"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="DisplayInterface::displayThrottleScreen" name="DisplayInterface::displayThrottleScreen">
-<area shape="rect" id="node1" title="Display the throttle screen." alt="" coords="719,5,903,47"/>
-<area shape="rect" id="node2" href="$classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="469,13,671,39"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="Node000001" title="Display the throttle screen." alt="" coords="719,5,903,45"/>
+<area shape="rect" id="Node000002" href="$classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="469,13,671,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="705,28,671,28,671,23,705,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="235,5,421,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,28,422,28,422,23,456,23"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,28,187,28,187,23,220,23"/>
 </map>

@@ -1,8 +1,13 @@
 <map id="Switch::triggerCallbacks" name="Switch::triggerCallbacks">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,184,133"/>
-<area shape="rect" id="node2" href="$classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="232,5,381,32"/>
-<area shape="rect" id="node3" href="$classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="239,56,375,83"/>
-<area shape="rect" id="node4" href="$classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="247,107,367,133"/>
-<area shape="rect" id="node5" href="$classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="242,157,371,184"/>
-<area shape="rect" id="node6" href="$classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="235,208,379,235"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,184,129"/>
+<area shape="rect" id="Node000002" href="$classSwitch.html#aaf65d60a2577803d7e0c1cc04e22d6d9" title=" " alt="" coords="232,5,381,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,101,167,71,231,40,248,33,250,38,233,44,169,76,118,106"/>
+<area shape="rect" id="Node000003" href="$classSwitch.html#a28631a0592b4453f279069cc1617d1e7" title=" " alt="" coords="239,55,375,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,101,237,81,239,86,151,107"/>
+<area shape="rect" id="Node000004" href="$classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="247,104,367,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,114,233,114,233,119,184,119"/>
+<area shape="rect" id="Node000005" href="$classSwitch.html#a85afd0589b71159575c8523c57f4f9fa" title=" " alt="" coords="242,153,371,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,127,239,148,237,153,149,132"/>
+<area shape="rect" id="Node000006" href="$classSwitch.html#a6dc0e5dff7a88420edc151ef24bd91da" title=" " alt="" coords="235,203,379,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="118,127,170,156,233,188,253,195,251,200,231,192,167,161,116,132"/>
 </map>

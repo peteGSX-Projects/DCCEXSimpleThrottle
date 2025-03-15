@@ -1,5 +1,7 @@
 <map id="BaseMenuItem::getName" name="BaseMenuItem::getName">
-<area shape="rect" id="node1" title="Get menu item name." alt="" coords="429,13,617,39"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a9916a1244fe550bca23fda97600cd704" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="217,5,381,47"/>
-<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="5,5,169,47"/>
+<area shape="rect" id="Node000001" title="Get menu item name." alt="" coords="429,13,617,38"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a9916a1244fe550bca23fda97600cd704" title="Display the list of menu items, paginated by the number that will fit on screen." alt="" coords="217,5,381,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="415,28,382,28,382,23,415,23"/>
+<area shape="rect" id="Node000003" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="5,5,169,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="204,28,169,28,169,23,204,23"/>
 </map>

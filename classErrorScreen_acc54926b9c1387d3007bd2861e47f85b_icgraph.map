@@ -1,5 +1,7 @@
 <map id="ErrorScreen::drawScreen" name="ErrorScreen::drawScreen">
-<area shape="rect" id="node1" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="469,13,651,39"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#a13522558df396b17108274f55f8ee620" title="Show any errors on screen and process user interaction to recover." alt="" coords="235,5,421,47"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,39"/>
+<area shape="rect" id="Node000001" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="469,13,651,38"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a13522558df396b17108274f55f8ee620" title="Show any errors on screen and process user interaction to recover." alt="" coords="235,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,28,422,28,422,23,455,23"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,13,187,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,28,187,28,187,23,220,23"/>
 </map>

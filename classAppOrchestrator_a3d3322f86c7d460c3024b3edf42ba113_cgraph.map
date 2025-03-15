@@ -1,18 +1,33 @@
 <map id="AppOrchestrator::_handleThrottleState" name="AppOrchestrator::_handleThrottleState">
-<area shape="rect" id="node1" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="5,308,192,349"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="260,7,445,48"/>
-<area shape="rect" id="node4" href="$classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="252,75,453,102"/>
-<area shape="rect" id="node6" href="$classThrottleScreen.html#a9f2f0bb6c023da81ba8d9a1eefc81cdc" title="Get the current speed." alt="" coords="259,126,446,153"/>
-<area shape="rect" id="node7" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="249,177,456,219"/>
-<area shape="rect" id="node8" href="$classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="261,243,444,284"/>
-<area shape="rect" id="node9" href="$classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="253,308,452,349"/>
-<area shape="rect" id="node12" href="$classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="253,373,452,415"/>
-<area shape="rect" id="node13" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="240,439,465,466"/>
-<area shape="rect" id="node14" href="$classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756" title="Explicitly request an update for the currently selected loco address." alt="" coords="251,491,455,532"/>
-<area shape="rect" id="node15" href="$classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885" title="Explicitly request a track power update (actually sends &#160;for server version which does this)" alt="" coords="249,556,457,597"/>
-<area shape="rect" id="node16" href="$classUserSelectionInterface.html#ad50f397a72e413b72bf6565fe8d4523a" title="Check if throttle is inverted compared to up/down." alt="" coords="267,621,438,663"/>
-<area shape="rect" id="node3" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="520,5,719,47"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6" title="Display the throttle screen." alt="" coords="527,71,711,112"/>
-<area shape="rect" id="node10" href="$classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3" title="Toggle lights (assumed to be F0) on/off." alt="" coords="513,286,725,313"/>
-<area shape="rect" id="node11" href="$classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52" title="Toggle track power state &#45; if unknown, turn on." alt="" coords="516,337,723,379"/>
+<area shape="rect" id="Node000001" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="5,301,192,341"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="260,7,445,47"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,300,118,251,145,187,185,118,210,87,238,59,250,51,253,55,242,63,214,90,189,121,150,189,123,253,108,302"/>
+<area shape="rect" id="Node000004" href="$classThrottleScreen.html#a75de25e87feda8ce74e36d03b1cf7f69" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="252,74,453,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="105,300,123,259,151,206,189,153,213,129,238,108,248,103,251,107,242,113,216,133,194,157,155,209,128,261,110,302"/>
+<area shape="rect" id="Node000006" href="$classThrottleScreen.html#a9f2f0bb6c023da81ba8d9a1eefc81cdc" title="Get the current speed." alt="" coords="259,123,446,149"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="110,299,159,230,196,191,239,159,254,151,257,156,241,164,200,195,163,233,114,303"/>
+<area shape="rect" id="Node000007" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="249,173,456,213"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="123,299,174,261,239,223,256,216,258,221,241,228,177,265,126,303"/>
+<area shape="rect" id="Node000008" href="$classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="261,237,444,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="178,299,259,278,260,283,179,304"/>
+<area shape="rect" id="Node000009" href="$classThrottleScreen.html#a5db2ee5376bdce83703696bbe6f921f1" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="253,301,452,341"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="192,319,239,319,239,324,192,324"/>
+<area shape="rect" id="Node000012" href="$classThrottleScreen.html#aa7aefd5e5912167d38bcbb7b48a98462" title="Implement this method to define what to do when user selection actions are performed." alt="" coords="253,365,452,405"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="179,339,260,359,259,365,178,344"/>
+<area shape="rect" id="Node000013" href="$classDisplayInterface.html#a8629d795eb21cea6a3c3411c7d9fafc3" title="Check if the display needs to be redrawn to prevent unnecessary redraws and flicker." alt="" coords="240,430,465,455"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="125,340,177,378,241,415,265,424,263,429,239,420,174,383,122,344"/>
+<area shape="rect" id="Node000014" href="$classThrottleScreen.html#a32002fa4856678a9977725bf2c5e4756" title="Explicitly request an update for the currently selected loco address." alt="" coords="251,480,455,520"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="116,340,167,402,202,437,241,466,253,472,251,477,239,470,198,441,163,406,112,343"/>
+<area shape="rect" id="Node000015" href="$classThrottleScreen.html#ab9c10d7a8f1fb45f8d0f64030c13d885" title="Explicitly request a track power update (actually sends &#160;for server version which does this)" alt="" coords="249,544,457,584"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="110,341,128,381,156,432,194,485,217,509,242,530,250,535,247,540,238,534,213,513,190,488,152,435,123,383,105,343"/>
+<area shape="rect" id="Node000016" href="$classUserSelectionInterface.html#ad50f397a72e413b72bf6565fe8d4523a" title="Check if throttle is inverted compared to up/down." alt="" coords="267,608,438,648"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="107,341,121,392,147,460,187,532,212,565,242,594,257,604,254,608,238,598,208,569,183,535,143,463,116,394,102,342"/>
+<area shape="rect" id="Node000003" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="520,5,719,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,24,506,23,506,29,446,29"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#a8f0c09be055ebae27e2e7d676798d4b6" title="Display the throttle screen." alt="" coords="527,69,711,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="453,85,513,86,513,91,453,90"/>
+<area shape="rect" id="Node000010" href="$classThrottleScreen.html#a036f266f412384948ca6a132d08ba5e3" title="Toggle lights (assumed to be F0) on/off." alt="" coords="513,281,725,306"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="452,308,499,303,500,309,453,314"/>
+<area shape="rect" id="Node000011" href="$classThrottleScreen.html#a0be6cce46a38220fe324c425803f0c52" title="Toggle track power state &#45; if unknown, turn on." alt="" coords="516,331,723,371"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="453,330,503,335,502,340,452,335"/>
 </map>

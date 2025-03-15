@@ -1,8 +1,16 @@
 <map id="UserSelectionInterface::getUserSelectionAction" name="UserSelectionInterface::getUserSelectionAction">
-<area shape="rect" id="node1" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="492,104,675,145"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,47"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,71,444,112"/>
-<area shape="rect" id="node5" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,136,433,177"/>
-<area shape="rect" id="node6" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="246,201,433,243"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,111,187,138"/>
+<area shape="rect" id="Node000001" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="492,101,675,141"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a2249568e08aec093685d92e90abf11f3" title="Show the select action menu and process user interaction to select one." alt="" coords="246,5,433,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="529,98,443,60,409,48,411,43,445,55,531,93"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#a1c97e3cf29b0b831944875bb852403b0" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="235,69,444,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="478,110,444,106,445,100,479,105"/>
+<area shape="rect" id="Node000005" href="$classAppOrchestrator.html#ab51b0375dc2a1aeb5b3d3183f7c73611" title="Show the loco selection menu and process user interaction to select one." alt="" coords="246,133,433,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="479,138,433,144,432,138,478,132"/>
+<area shape="rect" id="Node000006" href="$classAppOrchestrator.html#a3d3322f86c7d460c3024b3edf42ba113" title="Show the throttle screen and process user interaction with the throttle." alt="" coords="246,197,433,237"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="531,150,445,188,411,200,409,195,443,183,529,145"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa" title="Call this method at least once per main loop iteration to monitor for user interactions,..." alt="" coords="5,109,187,134"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,52,236,60,123,111,121,106,234,55,255,47"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="221,108,187,112,186,107,221,102"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="232,142,187,136,187,131,233,137"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="255,195,234,188,121,137,123,132,236,183,257,190"/>
 </map>

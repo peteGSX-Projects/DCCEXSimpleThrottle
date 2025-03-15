@@ -1,6 +1,9 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/Button.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/Button.h">
-<area shape="rect" id="node1" title=" " alt="" coords="87,5,325,61"/>
-<area shape="rect" id="node2" href="$UserConfirmationInterface_8h.html" title=" " alt="" coords="5,109,212,136"/>
-<area shape="rect" id="node3" href="$avdweb__Switch_8h.html" title=" " alt="" coords="236,109,371,136"/>
-<area shape="rect" id="node4" title=" " alt="" coords="261,184,345,211"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="87,5,325,60"/>
+<area shape="rect" id="Node000002" href="$UserConfirmationInterface_8h.html" title=" " alt="" coords="5,108,212,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,62,134,101,130,97,175,58"/>
+<area shape="rect" id="Node000003" href="$avdweb__Switch_8h.html" title=" " alt="" coords="236,108,371,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,58,282,97,278,101,234,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="261,181,345,207"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="306,134,306,168,301,168,301,134"/>
 </map>

@@ -1,8 +1,14 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationMenuItem.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationMenuItem.h">
-<area shape="rect" id="node1" title=" " alt="" coords="45,5,284,61"/>
-<area shape="rect" id="node2" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,109,137,136"/>
-<area shape="rect" id="node4" href="$CommandStationDetails_8h.html" title=" " alt="" coords="161,109,355,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="69,184,153,211"/>
-<area shape="rect" id="node5" href="$Defines_8h.html" title=" " alt="" coords="217,184,299,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="216,259,300,285"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="45,5,284,60"/>
+<area shape="rect" id="Node000002" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,108,137,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,62,96,100,92,96,134,58"/>
+<area shape="rect" id="Node000004" href="$CommandStationDetails_8h.html" title=" " alt="" coords="161,108,355,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,58,237,96,233,100,191,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="69,181,153,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,132,100,168,96,171,76,135"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="236,136,149,178,146,173,233,131"/>
+<area shape="rect" id="Node000005" href="$Defines_8h.html" title=" " alt="" coords="217,181,299,207"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="261,134,261,168,255,168,255,134"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="216,255,300,280"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="261,207,261,241,255,241,255,207"/>
 </map>

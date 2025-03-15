@@ -1,4 +1,5 @@
 <map id="ProgressScreen" name="ProgressScreen">
-<area shape="rect" id="node1" title=" " alt="" coords="6,80,129,107"/>
-<area shape="rect" id="node2" href="$classScreenInterface.html" title=" " alt="" coords="5,5,129,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="6,79,129,104"/>
+<area shape="rect" id="Node000002" href="$classScreenInterface.html" title=" " alt="" coords="5,5,129,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,70,79,65,79,65,44"/>
 </map>

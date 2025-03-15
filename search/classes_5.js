@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['locomenuitem_443',['LocoMenuItem',['../classLocoMenuItem.html',1,'']]]
+  ['locobroadcast_0',['LocoBroadcast',['../structLocoBroadcast.html',1,'']]],
+  ['locomenuitem_1',['LocoMenuItem',['../classLocoMenuItem.html',1,'']]]
 ];

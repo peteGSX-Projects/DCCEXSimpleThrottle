@@ -1,6 +1,9 @@
 <map id="U8G2SH1106Display::_displayHeader" name="U8G2SH1106Display::_displayHeader">
-<area shape="rect" id="node1" title="Display the header text with a horizontal line separator." alt="" coords="223,71,387,112"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="8,5,172,47"/>
-<area shape="rect" id="node3" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="5,71,175,112"/>
-<area shape="rect" id="node4" href="$classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231" title="Display the startup screen." alt="" coords="8,136,172,177"/>
+<area shape="rect" id="Node000001" title="Display the header text with a horizontal line separator." alt="" coords="223,69,387,109"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a3e19b4ee831bfa601565f6fae366b3b6" title="Display a menu." alt="" coords="8,5,172,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,68,157,48,158,43,224,63"/>
+<area shape="rect" id="Node000003" href="$classU8G2SH1106Display.html#af5bda97ed91db53410000e64d518fdda" title="Display progress screen for the specified activity." alt="" coords="5,69,175,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,92,175,92,175,87,209,87"/>
+<area shape="rect" id="Node000004" href="$classU8G2SH1106Display.html#af037f8b1b746f5c1ffb05ae34cdbe231" title="Display the startup screen." alt="" coords="8,133,172,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,116,158,136,157,131,223,111"/>
 </map>

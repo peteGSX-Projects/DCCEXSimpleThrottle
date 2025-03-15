@@ -1,4 +1,5 @@
 <map id="U8G2SH1106Display::_displayStartupInfo" name="U8G2SH1106Display::_displayStartupInfo">
-<area shape="rect" id="node1" title="Display the software version below the header text." alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="217,5,396,47"/>
+<area shape="rect" id="Node000001" title="Display the software version below the header text." alt="" coords="5,5,169,45"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a73d67b6b2234e3afbc4a807067ba737f" title="Calculates the height of the header area." alt="" coords="217,5,396,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,23,204,23,204,28,169,28"/>
 </map>

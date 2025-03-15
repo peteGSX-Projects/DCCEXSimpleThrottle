@@ -1,6 +1,9 @@
 <map id="Switch::calcSingleClick" name="Switch::calcSingleClick">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,176,83"/>
-<area shape="rect" id="node2" href="$classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="245,5,334,32"/>
-<area shape="rect" id="node3" href="$classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="229,56,349,83"/>
-<area shape="rect" id="node4" href="$classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="224,107,355,133"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,176,80"/>
+<area shape="rect" id="Node000002" href="$classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92" title=" " alt="" coords="245,5,334,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,52,230,30,232,35,143,57"/>
+<area shape="rect" id="Node000003" href="$classSwitch.html#afc965ba9f8f4ea9e11db6ed5b48f0be7" title=" " alt="" coords="229,55,349,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,65,216,65,216,70,176,70"/>
+<area shape="rect" id="Node000004" href="$classSwitch.html#a4967769dcf150dae6ea23e77509ee35e" title=" " alt="" coords="224,104,355,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,77,225,98,224,103,142,83"/>
 </map>

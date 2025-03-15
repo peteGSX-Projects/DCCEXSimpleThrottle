@@ -1,18 +1,33 @@
 <map id="AppOrchestrator::_handleSelectCommandStationState" name="AppOrchestrator::_handleSelectCommandStationState">
-<area shape="rect" id="node1" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="5,195,215,236"/>
-<area shape="rect" id="node2" href="$classAppOrchestrator.html#a8bfc05c50a19a90d0f64b69290d4994c" title="Display a menu." alt="" coords="275,13,501,39"/>
-<area shape="rect" id="node6" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="295,64,481,105"/>
-<area shape="rect" id="node8" href="$classMenuManager.html#a5c69017e3aa561385b5bfb40d9516a70" title="Get the Select CommandStation menu." alt="" coords="263,129,513,171"/>
-<area shape="rect" id="node9" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="285,195,491,236"/>
-<area shape="rect" id="node10" href="$classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="297,260,479,301"/>
-<area shape="rect" id="node11" href="$classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="273,325,503,367"/>
-<area shape="rect" id="node16" href="$classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c" title="Method to respond to user selection actions." alt="" coords="272,391,504,432"/>
-<area shape="rect" id="node3" href="$classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="603,13,789,39"/>
-<area shape="rect" id="node4" href="$classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6" title="Method to display the menu on screen." alt="" coords="895,13,1076,39"/>
-<area shape="rect" id="node5" href="$classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="1140,5,1324,47"/>
-<area shape="rect" id="node7" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="597,64,795,105"/>
-<area shape="rect" id="node12" href="$classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="561,292,831,333"/>
-<area shape="rect" id="node15" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="593,357,799,399"/>
-<area shape="rect" id="node13" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="879,274,1092,301"/>
-<area shape="rect" id="node14" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="900,325,1071,351"/>
+<area shape="rect" id="Node000001" title="Display the CommandStation menu and process user interaction to select one." alt="" coords="5,191,215,231"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a8bfc05c50a19a90d0f64b69290d4994c" title="Display a menu." alt="" coords="275,13,501,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,189,145,157,177,119,216,80,261,48,278,40,281,45,264,53,220,84,181,122,149,160,127,192"/>
+<area shape="rect" id="Node000006" href="$classAppOrchestrator.html#a680c907e1db1ec18c96d1caa9a952b95" title="Switch application states." alt="" coords="295,63,481,103"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="136,188,192,150,262,112,281,105,283,109,264,117,195,154,139,193"/>
+<area shape="rect" id="Node000008" href="$classMenuManager.html#a5c69017e3aa561385b5bfb40d9516a70" title="Get the Select CommandStation menu." alt="" coords="263,127,513,167"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="197,188,287,167,288,172,198,193"/>
+<area shape="rect" id="Node000009" href="$classUserConfirmationInterface.html#a9adc2551ce2ab09a96f3abe87339e3ef" title="Implement this to check for any user confirmation actions This should be called at least once per mai..." alt="" coords="285,191,491,231"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="215,208,271,208,271,213,215,213"/>
+<area shape="rect" id="Node000010" href="$classUserSelectionInterface.html#a88e56c2778f23a02a5a98c034bbd00e3" title="Implement this to check for any user selection actions This should be called at least once per main l..." alt="" coords="297,255,479,295"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="198,228,288,249,287,254,197,233"/>
+<area shape="rect" id="Node000011" href="$classSelectCommandStationMenu.html#a0731baedda1d99acd5d8ed13a81b02cd" title="Implement this method to respond to user confirmation actions." alt="" coords="273,319,503,359"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="139,228,195,267,264,304,283,312,281,317,262,309,192,271,136,233"/>
+<area shape="rect" id="Node000016" href="$classBaseMenu.html#a31a48ad14d159bc43f9e9d76d11da70c" title="Method to respond to user selection actions." alt="" coords="272,383,504,423"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="127,229,181,298,220,336,264,368,277,375,274,380,261,373,217,340,177,302,122,232"/>
+<area shape="rect" id="Node000003" href="$classMenuScreen.html#a03de42ff6d0d543bb2f50312d580dc7b" title="Implement this method to draw the associated screen object on the specified display." alt="" coords="603,13,789,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="502,23,589,23,589,28,502,28"/>
+<area shape="rect" id="Node000004" href="$classBaseMenu.html#a759164698eca3dc8a683a7230cd95fc6" title="Method to display the menu on screen." alt="" coords="895,13,1076,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="790,23,881,23,881,28,790,28"/>
+<area shape="rect" id="Node000005" href="$classDisplayInterface.html#af03ae7274a027e8da94be9bbeee516d4" title="Display a menu." alt="" coords="1140,5,1324,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1076,23,1127,23,1127,28,1076,28"/>
+<area shape="rect" id="Node000007" href="$classDisplayInterface.html#a30e1cc4bb075e2d2c52388d5e1e648f9" title="Set the redraw flag for this display." alt="" coords="597,63,795,103"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="481,80,583,80,583,85,481,85"/>
+<area shape="rect" id="Node000012" href="$classSelectCommandStationMenu.html#a10182b000de4f352b912c7ec61ff2246" title="Trigger the event manager to send the selected CommandStation to the connection manager." alt="" coords="561,287,831,327"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="503,324,547,319,548,325,503,329"/>
+<area shape="rect" id="Node000015" href="$classBaseMenu.html#adea2473be8fe7e33ca0859e88afda694" title="Get the index of the currently selected menu item." alt="" coords="593,351,799,391"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="503,348,580,356,579,361,503,353"/>
+<area shape="rect" id="Node000013" href="$classBaseMenu.html#acd63930db511d0d5d957be2f5c7977f8" title="Get the application&#39;s event manager instance." alt="" coords="879,270,1092,295"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="831,293,865,290,865,295,831,298"/>
+<area shape="rect" id="Node000014" href="$classEventManager.html#a1ee6c9ab5845aa236f6edf0814b4411c" title="Method to publish an event." alt="" coords="900,319,1071,345"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="831,316,886,321,886,326,831,321"/>
 </map>

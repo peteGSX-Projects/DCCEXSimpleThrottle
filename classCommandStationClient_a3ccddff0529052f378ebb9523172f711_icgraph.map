@@ -1,6 +1,15 @@
 <map id="CommandStationClient::getClient" name="CommandStationClient::getClient">
-<area shape="rect" id="node1" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="545,27,719,69"/>
-<area shape="rect" id="node2" href="$classAppConfiguration.html#af6ecc1985af3db347504449066b16cee" title="Constructor for the app configuration object." alt="" coords="243,5,497,32"/>
-<area shape="rect" id="node3" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="264,57,476,98"/>
-<area shape="rect" id="node4" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,64,195,91"/>
+<area shape="rect" id="Node000001" title="Get the actual DCCEXProtocol client to interact with." alt="" coords="545,88,719,128"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a567d08296e610885599d7be6d9a9dbcb" title="Set throttle to the received loco address when reading, or return to the select screen if failed." alt="" coords="277,5,463,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="568,85,497,60,455,48,456,43,498,55,570,80"/>
+<area shape="rect" id="Node000004" href="$classAppOrchestrator.html#a8c276b866b9f97c38de97d6993daf132" title="Send read loco command to CommandStation client and set ReadLoco state for progress." alt="" coords="269,70,471,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="531,101,471,95,472,90,532,96"/>
+<area shape="rect" id="Node000005" href="$classAppConfiguration.html#af6ecc1985af3db347504449066b16cee" title="Constructor for the app configuration object." alt="" coords="243,119,497,145"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="532,120,498,123,497,118,531,115"/>
+<area shape="rect" id="Node000006" href="$classAppOrchestrator.html#afff6489aad98eb2f1263e78f8be7c129" title="Method to setup the roster list in the SelectLocoMenu when the roster has been received." alt="" coords="264,169,476,209"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="566,135,498,159,452,172,451,167,497,153,564,130"/>
+<area shape="rect" id="Node000003" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,70,195,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,51,161,73,160,67,263,45"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="255,85,195,85,195,80,255,80"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="268,168,242,158,175,128,121,98,123,93,177,123,244,154,270,163"/>
 </map>

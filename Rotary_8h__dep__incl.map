@@ -1,8 +1,13 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/Rotary.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/Rotary.h">
-<area shape="rect" id="node1" title=" " alt="" coords="136,5,375,61"/>
-<area shape="rect" id="node2" href="$Rotary_8cpp.html" title=" " alt="" coords="5,109,244,165"/>
-<area shape="rect" id="node3" href="$RotaryEncoder_8h.html" title=" " alt="" coords="268,109,507,165"/>
-<area shape="rect" id="node4" href="$AppConfiguration_8h.html" title=" " alt="" coords="136,213,375,269"/>
-<area shape="rect" id="node6" href="$RotaryEncoder_8cpp.html" title=" " alt="" coords="399,213,637,269"/>
-<area shape="rect" id="node5" href="$AppConfiguration_8cpp.html" title=" " alt="" coords="136,317,375,373"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="136,5,375,60"/>
+<area shape="rect" id="Node000002" href="$Rotary_8cpp.html" title=" " alt="" coords="5,108,244,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,70,161,110,157,106,209,66"/>
+<area shape="rect" id="Node000003" href="$RotaryEncoder_8h.html" title=" " alt="" coords="268,108,507,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,66,354,106,351,110,299,70"/>
+<area shape="rect" id="Node000004" href="$AppConfiguration_8h.html" title=" " alt="" coords="136,211,375,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="344,173,292,213,288,208,341,169"/>
+<area shape="rect" id="Node000006" href="$RotaryEncoder_8cpp.html" title=" " alt="" coords="399,211,637,265"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="434,169,485,208,482,213,430,173"/>
+<area shape="rect" id="Node000005" href="$AppConfiguration_8cpp.html" title=" " alt="" coords="136,313,375,368"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="258,279,258,313,253,313,253,279"/>
 </map>

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['lastinput_780',['lastInput',['../classSwitch.html#a0df995280c5c1a453aed7ee651d82f64',1,'Switch']]],
-  ['locovalue_781',['locoValue',['../structEventData.html#a517b21cafcdcac03bd13969c4f929d9e',1,'EventData']]],
-  ['longpressdisable_782',['longPressDisable',['../classSwitch.html#a12c0c1078c8a839d8f1327ac97f9d1ce',1,'Switch']]],
-  ['longpressperiod_783',['longPressPeriod',['../classSwitch.html#aea440e149d2e2a386f49a0950e7e00a2',1,'Switch']]]
+  ['functionmap_0',['functionMap',['../structLocoBroadcast.html#a8bfc2443e5815a1e9c98049f25d5517c',1,'LocoBroadcast']]]
 ];

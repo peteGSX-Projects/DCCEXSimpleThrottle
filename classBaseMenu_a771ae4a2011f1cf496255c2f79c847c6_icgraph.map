@@ -1,4 +1,5 @@
 <map id="BaseMenu::handleUserConfirmationAction" name="BaseMenu::handleUserConfirmationAction">
-<area shape="rect" id="node1" title="Implement this method to respond to user confirmation actions." alt="" coords="321,5,577,47"/>
-<area shape="rect" id="node2" href="$classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="5,5,273,47"/>
+<area shape="rect" id="Node000001" title="Implement this method to respond to user confirmation actions." alt="" coords="321,5,577,45"/>
+<area shape="rect" id="Node000002" href="$classMenuScreen.html#ab06610f76229a492d6cc74953878e9ab" title="Implement this method to define what to do when user confirmation actions are performed." alt="" coords="5,5,273,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="308,28,274,28,274,23,308,23"/>
 </map>

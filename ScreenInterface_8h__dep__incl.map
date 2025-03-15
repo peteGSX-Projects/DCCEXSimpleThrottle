@@ -1,17 +1,36 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ScreenInterface.h" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/ScreenInterface.h">
-<area shape="rect" id="node1" title=" " alt="" coords="633,5,872,61"/>
-<area shape="rect" id="node2" href="$ErrorScreen_8h.html" title=" " alt="" coords="896,109,1135,165"/>
-<area shape="rect" id="node8" href="$MenuScreen_8h.html" title=" " alt="" coords="1237,109,1476,165"/>
-<area shape="rect" id="node10" href="$ProgressScreen_8h.html" title=" " alt="" coords="371,109,609,165"/>
-<area shape="rect" id="node12" href="$StartupScreen_8h.html" title=" " alt="" coords="633,109,872,165"/>
-<area shape="rect" id="node14" href="$ThrottleScreen_8h.html" title=" " alt="" coords="108,109,347,165"/>
-<area shape="rect" id="node3" href="$AppOrchestrator_8h.html" title=" " alt="" coords="555,213,793,269"/>
-<area shape="rect" id="node7" href="$ErrorScreen_8cpp.html" title=" " alt="" coords="1080,213,1319,269"/>
-<area shape="rect" id="node4" href="$AppConfiguration_8h.html" title=" " alt="" coords="319,317,557,373"/>
-<area shape="rect" id="node6" href="$AppOrchestrator_8cpp.html" title=" " alt="" coords="791,317,1029,373"/>
-<area shape="rect" id="node5" href="$AppConfiguration_8cpp.html" title=" " alt="" coords="319,421,557,477"/>
-<area shape="rect" id="node9" href="$MenuScreen_8cpp.html" title=" " alt="" coords="1395,213,1633,269"/>
-<area shape="rect" id="node11" href="$ProgressScreen_8cpp.html" title=" " alt="" coords="292,213,531,269"/>
-<area shape="rect" id="node13" href="$StartupScreen_8cpp.html" title=" " alt="" coords="817,213,1056,269"/>
-<area shape="rect" id="node15" href="$ThrottleScreen_8cpp.html" title=" " alt="" coords="29,213,268,269"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="633,5,872,60"/>
+<area shape="rect" id="Node000002" href="$ErrorScreen_8h.html" title=" " alt="" coords="896,108,1135,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="834,62,948,105,946,110,832,67"/>
+<area shape="rect" id="Node000008" href="$MenuScreen_8h.html" title=" " alt="" coords="1237,108,1476,163"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="886,53,1238,112,1237,117,885,59"/>
+<area shape="rect" id="Node000010" href="$ProgressScreen_8h.html" title=" " alt="" coords="371,108,609,163"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="673,67,559,110,557,105,671,62"/>
+<area shape="rect" id="Node000012" href="$StartupScreen_8h.html" title=" " alt="" coords="633,108,872,163"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="755,74,755,108,750,108,750,74"/>
+<area shape="rect" id="Node000014" href="$ThrottleScreen_8h.html" title=" " alt="" coords="108,108,347,163"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="620,61,358,111,347,113,346,108,357,105,619,56"/>
+<area shape="rect" id="Node000003" href="$AppOrchestrator_8h.html" title=" " alt="" coords="555,211,793,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="914,169,764,213,762,208,912,164"/>
+<area shape="rect" id="Node000007" href="$ErrorScreen_8cpp.html" title=" " alt="" coords="1080,211,1319,265"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1076,167,1152,208,1150,213,1074,171"/>
+<area shape="rect" id="Node000004" href="$AppConfiguration_8h.html" title=" " alt="" coords="319,313,557,368"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="601,273,500,316,498,311,599,268"/>
+<area shape="rect" id="Node000006" href="$AppOrchestrator_8cpp.html" title=" " alt="" coords="791,313,1029,368"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="749,268,849,311,847,316,747,273"/>
+<area shape="rect" id="Node000005" href="$AppConfiguration_8cpp.html" title=" " alt="" coords="319,416,557,471"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="441,382,441,416,435,416,435,382"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="1362,177,1357,224,1348,247,1333,267,1312,282,1283,295,1206,314,1117,328,1030,336,1029,330,1116,322,1205,309,1281,290,1309,277,1329,263,1343,245,1352,222,1357,176"/>
+<area shape="rect" id="Node000009" href="$MenuScreen_8cpp.html" title=" " alt="" coords="1395,211,1633,265"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1411,168,1474,208,1471,213,1408,172"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="551,167,627,208,624,213,548,171"/>
+<area shape="rect" id="Node000011" href="$ProgressScreen_8cpp.html" title=" " alt="" coords="292,211,531,265"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="463,175,434,212,430,209,459,172"/>
+<area shape="poly" id="edge14_Node000012_Node000003" title=" " alt="" coords="725,175,697,212,692,209,721,172"/>
+<area shape="rect" id="Node000013" href="$StartupScreen_8cpp.html" title=" " alt="" coords="817,211,1056,265"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="813,167,890,208,887,213,811,171"/>
+<area shape="poly" id="edge18_Node000014_Node000003" title=" " alt="" coords="357,163,558,208,557,213,356,168"/>
+<area shape="poly" id="edge17_Node000014_Node000004" title=" " alt="" coords="96,158,53,180,34,194,19,212,11,226,8,238,10,251,19,264,37,279,65,292,141,312,230,325,318,332,318,338,229,330,139,317,63,297,34,283,15,267,6,253,3,238,6,224,14,209,31,191,50,175,94,154"/>
+<area shape="rect" id="Node000015" href="$ThrottleScreen_8cpp.html" title=" " alt="" coords="29,211,268,265"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="200,175,171,212,167,209,196,172"/>
 </map>

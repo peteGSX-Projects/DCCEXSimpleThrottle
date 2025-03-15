@@ -1,0 +1,5 @@
+<map id="AppOrchestrator::_readLoco" name="AppOrchestrator::_readLoco">
+<area shape="rect" id="Node000001" title="Send read loco command to CommandStation client and set ReadLoco state for progress." alt="" coords="243,5,445,31"/>
+<area shape="rect" id="Node000002" href="$classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac" title="Implementation of the EventListener to respond to subscribed events." alt="" coords="5,5,195,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,21,195,21,195,15,229,15"/>
+</map>

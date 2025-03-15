@@ -1,0 +1,5 @@
+<map id="AppOrchestrator::updateThrottleLoco" name="AppOrchestrator::updateThrottleLoco">
+<area shape="rect" id="Node000001" title="Notify the throttle screen an update has been received for the associated loco." alt="" coords="5,13,268,38"/>
+<area shape="rect" id="Node000002" href="$classThrottleScreen.html#a38a9c952d9f66c70083675cd1d91b978" title="Method to call when a loco broadcast has been received." alt="" coords="316,5,533,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,23,302,23,302,28,268,28"/>
+</map>

@@ -1,4 +1,5 @@
 <map id="U8G2SH1106Display::_displayMenuFooter" name="U8G2SH1106Display::_displayMenuFooter">
-<area shape="rect" id="node1" title="Displays the horizontal line separator and Page # text." alt="" coords="5,5,169,47"/>
-<area shape="rect" id="node2" href="$classU8G2SH1106Display.html#a7cb461f6b06af59b6fa24e6de1ac53a9" title="Calculates the height of the footer area." alt="" coords="217,5,425,47"/>
+<area shape="rect" id="Node000001" title="Displays the horizontal line separator and Page # text." alt="" coords="5,5,169,45"/>
+<area shape="rect" id="Node000002" href="$classU8G2SH1106Display.html#a7cb461f6b06af59b6fa24e6de1ac53a9" title="Calculates the height of the footer area." alt="" coords="217,5,425,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,23,204,23,204,28,170,28"/>
 </map>

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['u8g2sh1106display_669',['U8G2SH1106Display',['../classU8G2SH1106Display.html#a8563fe884f502693aca74add0c19896d',1,'U8G2SH1106Display']]],
-  ['unsubscribe_670',['unsubscribe',['../classEventManager.html#ad9d182f09bb439a5f19962e680741163',1,'EventManager']]],
-  ['update_671',['update',['../classAppOrchestrator.html#ac3926aa46d9a33ad7b678b9982becafa',1,'AppOrchestrator::update()'],['../classCommandStationClient.html#ac6b6a22a6ed008a557df26d2ea4b8e82',1,'CommandStationClient::update()'],['../classConnectionManager.html#a055e0561b1c729748fe7df16c07c5608',1,'ConnectionManager::update()']]],
-  ['updatethrottleloco_672',['updateThrottleLoco',['../classAppOrchestrator.html#acb066a00e369a611282e2225bc1dd35f',1,'AppOrchestrator']]],
-  ['updatethrottletrackpower_673',['updateThrottleTrackPower',['../classAppOrchestrator.html#a6dee7d6939ccaed3be728d49b60c5a5b',1,'AppOrchestrator']]]
+  ['throttleinverted_0',['throttleInverted',['../classUserSelectionInterface.html#ad50f397a72e413b72bf6565fe8d4523a',1,'UserSelectionInterface']]],
+  ['throttlescreen_1',['ThrottleScreen',['../classThrottleScreen.html#a4358f2adf6e43c03bd5ea78445615ea1',1,'ThrottleScreen']]],
+  ['trackpowerupdatereceived_2',['trackPowerUpdateReceived',['../classThrottleScreen.html#a126ba15f59a91e2b29f08ac948262c50',1,'ThrottleScreen']]],
+  ['triggercallbacks_3',['triggerCallbacks',['../classSwitch.html#ab3380e6ae40fde8f5ec82751e59d735f',1,'Switch']]]
 ];

@@ -1,4 +1,7 @@
 <map id="Event" name="Event">
-<area shape="rect" id="node1" title="Structure for each Event that is published." alt="" coords="21,95,80,121"/>
-<area shape="rect" id="node2" href="$structEventData.html" title="Structure to enable supporting EventData that has various different types Byte &#45; caters for 8 bit uns..." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="Node000001" title="Structure for each Event that is published." alt="" coords="35,181,93,207"/>
+<area shape="rect" id="Node000002" href="$structEventData.html" title="Structure to enable supporting EventData that has various different types Byte &#45; caters for 8 bit uns..." alt="" coords="19,93,109,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,133,67,181,61,181,61,133"/>
+<area shape="rect" id="Node000003" href="$structLocoBroadcast.html" title="Structure for data from a Loco broadcast." alt="" coords="5,5,123,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,45,67,93,61,93,61,45"/>
 </map>

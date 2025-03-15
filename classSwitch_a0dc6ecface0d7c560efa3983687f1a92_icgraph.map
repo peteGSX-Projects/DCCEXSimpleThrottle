@@ -1,9 +1,16 @@
 <map id="Switch::on" name="Switch::on">
-<area shape="rect" id="node1" title=" " alt="" coords="796,42,885,69"/>
-<area shape="rect" id="node2" href="$classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="580,17,745,43"/>
-<area shape="rect" id="node7" href="$classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="577,67,748,94"/>
-<area shape="rect" id="node3" href="$classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,69"/>
-<area shape="rect" id="node4" href="$classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,69"/>
-<area shape="rect" id="node5" href="$classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,47"/>
-<area shape="rect" id="node6" href="$classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,71,167,98"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="796,42,885,67"/>
+<area shape="rect" id="Node000002" href="$classSwitch.html#afcb029f60baed406f88167af02954051" title=" " alt="" coords="580,17,745,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="782,49,745,44,746,38,783,44"/>
+<area shape="rect" id="Node000007" href="$classSwitch.html#a8100a6970d6e21fe581396bbf4926ee0" title=" " alt="" coords="577,66,748,91"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="783,65,749,70,748,64,782,60"/>
+<area shape="rect" id="Node000003" href="$classSwitch.html#a5dd4555ee2b69ffed62e99a2c2164938" title=" " alt="" coords="407,42,529,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="567,44,530,49,530,44,566,39"/>
+<area shape="rect" id="Node000004" href="$classSwitch.html#a54c7bb4078fda81710158fd6d3e7e5ae" title=" " alt="" coords="261,42,359,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="393,57,359,57,359,52,393,52"/>
+<area shape="rect" id="Node000005" href="$classButton.html#a043d8102c82da710ce158415fc646cbf" title="Check for any user confirmation actions This should be called at least once per main loop iteration." alt="" coords="5,5,213,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,48,213,43,214,38,248,43"/>
+<area shape="rect" id="Node000006" href="$classSwitch.html#afe605da5e62089b597b5db785e595396" title=" " alt="" coords="51,70,167,95"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="248,66,168,77,167,72,248,61"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="563,69,529,65,530,60,564,64"/>
 </map>

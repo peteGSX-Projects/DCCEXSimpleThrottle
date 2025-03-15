@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['oled_5faddress_292',['OLED_ADDRESS',['../Defines_8h.html#a5751031b78e50f8d0fe4a34441717b9a',1,'Defines.h']]],
-  ['oled_5fconnection_293',['OLED_CONNECTION',['../Defines_8h.html#afd9122f8342b4dea7ee78112eb4cdf13',1,'Defines.h']]],
-  ['oled_5fi2c_294',['OLED_I2C',['../Defines_8h.html#a2a56f44922e7e940b67f530ea9fe13fa',1,'Defines.h']]],
-  ['oled_5fspi_295',['OLED_SPI',['../Defines_8h.html#a05fb09d72806a1c7a6fadc838fb20715',1,'Defines.h']]],
-  ['oled_5ftype_296',['OLED_TYPE',['../Defines_8h.html#a9eed1840e43c6325ee9f42f84801a3f1',1,'Defines.h']]],
-  ['on_297',['on',['../classSwitch.html#a0dc6ecface0d7c560efa3983687f1a92',1,'Switch']]],
-  ['onevent_298',['onEvent',['../classAppOrchestrator.html#a734f55e38c649cff43fe9c00761a9cac',1,'AppOrchestrator::onEvent()'],['../classEventListener.html#ac1365587d6bfb62d4e698550d7cb9c4d',1,'EventListener::onEvent()']]]
+  ['menu_5ffont_0',['MENU_FONT',['../Defines_8h.html#a04d46f28d25d5b97d577aa8ddc949fee',1,'Defines.h']]],
+  ['menumanager_1',['menumanager',['../classMenuManager.html',1,'MenuManager'],['../classMenuManager.html#a7780f71b57ac755cf5292af3a5732be7',1,'MenuManager::MenuManager()']]],
+  ['menumanager_2ecpp_2',['MenuManager.cpp',['../MenuManager_8cpp.html',1,'']]],
+  ['menumanager_2eh_3',['MenuManager.h',['../MenuManager_8h.html',1,'']]],
+  ['menuscreen_4',['menuscreen',['../classMenuScreen.html',1,'MenuScreen'],['../classMenuScreen.html#ae9d4cb8c6889692cbe72e6c4b1a4b322',1,'MenuScreen::MenuScreen()']]],
+  ['menuscreen_2ecpp_5',['MenuScreen.cpp',['../MenuScreen_8cpp.html',1,'']]],
+  ['menuscreen_2eh_6',['MenuScreen.h',['../MenuScreen_8h.html',1,'']]],
+  ['ms_7',['ms',['../classSwitch.html#aa5839214b4ebc7c4bdbf06c25b5a5af8',1,'Switch']]]
 ];

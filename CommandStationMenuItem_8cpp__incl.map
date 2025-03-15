@@ -1,9 +1,16 @@
 <map id="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationMenuItem.cpp" name="/home/runner/work/DCCEXSimpleThrottle/DCCEXSimpleThrottle/CommandStationMenuItem.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="45,5,284,61"/>
-<area shape="rect" id="node2" href="$CommandStationMenuItem_8h.html" title=" " alt="" coords="58,109,271,136"/>
-<area shape="rect" id="node3" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,184,137,211"/>
-<area shape="rect" id="node5" href="$CommandStationDetails_8h.html" title=" " alt="" coords="161,184,355,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="69,259,153,285"/>
-<area shape="rect" id="node6" href="$Defines_8h.html" title=" " alt="" coords="217,259,299,285"/>
-<area shape="rect" id="node7" title=" " alt="" coords="216,333,300,360"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="45,5,284,60"/>
+<area shape="rect" id="Node000002" href="$CommandStationMenuItem_8h.html" title=" " alt="" coords="58,108,271,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,60,167,94,162,94,162,60"/>
+<area shape="rect" id="Node000003" href="$BaseMenuItem_8h.html" title=" " alt="" coords="5,181,137,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="151,135,99,175,96,171,148,131"/>
+<area shape="rect" id="Node000005" href="$CommandStationDetails_8h.html" title=" " alt="" coords="161,181,355,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="181,131,234,171,230,175,178,135"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="69,255,153,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,206,100,241,96,244,76,208"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="236,209,149,251,146,246,233,204"/>
+<area shape="rect" id="Node000006" href="$Defines_8h.html" title=" " alt="" coords="217,255,299,280"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="261,207,261,241,255,241,255,207"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="216,328,300,353"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="261,280,261,314,255,314,255,280"/>
 </map>

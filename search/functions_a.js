@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['menumanager_615',['MenuManager',['../classMenuManager.html#a7780f71b57ac755cf5292af3a5732be7',1,'MenuManager']]],
-  ['menuscreen_616',['MenuScreen',['../classMenuScreen.html#ae9d4cb8c6889692cbe72e6c4b1a4b322',1,'MenuScreen']]]
+  ['locobroadcast_0',['LocoBroadcast',['../structLocoBroadcast.html#aeb43b1eef691d970b17e9739727d0507',1,'LocoBroadcast']]],
+  ['locobroadcastreceived_1',['locoBroadcastReceived',['../classThrottleScreen.html#a38a9c952d9f66c70083675cd1d91b978',1,'ThrottleScreen']]],
+  ['locomenuitem_2',['LocoMenuItem',['../classLocoMenuItem.html#a8c623e1c762e0b328c22d8ea19498cc0',1,'LocoMenuItem']]],
+  ['longpress_3',['longPress',['../classSwitch.html#a28631a0592b4453f279069cc1617d1e7',1,'Switch']]]
 ];
