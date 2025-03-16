@@ -1,7 +1,8 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.14"
+#define VERSION "0.0.15"
+// 0.0.15 - Add missing myConfig.example.h
 // 0.0.14 - Implement support to read loco from PROG track
 //        - Implement support to JOIN/UNJOIN PROG track
 //        - Fix non-roster locos not updating correctly
