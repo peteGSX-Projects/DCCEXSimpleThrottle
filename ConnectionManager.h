@@ -43,7 +43,6 @@ public:
   /// @return Pointer to the connection stream object
   Stream *getConnectionStream();
 
-#ifdef WIFI_ENABLED
   /// @brief Check if user has selected a server
   /// @return True|False
   bool receivedUserSelection();
@@ -72,24 +71,24 @@ public:
   /// @return True|False
   bool newAttempt();
 
+  /// @brief Select the CommandStation to connect to
+  /// @param commandStationIndex Index of the list of CommandStationDetails to connect to
+  void selectCommandStation(uint8_t commandStationIndex);
+
+#ifdef WIFI_ENABLED
+
   /// @brief Set the list of CommandStations
   /// @param commandStationList Pointer to the array of CommandStations
   /// @param commandStationCount Count of CommandStations
   void setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount);
 
-  /// @brief Select the CommandStation to connect to
-  /// @param commandStationIndex Index of the list of CommandStationDetails to connect to
-  void selectCommandStation(uint8_t commandStationIndex);
-
 #endif // WIFI_ENABLED
 
 private:
   bool _connected;
-#ifdef WIFI_ENABLED
   bool _receivedUserSelection;
   uint8_t _selectedCommandStation;
   uint8_t _commandStationCount;
-  CommandStationDetails *_commandStationList;
   bool _wifiStarted;
   unsigned long _wifiRetryDelay;
   unsigned long _lastWifiRetry;
@@ -106,6 +105,8 @@ private:
   uint8_t _retryCounter;
   bool _newAttempt;
 
+#ifdef WIFI_ENABLED
+  CommandStationDetails *_commandStationList;
   WiFiClient _wifiClient;
 
   /// @brief Ensure WiFi client is connected and reconnects if disconnected

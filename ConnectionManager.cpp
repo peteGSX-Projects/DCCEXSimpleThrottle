@@ -19,12 +19,9 @@
 #include "ConnectionManager.h"
 
 ConnectionManager::ConnectionManager() {
-  _connected = false;
-#ifdef WIFI_ENABLED
   _receivedUserSelection = false;
   _selectedCommandStation = 255;
   _commandStationCount = 0;
-  _commandStationList = nullptr;
   _wifiStarted = false;
   _wifiRetryDelay = 1000;
   _lastWifiRetry = 0;
@@ -40,6 +37,11 @@ ConnectionManager::ConnectionManager() {
   _connectionErrorMessage = nullptr;
   _retryCounter = 0;
   _newAttempt = false;
+#ifdef WIFI_ENABLED
+  _connected = false;
+  _commandStationList = nullptr;
+#else
+  _connected = true;
 #endif // WIFI_ENABLED
 }
 
@@ -71,7 +73,6 @@ Stream *ConnectionManager::getConnectionStream() {
 #endif // WIFI_ENABLED
 }
 
-#ifdef WIFI_ENABLED
 bool ConnectionManager::receivedUserSelection() { return _receivedUserSelection; }
 
 bool ConnectionManager::isConnecting() { return _isConnecting; }
@@ -86,18 +87,21 @@ uint8_t ConnectionManager::getRetryCounter() { return _retryCounter; }
 
 bool ConnectionManager::newAttempt() { return _newAttempt; }
 
-void ConnectionManager::setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
-  _commandStationCount = commandStationCount;
-  _commandStationList = commandStationList;
-}
-
 void ConnectionManager::selectCommandStation(uint8_t commandStationIndex) {
+#ifdef WIFI_ENABLED
   if (!_commandStationList)
     return;
   if (commandStationIndex >= _commandStationCount)
     return;
   _receivedUserSelection = true;
   _selectedCommandStation = commandStationIndex;
+#endif // WIFI_ENABLED
+}
+
+#ifdef WIFI_ENABLED
+void ConnectionManager::setCommandStationList(CommandStationDetails *commandStationList, uint8_t commandStationCount) {
+  _commandStationCount = commandStationCount;
+  _commandStationList = commandStationList;
 }
 
 bool ConnectionManager::_connectWiFi(unsigned long currentMillis) {
