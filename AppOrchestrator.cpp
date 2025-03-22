@@ -36,6 +36,7 @@ void AppOrchestrator::begin() {}
 
 void AppOrchestrator::update() {
   if (_connectionManager) {
+#ifdef WIFI_ENABLED
     _connectionManager->update();
     if (_connectionManager->isConnecting() && _currentAppState != AppState::ConnectCommandStation) {
       _switchState(AppState::ConnectCommandStation);
@@ -52,6 +53,16 @@ void AppOrchestrator::update() {
         _commandStationClient->update();
       }
     }
+#else
+    if (!_commandStationClient->isConnected()) {
+      Stream *connectionStream = _connectionManager->getConnectionStream();
+      if (connectionStream) {
+        _commandStationClient->setConnectionStream(connectionStream);
+      }
+    } else {
+      _commandStationClient->update();
+    }
+#endif // WIFI_ENABLED
   }
   switch (_currentAppState) {
   case AppState::Startup:
@@ -85,9 +96,11 @@ void AppOrchestrator::update() {
 void AppOrchestrator::onEvent(Event &event) {
   switch (event.eventType) {
   case EventType::CommandStationSelected: {
+#ifdef WIFI_ENABLED
     if (_connectionManager) {
       _connectionManager->selectCommandStation(event.eventData.byteValue);
     }
+#endif // WIFI_ENABLED
     break;
   }
   case EventType::ReceivedRosterList: {
@@ -178,6 +191,7 @@ void AppOrchestrator::_handleStartupState() {
 void AppOrchestrator::_handleSelectCommandStationState() {
   if (!_menuManager)
     return;
+#ifdef WIFI_ENABLED
   SelectCommandStationMenu *menu = _menuManager->getSelectCommandStationMenu();
   if (!menu)
     return;
@@ -189,11 +203,13 @@ void AppOrchestrator::_handleSelectCommandStationState() {
       _switchState(AppState::ConnectCommandStation);
     }
   }
+#endif // WIFI_ENABLED
 }
 
 void AppOrchestrator::_handleConnectCommandStationState() {
   if (!_progressScreen)
     return;
+#ifdef WIFI_ENABLED
   if (_connectionManager->newAttempt()) {
     _displayInterface->setNeedsRedraw(true);
   }
@@ -203,6 +219,7 @@ void AppOrchestrator::_handleConnectCommandStationState() {
   if (_connectionManager->connected()) {
     _switchState(AppState::SelectLoco);
   }
+#endif // WIFI_ENABLED
 }
 
 void AppOrchestrator::_handleSelectLocoState() {
@@ -270,8 +287,10 @@ void AppOrchestrator::_handleSelectActionState() {
 void AppOrchestrator::_handleErrorState() {
   if (!_errorScreen)
     return;
+#ifdef WIFI_ENABLED
   _errorScreen->setErrorMessage(_connectionManager->getConnectionErrorMessage());
   _errorScreen->drawScreen(_displayInterface);
+#endif // WIFI_ENABLED
 }
 
 void AppOrchestrator::_switchState(AppState appState) {

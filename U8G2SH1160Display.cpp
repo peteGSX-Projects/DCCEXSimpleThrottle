@@ -28,12 +28,7 @@ U8G2SH1106Display::U8G2SH1106Display() {
   _defaultFont = DEFAULT_FONT;
   _menuFont = MENU_FONT;
   _speedFont = SPEED_FONT;
-  _directionFont = DIRECTION_FONT;
-  _addressFont = ADDRESS_FONT;
-  _eStopFont = ESTOP_FONT;
-  _wifiFont = WIFI_FONT;
-  _csFont = CS_FONT;
-  _errorFont = ERROR_FONT;
+  _throttleFont = THROTTLE_FONT;
   setMenuItemsPerPage(_calculateMenuItemsPerPage());
   setNeedsRedraw(true);
 }
@@ -245,13 +240,13 @@ void U8G2SH1106Display::_displayPageNumber(uint8_t pageNumber) {
 }
 
 void U8G2SH1106Display::_displayProgress(uint8_t counter) {
-  _oled->setFont(_wifiFont);
+  _oled->setFont(_defaultFont);
   uint16_t indicatorWidth = _oled->getMaxCharWidth();
   uint16_t indicatorHeight = _oled->getMaxCharHeight();
   uint16_t x = 0;
   uint16_t y = _calculateHeaderHeight() + (indicatorHeight * 3);
   for (uint8_t i = 0; i < counter; i++) {
-    _oled->drawGlyph(x, y, 0x0048);
+    _oled->drawStr(x, y, ".");
     x += indicatorWidth;
   }
   _oled->sendBuffer();
@@ -262,10 +257,6 @@ void U8G2SH1106Display::_displayErrorMessage(const char *errorMessage) {
   uint16_t x = 0;
   uint16_t y = 10;
   _oled->drawStr(x, y, errorMessage);
-  x = 50;
-  y = 50;
-  _oled->setFont(_errorFont);
-  _oled->drawGlyph(x, y, 0x0029);
   _oled->sendBuffer();
 }
 
@@ -295,7 +286,7 @@ void U8G2SH1106Display::_displayLocoDirection(Direction direction) {
   } else {
     directionText = "Forward";
   }
-  _oled->setFont(_directionFont);
+  _oled->setFont(_throttleFont);
   uint16_t displayWidth = _oled->getWidth();
   uint8_t fontHeight = _oled->getMaxCharHeight();
   uint16_t clearWidth = _oled->getStrWidth(directionText);
@@ -311,7 +302,7 @@ void U8G2SH1106Display::_displayLocoDirection(Direction direction) {
 
 void U8G2SH1106Display::_displayLocoName(const char *name) {
   _oled->setCursor(0, 50);
-  _oled->setFont(_addressFont);
+  _oled->setFont(_throttleFont);
   _oled->print(F("                      "));
   _oled->setCursor(0, 50);
   _oled->print(name);

@@ -73,12 +73,7 @@ private:
   const uint8_t *_defaultFont;
   const uint8_t *_menuFont;
   const uint8_t *_speedFont;
-  const uint8_t *_directionFont;
-  const uint8_t *_addressFont;
-  const uint8_t *_eStopFont;
-  const uint8_t *_wifiFont;
-  const uint8_t *_csFont;
-  const uint8_t *_errorFont;
+  const uint8_t *_throttleFont;
 
   /// @brief Calculates the number of menu items that will fit on screen
   /// @return Number of items that will fit on screen
