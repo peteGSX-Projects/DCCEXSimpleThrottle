@@ -216,14 +216,5 @@
 #define MENU_FONT u8g2_font_5x8_mr
 #define SPEED_FONT u8g2_font_spleen12x24_mn
 #define THROTTLE_FONT u8g2_font_6x10_mr
-// #define DIRECTION_FONT u8g2_font_6x10_mr
-// #define ADDRESS_FONT u8g2_font_6x10_mr
-// #define ESTOP_FONT u8g2_font_6x12_mr
-// #define WIFI_FONT u8g2_font_NokiaSmallPlain_tr
-// #define CS_FONT u8g2_font_NokiaSmallPlain_tr
-// #define ERROR_FONT u8g2_font_NokiaSmallPlain_tr
-// #define WIFI_FONT u8g2_font_open_iconic_www_1x_t      // use 0048
-// #define CS_FONT u8g2_font_streamline_transportation_t // use 0034
-// #define ERROR_FONT u8g2_font_emoticons21_tr           // use 0029 for error
 
 #endif

@@ -69,6 +69,7 @@ Stream *ConnectionManager::getConnectionStream() {
 #ifdef WIFI_ENABLED
   return &_wifiClient;
 #else
+  COMMANDSTATION_CONNECTION.begin(115200);
   return &COMMANDSTATION_CONNECTION;
 #endif // WIFI_ENABLED
 }

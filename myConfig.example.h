@@ -30,14 +30,9 @@ Define WiFi connection parameters here
 // #define ENCODER_CLK 14
 // #define ENCODER_SW 13
 
-// OLED font
-// #define OLED_FONT System5x7
-
 // OLED connection and type
-// #define OLED_USE_I2C
-// #define OLED_USE_SPI
-// #define OLED_TYPE &Adafruit128x64
-// #define OLED_TYPE &SH1106_128x64
+// #define OLED_CONNECTION OLED_I2C
+// #define OLED_CONNECTION OLED_SPI
 // #define OLED_ADDRESS 0x3c
 
 // Recommended I2C pins for Bluepill/Blackpill

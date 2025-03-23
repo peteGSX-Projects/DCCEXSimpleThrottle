@@ -22,6 +22,9 @@
 #include "Defines.h"
 #include "DisplayInterface.h"
 #include <U8g2lib.h>
+#if (OLED_CONNECTION == OLED_SPI)
+#include <SPI.h>
+#endif // OLED_CONNECTION
 
 /// @brief Class to implement display on an SH1106 based OLED using the U8g2 library
 class U8G2SH1106Display : public DisplayInterface {
