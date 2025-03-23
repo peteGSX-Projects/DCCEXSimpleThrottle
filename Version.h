@@ -2,7 +2,7 @@
 #define VERSION_H
 
 #define VERSION "0.0.16"
-// 0.0.16 - Fix compile errors on Bluepill
+// 0.0.16 - Fix to work correctly with Bluepill and serial connection
 // 0.0.15 - Add missing myConfig.example.h
 // 0.0.14 - Implement support to read loco from PROG track
 //        - Implement support to JOIN/UNJOIN PROG track
