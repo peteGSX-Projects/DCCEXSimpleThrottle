@@ -27,9 +27,8 @@ var searchData=
   ['connect_5fretries_24',['CONNECT_RETRIES',['../Defines_8h.html#a5edb2fdb88125c1c6adfd14ea1cde312',1,'Defines.h']]],
   ['connectcommandstation_25',['ConnectCommandStation',['../AppOrchestrator_8h.html#a83fc559664fc7c7e310c93586457b428a97898b664d49f0864c4b50c909975744',1,'AppOrchestrator.h']]],
   ['connected_26',['connected',['../classConnectionManager.html#a044438149a169fa61fd5a0b15d37439f',1,'ConnectionManager']]],
-  ['connectionmanager_27',['connectionmanager',['../classConnectionManager.html',1,'ConnectionManager'],['../classConnectionManager.html#a68db2f9138942ef16d50ebd753188410',1,'ConnectionManager::ConnectionManager()']]],
+  ['connectionmanager_27',['connectionmanager',['../classConnectionManager.html#a68db2f9138942ef16d50ebd753188410',1,'ConnectionManager::ConnectionManager()'],['../classConnectionManager.html',1,'ConnectionManager']]],
   ['connectionmanager_2ecpp_28',['ConnectionManager.cpp',['../ConnectionManager_8cpp.html',1,'']]],
   ['connectionmanager_2eh_29',['ConnectionManager.h',['../ConnectionManager_8h.html',1,'']]],
-  ['console_30',['CONSOLE',['../Defines_8h.html#a6c17169f464fb1a2995dbe06faa47a5f',1,'Defines.h']]],
-  ['cs_5ffont_31',['CS_FONT',['../Defines_8h.html#ae2fb5d313328d2e0940e2574baa218fa',1,'Defines.h']]]
+  ['console_30',['CONSOLE',['../Defines_8h.html#a6c17169f464fb1a2995dbe06faa47a5f',1,'Defines.h']]]
 ];

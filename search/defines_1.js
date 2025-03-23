@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['button_5fdebounce_5fperiod_0',['BUTTON_DEBOUNCE_PERIOD',['../Defines_8h.html#a6fae1b403bb60975928b0c8ec2ac3a05',1,'Defines.h']]],
-  ['button_5fdeglitch_5fperiod_1',['BUTTON_DEGLITCH_PERIOD',['../Defines_8h.html#a3195f9c5dffd58c9cfeb0772399cdcd8',1,'Defines.h']]],
-  ['button_5fdouble_5fclick_5fperiod_2',['BUTTON_DOUBLE_CLICK_PERIOD',['../Defines_8h.html#a95e06c5211c8bbe78121fae518d9092a',1,'Defines.h']]],
-  ['button_5flong_5fpress_5fperiod_3',['BUTTON_LONG_PRESS_PERIOD',['../Defines_8h.html#a4323a9e9910c1d1a07b9a2ebd37d04d9',1,'Defines.h']]],
-  ['button_5fpin_5fmode_4',['BUTTON_PIN_MODE',['../Defines_8h.html#a7ea1ae2cd3b6eca1765f1b4fd8f32e8b',1,'Defines.h']]],
-  ['button_5fpin_5fpolarity_5',['BUTTON_PIN_POLARITY',['../Defines_8h.html#aae86113caec28493ac265a228d352204',1,'Defines.h']]]
+  ['commandstation_5fconnection_0',['COMMANDSTATION_CONNECTION',['../Defines_8h.html#a0c7ffad6e424b3115641343bc75c7248',1,'Defines.h']]],
+  ['commandstation_5fcount_1',['COMMANDSTATION_COUNT',['../myConfig_8example_8h.html#a1eb733aaad4267bae37da97826668823',1,'myConfig.example.h']]],
+  ['commandstation_5fips_2',['COMMANDSTATION_IPS',['../myConfig_8example_8h.html#af736f169387aa82674921e28132a9c41',1,'myConfig.example.h']]],
+  ['commandstation_5fnames_3',['COMMANDSTATION_NAMES',['../myConfig_8example_8h.html#a9e6b7278c3494d8d3248c244fdc630c8',1,'myConfig.example.h']]],
+  ['commandstation_5fpasswords_4',['COMMANDSTATION_PASSWORDS',['../myConfig_8example_8h.html#a6955ca4cae53ca4f51246587b2505147',1,'myConfig.example.h']]],
+  ['commandstation_5fports_5',['COMMANDSTATION_PORTS',['../myConfig_8example_8h.html#acd584640dd1504e0d986094bbf0e64e4',1,'myConfig.example.h']]],
+  ['commandstation_5fssids_6',['COMMANDSTATION_SSIDS',['../myConfig_8example_8h.html#a9f4cf486b065994ebbfcebd1953cc643',1,'myConfig.example.h']]],
+  ['connect_5fretries_7',['CONNECT_RETRIES',['../Defines_8h.html#a5edb2fdb88125c1c6adfd14ea1cde312',1,'Defines.h']]],
+  ['console_8',['CONSOLE',['../Defines_8h.html#a6c17169f464fb1a2995dbe06faa47a5f',1,'Defines.h']]]
 ];
