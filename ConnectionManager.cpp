@@ -19,8 +19,8 @@
 #include "ConnectionManager.h"
 
 ConnectionManager::ConnectionManager() {
-  _connected = false;
 #ifdef WIFI_ENABLED
+  _connected = false;
   _receivedUserSelection = false;
   _selectedCommandStation = 255;
   _commandStationCount = 0;
@@ -40,6 +40,8 @@ ConnectionManager::ConnectionManager() {
   _connectionErrorMessage = nullptr;
   _retryCounter = 0;
   _newAttempt = false;
+#else
+  _connected = true;
 #endif // WIFI_ENABLED
 }
 
@@ -67,6 +69,7 @@ Stream *ConnectionManager::getConnectionStream() {
 #ifdef WIFI_ENABLED
   return &_wifiClient;
 #else
+  COMMANDSTATION_CONNECTION.begin(115200);
   return &COMMANDSTATION_CONNECTION;
 #endif // WIFI_ENABLED
 }
