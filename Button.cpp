@@ -32,7 +32,6 @@ UserConfirmationAction Button::getUserConfirmationAction() {
   UserConfirmationAction action = UserConfirmationAction::None;
   _button->poll();
   if (_button->singleClick()) {
-    CONSOLE.println("Single Click");
     action = UserConfirmationAction::SingleClick;
   } else if (_button->doubleClick()) {
     action = UserConfirmationAction::DoubleClick;

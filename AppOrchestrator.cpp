@@ -181,7 +181,11 @@ void AppOrchestrator::_handleStartupState() {
   case UserConfirmationAction::SingleClick:
   case UserConfirmationAction::DoubleClick:
   case UserConfirmationAction::LongPress:
+#ifdef WIFI_ENABLED
     _switchState(AppState::SelectCommandStation);
+#else
+    _switchState(AppState::SelectLoco);
+#endif // WIFI_ENABLED
     break;
   default:
     break;
