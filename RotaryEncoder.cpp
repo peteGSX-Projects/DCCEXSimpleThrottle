@@ -1,6 +1,5 @@
 /*
- *  © 2024 Peter Cole
- *  © 2023 Peter Cole
+ *  © 2025 Peter Cole
  *
  *  This is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,26 +15,50 @@
  *  along with this code.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifndef NATIVE_TESTING
+
 #include "RotaryEncoder.h"
 
-RotaryEncoder::RotaryEncoder() {
-  _rotary = new Rotary(ENCODER_DT_PIN, ENCODER_CLK_PIN);
-  _throttleStepFasterThreshold = THROTTLE_STEP_FASTER_THRESHOLD;
-  _throttleStepFastestThreshold = THROTTLE_STEP_FASTEST_THRESHOLD;
-  _lastUpThrottleStep = 0;
-  _lastDownThrottleStep = 0;
-  setThrottleInverted();
+constexpr uint8_t RotaryEncoder::_halfStepTable[6][4];
+constexpr uint8_t RotaryEncoder::_fullStepTable[7][4];
+
+RotaryEncoder::RotaryEncoder(uint8_t dtPin, uint8_t clkPin, RotaryEncoder::Mode mode, byte inputMode)
+    : _dtPin(dtPin), _clkPin(clkPin), _mode(mode), _inputMode(inputMode), _state(R_START),
+      _throttleStepFasterThreshold(THROTTLE_STEP_FASTER_THRESHOLD),
+      _throttleStepFastestThreshold(THROTTLE_STEP_FASTEST_THRESHOLD), _lastUpThrottleStep(0), _lastDownThrottleStep(0) {
 }
 
-void RotaryEncoder::begin() {}
+void RotaryEncoder::begin() {
+  pinMode(_clkPin, _inputMode);
+  pinMode(_dtPin, _inputMode);
+  _state = R_START;
+}
+
+RotaryEncoder::Direction RotaryEncoder::checkDirection() {
+  uint8_t pinState = (digitalRead(_clkPin) << 1) | digitalRead(_dtPin); // Read the current pin states
+
+  // Update state and get direction in one operation
+  const uint8_t result = (_mode == RotaryEncoder::Mode::HalfStep) ? _halfStepTable[_state & 0xf][pinState]
+                                                                  : _fullStepTable[_state & 0xf][pinState];
+
+  _state = result & 0xf; // Update state
+
+  const uint8_t direction = result & 0x30; // Check direction bits
+
+  // Return the direction based on the state bits
+  if (direction == DIR_CW) {
+    return RotaryEncoder::Direction::CW;
+  } else if (direction == DIR_CCW) {
+    return RotaryEncoder::Direction::CCW;
+  }
+  return RotaryEncoder::Direction::None;
+}
 
 UserSelectionAction RotaryEncoder::getUserSelectionAction() {
-  if (!_rotary)
-    return UserSelectionAction::None;
   UserSelectionAction action = UserSelectionAction::None;
   unsigned long currentMillis = millis();
-  unsigned char result = _rotary->process();
-  if (result == DIR_CW) {
+  Direction result = checkDirection();
+  if (result == Direction::CW) {
     unsigned long timeDifference = currentMillis - _lastDownThrottleStep;
     if (timeDifference < _throttleStepFastestThreshold) {
       action = UserSelectionAction::DownFastest;
@@ -45,7 +68,7 @@ UserSelectionAction RotaryEncoder::getUserSelectionAction() {
       action = UserSelectionAction::Down;
     }
     _lastDownThrottleStep = currentMillis;
-  } else if (result == DIR_CCW) {
+  } else if (result == Direction::CCW) {
     unsigned long timeDifference = currentMillis - _lastUpThrottleStep;
     if (timeDifference < _throttleStepFastestThreshold) {
       action = UserSelectionAction::UpFastest;
@@ -56,5 +79,15 @@ UserSelectionAction RotaryEncoder::getUserSelectionAction() {
     }
     _lastUpThrottleStep = currentMillis;
   }
+  // if (action != UserSelectionAction::None)
+    // LOG(LogLevel::LOG_DEBUG, "RotaryEncoder::check() returning: ", static_cast<int>(action));
   return action;
 }
+
+void RotaryEncoder::setMode(RotaryEncoder::Mode mode) {
+  _mode = mode;
+  _state = R_START; // Reset to R_START
+  // LOG(LogLevel::LOG_DEBUG, "RotaryEncoder::setMode(): ", static_cast<int>(_mode));
+}
+
+#endif // NATIVE_TESTING

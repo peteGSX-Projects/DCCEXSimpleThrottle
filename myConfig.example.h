@@ -15,10 +15,20 @@ Define WiFi connection parameters here
 #define COMMANDSTATION_SSIDS {"DCCEX_123456", "MY_CLUB_SSID"}
 #define COMMANDSTATION_PASSWORDS {"PASS_123456", "MY_CLUB_PASSWORD"}
 
-#define LOCAL_ROSTER_COUNT 3
+/*
+If you wish to define a local roster, uncomment and edit the below lines to define it
+LOCAL_ROSTER_COUNT must match the number of names and addresses provided
+*/
+// #define LOCAL_ROSTER_COUNT 3
+// #define LOCAL_ROSTER_NAMES {"Local Loco 1001", "Local Loco 1002", "Local Loco 1003"}
+// #define LOCAL_ROSTER_ADDRESSES {1001, 1002, 1003}
 
-#define LOCAL_ROSTER_NAMES {"Local Loco 1001", "Local Loco 1002", "Local Loco 1003"}
-#define LOCAL_ROSTER_ADDRESSES {1001, 1002, 1003}
+/*
+If you wish to increase or decrease rotary encoder sensitivity, adjust with one of the options below
+FULL_STEP is the default
+*/
+// #define ENCODER_MODE FULL_STEP // Default option
+// #define ENCODER_MODE HALF_STEP
 
 // Recommended rotary encoder pin definitions for Bluepill/Blackpill
 // #define ENCODER_DT PC14

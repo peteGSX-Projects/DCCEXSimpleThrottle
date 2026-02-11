@@ -20,7 +20,9 @@
 
 AppConfiguration::AppConfiguration() {
   _userConfirmationInterface = new Button();
-  _userSelectionInterface = new RotaryEncoder();
+  static RotaryEncoder::Mode encoderMode =
+      (ENCODER_MODE == HALF_STEP) ? RotaryEncoder::Mode::HalfStep : RotaryEncoder::Mode::FullStep;
+  _userSelectionInterface = new RotaryEncoder(ENCODER_DT_PIN, ENCODER_CLK_PIN, encoderMode);
   _displayInterface = new U8G2SH1106Display();
 
 #ifdef WIFI_ENABLED
@@ -45,6 +47,9 @@ void AppConfiguration::initialise() {
 #endif // BLUEPILL
   _userConfirmationInterface->begin();
   _userSelectionInterface->begin();
+#if INVERT_THROTTLE
+  _userSelectionInterface->setThrottleInverted();
+#endif // INVERT_THROTTLE
   _displayInterface->begin();
   _registerEventSubscriptions();
 #ifdef WIFI_ENABLED

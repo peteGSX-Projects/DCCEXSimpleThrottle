@@ -1,7 +1,11 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-#define VERSION "0.0.16"
+#define VERSION "0.0.17"
+// 0.0.17 - Improve synchronisation between user interaction and command station
+//        - Update DCCEXProtocol to 1.2.1
+//        - Implement improved RotaryEncoder class
+//        - Enable user configuration of RotaryEncoder half step/full step mode
 // 0.0.16 - Fix to work correctly with Bluepill and serial connection
 // 0.0.15 - Add missing myConfig.example.h
 // 0.0.14 - Implement support to read loco from PROG track

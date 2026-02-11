@@ -92,7 +92,6 @@ private:
   UserConfirmationInterface *_userConfirmationInterface;
   UserSelectionInterface *_userSelectionInterface;
   AppState _currentAppState;
-
   StartupScreen *_startupScreen;
   ThrottleScreen *_throttleScreen;
   ErrorScreen *_errorScreen;

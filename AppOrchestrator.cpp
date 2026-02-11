@@ -246,12 +246,10 @@ void AppOrchestrator::_handleSelectLocoState() {
 }
 
 void AppOrchestrator::_handleThrottleState() {
-  if (_displayInterface->needsRedraw()) {
-    _throttleScreen->requestLocoUpdate();
-    _throttleScreen->requestTrackPowerUpdate();
-  }
   _throttleScreen->drawScreen(_displayInterface);
   UserConfirmationAction action = _userConfirmationInterface->getUserConfirmationAction();
+  UserSelectionAction select = _userSelectionInterface->getUserSelectionAction();
+
   switch (action) {
   case UserConfirmationAction::DoubleClick: {
     if (_throttleScreen->getSpeed() == 0) {
@@ -263,8 +261,7 @@ void AppOrchestrator::_handleThrottleState() {
   }
   default:
     _throttleScreen->handleUserConfirmationAction(action);
-    _throttleScreen->handleUserSelectionAction(_userSelectionInterface->getUserSelectionAction(),
-                                               _userSelectionInterface->throttleInverted());
+    _throttleScreen->handleUserSelectionAction(select, _userSelectionInterface->throttleInverted());
     break;
   }
 }

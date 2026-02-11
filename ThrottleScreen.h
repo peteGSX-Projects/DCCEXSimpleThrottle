@@ -79,14 +79,18 @@ private:
   uint8_t _throttleStep;
   uint8_t _throttleStepFaster;
   uint8_t _throttleStepFastest;
-  unsigned long _speedUpdateDelay;
-  unsigned long _lastSpeedUpdate;
+  unsigned long _lastUserInteraction;
+  const unsigned long _SYNC_TIME = 250;
 
   /// @brief Toggle track power state - if unknown, turn on
   void _toggleTrackPower();
 
   /// @brief Toggle lights (assumed to be F0) on/off
   void _toggleLights();
+
+  /// @brief Synchronise user changes with Loco object
+  /// @param select UserSelectionAction
+  void _syncThrottle(UserSelectionAction select);
 };
 
 #endif // THROTTLESCREEN_H

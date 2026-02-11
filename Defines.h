@@ -21,6 +21,10 @@
 
 #include <U8g2lib.h>
 
+// Ensure encoder modes have a value so user settings take effect
+#define FULL_STEP 0
+#define HALF_STEP 1
+
 /// @brief Provide default definitions that can be overridden by a user creating myConfig.h
 
 #if __has_include("myConfig.h")
@@ -210,6 +214,12 @@
 #ifndef THROTTLE_STEP_FASTEST_THRESHOLD
 #define THROTTLE_STEP_FASTEST_THRESHOLD 125
 #endif // THROTTLE_STEP_FASTEST_THRESHOLD
+
+// Set default encoder mode
+#ifndef ENCODER_MODE
+#define ENCODER_MODE FULL_STEP
+// #define ENCODER_MODE HALF_STEP
+#endif // ENCODER_MODE
 
 // Define fonts in use for U8g2lib
 #define DEFAULT_FONT u8g2_font_NokiaSmallPlain_tr

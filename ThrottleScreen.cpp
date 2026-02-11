@@ -30,8 +30,7 @@ ThrottleScreen::ThrottleScreen(DCCEXProtocol *dccexProtocolClient, uint8_t throt
   _loco = nullptr;
   _trackPower = TrackPower::PowerUnknown;
   _trackPowerChanged = false;
-  _speedUpdateDelay = 500;
-  _lastSpeedUpdate = 0;
+  _lastUserInteraction = 0;
 }
 
 void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action) {
@@ -66,6 +65,10 @@ void ThrottleScreen::handleUserConfirmationAction(UserConfirmationAction action)
 }
 
 void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool throttleInverted) {
+  if (action != UserSelectionAction::None) {
+    _lastUserInteraction = millis();
+  }
+
   if (throttleInverted) {
     if (action == UserSelectionAction::Up) {
       action = UserSelectionAction::Down;
@@ -82,7 +85,7 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
     }
   }
   uint8_t minSpeed = 0;
-  uint8_t maxSpeed = 127;
+  uint8_t maxSpeed = 126;
   uint8_t changeStep = 0;
   bool speedUp = false;
   switch (action) {
@@ -139,17 +142,11 @@ void ThrottleScreen::handleUserSelectionAction(UserSelectionAction action, bool 
   if (_speedChanged) {
     _dccexProtocolClient->setThrottle(_loco, _speed, _direction);
   }
+
+  _syncThrottle(action);
 }
 
 void ThrottleScreen::drawScreen(DisplayInterface *display) {
-  if (millis() - _lastSpeedUpdate > _speedUpdateDelay) {
-    _lastSpeedUpdate = millis();
-    _speed = _loco->getSpeed();
-    _speedChanged = true;
-  }
-  if (_speed == 127) {
-    _speed = 126; // bit ugly, but prevents displaying 127 momentarily
-  }
   display->displayThrottleScreen(_loco->getName(), _speed, _loco->getDirection(), _trackPower, _speedChanged,
                                  _directionChanged, _trackPowerChanged);
   _speedChanged = false;
@@ -157,7 +154,11 @@ void ThrottleScreen::drawScreen(DisplayInterface *display) {
   _trackPowerChanged = false;
 }
 
-void ThrottleScreen::setLoco(Loco *loco) { _loco = loco; }
+void ThrottleScreen::setLoco(Loco *loco) {
+  _loco = loco;
+  _lastUserInteraction = 0;
+  _syncThrottle(UserSelectionAction::None);
+}
 
 void ThrottleScreen::locoBroadcastReceived(LocoBroadcast locoBroadcast) {
   if (_loco->getAddress() != locoBroadcast.address)
@@ -167,10 +168,11 @@ void ThrottleScreen::locoBroadcastReceived(LocoBroadcast locoBroadcast) {
     _loco->setDirection(locoBroadcast.direction);
     _loco->setFunctionStates(locoBroadcast.functionMap);
   }
-  _directionChanged = true;
-  if (_loco->getDirection() != _direction) {
-    _direction = _loco->getDirection();
-  }
+  // _directionChanged = true;
+  // if (_loco->getDirection() != _direction) {
+  //   _direction = _loco->getDirection();
+  //   _directionChanged = true;
+  // }
 }
 
 uint8_t ThrottleScreen::getSpeed() { return _speed; }
@@ -200,5 +202,24 @@ void ThrottleScreen::_toggleLights() {
     _dccexProtocolClient->functionOff(_loco, function);
   } else {
     _dccexProtocolClient->functionOn(_loco, function);
+  }
+}
+
+void ThrottleScreen::_syncThrottle(UserSelectionAction select) {
+  if (!_loco)
+    return;
+
+  int realSpeed = _loco->getSpeed();
+  Direction realDirection = _loco->getDirection();
+
+  if (millis() - _lastUserInteraction > _SYNC_TIME) {
+    if (_direction != realDirection) {
+      _direction = realDirection;
+      _directionChanged = true;
+    }
+    if (select == UserSelectionAction::None && _speed != realSpeed) {
+      _speed = realSpeed;
+      _speedChanged = true;
+    }
   }
 }
