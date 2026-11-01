@@ -21,14 +21,14 @@ Define WiFi connection parameters here
 #define LOCAL_ROSTER_ADDRESSES {1001, 1002, 1003}
 
 // Recommended rotary encoder pin definitions for Bluepill/Blackpill
-// #define ENCODER_DT PC14
-// #define ENCODER_CLK PC15
-// #define ENCODER_SW PA0
+// #define ENCODER_DT_PIN PC14
+// #define ENCODER_CLK_PIN PC15
+// #define BUTTON_PIN PA0
 
 // Recommended rotary encoder pin definitions for ESP32
-// #define ENCODER_DT 12
-// #define ENCODER_CLK 14
-// #define ENCODER_SW 13
+// #define ENCODER_DT_PIN 12
+// #define ENCODER_CLK_PIN 14
+// #define BUTTON_PIN 13
 
 // OLED connection and type
 // #define OLED_CONNECTION OLED_I2C
